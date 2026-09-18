@@ -756,3 +756,17 @@ specific order/recipient to Jev. This is an information-preservation fix for
 hierarchical decisions, applicable to support abilities in every scenario.
 Thirty-seven tests pass; a test checks that the capability and cargo state are
 visible at the contribution decision, before choosing the concrete order.
+
+### Live evidence after labs 080–081
+
+The same game recorded both reloads without reconnecting. In the archived
+snapshot, lab 080 had 65 Bunker contribution choices, all `continue`; lab 081
+had 47 `other` and one `continue`. Later observations contained actual Marine
+passengers in a bunker. Repair commands were also chosen, with some immediate
+`NotEnoughMinerals` responses. This is a sequential live observation, not a
+controlled causal comparison or a completed-mission result. The adapter and
+question wording were a real limitation before judging Jev's support behavior.
+Measured phase evidence: `docs/experiments/055-live-support-affordances.json`.
+The current policy does not yet receive all immediate action-result feedback;
+this remains a general observability gap to address without interrupting this
+healthy run. Zero Hour's result is still pending.

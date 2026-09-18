@@ -1,0 +1,75 @@
+{
+  "run": "runs/20260918T234141.639301Z",
+  "terminal_result": [],
+  "reloads": [
+    {
+      "time": 1789775044.69738,
+      "event": "reload",
+      "revision": "76d588d4aaf091d39be9bc4b606a0c7e4bb3ff50"
+    },
+    {
+      "time": 1789775129.280087,
+      "event": "reload",
+      "revision": "a914b373e41c996504fb6740b6ab00f005933bf2"
+    }
+  ],
+  "phases": [
+    {
+      "revision": "76d588d4aaf091d39be9bc4b606a0c7e4bb3ff50",
+      "ticks": 65,
+      "last_loop": 4947,
+      "support_contribution_counts": {
+        "continue": 65
+      },
+      "last_observed_loaded_units": [],
+      "action_result_counts": {
+        "1": 367,
+        "209": 9
+      }
+    },
+    {
+      "revision": "a914b373e41c996504fb6740b6ab00f005933bf2",
+      "ticks": 47,
+      "last_loop": 6344,
+      "support_contribution_counts": {
+        "other": 47,
+        "continue": 1
+      },
+      "last_observed_loaded_units": [
+        {
+          "tag": 4295491585,
+          "type": "Bunker",
+          "position": [
+            69.5,
+            33.5
+          ],
+          "health_fraction": 0.3,
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 2,
+            "capacity": 4,
+            "passengers": [
+              {
+                "tag": 4356308993,
+                "type": "Marine",
+                "health": 45.0
+              },
+              {
+                "tag": 4395630593,
+                "type": "Marine",
+                "health": 45.0
+              }
+            ]
+          },
+          "energy": 0.0
+        }
+      ],
+      "action_result_counts": {
+        "1": 239,
+        "9": 24
+      }
+    }
+  ],
+  "interpretation": "Sequential live observations, not a controlled comparison. Capability descriptions were followed by support choices and observed passengers. Mission outcome remains unverified."
+}
