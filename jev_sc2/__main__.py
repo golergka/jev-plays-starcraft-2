@@ -13,6 +13,7 @@ from .sc2 import SC2, launch, find_executable
 from .jev import Jev, CallBudgetReached
 from .reload import PlayerLoader
 from .view import make_view, validate_commands
+from .camera import choose_shot
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -66,6 +67,7 @@ async def run(args):
     loader = PlayerLoader(ROOT)
     loader.refresh()
     memory = {}
+    camera_memory = {}
     jev = Jev(log, stamp, max_calls=args.max_calls)
     proc = None
     if not args.attach:
@@ -144,11 +146,14 @@ async def run(args):
                 await asyncio.sleep(0.2)
                 continue
             if args.follow_camera and view['self']:
-                # Presentation only: raw observations/actions do not depend on camera.
-                camera = sc.Action()
-                camera.action_raw.camera_move.center_world_space.x = sum(u['position'][0] for u in view['self'])/len(view['self'])
-                camera.action_raw.camera_move.center_world_space.y = sum(u['position'][1] for u in view['self'])/len(view['self'])
-                await client.request('action',sc.RequestAction(actions=[camera]))
+                director = loader.camera_module.choose_shot if loader.camera_module else choose_shot
+                shot = director(view,camera_memory)
+                if shot:
+                    camera = sc.Action()
+                    camera.action_raw.camera_move.center_world_space.x = shot['position'][0]
+                    camera.action_raw.camera_move.center_world_space.y = shot['position'][1]
+                    await client.request('action',sc.RequestAction(actions=[camera]))
+                    log('camera_shot',loop=view['loop'],**shot)
             decision_start = time.monotonic()
             try:
                 commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),3)

@@ -770,3 +770,19 @@ Measured phase evidence: `docs/experiments/055-live-support-affordances.json`.
 The current policy does not yet receive all immediate action-result feedback;
 this remains a general observability gap to address without interrupting this
 healthy run. Zero Hour's result is still pending.
+
+## Lab 082: stream camera follows local action
+
+User requested a more watchable stream. Replace the average-owned-position
+camera with a presentation-only director. Frame visible engagements, weapon fire,
+new damage and moving forces; use quiet local overviews between action. Hold
+shots for seven seconds, allowing earlier cuts after 2.5 seconds for new damage
+elsewhere. Local framing avoids an empty midpoint between base and army.
+
+Camera memory is separate from Jev policy memory, consumes only its fair view,
+and emits camera moves only. It never supplies tactics or unit orders. Commit
+reload now includes the camera module atomically with the player and adapter.
+Forty tests pass, including a distant fight against a large base, shot dwell,
+damage interrupts, movement, and exclusion of fog snapshots from camera targets.
+The harness integration requires one controller reconnect to the same current
+mission, without loading a map or discarding completed campaign checkpoints.

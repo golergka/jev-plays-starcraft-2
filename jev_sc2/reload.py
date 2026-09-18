@@ -10,6 +10,7 @@ class PlayerLoader:
         self.attempted = None
         self.module = None
         self.view_module = None
+        self.camera_module = None
 
     def git(self, *args):
         return subprocess.check_output(['git', '-C', str(self.root), *args], text=True).strip()
@@ -33,7 +34,16 @@ class PlayerLoader:
             exec(compile(view_source,f'{view_path}@{revision}','exec'),view_candidate.__dict__)
             if not callable(getattr(view_candidate,'make_view',None)):
                 raise ValueError('view.py must export async make_view(...)')
-        # Commit both components together, retaining both old components if
+        camera_candidate = None
+        camera_path = 'jev_sc2/camera.py'
+        if self.git('ls-tree','--name-only',revision,'--',camera_path):
+            camera_source = self.git('show',f'{revision}:{camera_path}')
+            camera_candidate = types.ModuleType(f'jev_sc2.camera_{revision}')
+            exec(compile(camera_source,f'{camera_path}@{revision}','exec'),camera_candidate.__dict__)
+            if not callable(getattr(camera_candidate,'choose_shot',None)):
+                raise ValueError('camera.py must export choose_shot(view, memory)')
+        # Commit all components together, retaining all old components if
         # either new source fails. The socket and policy memory stay in place.
         self.module, self.view_module, self.revision = candidate, view_candidate, revision
+        self.camera_module = camera_candidate
         return revision
