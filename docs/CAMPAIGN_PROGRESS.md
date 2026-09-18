@@ -444,3 +444,13 @@ investment, along with existing counts and current orders. This makes, for examp
 an owned production building's observed training capability explicit without
 hardcoding which building to buy or giving Jev a build order. Unseen unit types
 remain capability-unknown. This knowledge resets with a harness restart.
+
+
+## Lab 065: fresh Outlaws evaluation of shared investment
+
+The lab 063–064 continuation ended normally at 299 successful calls ($0.161267)
+without a result. It inherited forty-plus SCVs, six Depots and two Command Centers
+from earlier policies. This is a poor starting point for evaluating whether the
+shared investment policy avoids worker overproduction. Start The Outlaws fresh
+with the latest policy and a 500-call/300-second budget. No new tactical rules or
+model changes accompany the reset. Previous runs and replays remain preserved.
