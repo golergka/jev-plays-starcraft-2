@@ -4,6 +4,9 @@ An experiment in fast, probabilistic decisions. Jev chooses actions; Python hand
 observations, geometry, validation, transport and logging. No other inference model
 participates in the game loop. This is an early combat prototype, not a complete bot.
 
+Read [the first-session experiment report](docs/EXPERIMENT_REPORT.md) for measured
+results, failed approaches, and current limitations.
+
 ## Run
 
 1. Install StarCraft II using Battle.net and finish its download. On this Mac, set
