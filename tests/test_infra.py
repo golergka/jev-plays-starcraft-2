@@ -7,6 +7,18 @@ from jev_sc2.sc2 import SC2, find_executable
 from jev_sc2.view import validate_commands, make_view
 
 
+def test_map_overview_masks_unexplored_terrain_and_preserves_north_orientation():
+    from s2clientprotocol import common_pb2 as common
+    from jev_sc2.view import explored_map
+    area=common.RectangleI(p0=common.PointI(x=0,y=0),p1=common.PointI(x=2,y=2))
+    visibility=common.ImageData(bits_per_pixel=8,size=common.Size2DI(x=2,y=2),data=bytes([0,3,1,2]))
+    pathing=common.ImageData(bits_per_pixel=8,size=common.Size2DI(x=2,y=2),data=bytes([0,1,1,0]))
+    first=explored_map(visibility,pathing,area,cell_size=1)
+    assert first['rows_north_to_south']==['.#','??']
+    pathing.data=bytes([1,0,1,0])
+    assert explored_map(visibility,pathing,area,cell_size=1)==first
+
+
 def test_reload_uses_commit_and_retains_good_policy(tmp_path):
     def git(*args):
         return subprocess.check_output(['git','-C',str(tmp_path),*args],text=True)

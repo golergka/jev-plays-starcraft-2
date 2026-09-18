@@ -33,6 +33,30 @@ def bearing(dx, dy):
     return directions[round(math.atan2(dy, dx)/(math.pi/4)) % 8]
 
 
+def explored_map(visibility, pathing, area, cell_size=6):
+    """Text overview of geography already revealed to this player, not a route."""
+    rows = []
+    for y in reversed(range(area.p0.y, area.p1.y, cell_size)):
+        row = ''
+        for x in range(area.p0.x, area.p1.x, cell_size):
+            known = []
+            total = 0
+            for py in range(y, min(y+cell_size,area.p1.y)):
+                for px in range(x, min(x+cell_size,area.p1.x)):
+                    total += 1
+                    if pixel(visibility,px,py) in (1,2):
+                        value = pixel(pathing,px,py)
+                        if value is not None:
+                            known.append(value)
+            row += ('?' if not known else
+                    '~' if len(known)<total else
+                    '.' if all(known) else '#' if not any(known) else '+')
+        rows.append(row)
+    return {'bounds': [area.p0.x,area.p0.y,area.p1.x,area.p1.y],
+            'cell_size':cell_size,'rows_north_to_south':rows,
+            'legend': '? unexplored; ~ partly explored; . walkable; # blocked; + mixed walkable/blocked. Columns west to east. Static terrain only; not a route or current unit occupancy.'}
+
+
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
@@ -51,6 +75,8 @@ async def make_view(client, observation, data, info, objective):
     placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
+            'explored_map': explored_map(obs.raw_data.map_state.visibility,
+                                         info.start_raw.pathing_grid,area),
             'resources': {'minerals': obs.player_common.minerals,
                           'vespene': obs.player_common.vespene,
                           'food_used': obs.player_common.food_used,

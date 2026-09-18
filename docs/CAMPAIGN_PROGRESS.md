@@ -86,3 +86,18 @@ planner, priority weight, or automatic action. Jev chooses whether to use these
 alongside short movement, attack, regroup, hold and continue. Resume the marker
 trial's game state to test uptake. Candidate construction requires a harness
 restart; committed player policy still reloads during a running game.
+
+Before running this trial, the user pointed out the API's map information. Added
+a coarse text map directly from `StartRaw.pathing_grid` and the player's dynamic
+visibility. Revealed terrain (visibility 1=fogged or 2=visible) is represented;
+unexplored/full-hidden terrain stays unknown. The overview distinguishes blocked,
+walkable, mixed and partially explored cells, with explicit coordinate orientation.
+No route or action is computed. Both squad and unit Jev requests receive it.
+Consequently lab 045 tests the combined broader observation/action interface,
+not an isolated long-range-action ablation. A regression test changes hidden
+terrain bytes and confirms that the Jev-facing map stays identical.
+
+Source fields: Blizzard's [raw protocol](https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/raw.proto)
+and [spatial layers](https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/spatial.proto).
+The minimap `alerts` field documents unit-attacked alerts, not campaign objective
+markers. Those markers are not exposed as a named raw field in these definitions.
