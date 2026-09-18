@@ -1,7 +1,7 @@
 # Verified contracts and local procedure
 
 Research date: 2026-09-18. Distinguish a documented API contract from a successful
-local test; Battle.net launch and authentication succeeded; API connection through Battle.net succeeded; mission play remains under test.
+local test; Battle.net launch and authentication succeeded; API connection through Battle.net succeeded; three realtime MarineMicro trials, accepted Jev actions and replay saving are verified.
 
 ## SC2 transport and player perspective
 
@@ -39,7 +39,7 @@ Sources: [Blizzard overview](https://github.com/Blizzard/s2client-proto),
    Also supply `-dataDir <installation-root>/ -tempDir <unique-temporary-directory>/`, as PySC2 does. Port 5000 is occupied by macOS Control Center on this host. On Apple Silicon the Intel binary needs Rosetta. Rosetta is present on this host;
    runtime compatibility still requires a real launch test.
 4. Connect to `ws://127.0.0.1:5001/sc2api`. Send `RequestPing` and record version.
-5. `RequestCreateGame(local_map.map_path=<absolute SC2Map>, realtime=True,
+5. `RequestCreateGame(local_map.map_path=<map filename>, local_map.map_data=<map bytes>, realtime=True,
    disable_fog=False, player_setup=[Participant])`. For a melee map, add a Computer
    slot; do not add one to a scripted single-player scenario automatically.
 6. `RequestJoinGame(race=Terran, options.raw=True, options.score=True, ...)` as a
@@ -106,3 +106,10 @@ succeeded: RequestPing returned version 5.0.16.97563. The practical procedure on
 this host is Battle.net Play followed by `--attach`. Keep that instance running
 across player commits and scenario transitions. Direct launch needs further
 diagnosis and must not be described as verified.
+
+Map bytes are required by the verified local route: passing the repository map
+path caused join_game to block in a file open. Sending map_data loaded immediately.
+This is consistent with macOS protected-folder handling, but the underlying OS
+cause is not proven. Three MarineMicro trials produced valid engine actions and
+replays. Commit 6452cdb was loaded while the first match ran. This proves runtime
+infrastructure, not campaign progression or good combat performance.
