@@ -42,6 +42,16 @@ async def decide(view, jev, memory):
                              'elapsed_loops': view['loop']-navigation['loop'],
                              'displacement': round(math.dist(center, navigation['center']), 1)})
             del outcomes[:-8]
+        navigation_options = {
+            'north': 'Explore north (increasing map y)',
+            'south': 'Explore south (decreasing map y)',
+            'east': 'Explore east (increasing map x)',
+            'west': 'Explore west (decreasing map x)',
+            'engage': 'Fight the visible enemies',
+            'neutral': 'Approach a visible neutral entity',
+            'hold': 'Hold position',
+            **{f'regroup_{u["tag"]}': f'Gather the squad around friendly {u["type"]} tag {u["tag"]} at {u["position"]}' for u in units},
+        }
         intent = await jev.ask({
             'objective': view['objective'], 'squad_center': center,
             'squad': squad, 'max_squad_separation': separation,
@@ -57,21 +67,12 @@ async def decide(view, jev, memory):
                             'whether the previous intent produced useful progress. '
                             'Use visited areas to recognize repeated routes. Neutral '
                             'entities are not enemies. Individual units will choose how to execute this intent.',
-            'criteria': {
-                'north': 'Explore north (increasing map y)',
-                'south': 'Explore south (decreasing map y)',
-                'east': 'Explore east (increasing map x)',
-                'west': 'Explore west (decreasing map x)',
-                'engage': 'Fight the visible enemies',
-                'neutral': 'Approach a visible neutral entity',
-                'hold': 'Hold position',
-                'regroup': 'Bring separated friendly units together',
-            },
+            'criteria': navigation_options,
         }})
         choice = intent.get('navigation', {}).get('choice')
         # Explore using Jev's probabilities, with no human-authored route weights.
         probabilities = intent.get('navigation', {}).get('probabilities', {})
-        allowed = {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold', 'regroup'}
+        allowed = set(navigation_options)
         weights = {k:float(v) for k,v in probabilities.items()
                    if k in allowed and isinstance(v,(int,float)) and math.isfinite(v) and v > 0}
         if weights:
@@ -80,7 +81,7 @@ async def decide(view, jev, memory):
             choice = rng.choices(list(weights), weights=list(weights.values()), k=1)[0]
             jev.log('navigation_sample', loop=view['loop'], top_choice=top_choice,
                     sampled_choice=choice, probabilities=weights, seed=20260918)
-        if choice in {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold', 'regroup'}:
+        if choice in allowed:
             navigation = {'loop': view['loop'], 'center': center, 'intent': choice}
             memory['navigation'] = navigation
     state['squad_intent_chosen_by_jev'] = navigation.get('intent')
@@ -118,6 +119,8 @@ async def decide(view, jev, memory):
             'type': 'choice',
             'instructions': 'Choose the next action for this unit to advance the objective. '
                             'Execute the squad intent chosen by Jev, adapting to immediate threats. '
+                            'For regroup_TAG, the meeting unit is TAG: approach that friendly unit. '
+                            'If you are the meeting unit, consider staying to let teammates arrive. '
                             'Use this unit’s health, current orders and visible surroundings. '
                             'Continue means keep its existing order without sending a command. '
                             'Consider whether recent choices are making progress toward the objective. '
