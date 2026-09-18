@@ -548,10 +548,38 @@ def test_support_capability_is_visible_before_jev_selects_contribution():
                 assert 'load owned units' in questions['purpose_Carrier']['criteria']['other']
                 assert state['units'][0]['cargo']['capacity']==4
                 return {'purpose_Carrier':{'choice':'other'}}
-            return {'Carrier':{'choice':'group_ability_3_2'}}
+            if 'support_ability_3_2' in questions['Carrier']['criteria']:
+                return {'Carrier':{'choice':'support_ability_3_2'}}
+            return {'Carrier':{'choice':'unit_1'}}
     command={'unit_tag':1,'ability_id':3,'target_tag':2}
     view={'loop':1,'self':[{'tag':1,'type':'Carrier','position':[0,0],
         'cargo':{'used':0,'capacity':4,'passengers':[]},'candidates':[
             {'id':'ability_3_2','description':'Load target',
              'capability_description':'Load: load owned units into available cargo space','command':command}]}]}
     assert asyncio.run(player.decide(view,Model(),{}))==[command]
+
+
+def test_jev_support_assignment_preserves_other_workers_and_excludes_duplicate_carriers():
+    import player
+    units=[{'tag':i,'position':[i,0],'orders':[{'ability':'Harvest'}]} for i in (1,2)]
+    requests={'Support':[{'command':{'unit_tag':i,'ability_id':3,'target_tag':9},
+                          'description':'Load passenger','exclusive_target':True} for i in (1,2)]}
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            assert 'all' not in questions['Support']['criteria']
+            assert 'Harvest' in questions['Support']['criteria']['unit_1']
+            return {'Support':{'choice':'unit_2'}}
+    chosen=asyncio.run(player.assign_support({'loop':1,'self':units},{},Model(),requests))
+    assert chosen==[{'unit_tag':2,'ability_id':3,'target_tag':9}]
+
+
+def test_engine_feedback_distinguishes_rejection_acceptance_and_stale_drop():
+    from jev_sc2.__main__ import action_feedback
+    from s2clientprotocol import error_pb2
+    a=sc.Action(); a.action_raw.unit_command.ability_id=316; a.action_raw.unit_command.unit_tags.append(7)
+    f=action_feedback([a],[error_pb2.NotEnoughMinerals],100,1,5,32)
+    assert f['failures']==[{'ability_id':316,'unit_tags':[7],'result':'NotEnoughMinerals'}]
+    assert f['accepted']==0 and not f['discarded_as_stale']
+    assert action_feedback([a],[error_pb2.Success],100,1,5,32)['accepted']==1
+    assert action_feedback([],[],100,1,40,32)['discarded_as_stale']

@@ -797,3 +797,31 @@ Camera-shot events and two SC2 screenshots confirm scene changes, including a
 visible Zerg attack on burning structures. Evidence is in
 `docs/experiments/056-live-camera.json`. Forty-one tests pass, including retention
 of the prior camera module if a committed replacement fails to compile.
+
+## Lab 083: Jev assigns support executors and receives engine rejections
+
+Zero Hour's first attempt ended in a UI-confirmed Defeat: “All of your structures
+have been destroyed,” with the game clock at 12:22 and 07:47 evacuation time left.
+The API omitted player results and stalled instead. Record UI evidence explicitly;
+do not invent protocol results. Two prior completed missions remain untouched.
+
+The first segment's worker choices changed from mostly continue/friendly moves
+(before loop 5000) to shared repairs: 40 repairs at one target and 25 at other
+targets during loops 5000–8000. Those commands redirected the whole worker group.
+Multiple bunkers also requested the same passenger. These are representation and
+coordination limitations, not proof that Jev independently chose a sound allocation.
+
+Collect support actions across eligible members, including cases where a full
+carrier differs from empty carriers. After Jev chooses the action/target, a compact
+assignment query selects one executor, all eligible executors where meaningful,
+or no change. Loading offers only a single carrier because a passenger cannot
+enter several simultaneously. Unselected units retain existing orders. No unit,
+recipient, quantity or action is chosen by Python. The extra Jev query adds latency
+and must be measured. Also expose the last eight engine submission outcomes,
+including named rejections and stale discards, to subsequent Jev decisions.
+Accepted requests are not represented as completed tasks.
+
+Forty-three tests pass. Retry Zero Hour with this general policy and camera;
+completed Liberation Day and Outlaws checkpoints persist. The saved first-attempt
+replay and measured summary are retained (057). This change makes no claim of
+improving the outcome before the retry runs.

@@ -49,7 +49,7 @@ def is_purchase(candidate):
 def investment_state(state):
     """Keep economic/force facts; raw terrain and repeated unit coordinates distract."""
     compact = {k:state[k] for k in ('objective','resources','selection_facts',
-               'unit_type_facts','recent_outcomes','observed_capabilities_by_type','previous_investment_intent',
+               'unit_type_facts','recent_outcomes','recent_action_feedback','observed_capabilities_by_type','previous_investment_intent',
                'strategy_chosen_by_jev') if k in state}
     for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
                           ('last_known_entities','stale_entities_by_alliance_and_type')]:
@@ -232,6 +232,40 @@ def control_groups(units, mode, learned):
     return groups
 
 
+async def assign_support(view, state, jev, requests):
+    """Jev selects executors; unselected units keep their current work."""
+    questions, plans = {}, {}
+    units = {u['tag']:u for u in view['self']}
+    for kind, candidates in requests.items():
+        options = {'continue':'Make no new support assignment; keep existing orders.'}
+        plans[kind] = {'continue':[]}
+        for candidate in candidates:
+            command = candidate['command']
+            unit = units[command['unit_tag']]
+            key = f'unit_{unit["tag"]}'
+            options[key] = (f'Only unit {unit["tag"]} at {unit["position"]} performs: {candidate["description"]}. '
+                            f'Its current orders: {unit.get("orders",[])}. Other units keep their current work.')
+            plans[kind][key] = [command]
+        if len(candidates)>1 and not any(c.get('exclusive_target') for c in candidates):
+            options['all'] = f'All {len(candidates)} eligible units perform this support action, replacing all their current orders. Concurrent repairs can consume shared resources.'
+            plans[kind]['all'] = [c['command'] for c in candidates]
+        questions[kind] = {'type':'choice',
+            'instructions':'Assign executors for the support action Jev selected. Consider their existing jobs, resources and urgency. '
+                           'One passenger can enter only one carrier, so loading offers single-carrier assignments. '
+                           'Unselected units retain their current orders.',
+            'criteria':options}
+    compact = {k:state.get(k) for k in ('objective','resources','strategy_chosen_by_jev','selection_facts','recent_action_feedback')}
+    answers = await jev.ask(compact,questions) if questions else {}
+    commands = []
+    for kind in questions:
+        choice = answers.get(kind,{}).get('choice')
+        selected = plans[kind].get(choice,[])
+        jev.log('support_assignment',loop=view['loop'],cohort=kind,choice=choice,
+                eligible=len(requests[kind]),assigned=len(selected))
+        commands.extend(selected)
+    return commands
+
+
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
     units = [{**u,'candidates':[c for c in u['candidates'] if not is_purchase(c)]}
@@ -243,6 +277,7 @@ async def decide(view, jev, memory):
         cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities','unit_type_facts')}
     state['recent_outcomes'] = recent_outcomes(view, memory)
+    state['recent_action_feedback'] = memory.get('action_feedback',[])
     state['previous_investment_intent'] = memory.get('investment_intent')
     learned = memory.setdefault('observed_capabilities_by_type', {})
     for unit in view['self']:
@@ -298,14 +333,17 @@ async def decide(view, jev, memory):
             state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
     memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
     state['strategy_chosen_by_jev'] = strategy
-    questions, tables, plans = {}, {}, {}
+    questions, tables, plans, support_plans = {}, {}, {}, {}
     for kind, selected in cohorts.items():
         tables[kind] = [{c['id']:c for c in u['candidates']} for u in selected]
         common = set.intersection(*(set(c) for c in tables[kind]))
         criteria = {'individual':'Choose separate orders for these units using further Jev decisions.',
                     'continue':'Keep the current orders of these units unchanged.'}
         plans[kind] = {}
+        support_plans[kind] = {}
         for key in sorted(common):
+            if any(t[key].get('capability_description') for t in tables[kind]):
+                continue
             descriptions = list(dict.fromkeys(re.sub(r', distance [0-9.]+','',c[key]['description']) for c in tables[kind]))
             description = ' | '.join(descriptions[:4])
             if len(descriptions)>4:
@@ -316,6 +354,14 @@ async def decide(view, jev, memory):
                 description += f'; travel distances across selection: {min(distances):.1f} to {max(distances):.1f}'
             criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + description
             plans[kind]['group_'+key] = [c[key]['command'] for c in tables[kind]]
+        # Support need not redirect an entire cohort. Collect each offered
+        # target once; a later Jev answer chooses its executor(s).
+        for table in tables[kind]:
+            for key,candidate in table.items():
+                if candidate.get('capability_description'):
+                    option = 'support_'+key
+                    support_plans[kind].setdefault(option,[]).append(candidate)
+                    criteria[option] = candidate['description']+'; choose executor(s) in a separate Jev decision'
         # A member cannot join itself, so intersection alone hid in-selection
         # anchors. Expose the exact legal hold + join combination to Jev.
         for anchor,anchor_table in zip(selected,tables[kind]):
@@ -368,6 +414,7 @@ async def decide(view, jev, memory):
         if key in ('continue','individual'):
             return key
         if key.startswith('unit_'): return 'construction'
+        if key.startswith('support_'): return 'other'
         action_id=key[len('group_'):]
         if action_id.startswith('gather_'): return 'income'
         if action_id.startswith('build_'): return 'construction'
@@ -400,15 +447,18 @@ async def decide(view, jev, memory):
                                               'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
         if concrete_questions:
             answers.update(await jev.ask(state,concrete_questions))
-        commands = []
+        commands, support_requests = [], {}
         for kind, selected in cohorts.items():
             choice = answers.get(kind,{}).get('choice')
             jev.log('group_choice',loop=view['loop'],cohort=kind,choice=choice,unit_count=len(selected))
             if choice == 'individual':
                 submemory = memory.setdefault('cohorts',{}).setdefault(kind,{})
                 commands.extend(await decide_individual({**view,'self':selected},jev,submemory))
+            elif choice in support_plans[kind]:
+                support_requests[kind] = support_plans[kind][choice]
             elif choice in plans[kind]:
                 commands.extend(plans[kind][choice])
+        commands.extend(await assign_support(view,state,jev,support_requests))
         return commands
     investment, commands = await asyncio.gather(choose_investment(view,state,jev,memory), choose_orders())
     # A selected purchase assigns its producer; preserve other Jev-selected orders.

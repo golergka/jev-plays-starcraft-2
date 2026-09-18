@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
 from openrouter.errors import PaymentRequiredResponseError
-from s2clientprotocol import sc2api_pb2 as sc
+from s2clientprotocol import sc2api_pb2 as sc, error_pb2
 from .sc2 import SC2, launch, find_executable
 from .jev import Jev, CallBudgetReached
 from .reload import PlayerLoader
@@ -28,6 +28,19 @@ def check_map_identity(info, expected):
     actual = info.local_map_path.replace('\\','/').split('/')[-1]
     if actual.casefold()!=Path(expected).name.casefold():
         raise RuntimeError(f'Resume map mismatch: expected {Path(expected).name}, got {actual!r}')
+
+
+def action_feedback(actions, results, loop, requested, age, max_age):
+    failures = []
+    for action, result in zip(actions, results):
+        if result != error_pb2.Success:
+            cmd = action.action_raw.unit_command
+            failures.append({'ability_id':cmd.ability_id,'unit_tags':list(cmd.unit_tags),
+                             'result':error_pb2.ActionResult.Name(result)})
+    return {'loop':loop,'requested':requested,'submitted':len(actions),
+            'accepted':sum(r==error_pb2.Success for r in results),
+            'failures':failures,'discarded_as_stale':bool(requested and age>max_age),
+            'note':'Accepted means engine accepted the request, not completed the action.'}
 
 
 async def run(args):
@@ -183,6 +196,10 @@ async def run(args):
             if actions:
                 response = await client.request('action',sc.RequestAction(actions=actions))
                 results = list(response.result)
+            feedback = action_feedback(actions,results,view['loop'],len(commands),age,args.max_age_loops)
+            history = memory.setdefault('action_feedback',[])
+            history.append(feedback)
+            memory['action_feedback'] = history[-8:]
             log('tick',loop=view['loop'],revision=loader.revision,own_units=len(view['self']),
                 units=[{k:u[k] for k in ('tag','type','position','health','health_fraction','build_progress')}
                        for u in view['self']],

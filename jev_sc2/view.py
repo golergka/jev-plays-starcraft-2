@@ -113,6 +113,7 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names):
             candidates.append({'id':f'ability_{ability}_{target.tag}',
                 'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
                 'capability_description':f'{label}: '+('restore damaged owned units' if kind in ('repair','heal') else 'load owned units into available cargo space'),
+                'exclusive_target':kind=='load',
                 'command':{'unit_tag':unit.tag,'ability_id':ability,'target_tag':target.tag}})
     return candidates
 
