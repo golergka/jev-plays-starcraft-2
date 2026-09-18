@@ -79,7 +79,49 @@ async def decide(view, jev, memory):
                            'Snapshot locations are stale, not live visible targets.',
             'criteria':criteria,
         }
-    answers = await jev.ask(state,questions)
+    # Separate semantic contribution from concrete command selection. Both are
+    # Jev choices; categorization describes controls and never chooses a tactic.
+    meanings = {
+        'income':'Collect resource income to fund unit production and construction.',
+        'production':'Produce more units.',
+        'construction':'Construct buildings.',
+        'combat':'Attack enemies or attack-move toward a location.',
+        'positioning':'Move, regroup, scout, stop or hold position.',
+        'other':'Use another available ability.',
+        'individual':'Let separate Jev decisions choose orders for individual units.',
+        'continue':'Keep the existing orders unchanged, whatever those orders currently are.',
+    }
+    def purpose(kind,key):
+        if key in ('continue','individual'):
+            return key
+        action_id=key[len('group_'):]
+        if action_id.startswith('gather_'): return 'income'
+        if action_id.startswith('build_'): return 'construction'
+        if 'attack' in action_id: return 'combat'
+        if tables[kind][0][action_id]['description'].startswith('Train '): return 'production'
+        if action_id.startswith('ability_'): return 'other'
+        return 'positioning'
+    purpose_questions = {f'purpose_{kind}': {
+        'type':'choice',
+        'instructions':f'Choose how the {len(cohorts[kind])} {kind} units should contribute to completing the mission now. '
+                       'Different unit types can make different contributions to the same strategy. '
+                       'Use their capabilities, current orders, resources and threats.',
+        'criteria':{p:meanings[p] for p in sorted({purpose(kind,k) for k in q['criteria']})},
+    } for kind,q in questions.items()}
+    roles = await jev.ask(state,purpose_questions)
+    answers, concrete_questions = {}, {}
+    for kind,q in questions.items():
+        role=roles.get(f'purpose_{kind}',{}).get('choice')
+        jev.log('purpose_choice',loop=view['loop'],cohort=kind,choice=role)
+        if role in ('continue','individual'):
+            answers[kind]={'choice':role}
+        else:
+            criteria={k:v for k,v in q['criteria'].items() if purpose(kind,k)==role}
+            if criteria:
+                concrete_questions[kind]={**q,'criteria':criteria,
+                                          'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
+    if concrete_questions:
+        answers.update(await jev.ask(state,concrete_questions))
     commands = []
     for kind, selected in cohorts.items():
         choice = answers.get(kind,{}).get('choice')

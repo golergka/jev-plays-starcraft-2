@@ -47,6 +47,8 @@ print(json.dumps({
     'group_decisions':len(groups),
     'group_choices':dict(collections.Counter(r['choice'] for r in groups)),
     'strategy_choices':dict(collections.Counter(r['choice'] for r in rows if r['event']=='strategy_choice')),
+    'purposes_by_cohort':{cohort:dict(collections.Counter(r['choice'] for r in rows if r['event']=='purpose_choice' and r['cohort']==cohort))
+                          for cohort in sorted({r['cohort'] for r in rows if r['event']=='purpose_choice'})},
     'group_calls':sum(any('individual' in q.get('criteria',{}) for q in r['questions'].values()) for r in calls),
     'choices_by_cohort':{cohort:dict(collections.Counter(r['choice'] for r in groups if r.get('cohort','whole_force')==cohort))
                          for cohort in sorted({r.get('cohort','whole_force') for r in groups})},

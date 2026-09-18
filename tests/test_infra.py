@@ -14,6 +14,8 @@ def test_jev_group_order_maps_only_shared_offered_actions():
         async def ask(self,state,questions):
             if 'strategy' in questions:
                 return {'strategy':{'choice':'strengthen'}}
+            if 'purpose_Marine' in questions:
+                return {'purpose_Marine':{'choice':'positioning'}}
             options=questions['Marine']['criteria']
             assert 'group_north' in options and 'group_only_one_unit' not in options
             return {'Marine':{'choice':'group_north'}}

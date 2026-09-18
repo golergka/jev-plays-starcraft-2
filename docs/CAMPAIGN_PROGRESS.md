@@ -264,3 +264,22 @@ a game-rule fact, not an order to harvest. Jev may still choose combat or other
 actions. A test surrounds a worker with eight nearby neutral distractions and
 checks that a distant visible mineral remains targetable while a hidden one does
 not. Retry from initial state; no resources or units are injected into the game.
+
+Result: early worker mining did not persist. Jev later committed the workers to
+combat again and lost all mobile units. Stopped after 405 calls ($0.204721); only
+the three starting buildings remained observed, with no API result. Saved the
+replay under `runs/lab054-stopped/`. Completing the gather action space was a real
+interface correction, but it did not by itself correct the decision pattern.
+
+## Lab 055: contribution first, concrete action second
+
+Test a closed-choice hierarchy per unit type. Jev first chooses income, production,
+construction, combat, positioning, continuing orders or individual control, limited
+to categories actually represented by available actions. Then Jev chooses a concrete
+offered command within its own selected category. Categories describe controls;
+the code never assigns an economic role to SCVs or a combat role to Marines.
+The first question explicitly allows different unit types to contribute differently
+to one overall strategy. This tests semantic decision framing and reduces the
+number of concrete alternatives in the second choice, at the cost of another
+inference stage. Both decisions and their latency are logged. Same fresh map and
+objective, with no manual target or route input.
