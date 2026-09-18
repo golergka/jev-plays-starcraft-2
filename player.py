@@ -53,6 +53,7 @@ def investment_state(state):
     for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
                           ('last_known_entities','stale_entities_by_alliance_and_type')]:
         compact[target] = dict(Counter(e['alliance']+' '+e['type'] for e in (state.get(source) or [])))
+    compact['selection_facts'] = state.get('type_selection_facts',state.get('selection_facts',{}))
     return compact
 
 
@@ -72,7 +73,7 @@ async def choose_investment(view, state, jev):
         example = projects[name][0][1]
         criteria[f'project_{i}'] = (f'Purchase one {name}. Project effects and cost: {example.get("project")}. '
                                   f'Observed capabilities of this type: {state.get("observed_capabilities_by_type",{}).get(name,"not yet observed")}. '
-                                  f'Existing selection facts: {state.get("selection_facts",{}).get(name,"none owned")}. '
+                                  f'Existing selection facts: {state.get("type_selection_facts",state.get("selection_facts",{})).get(name,"none owned")}. '
                                   'Compare its added capability with the other investments and saving resources.')
     answer = await jev.ask(investment_state(state), {'investment': {
         'type':'choice',
@@ -130,6 +131,46 @@ async def arbitrate_spending(commands, view, state, jev):
     return [cmd for i,cmd in enumerate(commands) if i not in spending or i==selected]
 
 
+def selection_facts(view, cohorts, previous_counts):
+    facts = {}
+    for kind, selected in cohorts.items():
+        tags = {u['tag'] for u in selected}
+        economic_selected = [u for u in view['self'] if u['tag'] in tags]
+        candidate_ids = {c['id'] for u in economic_selected for c in u['candidates']}
+        facts[kind] = {
+            'count':len(selected),
+            'total_health':round(sum(u.get('health',0) for u in selected),1),
+            'max_separation':round(max(math.dist(a['position'],b['position']) for a in selected for b in selected),1),
+            'largest_distance_to_nearest_selection_member':round(max(min(math.dist(a['position'],b['position']) for b in selected if b['tag']!=a['tag']) for a in selected),1) if len(selected)>1 else None,
+            'count_change_since_previous_decision':len(selected)-previous_counts.get(kind,len(selected)),
+            'damaged_count':sum(u.get('health_fraction',1)<1 for u in selected),
+            'lowest_health_percent':round(100*min(u.get('health_fraction',1) for u in selected)),
+            'current_order_counts':dict(Counter(o['ability'] for u in selected for o in u.get('orders',[]))),
+            'idle_count':sum(not u.get('orders') for u in selected),
+            'some_can_harvest_minerals':any(k.startswith('gather_') for k in candidate_ids),
+            'some_can_construct_buildings':any(k.startswith('build_') for k in candidate_ids),
+            'available_build_abilities':sorted({a for u in selected for a in u.get('available_build_abilities',[])}),
+            'available_projects':list({c['project']['type']:c['project'] for u in economic_selected for c in u['candidates']
+                                       if c.get('project')}.values()),
+            'some_can_train_units':any(c['description'].startswith('Train ') for u in economic_selected for c in u['candidates']),
+        }
+    return facts
+
+
+def control_groups(units, mode, learned):
+    groups = {}
+    for unit in units:
+        ids = {c['id'] for c in unit['candidates']}
+        has_attack = any(k.startswith('attack') for k in ids)
+        has_move = bool(ids & {'north','south','east','west'})
+        economic = (any(k.startswith('gather_') for k in ids)
+                    or unit.get('available_build_abilities')
+                    or any(c.startswith(('Build ', 'Harvest')) for c in learned.get(unit['type'],[])))
+        key = 'MobileCombat' if mode=='mobile_combat' and has_attack and has_move and not economic else unit['type']
+        groups.setdefault(key, []).append(unit)
+    return groups
+
+
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
     units = [{**u,'candidates':[c for c in u['candidates'] if not is_purchase(c)]}
@@ -154,29 +195,9 @@ async def decide(view, jev, memory):
     state['observed_capabilities_by_type'] = learned
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress')}
                       for u in units]
-    previous_counts = memory.get('previous_cohort_counts', {})
-    state['selection_facts'] = {}
-    for kind, selected in cohorts.items():
-        economic_selected = [u for u in view['self'] if u['type']==kind]
-        candidate_ids = {c['id'] for u in economic_selected for c in u['candidates']}
-        state['selection_facts'][kind] = {
-            'count':len(selected),
-            'total_health':round(sum(u.get('health',0) for u in selected),1),
-            'max_separation':round(max(math.dist(a['position'],b['position']) for a in selected for b in selected),1),
-            'largest_distance_to_nearest_same_type':round(max(min(math.dist(a['position'],b['position']) for b in selected if b['tag']!=a['tag']) for a in selected),1) if len(selected)>1 else None,
-            'count_change_since_previous_decision':len(selected)-previous_counts.get(kind,len(selected)),
-            'damaged_count':sum(u.get('health_fraction',1)<1 for u in selected),
-            'lowest_health_percent':round(100*min(u.get('health_fraction',1) for u in selected)),
-            'current_order_counts':dict(Counter(o['ability'] for u in selected for o in u.get('orders',[]))),
-            'idle_count':sum(not u.get('orders') for u in selected),
-            'some_can_harvest_minerals':any(k.startswith('gather_') for k in candidate_ids),
-            'some_can_construct_buildings':any(k.startswith('build_') for k in candidate_ids),
-            'available_build_abilities':sorted({a for u in selected for a in u.get('available_build_abilities',[])}),
-            'available_projects':list({c['project']['type']:c['project'] for u in economic_selected for c in u['candidates']
-                                       if c.get('project')}.values()),
-            'some_can_train_units':any(c['description'].startswith('Train ') for u in economic_selected for c in u['candidates']),
-        }
-    memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
+    state['type_selection_facts'] = selection_facts(view,cohorts,{})
+    cohorts = control_groups(units,memory.get('coordination','by_type'),learned)
+    state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
     strategy = memory.get('strategy')
     if strategy is None or view['loop']-strategy['loop'] >= 112:
         options = {
@@ -194,12 +215,26 @@ async def decide(view, jev, memory):
                            'Consider resources, own force, known enemy force, and recent_outcomes. Reassess your previous strategy using these measured outcomes. '
                            'This priority will inform further Jev decisions; it does not execute a scripted plan.',
             'criteria':options,
+        }, 'coordination': {
+            'type':'choice',
+            'instructions':'Choose how to organize the next control selections. This chooses grouping only; further Jev decisions choose every order.',
+            'criteria':{
+                'by_type':'Keep different unit types in separate selections, allowing different shared orders.',
+                'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
+            },
         }})
         selected = decision.get('strategy',{}).get('choice')
         if selected in options:
             strategy = {'loop':view['loop'],'choice':selected,'description':options[selected]}
             memory['strategy'] = strategy
             jev.log('strategy_choice',**strategy)
+        grouping = decision.get('coordination',{}).get('choice')
+        if grouping in ('by_type','mobile_combat'):
+            memory['coordination'] = grouping
+            jev.log('coordination_choice',loop=view['loop'],choice=grouping)
+            cohorts = control_groups(units,grouping,learned)
+            state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
+    memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
     state['strategy_chosen_by_jev'] = strategy
     questions, tables, plans = {}, {}, {}
     for kind, selected in cohorts.items():
@@ -225,10 +260,10 @@ async def decide(view, jev, memory):
         questions[kind] = {
             'type':'choice',
             'instructions':f'Choose the next order for the {len(selected)} {kind} units to advance the mission objective. '
-                           'You may choose a shared order for this unit type or individual control. '
-                           'Other unit types receive their own decisions in parallel. '
+                           'You may choose a shared order for this selection or individual control. '
+                           'Other selections receive their own decisions in parallel. '
                            'Consider current orders, health, resources and known entities. '
-                           'Count alone is not local fighting strength: max_separation and nearest-same-type distances describe dispersion. '
+                           'Count alone is not local fighting strength: max_separation and nearest-selection-member distances describe dispersion. '
                            'Use selection_facts for unit counts, recent changes, damage and economic capabilities. '
                            'Consider the strategic priority chosen by Jev alongside immediate threats. '
                            'Snapshot locations are stale, not live visible targets.',

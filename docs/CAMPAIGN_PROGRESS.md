@@ -532,3 +532,20 @@ previously verified Liberation Day victory. Only explicit own-player wins advanc
 the new local evaluation journal. Budget: 1,500 calls total, 600 seconds per attempt,
 at most two attempts per mission. The two-map fixture does not stand for the full
 three-campaign goal.
+
+
+## Lab 070: Jev chooses the grouping of heterogeneous forces
+
+The opening regression showed many Marine-to-hero and hero-to-Marine regroup
+orders with little progress. Type selections were introduced to separate workers
+and buildings from combat controls, but also split mixed combat armies. Offer Jev
+a grouping choice alongside its existing strategic question: type selections, or
+one mixed selection of units with move/attack controls and no observed harvesting
+or building capabilities. All other selections remain separate. This is a general
+control abstraction, with no mission/unit-name checks or destination choice.
+
+The mixed selection can receive a shared order or Jev can choose individual
+control. Economic type facts remain separate so mixed grouping cannot falsely
+report that a purchase's unit type is absent. A regression test uses arbitrary
+unit-type names and verifies that Jev can choose a joint attack-move. No extra
+sequential inference stage is added. Twenty-five tests pass.

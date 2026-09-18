@@ -354,3 +354,26 @@ def test_purchase_only_building_does_not_trigger_empty_individual_control():
           'candidates':[{'id':'ability_560','description':'Train Marine',
                          'project':{'type':'Marine'},'command':{'unit_tag':1,'ability_id':560}}]}]}
     assert asyncio.run(player.decide(view,Model(),{}))==[]
+
+
+def test_jev_can_choose_a_mixed_combat_selection_without_unit_name_rules():
+    import player
+    units=[]
+    for tag,kind in [(1,'Alpha'),(2,'Beta')]:
+        units.append({'tag':tag,'type':kind,'position':[tag,0], 'candidates':[
+            {'id':'north','description':'Move north','command':{'unit_tag':tag,'ability_id':16,'point':[tag,6]}},
+            {'id':'attack_move_north','description':'Attack-move north','command':{'unit_tag':tag,'ability_id':23,'point':[tag,6]}}]})
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions:
+                assert 'coordination' in questions
+                return {'strategy':{'choice':'attack'},'coordination':{'choice':'mobile_combat'}}
+            assert state['selection_facts']['MobileCombat']['count']==2
+            assert state['type_selection_facts']['Alpha']['count']==1
+            if 'purpose_MobileCombat' in questions:
+                return {'purpose_MobileCombat':{'choice':'combat'}}
+            return {'MobileCombat':{'choice':'group_attack_move_north'}}
+    commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
+    assert [c['unit_tag'] for c in commands]==[1,2]
+    assert all(c['ability_id']==23 for c in commands)
