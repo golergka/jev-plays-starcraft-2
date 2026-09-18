@@ -127,3 +127,20 @@ Remove the manually transcribed marker from the objective. Resume with only
 "Destroy the Logistics Headquarters. Raynor must survive." All spatial inputs now
 come directly from the player API. No route or target is selected by the harness.
 13 tests pass, including stale-snapshot and hidden-terrain boundaries.
+
+Result: 300 calls, $0.166383, median request 456.5 ms. Jev chose snapshot-location
+orders and moved out of the stalled area, but the force split, lost a Marine and
+ended south of its starting position. Nine units remain, 428 total health, final
+separation 12.1 map units (over 40 at an intermediate measurement). No victory.
+The input omission is fixed, but that alone does not establish competent navigation.
+
+## Lab 047: Jev chooses coordination granularity
+
+Add one Jev decision selecting either a shared order or individual control. Shared
+choices are the intersection of the actual offered action IDs for all owned units;
+the chosen command maps back to each unit's exact offered action and is validated
+normally. Jev may instead select `individual` to invoke the existing individual
+policy, or `continue` to retain all current orders. No option receives a manual
+weight, no action is forced and no game-specific route is added. This tests whether
+one shared model decision reduces contradictory orders and fragmentation. Log
+`group_choice` events and the last eight choices/centers for measured feedback.
