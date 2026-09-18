@@ -639,3 +639,20 @@ A test commits a valid pair, a broken adapter with a changed player, and a repai
 pair; it verifies retention and atomic replacement. Thirty-one tests pass. This
 loader/harness change itself takes effect on the next controller process start;
 subsequent observation-adapter edits will no longer require a controller restart.
+
+
+## Lab 076: short-lived Jev investment commitments
+
+The trace showed a named Barracks savings choice at loop 3323, followed by an SCV
+purchase at 3403; another at 5850 was followed by Marine purchase at 5925. Naming
+an intent alone did not preserve it long enough to fund the selected project.
+
+Change the meaning of a named savings option explicitly: Jev commits the purchase
+budget to that project for at most 224 game loops, or until an executable candidate
+appears. During that interval no new investment is chosen; other control decisions
+continue normally. If the chosen project becomes executable, request that same
+purchase and let Jev choose its producer/site when needed. At expiry or loss of
+the offered capability, ask Jev again. No target or project preference is in code.
+A carried request is logged as `carried_jev_commitment`, never as a new model answer
+or confirmed completed construction. The test verifies waiting and requesting
+only the model-selected project. Thirty-two tests pass.

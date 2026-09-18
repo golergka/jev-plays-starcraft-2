@@ -471,3 +471,24 @@ def test_reload_keeps_player_and_observation_adapter_atomic(tmp_path):
     loader.refresh()
     assert asyncio.run(loader.module.decide())==3
     assert asyncio.run(loader.view_module.make_view())==4
+
+
+def test_named_savings_commitment_waits_then_requests_only_jev_chosen_project():
+    from player import choose_investment
+    project={'type':'ChosenProject','minerals':150,'vespene':0,'supply':0,'supply_provided':0}
+    view={'loop':1,'self':[],'resources':{'minerals':50},'potential_projects':[project]}
+    class Model:
+        calls=0
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            self.calls+=1
+            return {'investment':{'choice':'save_for_0'}}
+    model=Model();memory={}
+    assert asyncio.run(choose_investment(view,{},model,memory))==[]
+    assert asyncio.run(choose_investment({**view,'loop':2},{},model,memory))==[]
+    command={'unit_tag':1,'ability_id':99}
+    ready={**view,'loop':20,'self':[{'tag':1,'position':[0,0],'candidates':[
+        {'description':'Build ChosenProject','project':project,'command':command}]}]}
+    assert asyncio.run(choose_investment(ready,{},model,memory))==[command]
+    assert model.calls==1
+    assert memory['investment_intent']['mode']=='request_purchase'

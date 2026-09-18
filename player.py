@@ -97,33 +97,49 @@ async def choose_investment(view, state, jev, memory=None):
         resources = view.get('resources',{})
         shortfall = {k:max(0,project[k]-resources.get(r,0)) for k,r in
                      [('minerals','minerals'),('vespene','vespene'),('supply','supply_remaining')]}
-        criteria[f'save_for_{i}'] = (f'Wait and save for {name}; do not spend now. '
+        criteria[f'save_for_{i}'] = (f'Commit to saving for {name} for up to 224 game loops (about ten seconds), purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. '
             f'The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. '
             f'Resource shortfall: {shortfall}. '+investment_description(name,project,state))
-    answer = await jev.ask(investment_state(state), {'investment': {
-        'type':'choice',
-        'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
-                       'This decision controls all new training and construction; no other selection will spend resources this tick. '
-                       'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
-        'criteria':criteria,
-    }})
-    prediction = answer.get('investment',{})
-    choice = prediction.get('choice')
-    probabilities = prediction.get('probabilities',{})
-    weights = {k:float(v) for k,v in probabilities.items()
-               if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
-    if memory is not None and weights:
-        rng = memory.setdefault('investment_rng',random.Random(20260918))
-        sampled = rng.choices(list(weights),weights=list(weights.values()),k=1)[0]
-        jev.log('investment_sample',loop=view['loop'],top_choice=choice,
-                sampled_choice=sampled,probabilities=weights,seed=20260918)
-        choice = sampled
-    jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names)
+    carried = False
+    choice = None
+    plan = (memory or {}).get('investment_intent',{})
+    if (plan.get('mode')=='save_for_project' and
+            plan.get('loop',0)<=view['loop']<plan.get('review_at',0)):
+        target = plan['target_project']
+        if target in projects:
+            choice = f'project_{names.index(target)}'
+            carried = True
+            jev.log('investment_plan_ready',loop=view['loop'],target_project=target)
+        elif target in potential:
+            jev.log('investment_wait',loop=view['loop'],target_project=target,review_at=plan['review_at'])
+            return []
+    if not carried:
+        answer = await jev.ask(investment_state(state), {'investment': {
+            'type':'choice',
+            'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
+                           'This decision controls all new training and construction; no other selection will spend resources this tick. '
+                           'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
+            'criteria':criteria,
+        }})
+        prediction = answer.get('investment',{})
+        choice = prediction.get('choice')
+        probabilities = prediction.get('probabilities',{})
+        weights = {k:float(v) for k,v in probabilities.items()
+                   if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
+        if memory is not None and weights:
+            rng = memory.setdefault('investment_rng',random.Random(20260918))
+            sampled = rng.choices(list(weights),weights=list(weights.values()),k=1)[0]
+            jev.log('investment_sample',loop=view['loop'],top_choice=choice,
+                    sampled_choice=sampled,probabilities=weights,seed=20260918)
+            choice = sampled
+    jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names,
+            source='carried_jev_commitment' if carried else 'jev_distribution')
     if memory is not None:
         target = (future_names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('save_for_') else
                   names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('project_') else None)
         mode = 'save_for_project' if choice in criteria and choice.startswith('save_for_') else 'request_purchase' if target else 'save'
-        memory['investment_intent'] = {'mode':mode,'target_project':target,'loop':view['loop']}
+        memory['investment_intent'] = {'mode':mode,'target_project':target,'loop':view['loop'],
+                                       'review_at':view['loop']+224 if mode=='save_for_project' else None}
 
     if choice in criteria and choice.startswith('save_for_'):
         return []
