@@ -69,8 +69,8 @@ preserving stock progression is separate work, not a solved feature here.
 [Archipelago's SC2 client](https://github.com/ArchipelagoMW/Archipelago/blob/main/worlds/sc2/client.py)
 demonstrates launching campaign-derived custom maps with `run_game(..., realtime=True)`.
 Its modified maps and item/progression system are not the vanilla campaign and
-must not be silently substituted or described as such. The reference MarineMicro scenario and the first stock campaign mission have
-both been tested; neither result implies whole-campaign compatibility.
+must not be silently substituted or described as such. MarineMicro and the first two stock campaign missions have been loaded and
+controlled; these results do not imply whole-campaign compatibility.
 
 ## Jev integration and experiment design
 
@@ -95,8 +95,11 @@ in a batch are independent, so don't assume one answer can inform another in tha
 same request. No fallback generative LLM and no traditional tactical policy after
 an API failure: keep existing game orders, log the failure, and stop after five.
 
-First player prototype chooses per-unit attack/movement/continue for up to 12
-units. It has no build order or campaign strategy. Progress means observed lessons
+The current player supports movement, combat, stopping, holding position, mineral
+gathering, training, and visible engine-approved building sites. It considers up
+to 64 owned units, scheduling twelve per boundary as two concurrent six-unit Jev
+requests. Squad intent is sampled from Jev probabilities. It has no scripted build
+order or campaign route. Progress means observed lessons
 about Jev, not hiding a conventional winning bot behind a token model call.
 
 ## Local runtime findings
@@ -118,7 +121,7 @@ infrastructure, not campaign progression or good combat performance.
 
 ## Visible terrain input
 
-The next terrain variant labels the four nearby compass destinations using the
+The terrain input labels the four nearby compass destinations using the
 static pathing grid only where the current player visibility byte is 2 (visible).
 Fogged/unexplored destinations remain unknown. This provides local terrain facts,
 not a route, target ranking or automatic replacement action. Buildings and dynamic

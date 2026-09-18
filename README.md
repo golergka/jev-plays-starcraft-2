@@ -2,7 +2,7 @@
 
 An experiment in fast, probabilistic decisions. Jev chooses actions; Python handles
 observations, geometry, validation, transport and logging. No other inference model
-participates in the game loop. This is an early combat prototype, not a complete bot.
+participates in the game loop. This is an experimental player, not a complete campaign bot.
 
 Read [the first-session experiment report](docs/EXPERIMENT_REPORT.md) for measured
 results, failed approaches, and current limitations.
@@ -77,3 +77,16 @@ In the first hierarchy trial this stopped repeated dog-following but produced
 a northward movement plateau. Accepted commands are not evidence of useful motion.
 Reports include squad centers, navigation choices and engine action-result codes;
 the commit journal records hypotheses and outcomes.
+
+## Resume the current experiment
+
+The last running scenario is the second Liberty mission. With the API-enabled
+SC2 instance still open, resume Jev control using:
+
+```sh
+uv run python -m jev_sc2 --attach --follow-camera --seconds 180 --max-calls 300 \
+  --objective 'Destroy the Dominion Base.'
+```
+
+See [the verified delivery status](docs/DELIVERY.md) and the experiment report
+for what is working, what failed, and what remains for future campaign work.
