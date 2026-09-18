@@ -28,16 +28,16 @@ Sources: [Blizzard overview](https://github.com/Blizzard/s2client-proto),
 ## Exact process and request sequence
 
 1. Download Battle.net from https://download.battle.net/en-us/desktop; install the
-   Mac app, sign in, choose StarCraft II, install and finish game data download.
-   Run the game once via Battle.net, then close it before our separate API launch.
-2. Set SC2PATH to the installation root (default `/Applications/StarCraft II`).
-   Select the numerically highest `Versions/BaseNNNNN` containing
-   `SC2.app/Contents/MacOS/SC2`. This path follows
-   [PySC2's Mac launcher](https://github.com/google-deepmind/pysc2/blob/master/pysc2/run_configs/platforms.py).
-3. Launch that binary with the installation root as cwd and flags
-   `-listen 127.0.0.1 -port 5001 -displayMode 0 -windowwidth 1280 -windowheight 800`.
-   Also supply `-dataDir <installation-root>/ -tempDir <unique-temporary-directory>/`, as PySC2 does. Port 5000 is occupied by macOS Control Center on this host. On Apple Silicon the Intel binary needs Rosetta. Rosetta is present on this host;
-   runtime compatibility still requires a real launch test.
+   Mac app, sign in, choose StarCraft II, and finish the game data download.
+2. In Battle.net's SC2 Game Settings, enable Additional command line arguments:
+   `-listen 127.0.0.1 -port 5001 -displayMode 0`. Click Play. Port 5000 is occupied
+   by macOS Control Center on this host. The installed Intel binary runs under Rosetta.
+3. Run `uv run python -m jev_sc2 --attach --map <local.SC2Map>` from this repository.
+   The harness can locate and directly launch the highest installed Base version,
+   but direct subprocess launch crashes on this Mac and is not the supported local
+   procedure. Battle.net launch followed by attachment is verified. Window placement
+   flags have not reliably placed the game on the external monitor; move it manually
+   and reuse the same process across experiments.
 4. Connect to `ws://127.0.0.1:5001/sc2api`. Send `RequestPing` and record version.
 5. `RequestCreateGame(local_map.map_path=<map filename>, local_map.map_data=<map bytes>, realtime=True,
    disable_fog=False, player_setup=[Participant])`. For a melee map, add a Computer
@@ -61,14 +61,16 @@ Hyperion, research, armory, save profile, or unlock state. The protocol has no
 campaign-navigation API. Do not advertise a fully automated vanilla campaign on
 the strength of the map API alone.
 
-A future campaign runner can sequence local mission maps, record results and
-carry a campaign manifest between runs. But extracting/authoring those maps and
+The installed first Liberty mission has now been extracted without changing its
+base/English components, repackaged, loaded and controlled through the API. See
+[the reproducible campaign procedure](CAMPAIGN.md). Mission completion remains
+unachieved. A future runner can sequence these maps and record results, but
 preserving stock progression is separate work, not a solved feature here.
 [Archipelago's SC2 client](https://github.com/ArchipelagoMW/Archipelago/blob/main/worlds/sc2/client.py)
 demonstrates launching campaign-derived custom maps with `run_game(..., realtime=True)`.
 Its modified maps and item/progression system are not the vanilla campaign and
-must not be silently substituted or described as such. Start with a small, openly
-available API test scenario; then verify a single campaign mission explicitly.
+must not be silently substituted or described as such. The reference MarineMicro scenario and the first stock campaign mission have
+both been tested; neither result implies whole-campaign compatibility.
 
 ## Jev integration and experiment design
 

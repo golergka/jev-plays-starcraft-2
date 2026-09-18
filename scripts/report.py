@@ -11,6 +11,7 @@ calls = [r for r in rows if r['event']=='jev']
 ticks = [r for r in rows if r['event']=='tick']
 latencies = sorted(r['latency_ms'] for r in calls)
 choices = collections.Counter(a.get('choice','unknown') for r in calls for a in r['response']['answers'].values())
+navigation = [r for r in calls if 'navigation' in r['questions']]
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
     'latency_median_ms':statistics.median(latencies) if latencies else None,
@@ -19,6 +20,10 @@ print(json.dumps({
     'actions_submitted':sum(r['submitted'] for r in ticks),
     'ticks_with_zero_submissions':sum(r['submitted']==0 for r in ticks),
     'choices':dict(choices),
+    'navigation_choices':dict(collections.Counter(r['response']['answers'].get('navigation',{}).get('choice','unknown') for r in navigation)),
+    'navigation_centers':[r['state']['squad_center'] for r in navigation],
+    'action_result_counts':dict(collections.Counter(str(code) for r in ticks for code in r.get('action_results',[]))),
+    'ticks_older_than_32_loops':sum(r['decision_age_loops']>32 for r in ticks),
     'errors':[r for r in rows if r['event'].endswith('error')],
     'results':[r for r in rows if r['event']=='result'],
     'reloads':[r for r in rows if r['event']=='reload'],
