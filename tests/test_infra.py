@@ -50,7 +50,7 @@ def test_jev_can_select_one_builder_without_shared_build_ability():
         def log(self,*args,**kwargs): pass
         async def ask(self,state,questions):
             if 'strategy' in questions: return {'strategy':{'choice':'strengthen'}}
-                        assert set(questions['investment']['criteria'])=={'save','project_0'}
+            assert set(questions['investment']['criteria'])=={'save','project_0'}
             return {'investment':{'choice':'project_0'}}
     assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==[command]
 
