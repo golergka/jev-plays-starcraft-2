@@ -92,7 +92,8 @@ def test_real_websocket_protocol_roundtrip(tmp_path):
     asyncio.run(scenario())
 
 
-def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids():
+@pytest.mark.parametrize("stationary_abilities", [(), (3665,3793)])
+def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids(stationary_abilities):
     from s2clientprotocol import query_pb2 as query
     class Client:
         async def request(self,name,body):
@@ -101,6 +102,8 @@ def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids():
             abilities=result.abilities.add(unit_tag=1)
             abilities.abilities.add(ability_id=3794)
             abilities.abilities.add(ability_id=3674)
+            for ability in stationary_abilities:
+                abilities.abilities.add(ability_id=ability)
             return result
     obs=sc.ResponseObservation()
     own=obs.observation.raw_data.units.add(tag=1,unit_type=48,alliance=raw.Self,health=45,health_max=45)
@@ -115,7 +118,10 @@ def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids():
     unit=result['self'][0]
     assert [u['tag'] for u in unit['surroundings']]==[2]
     assert 'orders' not in unit['surroundings'][0]
-    assert {c['command']['ability_id'] for c in unit['candidates']}=={3794,3674}
+    assert {c['command']['ability_id'] for c in unit['candidates']}=={3794,3674,*stationary_abilities}
+    for candidate in unit['candidates']:
+        if candidate['id'] in {'stop','hold_position'}:
+            assert set(candidate['command']) == {'unit_tag','ability_id'}
 
 
 def test_multistage_decision_cannot_exceed_call_budget(monkeypatch):
