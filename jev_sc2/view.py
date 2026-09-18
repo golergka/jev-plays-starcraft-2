@@ -60,6 +60,11 @@ async def make_view(client, observation, data, info, objective):
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
         candidates = []
+        for ability in sorted(legal):
+            label = ability_names.get(ability, '')
+            if label.startswith('Train '):
+                candidates.append({'id':f'ability_{ability}', 'description':label,
+                                   'command':command(ability)})
         for label, ids, description in [
             ('stop', {4,3665}, 'Stop the current order; normal automatic targeting remains possible'),
             ('hold_position', {18,3793}, 'Hold position here instead of continuing the current movement order'),
@@ -73,6 +78,11 @@ async def make_view(client, observation, data, info, objective):
         for target in sorted(visible, key=lambda t: math.hypot(t.pos.x-unit.pos.x, t.pos.y-unit.pos.y))[:8]:
             distance = round(math.hypot(target.pos.x-unit.pos.x, target.pos.y-unit.pos.y), 1)
             label = names.get(target.unit_type, str(target.unit_type))
+            gather = next((a for a in sorted(legal) if a in {295,3666} or remaps.get(a)==3666), None)
+            if gather is not None and target.mineral_contents > 0:
+                candidates.append({'id':f'gather_{target.tag}',
+                                   'description':f'Gather minerals from visible {label}, distance {distance}',
+                                   'command':command(gather,target_tag=target.tag)})
             surroundings.append({'tag':target.tag, 'type':label, 'distance':distance,
                                  'direction':bearing(target.pos.x-unit.pos.x,target.pos.y-unit.pos.y),
                                  'east_offset':round(target.pos.x-unit.pos.x,1),

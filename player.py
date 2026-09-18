@@ -12,7 +12,7 @@ import random
 async def decide(view, jev, memory):
     # Candidate construction is mechanical; Jev selects each unit's action.
     # Start small: combat/movement experiments, no hand-coded build order.
-    units = view['self'][:12]
+    units = view['self'][:64]
     if not units:
         return []
     questions = {}
@@ -118,7 +118,8 @@ async def decide(view, jev, memory):
         questions[tag] = {
             'type': 'choice',
             'instructions': 'Choose the next action for this unit to advance the objective. '
-                            'Execute the squad intent chosen by Jev, adapting to immediate threats. '
+                            'Consider the squad intent chosen by Jev, this unit’s role, and immediate threats. '
+                            'Workers and production buildings can choose economic actions instead of squad movement. '
                             'For regroup_TAG, the meeting unit is TAG: approach that friendly unit. '
                             'If you are the meeting unit, consider staying to let teammates arrive. '
                             'Use this unit’s health, current orders and visible surroundings. '
