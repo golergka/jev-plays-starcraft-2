@@ -16,6 +16,10 @@ async def decide(view, jev, memory):
         return []
     questions = {}
     state = {'objective': view['objective'], 'resources': view['resources']}
+    squad = [{k:u[k] for k in ('tag','type','position','health_fraction')} for u in units]
+    separation = round(max(math.dist(a['position'], b['position']) for a in units for b in units), 1)
+    state['squad'] = squad
+    state['max_squad_separation'] = separation
     # Jev chooses the squad intent as well as the individual commands. This
     # cadence is an inference budget, not a scripted route or unstuck action.
     navigation = memory.get('navigation', {})
@@ -38,6 +42,7 @@ async def decide(view, jev, memory):
             del outcomes[:-8]
         intent = await jev.ask({
             'objective': view['objective'], 'squad_center': center,
+            'squad': squad, 'max_squad_separation': separation,
             'visible_entities': list(surroundings.values()),
             'previous_navigation': navigation,
             'recent_intent_outcomes': outcomes,
@@ -58,10 +63,11 @@ async def decide(view, jev, memory):
                 'engage': 'Fight the visible enemies',
                 'neutral': 'Approach a visible neutral entity',
                 'hold': 'Hold position',
+                'regroup': 'Bring separated friendly units together',
             },
         }})
         choice = intent.get('navigation', {}).get('choice')
-        if choice in {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold'}:
+        if choice in {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold', 'regroup'}:
             navigation = {'loop': view['loop'], 'center': center, 'intent': choice}
             memory['navigation'] = navigation
     state['squad_intent_chosen_by_jev'] = navigation.get('intent')

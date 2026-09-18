@@ -58,6 +58,13 @@ async def make_view(client, observation, data, info, objective):
                                    'command':command(move, point=[target.pos.x,target.pos.y])})
         # Fixed compass displacements are action primitives, not tactical choices.
         if move is not None:
+            for teammate in own:
+                if teammate.tag == unit.tag:
+                    continue
+                distance = math.hypot(teammate.pos.x-unit.pos.x, teammate.pos.y-unit.pos.y)
+                candidates.append({'id': f'join_{teammate.tag}',
+                                   'description': f'Move to friendly {names.get(teammate.unit_type, str(teammate.unit_type))} tag {teammate.tag}, distance {distance:.1f}',
+                                   'command': command(move, point=[teammate.pos.x, teammate.pos.y])})
             for label, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
                 x,y = unit.pos.x+dx, unit.pos.y+dy
                 if area.p0.x <= x < area.p1.x and area.p0.y <= y < area.p1.y:
