@@ -377,3 +377,25 @@ campaign script), and resources as net income minus spending. Jev receives these
 facts at every decision layer and is asked to reassess its previous strategic
 priority; no strategy, production cap, timing or combat response is scripted.
 A test verifies that replacing a Marine is visible despite unchanged total count.
+
+
+## Lab 061: one shared investment choice across the economy
+
+Lab 060 reloaded live at revision 0320c12. Its history records Marine arrivals and
+disappearances, and strategic choices vary more, but the continuing run still
+has only two Marines and forty SCVs after 661 calls across labs 059–060. Four
+Depots are complete. This is not a win or proof that history improved play.
+
+Test a shared Jev investment decision across every currently available training
+and construction project, with an explicit save-resources alternative. Jev then
+chooses the actual producer/site if there is more than one. Unit-type selections
+retain movement, combat and gathering decisions but cannot make independent
+purchases. A selected producer receives the selected investment order; other
+Jev orders remain intact. No purchase priority or worker/army ratio is in code.
+The project choice runs concurrently with contribution choices to contain latency.
+
+Also fix missing SCV cost metadata: when the catalog's product ability mapping
+is absent, match the exact advertised Train/Build name to the unit catalog.
+This is presentation/lookup, not a guessed cost. The view change requires a
+harness restart; player changes reload on commit. Nineteen tests pass, including
+Jev choosing save or the non-first project and a single eligible builder.

@@ -41,6 +41,52 @@ def recent_outcomes(view, memory, window=672):
             'interpretation':'Measured changes, not causal attribution. Disappearance can be death, transport loading, morphing or campaign triggers. Resource changes are net of income and spending. Consider whether your previous choices are producing mission progress.'}
 
 
+def is_purchase(candidate):
+    return candidate['description'].startswith(('Train ', 'Build '))
+
+
+async def choose_investment(view, state, jev):
+    """Jev allocates the common budget, then selects the actual producer/site."""
+    projects = {}
+    for unit in view['self']:
+        for candidate in unit['candidates']:
+            if is_purchase(candidate):
+                name = (candidate.get('project') or {}).get('type') or candidate['description'].split(';')[0]
+                projects.setdefault(name, []).append((unit, candidate))
+    if not projects:
+        return []
+    names = sorted(projects)
+    criteria = {'save':'Make no new purchase now; preserve resources and let existing production/construction finish.'}
+    for i,name in enumerate(names):
+        example = projects[name][0][1]
+        criteria[f'project_{i}'] = f'Purchase one {name}. Project effects and cost: {example.get("project")}. Choose to improve overall mission progress, considering existing units, current orders, resources and recent outcomes.'
+    answer = await jev.ask(state, {'investment': {
+        'type':'choice',
+        'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
+                       'This decision controls all new training and construction; no other selection will spend resources this tick. '
+                       'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
+        'criteria':criteria,
+    }})
+    choice = answer.get('investment',{}).get('choice')
+    jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names)
+    if choice not in criteria or choice=='save':
+        return []
+    options = projects[names[int(choice.split('_')[1])]]
+    if len(options)==1:
+        return [options[0][1]['command']]
+    criteria = {f'option_{i}':f'Unit {u["tag"]} at {u["position"]}, current orders {u.get("orders",[])}: {c["description"]}'
+                for i,(u,c) in enumerate(options)}
+    criteria['defer']='Defer this purchase, retaining current orders.'
+    answer = await jev.ask(state, {'producer_site': {
+        'type':'choice','instructions':'Execute your selected investment using one of these legal producer/site choices. Consider current work and location.',
+        'criteria':criteria,
+    }})
+    choice=answer.get('producer_site',{}).get('choice')
+    if choice in criteria and choice!='defer':
+        return [options[int(choice.split('_')[1])][1]['command']]
+    return []
+
+
 async def arbitrate_spending(commands, view, state, jev):
     offered = {json.dumps(c['command'],sort_keys=True):c
                for u in view['self'] for c in u['candidates']}
@@ -71,7 +117,8 @@ async def arbitrate_spending(commands, view, state, jev):
 
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
-    units = view['self'][:64]
+    units = [{**u,'candidates':[c for c in u['candidates'] if not is_purchase(c)]}
+             for u in view['self'][:64]]
     if not units:
         return []
     cohorts = {}
@@ -84,7 +131,8 @@ async def decide(view, jev, memory):
     previous_counts = memory.get('previous_cohort_counts', {})
     state['selection_facts'] = {}
     for kind, selected in cohorts.items():
-        candidate_ids = {c['id'] for u in selected for c in u['candidates']}
+        economic_selected = [u for u in view['self'] if u['type']==kind]
+        candidate_ids = {c['id'] for u in economic_selected for c in u['candidates']}
         state['selection_facts'][kind] = {
             'count':len(selected),
             'count_change_since_previous_decision':len(selected)-previous_counts.get(kind,len(selected)),
@@ -95,9 +143,9 @@ async def decide(view, jev, memory):
             'some_can_harvest_minerals':any(k.startswith('gather_') for k in candidate_ids),
             'some_can_construct_buildings':any(k.startswith('build_') for k in candidate_ids),
             'available_build_abilities':sorted({a for u in selected for a in u.get('available_build_abilities',[])}),
-            'available_projects':list({c['project']['type']:c['project'] for u in selected for c in u['candidates']
+            'available_projects':list({c['project']['type']:c['project'] for u in economic_selected for c in u['candidates']
                                        if c.get('project')}.values()),
-            'some_can_train_units':any(c['description'].startswith('Train ') for u in selected for c in u['candidates']),
+            'some_can_train_units':any(c['description'].startswith('Train ') for u in economic_selected for c in u['candidates']),
         }
     memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
     strategy = memory.get('strategy')
@@ -183,7 +231,8 @@ async def decide(view, jev, memory):
                        'Use their capabilities, current orders, resources and threats.',
         'criteria':{p:meanings[p] for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
-    roles = await jev.ask(state,purpose_questions)
+    investment, roles = await asyncio.gather(choose_investment(view,state,jev),
+                                             jev.ask(state,purpose_questions))
     answers, concrete_questions = {}, {}
     for kind,q in questions.items():
         role=roles.get(f'purpose_{kind}',{}).get('choice')
@@ -207,7 +256,9 @@ async def decide(view, jev, memory):
             commands.extend(await decide_individual({**view,'self':selected},jev,submemory))
         elif choice in plans[kind]:
             commands.extend(plans[kind][choice])
-    return await arbitrate_spending(commands,view,state,jev)
+    # A selected purchase assigns its producer; preserve other Jev-selected orders.
+    producer_tags = {c['unit_tag'] for c in investment}
+    return [c for c in commands if c['unit_tag'] not in producer_tags]+investment
 
 
 async def decide_individual(view, jev, memory):

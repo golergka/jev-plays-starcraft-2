@@ -51,10 +51,10 @@ def test_jev_can_select_one_builder_without_shared_build_ability():
         async def ask(self,state,questions):
             if 'strategy' in questions: return {'strategy':{'choice':'strengthen'}}
             if 'purpose_SCV' in questions:
-                assert 'construction' in questions['purpose_SCV']['criteria']
-                return {'purpose_SCV':{'choice':'construction'}}
-            assert set(questions['SCV']['criteria'])=={'unit_1_build_319_north','continue'}
-            return {'SCV':{'choice':'unit_1_build_319_north'}}
+                assert 'construction' not in questions['purpose_SCV']['criteria']
+                return {'purpose_SCV':{'choice':'continue'}}
+            assert set(questions['investment']['criteria'])=={'save','project_0'}
+            return {'investment':{'choice':'project_0'}}
     assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==[command]
 
 
@@ -327,3 +327,19 @@ def test_outcome_history_detects_replacement_hidden_by_stable_count():
     assert outcome['resource_changes']['minerals']==29
     outcome=recent_outcomes(view(1,5),memory)
     assert outcome['own_units_disappeared_by_type']=={}
+
+
+def test_shared_investment_jev_can_save_or_choose_nonfirst_project():
+    from player import choose_investment
+    units=[{'tag':i,'position':[i,0],'candidates':[{'description':f'Train {name}',
+            'project':{'type':name},'command':{'unit_tag':i,'ability_id':i}}]}
+           for i,name in [(1,'Marine'),(2,'SCV')]]
+    class Model:
+        choice='save'
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            return {'investment':{'choice':self.choice}}
+    model=Model();view={'loop':1,'self':units}
+    assert asyncio.run(choose_investment(view,{},model))==[]
+    model.choice='project_1'
+    assert asyncio.run(choose_investment(view,{},model))==[{'unit_tag':2,'ability_id':2}]

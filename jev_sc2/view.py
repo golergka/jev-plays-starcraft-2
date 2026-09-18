@@ -124,6 +124,8 @@ async def make_view(client, observation, data, info, objective):
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
             product = products.get(ability)
+            if product is None and label.startswith(('Train ', 'Build ')):
+                product = next((u for u in data.units if label in (f'Train {u.name}',f'Build {u.name}')),None)
             cost = ({'minerals':product.mineral_cost,'vespene':product.vespene_cost,
                      'supply':product.food_required} if product is not None else None)
             project = ({'type':product.name,**cost,'supply_provided':product.food_provided}
