@@ -16,6 +16,7 @@ participates in the game loop. This is an early combat prototype, not a complete
    `uv run python -m jev_sc2 --map /absolute/path/mission.SC2Map`
    Add `--opponent` only for a melee map requiring a computer opponent.
 5. To reuse an API-enabled game: `uv run python -m jev_sc2 --attach`.
+   To start a fresh scenario in that process, use `--attach --map maps/MarineMicro.SC2Map --opponent`.
    An ordinary Battle.net-launched game has no API socket; it cannot simply be attached.
 
 Defaults: real time, 180 seconds, at most 300 successful Jev calls, no automatic

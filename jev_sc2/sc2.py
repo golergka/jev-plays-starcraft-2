@@ -2,6 +2,7 @@
 import asyncio
 import os
 import subprocess
+import socket
 from pathlib import Path
 from s2clientprotocol import sc2api_pb2 as sc, common_pb2 as common
 from websockets.asyncio.client import connect
@@ -16,6 +17,11 @@ def find_executable(root):
 
 def launch(root, port, logfile):
     executable = find_executable(root)
+    with socket.socket() as probe:
+        try:
+            probe.bind(('127.0.0.1', port))
+        except OSError as exc:
+            raise RuntimeError(f'Port {port} is already occupied. Use --attach for an existing SC2 instance.') from exc
     return subprocess.Popen([str(executable), '-listen', '127.0.0.1', '-port', str(port),
                              '-displayMode', '0', '-windowwidth', '1280', '-windowheight', '800'],
                             cwd=str(Path(root).expanduser()), stdout=logfile, stderr=logfile)
@@ -60,6 +66,8 @@ class SC2:
             return result
 
     async def start(self, map_path, opponent=False):
+        if self.status in {sc.in_game, sc.ended}:
+            await self.request('leave_game', sc.RequestLeaveGame())
         players = [sc.PlayerSetup(type=sc.Participant)]
         if opponent:
             players.append(sc.PlayerSetup(type=sc.Computer, race=common.Zerg, difficulty=sc.VeryEasy))

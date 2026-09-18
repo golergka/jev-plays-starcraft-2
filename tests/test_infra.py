@@ -67,7 +67,9 @@ def test_real_websocket_protocol_roundtrip():
                 request=sc.Request.FromString(payload)
                 requests.append(request)
                 kind=request.WhichOneof('request')
-                reply=sc.Response(id=request.id,status=sc.in_game)
+                status={'ping':sc.launched,'create_game':sc.init_game,
+                        'join_game':sc.in_game,'observation':sc.in_game}[kind]
+                reply=sc.Response(id=request.id,status=status)
                 getattr(reply,kind).SetInParent()
                 if kind=='ping': reply.ping.game_version='fixture'
                 await ws.send(reply.SerializeToString())
