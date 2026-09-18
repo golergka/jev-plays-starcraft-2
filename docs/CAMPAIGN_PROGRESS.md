@@ -892,3 +892,10 @@ No option or action is chosen by summarization. This does lose exact individual
 positions at the abstract stages; those remain available at concrete selection.
 Forty-five tests pass. Measure actual latency and stale ticks after reload rather
 than treating smaller character counts as proof of better real-time control.
+
+Correction: the first lab-087 commit was made before inspecting the completed test
+output; one test had failed because the economic compactor intentionally replaces
+mixed control selections with type selections. Add a separate control-context
+wrapper retaining both views. All 45 tests now pass. The initial pass claim above
+applies to this correction, not the first commit. Retain this mistake in the lab
+record rather than rewriting deployed history.

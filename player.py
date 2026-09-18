@@ -58,6 +58,13 @@ def investment_state(state):
     return compact
 
 
+def control_state(state):
+    compact = investment_state(state)
+    compact['selection_facts'] = state.get('selection_facts',{})
+    compact['type_selection_facts'] = state.get('type_selection_facts',{})
+    return compact
+
+
 def investment_description(name, project, state):
     facts = state.get('type_selection_facts',state.get('selection_facts',{})).get(name,{})
     capabilities = state.get('observed_capabilities_by_type',{}).get(name,[])
@@ -317,7 +324,7 @@ async def decide(view, jev, memory):
             'recover':'Restore income and replace losses.',
             'continue_operations':'Let current tasks progress before changing commitment.',
         }
-        decision = await jev.ask({**investment_state(state),'previous_strategy':strategy}, {'strategy': {
+        decision = await jev.ask({**control_state(state),'previous_strategy':strategy}, {'strategy': {
             'type':'choice',
             'instructions':'Choose the current strategic priority for completing the mission. '
                            'Consider resources, own force, known enemy force, and recent_outcomes. Reassess your previous strategy using these measured outcomes. '
@@ -461,7 +468,7 @@ async def decide(view, jev, memory):
                     for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
     async def choose_orders():
-        roles = await jev.ask(investment_state(state),purpose_questions) if purpose_questions else {}
+        roles = await jev.ask(control_state(state),purpose_questions) if purpose_questions else {}
         answers, concrete_questions = {}, {}
         for kind,q in questions.items():
             role=roles.get(f'purpose_{kind}',{}).get('choice')
