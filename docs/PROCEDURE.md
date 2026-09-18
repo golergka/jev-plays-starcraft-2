@@ -1,7 +1,7 @@
 # Verified contracts and local procedure
 
 Research date: 2026-09-18. Distinguish a documented API contract from a successful
-local test; Battle.net launch and authentication succeeded; API startup and mission play remain unverified.
+local test; Battle.net launch and authentication succeeded; API connection through Battle.net succeeded; mission play remains under test.
 
 ## SC2 transport and player perspective
 
@@ -96,3 +96,13 @@ an API failure: keep existing game orders, log the failure, and stop after five.
 First player prototype chooses per-unit attack/movement/continue for up to 12
 units. It has no build order or campaign strategy. Progress means observed lessons
 about Jev, not hiding a conventional winning bot behind a token model call.
+
+## Local runtime findings
+
+The full installation completed. Direct subprocess launch crashed even with no API
+flags, so that failure does not establish an API incompatibility. Launching through
+Battle.net with additional arguments `-listen 127.0.0.1 -port 5001 -displayMode 0`
+succeeded: RequestPing returned version 5.0.16.97563. The practical procedure on
+this host is Battle.net Play followed by `--attach`. Keep that instance running
+across player commits and scenario transitions. Direct launch needs further
+diagnosis and must not be described as verified.

@@ -6,14 +6,18 @@ participates in the game loop. This is an early combat prototype, not a complete
 
 ## Run
 
-1. Install StarCraft II using Battle.net and launch it once to finish downloading data.
+1. Install StarCraft II using Battle.net and finish its download. On this Mac, set
+   **Game Settings → Additional command line arguments** to
+   `-listen 127.0.0.1 -port 5001 -displayMode 0`, then click Play.
+   Battle.net launch is verified to expose the API; direct subprocess launch
+   currently crashes before connecting. Use `--attach` below.
 2. `uv sync` and put `OPENROUTER_API_KEY` in `.env` (see `.env.example`).
 3. `uv run python -m jev_sc2 --doctor`
    Fetch the reference map: `uv run python scripts/fetch_map.py`.
    Blizzard's MarineMicro example uses a computer opponent:
-   `uv run python -m jev_sc2 --map maps/MarineMicro.SC2Map --opponent`.
+   `uv run python -m jev_sc2 --attach --map maps/MarineMicro.SC2Map --opponent`.
 4. Provide a local single-player `.SC2Map`:
-   `uv run python -m jev_sc2 --map /absolute/path/mission.SC2Map`
+   `uv run python -m jev_sc2 --attach --map /absolute/path/mission.SC2Map`
    Add `--opponent` only for a melee map requiring a computer opponent.
 5. To reuse an API-enabled game: `uv run python -m jev_sc2 --attach`.
    To start a fresh scenario in that process, use `--attach --map maps/MarineMicro.SC2Map --opponent`.
