@@ -36,11 +36,22 @@ async def decide(view, jev, memory):
             actions[candidate['id']] = candidate['command']
         candidates[tag] = actions
         local = {k: v for k, v in unit.items() if k not in {'candidates', 'tag'}}
+        history = memory.setdefault('history', {}).setdefault(tag, [])
+        history[:] = [h for h in history if view['loop']-h['loop'] <= 112]
+        if history:
+            origin = history[0]['position']
+            local['recent_progress'] = {
+                'game_loops': view['loop']-history[0]['loop'],
+                'displacement': round(math.dist(unit['position'], origin), 1),
+                'last_choices': [h['choice'] for h in history[-4:]],
+            }
+        history.append({'loop': view['loop'], 'position': unit['position'], 'choice': 'pending'})
         questions[tag] = {
             'type': 'choice',
             'instructions': 'Choose the next action for this unit to advance the objective. '
                             'Use this unit’s health, current orders and visible surroundings. '
                             'Continue means keep its existing order without sending a command. '
+                            'Consider whether recent choices are making progress toward the objective. '
                             'Unit facts: ' + json.dumps(local, separators=(',', ':')),
             'criteria': options,
         }
@@ -50,6 +61,7 @@ async def decide(view, jev, memory):
         if tag not in candidates or answer.get('choice') not in candidates[tag]:
             continue
         action = candidates[tag][answer['choice']]
+        memory['history'][tag][-1]['choice'] = answer['choice']
         if action is not None:
             commands.append(action)
     return commands

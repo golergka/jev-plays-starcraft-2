@@ -1,0 +1,82 @@
+{
+  "run": "runs/20260918T204535.994237Z/events.jsonl",
+  "calls": 120,
+  "latency_median_ms": 359.5,
+  "latency_p95_ms": 687,
+  "cost_usd": 0.011805738,
+  "actions_submitted": 289,
+  "ticks_with_zero_submissions": 14,
+  "choices": {
+    "move_4309385217": 263,
+    "continue": 431,
+    "north": 4,
+    "east": 12,
+    "west": 10
+  },
+  "errors": [],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789764388.283401,
+      "event": "reload",
+      "revision": "b0750f700e2913473bdb44dd491a9b7349a95c88"
+    }
+  ],
+  "first_tick": {
+    "time": 1789764336.746918,
+    "event": "tick",
+    "loop": 1691,
+    "revision": "29d8df26683e397d4ecb6b486cf54307120c1567",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 11,
+    "commands": [
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          70.2705078125,
+          9.163818359375
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          70.2705078125,
+          9.163818359375
+        ]
+      },
+      {
+        "unit_tag": 4312006657,
+        "ability_id": 16,
+        "point": [
+          70.2705078125,
+          9.163818359375
+        ]
+      }
+    ],
+    "submitted": 3,
+    "action_results": [
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 523
+  },
+  "last_tick": {
+    "time": 1789764393.964802,
+    "event": "tick",
+    "loop": 2957,
+    "revision": "b0750f700e2913473bdb44dd491a9b7349a95c88",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 13,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 549
+  }
+}
