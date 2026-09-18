@@ -1,7 +1,7 @@
 # Verified contracts and local procedure
 
 Research date: 2026-09-18. Distinguish a documented API contract from a successful
-local test; installation and mission play must still be tested on this Mac.
+local test; Battle.net launch and authentication succeeded; API startup and mission play remain unverified.
 
 ## SC2 transport and player perspective
 
@@ -35,10 +35,10 @@ Sources: [Blizzard overview](https://github.com/Blizzard/s2client-proto),
    `SC2.app/Contents/MacOS/SC2`. This path follows
    [PySC2's Mac launcher](https://github.com/google-deepmind/pysc2/blob/master/pysc2/run_configs/platforms.py).
 3. Launch that binary with the installation root as cwd and flags
-   `-listen 127.0.0.1 -port 5000 -displayMode 0 -windowwidth 1280 -windowheight 800`.
-   On Apple Silicon the Intel binary needs Rosetta. Rosetta is present on this host;
+   `-listen 127.0.0.1 -port 5001 -displayMode 0 -windowwidth 1280 -windowheight 800`.
+   Also supply `-dataDir <installation-root>/ -tempDir <unique-temporary-directory>/`, as PySC2 does. Port 5000 is occupied by macOS Control Center on this host. On Apple Silicon the Intel binary needs Rosetta. Rosetta is present on this host;
    runtime compatibility still requires a real launch test.
-4. Connect to `ws://127.0.0.1:5000/sc2api`. Send `RequestPing` and record version.
+4. Connect to `ws://127.0.0.1:5001/sc2api`. Send `RequestPing` and record version.
 5. `RequestCreateGame(local_map.map_path=<absolute SC2Map>, realtime=True,
    disable_fog=False, player_setup=[Participant])`. For a melee map, add a Computer
    slot; do not add one to a scripted single-player scenario automatically.

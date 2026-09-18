@@ -3,9 +3,11 @@ import asyncio
 import os
 import subprocess
 import socket
+import tempfile
 from pathlib import Path
 from s2clientprotocol import sc2api_pb2 as sc, common_pb2 as common
 from websockets.asyncio.client import connect
+from websockets.exceptions import InvalidHandshake
 
 
 def find_executable(root):
@@ -23,6 +25,8 @@ def launch(root, port, logfile, window_size=(1280, 800), window_position=None):
         except OSError as exc:
             raise RuntimeError(f'Port {port} is already occupied. Use --attach for an existing SC2 instance.') from exc
     args = [str(executable), '-listen', '127.0.0.1', '-port', str(port),
+            '-dataDir', str(Path(root).expanduser().resolve()) + os.sep,
+            '-tempDir', tempfile.mkdtemp(prefix='jev-sc2-') + os.sep,
             '-displayMode', '0', '-windowwidth', str(window_size[0]),
             '-windowheight', str(window_size[1])]
     if window_position is not None:
@@ -38,13 +42,15 @@ class SC2:
         self.lock = asyncio.Lock()
 
     @classmethod
-    async def connect(cls, port, timeout=90):
+    async def connect(cls, port, timeout=90, process=None):
         deadline = asyncio.get_running_loop().time()+timeout
         while True:
+            if process is not None and process.poll() is not None:
+                raise RuntimeError(f'SC2 exited before API connection (code {process.returncode}); inspect sc2.log and Blizzard crash report')
             try:
                 return cls(await connect(f'ws://127.0.0.1:{port}/sc2api', max_size=32*1024*1024,
-                                         ping_interval=None, open_timeout=2))
-            except (OSError, TimeoutError):
+                                         ping_interval=None, open_timeout=2, proxy=None))
+            except (OSError, TimeoutError, InvalidHandshake):
                 if asyncio.get_running_loop().time() >= deadline:
                     raise TimeoutError(f'SC2 API not available on localhost:{port}')
                 await asyncio.sleep(0.5)

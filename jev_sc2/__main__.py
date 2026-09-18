@@ -49,7 +49,7 @@ async def run(args):
             raise ValueError('--map is required unless --attach is supplied')
         proc = launch(sc2root,args.port,(directory/'sc2.log').open('w'),
                       args.window_size, args.window_position)
-    client = await SC2.connect(args.port)
+    client = await SC2.connect(args.port, process=proc)
     try:
         ping = await client.request('ping',sc.RequestPing())
         log('connected',version=ping.game_version,revision=loader.revision)
@@ -119,7 +119,7 @@ def main():
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')
     parser.add_argument('--attach',action='store_true',help='Reuse an API-enabled SC2 process')
     parser.add_argument('--opponent',action='store_true',help='Add VeryEasy Zerg AI for a melee map')
-    parser.add_argument('--port',type=int,default=5000)
+    parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--window-size',type=int,nargs=2,default=(1280,800),metavar=('WIDTH','HEIGHT'))
     parser.add_argument('--window-position',type=int,nargs=2,metavar=('X','Y'))
     parser.add_argument('--seconds',type=float,default=180)

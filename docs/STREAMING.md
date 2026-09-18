@@ -4,8 +4,8 @@ OBS captures the external Samsung LS27D300G display at 1920×1080, 30 fps.
 The user arranged the webcam at upper left and ChatGPT at right; reserve the
 lower-left area for the windowed SC2 client. API launch uses `-displayMode 0`.
 Actual simultaneous game/API/capture operation still needs a runtime check.
-Use `--window-size 960 540 --window-position 1728 550` for the current external
-display arrangement; verify actual placement after launch. These are the same
+Use `--window-size 960 540` for the reserved area. The first launch ignored
+`--window-position 1728 550`; place the window through the UI after startup. These are the same
 window flags used by [PySC2](https://github.com/google-deepmind/pysc2/blob/master/pysc2/lib/sc_process.py).
 
 X broadcast: https://x.com/i/broadcasts/1oJMvNMOYpOxQ
