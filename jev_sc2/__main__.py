@@ -17,6 +17,12 @@ from .view import make_view, validate_commands
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def result_for_player(players, player_id):
+    """An ally's win or an ended clock is not proof of our mission result."""
+    own = next((p['result'] for p in players if p['player']==player_id),None)
+    return {'Victory':'victory','Defeat':'defeat','Tie':'tie'}.get(own,'incomplete')
+
+
 async def run(args):
     load_dotenv(ROOT / '.env')
     sc2root = os.getenv('SC2PATH', '/Applications/StarCraft II')
@@ -35,7 +41,18 @@ async def run(args):
     directory = ROOT / 'runs' / stamp
     directory.mkdir(parents=True)
     events = (directory/'events.jsonl').open('a',buffering=1)
+    outcome = {'status':'incomplete','players':[],'player_id':None,'run':str(directory)}
     def log(event, **fields):
+        if event=='result':
+            outcome['players'] = fields['players']
+            outcome['status'] = result_for_player(fields['players'],outcome['player_id'])
+        elif event=='stopped':
+            outcome['reason'] = fields['reason']
+        elif event=='finished':
+            outcome.update(calls=fields['calls'],cost=fields['cost'],replay=str(directory/'game.SC2Replay'))
+            if outcome['status']=='incomplete' and 'reason' not in outcome:
+                outcome['reason']='call budget reached' if fields['calls']>=args.max_calls else 'time limit reached'
+            (directory/'result.json').write_text(json.dumps(outcome,indent=2)+'\n')
         row = {'time':time.time(), 'event':event, **fields}
         events.write(json.dumps(row)+'\n')
         if event != 'jev':
@@ -58,17 +75,19 @@ async def run(args):
             max_age_loops=args.max_age_loops)
         if args.map:
             log('loading_map',map=Path(args.map).name,opponent=args.opponent)
-            await client.start(args.map,args.opponent)
+            joined = await client.start(args.map,args.opponent,getattr(args,'race','terran').capitalize())
+            outcome['player_id'] = joined.player_id
             log('joined_game')
         else:
             existing = await client.observe()
+            outcome['player_id'] = existing.observation.player_common.player_id or None
             if client.status == sc.ended:
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
                                      for r in existing.player_result],source='attach_to_ended_game')
                 replay = await client.request('save_replay',sc.RequestSaveReplay())
                 (directory/'game.SC2Replay').write_bytes(replay.data)
                 log('finished',calls=0,cost=0,run=str(directory))
-                return
+                return outcome
             if client.status != sc.in_game:
                 raise RuntimeError('--attach without --map needs an API game already in progress')
         info = await client.request('game_info',sc.RequestGameInfo())
@@ -158,6 +177,7 @@ async def run(args):
         replay = await client.request('save_replay',sc.RequestSaveReplay())
         (directory/'game.SC2Replay').write_bytes(replay.data)
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
+        return outcome
     finally:
         await client.ws.close()
         events.close()
@@ -167,6 +187,7 @@ async def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')
+    parser.add_argument('--race',choices=('terran','zerg','protoss','random'),default='terran')
     parser.add_argument('--attach',action='store_true',help='Reuse an API-enabled SC2 process')
     parser.add_argument('--opponent',action='store_true',help='Add VeryEasy Zerg AI for a melee map')
     parser.add_argument('--port',type=int,default=5001)

@@ -1,0 +1,17 @@
+{
+  "name": "Wings of Liberty opening — initial sequence, not the full campaign",
+  "missions": [
+    {
+      "id": "liberation-day",
+      "map": "../maps/traynor01.SC2Map",
+      "race": "terran",
+      "objective": "Destroy the Logistics Headquarters. Raynor must survive."
+    },
+    {
+      "id": "the-outlaws",
+      "map": "../maps/traynor02.SC2Map",
+      "race": "terran",
+      "objective": "Destroy the Dominion Base."
+    }
+  ]
+}

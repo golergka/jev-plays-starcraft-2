@@ -94,3 +94,25 @@ uv run python -m jev_sc2 --attach --follow-camera --seconds 180 --max-calls 300 
 
 See [the verified delivery status](docs/DELIVERY.md) and the experiment report
 for what is working, what failed, and what remains for future campaign work.
+
+## Autonomous mission sequencing
+
+With SC2 already running in API mode:
+
+```sh
+uv run python -m jev_sc2.campaign campaigns/opening.json --follow-camera --call-budget 3000
+```
+
+The initial manifest contains the two verified-loadable opening missions; it is
+not the full campaign inventory. The runner uses the same general player for each
+mission, retries confirmed defeats, and advances only on its own player's API
+Victory. It saves durable progress under `runs/campaign/progress.json`; rerunning
+the same manifest skips verified completed missions. The call budget is shared
+across the invocation, and retries are bounded. Timeouts, missing maps, ambiguous
+results, and UI stalls stop with a recorded reason instead of inventing a result.
+
+The manifest contains scenario inputs (map, race and primary objective), never
+build orders, tactical locations or routes. General policy changes still reload
+on commit during a mission. Later-campaign mission inventory, entitlement,
+scenario dependencies, full ability coverage and unattended UI recovery remain
+unfinished. Sequence completion means only the explicitly listed missions.

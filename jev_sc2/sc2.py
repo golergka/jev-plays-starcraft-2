@@ -75,7 +75,7 @@ class SC2:
                 raise RuntimeError(f'{name}: {result}')
             return result
 
-    async def start(self, map_path, opponent=False):
+    async def start(self, map_path, opponent=False, race="Terran"):
         if self.status == sc.in_game:
             await self.request('leave_game', sc.RequestLeaveGame())
         players = [sc.PlayerSetup(type=sc.Participant)]
@@ -86,7 +86,7 @@ class SC2:
                                  map_data=Path(map_path).expanduser().read_bytes()),
             player_setup=players, disable_fog=False, realtime=True))
         return await self.request('join_game', sc.RequestJoinGame(
-            race=common.Terran, player_name='Jev', options=sc.InterfaceOptions(
+            race=common.Race.Value(race), player_name='Jev', options=sc.InterfaceOptions(
                 raw=True, score=True, show_cloaked=False, show_burrowed_shadows=False,
                 show_placeholders=False, raw_crop_to_playable_area=True)))
 

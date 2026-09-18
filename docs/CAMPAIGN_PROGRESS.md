@@ -478,3 +478,24 @@ three times and repeatedly chose the Barracks as a regroup target, but the final
 Marine maximum separation was 56.7 map units. A different label and occasional
 regrouping do not establish sustained cohesion. Extend the same game with the
 unchanged policy for up to 1,000 calls / 600 seconds to evaluate persistence.
+
+
+## Lab 067: generic sequencing and verified own-player outcomes
+
+Clarified experiment rule: frequent live patches are welcome, but must improve
+general principles and transfer to unseen missions; they must not steer a
+particular attempt through hardcoded tactics. Keep Jev responsible for purchases,
+combat, destinations and timing. No requirement to freeze the policy was intended.
+
+Add a generic manifest-driven sequence runner and machine-readable attempt results.
+It advances only on the controlled player's Victory, retries explicit Defeat,
+shares a call budget across attempts, and records incomplete/ambiguous outcomes
+without advancement. Resume skips the completed prefix. It does not count an
+ally's victory or a stalled clock as our success. Join race is configurable for
+future campaign scenarios. Four orchestration tests bring the suite to 24 passes.
+
+The initial two-mission manifest is an integration fixture, not a replacement for
+the all-three-campaign goal. Live multi-mission progression remains unverified;
+this change does not imply that the full campaign, UI recovery, or later-race
+ability coverage works. The existing Outlaws trial continues unchanged while
+this harness work is prepared for the next process start.
