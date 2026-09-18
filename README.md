@@ -49,3 +49,23 @@ Use `uv run python scripts/report.py` for the latest run's measured summary.
 
 See [the researched procedure and limits](docs/PROCEDURE.md). Nothing here claims
 that stock campaign progression or combat performance has already been validated.
+
+## First campaign mission
+
+The installed first Liberty mission can be repackaged and played through the API;
+follow [the extraction instructions](docs/CAMPAIGN.md), then run:
+
+```sh
+uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
+  --objective 'Destroy the Logistics Headquarters. Raynor must survive.'
+```
+
+Omit `--map` to resume the running mission. This has loaded successfully and
+accepted Jev commands; it has not yet produced a mission victory. Stock campaign
+progression, research and unlocks are not implemented.
+
+The policy now asks Jev for a squad intent periodically, then asks Jev for each
+unit's action. In the first trial this stopped repeated dog-following but produced
+a northward movement plateau. Accepted commands are not evidence of useful motion.
+Reports include squad centers, navigation choices and engine action-result codes;
+the commit journal records hypotheses and outcomes.
