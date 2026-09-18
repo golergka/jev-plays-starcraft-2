@@ -81,3 +81,20 @@ labels, masked by current player visibility; it does not compute a route.
 The public stream was verified with the API-controlled game and conversation
 visible together, plus SC2 application audio. Microphone and webcam toggles remain
 under user control. See [stream controls](STREAMING.md).
+
+## Request latency versus attention frequency
+
+The six-unit round-robin trial (024) reduced per-call median latency to 488 ms,
+compared with 996.5 ms in the earlier full economic batch trial (022). One tick was
+older than 32 loops, versus sixteen in the earlier trial. These are sequential
+runs with different unit populations, not a controlled benchmark.
+
+The cost is per-unit attention: 31 distinct units were scheduled, with median
+79 game loops between scheduling events and maximum 119. Those are attempted
+updates, not a guarantee of successful commands. Smaller requests alone do not
+provide fast reactions for every unit. Concurrent small batches are a possible
+next experiment, but would need a strict shared call budget and measured cost.
+
+The trial ended with 14 SCVs, 11 Marines, five Supply Depots, a Barracks and a
+Command Center. No new building choice was made in that trial. More owned units
+and better inference latency do not establish progress toward destroying the base.

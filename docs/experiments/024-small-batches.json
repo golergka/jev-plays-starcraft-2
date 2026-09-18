@@ -1,0 +1,1263 @@
+{
+  "run": "runs/20260918T212725.579303Z/events.jsonl",
+  "calls": 100,
+  "latency_median_ms": 488.0,
+  "latency_p95_ms": 1014,
+  "cost_usd": 0.070643202,
+  "actions_submitted": 376,
+  "decision_batches": 88,
+  "units_scheduled": 31,
+  "median_scheduled_update_loops": 79,
+  "max_scheduled_update_loops": 119,
+  "ticks_with_zero_submissions": 1,
+  "choices": {
+    "east": 86,
+    "ability_524": 4,
+    "join_4298113026": 63,
+    "continue": 147,
+    "ability_560": 3,
+    "north": 25,
+    "join_4323278850": 36,
+    "gather_4299161601": 14,
+    "regroup_4323278850": 1,
+    "join_4317511681": 9,
+    "gather_4298899457": 9,
+    "join_4314103809": 7,
+    "join_4297850881": 1,
+    "join_4324589569": 5,
+    "join_4302307329": 8,
+    "join_4324851713": 7,
+    "join_4325376001": 3,
+    "join_4310958082": 8,
+    "join_4317249537": 29,
+    "join_4297326593": 41,
+    "join_4315676673": 1,
+    "join_4310695938": 2,
+    "gather_4294967297": 1,
+    "join_4302831617": 1,
+    "west": 2,
+    "join_4316725249": 26,
+    "hold_position": 1
+  },
+  "navigation_choices": {
+    "east": 8,
+    "north": 3,
+    "regroup_4323278850": 1
+  },
+  "sampled_navigation_choices": {
+    "regroup_4298113026": 2,
+    "regroup_4323278850": 1,
+    "east": 3,
+    "engage": 2,
+    "regroup_4297326593": 1,
+    "north": 1,
+    "regroup_4316725249": 1,
+    "regroup_4317249537": 1
+  },
+  "navigation_samples": [
+    {
+      "time": 1789766846.5558772,
+      "event": "navigation_sample",
+      "loop": 10046,
+      "top_choice": "east",
+      "sampled_choice": "regroup_4298113026",
+      "probabilities": {
+        "regroup_4316987393": 0.01,
+        "regroup_4310695938": 0.01,
+        "regroup_4323278850": 0.06,
+        "regroup_4325113857": 0.02,
+        "regroup_4297326593": 0.01,
+        "north": 0.1,
+        "neutral": 0.01,
+        "east": 0.29,
+        "south": 0.03,
+        "regroup_4324851713": 0.05,
+        "hold": 0.01,
+        "regroup_4302831617": 0.01,
+        "regroup_4315938818": 0.01,
+        "regroup_4315676673": 0.02,
+        "regroup_4317773825": 0.01,
+        "regroup_4314103809": 0.01,
+        "regroup_4317511681": 0.01,
+        "regroup_4314890241": 0.01,
+        "regroup_4302307329": 0.01,
+        "regroup_4325376001": 0.01,
+        "engage": 0.01,
+        "regroup_4303093761": 0.01,
+        "regroup_4323016706": 0.01,
+        "regroup_4317249537": 0.15,
+        "regroup_4298113026": 0.01,
+        "west": 0.11
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766851.52836,
+      "event": "navigation_sample",
+      "loop": 10164,
+      "top_choice": "north",
+      "sampled_choice": "regroup_4323278850",
+      "probabilities": {
+        "regroup_4316725249": 0.01,
+        "regroup_4317511681": 0.02,
+        "regroup_4324851713": 0.01,
+        "regroup_4324589569": 0.01,
+        "east": 0.09000000000000001,
+        "regroup_4297850881": 0.01,
+        "regroup_4314103809": 0.01,
+        "regroup_4310695938": 0.01,
+        "regroup_4314890241": 0.01,
+        "neutral": 0.01,
+        "regroup_4325113857": 0.04,
+        "west": 0.09,
+        "regroup_4297326593": 0.01,
+        "regroup_4315938818": 0.05,
+        "regroup_4317773825": 0.01,
+        "regroup_4316987393": 0.02,
+        "hold": 0.01,
+        "regroup_4303093761": 0.01,
+        "regroup_4325638145": 0.01,
+        "regroup_4302307329": 0.01,
+        "regroup_4314628097": 0.01,
+        "engage": 0.02,
+        "regroup_4310958082": 0.01,
+        "north": 0.21,
+        "regroup_4317249537": 0.12000000000000001,
+        "regroup_4303355905": 0.01,
+        "regroup_4302831617": 0.01,
+        "regroup_4323016706": 0.01,
+        "south": 0.01,
+        "regroup_4323278850": 0.03,
+        "regroup_4315676673": 0.02,
+        "regroup_4325376001": 0.01,
+        "regroup_4298113026": 0.08
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766856.929277,
+      "event": "navigation_sample",
+      "loop": 10282,
+      "top_choice": "regroup_4323278850",
+      "sampled_choice": "east",
+      "probabilities": {
+        "north": 0.14,
+        "regroup_4315676673": 0.01,
+        "regroup_4316725249": 0.01,
+        "west": 0.12,
+        "regroup_4317511681": 0.01,
+        "regroup_4317249537": 0.06,
+        "regroup_4298113026": 0.03,
+        "regroup_4297850881": 0.01,
+        "regroup_4323016706": 0.06,
+        "regroup_4314628097": 0.01,
+        "regroup_4297326593": 0.02,
+        "south": 0.04,
+        "regroup_4314890241": 0.02,
+        "regroup_4302307329": 0.02,
+        "regroup_4317773825": 0.01,
+        "regroup_4324851713": 0.01,
+        "neutral": 0.01,
+        "engage": 0.01,
+        "east": 0.07,
+        "regroup_4325376001": 0.02,
+        "regroup_4324589569": 0.01,
+        "regroup_4315938818": 0.03,
+        "regroup_4316987393": 0.01,
+        "regroup_4303093761": 0.01,
+        "regroup_4310695938": 0.01,
+        "regroup_4325113857": 0.01,
+        "regroup_4323278850": 0.21,
+        "regroup_4325638145": 0.01,
+        "regroup_4314103809": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766862.745505,
+      "event": "navigation_sample",
+      "loop": 10411,
+      "top_choice": "east",
+      "sampled_choice": "engage",
+      "probabilities": {
+        "regroup_4325376001": 0.01,
+        "regroup_4317249537": 0.09999999999999999,
+        "west": 0.02,
+        "regroup_4317511681": 0.02,
+        "regroup_4310958082": 0.01,
+        "east": 0.75,
+        "south": 0.01,
+        "regroup_4323278850": 0.01,
+        "regroup_4316987393": 0.01,
+        "north": 0.05,
+        "engage": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766868.140256,
+      "event": "navigation_sample",
+      "loop": 10529,
+      "top_choice": "east",
+      "sampled_choice": "regroup_4297326593",
+      "probabilities": {
+        "regroup_4323278850": 0.01,
+        "regroup_4315938818": 0.01,
+        "regroup_4302307329": 0.01,
+        "regroup_4310695938": 0.01,
+        "east": 0.29000000000000004,
+        "regroup_4317249537": 0.14,
+        "regroup_4314103809": 0.03,
+        "north": 0.25,
+        "regroup_4302831617": 0.02,
+        "regroup_4325900289": 0.01,
+        "regroup_4315676673": 0.01,
+        "engage": 0.12,
+        "regroup_4297326593": 0.01,
+        "west": 0.03,
+        "regroup_4323016706": 0.01,
+        "regroup_4324851713": 0.01,
+        "south": 0.01,
+        "regroup_4298113026": 0.01,
+        "regroup_4317511681": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766873.764228,
+      "event": "navigation_sample",
+      "loop": 10652,
+      "top_choice": "east",
+      "sampled_choice": "engage",
+      "probabilities": {
+        "regroup_4310695938": 0.01,
+        "north": 0.17,
+        "regroup_4324851713": 0.02,
+        "regroup_4298113026": 0.01,
+        "regroup_4317511681": 0.01,
+        "regroup_4324589569": 0.01,
+        "west": 0.04,
+        "regroup_4325113857": 0.01,
+        "regroup_4325638145": 0.01,
+        "regroup_4303093761": 0.01,
+        "regroup_4323278850": 0.02,
+        "regroup_4310958082": 0.01,
+        "engage": 0.04,
+        "regroup_4323016706": 0.03,
+        "south": 0.02,
+        "hold": 0.01,
+        "regroup_4317249537": 0.21000000000000002,
+        "regroup_4315938818": 0.01,
+        "regroup_4297326593": 0.060000000000000005,
+        "east": 0.21000000000000002,
+        "regroup_4325376001": 0.01,
+        "regroup_4314103809": 0.03,
+        "regroup_4316725249": 0.01,
+        "regroup_4316987393": 0.02
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766878.972213,
+      "event": "navigation_sample",
+      "loop": 10768,
+      "top_choice": "east",
+      "sampled_choice": "north",
+      "probabilities": {
+        "regroup_4315938818": 0.01,
+        "regroup_4318298115": 0.01,
+        "west": 0.05,
+        "regroup_4316725249": 0.03,
+        "regroup_4297326593": 0.01,
+        "regroup_4323016706": 0.01,
+        "regroup_4323278850": 0.02,
+        "south": 0.02,
+        "regroup_4325638145": 0.03,
+        "regroup_4317249537": 0.12,
+        "engage": 0.1,
+        "regroup_4314103809": 0.04,
+        "regroup_4325900289": 0.02,
+        "neutral": 0.01,
+        "east": 0.26,
+        "regroup_4302307329": 0.01,
+        "regroup_4325376001": 0.01,
+        "regroup_4324589569": 0.01,
+        "north": 0.19,
+        "regroup_4315676673": 0.01,
+        "regroup_4325113857": 0.01,
+        "regroup_4298113026": 0.02
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766884.655175,
+      "event": "navigation_sample",
+      "loop": 10893,
+      "top_choice": "north",
+      "sampled_choice": "regroup_4298113026",
+      "probabilities": {
+        "regroup_4325638145": 0.01,
+        "west": 0.09999999999999999,
+        "neutral": 0.01,
+        "regroup_4315938818": 0.03,
+        "regroup_4323016706": 0.01,
+        "regroup_4317249537": 0.08,
+        "regroup_4324851713": 0.01,
+        "regroup_4314103809": 0.01,
+        "engage": 0.03,
+        "regroup_4302307329": 0.01,
+        "south": 0.01,
+        "regroup_4298113026": 0.02,
+        "regroup_4325376001": 0.01,
+        "regroup_4297326593": 0.01,
+        "regroup_4323278850": 0.02,
+        "north": 0.43,
+        "east": 0.14,
+        "regroup_4316725249": 0.05,
+        "regroup_4325900289": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766890.558193,
+      "event": "navigation_sample",
+      "loop": 11024,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "regroup_4316725249": 0.01,
+        "regroup_4317511681": 0.01,
+        "regroup_4324589569": 0.03,
+        "east": 0.27,
+        "regroup_4310695938": 0.01,
+        "regroup_4314103809": 0.01,
+        "neutral": 0.02,
+        "west": 0.09999999999999999,
+        "regroup_4297326593": 0.05,
+        "regroup_4315938818": 0.03,
+        "regroup_4317773825": 0.02,
+        "regroup_4316987393": 0.01,
+        "engage": 0.05,
+        "regroup_4326424577": 0.03,
+        "north": 0.09,
+        "regroup_4303355905": 0.01,
+        "regroup_4317249537": 0.060000000000000005,
+        "regroup_4302831617": 0.01,
+        "regroup_4323016706": 0.03,
+        "regroup_4323278850": 0.04,
+        "regroup_4318298115": 0.01,
+        "south": 0.04,
+        "regroup_4326162433": 0.01,
+        "regroup_4298113026": 0.05
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766895.626847,
+      "event": "navigation_sample",
+      "loop": 11136,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "regroup_4314103809": 0.02,
+        "regroup_4323278850": 0.02,
+        "north": 0.09999999999999999,
+        "regroup_4315938818": 0.01,
+        "regroup_4317249537": 0.08,
+        "south": 0.01,
+        "regroup_4297850881": 0.01,
+        "regroup_4297326593": 0.01,
+        "regroup_4323016706": 0.01,
+        "regroup_4302307329": 0.01,
+        "west": 0.01,
+        "engage": 0.02,
+        "regroup_4326424577": 0.03,
+        "east": 0.65
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766900.835996,
+      "event": "navigation_sample",
+      "loop": 11249,
+      "top_choice": "east",
+      "sampled_choice": "regroup_4316725249",
+      "probabilities": {
+        "west": 0.06999999999999999,
+        "south": 0.02,
+        "regroup_4316725249": 0.05,
+        "regroup_4297326593": 0.02,
+        "regroup_4325638145": 0.01,
+        "regroup_4317249537": 0.09999999999999999,
+        "engage": 0.03,
+        "regroup_4314103809": 0.01,
+        "neutral": 0.01,
+        "east": 0.53,
+        "regroup_4302307329": 0.01,
+        "north": 0.09999999999999999,
+        "regroup_4326424577": 0.01,
+        "regroup_4316987393": 0.01,
+        "regroup_4317773825": 0.01,
+        "regroup_4298113026": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789766906.039871,
+      "event": "navigation_sample",
+      "loop": 11365,
+      "top_choice": "north",
+      "sampled_choice": "regroup_4317249537",
+      "probabilities": {
+        "regroup_4316725249": 0.21000000000000002,
+        "regroup_4317511681": 0.01,
+        "regroup_4324851713": 0.01,
+        "regroup_4324589569": 0.01,
+        "east": 0.17,
+        "regroup_4310695938": 0.01,
+        "regroup_4314890241": 0.01,
+        "regroup_4325113857": 0.01,
+        "west": 0.04,
+        "regroup_4315938818": 0.02,
+        "regroup_4316987393": 0.01,
+        "hold": 0.01,
+        "regroup_4303093761": 0.01,
+        "regroup_4325638145": 0.01,
+        "engage": 0.02,
+        "regroup_4326424577": 0.01,
+        "regroup_4317249537": 0.1,
+        "regroup_4325900289": 0.01,
+        "north": 0.27,
+        "regroup_4323016706": 0.01,
+        "south": 0.02,
+        "regroup_4323278850": 0.01
+      },
+      "seed": 20260918
+    }
+  ],
+  "navigation_centers": [
+    [
+      70.3,
+      46.0
+    ],
+    [
+      69.0,
+      41.9
+    ],
+    [
+      71.3,
+      40.4
+    ],
+    [
+      77.2,
+      41.0
+    ],
+    [
+      78.9,
+      40.4
+    ],
+    [
+      74.7,
+      34.3
+    ],
+    [
+      70.9,
+      28.9
+    ],
+    [
+      70.1,
+      30.9
+    ],
+    [
+      68.4,
+      34.5
+    ],
+    [
+      72.2,
+      34.3
+    ],
+    [
+      74.3,
+      33.5
+    ],
+    [
+      74.3,
+      34.7
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 5063.0,
+    "max_separation": 44.3
+  },
+  "last_distribution": {
+    "health_total": 5333.0,
+    "max_separation": 40.8
+  },
+  "action_result_counts": {
+    "1": 376
+  },
+  "ticks_older_than_32_loops": 1,
+  "errors": [],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789766847.1195252,
+    "event": "tick",
+    "loop": 10046,
+    "revision": "55d334ceec0e0e66e3b9f1d8020420eafb5b70a1",
+    "own_units": 26,
+    "units": [
+      {
+        "tag": 4316987393,
+        "type": "SCV",
+        "position": [
+          71.332763671875,
+          54.770263671875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324589569,
+        "type": "Marine",
+        "position": [
+          72.65185546875,
+          57.093994140625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4298113026,
+        "type": "SupplyDepot",
+        "position": [
+          66.0,
+          36.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303093761,
+        "type": "SCV",
+        "position": [
+          71.351806640625,
+          56.877685546875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325376001,
+        "type": "Marine",
+        "position": [
+          71.990234375,
+          57.408203125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325638145,
+        "type": "SCV",
+        "position": [
+          71.146484375,
+          61.245849609375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325113857,
+        "type": "SCV",
+        "position": [
+          73.458984375,
+          50.853515625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297850881,
+        "type": "SCV",
+        "position": [
+          65.734619140625,
+          37.3125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316725249,
+        "type": "SCV",
+        "position": [
+          71.8759765625,
+          61.3125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315938818,
+        "type": "SupplyDepot",
+        "position": [
+          70.0,
+          57.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303355905,
+        "type": "Barracks",
+        "position": [
+          75.5,
+          26.5
+        ],
+        "health": 1000.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317773825,
+        "type": "SupplyDepot",
+        "position": [
+          73.0,
+          19.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4323278850,
+        "type": "SupplyDepot",
+        "position": [
+          72.0,
+          44.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314890241,
+        "type": "SCV",
+        "position": [
+          60.54212188720703,
+          21.50732421875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317511681,
+        "type": "Marine",
+        "position": [
+          71.578125,
+          63.326416015625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315676673,
+        "type": "Marine",
+        "position": [
+          73.904541015625,
+          50.32861328125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302831617,
+        "type": "SCV",
+        "position": [
+          61.329345703125,
+          23.884765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310695938,
+        "type": "SCV",
+        "position": [
+          72.0,
+          52.3125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4323016706,
+        "type": "SupplyDepot",
+        "position": [
+          72.0,
+          51.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310958082,
+        "type": "Marine",
+        "position": [
+          72.654296875,
+          61.3125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297326593,
+        "type": "CommandCenter",
+        "position": [
+          66.5,
+          21.5
+        ],
+        "health": 1500.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314628097,
+        "type": "SCV",
+        "position": [
+          61.84031677246094,
+          22.744140625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314103809,
+        "type": "Marine",
+        "position": [
+          72.645263671875,
+          54.05810546875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302307329,
+        "type": "Marine",
+        "position": [
+          72.040283203125,
+          56.62109375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324851713,
+        "type": "Marine",
+        "position": [
+          69.670166015625,
+          47.69189453125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317249537,
+        "type": "Marine",
+        "position": [
+          74.427490234375,
+          50.796630859375
+        ],
+        "health": 3.0,
+        "health_fraction": 0.07,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 2865,
+    "decision_age_loops": 29,
+    "commands": [
+      {
+        "unit_tag": 4297326593,
+        "ability_id": 524
+      },
+      {
+        "unit_tag": 4297850881,
+        "ability_id": 16,
+        "point": [
+          66.0,
+          36.0
+        ]
+      },
+      {
+        "unit_tag": 4302307329,
+        "ability_id": 16,
+        "point": [
+          66.0,
+          36.0
+        ]
+      },
+      {
+        "unit_tag": 4302831617,
+        "ability_id": 16,
+        "point": [
+          66.0,
+          36.0
+        ]
+      },
+      {
+        "unit_tag": 4303093761,
+        "ability_id": 16,
+        "point": [
+          66.0,
+          36.0
+        ]
+      }
+    ],
+    "submitted": 5,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 1293
+  },
+  "last_tick": {
+    "time": 1789766910.4259572,
+    "event": "tick",
+    "loop": 11449,
+    "revision": "55d334ceec0e0e66e3b9f1d8020420eafb5b70a1",
+    "own_units": 32,
+    "units": [
+      {
+        "tag": 4303093761,
+        "type": "SCV",
+        "position": [
+          74.57396697998047,
+          37.88957977294922
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4323016706,
+        "type": "SupplyDepot",
+        "position": [
+          72.0,
+          51.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310695938,
+        "type": "SCV",
+        "position": [
+          73.17543029785156,
+          35.754539489746094
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4298113026,
+        "type": "SupplyDepot",
+        "position": [
+          66.0,
+          36.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326948865,
+        "type": "SCV",
+        "position": [
+          66.5,
+          18.625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325113857,
+        "type": "SCV",
+        "position": [
+          62.84783935546875,
+          23.272296905517578
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325900289,
+        "type": "Marine",
+        "position": [
+          75.158935546875,
+          36.294677734375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315938818,
+        "type": "SupplyDepot",
+        "position": [
+          70.0,
+          57.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310958082,
+        "type": "Marine",
+        "position": [
+          73.82979583740234,
+          38.52016067504883
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303355905,
+        "type": "Barracks",
+        "position": [
+          75.5,
+          26.5
+        ],
+        "health": 1000.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314890241,
+        "type": "SCV",
+        "position": [
+          73.03526306152344,
+          38.07656478881836
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326686721,
+        "type": "SCV",
+        "position": [
+          66.072509765625,
+          16.33935546875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297850881,
+        "type": "SCV",
+        "position": [
+          72.83984375,
+          36.48095703125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317249537,
+        "type": "Marine",
+        "position": [
+          72.40843963623047,
+          37.790138244628906
+        ],
+        "health": 3.0,
+        "health_fraction": 0.07,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297326593,
+        "type": "CommandCenter",
+        "position": [
+          66.5,
+          21.5
+        ],
+        "health": 1500.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324851713,
+        "type": "Marine",
+        "position": [
+          75.27392578125,
+          35.615966796875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316725249,
+        "type": "SCV",
+        "position": [
+          73.75240325927734,
+          36.13010787963867
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4323278850,
+        "type": "SupplyDepot",
+        "position": [
+          72.0,
+          44.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326424577,
+        "type": "Marine",
+        "position": [
+          74.47065734863281,
+          35.698856353759766
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317511681,
+        "type": "Marine",
+        "position": [
+          74.15060424804688,
+          37.34036636352539
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314103809,
+        "type": "Marine",
+        "position": [
+          74.84446716308594,
+          38.520652770996094
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4318298115,
+        "type": "SCV",
+        "position": [
+          72.57369232177734,
+          37.11452102661133
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316987393,
+        "type": "SCV",
+        "position": [
+          73.70284271240234,
+          37.84546661376953
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302307329,
+        "type": "Marine",
+        "position": [
+          76.01658630371094,
+          36.63093948364258
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302831617,
+        "type": "SCV",
+        "position": [
+          74.37550354003906,
+          36.39669418334961
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325638145,
+        "type": "SCV",
+        "position": [
+          74.73709106445312,
+          36.98224639892578
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315676673,
+        "type": "Marine",
+        "position": [
+          73.47224426269531,
+          36.75632858276367
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314628097,
+        "type": "SCV",
+        "position": [
+          73.19512939453125,
+          37.38056564331055
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325376001,
+        "type": "Marine",
+        "position": [
+          75.22998046875,
+          37.67431640625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324589569,
+        "type": "Marine",
+        "position": [
+          73.82223510742188,
+          35.44562530517578
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317773825,
+        "type": "SupplyDepot",
+        "position": [
+          73.0,
+          19.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326162433,
+        "type": "SCV",
+        "position": [
+          72.53587341308594,
+          35.50090408325195
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 2940,
+    "decision_age_loops": 22,
+    "commands": [
+      {
+        "unit_tag": 4314628097,
+        "ability_id": 16,
+        "point": [
+          72.40843963623047,
+          37.790138244628906
+        ]
+      },
+      {
+        "unit_tag": 4314890241,
+        "ability_id": 16,
+        "point": [
+          72.40843963623047,
+          37.790138244628906
+        ]
+      },
+      {
+        "unit_tag": 4315676673,
+        "ability_id": 16,
+        "point": [
+          72.40843963623047,
+          37.790138244628906
+        ]
+      },
+      {
+        "unit_tag": 4316725249,
+        "ability_id": 16,
+        "point": [
+          72.40843963623047,
+          37.790138244628906
+        ]
+      },
+      {
+        "unit_tag": 4316987393,
+        "ability_id": 16,
+        "point": [
+          72.40843963623047,
+          37.790138244628906
+        ]
+      }
+    ],
+    "submitted": 5,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 957
+  }
+}

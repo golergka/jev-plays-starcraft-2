@@ -13,6 +13,13 @@ ticks = [r for r in rows if r['event']=='tick']
 latencies = sorted(r['latency_ms'] for r in calls)
 choices = collections.Counter(a.get('choice','unknown') for r in calls for a in r['response']['answers'].values())
 navigation = [r for r in calls if 'navigation' in r['questions']]
+batches = [r for r in rows if r['event']=='decision_batch']
+seen_at, update_gaps = {}, []
+for batch in batches:
+    for tag in batch['unit_tags']:
+        if tag in seen_at:
+            update_gaps.append(batch['loop']-seen_at[tag])
+        seen_at[tag] = batch['loop']
 def distribution(tick):
     units = tick.get('units', [])
     if not units:
@@ -26,6 +33,10 @@ print(json.dumps({
     'latency_p95_ms':latencies[min(len(latencies)-1,int(len(latencies)*.95))] if latencies else None,
     'cost_usd':sum(r['response']['usage'].get('cost',0) or 0 for r in calls),
     'actions_submitted':sum(r['submitted'] for r in ticks),
+    'decision_batches':len(batches),
+    'units_scheduled':len(seen_at),
+    'median_scheduled_update_loops':statistics.median(update_gaps) if update_gaps else None,
+    'max_scheduled_update_loops':max(update_gaps) if update_gaps else None,
     'ticks_with_zero_submissions':sum(r['submitted']==0 for r in ticks),
     'choices':dict(choices),
     'navigation_choices':dict(collections.Counter(r['response']['answers'].get('navigation',{}).get('choice','unknown') for r in navigation)),

@@ -68,7 +68,8 @@ accepted Jev commands; it has not yet produced a mission victory. Stock campaign
 progression, research and unlocks are not implemented.
 
 The policy now asks Jev for a squad intent periodically, then asks Jev for each
-unit's action. The current experiment samples the squad intent from Jev's returned
+unit's action in rotating batches of six. This reduces request latency but
+updates each unit less frequently as the army grows. The current experiment samples the squad intent from Jev's returned
 probabilities using seed `20260918`; individual action choices are unchanged.
 `navigation_sample` events record the original top choice, sampled choice and
 weights. The seed resets on a new harness run and survives commit reloads.
