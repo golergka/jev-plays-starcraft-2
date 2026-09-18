@@ -29,6 +29,8 @@ print(json.dumps({
     'ticks_with_zero_submissions':sum(r['submitted']==0 for r in ticks),
     'choices':dict(choices),
     'navigation_choices':dict(collections.Counter(r['response']['answers'].get('navigation',{}).get('choice','unknown') for r in navigation)),
+    'sampled_navigation_choices':dict(collections.Counter(r['sampled_choice'] for r in rows if r['event']=='navigation_sample')),
+    'navigation_samples':[r for r in rows if r['event']=='navigation_sample'],
     'navigation_centers':[r['state']['squad_center'] for r in navigation],
     'first_distribution':distribution(ticks[0]) if ticks else None,
     'last_distribution':distribution(ticks[-1]) if ticks else None,

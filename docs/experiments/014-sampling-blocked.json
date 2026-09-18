@@ -1,0 +1,54 @@
+{
+  "run": "runs/20260918T210302.825317Z/events.jsonl",
+  "calls": 0,
+  "latency_median_ms": null,
+  "latency_p95_ms": null,
+  "cost_usd": 0,
+  "actions_submitted": 0,
+  "ticks_with_zero_submissions": 0,
+  "choices": {},
+  "navigation_choices": {},
+  "sampled_navigation_choices": {},
+  "navigation_samples": [],
+  "navigation_centers": [],
+  "first_distribution": null,
+  "last_distribution": null,
+  "action_result_counts": {},
+  "ticks_older_than_32_loops": 0,
+  "errors": [
+    {
+      "time": 1789765383.20755,
+      "event": "decision_error",
+      "error": "PaymentRequiredResponseError",
+      "detail": "Insufficient credits. Add more using https://openrouter.ai/settings/credits"
+    },
+    {
+      "time": 1789765383.794028,
+      "event": "decision_error",
+      "error": "PaymentRequiredResponseError",
+      "detail": "Insufficient credits. Add more using https://openrouter.ai/settings/credits"
+    },
+    {
+      "time": 1789765384.3976388,
+      "event": "decision_error",
+      "error": "PaymentRequiredResponseError",
+      "detail": "Insufficient credits. Add more using https://openrouter.ai/settings/credits"
+    },
+    {
+      "time": 1789765385.0090072,
+      "event": "decision_error",
+      "error": "PaymentRequiredResponseError",
+      "detail": "Insufficient credits. Add more using https://openrouter.ai/settings/credits"
+    },
+    {
+      "time": 1789765385.608282,
+      "event": "decision_error",
+      "error": "PaymentRequiredResponseError",
+      "detail": "Insufficient credits. Add more using https://openrouter.ai/settings/credits"
+    }
+  ],
+  "results": [],
+  "reloads": [],
+  "first_tick": null,
+  "last_tick": null
+}

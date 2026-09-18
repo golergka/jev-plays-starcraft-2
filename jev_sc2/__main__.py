@@ -7,6 +7,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
+from openrouter.errors import PaymentRequiredResponseError
 from s2clientprotocol import sc2api_pb2 as sc
 from .sc2 import SC2, launch, find_executable
 from .jev import Jev, CallBudgetReached
@@ -92,6 +93,9 @@ async def run(args):
                 failures = 0
             except CallBudgetReached:
                 log('stopped',reason='Jev call budget reached')
+                break
+            except PaymentRequiredResponseError:
+                log('stopped',reason='OpenRouter credits unavailable; replenish account credits or check the key cap')
                 break
             except Exception as exc:
                 log('decision_error',error=type(exc).__name__,detail=str(exc)[:200])
