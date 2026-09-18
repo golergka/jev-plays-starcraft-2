@@ -49,3 +49,20 @@ same queried attack ability, bounds and player-visible terrain descriptions.
 Jev still selects every action. No direction, route, combat priority or build
 order is selected by the harness. Next trial returns to the opening mission to
 measure command uptake, health and progress. This is not a victory claim.
+
+Result: 220 calls cost $0.053164. Jev selected attack-move actions; all six ground
+units remained at full health (425 total). Navigation still circled the starting
+area. No victory or combat progress was verified. Summary:
+`docs/experiments/026-attack-move.json`.
+
+## Lab 044: expose the mission marker the player can already see
+
+The normal rendered minimap displays a mission objective marker near its northern
+edge, about two-thirds of the way from west to east, despite unexplored terrain.
+The raw observations did not convey this UI fact. Transcribed that approximate
+location into the objective text, with API map bounds x=0..102, y=0..118 and the
+coordinate convention. Exact world coordinates and a route are explicitly
+unknown. This is an observation from the player's screen, not hidden map-script
+knowledge or an instruction to take a particular action. All choices remain Jev's.
+Resume the existing map for 300 calls to see whether this information changes
+navigation. This run resets policy memory but preserves live units and game state.
