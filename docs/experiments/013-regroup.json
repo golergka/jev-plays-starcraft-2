@@ -1,0 +1,274 @@
+{
+  "run": "runs/20260918T210115.736676Z/events.jsonl",
+  "calls": 120,
+  "latency_median_ms": 404.5,
+  "latency_p95_ms": 747,
+  "cost_usd": 0.03209031,
+  "actions_submitted": 336,
+  "ticks_with_zero_submissions": 7,
+  "choices": {
+    "west": 229,
+    "continue": 161,
+    "join_4310695937": 61,
+    "attack_4299948033": 19,
+    "join_4311220225": 5,
+    "attack_4309123073": 1,
+    "join_4311744513": 1,
+    "attack_4304142337": 2,
+    "attack_4304928769": 3,
+    "attack_4302045185": 7,
+    "engage": 4,
+    "attack_4303880193": 3,
+    "attack_4302831617": 9,
+    "join_4312268801": 1,
+    "attack_4302569473": 13
+  },
+  "navigation_choices": {
+    "west": 8,
+    "engage": 4
+  },
+  "navigation_centers": [
+    [
+      74.8,
+      30.3
+    ],
+    [
+      73.6,
+      27.1
+    ],
+    [
+      75.2,
+      27.7
+    ],
+    [
+      73.2,
+      31.0
+    ],
+    [
+      64.5,
+      30.2
+    ],
+    [
+      52.9,
+      21.6
+    ],
+    [
+      39.8,
+      11.3
+    ],
+    [
+      41.4,
+      32.1
+    ],
+    [
+      47.4,
+      30.3
+    ],
+    [
+      60.8,
+      21.0
+    ],
+    [
+      70.4,
+      23.7
+    ],
+    [
+      76.3,
+      23.8
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 350.0,
+    "max_separation": 44.3
+  },
+  "last_distribution": {
+    "health_total": 236.0,
+    "max_separation": 42.6
+  },
+  "action_result_counts": {
+    "1": 336
+  },
+  "ticks_older_than_32_loops": 0,
+  "errors": [],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789765277.000056,
+    "event": "tick",
+    "loop": 22339,
+    "revision": "1b76859f6cfe1c7d6c4d42cf911622e66c00345e",
+    "own_units": 5,
+    "units": [
+      {
+        "tag": 4311482369,
+        "type": "Marine",
+        "position": [
+          87.3173828125,
+          27.858154296875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311744513,
+        "type": "Marine",
+        "position": [
+          87.412353515625,
+          44.1875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          51.6875,
+          18.6875
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      },
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          59.4375,
+          16.87939453125
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4310958081,
+        "type": "Marine",
+        "position": [
+          88.135986328125,
+          43.91455078125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      }
+    ],
+    "score": 250,
+    "decision_age_loops": 23,
+    "commands": [
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          81.3173828125,
+          27.858154296875
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          81.412353515625,
+          44.1875
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          45.6875,
+          18.6875
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          53.4375,
+          16.87939453125
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          82.135986328125,
+          43.91455078125
+        ]
+      }
+    ],
+    "submitted": 5,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 1053
+  },
+  "last_tick": {
+    "time": 1789765337.878143,
+    "event": "tick",
+    "loop": 23700,
+    "revision": "1b76859f6cfe1c7d6c4d42cf911622e66c00345e",
+    "own_units": 3,
+    "units": [
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          78.11707305908203,
+          9.160253524780273
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311482369,
+        "type": "Marine",
+        "position": [
+          63.890830993652344,
+          49.29364776611328
+        ],
+        "health": 21.0,
+        "health_fraction": 0.47
+      },
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          74.08883666992188,
+          8.656496047973633
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      }
+    ],
+    "score": 150,
+    "decision_age_loops": 9,
+    "commands": [
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          72.11707305908203,
+          9.160253524780273
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          68.08883666992188,
+          8.656496047973633
+        ]
+      }
+    ],
+    "submitted": 2,
+    "action_results": [
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 411
+  }
+}

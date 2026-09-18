@@ -1,6 +1,7 @@
 """Summarize measured runs without inventing a performance score."""
 import collections
 import json
+import math
 import statistics
 import sys
 from pathlib import Path
@@ -12,6 +13,13 @@ ticks = [r for r in rows if r['event']=='tick']
 latencies = sorted(r['latency_ms'] for r in calls)
 choices = collections.Counter(a.get('choice','unknown') for r in calls for a in r['response']['answers'].values())
 navigation = [r for r in calls if 'navigation' in r['questions']]
+def distribution(tick):
+    units = tick.get('units', [])
+    if not units:
+        return None
+    return {'health_total': sum(u['health'] for u in units),
+            'max_separation': round(max(math.dist(a['position'],b['position'])
+                                        for a in units for b in units),1)}
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
     'latency_median_ms':statistics.median(latencies) if latencies else None,
@@ -22,6 +30,8 @@ print(json.dumps({
     'choices':dict(choices),
     'navigation_choices':dict(collections.Counter(r['response']['answers'].get('navigation',{}).get('choice','unknown') for r in navigation)),
     'navigation_centers':[r['state']['squad_center'] for r in navigation],
+    'first_distribution':distribution(ticks[0]) if ticks else None,
+    'last_distribution':distribution(ticks[-1]) if ticks else None,
     'action_result_counts':dict(collections.Counter(str(code) for r in ticks for code in r.get('action_results',[]))),
     'ticks_older_than_32_loops':sum(r['decision_age_loops']>32 for r in ticks),
     'errors':[r for r in rows if r['event'].endswith('error')],
