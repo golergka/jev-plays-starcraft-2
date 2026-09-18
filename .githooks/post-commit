@@ -1,0 +1,7 @@
+#!/bin/sh
+# The running harness observes HEAD and loads the committed player at its next boundary.
+# A failed push never rolls back a local experiment or silently loses its journal.
+git push origin HEAD || {
+  echo 'Auto-push failed. Local commit and hot reload remain valid; retry git push.' >&2
+  exit 0
+}

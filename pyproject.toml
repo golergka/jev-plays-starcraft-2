@@ -1,0 +1,21 @@
+[project]
+name = "jev"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "openrouter>=1.1.158",
+    "protobuf<4",
+    "python-dotenv>=1.2.3",
+    "s2clientprotocol>=5.0.16.97563.0",
+    "typesafe-sdk>=0.7.0",
+    "websockets>=17.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning:google.protobuf.*", "ignore::DeprecationWarning:s2clientprotocol.*"]
