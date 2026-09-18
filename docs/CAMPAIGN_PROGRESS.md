@@ -3,6 +3,18 @@
 Scope confirmed by the user: Wings of Liberty, Heart of the Swarm, and Legacy of
 the Void. No campaign has been completed and no mission victory is verified yet.
 
+The user subsequently authorized individual campaign missions played in sequence
+with progression recorded here. Native campaign controls and account achievement
+credit are not required. The standalone-map route is therefore the active route.
+Only verified victories advance this journal; merely loading a later map does not.
+
+| Campaign | Mission | Verified result |
+| --- | --- | --- |
+| Wings of Liberty | Liberation Day (`traynor01`) | In progress; prior defeat, no win |
+| Wings of Liberty | The Outlaws (`traynor02`) | Economy smoke tests only; no win |
+| Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
+| Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
+
 ## Native-client inspection — 2026-09-18
 
 Saved the preceding standalone second-mission replay under the ignored
