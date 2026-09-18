@@ -6,6 +6,7 @@ Commit this file to activate it at the next decision boundary.
 """
 import json
 import math
+import random
 
 
 async def decide(view, jev, memory):
@@ -67,6 +68,17 @@ async def decide(view, jev, memory):
             },
         }})
         choice = intent.get('navigation', {}).get('choice')
+        # Explore using Jev's probabilities, with no human-authored route weights.
+        probabilities = intent.get('navigation', {}).get('probabilities', {})
+        allowed = {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold', 'regroup'}
+        weights = {k:float(v) for k,v in probabilities.items()
+                   if k in allowed and isinstance(v,(int,float)) and math.isfinite(v) and v > 0}
+        if weights:
+            rng = memory.setdefault('navigation_rng', random.Random(20260918))
+            top_choice = choice
+            choice = rng.choices(list(weights), weights=list(weights.values()), k=1)[0]
+            jev.log('navigation_sample', loop=view['loop'], top_choice=top_choice,
+                    sampled_choice=choice, probabilities=weights, seed=20260918)
         if choice in {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold', 'regroup'}:
             navigation = {'loop': view['loop'], 'center': center, 'intent': choice}
             memory['navigation'] = navigation
