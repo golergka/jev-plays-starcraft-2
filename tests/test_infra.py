@@ -155,3 +155,28 @@ def test_terrain_is_masked_by_current_player_visibility():
     assert visible_terrain(visibility,pathing,2,0) == 'walkable static terrain'
     assert visible_terrain(visibility,pathing,3,0) == 'blocked static terrain'
     assert visible_terrain(visibility,pathing,9,0).startswith('unknown')
+
+
+def test_build_sites_require_visible_footprint_and_engine_approval():
+    from s2clientprotocol import query_pb2 as query
+    obs=sc.ResponseObservation()
+    own=obs.observation.raw_data.units.add(tag=1,unit_type=45,alliance=raw.Self,health=45,health_max=45)
+    own.pos.x=14; own.pos.y=14
+    image=obs.observation.raw_data.map_state.visibility
+    image.size.x=32; image.size.y=32; image.bits_per_pixel=8
+    pixels=bytearray([2]*1024); pixels[14*32+8]=0; image.data=bytes(pixels)
+    info=sc.ResponseGameInfo(); info.start_raw.playable_area.p1.x=32; info.start_raw.playable_area.p1.y=32
+    data=sc.ResponseData(); data.abilities.add(ability_id=319,friendly_name='Build SupplyDepot',target=2,footprint_radius=1)
+    class Client:
+        async def request(self,name,body):
+            result=query.ResponseQuery()
+            if body.abilities:
+                result.abilities.add(unit_tag=1).abilities.add(ability_id=319)
+            else:
+                assert not body.ignore_resource_requirements
+                assert len(body.placements)==3  # West overlaps an unseen cell.
+                assert all(p.placing_unit_tag==1 for p in body.placements)
+                for code in [1,44,1]: result.placements.add(result=code)
+            return result
+    view=asyncio.run(make_view(Client(),obs,data,info,'build test'))
+    assert {c['id'] for c in view['self'][0]['candidates']} == {'build_319_north','build_319_east'}

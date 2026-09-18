@@ -46,6 +46,8 @@ async def make_view(client, observation, data, info, objective):
     names = {u.unit_id: u.name for u in data.units}
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
+    catalog = {a.ability_id:a for a in data.abilities}
+    placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
             'resources': {'minerals': obs.player_common.minerals,
@@ -65,6 +67,24 @@ async def make_view(client, observation, data, info, objective):
             if label.startswith('Train '):
                 candidates.append({'id':f'ability_{ability}', 'description':label,
                                    'command':command(ability)})
+            if label.startswith('Build ') and catalog[ability].target == 2:
+                radius = catalog[ability].footprint_radius or 1.5
+                offset = radius % 1
+                for direction, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
+                    x, y = math.floor(unit.pos.x)+dx+offset, math.floor(unit.pos.y)+dy+offset
+                    cells = [(px,py) for px in range(math.floor(x-radius),math.ceil(x+radius))
+                             for py in range(math.floor(y-radius),math.ceil(y+radius))]
+                    if not all(area.p0.x <= px < area.p1.x and area.p0.y <= py < area.p1.y
+                               and pixel(obs.raw_data.map_state.visibility,px,py)==2 for px,py in cells):
+                        continue
+                    placement = query.RequestQueryBuildingPlacement(ability_id=ability,placing_unit_tag=unit.tag)
+                    placement.target_pos.x, placement.target_pos.y = x,y
+                    placements.append(placement)
+                    placement_candidates.append((candidates,{
+                        'id':f'build_{ability}_{direction}',
+                        'description':f'{label} at visible engine-checked site [{x},{y}]',
+                        'command':command(ability,point=[x,y]),
+                    }))
         for label, ids, description in [
             ('stop', {4,3665}, 'Stop the current order; normal automatic targeting remains possible'),
             ('hold_position', {18,3793}, 'Hold position here instead of continuing the current movement order'),
@@ -124,6 +144,14 @@ async def make_view(client, observation, data, info, objective):
                                         'target_point':[o.target_world_space_pos.x,o.target_world_space_pos.y]
                                         if o.HasField('target_world_space_pos') else None} for o in unit.orders],
                              'candidates':candidates})
+    if placements:
+        checked = await client.request('query',query.RequestQuery(
+            placements=placements,ignore_resource_requirements=False))
+        if len(checked.placements) != len(placement_candidates):
+            raise RuntimeError('SC2 placement response length mismatch')
+        for (candidates,candidate), result in zip(placement_candidates,checked.placements):
+            if result.result == 1:
+                candidates.append(candidate)
     return view
 
 
