@@ -65,6 +65,8 @@ async def decide(view, jev, memory):
             'some_can_harvest_minerals':any(k.startswith('gather_') for k in candidate_ids),
             'some_can_construct_buildings':any(k.startswith('build_') for k in candidate_ids),
             'available_build_abilities':sorted({a for u in selected for a in u.get('available_build_abilities',[])}),
+            'available_projects':list({c['project']['type']:c['project'] for u in selected for c in u['candidates']
+                                       if c.get('project')}.values()),
             'some_can_train_units':any(c['description'].startswith('Train ') for u in selected for c in u['candidates']),
         }
     memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
@@ -126,7 +128,7 @@ async def decide(view, jev, memory):
     meanings = {
         'income':'Collect resource income to fund unit production and construction.',
         'production':'Produce more units.',
-        'construction':'Construct buildings.',
+        'construction':'Construct one of the available_projects buildings, including any supply capacity listed there.',
         'combat':'Attack enemies or attack-move toward a location.',
         'positioning':'Move, regroup, scout, stop or hold position.',
         'other':'Use another available ability.',

@@ -83,6 +83,8 @@ async def make_view(client, observation, data, info, objective):
                 names.get(kind,str(kind)): {
                     'mineral_cost':unit_catalog[kind].mineral_cost,
                     'gas_cost':unit_catalog[kind].vespene_cost,
+                    'supply_provided':unit_catalog[kind].food_provided,
+                    'supply_required':unit_catalog[kind].food_required,
                     'catalog_weapons':[{'targets':data_proto.Weapon.TargetType.Name(w.type),
                                         'range':round(w.range,2),
                                         'damage_per_cycle':round(w.damage*w.attacks,2),
@@ -124,12 +126,14 @@ async def make_view(client, observation, data, info, objective):
             product = products.get(ability)
             cost = ({'minerals':product.mineral_cost,'vespene':product.vespene_cost,
                      'supply':product.food_required} if product is not None else None)
+            project = ({'type':product.name,**cost,'supply_provided':product.food_provided}
+                       if product is not None else None)
             details = '' if product is None else (
                 f'; costs {product.mineral_cost} minerals and {product.vespene_cost} gas'
                 f'; requires {product.food_required:g} supply; provides {product.food_provided:g} supply')
             if label.startswith('Train '):
                 candidates.append({'id':f'ability_{ability}', 'description':label+details,
-                                   'command':command(ability),'resource_cost':cost})
+                                   'command':command(ability),'resource_cost':cost,'project':project})
             if label.startswith('Build ') and catalog[ability].target == 2:
                 radius = catalog[ability].footprint_radius or 1.5
                 offset = radius % 1
@@ -152,6 +156,7 @@ async def make_view(client, observation, data, info, objective):
                         'description':f'{label} at visible engine-checked site [{x},{y}]'+details,
                         'command':command(ability,point=[x,y]),
                         'resource_cost':cost,
+                        'project':project,
                     }))
         for label, ids, description in [
             ('stop', {4,3665}, 'Stop the current order; normal automatic targeting remains possible'),

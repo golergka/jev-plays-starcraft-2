@@ -345,3 +345,20 @@ long unit list. It still chooses whether to continue or issue a different order;
 there is no automatic worker policy or suppression of model-selected commands.
 Commit this player-only change during the existing lab 057 run and inspect the
 actual reload event before claiming a live transition.
+
+Confirmed live reload to `10d75e9`. The combined run ended at 500 calls ($0.191827),
+with workers and base alive but supply blocked. Minerals accumulated after the
+leaf-level continue change (685 in one inspected state). This is sequential
+evidence, not an isolated throughput benchmark. No victory.
+
+## Lab 059: project effects must reach the contribution decision
+
+Consulted the journal: labs 036–038 already showed that available building names
+alone did not solve supply block, while explicit supply effects elicited a completed
+Depot. The new hierarchy exposed those effects only in concrete action descriptions,
+after the contribution choice had already been made. Put distinct available
+projects and their mineral/gas/supply costs and supply provided into per-selection
+facts as well. Include supply provided/required in unit-type facts. This restores
+known useful observation content at the decision stage that needs it; no code
+chooses a Depot or assigns a builder. Resume the same supply-blocked game, rather
+than resetting its functioning economy.
