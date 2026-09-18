@@ -1,0 +1,61 @@
+{
+  "run": "runs/20260918T203430.488033Z/events.jsonl",
+  "calls": 16,
+  "latency_median_ms": 446.0,
+  "latency_p95_ms": 800,
+  "cost_usd": 0.005904948,
+  "actions_submitted": 19,
+  "ticks_with_zero_submissions": 141,
+  "choices": {
+    "continue": 90,
+    "attack_4297064449": 5,
+    "attack_4301258753": 3,
+    "attack_4302045185": 1,
+    "attack_4301520897": 2,
+    "attack_4295229441": 2,
+    "attack_4297588737": 2,
+    "attack_4297326593": 1,
+    "attack_4297850881": 1,
+    "attack_4296802305": 3,
+    "attack_4295491585": 2,
+    "attack_4299161601": 2,
+    "attack_4300996609": 1
+  },
+  "errors": [],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789763692.447409,
+      "event": "reload",
+      "revision": "6452cdbe4682992362ce8d5e3859a7602c0a5ced"
+    }
+  ],
+  "first_tick": {
+    "time": 1789763685.2541518,
+    "event": "tick",
+    "loop": 5,
+    "revision": "eac64babd0d774193d63e3569437dac1b41fc1f0",
+    "own_units": 10,
+    "score": 500,
+    "decision_age_loops": 18,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 809
+  },
+  "last_tick": {
+    "time": 1789763744.2950678,
+    "event": "tick",
+    "loop": 1321,
+    "revision": "6452cdbe4682992362ce8d5e3859a7602c0a5ced",
+    "own_units": 0,
+    "score": 0,
+    "decision_age_loops": 0,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 7
+  }
+}

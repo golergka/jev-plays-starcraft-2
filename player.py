@@ -4,6 +4,7 @@ Contract: async decide(view: dict, jev, memory: dict) -> list[command dict].
 The harness owns sockets, action validation, telemetry, and persistent memory.
 Commit this file to activate it at the next decision boundary.
 """
+import json
 
 
 async def decide(view, jev, memory):
@@ -13,7 +14,7 @@ async def decide(view, jev, memory):
     if not units:
         return []
     questions = {}
-    state = {'objective': view['objective'], 'units': [], 'resources': view['resources']}
+    state = {'objective': view['objective'], 'resources': view['resources']}
     candidates = {}
     for unit in units:
         tag = str(unit['tag'])
@@ -23,12 +24,13 @@ async def decide(view, jev, memory):
             options[candidate['id']] = candidate['description']
             actions[candidate['id']] = candidate['command']
         candidates[tag] = actions
-        state['units'].append({k: v for k, v in unit.items() if k != 'candidates'})
+        local = {k: v for k, v in unit.items() if k not in {'candidates', 'tag'}}
         questions[tag] = {
             'type': 'choice',
-            'instructions': f'Choose the next action for unit tag {tag} to advance the objective. '
+            'instructions': 'Choose the next action for this unit to advance the objective. '
                             'Use this unit’s health, current orders and visible surroundings. '
-                            'Continue means keep its existing order without sending a command.',
+                            'Continue means keep its existing order without sending a command. '
+                            'Unit facts: ' + json.dumps(local, separators=(',', ':')),
             'criteria': options,
         }
     answers = await jev.ask(state, questions)

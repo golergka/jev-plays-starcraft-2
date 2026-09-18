@@ -5,7 +5,7 @@ import statistics
 import sys
 from pathlib import Path
 
-path = Path(sys.argv[1]) if len(sys.argv)>1 else sorted(Path('runs').glob('*/events.jsonl'))[-1]
+path = Path(sys.argv[1]) if len(sys.argv)>1 else max(Path('runs').glob('*/events.jsonl'),key=lambda p:p.stat().st_mtime)
 rows = [json.loads(line) for line in path.read_text().splitlines()]
 calls = [r for r in rows if r['event']=='jev']
 ticks = [r for r in rows if r['event']=='tick']
