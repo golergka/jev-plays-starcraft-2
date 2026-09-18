@@ -1,0 +1,259 @@
+{
+  "run": "runs/20260918T205653.663868Z/events.jsonl",
+  "calls": 301,
+  "latency_median_ms": 355,
+  "latency_p95_ms": 481,
+  "cost_usd": 0.02243955,
+  "actions_submitted": 827,
+  "ticks_with_zero_submissions": 68,
+  "choices": {
+    "west": 663,
+    "continue": 543,
+    "east": 195
+  },
+  "navigation_choices": {
+    "west": 15,
+    "east": 11
+  },
+  "navigation_centers": [
+    [
+      90.0,
+      8.6
+    ],
+    [
+      76.7,
+      8.5
+    ],
+    [
+      60.8,
+      9.5
+    ],
+    [
+      45.3,
+      9.0
+    ],
+    [
+      28.9,
+      6.7
+    ],
+    [
+      20.0,
+      5.7
+    ],
+    [
+      19.9,
+      6.1
+    ],
+    [
+      20.2,
+      5.9
+    ],
+    [
+      20.2,
+      5.9
+    ],
+    [
+      19.8,
+      6.1
+    ],
+    [
+      20.0,
+      5.9
+    ],
+    [
+      30.2,
+      5.5
+    ],
+    [
+      46.3,
+      5.6
+    ],
+    [
+      56.1,
+      10.2
+    ],
+    [
+      70.9,
+      9.6
+    ],
+    [
+      87.0,
+      8.8
+    ],
+    [
+      97.5,
+      12.0
+    ],
+    [
+      97.4,
+      12.1
+    ],
+    [
+      97.4,
+      12.1
+    ],
+    [
+      97.4,
+      12.1
+    ],
+    [
+      97.4,
+      12.1
+    ],
+    [
+      97.4,
+      12.1
+    ],
+    [
+      84.2,
+      12.4
+    ],
+    [
+      70.6,
+      8.6
+    ],
+    [
+      54.9,
+      10.4
+    ],
+    [
+      39.1,
+      6.8
+    ]
+  ],
+  "action_result_counts": {
+    "1": 827
+  },
+  "ticks_older_than_32_loops": 1,
+  "errors": [],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789765058.512046,
+      "event": "reload",
+      "revision": "ee5c29ae5bc9319bca46481f4a9aab42009abad6"
+    }
+  ],
+  "first_tick": {
+    "time": 1789765014.73543,
+    "event": "tick",
+    "loop": 16666,
+    "revision": "d63d8ec570f7349b01787086deba95b3aa5c9527",
+    "own_units": 5,
+    "score": 250,
+    "decision_age_loops": 19,
+    "commands": [
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          83.413330078125,
+          8.192138671875
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          85.1875,
+          9.04736328125
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          85.043212890625,
+          7.970458984375
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          84.53076171875,
+          9.267578125
+        ]
+      },
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          81.7783203125,
+          8.75634765625
+        ]
+      }
+    ],
+    "submitted": 5,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 859
+  },
+  "last_tick": {
+    "time": 1789765147.406566,
+    "event": "tick",
+    "loop": 19594,
+    "revision": "ee5c29ae5bc9319bca46481f4a9aab42009abad6",
+    "own_units": 5,
+    "score": 250,
+    "decision_age_loops": 16,
+    "commands": [
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          30.87848663330078,
+          6.910068511962891
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          33.3890495300293,
+          6.637779235839844
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          32.23957061767578,
+          6.764072418212891
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          34.04855728149414,
+          6.835956573486328
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          34.85495376586914,
+          7.097723007202148
+        ]
+      }
+    ],
+    "submitted": 5,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 703
+  }
+}

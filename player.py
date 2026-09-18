@@ -21,6 +21,10 @@ async def decide(view, jev, memory):
     navigation = memory.get('navigation', {})
     if not navigation or view['loop'] - navigation['loop'] >= 112:
         center = [round(sum(u['position'][i] for u in units)/len(units), 1) for i in (0, 1)]
+        # Spatial memory is measured from our own positions, not hidden map data.
+        visits = memory.setdefault('visited_cells', {})
+        cell = (math.floor(center[0]/10), math.floor(center[1]/10))
+        visits[cell] = visits.get(cell, 0) + 1
         surroundings = {str(e['tag']): {
             'type': e['type'], 'alliance': e['alliance'],
             'position': [round(u['position'][0]+e['east_offset'], 1),
@@ -37,11 +41,14 @@ async def decide(view, jev, memory):
             'visible_entities': list(surroundings.values()),
             'previous_navigation': navigation,
             'recent_intent_outcomes': outcomes,
+            'visited_areas': [{'center': [x*10+5, y*10+5], 'visits': count}
+                              for (x,y), count in visits.items()],
         }, {'navigation': {
             'type': 'choice',
             'instructions': 'Choose the squad intent that best advances the mission objective. '
                             'The objective location may be unknown. Consider exploration and '
-                            'whether the previous intent produced useful progress. Neutral '
+                            'whether the previous intent produced useful progress. '
+                            'Use visited areas to recognize repeated routes. Neutral '
                             'entities are not enemies. Individual units will choose how to execute this intent.',
             'criteria': {
                 'north': 'Explore north (increasing map y)',
