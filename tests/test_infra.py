@@ -53,7 +53,7 @@ def test_jev_can_select_one_builder_without_shared_build_ability():
             if 'purpose_SCV' in questions:
                 assert 'construction' in questions['purpose_SCV']['criteria']
                 return {'purpose_SCV':{'choice':'construction'}}
-            assert set(questions['SCV']['criteria'])=={'unit_1_build_319_north'}
+            assert set(questions['SCV']['criteria'])=={'unit_1_build_319_north','continue'}
             return {'SCV':{'choice':'unit_1_build_319_north'}}
     assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==[command]
 

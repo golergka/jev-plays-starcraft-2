@@ -331,3 +331,17 @@ site list is not represented as proof that the unit lacks construction abilities
 The placement test now requires an accepted farther site while rejecting closer
 sites and an unseen footprint. Retry The Outlaws from a fresh initial state with
 the spending and individual-builder changes present from the beginning.
+
+## Lab 058: maintain a task without resubmitting it
+
+The contribution hierarchy accidentally made a concrete new order mandatory after
+choosing income. Live observations show workers already in `Harvest Gather SCV`
+and `Harvest Return SCV` orders while new gather commands keep being proposed.
+Repeated orders may disrupt that work; the exact throughput effect is not yet
+isolated. Add a `continue` alternative inside every concrete contribution choice,
+explicitly meaning retain current orders when they already perform that work.
+Give Jev current-order counts and idle counts instead of requiring it to count a
+long unit list. It still chooses whether to continue or issue a different order;
+there is no automatic worker policy or suppression of model-selected commands.
+Commit this player-only change during the existing lab 057 run and inspect the
+actual reload event before claiming a live transition.
