@@ -57,6 +57,64 @@ def explored_map(visibility, pathing, area, cell_size=6):
             'legend': '? unexplored; ~ partly explored; . walkable; # blocked; + mixed walkable/blocked. Columns west to east. Static terrain only; not a route or current unit occupancy.'}
 
 
+def support_candidates(unit, legal, catalog, unit_catalog, own, names):
+    """Expose support controls, without selecting a recipient or issuing an order.
+
+    Available ability queries don't validate particular targets. Restrict these
+    candidates to observed owned units with compatible catalog properties; the
+    engine remains authoritative for range, race/mod filters and final success.
+    """
+    candidates = []
+    for ability in sorted(legal):
+        meta = catalog.get(ability)
+        if meta is None:
+            continue
+        label = meta.friendly_name or meta.button_name or meta.link_name
+        verb = label.lower().replace('_', '').replace(' ', '')
+        if verb.startswith('effect'):
+            verb = verb[6:]
+        kind = ('repair' if verb.startswith('repair') else
+                'heal' if verb.startswith('heal') else
+                'unload' if verb.startswith('unloadall') else
+                'load' if verb.startswith('load') else None)
+        if kind is None:
+            continue
+        if kind == 'unload':
+            if unit.cargo_space_taken <= 0:
+                continue
+            command = {'unit_tag':unit.tag,'ability_id':ability}
+            if meta.target in (2,4):
+                command['point'] = [unit.pos.x,unit.pos.y]
+            elif meta.target not in (1,5):
+                continue
+            candidates.append({'id':f'ability_{ability}_unload',
+                'description':f'{label}: request unloading passengers here; engine checks space',
+                'command':command})
+            continue
+        if meta.target not in (3,4):
+            continue
+        for target in own:
+            if target.tag == unit.tag or target.display_type != raw.Visible:
+                continue
+            product = unit_catalog.get(target.unit_type)
+            if product is None:
+                continue
+            if kind in ('repair','heal'):
+                attribute = data_proto.Mechanical if kind=='repair' else data_proto.Biological
+                if attribute not in product.attributes or not (0 < target.health < target.health_max):
+                    continue
+                effect = f'restore missing health ({target.health:g}/{target.health_max:g})'
+            else:
+                if (target.is_flying or data_proto.Structure in product.attributes or
+                    not product.cargo_size or product.cargo_size > unit.cargo_space_max-unit.cargo_space_taken):
+                    continue
+                effect = f'load into this unit; needs {product.cargo_size} cargo slots'
+            candidates.append({'id':f'ability_{ability}_{target.tag}',
+                'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
+                'command':{'unit_tag':unit.tag,'ability_id':ability,'target_tag':target.tag}})
+    return candidates
+
+
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
@@ -140,7 +198,7 @@ async def make_view(client, observation, data, info, objective):
         gather = next((a for a in sorted(legal) if a in {295,3666} or remaps.get(a)==3666), None)
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
-        candidates = []
+        candidates = support_candidates(unit,legal,catalog,unit_catalog,own,names)
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
             product = product_for(ability)
@@ -269,7 +327,11 @@ async def make_view(client, observation, data, info, objective):
                                                           if ability_names.get(a,'').startswith('Build ')],
                              'build_progress':round(unit.build_progress,3),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
-                             'shield':unit.shield, 'weapon_cooldown':unit.weapon_cooldown,
+                             'shield':unit.shield, 'energy':unit.energy,
+                             'cargo':{'used':unit.cargo_space_taken,'capacity':unit.cargo_space_max,
+                                      'passengers':[{'tag':p.tag,'type':names.get(p.unit_type,str(p.unit_type)),
+                                                     'health':p.health} for p in unit.passengers]},
+                             'weapon_cooldown':unit.weapon_cooldown,
                              'weapon_status':'ready' if unit.weapon_cooldown == 0 else 'cooling down',
                              'position':[unit.pos.x,unit.pos.y], 'surroundings':surroundings,
                              'nearby_terrain':terrain,

@@ -508,3 +508,30 @@ def test_large_selection_is_not_truncated_and_shared_descriptions_stay_compact()
             return {'Unit':{'choice':'group_join_999'}}
     commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
     assert {c['unit_tag'] for c in commands}==set(range(1,81))
+
+
+def test_support_controls_use_owned_visible_compatible_targets_and_available_abilities():
+    from s2clientprotocol import data_pb2 as data
+    from jev_sc2.view import support_candidates
+    catalog = {i:data.AbilityData(ability_id=i,friendly_name=label,target=target)
+               for i,label,target in [(1,'Repair',3),(2,'Effect Heal',3),(3,'Load',3),(4,'UnloadAll',1)]}
+    types = {1:data.UnitTypeData(unit_id=1,attributes=[data.Mechanical],cargo_size=1),
+             2:data.UnitTypeData(unit_id=2,attributes=[data.Biological],cargo_size=1),
+             3:data.UnitTypeData(unit_id=3,attributes=[data.Mechanical,data.Structure],cargo_size=0)}
+    actor=raw.Unit(tag=1,alliance=raw.Self,display_type=raw.Visible,cargo_space_max=2)
+    targets=[raw.Unit(tag=tag,unit_type=kind,alliance=raw.Self,display_type=display,
+                      health=hp,health_max=100)
+             for tag,kind,display,hp in [(2,1,raw.Visible,50),(3,2,raw.Visible,60),
+                                        (4,3,raw.Visible,70),(5,1,raw.Hidden,20),
+                                        (6,1,raw.Visible,100)]]
+    def offered(legal):
+        return support_candidates(actor,legal,catalog,types,[actor]+targets,{})
+    commands=[c['command'] for c in offered({1,2,3,4})]
+    assert [c['target_tag'] for c in commands if c['ability_id']==1]==[2,4]
+    assert [c['target_tag'] for c in commands if c['ability_id']==2]==[3]
+    assert [c['target_tag'] for c in commands if c['ability_id']==3]==[2,3,6]
+    assert not any(c['ability_id']==4 for c in commands)
+    assert offered(set())==[]
+    actor.cargo_space_taken=2
+    commands=[c['command'] for c in offered({3,4})]
+    assert commands==[{'unit_tag':1,'ability_id':4}]

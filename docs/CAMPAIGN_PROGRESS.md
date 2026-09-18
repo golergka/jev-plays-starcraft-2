@@ -713,3 +713,29 @@ Append Zero Hour with only its scenario objective, â€œHold out for evacuation,â€
 and load it through the same sequencer. No completed mission is replayed.
 Verified defeats retry only the pending mission; budget exhaustion allows
 checked attachment to that same live game. No mission-specific tactics added.
+
+## Lab 080: expose support actions and cargo state
+
+Zero Hour is running from the preserved checkpoint; at loop 2647 it had 43 owned
+units, with no terminal result. Adapter inspection found no repair, heal, load or
+unload candidates. This omission would limit any mission using support units or
+transports regardless of Jev's decisions.
+
+Add support candidates only for abilities offered by the engine's resource-aware
+query. Repair/heal recipients must be visible owned damaged units with the
+matching Mechanical/Biological catalog attribute. Load candidates require an
+owned visible ground unit with a positive cargo size that fits. Unload requires
+occupied cargo. These are candidate filters, not a guarantee of engine-specific
+target legality: range and mod filters remain subject to action results. No
+recipient, timing or tactical preference is selected in Python. Jev chooses
+through the existing ability branch. Expose owned cargo/passengers and energy in
+its observation state. No hidden or snapshot target is introduced.
+
+The official protocol documents ability target kinds and unit attributes in
+https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/data.proto
+and owned cargo/passengers in
+https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/raw.proto .
+Thirty-six tests pass, including unavailable abilities, hidden targets, full
+cargo, and undamaged recipients. Commit this adapter/player pair during the
+running game to verify atomic live reload. This expands controls; effectiveness
+of Jev's support decisions is still unproven.
