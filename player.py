@@ -191,6 +191,8 @@ async def decide(view, jev, memory):
                     option=f'unit_{unit["tag"]}_{key}'
                     criteria[option]=f'Only {kind} unit {unit["tag"]}: {candidate["description"]}'
                     plans[kind][option]=[candidate['command']]
+        if not any(u['candidates'] for u in selected):
+            continue  # No non-purchase action exists for Jev to choose here.
         questions[kind] = {
             'type':'choice',
             'instructions':f'Choose the next order for the {len(selected)} {kind} units to advance the mission objective. '
@@ -233,7 +235,7 @@ async def decide(view, jev, memory):
         'criteria':{p:meanings[p] for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
     async def choose_orders():
-        roles = await jev.ask(state,purpose_questions)
+        roles = await jev.ask(state,purpose_questions) if purpose_questions else {}
         answers, concrete_questions = {}, {}
         for kind,q in questions.items():
             role=roles.get(f'purpose_{kind}',{}).get('choice')

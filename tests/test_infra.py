@@ -50,10 +50,7 @@ def test_jev_can_select_one_builder_without_shared_build_ability():
         def log(self,*args,**kwargs): pass
         async def ask(self,state,questions):
             if 'strategy' in questions: return {'strategy':{'choice':'strengthen'}}
-            if 'purpose_SCV' in questions:
-                assert 'construction' not in questions['purpose_SCV']['criteria']
-                return {'purpose_SCV':{'choice':'continue'}}
-            assert set(questions['investment']['criteria'])=={'save','project_0'}
+                        assert set(questions['investment']['criteria'])=={'save','project_0'}
             return {'investment':{'choice':'project_0'}}
     assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==[command]
 
@@ -343,3 +340,17 @@ def test_shared_investment_jev_can_save_or_choose_nonfirst_project():
     assert asyncio.run(choose_investment(view,{},model))==[]
     model.choice='project_1'
     assert asyncio.run(choose_investment(view,{},model))==[{'unit_tag':2,'ability_id':2}]
+
+
+def test_purchase_only_building_does_not_trigger_empty_individual_control():
+    import player
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions: return {'strategy':{'choice':'strengthen'}}
+            assert set(questions)=={'investment'}
+            return {'investment':{'choice':'save'}}
+    view={'loop':1,'self':[{'tag':1,'type':'Barracks','position':[0,0],
+          'candidates':[{'id':'ability_560','description':'Train Marine',
+                         'project':{'type':'Marine'},'command':{'unit_tag':1,'ability_id':560}}]}]}
+    assert asyncio.run(player.decide(view,Model(),{}))==[]

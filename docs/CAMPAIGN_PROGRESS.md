@@ -416,3 +416,15 @@ and split execution probability across many similar choices. Remove the redundan
 veto from the execution allocation stage; Jev still chooses save versus each
 purchase at the shared investment step, and chooses the exact legal pair. No code
 picks a location or builder. Test in the existing game via committed player reload.
+
+
+## Lab 063: omit empty action selections
+
+After lab 062, Jev selected Marines through the shared purchase step, but 30 of
+33 inspected ticks still exceeded the 32-loop freshness limit. Command Centers
+chose individual control 25 times despite having no non-purchase candidates;
+the fallback then wasted navigation/action inference on an empty action surface.
+Exclude selections with no candidate actions from contribution questions. Their
+purchase opportunities remain in the global investment decision and their state
+remains visible. This does not suppress any available action or select a tactic.
+A regression test ensures a purchase-only building gets no empty control query.
