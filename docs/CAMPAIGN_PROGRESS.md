@@ -499,3 +499,23 @@ the all-three-campaign goal. Live multi-mission progression remains unverified;
 this change does not imply that the full campaign, UI recovery, or later-race
 ability coverage works. The existing Outlaws trial continues unchanged while
 this harness work is prepared for the next process start.
+
+
+## Lab 068: isolate context filtering before changing live investment
+
+The unchanged continuation repeatedly saved resources while its bank rose from
+about 1,000 to over 4,600 minerals. Tested four recorded investment states offline,
+with the exact same questions/options under two conditions. Full state included
+21–24k characters of map geometry, unit positions, and other observations. A compact
+state retained economic resources, selection aggregates, catalog facts, measured
+outcomes, learned capabilities and strategy, plus visible/stale entity counts.
+It was about 8.5–8.7k characters. All four full-state queries chose save; all four
+compact-state queries chose Marine. Eight Jev calls cost $0.002827. Confidence was
+low, and this is four paired single samples, not a statistical result or proof of
+better gameplay. The archived probe includes options and full distributions.
+
+Apply this general context filter only to the investment question. Combat and
+producer/site questions retain their spatial input. This changes no purchase
+priority and supplies no mission-specific instruction. The experiment directly
+implements the documented recommendation to filter state to the question's needs:
+https://docs.typesafe.ai/model-jaggedness/jev-1.13 .

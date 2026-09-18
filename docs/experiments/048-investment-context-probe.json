@@ -1,0 +1,198 @@
+{
+  "source": "runs/20260918T230139.535884Z/events.jsonl",
+  "calls": 8,
+  "cost": 0.002826558,
+  "results": [
+    {
+      "source_call_index": 0,
+      "resources": {
+        "minerals": 1045,
+        "vespene": 0,
+        "food_used": 22,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      },
+      "conditions": {
+        "full": {
+          "state_characters": 21743,
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "save": 0.31,
+            "project_3": 0.2,
+            "project_1": 0.11,
+            "project_2": 0.12,
+            "project_0": 0.08,
+            "project_4": 0.18
+          }
+        },
+        "compact": {
+          "state_characters": 8698,
+          "choice": "project_2",
+          "type": "choice",
+          "confidence": 0.09,
+          "probabilities": {
+            "project_2": 0.24,
+            "project_4": 0.2,
+            "project_1": 0.14,
+            "save": 0.1,
+            "project_0": 0.09,
+            "project_3": 0.23
+          }
+        }
+      },
+      "project_labels": {
+        "save": "Save",
+        "project_0": "Purchase one Barracks",
+        "project_1": "Purchase one CommandCenter",
+        "project_2": "Purchase one Marine",
+        "project_3": "Purchase one SCV",
+        "project_4": "Purchase one SupplyDepot"
+      }
+    },
+    {
+      "source_call_index": 92,
+      "resources": {
+        "minerals": 2220,
+        "vespene": 0,
+        "food_used": 26,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 9,
+        "supply_blocked": false
+      },
+      "conditions": {
+        "full": {
+          "state_characters": 23699,
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "project_1": 0.12,
+            "project_2": 0.17,
+            "save": 0.37,
+            "project_3": 0.23,
+            "project_0": 0.11
+          }
+        },
+        "compact": {
+          "state_characters": 8739,
+          "choice": "project_2",
+          "type": "choice",
+          "confidence": 0.1,
+          "probabilities": {
+            "project_1": 0.2,
+            "project_3": 0.19,
+            "save": 0.17,
+            "project_2": 0.28,
+            "project_0": 0.16
+          }
+        }
+      },
+      "project_labels": {
+        "save": "Save",
+        "project_0": "Purchase one Barracks",
+        "project_1": "Purchase one CommandCenter",
+        "project_2": "Purchase one SCV",
+        "project_3": "Purchase one SupplyDepot"
+      }
+    },
+    {
+      "source_call_index": 184,
+      "resources": {
+        "minerals": 3405,
+        "vespene": 0,
+        "food_used": 24,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 11,
+        "supply_blocked": false
+      },
+      "conditions": {
+        "full": {
+          "state_characters": 23245,
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "project_3": 0.17,
+            "project_1": 0.1,
+            "save": 0.39,
+            "project_2": 0.22,
+            "project_0": 0.12
+          }
+        },
+        "compact": {
+          "state_characters": 8521,
+          "choice": "project_2",
+          "type": "choice",
+          "confidence": 0.1,
+          "probabilities": {
+            "project_1": 0.13,
+            "project_0": 0.19,
+            "save": 0.22,
+            "project_3": 0.18,
+            "project_2": 0.28
+          }
+        }
+      },
+      "project_labels": {
+        "save": "Save",
+        "project_0": "Purchase one Barracks",
+        "project_1": "Purchase one CommandCenter",
+        "project_2": "Purchase one SCV",
+        "project_3": "Purchase one SupplyDepot"
+      }
+    },
+    {
+      "source_call_index": 275,
+      "resources": {
+        "minerals": 4655,
+        "vespene": 0,
+        "food_used": 25,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 10,
+        "supply_blocked": false
+      },
+      "conditions": {
+        "full": {
+          "state_characters": 23490,
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "project_1": 0.12,
+            "project_2": 0.19,
+            "save": 0.42,
+            "project_3": 0.14,
+            "project_0": 0.13
+          }
+        },
+        "compact": {
+          "state_characters": 8503,
+          "choice": "project_2",
+          "type": "choice",
+          "confidence": 0.11,
+          "probabilities": {
+            "project_1": 0.17,
+            "project_0": 0.09,
+            "project_2": 0.29,
+            "save": 0.27,
+            "project_3": 0.18
+          }
+        }
+      },
+      "project_labels": {
+        "save": "Save",
+        "project_0": "Purchase one Barracks",
+        "project_1": "Purchase one CommandCenter",
+        "project_2": "Purchase one SCV",
+        "project_3": "Purchase one SupplyDepot"
+      }
+    }
+  ]
+}

@@ -45,6 +45,17 @@ def is_purchase(candidate):
     return candidate['description'].startswith(('Train ', 'Build '))
 
 
+def investment_state(state):
+    """Keep economic/force facts; raw terrain and repeated unit coordinates distract."""
+    compact = {k:state[k] for k in ('objective','resources','selection_facts',
+               'unit_type_facts','recent_outcomes','observed_capabilities_by_type',
+               'strategy_chosen_by_jev') if k in state}
+    for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
+                          ('last_known_entities','stale_entities_by_alliance_and_type')]:
+        compact[target] = dict(Counter(e['alliance']+' '+e['type'] for e in (state.get(source) or [])))
+    return compact
+
+
 async def choose_investment(view, state, jev):
     """Jev allocates the common budget, then selects the actual producer/site."""
     projects = {}
@@ -63,7 +74,7 @@ async def choose_investment(view, state, jev):
                                   f'Observed capabilities of this type: {state.get("observed_capabilities_by_type",{}).get(name,"not yet observed")}. '
                                   f'Existing selection facts: {state.get("selection_facts",{}).get(name,"none owned")}. '
                                   'Compare its added capability with the other investments and saving resources.')
-    answer = await jev.ask(state, {'investment': {
+    answer = await jev.ask(investment_state(state), {'investment': {
         'type':'choice',
         'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
                        'This decision controls all new training and construction; no other selection will spend resources this tick. '
