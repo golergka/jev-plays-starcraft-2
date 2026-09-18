@@ -1,0 +1,111 @@
+{
+  "run": "runs/20260918T204407.189864Z/events.jsonl",
+  "calls": 120,
+  "latency_median_ms": 376.5,
+  "latency_p95_ms": 725,
+  "cost_usd": 0.014349426,
+  "actions_submitted": 278,
+  "ticks_with_zero_submissions": 29,
+  "choices": {
+    "attack_4302045185": 39,
+    "continue": 329,
+    "move_4309385217": 217,
+    "north": 24,
+    "attack_4298113025": 1
+  },
+  "errors": [],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789764256.249832,
+    "event": "tick",
+    "loop": 3,
+    "revision": "29d8df26683e397d4ecb6b486cf54307120c1567",
+    "own_units": 1,
+    "score": 500,
+    "decision_age_loops": 12,
+    "commands": [
+      {
+        "unit_tag": 4310433793,
+        "ability_id": 19,
+        "target_tag": 4302045185
+      }
+    ],
+    "submitted": 1,
+    "action_results": [
+      88
+    ],
+    "action_errors": [],
+    "latency_ms": 686
+  },
+  "last_tick": {
+    "time": 1789764313.6952949,
+    "event": "tick",
+    "loop": 1183,
+    "revision": "29d8df26683e397d4ecb6b486cf54307120c1567",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 10,
+    "commands": [
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          72.1826171875,
+          8.617431640625
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          72.1826171875,
+          8.617431640625
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          72.1826171875,
+          8.617431640625
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          72.1826171875,
+          8.617431640625
+        ]
+      },
+      {
+        "unit_tag": 4312006657,
+        "ability_id": 16,
+        "point": [
+          72.1826171875,
+          8.617431640625
+        ]
+      },
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          72.1826171875,
+          8.617431640625
+        ]
+      }
+    ],
+    "submitted": 6,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 418
+  }
+}
