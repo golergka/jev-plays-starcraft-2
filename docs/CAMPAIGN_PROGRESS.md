@@ -607,3 +607,21 @@ effect at the next harness start; a player-only reload cannot replace that modul
 in the currently running harness.
 
 The first autonomous Outlaws attempt ended incomplete at 1194 calls ($0.597970), reason: Jev call budget reached. No defeat or victory is inferred. Resume the same campaign checkpoint for another Outlaws attempt with the new observation fields; the verified Liberation Day win remains completed.
+
+
+## Lab 074: sample investment uncertainty and retain named intent
+
+The named-project run initially chose no savings targets. Many prior investment
+answers have low confidence and a spread of probability over several projects;
+always taking the maximum can repeatedly suppress the alternatives. Test sampling
+investment choices directly from Jev's positive probabilities over offered options,
+using persistent RNG seed 20260918. No Python investment preference or uniform
+random alternative is added. Log top choice, sampled choice and weights. A test
+ensures zero-weight and invalid options cannot be sampled. This is exploration,
+not a claim that the probabilities represent long-term strategic utility.
+
+Consulted earlier sampling trials: navigation sampling changed routes but also
+ended in defeat. This experiment applies the principle to budget allocation,
+leaving combat choices unchanged. Keep the prior negative outcome in mind.
+Also store previous investment intent as a named project and mode, not an index
+into a menu that changes between observations. Thirty tests pass.

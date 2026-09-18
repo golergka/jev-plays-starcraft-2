@@ -107,10 +107,24 @@ async def choose_investment(view, state, jev, memory=None):
                        'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
         'criteria':criteria,
     }})
-    choice = answer.get('investment',{}).get('choice')
+    prediction = answer.get('investment',{})
+    choice = prediction.get('choice')
+    probabilities = prediction.get('probabilities',{})
+    weights = {k:float(v) for k,v in probabilities.items()
+               if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
+    if memory is not None and weights:
+        rng = memory.setdefault('investment_rng',random.Random(20260918))
+        sampled = rng.choices(list(weights),weights=list(weights.values()),k=1)[0]
+        jev.log('investment_sample',loop=view['loop'],top_choice=choice,
+                sampled_choice=sampled,probabilities=weights,seed=20260918)
+        choice = sampled
     jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names)
     if memory is not None:
-        memory['investment_intent'] = {'choice':choice,'projects':names,'future_projects':future_names,'loop':view['loop']}
+        target = (future_names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('save_for_') else
+                  names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('project_') else None)
+        mode = 'save_for_project' if choice in criteria and choice.startswith('save_for_') else 'request_purchase' if target else 'save'
+        memory['investment_intent'] = {'mode':mode,'target_project':target,'loop':view['loop']}
+
     if choice in criteria and choice.startswith('save_for_'):
         return []
     if choice not in criteria or choice=='save':

@@ -434,4 +434,17 @@ def test_jev_can_choose_to_save_for_a_named_unaffordable_project():
             assert 'FutureBuilding' in option and "'minerals': 100" in option
             return {'investment':{'choice':'save_for_0'}}
     assert asyncio.run(choose_investment(view,{},Model(),memory))==[]
-    assert memory['investment_intent']['future_projects']==['FutureBuilding']
+    assert memory['investment_intent']['target_project']=='FutureBuilding'
+
+
+def test_investment_exploration_uses_only_jev_positive_probability_options():
+    from player import choose_investment
+    view={'loop':1,'self':[{'tag':1,'position':[0,0],'candidates':[
+        {'description':'Train Unit','project':{'type':'Unit'},'command':{'unit_tag':1,'ability_id':1}}]}]}
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            return {'investment':{'choice':'project_0','probabilities':{'save':1,'project_0':0,'invalid':100}}}
+    memory={}
+    assert asyncio.run(choose_investment(view,{},Model(),memory))==[]
+    assert memory['investment_intent']['mode']=='save'
