@@ -12,6 +12,35 @@ import random
 from collections import Counter
 
 
+def recent_outcomes(view, memory, window=672):
+    """Measured observation history; disappearing units are not assumed dead."""
+    loop = view['loop']
+    history = memory.setdefault('outcome_history', [])
+    if history and loop < history[-1]['loop']:
+        history.clear()
+    current = {'loop':loop, 'resources':dict(view.get('resources', {})),
+               'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0)}
+                        for u in view['self']}}
+    if not history or history[-1]['loop'] != loop:
+        history.append(current)
+    while len(history)>1 and history[1]['loop'] < loop-window:
+        history.pop(0)
+    appeared, disappeared, damage = Counter(), Counter(), Counter()
+    for before,after in zip(history,history[1:]):
+        a,b = before['units'],after['units']
+        appeared.update(b[t]['type'] for t in b.keys()-a.keys())
+        disappeared.update(a[t]['type'] for t in a.keys()-b.keys())
+        for t in a.keys() & b.keys():
+            damage[b[t]['type']] += max(0,a[t]['health']-b[t]['health'])
+    return {'observed_game_loops':loop-history[0]['loop'],
+            'own_units_appeared_by_type':dict(appeared),
+            'own_units_disappeared_by_type':dict(disappeared),
+            'health_decreases_on_continuously_observed_units':dict(damage),
+            'resource_changes':{k:current['resources'].get(k,0)-history[0]['resources'].get(k,0)
+                                for k in ('minerals','vespene','food_used','food_cap')},
+            'interpretation':'Measured changes, not causal attribution. Disappearance can be death, transport loading, morphing or campaign triggers. Resource changes are net of income and spending. Consider whether your previous choices are producing mission progress.'}
+
+
 async def arbitrate_spending(commands, view, state, jev):
     offered = {json.dumps(c['command'],sort_keys=True):c
                for u in view['self'] for c in u['candidates']}
@@ -49,6 +78,7 @@ async def decide(view, jev, memory):
     for unit in units:
         cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities','unit_type_facts')}
+    state['recent_outcomes'] = recent_outcomes(view, memory)
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress')}
                       for u in units]
     previous_counts = memory.get('previous_cohort_counts', {})
@@ -83,7 +113,7 @@ async def decide(view, jev, memory):
         decision = await jev.ask({**state,'previous_strategy':strategy}, {'strategy': {
             'type':'choice',
             'instructions':'Choose the current strategic priority for completing the mission. '
-                           'Consider the resources, own force, known enemy force, and recent count changes. '
+                           'Consider resources, own force, known enemy force, and recent_outcomes. Reassess your previous strategy using these measured outcomes. '
                            'This priority will inform further Jev decisions; it does not execute a scripted plan.',
             'criteria':options,
         }})

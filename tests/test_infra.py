@@ -310,3 +310,20 @@ def test_concurrent_jev_calls_reserve_budget(monkeypatch):
     asyncio.run(concurrent())
     assert len(entered)==model.calls==1
     assert model.inflight==0
+
+
+def test_outcome_history_detects_replacement_hidden_by_stable_count():
+    from player import recent_outcomes
+    memory = {}
+    def view(loop,tag,health=45):
+        return {'loop':loop,'resources':{'minerals':loop},
+                'self':[{'tag':tag,'type':'Marine','health':health}]}
+    recent_outcomes(view(1,1),memory)
+    recent_outcomes(view(20,1,20),memory)
+    outcome=recent_outcomes(view(30,2),memory)
+    assert outcome['own_units_appeared_by_type']=={'Marine':1}
+    assert outcome['own_units_disappeared_by_type']=={'Marine':1}
+    assert outcome['health_decreases_on_continuously_observed_units']=={'Marine':25}
+    assert outcome['resource_changes']['minerals']==29
+    outcome=recent_outcomes(view(1,5),memory)
+    assert outcome['own_units_disappeared_by_type']=={}

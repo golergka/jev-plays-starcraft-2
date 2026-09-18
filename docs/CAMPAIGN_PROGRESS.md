@@ -362,3 +362,18 @@ facts as well. Include supply provided/required in unit-type facts. This restore
 known useful observation content at the decision stage that needs it; no code
 chooses a Depot or assigns a builder. Resume the same supply-blocked game, rather
 than resetting its functioning economy.
+
+
+## Lab 060: temporal outcomes instead of one-tick count changes
+
+Lab 059 produced two additional completed Depots (three total), resolving the
+previous supply block. During the running trial Jev accumulated over 3,000
+minerals, grew beyond 30 SCVs, and sent successive small Marine forces out.
+One-tick count differences often read zero even while replacement units kept
+arriving and disappearing. Add a rolling 672-loop observation history with
+per-type arrivals, disappearances, measured health decreases and net resource
+changes. Explicitly label disappearance as ambiguous (death, transport, morph or
+campaign script), and resources as net income minus spending. Jev receives these
+facts at every decision layer and is asked to reassess its previous strategic
+priority; no strategy, production cap, timing or combat response is scripted.
+A test verifies that replacing a Marine is visible despite unchanged total count.
