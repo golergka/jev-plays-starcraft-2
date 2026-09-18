@@ -60,6 +60,14 @@ async def make_view(client, observation, data, info, objective):
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
         candidates = []
+        for label, ids, description in [
+            ('stop', {4,3665}, 'Stop the current order; normal automatic targeting remains possible'),
+            ('hold_position', {18,3793}, 'Hold position here instead of continuing the current movement order'),
+        ]:
+            ability = next((a for a in sorted(legal) if a in ids or remaps.get(a) in ids), None)
+            if ability is not None:
+                candidates.append({'id':label, 'description':description,
+                                   'command':command(ability)})
         surroundings = []
         terrain = {}
         for target in sorted(visible, key=lambda t: math.hypot(t.pos.x-unit.pos.x, t.pos.y-unit.pos.y))[:8]:
