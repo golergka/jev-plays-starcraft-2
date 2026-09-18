@@ -19,7 +19,7 @@ async def decide(view, jev, memory):
     cohorts = {}
     for unit in units:
         cohorts.setdefault(unit['type'], []).append(unit)
-    state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities')}
+    state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities','unit_type_facts')}
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress')}
                       for u in units]
     previous_counts = memory.get('previous_cohort_counts', {})
@@ -36,6 +36,29 @@ async def decide(view, jev, memory):
             'some_can_train_units':any(c['description'].startswith('Train ') for u in selected for c in u['candidates']),
         }
     memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
+    strategy = memory.get('strategy')
+    if strategy is None or view['loop']-strategy['loop'] >= 112:
+        options = {
+            'attack':'Commit forces to damaging or destroying the enemy base.',
+            'strengthen':'Increase military strength through resource collection and production.',
+            'protect':'Preserve owned units and structures from current threats.',
+            'explore':'Acquire information about the map and enemy positions.',
+            'recover':'Restore income and replace losses.',
+            'hold':'Let current tasks progress before changing commitment.',
+        }
+        decision = await jev.ask({**state,'previous_strategy':strategy}, {'strategy': {
+            'type':'choice',
+            'instructions':'Choose the current strategic priority for completing the mission. '
+                           'Consider the resources, own force, known enemy force, and recent count changes. '
+                           'This priority will inform further Jev decisions; it does not execute a scripted plan.',
+            'criteria':options,
+        }})
+        selected = decision.get('strategy',{}).get('choice')
+        if selected in options:
+            strategy = {'loop':view['loop'],'choice':selected,'description':options[selected]}
+            memory['strategy'] = strategy
+            jev.log('strategy_choice',**strategy)
+    state['strategy_chosen_by_jev'] = strategy
     questions, tables = {}, {}
     for kind, selected in cohorts.items():
         tables[kind] = [{c['id']:c for c in u['candidates']} for u in selected]
@@ -52,6 +75,7 @@ async def decide(view, jev, memory):
                            'Other unit types receive their own decisions in parallel. '
                            'Consider current orders, health, resources and known entities. '
                            'Use selection_facts for unit counts, recent changes, damage and economic capabilities. '
+                           'Consider the strategic priority chosen by Jev alongside immediate threats. '
                            'Snapshot locations are stale, not live visible targets.',
             'criteria':criteria,
         }
@@ -79,6 +103,7 @@ async def decide_individual(view, jev, memory):
     state['explored_map'] = view.get('explored_map')
     state['visible_entities'] = view.get('visible_entities', [])
     state['last_known_entities'] = view.get('last_known_entities', [])
+    state['unit_type_facts'] = view.get('unit_type_facts', {})
     squad = [{**{k:u[k] for k in ('tag','type','position','health_fraction')},
               'build_progress':u.get('build_progress',1),
               'nearby_terrain':u.get('nearby_terrain', {})} for u in units]

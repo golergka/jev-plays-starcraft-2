@@ -1,6 +1,6 @@
 """Player-visible facts, mechanical action candidates and legality checks."""
 import math
-from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc, query_pb2 as query
+from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc, query_pb2 as query, data_pb2 as data_proto
 
 
 def pixel(image, x, y):
@@ -71,6 +71,7 @@ async def make_view(client, observation, data, info, objective):
         ignore_resource_requirements=False))
     available = {a.unit_tag: {b.ability_id for b in a.abilities} for a in abilities.abilities}
     names = {u.unit_id: u.name for u in data.units}
+    unit_catalog = {u.unit_id:u for u in data.units}
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
     catalog = {a.ability_id:a for a in data.abilities}
@@ -78,6 +79,17 @@ async def make_view(client, observation, data, info, objective):
     placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
+            'unit_type_facts': {
+                names.get(kind,str(kind)): {
+                    'mineral_cost':unit_catalog[kind].mineral_cost,
+                    'gas_cost':unit_catalog[kind].vespene_cost,
+                    'catalog_weapons':[{'targets':data_proto.Weapon.TargetType.Name(w.type),
+                                        'range':round(w.range,2),
+                                        'damage_per_cycle':round(w.damage*w.attacks,2),
+                                        'damage_per_time_unit_before_armor_and_bonuses':round(w.damage*w.attacks/w.speed,2) if w.speed else None}
+                                       for w in unit_catalog[kind].weapons],
+                    'note':'Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).',
+                } for kind in {u.unit_type for u in own+visible+snapshots} if kind in unit_catalog},
             'last_known_entities': [
                 {'type':names.get(u.unit_type,str(u.unit_type)),
                  'alliance':raw.Alliance.Name(u.alliance),'position':[u.pos.x,u.pos.y],
@@ -94,6 +106,8 @@ async def make_view(client, observation, data, info, objective):
                           'vespene': obs.player_common.vespene,
                           'food_used': obs.player_common.food_used,
                           'food_cap': obs.player_common.food_cap,
+                          'supply_in_construction':sum(unit_catalog[u.unit_type].food_provided for u in own
+                                                        if u.build_progress<1 and u.unit_type in unit_catalog),
                           'supply_remaining': max(0,obs.player_common.food_cap-obs.player_common.food_used),
                           'supply_blocked': obs.player_common.food_used >= obs.player_common.food_cap}}
     for unit in own:

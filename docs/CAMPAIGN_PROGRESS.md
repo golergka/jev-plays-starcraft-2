@@ -221,3 +221,26 @@ decides whether to keep attacking, retreat, harvest, build, train or delegate to
 individual control. A missing unit is not automatically called dead because
 campaign cinematics can alter observation ownership. The report now separates
 health/count/position by unit type so building health cannot hide army losses.
+
+The live reload is confirmed at revision `d83b309`. The combined continuation
+ended at its 300-second limit after 427 calls, costing $0.324737. Adding count
+facts did not restore a functioning force: the final report has no Marines and
+five observed SCVs. No API defeat or victory was returned; this attempt is stopped
+and retried, not falsely recorded as a completed mission. Summary:
+`037-worker-attack-failure.json`.
+
+## Lab 053: Jev chooses strategic priority with catalog weapon facts
+
+Retry The Outlaws from its initial state. Add catalog weapon ranges, damage per
+cycle and computed damage/time (before armor/bonuses) for observed or remembered
+unit types. Catalog data was read at game join; it is not a hidden enemy upgrade
+oracle. An empty weapon list does not establish safety, especially for garrisons.
+Also expose supply still under construction to avoid requiring Jev to count it.
+
+Every 112 loops, Jev chooses attack, strengthen, protect, explore, recover or hold
+from current observations. This becomes explicit semantic context for Jev's
+per-type decisions. Code does not execute any plan from that label, impose a
+build order, reserve particular workers, or force a tactical response. This is a
+combined context/decision-structure experiment, not an isolated ablation. It tests
+whether a separate strategic judgment avoids interpreting every unit's task as
+"attack the objective immediately," while retaining Jev-only action selection.
