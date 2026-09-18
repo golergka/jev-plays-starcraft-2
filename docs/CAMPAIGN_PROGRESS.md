@@ -203,3 +203,21 @@ its 400-call budget before this commit ($0.341052), so no live reload occurred i
 that run. Resumed the same running game with the new policy and fresh policy memory;
 the final preceding summary is `035-outlaws-individual.json`. This is a sequential
 continuation, not an independent comparison or a verified hot-reload event.
+
+The type-based model sent both Marines and SCVs toward the enemy base. At an
+intermediate observation only two Marines remained, while eleven SCVs were far
+from the mineral line. This is not labeled defeat: buildings remained and the
+game was live. The policy appears to prioritize the attack without adequately
+preserving its force or economy. Summary `036-cohorts-before-count-facts.json`
+is an intermediate snapshot, not a final result.
+
+## Lab 052: arithmetic and capability facts
+
+Following TypeSafe's documented advice to do counting/arithmetic in code, expose
+per-selection counts, count changes, damaged-unit counts, lowest health percent,
+and whether offered actions include harvesting, construction or training.
+These are measured facts, not a priority score or scripted response. Jev still
+decides whether to keep attacking, retreat, harvest, build, train or delegate to
+individual control. A missing unit is not automatically called dead because
+campaign cinematics can alter observation ownership. The report now separates
+health/count/position by unit type so building health cannot hide army losses.

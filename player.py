@@ -22,6 +22,20 @@ async def decide(view, jev, memory):
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities')}
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress')}
                       for u in units]
+    previous_counts = memory.get('previous_cohort_counts', {})
+    state['selection_facts'] = {}
+    for kind, selected in cohorts.items():
+        candidate_ids = {c['id'] for u in selected for c in u['candidates']}
+        state['selection_facts'][kind] = {
+            'count':len(selected),
+            'count_change_since_previous_decision':len(selected)-previous_counts.get(kind,len(selected)),
+            'damaged_count':sum(u.get('health_fraction',1)<1 for u in selected),
+            'lowest_health_percent':round(100*min(u.get('health_fraction',1) for u in selected)),
+            'some_can_harvest_minerals':any(k.startswith('gather_') for k in candidate_ids),
+            'some_can_construct_buildings':any(k.startswith('build_') for k in candidate_ids),
+            'some_can_train_units':any(c['description'].startswith('Train ') for u in selected for c in u['candidates']),
+        }
+    memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
     questions, tables = {}, {}
     for kind, selected in cohorts.items():
         tables[kind] = [{c['id']:c for c in u['candidates']} for u in selected]
@@ -37,6 +51,7 @@ async def decide(view, jev, memory):
                            'You may choose a shared order for this unit type or individual control. '
                            'Other unit types receive their own decisions in parallel. '
                            'Consider current orders, health, resources and known entities. '
+                           'Use selection_facts for unit counts, recent changes, damage and economic capabilities. '
                            'Snapshot locations are stale, not live visible targets.',
             'criteria':criteria,
         }

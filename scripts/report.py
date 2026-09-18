@@ -28,7 +28,13 @@ def distribution(tick):
         return None
     return {'health_total': sum(u['health'] for u in units),
             'max_separation': round(max(math.dist(a['position'],b['position'])
-                                        for a in units for b in units),1)}
+                                        for a in units for b in units),1),
+            'by_type':{kind:{'count':len(selected),
+                             'health_total':sum(u['health'] for u in selected),
+                             'center':[round(sum(u['position'][i] for u in selected)/len(selected),1) for i in (0,1)],
+                             'max_separation':round(max(math.dist(a['position'],b['position']) for a in selected for b in selected),1)}
+                       for kind in sorted({u['type'] for u in units})
+                       for selected in [[u for u in units if u['type']==kind]]}}
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
     'latency_median_ms':statistics.median(latencies) if latencies else None,
