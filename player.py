@@ -86,8 +86,15 @@ async def decide(view, jev, memory):
             navigation = {'loop': view['loop'], 'center': center, 'intent': choice}
             memory['navigation'] = navigation
     state['squad_intent_chosen_by_jev'] = navigation.get('intent')
+    # Round-robin inference scheduling only: no unit action is chosen here.
+    ordered = sorted(units,key=lambda u:u['tag'])
+    cursor = memory.get('decision_cursor', -1)
+    batch = ([u for u in ordered if u['tag'] > cursor]
+             + [u for u in ordered if u['tag'] <= cursor])[:6]
+    memory['decision_cursor'] = batch[-1]['tag']
+    jev.log('decision_batch',loop=view['loop'],unit_tags=[u['tag'] for u in batch])
     candidates = {}
-    for unit in units:
+    for unit in batch:
         tag = str(unit['tag'])
         options = {'continue': None}
         actions = {'continue': None}
