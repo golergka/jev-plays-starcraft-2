@@ -81,3 +81,15 @@ play resumes. Close the panel through the game UI; this is menu handling, not a
 model-controlled tactical choice. The harness now avoids inference on unchanged
 game loops and stops after ten seconds of a stalled clock, requesting UI inspection.
 The first economic trial remained at loop 354 and is not evidence of production.
+
+
+## Installed later-campaign map inventory
+
+Read-only CASC name enumeration found 41 Liberty map roots, 38 Swarm roots and
+26 Void roots on this installation. These counts include story/tutorial/evolution
+maps and are **not** counts of required campaign missions or proof of entitlement.
+The root paths differ: Swarm and Void insert `swarm/` or `void/` under
+`maps/campaign/`. The extractor now accepts `--campaign liberty|swarm|void` to
+handle those observed main-map paths. Nested evolution maps are not covered by
+that simple path construction. Later-campaign loading, dependencies, ownership
+and progress remain unverified; no victory is inferred from installed assets.

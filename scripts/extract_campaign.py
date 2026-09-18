@@ -11,6 +11,7 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--casc',required=True)
 parser.add_argument('--storm',required=True)
 parser.add_argument('--mission',default='traynor01')
+parser.add_argument('--campaign',choices=('liberty','swarm','void'),default='liberty')
 parser.add_argument('--storage',default='/Applications/StarCraft II')
 args=parser.parse_args()
 if not args.mission.isalnum(): raise ValueError('Mission must be an alphanumeric internal map name')
@@ -29,7 +30,9 @@ find_next=fn(C,'CascFindNextFile',[P,P]);find_close=fn(C,'CascFindClose',[P])
 create=fn(S,'SFileCreateArchive',[B,U,U,c.POINTER(P)])
 add=fn(S,'SFileAddFileEx',[P,B,B,U,U,U]);close_mpq=fn(S,'SFileCloseArchive',[P])
 store=P();assert open_store(args.storage.encode(),0,c.byref(store))
-prefix=b'campaigns\\liberty.sc2campaign\\base.sc2maps\\maps\\campaign\\' + args.mission.encode() + b'.sc2map\\'
+prefix=(f'campaigns\\{args.campaign}.sc2campaign\\base.sc2maps\\maps\\campaign\\'
+        + (f'{args.campaign}\\' if args.campaign!='liberty' else '')
+        + args.mission + '.sc2map\\').encode()
 finddata=c.create_string_buffer(65536);h=find_first(store,prefix+b'*',finddata,None)
 assert h and h!=P(-1).value
 names=[]

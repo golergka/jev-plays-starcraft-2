@@ -470,3 +470,11 @@ choose, with no automatic orders attached. Existing regroup/movement choices
 remain available. This tests whether concrete dispersion facts and an explicit
 strategic alternative change Jev's selections, rather than programming a minimum
 army size or rendezvous route. The current fresh trial continues through reload.
+
+
+Lab 065–066 ended at 499 successful calls ($0.203943) with sixteen SCVs, five
+Marines, three Depots and the base intact. No result. Jev selected assembling
+three times and repeatedly chose the Barracks as a regroup target, but the final
+Marine maximum separation was 56.7 map units. A different label and occasional
+regrouping do not establish sustained cohesion. Extend the same game with the
+unchanged policy for up to 1,000 calls / 600 seconds to evaluate persistence.
