@@ -68,6 +68,7 @@ async def run(args):
         data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True))
         started = time.monotonic()
         failures = 0
+        empty_since = None
         while time.monotonic()-started < args.seconds and jev.calls < args.max_calls:
             try:
                 revision = loader.refresh()
@@ -81,6 +82,10 @@ async def run(args):
                                      for r in observation.player_result])
                 break
             view = await make_view(client,observation,data,info,args.objective)
+            empty_since = None if view['self'] else (empty_since or time.monotonic())
+            if empty_since is not None and time.monotonic()-empty_since >= 10:
+                log('stopped',reason='No owned units observed for ten seconds; inspect mission UI for outcome')
+                break
             if args.follow_camera and view['self']:
                 # Presentation only: raw observations/actions do not depend on camera.
                 camera = sc.Action()

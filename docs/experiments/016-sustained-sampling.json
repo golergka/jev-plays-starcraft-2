@@ -1,0 +1,403 @@
+{
+  "run": "runs/20260918T210736.130300Z/events.jsonl",
+  "calls": 151,
+  "latency_median_ms": 353,
+  "latency_p95_ms": 521,
+  "cost_usd": 0.008819538,
+  "actions_submitted": 115,
+  "ticks_with_zero_submissions": 319,
+  "choices": {
+    "west": 79,
+    "continue": 60,
+    "join_4310695937": 20,
+    "join_4311220225": 6,
+    "east": 22,
+    "attack_4305190913": 2,
+    "south": 2
+  },
+  "navigation_choices": {
+    "west": 11,
+    "east": 3
+  },
+  "sampled_navigation_choices": {
+    "west": 9,
+    "regroup": 1,
+    "east": 3,
+    "engage": 1
+  },
+  "navigation_samples": [
+    {
+      "time": 1789765656.8020859,
+      "event": "navigation_sample",
+      "loop": 30733,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "south": 0.04,
+        "engage": 0.08,
+        "east": 0.1,
+        "north": 0.03,
+        "neutral": 0.01,
+        "regroup": 0.05,
+        "west": 0.68
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765661.824151,
+      "event": "navigation_sample",
+      "loop": 30846,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "regroup": 0.08,
+        "west": 0.82,
+        "north": 0.01,
+        "south": 0.02,
+        "east": 0.02,
+        "engage": 0.05
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765666.973109,
+      "event": "navigation_sample",
+      "loop": 30961,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "south": 0.02,
+        "neutral": 0.02,
+        "west": 0.82,
+        "east": 0.03,
+        "engage": 0.08,
+        "regroup": 0.03
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765672.1273978,
+      "event": "navigation_sample",
+      "loop": 31073,
+      "top_choice": "west",
+      "sampled_choice": "regroup",
+      "probabilities": {
+        "south": 0.01,
+        "neutral": 0.01,
+        "west": 0.8,
+        "east": 0.02,
+        "engage": 0.13,
+        "regroup": 0.02
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765677.307053,
+      "event": "navigation_sample",
+      "loop": 31188,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "north": 0.05,
+        "east": 0.13,
+        "regroup": 0.02,
+        "south": 0.05,
+        "neutral": 0.02,
+        "west": 0.73
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765682.633088,
+      "event": "navigation_sample",
+      "loop": 31306,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "east": 0.07,
+        "west": 0.86,
+        "neutral": 0.01,
+        "south": 0.03,
+        "north": 0.02,
+        "regroup": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765688.048846,
+      "event": "navigation_sample",
+      "loop": 31424,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "east": 0.05,
+        "north": 0.01,
+        "regroup": 0.01,
+        "south": 0.01,
+        "west": 0.92
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765693.380404,
+      "event": "navigation_sample",
+      "loop": 31542,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "regroup": 0.01,
+        "west": 0.83,
+        "north": 0.05,
+        "south": 0.03,
+        "east": 0.08
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765698.6139698,
+      "event": "navigation_sample",
+      "loop": 31658,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "west": 0.75,
+        "north": 0.05,
+        "regroup": 0.01,
+        "east": 0.14,
+        "south": 0.04,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765703.7297988,
+      "event": "navigation_sample",
+      "loop": 31770,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "east": 0.12,
+        "hold": 0.01,
+        "regroup": 0.01,
+        "north": 0.04,
+        "west": 0.77,
+        "south": 0.05
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765709.0033228,
+      "event": "navigation_sample",
+      "loop": 31888,
+      "top_choice": "west",
+      "sampled_choice": "east",
+      "probabilities": {
+        "east": 0.31,
+        "hold": 0.05,
+        "west": 0.44,
+        "regroup": 0.02,
+        "south": 0.09,
+        "north": 0.09
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765735.728699,
+      "event": "navigation_sample",
+      "loop": 32321,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "west": 0.05,
+        "east": 0.68,
+        "neutral": 0.01,
+        "engage": 0.16,
+        "south": 0.01,
+        "north": 0.08
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765740.795756,
+      "event": "navigation_sample",
+      "loop": 32436,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "east": 0.52,
+        "hold": 0.01,
+        "west": 0.07,
+        "neutral": 0.01,
+        "north": 0.11,
+        "south": 0.05,
+        "engage": 0.23
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765745.884951,
+      "event": "navigation_sample",
+      "loop": 32548,
+      "top_choice": "east",
+      "sampled_choice": "engage",
+      "probabilities": {
+        "west": 0.1,
+        "engage": 0.29,
+        "north": 0.05,
+        "hold": 0.01,
+        "south": 0.05,
+        "east": 0.49,
+        "neutral": 0.01
+      },
+      "seed": 20260918
+    }
+  ],
+  "navigation_centers": [
+    [
+      86.1,
+      60.1
+    ],
+    [
+      75.9,
+      57.9
+    ],
+    [
+      68.7,
+      53.0
+    ],
+    [
+      60.3,
+      47.6
+    ],
+    [
+      58.3,
+      46.2
+    ],
+    [
+      46.6,
+      44.7
+    ],
+    [
+      31.0,
+      45.5
+    ],
+    [
+      18.2,
+      51.7
+    ],
+    [
+      15.4,
+      53.0
+    ],
+    [
+      15.4,
+      53.0
+    ],
+    [
+      15.4,
+      53.0
+    ],
+    [
+      21.2,
+      53.0
+    ],
+    [
+      31.9,
+      57.0
+    ],
+    [
+      31.9,
+      57.0
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 215.0,
+    "max_separation": 11.8
+  },
+  "last_distribution": null,
+  "action_result_counts": {
+    "1": 115
+  },
+  "ticks_older_than_32_loops": 0,
+  "errors": [
+    {
+      "time": 1789765742.486877,
+      "event": "decision_error",
+      "error": "ServiceUnavailableResponseError",
+      "detail": "HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused"
+    }
+  ],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789765657.160928,
+    "event": "tick",
+    "loop": 30733,
+    "revision": "918a81e8cbe19b3b7ddd7ed267478580ceeb8006",
+    "own_units": 2,
+    "units": [
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          80.8125,
+          62.694580078125
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      },
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          91.4375,
+          57.5625
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      }
+    ],
+    "score": 100,
+    "decision_age_loops": 18,
+    "commands": [
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          74.8125,
+          62.694580078125
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          85.4375,
+          57.5625
+        ]
+      }
+    ],
+    "submitted": 2,
+    "action_results": [
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 816
+  },
+  "last_tick": {
+    "time": 1789765836.0934231,
+    "event": "tick",
+    "loop": 32685,
+    "revision": "918a81e8cbe19b3b7ddd7ed267478580ceeb8006",
+    "own_units": 0,
+    "units": [],
+    "score": 0,
+    "decision_age_loops": 0,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 10
+  }
+}
