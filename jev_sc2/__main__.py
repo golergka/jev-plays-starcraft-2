@@ -61,7 +61,14 @@ async def run(args):
             await client.start(args.map,args.opponent)
             log('joined_game')
         else:
-            await client.observe()
+            existing = await client.observe()
+            if client.status == sc.ended:
+                log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
+                                     for r in existing.player_result],source='attach_to_ended_game')
+                replay = await client.request('save_replay',sc.RequestSaveReplay())
+                (directory/'game.SC2Replay').write_bytes(replay.data)
+                log('finished',calls=0,cost=0,run=str(directory))
+                return
             if client.status != sc.in_game:
                 raise RuntimeError('--attach without --map needs an API game already in progress')
         info = await client.request('game_info',sc.RequestGameInfo())

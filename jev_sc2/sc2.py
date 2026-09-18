@@ -76,7 +76,7 @@ class SC2:
             return result
 
     async def start(self, map_path, opponent=False):
-        if self.status in {sc.in_game, sc.ended}:
+        if self.status == sc.in_game:
             await self.request('leave_game', sc.RequestLeaveGame())
         players = [sc.PlayerSetup(type=sc.Participant)]
         if opponent:

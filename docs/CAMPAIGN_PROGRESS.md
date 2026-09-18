@@ -1,7 +1,7 @@
 # Three-campaign objective
 
 Scope confirmed by the user: Wings of Liberty, Heart of the Swarm, and Legacy of
-the Void. No campaign has been completed and no mission victory is verified yet.
+the Void. No campaign has been completed. One mission victory is verified.
 
 The user subsequently authorized individual campaign missions played in sequence
 with progression recorded here. Native campaign controls and account achievement
@@ -10,7 +10,7 @@ Only verified victories advance this journal; merely loading a later map does no
 
 | Campaign | Mission | Verified result |
 | --- | --- | --- |
-| Wings of Liberty | Liberation Day (`traynor01`) | In progress; prior defeat, no win |
+| Wings of Liberty | Liberation Day (`traynor01`) | **Victory**, API player 1, loop 3512; lab 048 |
 | Wings of Liberty | The Outlaws (`traynor02`) | Economy smoke tests only; no win |
 | Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
 | Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
@@ -169,3 +169,17 @@ cinematic. The policy is unchanged. The harness now waits up to ninety seconds
 without inference when owned units disappear, avoiding repeated false stops for
 campaign cutscenes. A stalled clock or actual API result remains independently
 handled. No empty observation is classified as victory or defeat.
+
+**Verified victory:** reconnecting found the game already ended. A fresh API
+observation reported player 1 Victory at loop 3512. The last Jev-issued shared
+attack-move continued through the cinematic while the harness was disconnected;
+there were no assistant tactical inputs or substitute decisions. The rendered
+client showed the Headquarters destruction ending scene with Raynor alive.
+Saved `runs/lab048-victory/LiberationDay.SC2Replay` (20,515 bytes) and result JSON.
+The ended-game attach path now logs the actual result and saves the replay instead
+of raising an error. `033-liberation-day-victory.json` records the API result.
+
+This fresh attempt made 190 Jev calls costing $0.044435 before the cinematic
+interruption. It suggests the simpler shared-order interface is useful here;
+it does not establish robust hero protection, and the preceding injured-force
+attempt failed. The first mission is now complete in our standalone progression.
