@@ -52,7 +52,9 @@ async def run(args):
     client = await SC2.connect(args.port, process=proc)
     try:
         ping = await client.request('ping',sc.RequestPing())
-        log('connected',version=ping.game_version,revision=loader.revision)
+        log('connected',version=ping.game_version,revision=loader.revision,
+            objective=args.objective,seconds=args.seconds,max_calls=args.max_calls,
+            max_age_loops=args.max_age_loops)
         if args.map:
             log('loading_map',map=Path(args.map).name,opponent=args.opponent)
             await client.start(args.map,args.opponent)
@@ -108,6 +110,8 @@ async def run(args):
                 response = await client.request('action',sc.RequestAction(actions=actions))
                 results = list(response.result)
             log('tick',loop=view['loop'],revision=loader.revision,own_units=len(view['self']),
+                units=[{k:u[k] for k in ('tag','type','position','health','health_fraction')}
+                       for u in view['self']],
                 score=fresh.observation.score.score,decision_age_loops=age,
                 commands=commands,submitted=len(actions),action_results=results,
                 action_errors=[str(e) for e in fresh.action_errors],
