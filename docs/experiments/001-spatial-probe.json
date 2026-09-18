@@ -1,0 +1,268 @@
+[
+  {
+    "representation": "named",
+    "batch": false,
+    "latency_ms": 407,
+    "answers": {
+      "case_a": {
+        "choice": "south",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "east": 0.0,
+          "south": 1.0,
+          "north": 0.0,
+          "west": 0.0
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "named",
+    "batch": false,
+    "latency_ms": 366,
+    "answers": {
+      "case_b": {
+        "choice": "north",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "south": 0.0,
+          "west": 0.0,
+          "east": 0.0,
+          "north": 1.0
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "named",
+    "batch": false,
+    "latency_ms": 332,
+    "answers": {
+      "case_c": {
+        "choice": "west",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "east": 0.0,
+          "north": 0.0,
+          "west": 1.0,
+          "south": 0.0
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "named",
+    "batch": false,
+    "latency_ms": 540,
+    "answers": {
+      "case_d": {
+        "choice": "east",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "west": 0.0,
+          "south": 0.0,
+          "north": 0.0,
+          "east": 1.0
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "named",
+    "batch": true,
+    "latency_ms": 340,
+    "answers": {
+      "case_a": {
+        "choice": "south",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "west": 0.0,
+          "north": 0.0,
+          "east": 0.0,
+          "south": 1.0
+        }
+      },
+      "case_b": {
+        "choice": "north",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "west": 0.0,
+          "north": 1.0,
+          "east": 0.0,
+          "south": 0.0
+        }
+      },
+      "case_c": {
+        "choice": "west",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "west": 1.0,
+          "north": 0.0,
+          "east": 0.0,
+          "south": 0.0
+        }
+      },
+      "case_d": {
+        "choice": "east",
+        "type": "choice",
+        "confidence": 0.99,
+        "probabilities": {
+          "west": 0.01,
+          "north": 0.0,
+          "east": 0.99,
+          "south": 0.0
+        }
+      }
+    },
+    "correct": 4,
+    "total": 4
+  },
+  {
+    "representation": "numeric",
+    "batch": false,
+    "latency_ms": 382,
+    "answers": {
+      "case_a": {
+        "choice": "south",
+        "type": "choice",
+        "confidence": 0.54,
+        "probabilities": {
+          "west": 0.05,
+          "north": 0.27,
+          "east": 0.03,
+          "south": 0.65
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "numeric",
+    "batch": false,
+    "latency_ms": 399,
+    "answers": {
+      "case_b": {
+        "choice": "south",
+        "type": "choice",
+        "confidence": 0.59,
+        "probabilities": {
+          "north": 0.25,
+          "west": 0.02,
+          "east": 0.04,
+          "south": 0.69
+        }
+      }
+    },
+    "correct": 0,
+    "total": 1
+  },
+  {
+    "representation": "numeric",
+    "batch": false,
+    "latency_ms": 328,
+    "answers": {
+      "case_c": {
+        "choice": "west",
+        "type": "choice",
+        "confidence": 0.83,
+        "probabilities": {
+          "east": 0.08,
+          "south": 0.04,
+          "west": 0.87,
+          "north": 0.01
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "numeric",
+    "batch": false,
+    "latency_ms": 582,
+    "answers": {
+      "case_d": {
+        "choice": "east",
+        "type": "choice",
+        "confidence": 0.88,
+        "probabilities": {
+          "east": 0.92,
+          "south": 0.01,
+          "west": 0.06,
+          "north": 0.01
+        }
+      }
+    },
+    "correct": 1,
+    "total": 1
+  },
+  {
+    "representation": "numeric",
+    "batch": true,
+    "latency_ms": 959,
+    "answers": {
+      "case_a": {
+        "choice": "south",
+        "type": "choice",
+        "confidence": 0.36,
+        "probabilities": {
+          "south": 0.52,
+          "west": 0.01,
+          "east": 0.0,
+          "north": 0.47
+        }
+      },
+      "case_b": {
+        "choice": "north",
+        "type": "choice",
+        "confidence": 0.35,
+        "probabilities": {
+          "west": 0.0,
+          "south": 0.49,
+          "east": 0.0,
+          "north": 0.51
+        }
+      },
+      "case_c": {
+        "choice": "west",
+        "type": "choice",
+        "confidence": 0.87,
+        "probabilities": {
+          "west": 0.9,
+          "south": 0.0,
+          "east": 0.1,
+          "north": 0.0
+        }
+      },
+      "case_d": {
+        "choice": "east",
+        "type": "choice",
+        "confidence": 0.54,
+        "probabilities": {
+          "west": 0.34,
+          "south": 0.0,
+          "east": 0.66,
+          "north": 0.0
+        }
+      }
+    },
+    "correct": 4,
+    "total": 4
+  }
+]
