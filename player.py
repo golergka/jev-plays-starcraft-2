@@ -26,10 +26,17 @@ async def decide(view, jev, memory):
             'position': [round(u['position'][0]+e['east_offset'], 1),
                          round(u['position'][1]+e['north_offset'], 1)],
         } for u in units for e in u['surroundings']}
+        outcomes = memory.setdefault('navigation_outcomes', [])
+        if navigation:
+            outcomes.append({'intent': navigation['intent'],
+                             'elapsed_loops': view['loop']-navigation['loop'],
+                             'displacement': round(math.dist(center, navigation['center']), 1)})
+            del outcomes[:-8]
         intent = await jev.ask({
             'objective': view['objective'], 'squad_center': center,
             'visible_entities': list(surroundings.values()),
             'previous_navigation': navigation,
+            'recent_intent_outcomes': outcomes,
         }, {'navigation': {
             'type': 'choice',
             'instructions': 'Choose the squad intent that best advances the mission objective. '
