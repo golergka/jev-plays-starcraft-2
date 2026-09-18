@@ -68,7 +68,11 @@ accepted Jev commands; it has not yet produced a mission victory. Stock campaign
 progression, research and unlocks are not implemented.
 
 The policy now asks Jev for a squad intent periodically, then asks Jev for each
-unit's action. In the first trial this stopped repeated dog-following but produced
+unit's action. The current experiment samples the squad intent from Jev's returned
+probabilities using seed `20260918`; individual action choices are unchanged.
+`navigation_sample` events record the original top choice, sampled choice and
+weights. The seed resets on a new harness run and survives commit reloads.
+In the first hierarchy trial this stopped repeated dog-following but produced
 a northward movement plateau. Accepted commands are not evidence of useful motion.
 Reports include squad centers, navigation choices and engine action-result codes;
 the commit journal records hypotheses and outcomes.
