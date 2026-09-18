@@ -428,3 +428,19 @@ Exclude selections with no candidate actions from contribution questions. Their
 purchase opportunities remain in the global investment decision and their state
 remains visible. This does not suppress any available action or select a tactic.
 A regression test ensures a purchase-only building gets no empty control query.
+
+
+## Lab 064: explain purchased capabilities from observed controls
+
+The first 13 ticks of lab 063 had four stale decisions, versus 30/33 in the prior
+inspected window. This is a sequential sample, not a latency benchmark. Jev chose
+Marine purchases or saving resources and stopped adding workers in that window.
+A single Barracks still limits production despite the large accumulated bank.
+
+Purchase descriptions have costs and supply effects but omit what a building can
+do. Learn Train/Build/Harvest capabilities from actually offered own-unit controls
+and retain them in policy memory. Present those observations directly beside each
+investment, along with existing counts and current orders. This makes, for example,
+an owned production building's observed training capability explicit without
+hardcoding which building to buy or giving Jev a build order. Unseen unit types
+remain capability-unknown. This knowledge resets with a harness restart.

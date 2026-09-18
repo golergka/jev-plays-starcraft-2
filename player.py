@@ -59,7 +59,10 @@ async def choose_investment(view, state, jev):
     criteria = {'save':'Make no new purchase now; preserve resources and let existing production/construction finish.'}
     for i,name in enumerate(names):
         example = projects[name][0][1]
-        criteria[f'project_{i}'] = f'Purchase one {name}. Project effects and cost: {example.get("project")}. Choose to improve overall mission progress, considering existing units, current orders, resources and recent outcomes.'
+        criteria[f'project_{i}'] = (f'Purchase one {name}. Project effects and cost: {example.get("project")}. '
+                                  f'Observed capabilities of this type: {state.get("observed_capabilities_by_type",{}).get(name,"not yet observed")}. '
+                                  f'Existing selection facts: {state.get("selection_facts",{}).get(name,"none owned")}. '
+                                  'Compare its added capability with the other investments and saving resources.')
     answer = await jev.ask(state, {'investment': {
         'type':'choice',
         'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
@@ -127,6 +130,17 @@ async def decide(view, jev, memory):
         cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities','unit_type_facts')}
     state['recent_outcomes'] = recent_outcomes(view, memory)
+    learned = memory.setdefault('observed_capabilities_by_type', {})
+    for unit in view['self']:
+        capabilities = set(learned.get(unit['type'], []))
+        for candidate in unit['candidates']:
+            label = candidate['description']
+            if label.startswith(('Train ', 'Build ')):
+                capabilities.add(label.split(';')[0].split(' at visible')[0])
+            if candidate['id'].startswith('gather_'):
+                capabilities.add('Harvest resources')
+        learned[unit['type']] = sorted(capabilities)
+    state['observed_capabilities_by_type'] = learned
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress')}
                       for u in units]
     previous_counts = memory.get('previous_cohort_counts', {})
