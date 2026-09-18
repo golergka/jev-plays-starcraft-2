@@ -875,3 +875,20 @@ concrete support choices include single workers. The first 17 lab-085 ticks stil
 included 11 stale decisions (median 1458ms), so collapsing small menus alone did
 not resolve latency. Larger support menus retain the extra executor query. This
 remains an unresolved throughput issue, not a claimed improvement in survival.
+
+## Lab 087: compact strategic and contribution context
+
+A live sample had median strategy and contribution request states near 37k
+characters, with median call latencies 472ms and 481ms. Concrete-order calls took
+493ms median beside roughly 19k-character questions. Repeating full per-unit and
+map data at every hierarchy level consumed the freshness budget before action.
+
+Use compact context for strategy and contribution queries, retaining objective,
+resources, current orders, health/dispersion, capabilities, observed outcomes,
+engine feedback, and visible/stale entity counts. Add computed selection centers,
+nearest visible enemy distance, nearby visible threat counts, cargo totals and
+harvester assignments. Concrete order queries retain the full detailed view.
+No option or action is chosen by summarization. This does lose exact individual
+positions at the abstract stages; those remain available at concrete selection.
+Forty-five tests pass. Measure actual latency and stale ticks after reload rather
+than treating smaller character counts as proof of better real-time control.

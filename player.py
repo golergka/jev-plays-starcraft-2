@@ -199,6 +199,17 @@ def selection_facts(view, cohorts, previous_counts):
         candidate_ids = {c['id'] for u in economic_selected for c in u['candidates']}
         facts[kind] = {
             'count':len(selected),
+            'center':[round(sum(u['position'][i] for u in selected)/len(selected),1) for i in (0,1)],
+            'nearest_visible_enemy_distance':round(min((math.dist(u['position'],e['position'])
+                for u in selected for e in view.get('visible_entities',[]) if e['alliance']=='Enemy'),default=math.inf),1)
+                if any(e['alliance']=='Enemy' for e in view.get('visible_entities',[])) else None,
+            'visible_enemies_within_12_of_any_member':dict(Counter(e['type'] for e in view.get('visible_entities',[])
+                if e['alliance']=='Enemy' and any(math.dist(u['position'],e['position'])<=12 for u in selected))),
+            'cargo_slots_used':sum((u.get('cargo') or {}).get('used',0) for u in selected),
+            'cargo_slots_available':sum(max(0,(u.get('cargo') or {}).get('capacity',0)-(u.get('cargo') or {}).get('used',0)) for u in selected),
+            'passengers_by_type':dict(Counter(p['type'] for u in selected for p in (u.get('cargo') or {}).get('passengers',[]))),
+            'harvesters_assigned':sum((u.get('harvesters') or {}).get('assigned',0) for u in selected),
+            'harvesters_ideal':sum((u.get('harvesters') or {}).get('ideal',0) for u in selected),
             'total_health':round(sum(u.get('health',0) for u in selected),1),
             'max_separation':round(max(math.dist(a['position'],b['position']) for a in selected for b in selected),1),
             'largest_distance_to_nearest_selection_member':round(max(min(math.dist(a['position'],b['position']) for b in selected if b['tag']!=a['tag']) for a in selected),1) if len(selected)>1 else None,
@@ -306,7 +317,7 @@ async def decide(view, jev, memory):
             'recover':'Restore income and replace losses.',
             'continue_operations':'Let current tasks progress before changing commitment.',
         }
-        decision = await jev.ask({**state,'previous_strategy':strategy}, {'strategy': {
+        decision = await jev.ask({**investment_state(state),'previous_strategy':strategy}, {'strategy': {
             'type':'choice',
             'instructions':'Choose the current strategic priority for completing the mission. '
                            'Consider resources, own force, known enemy force, and recent_outcomes. Reassess your previous strategy using these measured outcomes. '
@@ -450,7 +461,7 @@ async def decide(view, jev, memory):
                     for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
     async def choose_orders():
-        roles = await jev.ask(state,purpose_questions) if purpose_questions else {}
+        roles = await jev.ask(investment_state(state),purpose_questions) if purpose_questions else {}
         answers, concrete_questions = {}, {}
         for kind,q in questions.items():
             role=roles.get(f'purpose_{kind}',{}).get('choice')

@@ -546,7 +546,7 @@ def test_support_capability_is_visible_before_jev_selects_contribution():
                 return {'strategy':{'choice':'hold'}}
             if 'purpose_Carrier' in questions:
                 assert 'load owned units' in questions['purpose_Carrier']['criteria']['other']
-                assert state['units'][0]['cargo']['capacity']==4
+                assert state['selection_facts']['Carrier']['count']==1
                 return {'purpose_Carrier':{'choice':'other'}}
             assert 'support_ability_3_2_only_1' in questions['Carrier']['criteria']
             return {'Carrier':{'choice':'support_ability_3_2_only_1'}}
@@ -597,3 +597,16 @@ def test_income_observation_distinguishes_missing_from_zero():
     view=asyncio.run(make_view(Client(),obs,data,info,'test'))
     assert view['resources']['estimated_minerals_per_minute']==0
     assert view['resources']['estimated_vespene_per_minute']==123
+
+
+def test_compact_contribution_retains_measured_threats_and_existing_work():
+    import player
+    units=[{'tag':1,'type':'Worker','position':[0,0],'orders':[{'ability':'Harvest'}],'candidates':[]}]
+    view={'self':units,'visible_entities':[{'type':'Threat','alliance':'Enemy','position':[3,4]},
+                                          {'type':'Remote','alliance':'Enemy','position':[100,100]}]}
+    facts=player.selection_facts(view,{'Worker':units},{})
+    assert facts['Worker']['nearest_visible_enemy_distance']==5
+    assert facts['Worker']['visible_enemies_within_12_of_any_member']=={'Threat':1}
+    compact=player.investment_state({'selection_facts':facts,'units':units,**view})
+    assert 'units' not in compact and 'self' not in compact
+    assert compact['selection_facts']['Worker']['current_order_counts']=={'Harvest':1}
