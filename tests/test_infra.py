@@ -280,12 +280,13 @@ def test_build_sites_require_visible_footprint_and_engine_approval():
                 result.abilities.add(unit_tag=1).abilities.add(ability_id=319)
             else:
                 assert not body.ignore_resource_requirements
-                assert len(body.placements)==3  # West overlaps an unseen cell.
+                assert not any(p.target_pos.x==8 and p.target_pos.y==14 for p in body.placements)
                 assert all(p.placing_unit_tag==1 for p in body.placements)
-                for code in [1,44,1]: result.placements.add(result=code)
+                for p in body.placements:
+                    result.placements.add(result=1 if (p.target_pos.x,p.target_pos.y) in {(14,28),(20,14)} else 44)
             return result
     view=asyncio.run(make_view(Client(),obs,data,info,'build test'))
-    assert {c['id'] for c in view['self'][0]['candidates']} == {'build_319_north','build_319_east'}
+    assert {c['id'] for c in view['self'][0]['candidates']} == {'build_319_north_14','build_319_east'}
 
 
 def test_concurrent_jev_calls_reserve_budget(monkeypatch):

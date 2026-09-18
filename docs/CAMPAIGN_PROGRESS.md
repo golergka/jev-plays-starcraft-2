@@ -311,3 +311,23 @@ workers had a legal site, leaving only an indirect generic individual-control
 option. Jev now explicitly chooses both builder and site from engine-approved
 candidates. Tests verify non-first purchase selection by Jev and construction
 availability when only one worker can build. Seventeen tests pass.
+
+Continuation result: visible **DEFEAT / All of your structures have been destroyed**.
+Jev kept choosing income for SCVs during the raid, even after choosing protect as
+the strategic priority once. This is a real defensive decision failure. The API
+did not return a result; the game clock stalled. The continuation began with a
+large mineral bank accumulated by persistent mining orders while the harness was
+stopped, so it is not a controlled fresh-policy comparison. 88 calls cost $0.034277.
+
+## Lab 057: widen the legal building-site search
+
+The building menu also suffered from testing only four locations six units from
+each worker. The crowded mineral-line continuation offered no construction sites.
+Query the same four compass directions at distances 6, 10 and 14, retaining at
+most four engine-approved sites per ability/worker. Every footprint must still be
+currently visible and within the playable area. No site is selected automatically.
+Expose queried Build ability names separately from generated sites, so an empty
+site list is not represented as proof that the unit lacks construction abilities.
+The placement test now requires an accepted farther site while rejecting closer
+sites and an unseen footprint. Retry The Outlaws from a fresh initial state with
+the spending and individual-builder changes present from the beginning.

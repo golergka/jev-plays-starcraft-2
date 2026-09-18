@@ -61,6 +61,7 @@ async def decide(view, jev, memory):
             'lowest_health_percent':round(100*min(u.get('health_fraction',1) for u in selected)),
             'some_can_harvest_minerals':any(k.startswith('gather_') for k in candidate_ids),
             'some_can_construct_buildings':any(k.startswith('build_') for k in candidate_ids),
+            'available_build_abilities':sorted({a for u in selected for a in u.get('available_build_abilities',[])}),
             'some_can_train_units':any(c['description'].startswith('Train ') for u in selected for c in u['candidates']),
         }
     memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}

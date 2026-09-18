@@ -133,7 +133,11 @@ async def make_view(client, observation, data, info, objective):
             if label.startswith('Build ') and catalog[ability].target == 2:
                 radius = catalog[ability].footprint_radius or 1.5
                 offset = radius % 1
-                for direction, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
+                for direction, dx, dy in [
+                    (name if distance==6 else f'{name}_{distance}',vx*distance,vy*distance)
+                    for distance in (6,10,14)
+                    for name,vx,vy in [('north',0,1),('south',0,-1),('east',1,0),('west',-1,0)]
+                ]:
                     x, y = math.floor(unit.pos.x)+dx+offset, math.floor(unit.pos.y)+dy+offset
                     cells = [(px,py) for px in range(math.floor(x-radius),math.ceil(x+radius))
                              for py in range(math.floor(y-radius),math.ceil(y+radius))]
@@ -236,6 +240,8 @@ async def make_view(client, observation, data, info, objective):
                                            'description':f'Attack-move six map units {label}, engaging enemies encountered on the way; destination: {terrain[label]}',
                                            'command':command(attack,point=[x,y])})
         view['self'].append({'tag':unit.tag, 'type':names.get(unit.unit_type,str(unit.unit_type)),
+                             'available_build_abilities':[ability_names[a] for a in sorted(legal)
+                                                          if ability_names.get(a,'').startswith('Build ')],
                              'build_progress':round(unit.build_progress,3),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
                              'shield':unit.shield, 'weapon_cooldown':unit.weapon_cooldown,
@@ -252,9 +258,13 @@ async def make_view(client, observation, data, info, objective):
             placements=placements,ignore_resource_requirements=False))
         if len(checked.placements) != len(placement_candidates):
             raise RuntimeError('SC2 placement response length mismatch')
+        site_counts = {}
         for (candidates,candidate), result in zip(placement_candidates,checked.placements):
             if result.result == 1:
-                candidates.append(candidate)
+                key = (candidate['command']['unit_tag'],candidate['command']['ability_id'])
+                if site_counts.get(key,0)<4:
+                    candidates.append(candidate)
+                    site_counts[key]=site_counts.get(key,0)+1
     return view
 
 
