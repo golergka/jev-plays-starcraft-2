@@ -82,7 +82,8 @@ class SC2:
         if opponent:
             players.append(sc.PlayerSetup(type=sc.Computer, race=common.Zerg, difficulty=sc.VeryEasy))
         await self.request('create_game', sc.RequestCreateGame(
-            local_map=sc.LocalMap(map_path=str(Path(map_path).expanduser().resolve())),
+            local_map=sc.LocalMap(map_path=Path(map_path).name,
+                                 map_data=Path(map_path).expanduser().read_bytes()),
             player_setup=players, disable_fog=False, realtime=True))
         return await self.request('join_game', sc.RequestJoinGame(
             race=common.Terran, player_name='Jev', options=sc.InterfaceOptions(

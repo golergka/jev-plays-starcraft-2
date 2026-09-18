@@ -54,7 +54,9 @@ async def run(args):
         ping = await client.request('ping',sc.RequestPing())
         log('connected',version=ping.game_version,revision=loader.revision)
         if args.map:
+            log('loading_map',map=Path(args.map).name,opponent=args.opponent)
             await client.start(args.map,args.opponent)
+            log('joined_game')
         else:
             await client.observe()
             if client.status != sc.in_game:

@@ -58,8 +58,10 @@ def test_latest_build_numerically(tmp_path):
     assert 'Base100' in str(find_executable(tmp_path))
 
 
-def test_real_websocket_protocol_roundtrip():
+def test_real_websocket_protocol_roundtrip(tmp_path):
     from websockets.asyncio.server import serve
+    map_path = tmp_path/'test.SC2Map'
+    map_path.write_bytes(b'fixture-map-bytes')
     async def scenario():
         requests=[]
         async def server(ws):
@@ -77,11 +79,12 @@ def test_real_websocket_protocol_roundtrip():
             port=service.sockets[0].getsockname()[1]
             client=await SC2.connect(port)
             assert (await client.request('ping',sc.RequestPing())).game_version=='fixture'
-            await client.start('/tmp/test.SC2Map')
+            await client.start(map_path)
             await client.observe()
             await client.ws.close()
         assert [r.WhichOneof('request') for r in requests]==['ping','create_game','join_game','observation']
         assert requests[1].create_game.realtime
+        assert requests[1].create_game.local_map.map_data == b'fixture-map-bytes'
         assert not requests[1].create_game.disable_fog
         assert requests[1].create_game.player_setup[0].type==sc.Participant
         assert not requests[2].join_game.HasField('observed_player_id')
