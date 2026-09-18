@@ -857,3 +857,21 @@ Forty-three tests pass. This reduces one sequential inference for small support
 menus without relaxing observation freshness or replacing any choice with a
 script. Evaluate live latency and accepted commands after the commit reload;
 do not assume fewer requests automatically improve survival.
+
+## Lab 086: distinguish resource balance from income
+
+The prior defeat screen showed zero assigned mineral workers. The policy had
+balances and net resource changes, but these combine income with spending and
+cannot establish whether income exists. Expose own-player collection-rate
+estimates (minerals/vespene per minute) and owned structures' assigned/ideal
+harvesters. Missing protocol fields remain null rather than becoming zero.
+These are observations, with no worker-allocation rule or production preference.
+The official definitions are in
+https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/score.proto .
+No enemy kill scores or hidden information are added. Forty-four tests pass.
+
+The current retry reloaded labs 084–085. Strategy choices changed to protect;
+concrete support choices include single workers. The first 17 lab-085 ticks still
+included 11 stale decisions (median 1458ms), so collapsing small menus alone did
+not resolve latency. Larger support menus retain the extra executor query. This
+remains an unresolved throughput issue, not a claimed improvement in survival.

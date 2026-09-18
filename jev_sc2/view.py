@@ -187,6 +187,10 @@ async def make_view(client, observation, data, info, objective):
                                          info.start_raw.pathing_grid,area),
             'resources': {'minerals': obs.player_common.minerals,
                           'vespene': obs.player_common.vespene,
+                          'estimated_minerals_per_minute': (round(obs.score.score_details.collection_rate_minerals,1)
+                              if obs.score.score_details.HasField('collection_rate_minerals') else None),
+                          'estimated_vespene_per_minute': (round(obs.score.score_details.collection_rate_vespene,1)
+                              if obs.score.score_details.HasField('collection_rate_vespene') else None),
                           'food_used': obs.player_common.food_used,
                           'food_cap': obs.player_common.food_cap,
                           'supply_in_construction':sum(unit_catalog[u.unit_type].food_provided for u in own
@@ -329,6 +333,8 @@ async def make_view(client, observation, data, info, objective):
                              'available_build_abilities':[ability_names[a] for a in sorted(legal)
                                                           if ability_names.get(a,'').startswith('Build ')],
                              'build_progress':round(unit.build_progress,3),
+                             'harvesters':{'assigned':unit.assigned_harvesters,'ideal':unit.ideal_harvesters}
+                                 if unit.HasField('ideal_harvesters') else None,
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
                              'shield':unit.shield, 'energy':unit.energy,
                              'cargo':{'used':unit.cargo_space_taken,'capacity':unit.cargo_space_max,

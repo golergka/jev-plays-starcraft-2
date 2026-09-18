@@ -582,3 +582,18 @@ def test_engine_feedback_distinguishes_rejection_acceptance_and_stale_drop():
     assert f['accepted']==0 and not f['discarded_as_stale']
     assert action_feedback([a],[error_pb2.Success],100,1,5,32)['accepted']==1
     assert action_feedback([],[],100,1,40,32)['discarded_as_stale']
+
+
+def test_income_observation_distinguishes_missing_from_zero():
+    from s2clientprotocol import query_pb2 as query
+    class Client:
+        async def request(self,*args): return query.ResponseQuery()
+    obs=sc.ResponseObservation()
+    data=sc.ResponseData(); info=sc.ResponseGameInfo()
+    view=asyncio.run(make_view(Client(),obs,data,info,'test'))
+    assert view['resources']['estimated_minerals_per_minute'] is None
+    obs.observation.score.score_details.collection_rate_minerals=0
+    obs.observation.score.score_details.collection_rate_vespene=123
+    view=asyncio.run(make_view(Client(),obs,data,info,'test'))
+    assert view['resources']['estimated_minerals_per_minute']==0
+    assert view['resources']['estimated_vespene_per_minute']==123
