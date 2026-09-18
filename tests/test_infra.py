@@ -56,3 +56,32 @@ def test_latest_build_numerically(tmp_path):
         p=tmp_path/f'Versions/Base{version}/SC2.app/Contents/MacOS/SC2'
         p.parent.mkdir(parents=True); p.touch()
     assert 'Base100' in str(find_executable(tmp_path))
+
+
+def test_real_websocket_protocol_roundtrip():
+    from websockets.asyncio.server import serve
+    async def scenario():
+        requests=[]
+        async def server(ws):
+            async for payload in ws:
+                request=sc.Request.FromString(payload)
+                requests.append(request)
+                kind=request.WhichOneof('request')
+                reply=sc.Response(id=request.id,status=sc.in_game)
+                getattr(reply,kind).SetInParent()
+                if kind=='ping': reply.ping.game_version='fixture'
+                await ws.send(reply.SerializeToString())
+        async with serve(server,'127.0.0.1',0) as service:
+            port=service.sockets[0].getsockname()[1]
+            client=await SC2.connect(port)
+            assert (await client.request('ping',sc.RequestPing())).game_version=='fixture'
+            await client.start('/tmp/test.SC2Map')
+            await client.observe()
+            await client.ws.close()
+        assert [r.WhichOneof('request') for r in requests]==['ping','create_game','join_game','observation']
+        assert requests[1].create_game.realtime
+        assert not requests[1].create_game.disable_fog
+        assert requests[1].create_game.player_setup[0].type==sc.Participant
+        assert not requests[2].join_game.HasField('observed_player_id')
+        assert not requests[3].observation.disable_fog
+    asyncio.run(scenario())

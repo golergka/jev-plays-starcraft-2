@@ -9,6 +9,9 @@ participates in the game loop. This is an early combat prototype, not a complete
 1. Install StarCraft II using Battle.net and launch it once to finish downloading data.
 2. `uv sync` and put `OPENROUTER_API_KEY` in `.env` (see `.env.example`).
 3. `uv run python -m jev_sc2 --doctor`
+   Fetch the reference map: `uv run python scripts/fetch_map.py`.
+   Blizzard's MarineMicro example uses a computer opponent:
+   `uv run python -m jev_sc2 --map maps/MarineMicro.SC2Map --opponent`.
 4. Provide a local single-player `.SC2Map`:
    `uv run python -m jev_sc2 --map /absolute/path/mission.SC2Map`
    Add `--opponent` only for a melee map requiring a computer opponent.
@@ -35,6 +38,7 @@ are the lab journal: hypothesis, measured outcome, failure, and next experiment.
 Every decision logs its input, questions, full probabilities, model version, cost,
 latency, policy revision, action results, and observation age to JSONL. Inspect it
 with ordinary Python or `tail -f runs/<run>/events.jsonl`. No API keys are logged.
+Use `uv run python scripts/report.py` for the latest run's measured summary.
 
 `uv run pytest -q` checks committed-source reload and command/visibility boundaries.
 

@@ -55,7 +55,7 @@ class SC2:
             if reply.HasField('id') and reply.id != req.id:
                 raise RuntimeError('SC2 response ID mismatch')
             result = getattr(reply, name)
-            if hasattr(result, 'error') and result.error:
+            if 'error' in result.DESCRIPTOR.fields_by_name and result.HasField('error'):
                 raise RuntimeError(f'{name}: {result}')
             return result
 
@@ -73,4 +73,3 @@ class SC2:
 
     async def observe(self):
         return await self.request('observation', sc.RequestObservation(disable_fog=False))
-
