@@ -78,6 +78,12 @@ async def run(args):
                                      for r in observation.player_result])
                 break
             view = await make_view(client,observation,data,info,args.objective)
+            if args.follow_camera and view['self']:
+                # Presentation only: raw observations/actions do not depend on camera.
+                camera = sc.Action()
+                camera.action_raw.camera_move.center_world_space.x = sum(u['position'][0] for u in view['self'])/len(view['self'])
+                camera.action_raw.camera_move.center_world_space.y = sum(u['position'][1] for u in view['self'])/len(view['self'])
+                await client.request('action',sc.RequestAction(actions=[camera]))
             decision_start = time.monotonic()
             try:
                 commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),3)
@@ -124,6 +130,7 @@ def main():
     parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--window-size',type=int,nargs=2,default=(1280,800),metavar=('WIDTH','HEIGHT'))
     parser.add_argument('--window-position',type=int,nargs=2,metavar=('X','Y'))
+    parser.add_argument('--follow-camera',action='store_true',help='Center display camera on owned units; does not change raw policy observations')
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)

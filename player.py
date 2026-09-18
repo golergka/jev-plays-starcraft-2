@@ -5,6 +5,7 @@ The harness owns sockets, action validation, telemetry, and persistent memory.
 Commit this file to activate it at the next decision boundary.
 """
 import json
+import math
 
 
 async def decide(view, jev, memory):
@@ -21,7 +22,17 @@ async def decide(view, jev, memory):
         options = {'continue': None}
         actions = {'continue': None}
         for candidate in unit['candidates']:
-            options[candidate['id']] = candidate['description']
+            description = candidate['description']
+            destination = candidate['command'].get('point')
+            enemies = [e for e in unit['surroundings'] if e['alliance'] == 'Enemy']
+            if destination is not None and enemies:
+                dx = destination[0] - unit['position'][0]
+                dy = destination[1] - unit['position'][1]
+                before = min(e['distance'] for e in enemies)
+                after = min(math.hypot(e['east_offset']-dx, e['north_offset']-dy) for e in enemies)
+                change = 'farther from' if after > before else 'closer to'
+                description += f'; destination is {change} the nearest visible enemy ({before:.1f} to {after:.1f} map units), assuming enemies stay still'
+            options[candidate['id']] = description
             actions[candidate['id']] = candidate['command']
         candidates[tag] = actions
         local = {k: v for k, v in unit.items() if k not in {'candidates', 'tag'}}
