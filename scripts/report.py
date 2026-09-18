@@ -11,6 +11,7 @@ rows = [json.loads(line) for line in path.read_text().splitlines()]
 calls = [r for r in rows if r['event']=='jev']
 ticks = [r for r in rows if r['event']=='tick']
 latencies = sorted(r['latency_ms'] for r in calls)
+decision_latencies = sorted(r['latency_ms'] for r in ticks)
 choices = collections.Counter(a.get('choice','unknown') for r in calls for a in r['response']['answers'].values())
 navigation = [r for r in calls if 'navigation' in r['questions']]
 batches = [r for r in rows if r['event']=='decision_batch']
@@ -31,6 +32,8 @@ print(json.dumps({
     'run':str(path), 'calls':len(calls),
     'latency_median_ms':statistics.median(latencies) if latencies else None,
     'latency_p95_ms':latencies[min(len(latencies)-1,int(len(latencies)*.95))] if latencies else None,
+    'decision_median_ms':statistics.median(decision_latencies) if decision_latencies else None,
+    'decision_p95_ms':decision_latencies[min(len(decision_latencies)-1,int(len(decision_latencies)*.95))] if decision_latencies else None,
     'cost_usd':sum(r['response']['usage'].get('cost',0) or 0 for r in calls),
     'actions_submitted':sum(r['submitted'] for r in ticks),
     'decision_batches':len(batches),

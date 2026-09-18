@@ -98,3 +98,15 @@ next experiment, but would need a strict shared call budget and measured cost.
 The trial ended with 14 SCVs, 11 Marines, five Supply Depots, a Barracks and a
 Command Center. No new building choice was made in that trial. More owned units
 and better inference latency do not establish progress toward destroying the base.
+
+The follow-up (025) used two concurrent six-unit requests per boundary. It recorded
+497 ms median call latency, 705 ms median complete decision-cycle latency, and
+45-loop median / 84-loop maximum scheduling gaps across 33 distinct units. Two
+ticks exceeded the age limit. The shared reservation guard kept the run at exactly
+150 calls; eleven tests include overlapping requests at a one-call cap.
+
+The run cost $0.123215 for 834 unit answers, including navigation overhead. The
+sequential trial cost $0.070643 for 528 unit answers. Normalized with that overhead,
+these are about $0.148 versus $0.134 per thousand unit answers. Different game
+states and request counts prevent a controlled cost comparison. Parallelism reduced
+observed attention gaps; it did not establish better tactics or a mission victory.
