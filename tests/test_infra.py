@@ -548,9 +548,8 @@ def test_support_capability_is_visible_before_jev_selects_contribution():
                 assert 'load owned units' in questions['purpose_Carrier']['criteria']['other']
                 assert state['units'][0]['cargo']['capacity']==4
                 return {'purpose_Carrier':{'choice':'other'}}
-            if 'support_ability_3_2' in questions['Carrier']['criteria']:
-                return {'Carrier':{'choice':'support_ability_3_2'}}
-            return {'Carrier':{'choice':'unit_1'}}
+            assert 'support_ability_3_2_only_1' in questions['Carrier']['criteria']
+            return {'Carrier':{'choice':'support_ability_3_2_only_1'}}
     command={'unit_tag':1,'ability_id':3,'target_tag':2}
     view={'loop':1,'self':[{'tag':1,'type':'Carrier','position':[0,0],
         'cargo':{'used':0,'capacity':4,'passengers':[]},'candidates':[

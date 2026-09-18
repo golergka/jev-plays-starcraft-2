@@ -843,3 +843,17 @@ and no strategy is selected in Python. Full paired probabilities are in
 The live retry also exposes a cost of lab 083: 22 of its first 33 ticks were stale,
 and the extra assignment query often returned continue. Support allocation needs
 a cheaper representation; do not credit it with tactical improvement yet.
+
+## Lab 085: collapse small support assignment menus into one Jev call
+
+Lab 083 added a serial model call after target selection. For menus with at most
+80 eligible target/executor pairs, offer exact single-executor assignments in the
+existing concrete-order query, plus all-eligible assignments when meaningful.
+The model still selects target and participants. Larger menus retain the staged
+path rather than truncating candidates. Loading never offers duplicate carriers
+for a single passenger. The threshold governs request representation only.
+
+Forty-three tests pass. This reduces one sequential inference for small support
+menus without relaxing observation freshness or replacing any choice with a
+script. Evaluate live latency and accepted commands after the commit reload;
+do not assume fewer requests automatically improve survival.

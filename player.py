@@ -362,6 +362,24 @@ async def decide(view, jev, memory):
                     option = 'support_'+key
                     support_plans[kind].setdefault(option,[]).append(candidate)
                     criteria[option] = candidate['description']+'; choose executor(s) in a separate Jev decision'
+        # Small support menus can name exact assignments in this same call,
+        # avoiding a serial executor query. Larger menus retain the staged path
+        # so all candidates remain available without an unbounded cross-product.
+        if sum(len(cs) for cs in support_plans[kind].values()) <= 80:
+            for option, candidates in list(support_plans[kind].items()):
+                criteria.pop(option)
+                for candidate in candidates:
+                    command = candidate['command']
+                    direct = f'{option}_only_{command["unit_tag"]}'
+                    criteria[direct] = (f'Only unit {command["unit_tag"]}: {candidate["description"]}. '
+                                        'All other units keep their current orders.')
+                    plans[kind][direct] = [command]
+                if len(candidates)>1 and not any(c.get('exclusive_target') for c in candidates):
+                    direct = option+'_all'
+                    criteria[direct] = (f'All {len(candidates)} eligible units: {candidates[0]["description"]}. '
+                                        'Replaces all their current work; concurrent repairs share resources.')
+                    plans[kind][direct] = [c['command'] for c in candidates]
+            support_plans[kind] = {}
         # A member cannot join itself, so intersection alone hid in-selection
         # anchors. Expose the exact legal hold + join combination to Jev.
         for anchor,anchor_table in zip(selected,tables[kind]):
