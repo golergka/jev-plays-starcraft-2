@@ -180,3 +180,26 @@ def test_build_sites_require_visible_footprint_and_engine_approval():
             return result
     view=asyncio.run(make_view(Client(),obs,data,info,'build test'))
     assert {c['id'] for c in view['self'][0]['candidates']} == {'build_319_north','build_319_east'}
+
+
+def test_concurrent_jev_calls_reserve_budget(monkeypatch):
+    from types import SimpleNamespace
+    import jev_sc2.jev as module
+    started, release = asyncio.Event(), asyncio.Event()
+    entered = []
+    async def request(**kwargs):
+        entered.append(True); started.set(); await release.wait()
+        return SimpleNamespace(usage=SimpleNamespace(cost=0),
+                               model_dump=lambda **kwargs: {'answers': {}})
+    monkeypatch.setenv('OPENROUTER_API_KEY','test-key-not-a-credential')
+    monkeypatch.setattr(module,'OpenRouter',lambda **kwargs: SimpleNamespace(
+        alpha=SimpleNamespace(decisions=SimpleNamespace(create_async=request))))
+    model=module.Jev(lambda *a,**k:None,'test',max_calls=1)
+    async def concurrent():
+        first=asyncio.create_task(model.ask({},{}))
+        await started.wait()
+        with pytest.raises(module.CallBudgetReached): await model.ask({},{})
+        release.set(); await first
+    asyncio.run(concurrent())
+    assert len(entered)==model.calls==1
+    assert model.inflight==0

@@ -5,6 +5,8 @@ The harness owns sockets, action validation, telemetry, and persistent memory.
 Commit this file to activate it at the next decision boundary.
 """
 import json
+import asyncio
+from openrouter.errors import PaymentRequiredResponseError
 import math
 import random
 
@@ -90,7 +92,7 @@ async def decide(view, jev, memory):
     ordered = sorted(units,key=lambda u:u['tag'])
     cursor = memory.get('decision_cursor', -1)
     batch = ([u for u in ordered if u['tag'] > cursor]
-             + [u for u in ordered if u['tag'] <= cursor])[:6]
+             + [u for u in ordered if u['tag'] <= cursor])[:12]
     memory['decision_cursor'] = batch[-1]['tag']
     jev.log('decision_batch',loop=view['loop'],unit_tags=[u['tag'] for u in batch])
     candidates = {}
@@ -136,7 +138,22 @@ async def decide(view, jev, memory):
                             'Unit facts: ' + json.dumps(local, separators=(',', ':')),
             'criteria': options,
         }
-    answers = await jev.ask(state, questions)
+    items = list(questions.items())
+    results = await asyncio.gather(*(jev.ask(state,dict(items[i:i+6]))
+                                    for i in range(0,len(items),6)), return_exceptions=True)
+    answers = {}
+    failures = []
+    for result in results:
+        if isinstance(result, BaseException):
+            failures.append(result)
+            jev.log('decision_batch_error',error=type(result).__name__)
+        else:
+            answers.update(result)
+    billing = next((e for e in failures if isinstance(e, PaymentRequiredResponseError)), None)
+    if billing is not None:
+        raise billing
+    if not answers and failures:
+        raise failures[0]
     commands = []
     for tag, answer in answers.items():
         if tag not in candidates or answer.get('choice') not in candidates[tag]:
