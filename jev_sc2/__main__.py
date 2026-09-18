@@ -94,10 +94,17 @@ async def run(args):
             last_loop = observation.observation.game_loop
             clock_changed_at = time.monotonic()
             view = await make_view(client,observation,data,info,args.objective)
-            empty_since = None if view['self'] else (empty_since or time.monotonic())
-            if empty_since is not None and time.monotonic()-empty_since >= 10:
-                log('stopped',reason='No owned units observed for ten seconds; inspect mission UI for outcome')
-                break
+            if view['self']:
+                empty_since = None
+            else:
+                if empty_since is None:
+                    empty_since = time.monotonic()
+                    log('awaiting_units',reason='No owned units; campaign cinematics can temporarily hide the force')
+                if time.monotonic()-empty_since >= 90:
+                    log('stopped',reason='No owned units observed for ninety seconds; inspect mission UI for outcome')
+                    break
+                await asyncio.sleep(0.2)
+                continue
             if args.follow_camera and view['self']:
                 # Presentation only: raw observations/actions do not depend on camera.
                 camera = sc.Action()

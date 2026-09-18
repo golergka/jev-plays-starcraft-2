@@ -158,3 +158,14 @@ Jev did not protect Raynor adequately while focusing the objective. The starting
 force had already lost health and a Marine during earlier trials, so the next
 test restarts the mission with the same shared-order policy and a fresh force.
 Summaries: `030-shared-orders-cinematic.json`, `031-shared-orders-defeat.json`.
+
+## Lab 048: fresh force, unchanged policy
+
+The fresh opening reached town at about 55 seconds on the visible game clock,
+with all six starting units alive. The second cinematic again temporarily hid
+the force; the harness stopped after 190 calls, costing $0.044435. No outcome
+was claimed. Saved the summary and resumed the same game after skipping the
+cinematic. The policy is unchanged. The harness now waits up to ninety seconds
+without inference when owned units disappear, avoiding repeated false stops for
+campaign cutscenes. A stalled clock or actual API result remains independently
+handled. No empty observation is classified as victory or defeat.
