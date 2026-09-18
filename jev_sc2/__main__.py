@@ -20,8 +20,15 @@ async def run(args):
     load_dotenv(ROOT / '.env')
     sc2root = os.getenv('SC2PATH', '/Applications/StarCraft II')
     if args.doctor:
-        print(json.dumps({'key_present':bool(os.getenv('OPENROUTER_API_KEY')),
-                          'executable':str(find_executable(sc2root))},indent=2))
+        status = {'key_present':bool(os.getenv('OPENROUTER_API_KEY'))}
+        try:
+            status['executable'] = str(find_executable(sc2root))
+        except FileNotFoundError as exc:
+            status['executable'] = None
+            status['next_step'] = str(exc)
+        print(json.dumps(status,indent=2))
+        if not status['key_present'] or not status['executable']:
+            raise SystemExit(1)
         return
     stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
     directory = ROOT / 'runs' / stamp
@@ -127,4 +134,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
