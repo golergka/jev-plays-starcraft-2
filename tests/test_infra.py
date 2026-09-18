@@ -4,7 +4,7 @@ import pytest
 from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc
 from jev_sc2.reload import PlayerLoader
 from jev_sc2.sc2 import SC2, find_executable
-from jev_sc2.view import validate_commands
+from jev_sc2.view import validate_commands, make_view
 
 
 def test_reload_uses_commit_and_retains_good_policy(tmp_path):
@@ -85,3 +85,29 @@ def test_real_websocket_protocol_roundtrip():
         assert not requests[2].join_game.HasField('observed_player_id')
         assert not requests[3].observation.disable_fog
     asyncio.run(scenario())
+
+
+def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids():
+    from s2clientprotocol import query_pb2 as query
+    class Client:
+        async def request(self,name,body):
+            assert name=='query' and not body.ignore_resource_requirements
+            result=query.ResponseQuery()
+            abilities=result.abilities.add(unit_tag=1)
+            abilities.abilities.add(ability_id=3794)
+            abilities.abilities.add(ability_id=3674)
+            return result
+    obs=sc.ResponseObservation()
+    own=obs.observation.raw_data.units.add(tag=1,unit_type=48,alliance=raw.Self,health=45,health_max=45)
+    own.pos.x=10; own.pos.y=10
+    for tag, display in [(2,raw.Visible),(3,raw.Hidden),(4,raw.Snapshot)]:
+        enemy=obs.observation.raw_data.units.add(tag=tag,unit_type=105,alliance=raw.Enemy,display_type=display)
+        enemy.pos.x=12; enemy.pos.y=12
+        enemy.orders.add(ability_id=999)
+    info=sc.ResponseGameInfo()
+    info.start_raw.playable_area.p1.x=32; info.start_raw.playable_area.p1.y=32
+    result=asyncio.run(make_view(Client(),obs,sc.ResponseData(),info,'combat test'))
+    unit=result['self'][0]
+    assert [u['tag'] for u in unit['surroundings']]==[2]
+    assert 'orders' not in unit['surroundings'][0]
+    assert {c['command']['ability_id'] for c in unit['candidates']}=={3794,3674}

@@ -15,6 +15,7 @@ async def make_view(client, observation, data, info, objective):
     available = {a.unit_tag: {b.ability_id for b in a.abilities} for a in abilities.abilities}
     names = {u.unit_id: u.name for u in data.units}
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
+    remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
             'resources': {'minerals': obs.player_common.minerals,
@@ -23,6 +24,9 @@ async def make_view(client, observation, data, info, objective):
                           'food_cap': obs.player_common.food_cap}}
     for unit in own:
         legal = available.get(unit.tag, set())
+        # Game versions may advertise concrete or generalized ability IDs.
+        move = next((a for a in sorted(legal) if a in {16, 3794} or remaps.get(a) in {16, 3794}), None)
+        attack = next((a for a in sorted(legal) if a in {23, 3674} or remaps.get(a) == 3674), None)
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
         candidates = []
@@ -31,23 +35,25 @@ async def make_view(client, observation, data, info, objective):
             distance = round(math.hypot(target.pos.x-unit.pos.x, target.pos.y-unit.pos.y), 1)
             label = names.get(target.unit_type, str(target.unit_type))
             surroundings.append({'tag':target.tag, 'type':label, 'distance':distance,
+                                 'east_offset':round(target.pos.x-unit.pos.x,1),
+                                 'north_offset':round(target.pos.y-unit.pos.y,1),
                                  'alliance':raw.Alliance.Name(target.alliance),
                                  'health':target.health, 'shield':target.shield})
-            if target.alliance == raw.Enemy and 23 in legal:
+            if target.alliance == raw.Enemy and attack is not None:
                 candidates.append({'id':f'attack_{target.tag}',
                                    'description':f'Attack visible {label} tag {target.tag}, distance {distance}',
-                                   'command':command(23, target_tag=target.tag)})
-            if target.alliance == raw.Neutral and 16 in legal:
+                                   'command':command(attack, target_tag=target.tag)})
+            if target.alliance == raw.Neutral and move is not None:
                 candidates.append({'id':f'move_{target.tag}',
                                    'description':f'Move to visible {label} tag {target.tag}, distance {distance}',
-                                   'command':command(16, point=[target.pos.x,target.pos.y])})
+                                   'command':command(move, point=[target.pos.x,target.pos.y])})
         # Fixed compass displacements are action primitives, not tactical choices.
-        if 16 in legal:
+        if move is not None:
             for label, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
                 x,y = unit.pos.x+dx, unit.pos.y+dy
                 if area.p0.x <= x < area.p1.x and area.p0.y <= y < area.p1.y:
                     candidates.append({'id':label, 'description':f'Move six map units {label}',
-                                       'command':command(16,point=[x,y])})
+                                       'command':command(move,point=[x,y])})
         view['self'].append({'tag':unit.tag, 'type':names.get(unit.unit_type,str(unit.unit_type)),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
                              'shield':unit.shield, 'weapon_cooldown':unit.weapon_cooldown,
@@ -81,4 +87,3 @@ def validate_commands(commands, offered_view, fresh_observation):
         actions.append(action)
         seen.add(cmd['unit_tag'])
     return actions
-
