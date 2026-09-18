@@ -1,0 +1,143 @@
+{
+  "source": "runs/20260918T234141.639301Z/events.jsonl",
+  "pairs": [
+    {
+      "sample": 0,
+      "recorded_choice": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 0.71,
+        "probabilities": {
+          "assemble": 0.04,
+          "explore": 0.02,
+          "strengthen": 0.01,
+          "recover": 0.0,
+          "protect": 0.17,
+          "hold": 0.76,
+          "attack": 0.0
+        }
+      },
+      "original": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 0.67,
+        "probabilities": {
+          "recover": 0.0,
+          "assemble": 0.04,
+          "attack": 0.0,
+          "strengthen": 0.01,
+          "explore": 0.04,
+          "protect": 0.19,
+          "hold": 0.72
+        }
+      },
+      "renamed": {
+        "choice": "protect",
+        "type": "choice",
+        "confidence": 0.7,
+        "probabilities": {
+          "protect": 0.74,
+          "strengthen": 0.02,
+          "attack": 0.0,
+          "continue_operations": 0.07,
+          "explore": 0.05,
+          "recover": 0.0,
+          "assemble": 0.12
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "recorded_choice": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 0.63,
+        "probabilities": {
+          "strengthen": 0.02,
+          "hold": 0.6900000000000001,
+          "recover": 0.0,
+          "attack": 0.0,
+          "protect": 0.24,
+          "assemble": 0.02,
+          "explore": 0.03
+        }
+      },
+      "renamed": {
+        "choice": "protect",
+        "type": "choice",
+        "confidence": 0.39,
+        "probabilities": {
+          "continue_operations": 0.44,
+          "protect": 0.49,
+          "recover": 0.0,
+          "strengthen": 0.02,
+          "assemble": 0.02,
+          "attack": 0.0,
+          "explore": 0.03
+        }
+      },
+      "original": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 0.69,
+        "probabilities": {
+          "protect": 0.2,
+          "assemble": 0.01,
+          "strengthen": 0.02,
+          "attack": 0.0,
+          "recover": 0.0,
+          "hold": 0.74,
+          "explore": 0.03
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "recorded_choice": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 0.53,
+        "probabilities": {
+          "recover": 0.0,
+          "protect": 0.32,
+          "strengthen": 0.02,
+          "assemble": 0.04,
+          "attack": 0.0,
+          "hold": 0.59,
+          "explore": 0.03
+        }
+      },
+      "original": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 0.53,
+        "probabilities": {
+          "explore": 0.02,
+          "assemble": 0.04,
+          "strengthen": 0.01,
+          "protect": 0.33,
+          "attack": 0.0,
+          "hold": 0.6,
+          "recover": 0.0
+        }
+      },
+      "renamed": {
+        "choice": "protect",
+        "type": "choice",
+        "confidence": 0.42,
+        "probabilities": {
+          "strengthen": 0.02,
+          "recover": 0.0,
+          "protect": 0.5,
+          "attack": 0.0,
+          "continue_operations": 0.4,
+          "explore": 0.02,
+          "assemble": 0.06
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.003594066000000001,
+  "method": "Only hold key renamed to continue_operations; all descriptions and recorded state unchanged. Pair order alternates. Small sequential probe, not a gameplay performance claim."
+}

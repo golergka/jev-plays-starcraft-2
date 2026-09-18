@@ -825,3 +825,21 @@ Forty-three tests pass. Retry Zero Hour with this general policy and camera;
 completed Liberation Day and Outlaws checkpoints persist. The saved first-attempt
 replay and measured summary are retained (057). This change makes no claim of
 improving the outcome before the retry runs.
+
+## Lab 084: a choice key changed Jev's strategic answer
+
+Hypothesis: the `hold` strategy key collides with “Hold out” in the objective,
+although its description means continuing current tasks. Run three paired offline
+queries on recorded fair states, changing only that key to `continue_operations`
+and preserving descriptions/state. Alternate pair order. All three original-key
+queries chose hold (probability .72, .74, .60); all three renamed queries chose
+protect (.74, .49, .50). Six calls cost $0.003594066. These are tiny sequential
+samples, not a statistical result or gameplay advantage. They establish useful
+sensitivity evidence without sending any game commands.
+
+Rename the key for semantic precision across all missions. No option is removed
+and no strategy is selected in Python. Full paired probabilities are in
+`058-choice-label-probe.json`, with reproducible script `scripts/probe_choice_labels.py`.
+The live retry also exposes a cost of lab 083: 22 of its first 33 ticks were stale,
+and the extra assignment query often returned continue. Support allocation needs
+a cheaper representation; do not credit it with tactical improvement yet.

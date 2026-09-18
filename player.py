@@ -304,7 +304,7 @@ async def decide(view, jev, memory):
             'assemble':'Bring separated units together and accumulate a force before committing to an engagement.',
             'explore':'Acquire information about the map and enemy positions.',
             'recover':'Restore income and replace losses.',
-            'hold':'Let current tasks progress before changing commitment.',
+            'continue_operations':'Let current tasks progress before changing commitment.',
         }
         decision = await jev.ask({**state,'previous_strategy':strategy}, {'strategy': {
             'type':'choice',
