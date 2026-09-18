@@ -29,7 +29,7 @@ standalone mission, not a verified recreation of campaign progression.
 | Add measured displacement history | Jev eventually changed direction | Longer trial crossed the same corridor repeatedly |
 | Add visited-area counts | A different route emerged | Units spread apart; centroid movement hid separation |
 | Offer regroup intent and friendly-unit movement | Local friendly approaches occurred; squad intent never selected regroup | Ended with Raynor and two wounded Marines; no victory |
-| Sample navigation probabilities | Implemented with recorded seed and weights | **Untested:** account credit exhaustion prevented inference |
+| Sample navigation probabilities | After a top-up, live sampling selected regroup and produced further northward travel | Two-unit damaged starting state; compare cautiously; see run 015 |
 
 Successful calls in these live trials had per-run median latency between 355 and
 450 ms. These are measured run medians, not a service guarantee. Two-stage decisions
@@ -56,15 +56,15 @@ the harness restarts. SC2 continues in real time during those gaps; a unit can d
 between trials. Later policies therefore inherit different positions and damage.
 No causal ranking of policies or generalized claim about Jev's limits is justified.
 
-The next trial is probability sampling of squad intent. All weights come from Jev;
-there is no scripted route or uniform-random escape policy. If it runs, measure
+The current trial uses probability sampling of squad intent. All weights come from Jev;
+there is no scripted route or uniform-random escape policy. Measure
 whether it explores new areas, preserves Raynor, and avoids repeated routes. A
 single lucky movement is not enough to call it an improvement.
 
 ## Remaining work
 
-- Fund the OpenRouter account to resume inference; the dedicated key cap is separate.
-- Evaluate the committed sampling policy and compare fresh mission runs if useful.
+- Keep inference within the dedicated key cap; account credit availability is separate.
+- Evaluate sustained sampling behavior and compare fresh mission runs if useful.
 - Improve the observation/action representation based on measured failures, while
   keeping every tactical choice with Jev.
 - Mission victory, build/train mechanics, and full campaign progression remain

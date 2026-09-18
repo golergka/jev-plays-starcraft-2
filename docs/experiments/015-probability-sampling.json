@@ -1,0 +1,508 @@
+{
+  "run": "runs/20260918T210536.451072Z/events.jsonl",
+  "calls": 180,
+  "latency_median_ms": 362.5,
+  "latency_p95_ms": 665,
+  "cost_usd": 0.018447324,
+  "actions_submitted": 241,
+  "ticks_with_zero_submissions": 27,
+  "choices": {
+    "north": 132,
+    "east": 31,
+    "continue": 85,
+    "join_4311220225": 33,
+    "join_4310695937": 59,
+    "move_4295229441": 1,
+    "west": 3
+  },
+  "navigation_choices": {
+    "north": 10,
+    "east": 3,
+    "west": 3
+  },
+  "sampled_navigation_choices": {
+    "east": 2,
+    "regroup": 3,
+    "north": 9,
+    "engage": 2
+  },
+  "navigation_samples": [
+    {
+      "time": 1789765537.489067,
+      "event": "navigation_sample",
+      "loop": 28099,
+      "top_choice": "north",
+      "sampled_choice": "east",
+      "probabilities": {
+        "north": 0.4,
+        "regroup": 0.11,
+        "west": 0.35,
+        "east": 0.05,
+        "engage": 0.07,
+        "neutral": 0.01,
+        "south": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765542.454099,
+      "event": "navigation_sample",
+      "loop": 28219,
+      "top_choice": "east",
+      "sampled_choice": "regroup",
+      "probabilities": {
+        "east": 0.58,
+        "north": 0.19,
+        "hold": 0.01,
+        "regroup": 0.09,
+        "engage": 0.03,
+        "west": 0.1
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765547.9127522,
+      "event": "navigation_sample",
+      "loop": 28337,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "east": 0.26,
+        "hold": 0.01,
+        "engage": 0.03,
+        "regroup": 0.11,
+        "south": 0.01,
+        "neutral": 0.01,
+        "north": 0.31,
+        "west": 0.26
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765553.264789,
+      "event": "navigation_sample",
+      "loop": 28456,
+      "top_choice": "north",
+      "sampled_choice": "engage",
+      "probabilities": {
+        "neutral": 0.01,
+        "west": 0.37,
+        "east": 0.01,
+        "regroup": 0.07,
+        "north": 0.51,
+        "engage": 0.03
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765558.496237,
+      "event": "navigation_sample",
+      "loop": 28570,
+      "top_choice": "west",
+      "sampled_choice": "regroup",
+      "probabilities": {
+        "west": 0.35,
+        "south": 0.01,
+        "north": 0.25,
+        "neutral": 0.01,
+        "engage": 0.12,
+        "hold": 0.01,
+        "east": 0.16,
+        "regroup": 0.09
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765563.737076,
+      "event": "navigation_sample",
+      "loop": 28686,
+      "top_choice": "east",
+      "sampled_choice": "engage",
+      "probabilities": {
+        "west": 0.21,
+        "south": 0.02,
+        "north": 0.11,
+        "engage": 0.07,
+        "neutral": 0.01,
+        "hold": 0.01,
+        "east": 0.37,
+        "regroup": 0.2
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765568.87539,
+      "event": "navigation_sample",
+      "loop": 28799,
+      "top_choice": "west",
+      "sampled_choice": "north",
+      "probabilities": {
+        "south": 0.02,
+        "neutral": 0.01,
+        "hold": 0.01,
+        "east": 0.26,
+        "regroup": 0.11,
+        "west": 0.34,
+        "north": 0.14,
+        "engage": 0.11
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765574.2803268,
+      "event": "navigation_sample",
+      "loop": 28917,
+      "top_choice": "north",
+      "sampled_choice": "east",
+      "probabilities": {
+        "west": 0.17,
+        "regroup": 0.09,
+        "east": 0.11,
+        "south": 0.01,
+        "north": 0.54,
+        "hold": 0.01,
+        "neutral": 0.01,
+        "engage": 0.06
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765579.64402,
+      "event": "navigation_sample",
+      "loop": 29037,
+      "top_choice": "east",
+      "sampled_choice": "regroup",
+      "probabilities": {
+        "west": 0.12,
+        "south": 0.02,
+        "regroup": 0.19,
+        "engage": 0.08,
+        "neutral": 0.01,
+        "hold": 0.01,
+        "east": 0.5,
+        "north": 0.07
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765585.02496,
+      "event": "navigation_sample",
+      "loop": 29154,
+      "top_choice": "west",
+      "sampled_choice": "north",
+      "probabilities": {
+        "west": 0.4,
+        "south": 0.01,
+        "regroup": 0.15,
+        "neutral": 0.01,
+        "engage": 0.13,
+        "hold": 0.01,
+        "east": 0.09,
+        "north": 0.2
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765590.276672,
+      "event": "navigation_sample",
+      "loop": 29267,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "neutral": 0.02,
+        "north": 0.5,
+        "regroup": 0.19,
+        "south": 0.01,
+        "east": 0.01,
+        "hold": 0.01,
+        "engage": 0.05,
+        "west": 0.21
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765595.3046231,
+      "event": "navigation_sample",
+      "loop": 29381,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "neutral": 0.01,
+        "south": 0.01,
+        "east": 0.03,
+        "engage": 0.05,
+        "regroup": 0.11,
+        "north": 0.56,
+        "west": 0.21,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765601.102575,
+      "event": "navigation_sample",
+      "loop": 29507,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "east": 0.04,
+        "north": 0.64,
+        "neutral": 0.01,
+        "hold": 0.01,
+        "regroup": 0.05,
+        "south": 0.03,
+        "engage": 0.06,
+        "west": 0.16
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765606.0969028,
+      "event": "navigation_sample",
+      "loop": 29619,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "neutral": 0.01,
+        "north": 0.6,
+        "engage": 0.03,
+        "south": 0.03,
+        "regroup": 0.15,
+        "east": 0.02,
+        "west": 0.16
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765611.407596,
+      "event": "navigation_sample",
+      "loop": 29735,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "engage": 0.03,
+        "regroup": 0.11,
+        "west": 0.13,
+        "north": 0.62,
+        "hold": 0.01,
+        "east": 0.06,
+        "south": 0.04
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765617.095009,
+      "event": "navigation_sample",
+      "loop": 29853,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "regroup": 0.14,
+        "engage": 0.03,
+        "north": 0.47,
+        "neutral": 0.01,
+        "east": 0.08,
+        "hold": 0.02,
+        "west": 0.22,
+        "south": 0.03
+      },
+      "seed": 20260918
+    }
+  ],
+  "navigation_centers": [
+    [
+      70.1,
+      8.9
+    ],
+    [
+      79.4,
+      8.6
+    ],
+    [
+      81.3,
+      8.7
+    ],
+    [
+      84.0,
+      12.6
+    ],
+    [
+      87.8,
+      20.1
+    ],
+    [
+      88.1,
+      20.2
+    ],
+    [
+      88.7,
+      20.0
+    ],
+    [
+      89.5,
+      30.2
+    ],
+    [
+      96.5,
+      27.0
+    ],
+    [
+      95.0,
+      25.5
+    ],
+    [
+      92.7,
+      34.2
+    ],
+    [
+      93.3,
+      48.2
+    ],
+    [
+      90.0,
+      57.4
+    ],
+    [
+      86.8,
+      59.4
+    ],
+    [
+      86.1,
+      60.1
+    ],
+    [
+      86.1,
+      60.1
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 215.0,
+    "max_separation": 4.1
+  },
+  "last_distribution": {
+    "health_total": 215.0,
+    "max_separation": 11.8
+  },
+  "action_result_counts": {
+    "1": 241
+  },
+  "ticks_older_than_32_loops": 1,
+  "errors": [],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789765584.226685,
+      "event": "reload",
+      "revision": "01543b5223a2bdb28096d77e8715699a1f4ae0ab"
+    }
+  ],
+  "first_tick": {
+    "time": 1789765538.245312,
+    "event": "tick",
+    "loop": 28099,
+    "revision": "907df2e4526a402d992f113ed75a7fe5146de72d",
+    "own_units": 2,
+    "units": [
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          72.116943359375,
+          9.16015625
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          68.088623046875,
+          8.656494140625
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      }
+    ],
+    "score": 100,
+    "decision_age_loops": 34,
+    "commands": [
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          78.116943359375,
+          9.16015625
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          74.088623046875,
+          8.656494140625
+        ]
+      }
+    ],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 1532
+  },
+  "last_tick": {
+    "time": 1789765617.463549,
+    "event": "tick",
+    "loop": 29853,
+    "revision": "01543b5223a2bdb28096d77e8715699a1f4ae0ab",
+    "own_units": 2,
+    "units": [
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          91.4375,
+          57.5625
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          80.8125,
+          62.694580078125
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      }
+    ],
+    "score": 100,
+    "decision_age_loops": 24,
+    "commands": [
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          91.4375,
+          63.5625
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          80.8125,
+          68.694580078125
+        ]
+      }
+    ],
+    "submitted": 2,
+    "action_results": [
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 1034
+  }
+}
