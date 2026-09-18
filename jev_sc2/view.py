@@ -274,6 +274,7 @@ async def make_view(client, observation, data, info, objective):
                              'position':[unit.pos.x,unit.pos.y], 'surroundings':surroundings,
                              'nearby_terrain':terrain,
                              'orders':[{'ability':ability_names.get(o.ability_id,str(o.ability_id)),
+                                        'progress':round(o.progress,3),
                                         'target_tag':o.target_unit_tag if o.HasField('target_unit_tag') else None,
                                         'target_point':[o.target_world_space_pos.x,o.target_world_space_pos.y]
                                         if o.HasField('target_world_space_pos') else None} for o in unit.orders],

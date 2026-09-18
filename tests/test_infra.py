@@ -492,3 +492,19 @@ def test_named_savings_commitment_waits_then_requests_only_jev_chosen_project():
     assert asyncio.run(choose_investment(ready,{},model,memory))==[command]
     assert model.calls==1
     assert memory['investment_intent']['mode']=='request_purchase'
+
+
+def test_large_selection_is_not_truncated_and_shared_descriptions_stay_compact():
+    import player
+    units=[{'tag':i,'type':'Unit','position':[i,0],'candidates':[
+        {'id':'join_999','description':f'Move to friendly unit tag 999, distance {i}.0',
+         'command':{'unit_tag':i,'ability_id':16,'point':[0,0]}}]} for i in range(1,81)]
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions: return {'strategy':{'choice':'assemble'}}
+            if 'purpose_Unit' in questions: return {'purpose_Unit':{'choice':'positioning'}}
+            assert len(questions['Unit']['criteria']['group_join_999'])<250
+            return {'Unit':{'choice':'group_join_999'}}
+    commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
+    assert {c['unit_tag'] for c in commands}==set(range(1,81))

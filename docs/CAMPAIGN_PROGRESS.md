@@ -673,3 +673,24 @@ The preceding run ended at 1,499 calls with no win. Read-only live inspection
 confirmed `The Outlaws`, `traynor02.SC2Map`, status `in_game`. Resume that same game
 with a longer 3,000-call budget instead of discarding its economy and army. This
 controller start also enables the previously committed atomic observation reload.
+
+
+## Lab 078: compact shared action descriptions and control the full force
+
+The resumed large-base run produced `max_tokens_exceeded`. One successful combat
+question was already 43,113 characters beside a 29,369-character state. Shared
+orders concatenated per-unit descriptions, often repeating the same target with
+only a different distance. Normalize that repeated distance text and provide the
+computed travel-distance range instead. Keep representative semantic variants,
+and keep every unit's actual offered command in the selected plan.
+
+Remove the old first-64-units cap from shared and round-robin control. A test with
+80 owned units verifies all receive the model-selected shared action while its
+description stays compact. Also expose order progress from the existing protocol
+field; this enables future production observations without inferring completion
+from a queued order. Thirty-five tests pass. The observation change is intended
+as the first live check of the new adapter reload.
+
+TypeSafe documents 64k tokens for a request and 32k for state plus its longest
+question: https://docs.typesafe.ai/models . Character measurements are diagnostic
+proxies, not token counts or a guarantee that every future request fits.

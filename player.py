@@ -9,6 +9,7 @@ import asyncio
 from openrouter.errors import PaymentRequiredResponseError
 import math
 import random
+import re
 from collections import Counter
 
 
@@ -233,7 +234,7 @@ def control_groups(units, mode, learned):
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
     units = [{**u,'candidates':[c for c in u['candidates'] if not is_purchase(c)]}
-             for u in view['self'][:64]]
+             for u in view['self']]
     if not units:
         return []
     cohorts = {}
@@ -304,8 +305,15 @@ async def decide(view, jev, memory):
                     'continue':'Keep the current orders of these units unchanged.'}
         plans[kind] = {}
         for key in sorted(common):
-            descriptions = list(dict.fromkeys(c[key]['description'] for c in tables[kind]))
-            criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + ' | '.join(descriptions)
+            descriptions = list(dict.fromkeys(re.sub(r', distance [0-9.]+','',c[key]['description']) for c in tables[kind]))
+            description = ' | '.join(descriptions[:4])
+            if len(descriptions)>4:
+                description += f' (descriptions vary across {len(descriptions)} units; apply each offered version)'
+            distances = [math.dist(u['position'],t[key]['command']['point'])
+                         for u,t in zip(selected,tables[kind]) if 'point' in t[key]['command']]
+            if distances:
+                description += f'; travel distances across selection: {min(distances):.1f} to {max(distances):.1f}'
+            criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + description
             plans[kind]['group_'+key] = [c[key]['command'] for c in tables[kind]]
         # A member cannot join itself, so intersection alone hid in-selection
         # anchors. Expose the exact legal hold + join combination to Jev.
@@ -409,7 +417,7 @@ async def decide(view, jev, memory):
 async def decide_individual(view, jev, memory):
     # Candidate construction is mechanical; Jev selects each unit's action.
     # Start small: combat/movement experiments, no hand-coded build order.
-    units = view['self'][:64]
+    units = view['self']
     if not units:
         return []
     questions = {}
