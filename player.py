@@ -150,6 +150,9 @@ async def decide(view, jev, memory):
         candidate_ids = {c['id'] for u in economic_selected for c in u['candidates']}
         state['selection_facts'][kind] = {
             'count':len(selected),
+            'total_health':round(sum(u.get('health',0) for u in selected),1),
+            'max_separation':round(max(math.dist(a['position'],b['position']) for a in selected for b in selected),1),
+            'largest_distance_to_nearest_same_type':round(max(min(math.dist(a['position'],b['position']) for b in selected if b['tag']!=a['tag']) for a in selected),1) if len(selected)>1 else None,
             'count_change_since_previous_decision':len(selected)-previous_counts.get(kind,len(selected)),
             'damaged_count':sum(u.get('health_fraction',1)<1 for u in selected),
             'lowest_health_percent':round(100*min(u.get('health_fraction',1) for u in selected)),
@@ -169,6 +172,7 @@ async def decide(view, jev, memory):
             'attack':'Commit forces to damaging or destroying the enemy base.',
             'strengthen':'Increase military strength through resource collection and production.',
             'protect':'Preserve owned units and structures from current threats.',
+            'assemble':'Bring separated units together and accumulate a force before committing to an engagement.',
             'explore':'Acquire information about the map and enemy positions.',
             'recover':'Restore income and replace losses.',
             'hold':'Let current tasks progress before changing commitment.',
@@ -213,6 +217,7 @@ async def decide(view, jev, memory):
                            'You may choose a shared order for this unit type or individual control. '
                            'Other unit types receive their own decisions in parallel. '
                            'Consider current orders, health, resources and known entities. '
+                           'Count alone is not local fighting strength: max_separation and nearest-same-type distances describe dispersion. '
                            'Use selection_facts for unit counts, recent changes, damage and economic capabilities. '
                            'Consider the strategic priority chosen by Jev alongside immediate threats. '
                            'Snapshot locations are stale, not live visible targets.',

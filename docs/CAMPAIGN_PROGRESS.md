@@ -454,3 +454,19 @@ from earlier policies. This is a poor starting point for evaluating whether the
 shared investment policy avoids worker overproduction. Start The Outlaws fresh
 with the latest policy and a 500-call/300-second budget. No new tactical rules or
 model changes accompany the reset. Previous runs and replays remain preserved.
+
+
+## Lab 066: make dispersion explicit and offer assembling as a priority
+
+In the fresh lab 065 opening, five Marines counted as one selection while one was
+near the home base and four were fighting far away. Later only two were near a
+pair of Hellions. The history eventually showed seven Marine disappearances;
+Jev chose strengthen but replacement Marines kept traveling separately. These
+observations expose a missing aggregate: counts are not local force strength.
+
+Add measured per-selection health, maximum separation, and the largest distance
+to a nearest same-type neighbor. Add assembling to the strategic options Jev may
+choose, with no automatic orders attached. Existing regroup/movement choices
+remain available. This tests whether concrete dispersion facts and an explicit
+strategic alternative change Jev's selections, rather than programming a minimum
+army size or rendezvous route. The current fresh trial continues through reload.

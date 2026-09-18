@@ -46,6 +46,11 @@ print(json.dumps({
     'decision_batches':len(batches),
     'group_decisions':len(groups),
     'group_choices':dict(collections.Counter(r['choice'] for r in groups)),
+    'investment_choices':dict(collections.Counter(
+        'save' if r['choice']=='save' else r['projects'][int(r['choice'].split('_')[1])]
+        for r in rows if r['event']=='investment_choice' and r.get('choice')
+        and (r['choice']=='save' or r['choice'].startswith('project_')))),
+    'producer_site_deferrals':sum(r['response']['answers'].get('producer_site',{}).get('choice')=='defer' for r in calls),
     'strategy_choices':dict(collections.Counter(r['choice'] for r in rows if r['event']=='strategy_choice')),
     'purposes_by_cohort':{cohort:dict(collections.Counter(r['choice'] for r in rows if r['event']=='purpose_choice' and r['cohort']==cohort))
                           for cohort in sorted({r['cohort'] for r in rows if r['event']=='purpose_choice'})},
