@@ -16,6 +16,41 @@ async def decide(view, jev, memory):
         return []
     questions = {}
     state = {'objective': view['objective'], 'resources': view['resources']}
+    # Jev chooses the squad intent as well as the individual commands. This
+    # cadence is an inference budget, not a scripted route or unstuck action.
+    navigation = memory.get('navigation', {})
+    if not navigation or view['loop'] - navigation['loop'] >= 112:
+        center = [round(sum(u['position'][i] for u in units)/len(units), 1) for i in (0, 1)]
+        surroundings = {str(e['tag']): {
+            'type': e['type'], 'alliance': e['alliance'],
+            'position': [round(u['position'][0]+e['east_offset'], 1),
+                         round(u['position'][1]+e['north_offset'], 1)],
+        } for u in units for e in u['surroundings']}
+        intent = await jev.ask({
+            'objective': view['objective'], 'squad_center': center,
+            'visible_entities': list(surroundings.values()),
+            'previous_navigation': navigation,
+        }, {'navigation': {
+            'type': 'choice',
+            'instructions': 'Choose the squad intent that best advances the mission objective. '
+                            'The objective location may be unknown. Consider exploration and '
+                            'whether the previous intent produced useful progress. Neutral '
+                            'entities are not enemies. Individual units will choose how to execute this intent.',
+            'criteria': {
+                'north': 'Explore north (increasing map y)',
+                'south': 'Explore south (decreasing map y)',
+                'east': 'Explore east (increasing map x)',
+                'west': 'Explore west (decreasing map x)',
+                'engage': 'Fight the visible enemies',
+                'neutral': 'Approach a visible neutral entity',
+                'hold': 'Hold position',
+            },
+        }})
+        choice = intent.get('navigation', {}).get('choice')
+        if choice in {'north', 'south', 'east', 'west', 'engage', 'neutral', 'hold'}:
+            navigation = {'loop': view['loop'], 'center': center, 'intent': choice}
+            memory['navigation'] = navigation
+    state['squad_intent_chosen_by_jev'] = navigation.get('intent')
     candidates = {}
     for unit in units:
         tag = str(unit['tag'])
@@ -49,6 +84,7 @@ async def decide(view, jev, memory):
         questions[tag] = {
             'type': 'choice',
             'instructions': 'Choose the next action for this unit to advance the objective. '
+                            'Execute the squad intent chosen by Jev, adapting to immediate threats. '
                             'Use this unit’s health, current orders and visible surroundings. '
                             'Continue means keep its existing order without sending a command. '
                             'Consider whether recent choices are making progress toward the objective. '
