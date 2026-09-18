@@ -1,0 +1,293 @@
+{
+  "run": "runs/20260918T205922.543535Z/events.jsonl",
+  "calls": 120,
+  "latency_median_ms": 375.0,
+  "latency_p95_ms": 655,
+  "cost_usd": 0.01677291,
+  "actions_submitted": 182,
+  "ticks_with_zero_submissions": 17,
+  "choices": {
+    "north": 192,
+    "continue": 368
+  },
+  "navigation_choices": {
+    "north": 10
+  },
+  "navigation_centers": [
+    [
+      33.1,
+      6.8
+    ],
+    [
+      32.2,
+      12.6
+    ],
+    [
+      37.7,
+      9.2
+    ],
+    [
+      47.4,
+      10.7
+    ],
+    [
+      55.3,
+      11.7
+    ],
+    [
+      61.6,
+      12.2
+    ],
+    [
+      70.4,
+      14.2
+    ],
+    [
+      71.9,
+      15.9
+    ],
+    [
+      71.9,
+      15.9
+    ],
+    [
+      74.4,
+      20.9
+    ]
+  ],
+  "action_result_counts": {
+    "1": 182
+  },
+  "ticks_older_than_32_loops": 0,
+  "errors": [],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789765183.8455539,
+      "event": "reload",
+      "revision": "89717533abfbcbba59742f699305f444f12f3c1c"
+    },
+    {
+      "time": 1789765209.870222,
+      "event": "reload",
+      "revision": "f0737fae3409050e812b2b29dbe06ac3f5fbe271"
+    }
+  ],
+  "first_tick": {
+    "time": 1789765164.177757,
+    "event": "tick",
+    "loop": 19950,
+    "revision": "477a108c43724942c4067a2976ba09ab9746c074",
+    "own_units": 5,
+    "units": [
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          32.239501953125,
+          6.763916015625
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      },
+      {
+        "tag": 4310958081,
+        "type": "Marine",
+        "position": [
+          34.04833984375,
+          6.8359375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311744513,
+        "type": "Marine",
+        "position": [
+          33.388916015625,
+          6.6376953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311482369,
+        "type": "Marine",
+        "position": [
+          30.87841796875,
+          6.909912109375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          34.854736328125,
+          7.09765625
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      }
+    ],
+    "score": 250,
+    "decision_age_loops": 31,
+    "commands": [
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          32.239501953125,
+          12.763916015625
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          34.04833984375,
+          12.8359375
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          33.388916015625,
+          12.6376953125
+        ]
+      },
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          30.87841796875,
+          12.909912109375
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          34.854736328125,
+          13.09765625
+        ]
+      }
+    ],
+    "submitted": 5,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 1394
+  },
+  "last_tick": {
+    "time": 1789765219.5389261,
+    "event": "tick",
+    "loop": 21090,
+    "revision": "f0737fae3409050e812b2b29dbe06ac3f5fbe271",
+    "own_units": 5,
+    "units": [
+      {
+        "tag": 4311482369,
+        "type": "Marine",
+        "position": [
+          87.31756591796875,
+          21.858245849609375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311744513,
+        "type": "Marine",
+        "position": [
+          87.90520477294922,
+          40.694671630859375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4310958081,
+        "type": "Marine",
+        "position": [
+          87.92578125,
+          38.17607879638672
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          59.4375,
+          16.87939453125
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          52.030029296875,
+          15.097524642944336
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33
+      }
+    ],
+    "score": 250,
+    "decision_age_loops": 8,
+    "commands": [
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          87.31756591796875,
+          27.858245849609375
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          87.92578125,
+          44.17607879638672
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          59.4375,
+          22.87939453125
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          52.030029296875,
+          21.097524642944336
+        ]
+      }
+    ],
+    "submitted": 4,
+    "action_results": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 349
+  }
+}
