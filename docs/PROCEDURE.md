@@ -17,7 +17,9 @@ not prevent cheating. Our wrapper permits only setup, player observations,
 queries, ordinary actions and replay saving. No debug requests, map commands,
 observer slots, fog disabling, quick-load, or resource overrides. Both game creation
 and observations explicitly set `disable_fog=False`. Cloaked/burrowed extras are
-disabled. Enemy snapshots/hidden units and enemy orders are not sent to Jev.
+disabled. Hidden units and enemy orders are not sent to Jev. As of lab 046,
+snapshots are exposed as explicitly stale type/location facts without health or
+orders; they may receive point-targeted movement, never a live unit-tag attack.
 Ability queries respect resource requirements; the engine remains the final arbiter.
 
 Sources: [Blizzard overview](https://github.com/Blizzard/s2client-proto),

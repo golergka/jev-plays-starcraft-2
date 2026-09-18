@@ -20,6 +20,8 @@ async def decide(view, jev, memory):
     questions = {}
     state = {'objective': view['objective'], 'resources': view['resources']}
     state['explored_map'] = view.get('explored_map')
+    state['visible_entities'] = view.get('visible_entities', [])
+    state['last_known_entities'] = view.get('last_known_entities', [])
     squad = [{**{k:u[k] for k in ('tag','type','position','health_fraction')},
               'build_progress':u.get('build_progress',1),
               'nearby_terrain':u.get('nearby_terrain', {})} for u in units]
@@ -59,8 +61,9 @@ async def decide(view, jev, memory):
         intent = await jev.ask({
             'objective': view['objective'], 'squad_center': center,
             'explored_map': view.get('explored_map'),
+            'last_known_entities': view.get('last_known_entities', []),
             'squad': squad, 'max_squad_separation': separation,
-            'visible_entities': list(surroundings.values()),
+            'visible_entities': view.get('visible_entities',list(surroundings.values())),
             'previous_navigation': navigation,
             'recent_intent_outcomes': outcomes,
             'visited_areas': [{'center': [x*10+5, y*10+5], 'visits': count}

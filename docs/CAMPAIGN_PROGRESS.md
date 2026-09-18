@@ -101,3 +101,29 @@ Source fields: Blizzard's [raw protocol](https://github.com/Blizzard/s2client-pr
 and [spatial layers](https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/spatial.proto).
 The minimap `alerts` field documents unit-attacked alerts, not campaign objective
 markers. Those markers are not exposed as a named raw field in these definitions.
+
+Result: 300 calls, $0.132396, median request latency 422 ms. No long-range map
+candidate was selected. The squad acquired reinforcements (ten owned units at the
+end), clustered tightly, and stalled around town. No victory. This is evidence
+that adding a terrain grid and more actions alone did not produce useful long
+movement choices in this trial. Summary: `028-map-overview.json`.
+
+## Lab 046: restore legitimate snapshot information
+
+A direct API inspection with the harness stopped found `LogisticsHeadquarters`
+at (72.5,108.5), alliance Enemy, display type Snapshot. There were no currently
+visible enemy units in that inspection. Blizzard defines Snapshot as the dimmed
+unit representation retained under fog. The earlier filter discarded this
+player-known information, explaining why the objective location was missing.
+
+Expose all snapshots as stale type/location/alliance facts, with no health,
+orders or live-presence claim. Offer point-targeted move/attack-move to every
+snapshot location equally. Also expose all currently visible entities globally
+and all visible enemy attack targets, rather than dropping distant ones through
+the nearest-eight local-context limit. Hidden units remain excluded, and the
+validator still forbids tag-targeting anything not currently visible.
+
+Remove the manually transcribed marker from the objective. Resume with only
+"Destroy the Logistics Headquarters. Raynor must survive." All spatial inputs now
+come directly from the player API. No route or target is selected by the harness.
+13 tests pass, including stale-snapshot and hidden-terrain boundaries.

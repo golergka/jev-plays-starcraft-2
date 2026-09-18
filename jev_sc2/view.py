@@ -60,7 +60,10 @@ def explored_map(visibility, pathing, area, cell_size=6):
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
-    # Do not pass snapshots, hidden units, or enemy orders to the policy.
+    # Snapshots are the player's stale fog-of-war memory, never live targets.
+    snapshots = [u for u in obs.raw_data.units if u.display_type == raw.Snapshot
+                 and u.alliance != raw.Self]
+    # Do not pass hidden units or enemy orders to the policy.
     visible = [u for u in obs.raw_data.units if u.display_type == raw.Visible
                and u.alliance != raw.Self]
     abilities = await client.request('query', query.RequestQuery(
@@ -75,6 +78,16 @@ async def make_view(client, observation, data, info, objective):
     placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
+            'last_known_entities': [
+                {'type':names.get(u.unit_type,str(u.unit_type)),
+                 'alliance':raw.Alliance.Name(u.alliance),'position':[u.pos.x,u.pos.y],
+                 'status':'snapshot under fog; current presence and health unknown'}
+                for u in snapshots],
+            'visible_entities': [
+                {'tag':u.tag,'type':names.get(u.unit_type,str(u.unit_type)),
+                 'alliance':raw.Alliance.Name(u.alliance),
+                 'position':[u.pos.x,u.pos.y],'health':u.health,'shield':u.shield}
+                for u in visible],
             'explored_map': explored_map(obs.raw_data.map_state.visibility,
                                          info.start_raw.pathing_grid,area),
             'resources': {'minerals': obs.player_common.minerals,
@@ -150,8 +163,23 @@ async def make_view(client, observation, data, info, objective):
                 candidates.append({'id':f'move_{target.tag}',
                                    'description':f'Move to visible {label} tag {target.tag}, distance {distance}',
                                    'command':command(move, point=[target.pos.x,target.pos.y])})
+        if attack is not None:
+            offered_ids = {c['id'] for c in candidates}
+            for target in visible:
+                if target.alliance != raw.Enemy or f'attack_{target.tag}' in offered_ids:
+                    continue
+                candidates.append({'id':f'attack_{target.tag}',
+                                   'description':f'Attack visible {names.get(target.unit_type,str(target.unit_type))} tag {target.tag} at [{target.pos.x:.1f},{target.pos.y:.1f}]',
+                                   'command':command(attack,target_tag=target.tag)})
         # Fixed compass displacements are action primitives, not tactical choices.
         if move is not None:
+            for target in snapshots:
+                for mode, ability in [('move',move),('attack_move',attack)]:
+                    if ability is None:
+                        continue
+                    candidates.append({'id':f'last_known_{mode}_{target.tag}',
+                                       'description':f'{mode.replace("_"," ")} to last-known {names.get(target.unit_type,str(target.unit_type))} location [{target.pos.x:.1f},{target.pos.y:.1f}]; snapshot under fog, current presence unknown',
+                                       'command':command(ability,point=[target.pos.x,target.pos.y])})
             # A human may click any minimap coordinate, including unexplored
             # terrain. Uniform destinations expose that reach without a route
             # planner, mission-specific coordinates, or hidden terrain facts.

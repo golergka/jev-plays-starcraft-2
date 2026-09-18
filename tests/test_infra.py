@@ -63,6 +63,30 @@ def test_debug_is_unavailable():
         asyncio.run(SC2(None).request('debug',None))
 
 
+def test_snapshots_are_stale_locations_not_live_units_or_tag_targets():
+    from s2clientprotocol import query_pb2 as query
+    obs=sc.ResponseObservation()
+    own=obs.observation.raw_data.units.add(tag=1,alliance=raw.Self,display_type=raw.Visible)
+    own.pos.x=2; own.pos.y=2
+    old=obs.observation.raw_data.units.add(tag=2,unit_type=100,alliance=raw.Enemy,display_type=raw.Snapshot,health=999)
+    old.pos.x=18; old.pos.y=18
+    obs.observation.raw_data.units.add(tag=3,unit_type=101,alliance=raw.Enemy,display_type=raw.Hidden)
+    data=sc.ResponseData(); data.units.add(unit_id=100,name='KnownBuilding'); data.units.add(unit_id=101,name='HiddenSecret')
+    info=sc.ResponseGameInfo(); info.start_raw.playable_area.p1.x=20; info.start_raw.playable_area.p1.y=20
+    class Client:
+        async def request(self,name,body):
+            result=query.ResponseQuery(); abilities=result.abilities.add(unit_tag=1)
+            abilities.abilities.add(ability_id=16); abilities.abilities.add(ability_id=23)
+            return result
+    view=asyncio.run(make_view(Client(),obs,data,info,'test'))
+    assert view['last_known_entities']==[{'type':'KnownBuilding','alliance':'Enemy','position':[18.0,18.0],'status':'snapshot under fog; current presence and health unknown'}]
+    assert view['visible_entities']==[]
+    assert 'HiddenSecret' not in str(view)
+    commands=[c['command'] for c in view['self'][0]['candidates'] if c['id'].startswith('last_known_')]
+    assert len(commands)==2
+    assert all(c['point']==[18,18] and 'target_tag' not in c for c in commands)
+
+
 def test_latest_build_numerically(tmp_path):
     for version in [9,100]:
         p=tmp_path/f'Versions/Base{version}/SC2.app/Contents/MacOS/SC2'
