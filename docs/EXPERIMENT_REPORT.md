@@ -1,9 +1,11 @@
-# Jev plays StarCraft II: first session
+# Jev plays StarCraft II: experiment report
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-The policy has not won the mission. Its most persistent difficulty is converting
-local actions into sustained objective progress.
+**Liberation Day is now verified won.** The Outlaws remains in progress. The most
+persistent difficulty is converting local choices into coordinated, sustained
+objective progress. Earlier sections below retain the unsuccessful trials; the
+latest results appear at the end.
 
 ## What ran
 
@@ -74,7 +76,7 @@ labels, masked by current player visibility; it does not compute a route.
 - Evaluate sustained sampling behavior and compare fresh mission runs if useful.
 - Improve the observation/action representation based on measured failures, while
   keeping every tactical choice with Jev.
-- Mission victory and full campaign progression remain unachieved. Training,
+- Full campaign progression remains unachieved. Liberation Day is won. Training,
   mineral gathering and visible engine-checked building sites are available;
   research, armory and unlock state are not implemented.
 
@@ -110,3 +112,39 @@ sequential trial cost $0.070643 for 528 unit answers. Normalized with that overh
 these are about $0.148 versus $0.134 per thousand unit answers. Different game
 states and request counts prevent a controlled cost comparison. Parallelism reduced
 observed attention gaps; it did not establish better tactics or a mission victory.
+
+
+## Campaign results through labs 059–061
+
+Liberation Day ended in an API-confirmed Victory at loop 3512. The successful fresh
+attempt made 190 Jev calls ($0.044435) before a cinematic temporarily hid the army.
+A persistent Jev-selected shared attack-move continued and finished the mission.
+The harness subsequently read the actual result and saved a replay. This is one
+verified win, not a repeatability claim. The injured-force attempt before it lost
+Raynor near the Headquarters.
+
+Exposing fog snapshots supplied the Headquarters' last-known location without
+manual coordinates. Shared force orders reduced the fragmentation seen with
+independent per-unit decisions. Neither change alone was isolated experimentally.
+
+The Outlaws adds an economy, and exposed several failures and interface omissions:
+
+- Whole-force actions fit combat squads poorly once structures and workers appear.
+  Type selections restored separate control, but Jev repeatedly sent workers into
+  combat and lost the base.
+- Contribution-before-action questions kept workers mining in subsequent trials.
+  Distant visible mineral targets and legal single-builder options had previously
+  been missing from the interface; those failures cannot fairly be blamed on Jev.
+- Supply effects must reach the decision stage that chooses construction. Moving
+  them into contribution facts led to additional completed Depots.
+- The combined labs 059–060 continuation used 676 calls ($0.341030), grew to four
+  Depots and about forty SCVs, but never built a sustained army or won. A rolling
+  observation history exposed replacements and losses; changing strategic labels
+  did not establish better execution.
+- Lab 061 now tests a shared Jev investment choice rather than independent spending
+  choices for each unit type. Outcome is pending; passing tests verify routing and
+  control boundaries, not strategic competence.
+
+These trials resume evolving games. Resource accumulation while the harness is
+stopped, policy-memory resets on restart, and prior losses confound comparisons.
+The public summary files and progression journal preserve those qualifications.

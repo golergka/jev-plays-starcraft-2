@@ -4,7 +4,7 @@ An experiment in fast, probabilistic decisions. Jev chooses actions; Python hand
 observations, geometry, validation, transport and logging. No other inference model
 participates in the game loop. This is an experimental player, not a complete campaign bot.
 
-Read [the first-session experiment report](docs/EXPERIMENT_REPORT.md) for measured
+Read [the experiment report](docs/EXPERIMENT_REPORT.md) for measured
 results, failed approaches, and current limitations.
 
 ## Run
@@ -64,19 +64,23 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
 ```
 
 Omit `--map` to resume the running mission. This has loaded successfully and
-accepted Jev commands; it has not yet produced a mission victory. Stock campaign
-progression, research and unlocks are not implemented.
+produced a verified **Victory in Liberation Day**, recorded with an API result and
+replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). The Outlaws remains
+in progress. All three main campaigns are the target; stock campaign menus,
+research and unlock persistence are not implemented.
 
-The policy now asks Jev for a squad intent periodically, then asks Jev for each
-unit's action in two concurrent batches of six, rotating through the owned units.
-This reduces request latency but still updates each unit less frequently as the army grows. The current experiment samples the squad intent from Jev's returned
-probabilities using seed `20260918`; individual action choices are unchanged.
-`navigation_sample` events record the original top choice, sampled choice and
-weights. The seed resets on a new harness run and survives commit reloads.
-In the first hierarchy trial this stopped repeated dog-following but produced
-a northward movement plateau. Accepted commands are not evidence of useful motion.
-Reports include squad centers, navigation choices and engine action-result codes;
-the commit journal records hypotheses and outcomes.
+The current policy asks Jev for a strategic priority, a contribution and concrete
+order for each unit-type selection, and one shared investment across the economy.
+All choices remain Jev decisions, including saving resources, selecting a builder,
+and choosing individual control. A rolling observation history exposes unit
+arrivals/disappearances and net resource changes without prescribing a response.
+The individual-control fallback uses concurrent small batches and sampled Jev
+navigation probabilities. Commit history records earlier policy designs.
+
+Map observations include explored static terrain, currently visible entities and
+explicitly stale fog snapshots. Hidden entities are excluded. Shared commands,
+training, gathering and engine-checked construction are implemented; the complete
+SC2 ability surface is not yet covered. See the progression journal for outcomes.
 
 ## Resume the current experiment
 

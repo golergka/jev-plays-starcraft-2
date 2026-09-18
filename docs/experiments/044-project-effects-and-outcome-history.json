@@ -1,0 +1,1421 @@
+{
+  "run": "runs/20260918T224328.655378Z/events.jsonl",
+  "calls": 676,
+  "latency_median_ms": 450.0,
+  "latency_p95_ms": 744,
+  "decision_median_ms": 1082.0,
+  "decision_p95_ms": 1889,
+  "cost_usd": 0.341029752,
+  "actions_submitted": 76,
+  "decision_batches": 19,
+  "group_decisions": 1347,
+  "group_choices": {
+    "unit_4325113858_build_319_east": 6,
+    "continue": 1222,
+    "unit_4306239490_build_319_east": 2,
+    "unit_4314890241_build_319_east": 1,
+    "individual": 19,
+    "group_ability_524": 32,
+    "group_ability_560": 25,
+    "group_attack_4310695937": 1,
+    "group_last_known_attack_move_8663990278": 34,
+    "unit_4325113858_build_319_north": 1,
+    "group_attack_4317511683": 1,
+    "unit_4327211009_build_319_north": 1,
+    "group_stop": 1,
+    "unit_4302045186_build_319_east_10": 1
+  },
+  "strategy_choices": {
+    "strengthen": 23,
+    "attack": 52
+  },
+  "purposes_by_cohort": {
+    "Barracks": {
+      "continue": 94,
+      "production": 195
+    },
+    "CommandCenter": {
+      "continue": 99,
+      "production": 190
+    },
+    "Marine": {
+      "combat": 62,
+      "continue": 173,
+      "positioning": 1
+    },
+    "SCV": {
+      "construction": 49,
+      "income": 240
+    },
+    "SupplyDepot": {
+      "continue": 269,
+      "individual": 20
+    }
+  },
+  "group_calls": 289,
+  "choices_by_cohort": {
+    "Barracks": {
+      "continue": 255,
+      "group_ability_560": 25
+    },
+    "CommandCenter": {
+      "continue": 248,
+      "group_ability_524": 32
+    },
+    "Marine": {
+      "group_attack_4310695937": 1,
+      "continue": 190,
+      "group_last_known_attack_move_8663990278": 34,
+      "group_attack_4317511683": 1,
+      "group_stop": 1
+    },
+    "SCV": {
+      "unit_4325113858_build_319_east": 6,
+      "unit_4306239490_build_319_east": 2,
+      "continue": 268,
+      "unit_4314890241_build_319_east": 1,
+      "unit_4325113858_build_319_north": 1,
+      "unit_4327211009_build_319_north": 1,
+      "unit_4302045186_build_319_east_10": 1
+    },
+    "SupplyDepot": {
+      "continue": 261,
+      "individual": 19
+    }
+  },
+  "units_scheduled": 4,
+  "median_scheduled_update_loops": 128.0,
+  "max_scheduled_update_loops": 1974,
+  "ticks_with_zero_submissions": 231,
+  "choices": {
+    "strengthen": 23,
+    "construction": 49,
+    "continue": 1311,
+    "unit_4325113858_build_319_east": 6,
+    "unit_4306239490_build_319_east": 2,
+    "unit_4314890241_build_319_east": 1,
+    "individual": 20,
+    "west": 11,
+    "income": 240,
+    "production": 385,
+    "group_ability_524": 32,
+    "group_ability_560": 25,
+    "combat": 62,
+    "group_attack_4310695937": 1,
+    "attack": 52,
+    "group_last_known_attack_move_8663990278": 34,
+    "unit_4325113858_build_319_north": 1,
+    "south": 1,
+    "group_attack_4317511683": 1,
+    "unit_4327211009_build_319_north": 1,
+    "positioning": 1,
+    "group_stop": 1,
+    "north": 1,
+    "unit_4302045186_build_319_east_10": 1
+  },
+  "navigation_choices": {
+    "west": 11,
+    "south": 1,
+    "north": 1
+  },
+  "sampled_navigation_choices": {
+    "west": 7,
+    "south": 2,
+    "regroup_4324851726": 1,
+    "regroup_4325376002": 1,
+    "north": 2
+  },
+  "navigation_samples": [
+    {
+      "time": 1789771430.39131,
+      "event": "navigation_sample",
+      "loop": 8183,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "engage": 0.07,
+        "regroup_4317773825": 0.02,
+        "regroup_4325376002": 0.07,
+        "neutral": 0.01,
+        "east": 0.09,
+        "north": 0.24,
+        "south": 0.14,
+        "west": 0.36
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771436.873436,
+      "event": "navigation_sample",
+      "loop": 8325,
+      "top_choice": "west",
+      "sampled_choice": "south",
+      "probabilities": {
+        "north": 0.14,
+        "hold": 0.04,
+        "west": 0.37,
+        "regroup_4325376002": 0.08,
+        "east": 0.05,
+        "engage": 0.06,
+        "neutral": 0.01,
+        "regroup_4317773825": 0.04,
+        "south": 0.21
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771524.9039161,
+      "event": "navigation_sample",
+      "loop": 10299,
+      "top_choice": "south",
+      "sampled_choice": "regroup_4324851726",
+      "probabilities": {
+        "north": 0.11,
+        "regroup_4317773825": 0.01,
+        "south": 0.4,
+        "regroup_4325376002": 0.01,
+        "hold": 0.01,
+        "neutral": 0.01,
+        "engage": 0.02,
+        "regroup_4324851726": 0.07,
+        "west": 0.31,
+        "east": 0.05
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771535.317373,
+      "event": "navigation_sample",
+      "loop": 10520,
+      "top_choice": "west",
+      "sampled_choice": "regroup_4325376002",
+      "probabilities": {
+        "engage": 0.01,
+        "west": 0.43,
+        "east": 0.04,
+        "north": 0.27,
+        "regroup_4317773825": 0.01,
+        "south": 0.14,
+        "neutral": 0.01,
+        "regroup_4324851726": 0.06,
+        "hold": 0.01,
+        "regroup_4325376002": 0.02
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771540.966805,
+      "event": "navigation_sample",
+      "loop": 10640,
+      "top_choice": "west",
+      "sampled_choice": "south",
+      "probabilities": {
+        "west": 0.41000000000000003,
+        "north": 0.26,
+        "regroup_4324851726": 0.02,
+        "regroup_4325376002": 0.03,
+        "neutral": 0.01,
+        "east": 0.06,
+        "hold": 0.01,
+        "regroup_4317773825": 0.01,
+        "south": 0.19
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771554.921907,
+      "event": "navigation_sample",
+      "loop": 10967,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "hold": 0.01,
+        "regroup_4324851726": 0.01,
+        "west": 0.39999999999999997,
+        "east": 0.04,
+        "neutral": 0.01,
+        "south": 0.31,
+        "regroup_4317773825": 0.01,
+        "regroup_4325376002": 0.01,
+        "north": 0.13,
+        "engage": 0.07
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771587.000688,
+      "event": "navigation_sample",
+      "loop": 11693,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "hold": 0.01,
+        "regroup_4324851726": 0.01,
+        "north": 0.19,
+        "neutral": 0.01,
+        "east": 0.04,
+        "regroup_4325376002": 0.01,
+        "south": 0.26,
+        "regroup_4317773825": 0.01,
+        "west": 0.46
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771628.6276119,
+      "event": "navigation_sample",
+      "loop": 12600,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "regroup_4324851726": 0.01,
+        "regroup_4317773825": 0.01,
+        "west": 0.45,
+        "north": 0.2,
+        "south": 0.21,
+        "east": 0.04,
+        "regroup_4325376002": 0.01,
+        "hold": 0.01,
+        "neutral": 0.01,
+        "engage": 0.05
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771640.2587562,
+      "event": "navigation_sample",
+      "loop": 12884,
+      "top_choice": "west",
+      "sampled_choice": "north",
+      "probabilities": {
+        "east": 0.03,
+        "north": 0.16,
+        "engage": 0.1,
+        "regroup_4324851726": 0.02,
+        "south": 0.26,
+        "regroup_4317773825": 0.01,
+        "neutral": 0.01,
+        "west": 0.39,
+        "regroup_4325376002": 0.01,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771658.4721842,
+      "event": "navigation_sample",
+      "loop": 13292,
+      "top_choice": "north",
+      "sampled_choice": "north",
+      "probabilities": {
+        "south": 0.05,
+        "neutral": 0.01,
+        "west": 0.27999999999999997,
+        "regroup_4325376002": 0.01,
+        "east": 0.03,
+        "regroup_4317773825": 0.01,
+        "engage": 0.01,
+        "north": 0.59,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771676.5644631,
+      "event": "navigation_sample",
+      "loop": 13698,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "west": 0.46,
+        "south": 0.03,
+        "north": 0.39,
+        "engage": 0.01,
+        "regroup_4317773825": 0.01,
+        "hold": 0.01,
+        "regroup_4304666627": 0.06,
+        "east": 0.02,
+        "regroup_4325376002": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771693.466156,
+      "event": "navigation_sample",
+      "loop": 14077,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "neutral": 0.01,
+        "hold": 0.01,
+        "west": 0.59,
+        "regroup_4304666627": 0.01,
+        "north": 0.12,
+        "south": 0.13,
+        "regroup_4325376002": 0.01,
+        "east": 0.04,
+        "regroup_4324851726": 0.02,
+        "engage": 0.06
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789771698.903578,
+      "event": "navigation_sample",
+      "loop": 14198,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "regroup_4324851726": 0.01,
+        "neutral": 0.02,
+        "west": 0.34,
+        "engage": 0.01,
+        "east": 0.1,
+        "south": 0.29,
+        "north": 0.16,
+        "regroup_4325376002": 0.01,
+        "hold": 0.04,
+        "regroup_4317773825": 0.01,
+        "regroup_4304666627": 0.01
+      },
+      "seed": 20260918
+    }
+  ],
+  "navigation_centers": [
+    [
+      72.0,
+      18.5
+    ],
+    [
+      72.0,
+      18.5
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      71.7,
+      20.7
+    ],
+    [
+      72.0,
+      20.8
+    ],
+    [
+      72.0,
+      20.8
+    ],
+    [
+      72.0,
+      20.8
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 3697.87109375,
+    "max_separation": 17.2,
+    "by_type": {
+      "Barracks": {
+        "count": 1,
+        "health_total": 992.87109375,
+        "center": [
+          75.5,
+          26.5
+        ],
+        "max_separation": 0.0
+      },
+      "CommandCenter": {
+        "count": 1,
+        "health_total": 1500.0,
+        "center": [
+          66.5,
+          21.5
+        ],
+        "max_separation": 0.0
+      },
+      "SCV": {
+        "count": 19,
+        "health_total": 855.0,
+        "center": [
+          64.0,
+          20.0
+        ],
+        "max_separation": 15.0
+      },
+      "SupplyDepot": {
+        "count": 1,
+        "health_total": 350.0,
+        "center": [
+          73.0,
+          19.0
+        ],
+        "max_separation": 0.0
+      }
+    }
+  },
+  "last_distribution": {
+    "health_total": 5835.0,
+    "max_separation": 57.1,
+    "by_type": {
+      "Barracks": {
+        "count": 1,
+        "health_total": 1000.0,
+        "center": [
+          75.5,
+          26.5
+        ],
+        "max_separation": 0.0
+      },
+      "CommandCenter": {
+        "count": 1,
+        "health_total": 1500.0,
+        "center": [
+          66.5,
+          21.5
+        ],
+        "max_separation": 0.0
+      },
+      "Marine": {
+        "count": 2,
+        "health_total": 90.0,
+        "center": [
+          35.0,
+          43.7
+        ],
+        "max_separation": 25.4
+      },
+      "SCV": {
+        "count": 41,
+        "health_total": 1845.0,
+        "center": [
+          65.6,
+          21.0
+        ],
+        "max_separation": 12.9
+      },
+      "SupplyDepot": {
+        "count": 4,
+        "health_total": 1400.0,
+        "center": [
+          72.0,
+          20.8
+        ],
+        "max_separation": 7.0
+      }
+    }
+  },
+  "action_result_counts": {
+    "1": 76
+  },
+  "ticks_older_than_32_loops": 99,
+  "errors": [
+    {
+      "time": 1789771792.34641,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771794.106699,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771799.858623,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771801.859188,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771809.0462039,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771814.4113832,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771817.246261,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771822.163072,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    },
+    {
+      "time": 1789771826.677428,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}"
+    }
+  ],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789771686.40265,
+      "event": "reload",
+      "revision": "0320c12290ed279edf6ad6e24547e36dd0decf52"
+    }
+  ],
+  "first_tick": {
+    "time": 1789771411.019528,
+    "event": "tick",
+    "loop": 7738,
+    "revision": "b33edab06e0a95f60c7bd098a8fc6ea0259c5557",
+    "own_units": 22,
+    "units": [
+      {
+        "tag": 4325113858,
+        "type": "SCV",
+        "position": [
+          65.02197265625,
+          18.947509765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302307330,
+        "type": "SCV",
+        "position": [
+          67.221923828125,
+          18.625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316987393,
+        "type": "SCV",
+        "position": [
+          61.647071838378906,
+          19.26146125793457
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297850881,
+        "type": "SCV",
+        "position": [
+          60.3486328125,
+          23.13818359375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303355905,
+        "type": "Barracks",
+        "position": [
+          75.5,
+          26.5
+        ],
+        "health": 992.87109375,
+        "health_fraction": 0.99,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324589569,
+        "type": "SCV",
+        "position": [
+          60.80110168457031,
+          17.65226936340332
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4298113025,
+        "type": "SCV",
+        "position": [
+          63.54596710205078,
+          22.290103912353516
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313579531,
+        "type": "SCV",
+        "position": [
+          67.977783203125,
+          18.947509765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314890241,
+        "type": "SCV",
+        "position": [
+          62.703857421875,
+          16.367919921875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315676685,
+        "type": "SCV",
+        "position": [
+          73.829833984375,
+          25.16064453125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315938819,
+        "type": "SCV",
+        "position": [
+          62.15125274658203,
+          21.505126953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310433794,
+        "type": "SCV",
+        "position": [
+          66.5,
+          18.625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302831617,
+        "type": "SCV",
+        "position": [
+          64.99092864990234,
+          17.098575592041016
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314628097,
+        "type": "SCV",
+        "position": [
+          60.35546875,
+          21.505126953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4306239490,
+        "type": "SCV",
+        "position": [
+          65.77783203125,
+          18.625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313841667,
+        "type": "SCV",
+        "position": [
+          66.07470703125,
+          16.37255859375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4312793091,
+        "type": "SCV",
+        "position": [
+          61.337646484375,
+          20.70751953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303093761,
+        "type": "SCV",
+        "position": [
+          61.329345703125,
+          23.884765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297326593,
+        "type": "CommandCenter",
+        "position": [
+          66.5,
+          21.5
+        ],
+        "health": 1500.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316725249,
+        "type": "SCV",
+        "position": [
+          62.868804931640625,
+          23.175174713134766
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317773825,
+        "type": "SupplyDepot",
+        "position": [
+          73.0,
+          19.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313317378,
+        "type": "SCV",
+        "position": [
+          61.958251953125,
+          17.37158203125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 3265,
+    "decision_age_loops": 47,
+    "commands": [
+      {
+        "unit_tag": 4325113858,
+        "ability_id": 319,
+        "point": [
+          71.0,
+          18.0
+        ]
+      }
+    ],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 1942
+  },
+  "last_tick": {
+    "time": 1789771829.556236,
+    "event": "tick",
+    "loop": 17127,
+    "revision": "0320c12290ed279edf6ad6e24547e36dd0decf52",
+    "own_units": 49,
+    "units": [
+      {
+        "tag": 4302831617,
+        "type": "SCV",
+        "position": [
+          64.61612701416016,
+          15.41377067565918
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316725249,
+        "type": "SCV",
+        "position": [
+          61.68750762939453,
+          23.719417572021484
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326948867,
+        "type": "SCV",
+        "position": [
+          69.3125,
+          21.820556640625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324589569,
+        "type": "SCV",
+        "position": [
+          60.344482421875,
+          17.6064453125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4324851726,
+        "type": "SupplyDepot",
+        "position": [
+          71.0,
+          25.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315676685,
+        "type": "SCV",
+        "position": [
+          70.89208984375,
+          21.0537109375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326162434,
+        "type": "SCV",
+        "position": [
+          63.947509765625,
+          20.0224609375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4328521732,
+        "type": "SCV",
+        "position": [
+          63.625,
+          21.355712890625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317773825,
+        "type": "SupplyDepot",
+        "position": [
+          73.0,
+          19.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4316987393,
+        "type": "SCV",
+        "position": [
+          63.00511169433594,
+          19.885942459106445
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302307330,
+        "type": "SCV",
+        "position": [
+          66.759765625,
+          18.67333984375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4298113025,
+        "type": "SCV",
+        "position": [
+          60.3720703125,
+          23.132080078125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314628097,
+        "type": "SCV",
+        "position": [
+          60.35546875,
+          21.505126953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4302045186,
+        "type": "SCV",
+        "position": [
+          72.056640625,
+          20.0
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4329832451,
+        "type": "SCV",
+        "position": [
+          67.22216796875,
+          24.375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4306239490,
+        "type": "SCV",
+        "position": [
+          65.77783203125,
+          18.625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310695938,
+        "type": "SCV",
+        "position": [
+          68.51513671875,
+          19.48486328125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4315938819,
+        "type": "SCV",
+        "position": [
+          63.500572204589844,
+          21.505126953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314103833,
+        "type": "SCV",
+        "position": [
+          69.6318359375,
+          21.210693359375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297326593,
+        "type": "CommandCenter",
+        "position": [
+          66.5,
+          21.5
+        ],
+        "health": 1500.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4329570306,
+        "type": "SCV",
+        "position": [
+          66.5,
+          24.375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313579531,
+        "type": "SCV",
+        "position": [
+          67.977783203125,
+          18.947509765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325638145,
+        "type": "SCV",
+        "position": [
+          65.02197265625,
+          18.947509765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4308860931,
+        "type": "SCV",
+        "position": [
+          63.732666015625,
+          22.762939453125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4329046021,
+        "type": "Marine",
+        "position": [
+          22.394927978515625,
+          45.453392028808594
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4331405313,
+        "type": "SCV",
+        "position": [
+          66.5,
+          17.875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325113858,
+        "type": "SCV",
+        "position": [
+          70.12109375,
+          26.06640625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4327735298,
+        "type": "SCV",
+        "position": [
+          63.625,
+          22.07763671875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4329308163,
+        "type": "SCV",
+        "position": [
+          68.085205078125,
+          23.94482421875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326424583,
+        "type": "SCV",
+        "position": [
+          64.807373046875,
+          23.837646484375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317511684,
+        "type": "SCV",
+        "position": [
+          69.23193359375,
+          23.0
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4330094594,
+        "type": "SCV",
+        "position": [
+          65.778076171875,
+          24.375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4327997445,
+        "type": "SCV",
+        "position": [
+          64.27001953125,
+          23.30029296875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313317378,
+        "type": "SCV",
+        "position": [
+          61.956298828125,
+          17.369873046875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4304666627,
+        "type": "SupplyDepot",
+        "position": [
+          73.0,
+          21.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4327473157,
+        "type": "SCV",
+        "position": [
+          68.644775390625,
+          23.359375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4312793091,
+        "type": "SCV",
+        "position": [
+          61.337646484375,
+          20.70751953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313841667,
+        "type": "SCV",
+        "position": [
+          66.07470703125,
+          16.37255859375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310433794,
+        "type": "SCV",
+        "position": [
+          67.316650390625,
+          18.2685546875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4317249563,
+        "type": "SCV",
+        "position": [
+          69.623291015625,
+          22.43408203125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4325376002,
+        "type": "SupplyDepot",
+        "position": [
+          71.0,
+          18.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4327211009,
+        "type": "SCV",
+        "position": [
+          63.625,
+          20.633544921875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310958089,
+        "type": "SCV",
+        "position": [
+          64.48486328125,
+          19.48486328125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297850881,
+        "type": "SCV",
+        "position": [
+          63.63525390625,
+          22.26668930053711
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4328783877,
+        "type": "Marine",
+        "position": [
+          47.52262878417969,
+          41.97367858886719
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314890241,
+        "type": "SCV",
+        "position": [
+          63.05000305175781,
+          16.80615997314453
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4326686721,
+        "type": "SCV",
+        "position": [
+          69.05224609375,
+          20.02197265625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303093761,
+        "type": "SCV",
+        "position": [
+          61.61811065673828,
+          23.752212524414062
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4303355905,
+        "type": "Barracks",
+        "position": [
+          75.5,
+          26.5
+        ],
+        "health": 1000.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 7672,
+    "decision_age_loops": 25,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 935
+  }
+}
