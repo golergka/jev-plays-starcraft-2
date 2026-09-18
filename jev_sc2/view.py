@@ -126,6 +126,21 @@ async def make_view(client, observation, data, info, objective):
                                    'command':command(move, point=[target.pos.x,target.pos.y])})
         # Fixed compass displacements are action primitives, not tactical choices.
         if move is not None:
+            # A human may click any minimap coordinate, including unexplored
+            # terrain. Uniform destinations expose that reach without a route
+            # planner, mission-specific coordinates, or hidden terrain facts.
+            for row, north in enumerate(('south', 'middle', 'north')):
+                for col, east in enumerate(('west', 'center', 'east')):
+                    x = area.p0.x + (col + 0.5) * (area.p1.x-area.p0.x)/3
+                    y = area.p0.y + (row + 0.5) * (area.p1.y-area.p0.y)/3
+                    terrain_label = visible_terrain(obs.raw_data.map_state.visibility,
+                                                    info.start_raw.pathing_grid,x,y)
+                    for mode, ability in [('move',move),('attack_move',attack)]:
+                        if ability is None:
+                            continue
+                        candidates.append({'id':f'map_{mode}_{north}_{east}',
+                                           'description':f'{mode.replace("_"," ")} to {north}-{east} map sector at [{x:.1f},{y:.1f}]; {terrain_label}',
+                                           'command':command(ability,point=[x,y])})
             for teammate in own:
                 if teammate.tag == unit.tag:
                     continue

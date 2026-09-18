@@ -66,3 +66,23 @@ unknown. This is an observation from the player's screen, not hidden map-script
 knowledge or an instruction to take a particular action. All choices remain Jev's.
 Resume the existing map for 300 calls to see whether this information changes
 navigation. This run resets policy memory but preserves live units and game state.
+
+Result: the marker trial advanced into town, triggering the propaganda scene and
+the Adjutant's warning that a large Dominion force is gathering in the town center.
+300 calls cost $0.096452. This is qualitative progress, not a controlled causal
+comparison and not a victory. The marker was manually transcribed, so observation
+ingestion is not fully autonomous yet. Gameplay orders themselves came from Jev.
+
+The user reiterated that exploring Jev matters more than mechanically completing
+the campaign. Direct tactical orders from the supervising assistant would only be
+an intermediate debugging technique; the final player must make its own choices.
+
+## Lab 045: longer action reach
+
+Offer move and attack-move to the centers of a uniform 3x3 partition of the playable
+map. Every point is an ordinary player-clickable coordinate; its terrain is only
+described when currently visible. There is no objective-specific target, path
+planner, priority weight, or automatic action. Jev chooses whether to use these
+alongside short movement, attack, regroup, hold and continue. Resume the marker
+trial's game state to test uptake. Candidate construction requires a harness
+restart; committed player policy still reloads during a running game.
