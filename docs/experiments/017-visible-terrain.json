@@ -1,0 +1,470 @@
+{
+  "run": "runs/20260918T211056.315863Z/events.jsonl",
+  "calls": 150,
+  "latency_median_ms": 383.5,
+  "latency_p95_ms": 831,
+  "cost_usd": 0.03078033,
+  "actions_submitted": 414,
+  "ticks_with_zero_submissions": 12,
+  "choices": {
+    "east": 122,
+    "continue": 293,
+    "north": 37,
+    "south": 3,
+    "join_4311744513": 50,
+    "join_4312006657": 42,
+    "join_4310695937": 57,
+    "join_4310958081": 35,
+    "west": 50,
+    "join_4311220225": 24,
+    "join_4311482369": 7,
+    "attack_4299423745": 1
+  },
+  "navigation_choices": {
+    "east": 11,
+    "north": 2,
+    "west": 1
+  },
+  "sampled_navigation_choices": {
+    "east": 9,
+    "north": 2,
+    "west": 1,
+    "regroup": 2
+  },
+  "navigation_samples": [
+    {
+      "time": 1789765861.8617442,
+      "event": "navigation_sample",
+      "loop": 2,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "engage": 0.07,
+        "north": 0.24,
+        "hold": 0.01,
+        "east": 0.6,
+        "west": 0.04,
+        "south": 0.02,
+        "neutral": 0.02
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765868.858481,
+      "event": "navigation_sample",
+      "loop": 117,
+      "top_choice": "east",
+      "sampled_choice": "north",
+      "probabilities": {
+        "east": 0.64,
+        "engage": 0.1,
+        "north": 0.26
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765876.0169668,
+      "event": "navigation_sample",
+      "loop": 229,
+      "top_choice": "north",
+      "sampled_choice": "east",
+      "probabilities": {
+        "engage": 0.04,
+        "regroup": 0.05,
+        "north": 0.49,
+        "south": 0.01,
+        "east": 0.38,
+        "west": 0.02,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765881.868004,
+      "event": "navigation_sample",
+      "loop": 347,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "west": 0.03,
+        "regroup": 0.03,
+        "north": 0.13,
+        "south": 0.09,
+        "east": 0.72
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765886.6414359,
+      "event": "navigation_sample",
+      "loop": 462,
+      "top_choice": "east",
+      "sampled_choice": "west",
+      "probabilities": {
+        "regroup": 0.05,
+        "north": 0.21,
+        "south": 0.1,
+        "east": 0.55,
+        "west": 0.08,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765891.9396758,
+      "event": "navigation_sample",
+      "loop": 578,
+      "top_choice": "west",
+      "sampled_choice": "regroup",
+      "probabilities": {
+        "east": 0.34,
+        "regroup": 0.02,
+        "south": 0.03,
+        "west": 0.39,
+        "north": 0.21,
+        "hold": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765897.413035,
+      "event": "navigation_sample",
+      "loop": 699,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "west": 0.05,
+        "north": 0.07,
+        "south": 0.06,
+        "regroup": 0.11,
+        "east": 0.71
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765902.693984,
+      "event": "navigation_sample",
+      "loop": 815,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "north": 0.02,
+        "regroup": 0.06,
+        "west": 0.03,
+        "south": 0.06,
+        "east": 0.83
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765908.079329,
+      "event": "navigation_sample",
+      "loop": 933,
+      "top_choice": "east",
+      "sampled_choice": "north",
+      "probabilities": {
+        "regroup": 0.12,
+        "north": 0.07,
+        "south": 0.09,
+        "east": 0.65,
+        "hold": 0.01,
+        "west": 0.06
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765913.4794612,
+      "event": "navigation_sample",
+      "loop": 1054,
+      "top_choice": "north",
+      "sampled_choice": "east",
+      "probabilities": {
+        "north": 0.38,
+        "regroup": 0.21,
+        "hold": 0.01,
+        "west": 0.07,
+        "east": 0.3,
+        "south": 0.03
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765918.765086,
+      "event": "navigation_sample",
+      "loop": 1171,
+      "top_choice": "east",
+      "sampled_choice": "regroup",
+      "probabilities": {
+        "neutral": 0.01,
+        "south": 0.02,
+        "regroup": 0.09,
+        "east": 0.78,
+        "north": 0.06,
+        "west": 0.04
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765924.130922,
+      "event": "navigation_sample",
+      "loop": 1291,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "west": 0.24,
+        "south": 0.01,
+        "regroup": 0.2,
+        "neutral": 0.01,
+        "east": 0.49,
+        "north": 0.05
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765929.334188,
+      "event": "navigation_sample",
+      "loop": 1407,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "east": 0.63,
+        "south": 0.02,
+        "west": 0.03,
+        "regroup": 0.15,
+        "north": 0.16,
+        "neutral": 0.01
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789765934.8513641,
+      "event": "navigation_sample",
+      "loop": 1525,
+      "top_choice": "east",
+      "sampled_choice": "east",
+      "probabilities": {
+        "north": 0.02,
+        "regroup": 0.08,
+        "west": 0.01,
+        "south": 0.01,
+        "east": 0.78,
+        "engage": 0.1
+      },
+      "seed": 20260918
+    }
+  ],
+  "navigation_centers": [
+    [
+      10.6,
+      17.2
+    ],
+    [
+      21.1,
+      8.8
+    ],
+    [
+      22.7,
+      11.5
+    ],
+    [
+      30.8,
+      10.2
+    ],
+    [
+      34.1,
+      11.0
+    ],
+    [
+      24.0,
+      8.5
+    ],
+    [
+      26.5,
+      8.5
+    ],
+    [
+      36.0,
+      7.8
+    ],
+    [
+      46.1,
+      6.8
+    ],
+    [
+      51.0,
+      10.0
+    ],
+    [
+      54.2,
+      10.0
+    ],
+    [
+      56.3,
+      9.7
+    ],
+    [
+      61.4,
+      8.7
+    ],
+    [
+      66.9,
+      8.2
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 150.0,
+    "max_separation": 0.0
+  },
+  "last_distribution": {
+    "health_total": 407.0,
+    "max_separation": 31.2
+  },
+  "action_result_counts": {
+    "88": 23,
+    "1": 391
+  },
+  "ticks_older_than_32_loops": 0,
+  "errors": [],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789765862.21722,
+    "event": "tick",
+    "loop": 2,
+    "revision": "794b9fd3feb9fde224d85efa9ab1b1e9304974e0",
+    "own_units": 1,
+    "units": [
+      {
+        "tag": 4310433793,
+        "type": "SpecialOpsDropship",
+        "position": [
+          10.603042602539062,
+          17.183181762695312
+        ],
+        "health": 150.0,
+        "health_fraction": 1.0
+      }
+    ],
+    "score": 500,
+    "decision_age_loops": 17,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 1050
+  },
+  "last_tick": {
+    "time": 1789765937.041827,
+    "event": "tick",
+    "loop": 1573,
+    "revision": "794b9fd3feb9fde224d85efa9ab1b1e9304974e0",
+    "own_units": 6,
+    "units": [
+      {
+        "tag": 4311220225,
+        "type": "Marine",
+        "position": [
+          65.79300689697266,
+          10.223711013793945
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4312006657,
+        "type": "Marine",
+        "position": [
+          84.951416015625,
+          8.55029296875
+        ],
+        "health": 27.0,
+        "health_fraction": 0.6
+      },
+      {
+        "tag": 4311482369,
+        "type": "Marine",
+        "position": [
+          84.145751953125,
+          9.052490234375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4310958081,
+        "type": "Marine",
+        "position": [
+          53.79380798339844,
+          8.334199905395508
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4310695937,
+        "type": "Raynor01",
+        "position": [
+          54.00672149658203,
+          9.118867874145508
+        ],
+        "health": 200.0,
+        "health_fraction": 1.0
+      },
+      {
+        "tag": 4311744513,
+        "type": "Marine",
+        "position": [
+          68.12703704833984,
+          10.350875854492188
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0
+      }
+    ],
+    "score": 300,
+    "decision_age_loops": 11,
+    "commands": [
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          71.79300689697266,
+          10.223711013793945
+        ]
+      },
+      {
+        "unit_tag": 4312006657,
+        "ability_id": 16,
+        "point": [
+          90.951416015625,
+          8.55029296875
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          84.951416015625,
+          8.55029296875
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          62.127037048339844,
+          10.350875854492188
+        ]
+      }
+    ],
+    "submitted": 4,
+    "action_results": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 502
+  }
+}

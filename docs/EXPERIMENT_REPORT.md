@@ -29,7 +29,7 @@ standalone mission, not a verified recreation of campaign progression.
 | Add measured displacement history | Jev eventually changed direction | Longer trial crossed the same corridor repeatedly |
 | Add visited-area counts | A different route emerged | Units spread apart; centroid movement hid separation |
 | Offer regroup intent and friendly-unit movement | Local friendly approaches occurred; squad intent never selected regroup | Ended with Raynor and two wounded Marines; no victory |
-| Sample navigation probabilities | After a top-up, live sampling selected regroup and produced further northward travel | Two-unit damaged starting state; compare cautiously; see run 015 |
+| Sample navigation probabilities | Initial run selected regroup and moved north; sustained run lost Raynor | Runs 015–016; UI-confirmed defeat, despite missing protocol result |
 
 Successful calls in these live trials had per-run median latency between 355 and
 450 ms. These are measured run medians, not a service guarantee. Two-stage decisions
@@ -56,10 +56,12 @@ the harness restarts. SC2 continues in real time during those gaps; a unit can d
 between trials. Later policies therefore inherit different positions and damage.
 No causal ranking of policies or generalized claim about Jev's limits is justified.
 
-The current trial uses probability sampling of squad intent. All weights come from Jev;
+The policy uses probability sampling of squad intent. All weights come from Jev;
 there is no scripted route or uniform-random escape policy. Measure
 whether it explores new areas, preserves Raynor, and avoids repeated routes. A
-single lucky movement is not enough to call it an improvement.
+single lucky movement is not enough to call it an improvement. The sustained
+follow-up did end in defeat. A fresh-mission trial now adds nearby static terrain
+labels, masked by current player visibility; it does not compute a route.
 
 ## Remaining work
 
