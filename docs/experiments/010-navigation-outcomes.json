@@ -1,0 +1,199 @@
+{
+  "run": "runs/20260918T205533.249430Z/events.jsonl",
+  "calls": 120,
+  "latency_median_ms": 356.0,
+  "latency_p95_ms": 457,
+  "cost_usd": 0.013531056,
+  "actions_submitted": 243,
+  "ticks_with_zero_submissions": 10,
+  "choices": {
+    "north": 196,
+    "continue": 405,
+    "east": 64
+  },
+  "navigation_choices": {
+    "north": 9,
+    "east": 2
+  },
+  "navigation_centers": [
+    [
+      66.7,
+      13.8
+    ],
+    [
+      67.0,
+      14.1
+    ],
+    [
+      66.7,
+      14.3
+    ],
+    [
+      67.0,
+      14.2
+    ],
+    [
+      66.7,
+      14.3
+    ],
+    [
+      66.7,
+      14.2
+    ],
+    [
+      66.9,
+      14.3
+    ],
+    [
+      66.8,
+      14.1
+    ],
+    [
+      66.8,
+      14.4
+    ],
+    [
+      66.8,
+      14.4
+    ],
+    [
+      75.3,
+      8.6
+    ]
+  ],
+  "action_result_counts": {
+    "1": 243
+  },
+  "ticks_older_than_32_loops": 1,
+  "errors": [
+    {
+      "time": 1789764943.692074,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789764950.5281222,
+      "event": "reload",
+      "revision": "9a509f5bdaf8d360bf6b53fcaee234353afbb1f6"
+    }
+  ],
+  "first_tick": {
+    "time": 1789764935.0579011,
+    "event": "tick",
+    "loop": 14891,
+    "revision": "830ed14fc6dc5be8168b3936b59c73a0ddac0a1b",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 35,
+    "commands": [
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          66.1298828125,
+          18.8076171875
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          67.5625,
+          20.4375
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          66.201171875,
+          19.56005859375
+        ]
+      },
+      {
+        "unit_tag": 4312006657,
+        "ability_id": 16,
+        "point": [
+          66.8125,
+          20.75
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          66.74462890625,
+          20.0390625
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          66.880859375,
+          19.0576171875
+        ]
+      }
+    ],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 1564
+  },
+  "last_tick": {
+    "time": 1789764990.052524,
+    "event": "tick",
+    "loop": 16133,
+    "revision": "9a509f5bdaf8d360bf6b53fcaee234353afbb1f6",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 8,
+    "commands": [
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          91.07344818115234,
+          9.247669219970703
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          91.0432357788086,
+          7.970529556274414
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          91.77494812011719,
+          9.1475830078125
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          89.41342163085938,
+          8.192310333251953
+        ]
+      }
+    ],
+    "submitted": 4,
+    "action_results": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 369
+  }
+}
