@@ -1,7 +1,7 @@
 # Three-campaign objective
 
 Scope confirmed by the user: Wings of Liberty, Heart of the Swarm, and Legacy of
-the Void. No campaign has been completed. One mission victory is verified.
+the Void. No campaign has been completed. Two mission victories are verified.
 
 The user subsequently authorized individual campaign missions played in sequence
 with progression recorded here. Native campaign controls and account achievement
@@ -11,7 +11,7 @@ Only verified victories advance this journal; merely loading a later map does no
 | Campaign | Mission | Verified result |
 | --- | --- | --- |
 | Wings of Liberty | Liberation Day (`traynor01`) | **Victory**, API player 1, loop 3512; lab 048 |
-| Wings of Liberty | The Outlaws (`traynor02`) | Active attempt after Liberation Day; no win |
+| Wings of Liberty | The Outlaws (`traynor02`) | **Victory**, API player 1; lab 079 |
 | Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
 | Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
 
@@ -694,3 +694,22 @@ as the first live check of the new adapter reload.
 TypeSafe documents 64k tokens for a request and 32k for state plus its longest
 question: https://docs.typesafe.ai/models . Character measurements are diagnostic
 proxies, not token counts or a guarantee that every future request fits.
+
+
+## Lab 079: Outlaws victory and continuation to Zero Hour
+
+The resumed Outlaws game returned Victory for controlled player 1 after 390
+additional Jev calls ($0.183502704). Result and replay are saved in
+`runs/20260918T233326.859613Z/`; the public measured summary is
+`docs/experiments/054-outlaws-victory.json`. The run continued the existing
+mission after its controller budget boundary. Both completed missions remain
+in the sequence checkpoint.
+
+Lab 078 was committed after this victory, so its request compaction and removal
+of the 64-unit cap cannot explain this win. Request-size failures occurred in
+the winning segment; victory does not establish that the policy is robust.
+
+Append Zero Hour with only its scenario objective, “Hold out for evacuation,”
+and load it through the same sequencer. No completed mission is replayed.
+Verified defeats retry only the pending mission; budget exhaustion allows
+checked attachment to that same live game. No mission-specific tactics added.
