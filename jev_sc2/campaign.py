@@ -29,10 +29,17 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
     digest = hashlib.sha256(payload).hexdigest()
     progress = (json.loads(state_path.read_text()) if state_path.exists() else
                 {'manifest_sha256':digest,'completed':[],'attempts':[]})
-    if progress['manifest_sha256']!=digest:
-        raise ValueError('Manifest changed; use a new state file to avoid misattributing results')
     if progress['completed']!=ids[:len(progress['completed'])]:
         raise ValueError('Completed missions are not a prefix of this sequence')
+    if progress['manifest_sha256']!=digest:
+        saved = progress.get('mission_definitions')
+        completed_count = len(progress['completed'])
+        if saved is None or saved[:completed_count]!=missions[:completed_count]:
+            raise ValueError('Completed mission definitions changed; refusing to transfer victories')
+    # Appending later missions must not erase earlier verified wins. Definitions
+    # of the completed prefix remain immutable; unplayed entries may be extended.
+    progress.update(manifest_sha256=digest,mission_definitions=missions)
+    save_progress(state_path,progress)
     remaining = call_budget
     for mission in missions[len(progress['completed']):]:
         map_path = (manifest_path.parent / mission['map']).resolve()

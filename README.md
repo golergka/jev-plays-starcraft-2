@@ -116,3 +116,9 @@ build orders, tactical locations or routes. General policy changes still reload
 on commit during a mission. Later-campaign mission inventory, entitlement,
 scenario dependencies, full ability coverage and unattended UI recovery remain
 unfinished. Sequence completion means only the explicitly listed missions.
+
+The active evaluation checkpoint is `runs/campaign-lab069/progress.json`. To resume
+that sequence after its process exits, use the same `--state` path. Its verified
+Liberation Day win is preserved; failures in The Outlaws do not return to the
+opening. Appending missions preserves the completed prefix when those completed
+scenario definitions are unchanged.

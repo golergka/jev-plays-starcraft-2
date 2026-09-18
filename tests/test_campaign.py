@@ -61,3 +61,20 @@ def test_sequence_resume_does_not_replay_verified_completed_mission(tmp_path):
     final=asyncio.run(run_sequence(path,state,call_budget=10,mission_runner=second))
     assert final['status']=='sequence_complete'
     assert calls==[str(tmp_path/'second.SC2Map')]
+
+
+def test_extending_manifest_preserves_completed_prefix(tmp_path):
+    path=manifest(tmp_path);state=tmp_path/'progress.json'
+    async def win(args): return {'status':'victory','calls':1}
+    asyncio.run(run_sequence(path,state,mission_runner=win))
+    data=json.loads(path.read_text())
+    (tmp_path/'third.SC2Map').write_bytes(b'test map')
+    data['missions'].append({'id':'third','map':'third.SC2Map','race':'protoss','objective':'Complete mission'})
+    path.write_text(json.dumps(data))
+    calls=[]
+    async def third(args):
+        calls.append(args.map)
+        return {'status':'victory','calls':1}
+    result=asyncio.run(run_sequence(path,state,mission_runner=third))
+    assert result['completed']==['first','second','third']
+    assert calls==[str(tmp_path/'third.SC2Map')]

@@ -549,3 +549,22 @@ control. Economic type facts remain separate so mixed grouping cannot falsely
 report that a purchase's unit type is absent. A regression test uses arbitrary
 unit-type names and verifies that Jev can choose a joint attack-move. No extra
 sequential inference stage is added. Twenty-five tests pass.
+
+
+## Lab 071: autonomous advancement verified; retain completed mission checkpoints
+
+The unattended sequence received own-player Victory for Liberation Day after 305
+calls ($0.069482), saved its replay/result, wrote the completed checkpoint, and
+loaded The Outlaws without an assistant menu action or launch command. This is a
+second verified opening win. Lab 070 reloaded near the end, so the victory does
+not isolate mixed grouping as its cause. The new Outlaws attempt is live.
+
+The user clarified that failed attempts should restart only their mission, never
+reset the campaign. The runner already retries the current mission and resumes a
+completed prefix. Improve extension behavior too: adding later missions to a
+manifest preserves verified prior wins, provided completed mission definitions
+are unchanged. It refuses to transfer a victory to a changed completed scenario.
+A test verifies an appended third mission runs alone after the first two wins.
+Twenty-six tests pass. The current checkpoint is
+`runs/campaign-lab069/progress.json`; the earlier fresh opening was an explicit
+regression evaluation, not ordinary failure recovery.
