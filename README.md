@@ -36,7 +36,9 @@ the harness exits. Stop it through its UI when finished. Runs and replays live i
 Edit **player.py**, then commit. The orchestrator loads the source from the new Git
 commit at the next decision boundary while keeping the socket and `memory` dict.
 Uncommitted edits do not run. A syntax/import error retains the previous policy.
-Changes to harness modules require restarting the harness and using `--attach`.
+The observation adapter `jev_sc2/view.py` reloads atomically with `player.py`; if
+either source is invalid, both previous components remain active. Other harness
+modules require restarting the controller.
 
 Enable auto-push with `git config core.hooksPath .githooks`. Every commit is pushed
 to origin. Failed pushes print an error and preserve the local commit and reload.

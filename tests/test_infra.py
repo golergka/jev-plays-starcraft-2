@@ -448,3 +448,26 @@ def test_investment_exploration_uses_only_jev_positive_probability_options():
     memory={}
     assert asyncio.run(choose_investment(view,{},Model(),memory))==[]
     assert memory['investment_intent']['mode']=='save'
+
+
+def test_reload_keeps_player_and_observation_adapter_atomic(tmp_path):
+    def git(*args):
+        return subprocess.check_output(['git','-C',str(tmp_path),*args],text=True)
+    git('init','-q');git('config','user.name','Test');git('config','user.email','test@example.invalid')
+    (tmp_path/'jev_sc2').mkdir()
+    (tmp_path/'player.py').write_text('async def decide(*args): return 1\n')
+    view=tmp_path/'jev_sc2/view.py';view.write_text('async def make_view(*args): return 2\n')
+    git('add','.');git('commit','-qm','working pair')
+    loader=PlayerLoader(tmp_path);loader.refresh();revision=loader.revision
+    (tmp_path/'player.py').write_text('async def decide(*args): return 3\n')
+    view.write_text('bad syntax!')
+    git('add','.');git('commit','-qm','broken adapter')
+    with pytest.raises(SyntaxError):loader.refresh()
+    assert loader.revision==revision
+    assert asyncio.run(loader.module.decide())==1
+    assert asyncio.run(loader.view_module.make_view())==2
+    view.write_text('async def make_view(*args): return 4\n')
+    git('add','.');git('commit','-qm','repaired pair')
+    loader.refresh()
+    assert asyncio.run(loader.module.decide())==3
+    assert asyncio.run(loader.view_module.make_view())==4

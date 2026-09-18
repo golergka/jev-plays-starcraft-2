@@ -119,7 +119,8 @@ async def run(args):
                 continue
             last_loop = observation.observation.game_loop
             clock_changed_at = time.monotonic()
-            view = await make_view(client,observation,data,info,args.objective)
+            observe_player = loader.view_module.make_view if loader.view_module else make_view
+            view = await observe_player(client,observation,data,info,args.objective)
             if view['self']:
                 empty_since = None
             else:

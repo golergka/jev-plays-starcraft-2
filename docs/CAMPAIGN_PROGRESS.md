@@ -625,3 +625,17 @@ ended in defeat. This experiment applies the principle to budget allocation,
 leaving combat choices unchanged. Keep the prior negative outcome in mind.
 Also store previous investment intent as a named project and mode, not an index
 into a menu that changes between observations. Thirty tests pass.
+
+
+## Lab 075: hot-reload the observation adapter atomically with the player
+
+Extend committed-source reload to `jev_sc2/view.py` as well as `player.py`. Both
+new modules must compile and expose the required callables before either replaces
+the active pair. A failed adapter edit therefore cannot leave a new policy paired
+with stale observations. Socket, game, model client and memory remain in the
+harness. The command validation entry point remains in the harness.
+
+A test commits a valid pair, a broken adapter with a changed player, and a repaired
+pair; it verifies retention and atomic replacement. Thirty-one tests pass. This
+loader/harness change itself takes effect on the next controller process start;
+subsequent observation-adapter edits will no longer require a controller restart.
