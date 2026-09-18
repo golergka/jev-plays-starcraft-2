@@ -1,0 +1,103 @@
+{
+  "run": "runs/20260918T204714.083744Z/events.jsonl",
+  "calls": 120,
+  "latency_median_ms": 360.0,
+  "latency_p95_ms": 702,
+  "cost_usd": 0.013280778,
+  "actions_submitted": 257,
+  "ticks_with_zero_submissions": 31,
+  "choices": {
+    "move_4309385217": 246,
+    "east": 5,
+    "continue": 463,
+    "west": 4,
+    "north": 2
+  },
+  "errors": [],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789764435.046474,
+    "event": "tick",
+    "loop": 3864,
+    "revision": "08719c1c9dd15d7400e72ddb3c286a44a4e13475",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 16,
+    "commands": [
+      {
+        "unit_tag": 4311482369,
+        "ability_id": 16,
+        "point": [
+          69.957275390625,
+          9.6806640625
+        ]
+      },
+      {
+        "unit_tag": 4312006657,
+        "ability_id": 16,
+        "point": [
+          69.957275390625,
+          9.6806640625
+        ]
+      },
+      {
+        "unit_tag": 4311220225,
+        "ability_id": 16,
+        "point": [
+          69.957275390625,
+          9.6806640625
+        ]
+      },
+      {
+        "unit_tag": 4310958081,
+        "ability_id": 16,
+        "point": [
+          69.957275390625,
+          9.6806640625
+        ]
+      },
+      {
+        "unit_tag": 4310695937,
+        "ability_id": 16,
+        "point": [
+          70.375732421875,
+          9.090087890625
+        ]
+      },
+      {
+        "unit_tag": 4311744513,
+        "ability_id": 16,
+        "point": [
+          69.957275390625,
+          9.6806640625
+        ]
+      }
+    ],
+    "submitted": 6,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 722
+  },
+  "last_tick": {
+    "time": 1789764490.6915479,
+    "event": "tick",
+    "loop": 5104,
+    "revision": "08719c1c9dd15d7400e72ddb3c286a44a4e13475",
+    "own_units": 6,
+    "score": 300,
+    "decision_age_loops": 9,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 392
+  }
+}

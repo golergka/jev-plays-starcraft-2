@@ -29,3 +29,18 @@ Infrastructure verified: API connection through Battle.net, map bytes transport,
 real-time player observations, engine acceptance, saved replays, and a new committed
 player revision loaded in the first match without restarting SC2. The Mac editor
 fails video initialization; stock campaign map access is a separate investigation.
+
+## Campaign navigation: the dog trap
+
+The repackaged first campaign mission loaded. The initial objective-free trial
+survived, but a trial with the visible objectives (destroy Logistics Headquarters,
+Raynor must survive) chose the same neutral target 263 times. A five-second history
+with displacement and last four choices still chose it 246 times. The target was
+a neutral **Dog**, confirmed from live unit data. These were 120-call trials,
+costing $0.011806 and $0.013281 respectively, with six units remaining alive.
+
+This is a specific failure of objective-directed navigation, not transport or
+command legality: the commands succeeded, but did not pursue the objective.
+More local facts and recent history did not overcome the salient nearby object.
+Next test: a separate Jev decision for squad navigation intent, then Jev decisions
+for unit actions. Do not implement a fixed route or an automatic unstuck policy.
