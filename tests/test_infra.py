@@ -377,3 +377,23 @@ def test_jev_can_choose_a_mixed_combat_selection_without_unit_name_rules():
     commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
     assert [c['unit_tag'] for c in commands]==[1,2]
     assert all(c['ability_id']==23 for c in commands)
+
+
+def test_jev_can_regroup_at_a_member_without_an_unoffered_self_move():
+    import player
+    units=[]
+    for tag,other in [(1,2),(2,1)]:
+        units.append({'tag':tag,'type':'Unit','position':[tag,0], 'candidates':[
+            {'id':f'join_{other}','description':f'Join {other}',
+             'command':{'unit_tag':tag,'ability_id':16,'point':[other,0]}},
+            {'id':'hold_position','description':'Hold position',
+             'command':{'unit_tag':tag,'ability_id':18}}]})
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions: return {'strategy':{'choice':'assemble'}}
+            if 'purpose_Unit' in questions: return {'purpose_Unit':{'choice':'positioning'}}
+            assert 'group_join_1' in questions['Unit']['criteria']
+            return {'Unit':{'choice':'group_join_1'}}
+    commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
+    assert commands==[{'unit_tag':1,'ability_id':18},{'unit_tag':2,'ability_id':16,'point':[1,0]}]

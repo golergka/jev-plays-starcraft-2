@@ -247,6 +247,20 @@ async def decide(view, jev, memory):
             descriptions = list(dict.fromkeys(c[key]['description'] for c in tables[kind]))
             criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + ' | '.join(descriptions)
             plans[kind]['group_'+key] = [c[key]['command'] for c in tables[kind]]
+        # A member cannot join itself, so intersection alone hid in-selection
+        # anchors. Expose the exact legal hold + join combination to Jev.
+        for anchor,anchor_table in zip(selected,tables[kind]):
+            key = f'join_{anchor["tag"]}'
+            if key in common or 'hold_position' not in anchor_table:
+                continue
+            followers = [(u,t) for u,t in zip(selected,tables[kind]) if u['tag']!=anchor['tag']]
+            if not followers or not all(key in t for _,t in followers):
+                continue
+            option = 'group_'+key
+            criteria[option] = (f'Regroup this selection at {anchor["type"]} unit {anchor["tag"]} '
+                                f'position {anchor["position"]}: that unit holds position; '
+                                f'the other {len(followers)} units move to its observed position.')
+            plans[kind][option] = [anchor_table['hold_position']['command']]+[t[key]['command'] for _,t in followers]
         # A construction order need not apply to every member of a selection.
         # Offer actual legal individual builder/site pairs; Jev chooses the pair.
         for unit,table in zip(selected,tables[kind]):
@@ -289,6 +303,7 @@ async def decide(view, jev, memory):
         if action_id.startswith('gather_'): return 'income'
         if action_id.startswith('build_'): return 'construction'
         if 'attack' in action_id: return 'combat'
+        if action_id.startswith('join_'): return 'positioning'
         if tables[kind][0][action_id]['description'].startswith('Train '): return 'production'
         if action_id.startswith('ability_'): return 'other'
         return 'positioning'

@@ -568,3 +568,15 @@ A test verifies an appended third mission runs alone after the first two wins.
 Twenty-six tests pass. The current checkpoint is
 `runs/campaign-lab069/progress.json`; the earlier fresh opening was an explicit
 regression evaluation, not ordinary failure recovery.
+
+
+## Lab 072: repair an omitted in-selection regroup option
+
+Common-action intersection removed `join_TAG` whenever TAG belonged to the
+selection, because that unit had no self-join candidate. Mixed combat selections
+therefore could regroup at outsiders such as buildings but not at their own
+members. Expose every legal in-selection anchor as an explicit Jev choice:
+anchor uses its offered Hold Position, followers use their offered point moves.
+No anchor is selected in Python. The complete effect is described in the choice;
+no unoffered command is synthesized. This fixes a general action-interface gap,
+not a mission route. A test verifies the legal two-unit combination.
