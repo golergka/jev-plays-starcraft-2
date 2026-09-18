@@ -134,7 +134,7 @@ async def run(args):
                 response = await client.request('action',sc.RequestAction(actions=actions))
                 results = list(response.result)
             log('tick',loop=view['loop'],revision=loader.revision,own_units=len(view['self']),
-                units=[{k:u[k] for k in ('tag','type','position','health','health_fraction')}
+                units=[{k:u[k] for k in ('tag','type','position','health','health_fraction','build_progress')}
                        for u in view['self']],
                 score=fresh.observation.score.score,decision_age_loops=age,
                 commands=commands,submitted=len(actions),action_results=results,

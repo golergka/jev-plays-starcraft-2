@@ -141,6 +141,7 @@ async def make_view(client, observation, data, info, objective):
                     candidates.append({'id':label, 'description':f'Move six map units {label}; destination: {terrain[label]}',
                                        'command':command(move,point=[x,y])})
         view['self'].append({'tag':unit.tag, 'type':names.get(unit.unit_type,str(unit.unit_type)),
+                             'build_progress':round(unit.build_progress,3),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
                              'shield':unit.shield, 'weapon_cooldown':unit.weapon_cooldown,
                              'weapon_status':'ready' if unit.weapon_cooldown == 0 else 'cooling down',
