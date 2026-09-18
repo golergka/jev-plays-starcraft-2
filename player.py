@@ -11,6 +11,34 @@ import math
 import random
 
 
+async def arbitrate_spending(commands, view, state, jev):
+    offered = {json.dumps(c['command'],sort_keys=True):c
+               for u in view['self'] for c in u['candidates']}
+    spending = {i:offered[json.dumps(cmd,sort_keys=True)] for i,cmd in enumerate(commands)
+                if offered[json.dumps(cmd,sort_keys=True)].get('resource_cost')}
+    totals = {k:sum(c['resource_cost'][k] for c in spending.values()) for k in ('minerals','vespene','supply')}
+    resources = view.get('resources', {})
+    available = {'minerals':resources.get('minerals',0),'vespene':resources.get('vespene',0),
+                 'supply':resources.get('supply_remaining',0)}
+    if all(totals[k] <= available[k] for k in totals):
+        return commands
+    criteria = {'defer':'Defer these proposed purchases and retain the resources for later.'}
+    for i,c in spending.items():
+        if all(c['resource_cost'][k] <= available[k] for k in available):
+            criteria[f'buy_{i}'] = f'Execute only this purchase now: unit {commands[i]["unit_tag"]}: {c["description"]}; costs {c["resource_cost"]}'
+    result = await jev.ask({**state,'proposed_total_cost':totals,'available_budget':available}, {'spending': {
+        'type':'choice',
+        'instructions':'The proposed purchases exceed the observed shared resource budget. '
+                       'Choose one affordable purchase to execute now, or defer. '
+                       'Other non-spending orders will still execute. Choose for overall mission progress.',
+        'criteria':criteria,
+    }})
+    choice = result.get('spending',{}).get('choice')
+    jev.log('spending_choice',loop=view['loop'],choice=choice,proposed_cost=totals,available=available)
+    selected = int(choice[4:]) if choice in criteria and choice.startswith('buy_') else None
+    return [cmd for i,cmd in enumerate(commands) if i not in spending or i==selected]
+
+
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
     units = view['self'][:64]
@@ -59,15 +87,25 @@ async def decide(view, jev, memory):
             memory['strategy'] = strategy
             jev.log('strategy_choice',**strategy)
     state['strategy_chosen_by_jev'] = strategy
-    questions, tables = {}, {}
+    questions, tables, plans = {}, {}, {}
     for kind, selected in cohorts.items():
         tables[kind] = [{c['id']:c for c in u['candidates']} for u in selected]
         common = set.intersection(*(set(c) for c in tables[kind]))
         criteria = {'individual':'Choose separate orders for these units using further Jev decisions.',
                     'continue':'Keep the current orders of these units unchanged.'}
+        plans[kind] = {}
         for key in sorted(common):
             descriptions = list(dict.fromkeys(c[key]['description'] for c in tables[kind]))
             criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + ' | '.join(descriptions)
+            plans[kind]['group_'+key] = [c[key]['command'] for c in tables[kind]]
+        # A construction order need not apply to every member of a selection.
+        # Offer actual legal individual builder/site pairs; Jev chooses the pair.
+        for unit,table in zip(selected,tables[kind]):
+            for key,candidate in table.items():
+                if key.startswith('build_'):
+                    option=f'unit_{unit["tag"]}_{key}'
+                    criteria[option]=f'Only {kind} unit {unit["tag"]}: {candidate["description"]}'
+                    plans[kind][option]=[candidate['command']]
         questions[kind] = {
             'type':'choice',
             'instructions':f'Choose the next order for the {len(selected)} {kind} units to advance the mission objective. '
@@ -94,6 +132,7 @@ async def decide(view, jev, memory):
     def purpose(kind,key):
         if key in ('continue','individual'):
             return key
+        if key.startswith('unit_'): return 'construction'
         action_id=key[len('group_'):]
         if action_id.startswith('gather_'): return 'income'
         if action_id.startswith('build_'): return 'construction'
@@ -129,9 +168,9 @@ async def decide(view, jev, memory):
         if choice == 'individual':
             submemory = memory.setdefault('cohorts',{}).setdefault(kind,{})
             commands.extend(await decide_individual({**view,'self':selected},jev,submemory))
-        elif choice in questions[kind]['criteria'] and choice.startswith('group_'):
-            commands.extend(c[choice[len('group_'):]]['command'] for c in tables[kind])
-    return commands
+        elif choice in plans[kind]:
+            commands.extend(plans[kind][choice])
+    return await arbitrate_spending(commands,view,state,jev)
 
 
 async def decide_individual(view, jev, memory):

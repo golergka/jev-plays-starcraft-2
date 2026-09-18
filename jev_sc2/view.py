@@ -122,12 +122,14 @@ async def make_view(client, observation, data, info, objective):
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
             product = products.get(ability)
+            cost = ({'minerals':product.mineral_cost,'vespene':product.vespene_cost,
+                     'supply':product.food_required} if product is not None else None)
             details = '' if product is None else (
                 f'; costs {product.mineral_cost} minerals and {product.vespene_cost} gas'
                 f'; requires {product.food_required:g} supply; provides {product.food_provided:g} supply')
             if label.startswith('Train '):
                 candidates.append({'id':f'ability_{ability}', 'description':label+details,
-                                   'command':command(ability)})
+                                   'command':command(ability),'resource_cost':cost})
             if label.startswith('Build ') and catalog[ability].target == 2:
                 radius = catalog[ability].footprint_radius or 1.5
                 offset = radius % 1
@@ -145,6 +147,7 @@ async def make_view(client, observation, data, info, objective):
                         'id':f'build_{ability}_{direction}',
                         'description':f'{label} at visible engine-checked site [{x},{y}]'+details,
                         'command':command(ability,point=[x,y]),
+                        'resource_cost':cost,
                     }))
         for label, ids, description in [
             ('stop', {4,3665}, 'Stop the current order; normal automatic targeting remains possible'),

@@ -283,3 +283,31 @@ to one overall strategy. This tests semantic decision framing and reduces the
 number of concrete alternatives in the second choice, at the cost of another
 inference stage. Both decisions and their latency are logged. Same fresh map and
 objective, with no manual target or route input.
+
+Result: 499 calls, $0.194834. SCVs chose income on all 223 contribution decisions.
+The economy survived with eighteen workers; Marines were produced and lost, and
+the army was gone at the run boundary. There was no victory. Resource orders
+continued while the harness was stopped, and minerals accumulated before the
+next continuation; that continuation is not a matched initial-state comparison.
+
+Thirteen submitted ticks proposed two 50-mineral training orders against an
+observed balance below 100 (for example 55 minerals). Response codes were Success;
+no NotEnoughMinerals event was logged. This demonstrates proposed budget conflicts,
+not which production orders the engine ultimately fulfilled. Do not attribute
+all army losses or production imbalance to this mechanism without more evidence.
+
+## Lab 056: Jev resolves spending conflicts and chooses individual builders
+
+Annotate production/construction candidates with their catalog mineral, gas and
+supply costs. If proposed costs exceed the observed shared budget, ask Jev which
+single affordable purchase to make or whether to defer; other already-chosen,
+non-spending orders remain. No purchase is selected by Python command ordering.
+This simple resolver models the current one-unit Terran production options; it
+does not establish correct costs for untested multi-unit morph abilities.
+
+Also offer individual worker/site construction choices alongside shared orders.
+Previously a build option could vanish from the group intersection when only some
+workers had a legal site, leaving only an indirect generic individual-control
+option. Jev now explicitly chooses both builder and site from engine-approved
+candidates. Tests verify non-first purchase selection by Jev and construction
+availability when only one worker can build. Seventeen tests pass.

@@ -26,6 +26,38 @@ def test_jev_group_order_maps_only_shared_offered_actions():
     assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==commands
 
 
+def test_spending_conflict_is_chosen_by_jev_not_command_order():
+    import player
+    commands=[{'unit_tag':i,'ability_id':524 if i==1 else 560} for i in (1,2)]
+    units=[{'candidates':[{'command':cmd,'description':'Train unit',
+                          'resource_cost':{'minerals':50,'vespene':0,'supply':1}}]} for cmd in commands]
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            assert state['proposed_total_cost']['minerals']==100
+            assert set(questions['spending']['criteria'])=={'defer','buy_0','buy_1'}
+            return {'spending':{'choice':'buy_1'}}
+    view={'self':units,'loop':1,'resources':{'minerals':50,'vespene':0,'supply_remaining':2}}
+    assert asyncio.run(player.arbitrate_spending(commands,view,{},Model()))==[commands[1]]
+
+
+def test_jev_can_select_one_builder_without_shared_build_ability():
+    import player
+    command={'unit_tag':1,'ability_id':319,'point':[5,5]}
+    units=[{'tag':1,'type':'SCV','position':[1,1],'candidates':[{'id':'build_319_north','description':'Build SupplyDepot','command':command}]},
+           {'tag':2,'type':'SCV','position':[2,2],'candidates':[]}]
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions: return {'strategy':{'choice':'strengthen'}}
+            if 'purpose_SCV' in questions:
+                assert 'construction' in questions['purpose_SCV']['criteria']
+                return {'purpose_SCV':{'choice':'construction'}}
+            assert set(questions['SCV']['criteria'])=={'unit_1_build_319_north'}
+            return {'SCV':{'choice':'unit_1_build_319_north'}}
+    assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==[command]
+
+
 def test_map_overview_masks_unexplored_terrain_and_preserves_north_orientation():
     from s2clientprotocol import common_pb2 as common
     from jev_sc2.view import explored_map
