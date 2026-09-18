@@ -80,6 +80,25 @@ def test_debug_is_unavailable():
         asyncio.run(SC2(None).request('debug',None))
 
 
+def test_gather_can_return_to_distant_visible_minerals_but_not_hidden_resources():
+    from s2clientprotocol import query_pb2 as query
+    obs=sc.ResponseObservation()
+    obs.observation.raw_data.units.add(tag=1,alliance=raw.Self,display_type=raw.Visible)
+    for tag in range(10,18):
+        u=obs.observation.raw_data.units.add(tag=tag,alliance=raw.Neutral,display_type=raw.Visible)
+        u.pos.x=1
+    for tag,display in ((99,raw.Visible),(100,raw.Hidden)):
+        u=obs.observation.raw_data.units.add(tag=tag,alliance=raw.Neutral,display_type=display,mineral_contents=500)
+        u.pos.x=28
+    class Client:
+        async def request(self,name,body):
+            result=query.ResponseQuery(); result.abilities.add(unit_tag=1).abilities.add(ability_id=295)
+            return result
+    info=sc.ResponseGameInfo(); info.start_raw.playable_area.p1.x=30; info.start_raw.playable_area.p1.y=30
+    view=asyncio.run(make_view(Client(),obs,sc.ResponseData(),info,'test'))
+    assert [c['command']['target_tag'] for c in view['self'][0]['candidates']]==[99]
+
+
 def test_snapshots_are_stale_locations_not_live_units_or_tag_targets():
     from s2clientprotocol import query_pb2 as query
     obs=sc.ResponseObservation()

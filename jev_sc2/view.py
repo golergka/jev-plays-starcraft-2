@@ -115,6 +115,7 @@ async def make_view(client, observation, data, info, objective):
         # Game versions may advertise concrete or generalized ability IDs.
         move = next((a for a in sorted(legal) if a in {16, 3794} or remaps.get(a) in {16, 3794}), None)
         attack = next((a for a in sorted(legal) if a in {23, 3674} or remaps.get(a) == 3674), None)
+        gather = next((a for a in sorted(legal) if a in {295,3666} or remaps.get(a)==3666), None)
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
         candidates = []
@@ -158,11 +159,6 @@ async def make_view(client, observation, data, info, objective):
         for target in sorted(visible, key=lambda t: math.hypot(t.pos.x-unit.pos.x, t.pos.y-unit.pos.y))[:8]:
             distance = round(math.hypot(target.pos.x-unit.pos.x, target.pos.y-unit.pos.y), 1)
             label = names.get(target.unit_type, str(target.unit_type))
-            gather = next((a for a in sorted(legal) if a in {295,3666} or remaps.get(a)==3666), None)
-            if gather is not None and target.mineral_contents > 0:
-                candidates.append({'id':f'gather_{target.tag}',
-                                   'description':f'Gather minerals from visible {label}, distance {distance}',
-                                   'command':command(gather,target_tag=target.tag)})
             surroundings.append({'tag':target.tag, 'type':label, 'distance':distance,
                                  'direction':bearing(target.pos.x-unit.pos.x,target.pos.y-unit.pos.y),
                                  'east_offset':round(target.pos.x-unit.pos.x,1),
@@ -185,6 +181,15 @@ async def make_view(client, observation, data, info, objective):
                 candidates.append({'id':f'attack_{target.tag}',
                                    'description':f'Attack visible {names.get(target.unit_type,str(target.unit_type))} tag {target.tag} at [{target.pos.x:.1f},{target.pos.y:.1f}]',
                                    'command':command(attack,target_tag=target.tag)})
+        if gather is not None:
+            for target in visible+own:
+                resource = ('minerals' if target.mineral_contents>0 else
+                            'vespene gas' if target.alliance==raw.Self and target.vespene_contents>0 else None)
+                if resource is None:
+                    continue
+                candidates.append({'id':f'gather_{target.tag}',
+                                   'description':f'Gather {resource} from visible {names.get(target.unit_type,str(target.unit_type))} at [{target.pos.x:.1f},{target.pos.y:.1f}]; supplies income for training units and constructing buildings',
+                                   'command':command(gather,target_tag=target.tag)})
         # Fixed compass displacements are action primitives, not tactical choices.
         if move is not None:
             for target in snapshots:

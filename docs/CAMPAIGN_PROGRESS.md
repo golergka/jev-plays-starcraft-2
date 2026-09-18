@@ -244,3 +244,23 @@ build order, reserve particular workers, or force a tactical response. This is a
 combined context/decision-structure experiment, not an isolated ablation. It tests
 whether a separate strategic judgment avoids interpreting every unit's task as
 "attack the objective immediately," while retaining Jev-only action selection.
+
+Result: stopped after 256 calls ($0.126299) with only the three starting buildings
+observed; all mobile units had disappeared. Jev chose explore once, attack sixteen
+times and strengthen twelve times, with the strengthening shift too late to keep
+the mobile force. No victory or API defeat was returned. Saved an interrupted-run
+replay separately under `runs/lab053-stopped/`. This does not isolate model limits:
+another action-space omission was found during inspection.
+
+## Lab 054: complete visible resource targeting
+
+Gather candidates were still restricted to the nearest eight non-owned entities,
+even after enemy attack targets were made global. A worker far from home therefore
+could not issue a direct return-to-mining order for a distant visible mineral field.
+Offer every currently visible mineral field and owned gas resource to units whose
+queried abilities allow harvesting. Hidden resources remain excluded. Descriptions
+state that gathering supplies income for unit production and construction; this is
+a game-rule fact, not an order to harvest. Jev may still choose combat or other
+actions. A test surrounds a worker with eight nearby neutral distractions and
+checks that a distant visible mineral remains targetable while a hidden one does
+not. Retry from initial state; no resources or units are injected into the game.
