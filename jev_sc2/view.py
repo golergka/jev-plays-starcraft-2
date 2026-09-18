@@ -47,13 +47,16 @@ async def make_view(client, observation, data, info, objective):
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
     catalog = {a.ability_id:a for a in data.abilities}
+    products = {u.ability_id:u for u in data.units if u.ability_id}
     placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
             'resources': {'minerals': obs.player_common.minerals,
                           'vespene': obs.player_common.vespene,
                           'food_used': obs.player_common.food_used,
-                          'food_cap': obs.player_common.food_cap}}
+                          'food_cap': obs.player_common.food_cap,
+                          'supply_remaining': max(0,obs.player_common.food_cap-obs.player_common.food_used),
+                          'supply_blocked': obs.player_common.food_used >= obs.player_common.food_cap}}
     for unit in own:
         legal = available.get(unit.tag, set())
         # Game versions may advertise concrete or generalized ability IDs.
@@ -64,8 +67,12 @@ async def make_view(client, observation, data, info, objective):
         candidates = []
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
+            product = products.get(ability)
+            details = '' if product is None else (
+                f'; costs {product.mineral_cost} minerals and {product.vespene_cost} gas'
+                f'; requires {product.food_required:g} supply; provides {product.food_provided:g} supply')
             if label.startswith('Train '):
-                candidates.append({'id':f'ability_{ability}', 'description':label,
+                candidates.append({'id':f'ability_{ability}', 'description':label+details,
                                    'command':command(ability)})
             if label.startswith('Build ') and catalog[ability].target == 2:
                 radius = catalog[ability].footprint_radius or 1.5
@@ -82,7 +89,7 @@ async def make_view(client, observation, data, info, objective):
                     placements.append(placement)
                     placement_candidates.append((candidates,{
                         'id':f'build_{ability}_{direction}',
-                        'description':f'{label} at visible engine-checked site [{x},{y}]',
+                        'description':f'{label} at visible engine-checked site [{x},{y}]'+details,
                         'command':command(ability,point=[x,y]),
                     }))
         for label, ids, description in [
