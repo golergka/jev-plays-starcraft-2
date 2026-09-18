@@ -198,5 +198,8 @@ control, and continuing orders. All type questions share one SDK request; per-un
 decisions happen only when Jev selects them. No unit type is told to attack, mine
 or build by code. The intersection still restricts shared actions to commands
 offered to every member of that selection. This lets Marines coordinate without
-requiring Command Centers to execute the same order. Committing activates the
-new player during the same game; the run's reload event identifies the boundary.
+requiring Command Centers to execute the same order. The preceding harness reached
+its 400-call budget before this commit ($0.341052), so no live reload occurred in
+that run. Resumed the same running game with the new policy and fresh policy memory;
+the final preceding summary is `035-outlaws-individual.json`. This is a sequential
+continuation, not an independent comparison or a verified hot-reload event.
