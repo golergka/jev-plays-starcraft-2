@@ -17,7 +17,8 @@ async def decide(view, jev, memory):
         return []
     questions = {}
     state = {'objective': view['objective'], 'resources': view['resources']}
-    squad = [{k:u[k] for k in ('tag','type','position','health_fraction')} for u in units]
+    squad = [{**{k:u[k] for k in ('tag','type','position','health_fraction')},
+              'nearby_terrain':u.get('nearby_terrain', {})} for u in units]
     separation = round(max(math.dist(a['position'], b['position']) for a in units for b in units), 1)
     state['squad'] = squad
     state['max_squad_separation'] = separation

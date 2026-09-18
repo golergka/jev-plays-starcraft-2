@@ -3,6 +3,28 @@ import math
 from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc, query_pb2 as query
 
 
+def pixel(image, x, y):
+    x, y = math.floor(x), math.floor(y)
+    if not (0 <= x < image.size.x and 0 <= y < image.size.y):
+        return None
+    index = y*image.size.x+x
+    if image.bits_per_pixel == 8 and index < len(image.data):
+        return image.data[index]
+    if image.bits_per_pixel == 1 and index//8 < len(image.data):
+        return (image.data[index//8] >> (7-index%8)) & 1
+    return None
+
+
+def visible_terrain(visibility, pathing, x, y):
+    # Full-map static data is never exposed at unexplored or fogged coordinates.
+    if pixel(visibility, x, y) != 2:
+        return 'unknown (not currently visible)'
+    value = pixel(pathing, x, y)
+    if value is None:
+        return 'unknown (terrain unavailable)'
+    return 'walkable static terrain' if value else 'blocked static terrain'
+
+
 def bearing(dx, dy):
     """Translate geometry into words without choosing a tactical response."""
     if math.hypot(dx, dy) < 0.1:
@@ -39,6 +61,7 @@ async def make_view(client, observation, data, info, objective):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
         candidates = []
         surroundings = []
+        terrain = {}
         for target in sorted(visible, key=lambda t: math.hypot(t.pos.x-unit.pos.x, t.pos.y-unit.pos.y))[:8]:
             distance = round(math.hypot(target.pos.x-unit.pos.x, target.pos.y-unit.pos.y), 1)
             label = names.get(target.unit_type, str(target.unit_type))
@@ -68,13 +91,16 @@ async def make_view(client, observation, data, info, objective):
             for label, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
                 x,y = unit.pos.x+dx, unit.pos.y+dy
                 if area.p0.x <= x < area.p1.x and area.p0.y <= y < area.p1.y:
-                    candidates.append({'id':label, 'description':f'Move six map units {label}',
+                    terrain[label] = visible_terrain(obs.raw_data.map_state.visibility,
+                                                    info.start_raw.pathing_grid,x,y)
+                    candidates.append({'id':label, 'description':f'Move six map units {label}; destination: {terrain[label]}',
                                        'command':command(move,point=[x,y])})
         view['self'].append({'tag':unit.tag, 'type':names.get(unit.unit_type,str(unit.unit_type)),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
                              'shield':unit.shield, 'weapon_cooldown':unit.weapon_cooldown,
                              'weapon_status':'ready' if unit.weapon_cooldown == 0 else 'cooling down',
                              'position':[unit.pos.x,unit.pos.y], 'surroundings':surroundings,
+                             'nearby_terrain':terrain,
                              'orders':[{'ability':ability_names.get(o.ability_id,str(o.ability_id)),
                                         'target_tag':o.target_unit_tag if o.HasField('target_unit_tag') else None,
                                         'target_point':[o.target_world_space_pos.x,o.target_world_space_pos.y]

@@ -135,3 +135,17 @@ def test_multistage_decision_cannot_exceed_call_budget(monkeypatch):
             await model.ask({}, {})
     asyncio.run(two_stages())
     assert request.await_count == 1
+
+
+def test_terrain_is_masked_by_current_player_visibility():
+    from s2clientprotocol.common_pb2 import ImageData
+    from jev_sc2.view import visible_terrain
+    visibility = ImageData(bits_per_pixel=8, data=bytes([0,1,2,2]))
+    visibility.size.x, visibility.size.y = 4, 1
+    pathing = ImageData(bits_per_pixel=1, data=bytes([0b10100000]))
+    pathing.size.x, pathing.size.y = 4, 1
+    assert visible_terrain(visibility,pathing,0,0).startswith('unknown')
+    assert visible_terrain(visibility,pathing,1,0).startswith('unknown')
+    assert visible_terrain(visibility,pathing,2,0) == 'walkable static terrain'
+    assert visible_terrain(visibility,pathing,3,0) == 'blocked static terrain'
+    assert visible_terrain(visibility,pathing,9,0).startswith('unknown')

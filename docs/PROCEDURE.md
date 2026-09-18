@@ -115,3 +115,22 @@ This is consistent with macOS protected-folder handling, but the underlying OS
 cause is not proven. Three MarineMicro trials produced valid engine actions and
 replays. Commit 6452cdb was loaded while the first match ran. This proves runtime
 infrastructure, not campaign progression or good combat performance.
+
+## Visible terrain input
+
+The next terrain variant labels the four nearby compass destinations using the
+static pathing grid only where the current player visibility byte is 2 (visible).
+Fogged/unexplored destinations remain unknown. This provides local terrain facts,
+not a route, target ranking or automatic replacement action. Buildings and dynamic
+obstacles can still invalidate a static walkability label.
+
+Packed 1-bit pixels use row-major indexing with the most significant bit first;
+8-bit visibility uses one byte per cell. This agrees with the
+[python-sc2 pixel reader](https://github.com/BurnySc2/python-sc2/blob/develop/sc2/pixel_map.py).
+A regression test checks masking of hidden, fogged and out-of-bounds destinations.
+
+The sustained sampling trial ended with the stock campaign's on-screen **DEFEAT /
+Raynor has died** dialog, while the protocol continued returning in-game status
+and no player_result. The harness now also stops after ten seconds with no owned
+units, saves a replay, and asks for UI inspection. That diagnostic stop is not
+itself classified as defeat: cinematics or mission scripts may remove units too.
