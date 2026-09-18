@@ -399,3 +399,20 @@ is absent, match the exact advertised Train/Build name to the unit catalog.
 This is presentation/lookup, not a guessed cost. The view change requires a
 harness restart; player changes reload on commit. Nineteen tests pass, including
 Jev choosing save or the non-first project and a single eligible builder.
+
+
+## Lab 062: remove an execution veto and fix branch concurrency
+
+The initial lab 061 window recorded 24 stale ticks out of 31. Although the first
+contribution query ran beside investment selection, concrete order selection still
+waited for the entire investment branch. Run both complete decision branches
+concurrently. The builder/site request now gets its selected project, objective,
+visible entities, and explicit candidate facts rather than repeating the whole
+state. Project selection still sees the full observations and measured outcomes.
+
+All 21 observed builder/site choices selected defer among roughly 137 concrete
+pairs. This duplicated the save alternative after Jev had already decided to buy,
+and split execution probability across many similar choices. Remove the redundant
+veto from the execution allocation stage; Jev still chooses save versus each
+purchase at the shared investment step, and chooses the exact legal pair. No code
+picks a location or builder. Test in the existing game via committed player reload.

@@ -76,13 +76,14 @@ async def choose_investment(view, state, jev):
         return [options[0][1]['command']]
     criteria = {f'option_{i}':f'Unit {u["tag"]} at {u["position"]}, current orders {u.get("orders",[])}: {c["description"]}'
                 for i,(u,c) in enumerate(options)}
-    criteria['defer']='Defer this purchase, retaining current orders.'
-    answer = await jev.ask(state, {'producer_site': {
+    answer = await jev.ask({'objective':state.get('objective'),
+                            'selected_investment':names[int(choice.split('_')[1])],
+                            'visible_entities':state.get('visible_entities',[])}, {'producer_site': {
         'type':'choice','instructions':'Execute your selected investment using one of these legal producer/site choices. Consider current work and location.',
         'criteria':criteria,
     }})
     choice=answer.get('producer_site',{}).get('choice')
-    if choice in criteria and choice!='defer':
+    if choice in criteria:
         return [options[int(choice.split('_')[1])][1]['command']]
     return []
 
@@ -231,31 +232,33 @@ async def decide(view, jev, memory):
                        'Use their capabilities, current orders, resources and threats.',
         'criteria':{p:meanings[p] for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
-    investment, roles = await asyncio.gather(choose_investment(view,state,jev),
-                                             jev.ask(state,purpose_questions))
-    answers, concrete_questions = {}, {}
-    for kind,q in questions.items():
-        role=roles.get(f'purpose_{kind}',{}).get('choice')
-        jev.log('purpose_choice',loop=view['loop'],cohort=kind,choice=role)
-        if role in ('continue','individual'):
-            answers[kind]={'choice':role}
-        else:
-            criteria={k:v for k,v in q['criteria'].items() if purpose(kind,k)==role}
-            if criteria:
-                criteria['continue']='Keep current orders without reissuing them. If they already implement the chosen contribution, this maintains that work.'
-                concrete_questions[kind]={**q,'criteria':criteria,
-                                          'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
-    if concrete_questions:
-        answers.update(await jev.ask(state,concrete_questions))
-    commands = []
-    for kind, selected in cohorts.items():
-        choice = answers.get(kind,{}).get('choice')
-        jev.log('group_choice',loop=view['loop'],cohort=kind,choice=choice,unit_count=len(selected))
-        if choice == 'individual':
-            submemory = memory.setdefault('cohorts',{}).setdefault(kind,{})
-            commands.extend(await decide_individual({**view,'self':selected},jev,submemory))
-        elif choice in plans[kind]:
-            commands.extend(plans[kind][choice])
+    async def choose_orders():
+        roles = await jev.ask(state,purpose_questions)
+        answers, concrete_questions = {}, {}
+        for kind,q in questions.items():
+            role=roles.get(f'purpose_{kind}',{}).get('choice')
+            jev.log('purpose_choice',loop=view['loop'],cohort=kind,choice=role)
+            if role in ('continue','individual'):
+                answers[kind]={'choice':role}
+            else:
+                criteria={k:v for k,v in q['criteria'].items() if purpose(kind,k)==role}
+                if criteria:
+                    criteria['continue']='Keep current orders without reissuing them. If they already implement the chosen contribution, this maintains that work.'
+                    concrete_questions[kind]={**q,'criteria':criteria,
+                                              'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
+        if concrete_questions:
+            answers.update(await jev.ask(state,concrete_questions))
+        commands = []
+        for kind, selected in cohorts.items():
+            choice = answers.get(kind,{}).get('choice')
+            jev.log('group_choice',loop=view['loop'],cohort=kind,choice=choice,unit_count=len(selected))
+            if choice == 'individual':
+                submemory = memory.setdefault('cohorts',{}).setdefault(kind,{})
+                commands.extend(await decide_individual({**view,'self':selected},jev,submemory))
+            elif choice in plans[kind]:
+                commands.extend(plans[kind][choice])
+        return commands
+    investment, commands = await asyncio.gather(choose_investment(view,state,jev), choose_orders())
     # A selected purchase assigns its producer; preserve other Jev-selected orders.
     producer_tags = {c['unit_tag'] for c in investment}
     return [c for c in commands if c['unit_tag'] not in producer_tags]+investment
