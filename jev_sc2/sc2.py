@@ -15,15 +15,19 @@ def find_executable(root):
     return max(choices, key=lambda p: int(p.parts[-5][4:]))
 
 
-def launch(root, port, logfile):
+def launch(root, port, logfile, window_size=(1280, 800), window_position=None):
     executable = find_executable(root)
     with socket.socket() as probe:
         try:
             probe.bind(('127.0.0.1', port))
         except OSError as exc:
             raise RuntimeError(f'Port {port} is already occupied. Use --attach for an existing SC2 instance.') from exc
-    return subprocess.Popen([str(executable), '-listen', '127.0.0.1', '-port', str(port),
-                             '-displayMode', '0', '-windowwidth', '1280', '-windowheight', '800'],
+    args = [str(executable), '-listen', '127.0.0.1', '-port', str(port),
+            '-displayMode', '0', '-windowwidth', str(window_size[0]),
+            '-windowheight', str(window_size[1])]
+    if window_position is not None:
+        args += ['-windowx', str(window_position[0]), '-windowy', str(window_position[1])]
+    return subprocess.Popen(args,
                             cwd=str(Path(root).expanduser()), stdout=logfile, stderr=logfile)
 
 

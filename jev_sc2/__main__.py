@@ -47,7 +47,8 @@ async def run(args):
     if not args.attach:
         if not args.map:
             raise ValueError('--map is required unless --attach is supplied')
-        proc = launch(sc2root,args.port,(directory/'sc2.log').open('w'))
+        proc = launch(sc2root,args.port,(directory/'sc2.log').open('w'),
+                      args.window_size, args.window_position)
     client = await SC2.connect(args.port)
     try:
         ping = await client.request('ping',sc.RequestPing())
@@ -119,6 +120,8 @@ def main():
     parser.add_argument('--attach',action='store_true',help='Reuse an API-enabled SC2 process')
     parser.add_argument('--opponent',action='store_true',help='Add VeryEasy Zerg AI for a melee map')
     parser.add_argument('--port',type=int,default=5000)
+    parser.add_argument('--window-size',type=int,nargs=2,default=(1280,800),metavar=('WIDTH','HEIGHT'))
+    parser.add_argument('--window-position',type=int,nargs=2,metavar=('X','Y'))
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)
