@@ -50,6 +50,8 @@ print(json.dumps({
         'save' if r['choice']=='save' else r['projects'][int(r['choice'].split('_')[1])]
         for r in rows if r['event']=='investment_choice' and r.get('choice')
         and (r['choice']=='save' or r['choice'].startswith('project_')))),
+    'saving_targets':dict(collections.Counter(r.get('future_projects',[])[int(r['choice'].split('_')[-1])]
+                         for r in rows if r['event']=='investment_choice' and (r.get('choice') or '').startswith('save_for_'))),
     'producer_site_deferrals':sum(r['response']['answers'].get('producer_site',{}).get('choice')=='defer' for r in calls),
     'strategy_choices':dict(collections.Counter(r['choice'] for r in rows if r['event']=='strategy_choice')),
     'purposes_by_cohort':{cohort:dict(collections.Counter(r['choice'] for r in rows if r['event']=='purpose_choice' and r['cohort']==cohort))

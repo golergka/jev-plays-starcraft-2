@@ -1,0 +1,53 @@
+{
+  "source": "runs/20260918T231217.693046Z/events.jsonl",
+  "calls": 2,
+  "cost": 0.000363552,
+  "results": [
+    {
+      "source_filtered_index": 0,
+      "resources": {
+        "minerals": 160,
+        "vespene": 0,
+        "food_used": 33,
+        "food_cap": 59,
+        "supply_in_construction": 0,
+        "supply_remaining": 26,
+        "supply_blocked": false
+      },
+      "projects": {
+        "project_0": "Barracks",
+        "project_1": "Marine",
+        "project_2": "SCV",
+        "project_3": "SupplyDepot"
+      },
+      "conditions": {
+        "verbose": {
+          "question_characters": 3870,
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.13,
+          "probabilities": {
+            "project_0": 0.13,
+            "save": 0.18,
+            "project_2": 0.21,
+            "project_1": 0.3,
+            "project_3": 0.18
+          }
+        },
+        "direct_effects": {
+          "question_characters": 1711,
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.33,
+          "probabilities": {
+            "project_1": 0.46,
+            "project_2": 0.12,
+            "save": 0.14,
+            "project_0": 0.08,
+            "project_3": 0.2
+          }
+        }
+      }
+    }
+  ]
+}

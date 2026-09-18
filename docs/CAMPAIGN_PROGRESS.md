@@ -580,3 +580,28 @@ anchor uses its offered Hold Position, followers use their offered point moves.
 No anchor is selected in Python. The complete effect is described in the choice;
 no unoffered command is synthesized. This fixes a general action-interface gap,
 not a mission route. A test verifies the legal two-unit combination.
+
+
+## Lab 073: named savings goals for currently unaffordable projects
+
+A purchase-description probe had only one eligible recorded state offering four
+purchases, including a higher-cost production building. The two queries both
+chose Marine; shorter direct-effect descriptions reduced question text from
+3,870 to 1,711 characters and changed confidence, but did not establish a better
+choice. Preserve that negative/limited result rather than claim a strategic fix.
+
+A more fundamental limitation is that the project menu used only resource-legal
+abilities. Cheap purchases could consume resources before an expensive project
+ever appeared. Add a second read-only ability query with resource checking ignored
+for discovery. Only supported Train/point-Build products enter potential-project
+facts; the original resource-checked query still exclusively supplies executable
+commands and engine-checked placements. Jev can now explicitly choose to save for
+a named unavailable project, with resource shortfalls computed in Python. That
+choice submits no action, and its intent is shown at the next decision; Jev may
+reconsider at any time. There is no fixed saving target or automatic purchase.
+
+The live policy also gets shorter observed-capability purchase descriptions.
+Tests verify unaffordable projects never become executable commands and named
+saving produces no command. Twenty-nine tests pass. The observation change takes
+effect at the next harness start; a player-only reload cannot replace that module
+in the currently running harness.

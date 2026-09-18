@@ -70,15 +70,35 @@ async def make_view(client, observation, data, info, objective):
         abilities=[query.RequestQueryAvailableAbilities(unit_tag=u.tag) for u in own],
         ignore_resource_requirements=False))
     available = {a.unit_tag: {b.ability_id for b in a.abilities} for a in abilities.abilities}
+    possible = await client.request('query', query.RequestQuery(
+        abilities=[query.RequestQueryAvailableAbilities(unit_tag=u.tag) for u in own],
+        ignore_resource_requirements=True))
     names = {u.unit_id: u.name for u in data.units}
     unit_catalog = {u.unit_id:u for u in data.units}
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
     catalog = {a.ability_id:a for a in data.abilities}
     products = {u.ability_id:u for u in data.units if u.ability_id}
+    def product_for(ability):
+        product = products.get(ability)
+        label = ability_names.get(ability,'')
+        if product is None and label.startswith(('Train ', 'Build ')):
+            product = next((u for u in data.units if label in (f'Train {u.name}',f'Build {u.name}')),None)
+        return product
+    potential = {}
+    for offered in possible.abilities:
+        for ability in offered.abilities:
+            label = ability_names.get(ability.ability_id,'')
+            product = product_for(ability.ability_id)
+            if product is not None and (label.startswith('Train ') or
+                    (label.startswith('Build ') and catalog[ability.ability_id].target==2)):
+                potential[product.name] = {'type':product.name,'minerals':product.mineral_cost,
+                    'vespene':product.vespene_cost,'supply':product.food_required,
+                    'supply_provided':product.food_provided}
     placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
+            'potential_projects':list(potential.values()),
             'unit_type_facts': {
                 names.get(kind,str(kind)): {
                     'mineral_cost':unit_catalog[kind].mineral_cost,
@@ -123,9 +143,7 @@ async def make_view(client, observation, data, info, objective):
         candidates = []
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
-            product = products.get(ability)
-            if product is None and label.startswith(('Train ', 'Build ')):
-                product = next((u for u in data.units if label in (f'Train {u.name}',f'Build {u.name}')),None)
+            product = product_for(ability)
             cost = ({'minerals':product.mineral_cost,'vespene':product.vespene_cost,
                      'supply':product.food_required} if product is not None else None)
             project = ({'type':product.name,**cost,'supply_provided':product.food_provided}

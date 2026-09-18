@@ -48,7 +48,7 @@ def is_purchase(candidate):
 def investment_state(state):
     """Keep economic/force facts; raw terrain and repeated unit coordinates distract."""
     compact = {k:state[k] for k in ('objective','resources','selection_facts',
-               'unit_type_facts','recent_outcomes','observed_capabilities_by_type',
+               'unit_type_facts','recent_outcomes','observed_capabilities_by_type','previous_investment_intent',
                'strategy_chosen_by_jev') if k in state}
     for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
                           ('last_known_entities','stale_entities_by_alliance_and_type')]:
@@ -57,7 +57,25 @@ def investment_state(state):
     return compact
 
 
-async def choose_investment(view, state, jev):
+def investment_description(name, project, state):
+    facts = state.get('type_selection_facts',state.get('selection_facts',{})).get(name,{})
+    capabilities = state.get('observed_capabilities_by_type',{}).get(name,[])
+    effects = []
+    if capabilities:
+        effects.append('Adds another unit able to: '+', '.join(capabilities))
+    else:
+        effects.append('Its action capabilities have not yet been observed')
+    if project and project.get('supply_provided',0):
+        effects.append(f'Adds {project["supply_provided"]:g} supply capacity when complete')
+    weapons = (state.get('unit_type_facts') or {}).get(name,{}).get('catalog_weapons',[])
+    if weapons:
+        effects.append('Has weapons: '+', '.join(f'{w["targets"]} targets at range {w["range"]}' for w in weapons))
+    return (f'Purchase one {name}. '+'. '.join(effects)+'. '
+            f'Cost/effects: {project}. Already owned: {facts.get("count",0)}; '
+            f'idle: {facts.get("idle_count",0)}; current orders: {facts.get("current_order_counts",{})}.')
+
+
+async def choose_investment(view, state, jev, memory=None):
     """Jev allocates the common budget, then selects the actual producer/site."""
     projects = {}
     for unit in view['self']:
@@ -65,16 +83,23 @@ async def choose_investment(view, state, jev):
             if is_purchase(candidate):
                 name = (candidate.get('project') or {}).get('type') or candidate['description'].split(';')[0]
                 projects.setdefault(name, []).append((unit, candidate))
-    if not projects:
+    potential = {p['type']:p for p in view.get('potential_projects',[])}
+    if not projects and not potential:
         return []
     names = sorted(projects)
     criteria = {'save':'Make no new purchase now; preserve resources and let existing production/construction finish.'}
     for i,name in enumerate(names):
         example = projects[name][0][1]
-        criteria[f'project_{i}'] = (f'Purchase one {name}. Project effects and cost: {example.get("project")}. '
-                                  f'Observed capabilities of this type: {state.get("observed_capabilities_by_type",{}).get(name,"not yet observed")}. '
-                                  f'Existing selection facts: {state.get("type_selection_facts",state.get("selection_facts",{})).get(name,"none owned")}. '
-                                  'Compare its added capability with the other investments and saving resources.')
+        criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)
+    future_names = sorted(set(potential)-set(projects))
+    for i,name in enumerate(future_names):
+        project = potential[name]
+        resources = view.get('resources',{})
+        shortfall = {k:max(0,project[k]-resources.get(r,0)) for k,r in
+                     [('minerals','minerals'),('vespene','vespene'),('supply','supply_remaining')]}
+        criteria[f'save_for_{i}'] = (f'Wait and save for {name}; do not spend now. '
+            f'The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. '
+            f'Resource shortfall: {shortfall}. '+investment_description(name,project,state))
     answer = await jev.ask(investment_state(state), {'investment': {
         'type':'choice',
         'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
@@ -83,7 +108,11 @@ async def choose_investment(view, state, jev):
         'criteria':criteria,
     }})
     choice = answer.get('investment',{}).get('choice')
-    jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names)
+    jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names)
+    if memory is not None:
+        memory['investment_intent'] = {'choice':choice,'projects':names,'future_projects':future_names,'loop':view['loop']}
+    if choice in criteria and choice.startswith('save_for_'):
+        return []
     if choice not in criteria or choice=='save':
         return []
     options = projects[names[int(choice.split('_')[1])]]
@@ -182,6 +211,7 @@ async def decide(view, jev, memory):
         cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities','unit_type_facts')}
     state['recent_outcomes'] = recent_outcomes(view, memory)
+    state['previous_investment_intent'] = memory.get('investment_intent')
     learned = memory.setdefault('observed_capabilities_by_type', {})
     for unit in view['self']:
         capabilities = set(learned.get(unit['type'], []))
@@ -340,7 +370,7 @@ async def decide(view, jev, memory):
             elif choice in plans[kind]:
                 commands.extend(plans[kind][choice])
         return commands
-    investment, commands = await asyncio.gather(choose_investment(view,state,jev), choose_orders())
+    investment, commands = await asyncio.gather(choose_investment(view,state,jev,memory), choose_orders())
     # A selected purchase assigns its producer; preserve other Jev-selected orders.
     producer_tags = {c['unit_tag'] for c in investment}
     return [c for c in commands if c['unit_tag'] not in producer_tags]+investment

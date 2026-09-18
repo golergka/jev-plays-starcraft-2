@@ -200,7 +200,7 @@ def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids(stationa
     from s2clientprotocol import query_pb2 as query
     class Client:
         async def request(self,name,body):
-            assert name=='query' and not body.ignore_resource_requirements
+            assert name=='query'
             result=query.ResponseQuery()
             abilities=result.abilities.add(unit_tag=1)
             abilities.abilities.add(ability_id=3794)
@@ -397,3 +397,41 @@ def test_jev_can_regroup_at_a_member_without_an_unoffered_self_move():
             return {'Unit':{'choice':'group_join_1'}}
     commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
     assert commands==[{'unit_tag':1,'ability_id':18},{'unit_tag':2,'ability_id':16,'point':[1,0]}]
+
+
+def test_unaffordable_project_is_information_not_an_executable_command():
+    from s2clientprotocol import query_pb2 as query
+    flags=[]
+    class Client:
+        async def request(self,name,body):
+            flags.append(body.ignore_resource_requirements)
+            result=query.ResponseQuery()
+            abilities=result.abilities.add(unit_tag=1)
+            if body.ignore_resource_requirements:
+                abilities.abilities.add(ability_id=321)
+            return result
+    obs=sc.ResponseObservation()
+    obs.observation.raw_data.units.add(tag=1,unit_type=45,alliance=raw.Self,display_type=raw.Visible)
+    data=sc.ResponseData()
+    data.abilities.add(ability_id=321,friendly_name='Build Barracks',target=2)
+    data.units.add(unit_id=21,name='Barracks',ability_id=321,mineral_cost=150)
+    view=asyncio.run(make_view(Client(),obs,data,sc.ResponseGameInfo(),'test'))
+    assert flags==[False,True]
+    assert view['potential_projects'][0]['type']=='Barracks'
+    assert view['potential_projects'][0]['minerals']==150
+    assert view['self'][0]['candidates']==[]
+
+
+def test_jev_can_choose_to_save_for_a_named_unaffordable_project():
+    from player import choose_investment
+    memory={}
+    view={'loop':1,'self':[],'resources':{'minerals':50},'potential_projects':[
+        {'type':'FutureBuilding','minerals':150,'vespene':0,'supply':0,'supply_provided':0}]}
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            option=questions['investment']['criteria']['save_for_0']
+            assert 'FutureBuilding' in option and "'minerals': 100" in option
+            return {'investment':{'choice':'save_for_0'}}
+    assert asyncio.run(choose_investment(view,{},Model(),memory))==[]
+    assert memory['investment_intent']['future_projects']==['FutureBuilding']
