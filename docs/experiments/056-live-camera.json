@@ -1,0 +1,66 @@
+{
+  "run": "runs/20260918T234914.185918Z",
+  "shots": [
+    {
+      "time": 1789775354.54958,
+      "event": "camera_shot",
+      "loop": 10010,
+      "position": [
+        83.08551025390625,
+        14.04254150390625
+      ],
+      "reason": "base overview"
+    },
+    {
+      "time": 1789775362.48574,
+      "event": "camera_shot",
+      "loop": 10186,
+      "position": [
+        77.3408447265625,
+        21.211474609375
+      ],
+      "reason": "base overview"
+    },
+    {
+      "time": 1789775369.511585,
+      "event": "camera_shot",
+      "loop": 10343,
+      "position": [
+        69.38624455378606,
+        25.319772867056038
+      ],
+      "reason": "visible engagement"
+    },
+    {
+      "time": 1789775375.1786711,
+      "event": "camera_shot",
+      "loop": 10469,
+      "position": [
+        74.33993853055514,
+        19.811193246107834
+      ],
+      "reason": "taking damage"
+    },
+    {
+      "time": 1789775387.317726,
+      "event": "camera_shot",
+      "loop": 10741,
+      "position": [
+        72.79121698651996,
+        21.85008716583252
+      ],
+      "reason": "taking damage"
+    },
+    {
+      "time": 1789775400.664635,
+      "event": "camera_shot",
+      "loop": 11040,
+      "position": [
+        73.76910919189453,
+        20.864225006103517
+      ],
+      "reason": "taking damage"
+    }
+  ],
+  "verification": "SC2 screenshots confirmed camera moved from quiet production area to visible Zerg attack and burning structures; game continued on Zero Hour without map reload."
+}

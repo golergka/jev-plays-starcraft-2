@@ -33,3 +33,23 @@ def test_camera_follows_movement_and_ignores_snapshot_enemy_locations():
     shot=choose_shot(view,memory,now=8)
     assert shot['reason']=='moving force'
     assert shot['position'][0]==85
+
+
+def test_camera_reload_retains_previous_pair_if_camera_is_broken(tmp_path):
+    import subprocess
+    import pytest
+    from jev_sc2.reload import PlayerLoader
+    def git(*args):
+        return subprocess.check_output(['git','-C',str(tmp_path),*args],text=True)
+    git('init','-q'); git('config','user.name','Test'); git('config','user.email','test@example.invalid')
+    (tmp_path/'player.py').write_text('async def decide(*args): return []\n')
+    (tmp_path/'jev_sc2').mkdir()
+    camera=tmp_path/'jev_sc2/camera.py'
+    camera.write_text('def choose_shot(*args): return 1\n')
+    git('add','.'); git('commit','-qm','valid')
+    loader=PlayerLoader(tmp_path); loader.refresh(); previous=loader.revision
+    camera.write_text('broken syntax!')
+    git('add','.'); git('commit','-qm','invalid')
+    with pytest.raises(SyntaxError): loader.refresh()
+    assert loader.revision==previous
+    assert loader.camera_module.choose_shot()==1

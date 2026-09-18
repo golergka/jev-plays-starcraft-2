@@ -786,3 +786,14 @@ Forty tests pass, including a distant fight against a large base, shot dwell,
 damage interrupts, movement, and exclusion of fog snapshots from camera targets.
 The harness integration requires one controller reconnect to the same current
 mission, without loading a map or discarding completed campaign checkpoints.
+
+### Camera deployment verified
+
+Reconnected to the same Zero Hour game after recording the interrupted segment
+(954 observed successful calls, $0.610474662; in-flight billing may differ).
+Checked map identity before issuing actions. New run
+`runs/20260918T234914.185918Z` began at loop 10010, not a restarted mission.
+Camera-shot events and two SC2 screenshots confirm scene changes, including a
+visible Zerg attack on burning structures. Evidence is in
+`docs/experiments/056-live-camera.json`. Forty-one tests pass, including retention
+of the prior camera module if a committed replacement fails to compile.
