@@ -605,3 +605,5 @@ Tests verify unaffordable projects never become executable commands and named
 saving produces no command. Twenty-nine tests pass. The observation change takes
 effect at the next harness start; a player-only reload cannot replace that module
 in the currently running harness.
+
+The first autonomous Outlaws attempt ended incomplete at 1194 calls ($0.597970), reason: Jev call budget reached. No defeat or victory is inferred. Resume the same campaign checkpoint for another Outlaws attempt with the new observation fields; the verified Liberation Day win remains completed.
