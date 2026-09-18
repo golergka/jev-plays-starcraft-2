@@ -144,3 +144,17 @@ policy, or `continue` to retain all current orders. No option receives a manual
 weight, no action is forced and no game-specific route is added. This tests whether
 one shared model decision reduces contradictory orders and fragmentation. Log
 `group_choice` events and the last eight choices/centers for measured feedback.
+
+First segment: 29 calls ($0.006262), repeatedly selecting a shared attack-move to
+the Headquarters snapshot. Reached the next town cinematic; temporarily zero
+owned units made the harness stop after ten seconds. UI inspection confirmed a
+cinematic, not a loss, and it was skipped through the normal UI.
+
+Resumed segment: the force reached the Headquarters and Jev switched to shared
+direct attacks on it. The final observed Headquarters health was 218, followed
+by the visible **DEFEAT / Raynor has died** screen. This is a confirmed defeat,
+not a win inferred from empty observations. The API did not provide a result.
+Jev did not protect Raynor adequately while focusing the objective. The starting
+force had already lost health and a Marine during earlier trials, so the next
+test restarts the mission with the same shared-order policy and a fresh force.
+Summaries: `030-shared-orders-cinematic.json`, `031-shared-orders-defeat.json`.

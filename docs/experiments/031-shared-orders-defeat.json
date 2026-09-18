@@ -1,0 +1,236 @@
+{
+  "run": "runs/20260918T215703.095914Z/events.jsonl",
+  "calls": 38,
+  "latency_median_ms": 406.5,
+  "latency_p95_ms": 870,
+  "decision_median_ms": 430,
+  "decision_p95_ms": 538,
+  "cost_usd": 0.01478463,
+  "actions_submitted": 154,
+  "decision_batches": 0,
+  "group_decisions": 38,
+  "group_choices": {
+    "group_last_known_attack_move_8756658184": 7,
+    "continue": 7,
+    "group_attack_4297588737": 24
+  },
+  "group_calls": 38,
+  "units_scheduled": 0,
+  "median_scheduled_update_loops": null,
+  "max_scheduled_update_loops": null,
+  "ticks_with_zero_submissions": 17,
+  "choices": {
+    "group_last_known_attack_move_8756658184": 7,
+    "continue": 7,
+    "group_attack_4297588737": 24
+  },
+  "navigation_choices": {},
+  "sampled_navigation_choices": {},
+  "navigation_samples": [],
+  "navigation_centers": [],
+  "first_distribution": {
+    "health_total": 341.0,
+    "max_separation": 4.2
+  },
+  "last_distribution": null,
+  "action_result_counts": {
+    "1": 154
+  },
+  "ticks_older_than_32_loops": 0,
+  "errors": [],
+  "results": [],
+  "reloads": [],
+  "first_tick": {
+    "time": 1789768623.835335,
+    "event": "tick",
+    "loop": 18017,
+    "revision": "50537d0594ab7955e4557d438a99c08d4196b084",
+    "own_units": 8,
+    "units": [
+      {
+        "tag": 4313579521,
+        "type": "Marine",
+        "position": [
+          32.67300033569336,
+          68.48594665527344
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310695938,
+        "type": "Marine",
+        "position": [
+          33.8526725769043,
+          67.77967071533203
+        ],
+        "health": 15.0,
+        "health_fraction": 0.33,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313055233,
+        "type": "Marine",
+        "position": [
+          34.657718658447266,
+          67.71217346191406
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4312268801,
+        "type": "Raynor01",
+        "position": [
+          31.21854019165039,
+          67.9916763305664
+        ],
+        "health": 164.0,
+        "health_fraction": 0.82,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4314365953,
+        "type": "Marine",
+        "position": [
+          33.90040969848633,
+          68.76244354248047
+        ],
+        "health": 3.0,
+        "health_fraction": 0.07,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4312793089,
+        "type": "Marine",
+        "position": [
+          32.61746597290039,
+          69.30195617675781
+        ],
+        "health": 33.0,
+        "health_fraction": 0.73,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4313317377,
+        "type": "Marine",
+        "position": [
+          30.846332550048828,
+          69.38292694091797
+        ],
+        "health": 9.0,
+        "health_fraction": 0.2,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4310958082,
+        "type": "Marine",
+        "position": [
+          31.424015045166016,
+          69.00934600830078
+        ],
+        "health": 27.0,
+        "health_fraction": 0.6,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 400,
+    "decision_age_loops": 12,
+    "commands": [
+      {
+        "unit_tag": 4313579521,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4310695938,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4313055233,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4312268801,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4314365953,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4312793089,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4313317377,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      },
+      {
+        "unit_tag": 4310958082,
+        "ability_id": 23,
+        "point": [
+          72.5,
+          108.5
+        ]
+      }
+    ],
+    "submitted": 8,
+    "action_results": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "action_errors": [],
+    "latency_ms": 490
+  },
+  "last_tick": {
+    "time": 1789768647.801357,
+    "event": "tick",
+    "loop": 18559,
+    "revision": "50537d0594ab7955e4557d438a99c08d4196b084",
+    "own_units": 0,
+    "units": [],
+    "score": 0,
+    "decision_age_loops": 0,
+    "commands": [],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 14
+  }
+}

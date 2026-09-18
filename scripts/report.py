@@ -15,6 +15,7 @@ decision_latencies = sorted(r['latency_ms'] for r in ticks)
 choices = collections.Counter(a.get('choice','unknown') for r in calls for a in r['response']['answers'].values())
 navigation = [r for r in calls if 'navigation' in r['questions']]
 batches = [r for r in rows if r['event']=='decision_batch']
+groups = [r for r in rows if r['event']=='group_choice']
 seen_at, update_gaps = {}, []
 for batch in batches:
     for tag in batch['unit_tags']:
@@ -37,6 +38,9 @@ print(json.dumps({
     'cost_usd':sum(r['response']['usage'].get('cost',0) or 0 for r in calls),
     'actions_submitted':sum(r['submitted'] for r in ticks),
     'decision_batches':len(batches),
+    'group_decisions':len(groups),
+    'group_choices':dict(collections.Counter(r['choice'] for r in groups)),
+    'group_calls':sum('group_order' in r['questions'] for r in calls),
     'units_scheduled':len(seen_at),
     'median_scheduled_update_loops':statistics.median(update_gaps) if update_gaps else None,
     'max_scheduled_update_loops':max(update_gaps) if update_gaps else None,
