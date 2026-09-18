@@ -140,6 +140,10 @@ async def make_view(client, observation, data, info, objective):
                                                     info.start_raw.pathing_grid,x,y)
                     candidates.append({'id':label, 'description':f'Move six map units {label}; destination: {terrain[label]}',
                                        'command':command(move,point=[x,y])})
+                    if attack is not None:
+                        candidates.append({'id':f'attack_move_{label}',
+                                           'description':f'Attack-move six map units {label}, engaging enemies encountered on the way; destination: {terrain[label]}',
+                                           'command':command(attack,point=[x,y])})
         view['self'].append({'tag':unit.tag, 'type':names.get(unit.unit_type,str(unit.unit_type)),
                              'build_progress':round(unit.build_progress,3),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
