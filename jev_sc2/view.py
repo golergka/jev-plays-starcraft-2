@@ -3,6 +3,14 @@ import math
 from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc, query_pb2 as query
 
 
+def bearing(dx, dy):
+    """Translate geometry into words without choosing a tactical response."""
+    if math.hypot(dx, dy) < 0.1:
+        return 'same position'
+    directions = ['east','northeast','north','northwest','west','southwest','south','southeast']
+    return directions[round(math.atan2(dy, dx)/(math.pi/4)) % 8]
+
+
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
@@ -35,6 +43,7 @@ async def make_view(client, observation, data, info, objective):
             distance = round(math.hypot(target.pos.x-unit.pos.x, target.pos.y-unit.pos.y), 1)
             label = names.get(target.unit_type, str(target.unit_type))
             surroundings.append({'tag':target.tag, 'type':label, 'distance':distance,
+                                 'direction':bearing(target.pos.x-unit.pos.x,target.pos.y-unit.pos.y),
                                  'east_offset':round(target.pos.x-unit.pos.x,1),
                                  'north_offset':round(target.pos.y-unit.pos.y,1),
                                  'alliance':raw.Alliance.Name(target.alliance),
@@ -57,8 +66,12 @@ async def make_view(client, observation, data, info, objective):
         view['self'].append({'tag':unit.tag, 'type':names.get(unit.unit_type,str(unit.unit_type)),
                              'health':unit.health, 'health_fraction':round(unit.health/max(unit.health_max,1),2),
                              'shield':unit.shield, 'weapon_cooldown':unit.weapon_cooldown,
+                             'weapon_status':'ready' if unit.weapon_cooldown == 0 else 'cooling down',
                              'position':[unit.pos.x,unit.pos.y], 'surroundings':surroundings,
-                             'orders':[ability_names.get(o.ability_id,str(o.ability_id)) for o in unit.orders],
+                             'orders':[{'ability':ability_names.get(o.ability_id,str(o.ability_id)),
+                                        'target_tag':o.target_unit_tag if o.HasField('target_unit_tag') else None,
+                                        'target_point':[o.target_world_space_pos.x,o.target_world_space_pos.y]
+                                        if o.HasField('target_world_space_pos') else None} for o in unit.orders],
                              'candidates':candidates})
     return view
 
