@@ -12,43 +12,45 @@ import random
 
 
 async def decide(view, jev, memory):
-    """Jev chooses a shared order or delegates to its individual-unit policy."""
+    """Jev chooses shared or individual orders for each unit-type selection."""
     units = view['self'][:64]
     if not units:
         return []
-    by_unit = [{c['id']:c for c in u['candidates']} for u in units]
-    common = set.intersection(*(set(c) for c in by_unit))
-    criteria = {
-        'individual': 'Choose separate actions for individual units using further Jev decisions.',
-        'continue': 'Keep every current order unchanged.',
-    }
-    for key in sorted(common):
-        descriptions = list(dict.fromkeys(c[key]['description'] for c in by_unit))
-        criteria['group_'+key] = 'Give all owned units this shared order: ' + ' | '.join(descriptions)
+    cohorts = {}
+    for unit in units:
+        cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities')}
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress')}
                       for u in units]
-    state['recent_group_choices'] = memory.get('group_choices', [])[-8:]
-    answer = await jev.ask(state, {'group_order': {
-        'type':'choice',
-        'instructions':'Choose the next control decision to advance the mission objective. '
-                       'You may issue a shared order to the whole force or use individual control. '
-                       'Consider existing orders, health, visible enemies, and known objective locations. '
-                       'Snapshot locations are stale player knowledge, not currently visible targets. '
-                       'Only you choose whether to move, fight, wait or use individual control.',
-        'criteria':criteria,
-    }})
-    choice = answer.get('group_order', {}).get('choice')
-    jev.log('group_choice',loop=view['loop'],choice=choice,unit_count=len(units))
-    history = memory.setdefault('group_choices', [])
-    history.append({'loop':view['loop'],'choice':choice,
-                    'center':[round(sum(u['position'][i] for u in units)/len(units),1) for i in (0,1)]})
-    del history[:-8]
-    if choice == 'individual':
-        return await decide_individual(view,jev,memory)
-    if choice in criteria and choice.startswith('group_'):
-        return [c[choice[len('group_'):]]['command'] for c in by_unit]
-    return []
+    questions, tables = {}, {}
+    for kind, selected in cohorts.items():
+        tables[kind] = [{c['id']:c for c in u['candidates']} for u in selected]
+        common = set.intersection(*(set(c) for c in tables[kind]))
+        criteria = {'individual':'Choose separate orders for these units using further Jev decisions.',
+                    'continue':'Keep the current orders of these units unchanged.'}
+        for key in sorted(common):
+            descriptions = list(dict.fromkeys(c[key]['description'] for c in tables[kind]))
+            criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + ' | '.join(descriptions)
+        questions[kind] = {
+            'type':'choice',
+            'instructions':f'Choose the next order for the {len(selected)} {kind} units to advance the mission objective. '
+                           'You may choose a shared order for this unit type or individual control. '
+                           'Other unit types receive their own decisions in parallel. '
+                           'Consider current orders, health, resources and known entities. '
+                           'Snapshot locations are stale, not live visible targets.',
+            'criteria':criteria,
+        }
+    answers = await jev.ask(state,questions)
+    commands = []
+    for kind, selected in cohorts.items():
+        choice = answers.get(kind,{}).get('choice')
+        jev.log('group_choice',loop=view['loop'],cohort=kind,choice=choice,unit_count=len(selected))
+        if choice == 'individual':
+            submemory = memory.setdefault('cohorts',{}).setdefault(kind,{})
+            commands.extend(await decide_individual({**view,'self':selected},jev,submemory))
+        elif choice in questions[kind]['criteria'] and choice.startswith('group_'):
+            commands.extend(c[choice[len('group_'):]]['command'] for c in tables[kind])
+    return commands
 
 
 async def decide_individual(view, jev, memory):

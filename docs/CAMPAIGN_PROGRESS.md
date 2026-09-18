@@ -11,7 +11,7 @@ Only verified victories advance this journal; merely loading a later map does no
 | Campaign | Mission | Verified result |
 | --- | --- | --- |
 | Wings of Liberty | Liberation Day (`traynor01`) | **Victory**, API player 1, loop 3512; lab 048 |
-| Wings of Liberty | The Outlaws (`traynor02`) | Economy smoke tests only; no win |
+| Wings of Liberty | The Outlaws (`traynor02`) | Active attempt after Liberation Day; no win |
 | Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
 | Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
 
@@ -183,3 +183,20 @@ This fresh attempt made 190 Jev calls costing $0.044435 before the cinematic
 interruption. It suggests the simpler shared-order interface is useful here;
 it does not establish robust hero protection, and the preceding injured-force
 attempt failed. The first mission is now complete in our standalone progression.
+
+## Lab 050–051: mixed economy and combat selections
+
+Loaded The Outlaws after the verified victory. With buildings and mobile units
+together, the whole-force action intersection mostly forces individual control.
+Jev mined, trained Marines/SCVs and completed multiple Supply Depots. The army
+advanced while production continued; no victory yet. Saved a pre-change summary
+as `034-outlaws-before-cohorts.json` (a partial run, not an independent episode).
+
+Lab 051 splits selections mechanically by unit type, like selecting matching
+units in the game. Each type gets a Jev choice between a shared action, individual
+control, and continuing orders. All type questions share one SDK request; per-unit
+decisions happen only when Jev selects them. No unit type is told to attack, mine
+or build by code. The intersection still restricts shared actions to commands
+offered to every member of that selection. This lets Marines coordinate without
+requiring Command Centers to execute the same order. Committing activates the
+new player during the same game; the run's reload event identifies the boundary.

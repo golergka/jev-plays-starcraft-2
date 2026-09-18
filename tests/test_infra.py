@@ -12,11 +12,11 @@ def test_jev_group_order_maps_only_shared_offered_actions():
     class Model:
         def log(self,*args,**kwargs): pass
         async def ask(self,state,questions):
-            options=questions['group_order']['criteria']
+            options=questions['Marine']['criteria']
             assert 'group_north' in options and 'group_only_one_unit' not in options
-            return {'group_order':{'choice':'group_north'}}
+            return {'Marine':{'choice':'group_north'}}
     commands=[{'unit_tag':i,'ability_id':16,'point':[i,6]} for i in (1,2)]
-    units=[{'tag':i,'position':[i,0], 'candidates':[{'id':'north','description':'Move north','command':c}]}
+    units=[{'tag':i,'type':'Marine','position':[i,0], 'candidates':[{'id':'north','description':'Move north','command':c}]}
            for i,c in zip((1,2),commands)]
     units[0]['candidates'].append({'id':'only_one_unit','description':'unshared','command':{}})
     assert asyncio.run(player.decide({'self':units,'loop':1},Model(),{}))==commands

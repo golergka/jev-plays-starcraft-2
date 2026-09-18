@@ -40,7 +40,9 @@ print(json.dumps({
     'decision_batches':len(batches),
     'group_decisions':len(groups),
     'group_choices':dict(collections.Counter(r['choice'] for r in groups)),
-    'group_calls':sum('group_order' in r['questions'] for r in calls),
+    'group_calls':sum(any('individual' in q.get('criteria',{}) for q in r['questions'].values()) for r in calls),
+    'choices_by_cohort':{cohort:dict(collections.Counter(r['choice'] for r in groups if r.get('cohort','whole_force')==cohort))
+                         for cohort in sorted({r.get('cohort','whole_force') for r in groups})},
     'units_scheduled':len(seen_at),
     'median_scheduled_update_loops':statistics.median(update_gaps) if update_gaps else None,
     'max_scheduled_update_loops':max(update_gaps) if update_gaps else None,
