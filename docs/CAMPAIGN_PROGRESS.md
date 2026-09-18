@@ -519,3 +519,16 @@ producer/site questions retain their spatial input. This changes no purchase
 priority and supplies no mission-specific instruction. The experiment directly
 implements the documented recommendation to filter state to the question's needs:
 https://docs.typesafe.ai/model-jaggedness/jev-1.13 .
+
+
+## Lab 069: unattended opening-sequence evaluation
+
+The unchanged Outlaws continuation ended at 1,000 calls ($0.527087), without a
+verified win. Lab 068 was committed after that process ended, so it was not tested
+live there. Preserve the replay and summary, then evaluate the generic sequence
+runner from the first opening mission, with the same latest player throughout.
+This is a generalization/regression test across scenarios, not erasure of the
+previously verified Liberation Day victory. Only explicit own-player wins advance
+the new local evaluation journal. Budget: 1,500 calls total, 600 seconds per attempt,
+at most two attempts per mission. The two-map fixture does not stand for the full
+three-campaign goal.
