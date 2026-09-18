@@ -9,7 +9,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from s2clientprotocol import sc2api_pb2 as sc
 from .sc2 import SC2, launch, find_executable
-from .jev import Jev
+from .jev import Jev, CallBudgetReached
 from .reload import PlayerLoader
 from .view import make_view, validate_commands
 
@@ -42,7 +42,7 @@ async def run(args):
     loader = PlayerLoader(ROOT)
     loader.refresh()
     memory = {}
-    jev = Jev(log, stamp)
+    jev = Jev(log, stamp, max_calls=args.max_calls)
     proc = None
     if not args.attach:
         if not args.map:
@@ -90,6 +90,9 @@ async def run(args):
             try:
                 commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),3)
                 failures = 0
+            except CallBudgetReached:
+                log('stopped',reason='Jev call budget reached')
+                break
             except Exception as exc:
                 log('decision_error',error=type(exc).__name__,detail=str(exc)[:200])
                 failures += 1

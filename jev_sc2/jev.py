@@ -4,8 +4,12 @@ import time
 from openrouter import OpenRouter
 
 
+class CallBudgetReached(Exception):
+    pass
+
+
 class Jev:
-    def __init__(self, log, session):
+    def __init__(self, log, session, max_calls=None):
         key = os.environ.get('OPENROUTER_API_KEY')
         if not key:
             raise RuntimeError('Set OPENROUTER_API_KEY in .env')
@@ -15,9 +19,12 @@ class Jev:
         self.client = OpenRouter(api_key=key, x_open_router_title='Jev StarCraft Lab')
         self.log, self.session = log, session
         self.calls = 0
+        self.max_calls = max_calls
         self.cost = 0.0
 
     async def ask(self, state, questions):
+        if self.max_calls is not None and self.calls >= self.max_calls:
+            raise CallBudgetReached()
         started = time.monotonic()
         response = await self.client.alpha.decisions.create_async(
             model=self.model, state=state, questions=questions,
