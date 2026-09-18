@@ -656,3 +656,20 @@ the offered capability, ask Jev again. No target or project preference is in cod
 A carried request is logged as `carried_jev_commitment`, never as a new model answer
 or confirmed completed construction. The test verifies waiting and requesting
 only the model-selected project. Thirty-two tests pass.
+
+
+## Lab 077: preserve live missions across controller budget boundaries
+
+A development call budget is not a mission defeat. Add checked continuation of
+an incomplete checkpoint: `--resume-current` attaches to the existing API game,
+verifies the engine-reported local map filename before action/result handling,
+and records a resumed segment without consuming a new-attempt slot. Missing or
+mismatched map identity stops rather than attributing another scenario's result.
+The original create/join path remains for genuine new attempts. Thirty-four tests
+pass, including continuation after an attempt cap and rejection of wrong/unknown
+map identities.
+
+The preceding run ended at 1,499 calls with no win. Read-only live inspection
+confirmed `The Outlaws`, `traynor02.SC2Map`, status `in_game`. Resume that same game
+with a longer 3,000-call budget instead of discarding its economy and army. This
+controller start also enables the previously committed atomic observation reload.

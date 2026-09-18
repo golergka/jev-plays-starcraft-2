@@ -23,6 +23,12 @@ def result_for_player(players, player_id):
     return {'Victory':'victory','Defeat':'defeat','Tie':'tie'}.get(own,'incomplete')
 
 
+def check_map_identity(info, expected):
+    actual = info.local_map_path.replace('\\','/').split('/')[-1]
+    if actual.casefold()!=Path(expected).name.casefold():
+        raise RuntimeError(f'Resume map mismatch: expected {Path(expected).name}, got {actual!r}')
+
+
 async def run(args):
     load_dotenv(ROOT / '.env')
     sc2root = os.getenv('SC2PATH', '/Applications/StarCraft II')
@@ -73,6 +79,7 @@ async def run(args):
         log('connected',version=ping.game_version,revision=loader.revision,
             objective=args.objective,seconds=args.seconds,max_calls=args.max_calls,
             max_age_loops=args.max_age_loops)
+        attached_info = None
         if args.map:
             log('loading_map',map=Path(args.map).name,opponent=args.opponent)
             joined = await client.start(args.map,args.opponent,getattr(args,'race','terran').capitalize())
@@ -81,6 +88,9 @@ async def run(args):
         else:
             existing = await client.observe()
             outcome['player_id'] = existing.observation.player_common.player_id or None
+            if getattr(args,'expected_map',None):
+                attached_info = await client.request('game_info',sc.RequestGameInfo())
+                check_map_identity(attached_info,args.expected_map)
             if client.status == sc.ended:
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
                                      for r in existing.player_result],source='attach_to_ended_game')
@@ -90,7 +100,8 @@ async def run(args):
                 return outcome
             if client.status != sc.in_game:
                 raise RuntimeError('--attach without --map needs an API game already in progress')
-        info = await client.request('game_info',sc.RequestGameInfo())
+        info = attached_info if attached_info is not None else await client.request('game_info',sc.RequestGameInfo())
+        outcome.update(map_name=info.map_name,local_map_path=info.local_map_path)
         data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True))
         started = time.monotonic()
         failures = 0

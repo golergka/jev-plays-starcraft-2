@@ -124,3 +124,9 @@ that sequence after its process exits, use the same `--state` path. Its verified
 Liberation Day win is preserved; failures in The Outlaws do not return to the
 opening. Appending missions preserves the completed prefix when those completed
 scenario definitions are unchanged.
+
+Use `--resume-current` with that checkpoint after a budget/time stop to retain the
+running mission and army. It checks SC2's reported map path before submitting any
+orders or accepting a result. A continuation is recorded separately and does not
+consume a new-attempt slot. Omitting the flag starts a fresh attempt at the pending
+mission; completed missions stay skipped.

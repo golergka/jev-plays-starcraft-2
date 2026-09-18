@@ -18,7 +18,7 @@ def save_progress(path, progress):
 
 async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                        seconds_per_attempt=600, max_attempts=3, port=5001,
-                       follow_camera=False, mission_runner=run):
+                       follow_camera=False, resume_current=False, mission_runner=run):
     manifest_path, state_path = Path(manifest_path), Path(state_path)
     payload = manifest_path.read_bytes()
     manifest = json.loads(payload)
@@ -41,19 +41,27 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
     progress.update(manifest_sha256=digest,mission_definitions=missions)
     save_progress(state_path,progress)
     remaining = call_budget
+    resume_now = resume_current
     for mission in missions[len(progress['completed']):]:
         map_path = (manifest_path.parent / mission['map']).resolve()
         if not map_path.is_file():
             progress.update(status='needs_attention',reason=f'Missing map: {map_path}')
             save_progress(state_path, progress)
             return progress
-        attempts = sum(a['mission']==mission['id'] for a in progress['attempts'])
-        while attempts < max_attempts and remaining > 0:
-            args = SimpleNamespace(doctor=False, attach=True, map=str(map_path),
+        if resume_now and (not progress['attempts'] or
+                progress['attempts'][-1]['mission']!=mission['id'] or
+                progress['attempts'][-1]['status']!='incomplete'):
+            raise ValueError('Resume requires an incomplete checkpoint for this mission')
+        attempts = sum(a['mission']==mission['id'] and not a.get('resumed',False) for a in progress['attempts'])
+        while (resume_now or attempts < max_attempts) and remaining > 0:
+            was_resume = resume_now
+            args = SimpleNamespace(doctor=False, attach=True, map=None if was_resume else str(map_path),
+                expected_map=map_path.name if was_resume else None,
                 opponent=False, race=mission['race'], objective=mission['objective'],
                 port=port, seconds=seconds_per_attempt, max_calls=remaining,
                 follow_camera=follow_camera, max_age_loops=32, interval=.35)
             progress.update(status='running',current_mission=mission['id'])
+            progress.pop('reason',None)
             save_progress(state_path, progress)
             try:
                 result = await mission_runner(args)
@@ -61,9 +69,11 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                 progress.update(status='needs_attention',reason=f'{type(exc).__name__}: {exc}')
                 save_progress(state_path, progress)
                 return progress
-            attempts += 1
+            resume_now = False
+            if not was_resume:
+                attempts += 1
             remaining -= result.get('calls',0)
-            progress['attempts'].append({'mission':mission['id'],**result})
+            progress['attempts'].append({'mission':mission['id'],'resumed':was_resume,**result})
             if result['status']=='victory':
                 progress['completed'].append(mission['id'])
                 save_progress(state_path, progress)
@@ -94,10 +104,11 @@ def main():
     parser.add_argument('--max-attempts',type=int,default=3)
     parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--follow-camera',action='store_true')
+    parser.add_argument('--resume-current',action='store_true',help='Continue the checkpointed incomplete game after verifying its map')
     args = parser.parse_args()
     result = asyncio.run(run_sequence(args.manifest,args.state,
         call_budget=args.call_budget,seconds_per_attempt=args.seconds_per_attempt,
-        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera))
+        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current))
     print(json.dumps(result,indent=2))
 
 

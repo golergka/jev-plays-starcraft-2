@@ -78,3 +78,29 @@ def test_extending_manifest_preserves_completed_prefix(tmp_path):
     result=asyncio.run(run_sequence(path,state,mission_runner=third))
     assert result['completed']==['first','second','third']
     assert calls==[str(tmp_path/'third.SC2Map')]
+
+
+def test_resume_current_preserves_map_and_does_not_consume_new_attempt(tmp_path):
+    path=manifest(tmp_path);state=tmp_path/'progress.json'
+    async def initial(args):
+        return {'status':'victory' if args.map.endswith('first.SC2Map') else 'incomplete','calls':1}
+    asyncio.run(run_sequence(path,state,max_attempts=1,mission_runner=initial))
+    calls=[]
+    async def resume(args):
+        calls.append(args)
+        return {'status':'victory','calls':1}
+    progress=asyncio.run(run_sequence(path,state,max_attempts=1,resume_current=True,mission_runner=resume))
+    assert progress['status']=='sequence_complete'
+    assert len(calls)==1 and calls[0].map is None
+    assert calls[0].expected_map=='second.SC2Map'
+    assert progress['attempts'][-1]['resumed'] is True
+
+
+def test_resume_map_identity_rejects_other_or_unknown_map():
+    import pytest
+    from types import SimpleNamespace
+    from jev_sc2.__main__ import check_map_identity
+    check_map_identity(SimpleNamespace(local_map_path='Maps/second.SC2Map'),'second.SC2Map')
+    for actual in ('Maps/first.SC2Map',''):
+        with pytest.raises(RuntimeError,match='map mismatch'):
+            check_map_identity(SimpleNamespace(local_map_path=actual),'second.SC2Map')
