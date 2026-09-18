@@ -70,8 +70,10 @@ uv run python -m jev_sc2 --attach --map maps/traynor02.SC2Map --follow-camera --
 ```
 
 The player now offers engine-advertised training actions and gathering from visible
-mineral fields. Jev decides whether and where to use them. Building placement,
-gas harvesting, upgrades, research and cross-mission progression are still absent.
+mineral fields. Jev decides whether and where to use them. Point-target building placement now offers four nearby, currently visible,
+engine-approved sites. A Jev-selected Supply Depot completed and increased capacity
+from 19 to 27; further depots were in progress. Gas harvesting, upgrades, research
+and cross-mission progression are still absent.
 
 The second mission opens a tutorial/help panel that pauses the game clock. During
 that pause, API actions can report success without resource or unit changes until

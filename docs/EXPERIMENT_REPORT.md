@@ -32,10 +32,12 @@ not a verified recreation of campaign progression.
 | Offer regroup intent and friendly-unit movement | Local friendly approaches occurred; squad intent never selected regroup | Ended with Raynor and two wounded Marines; no victory |
 | Name a regroup anchor | Four surviving units ended close together with unchanged health | Sequential trial; no victory |
 | Offer stop and hold commands | Jev selected both; the engine accepted them | Fixes an action-interface gap, not a demonstrated strategy improvement |
+| Explain building costs and supply effects | Jev built a depot; capacity rose 19 to 27 | Multiple depots in progress suggest overproduction risk |
 | Sample navigation probabilities | Initial run selected regroup and moved north; sustained run lost Raynor | Runs 015–016; UI-confirmed defeat, despite missing protocol result |
 
-Successful calls in these live trials had per-run median latency between 355 and
-450 ms. These are measured run medians, not a service guarantee. Two-stage decisions
+Successful calls in these live trials had per-run median latency between 353 and
+450 ms in the small combat/navigation batches. Economic batches approached one
+second median and produced more stale observations and occasional timeouts. These are measured run medians, not a service guarantee. Two-stage decisions
 add latency; stale observations are rejected. The successful-call limit initially
 overshot by one in the 300-call trial; it now checks before every inference, with a
 regression test. Billing errors stop immediately and preserve a replay.
@@ -72,9 +74,9 @@ labels, masked by current player visibility; it does not compute a route.
 - Evaluate sustained sampling behavior and compare fresh mission runs if useful.
 - Improve the observation/action representation based on measured failures, while
   keeping every tactical choice with Jev.
-- Mission victory, building placement, and full campaign progression remain
-  unachieved. Training and mineral gathering are newly available choices; research,
-  armory and unlock state are not implemented.
+- Mission victory and full campaign progression remain unachieved. Training,
+  mineral gathering and visible engine-checked building sites are available;
+  research, armory and unlock state are not implemented.
 
 The public stream was verified with the API-controlled game and conversation
 visible together, plus SC2 application audio. Microphone and webcam toggles remain
