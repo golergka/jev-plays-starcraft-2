@@ -116,3 +116,22 @@ def test_view_excludes_hidden_and_snapshot_enemies_and_uses_queried_ids():
     assert [u['tag'] for u in unit['surroundings']]==[2]
     assert 'orders' not in unit['surroundings'][0]
     assert {c['command']['ability_id'] for c in unit['candidates']}=={3794,3674}
+
+
+def test_multistage_decision_cannot_exceed_call_budget(monkeypatch):
+    from types import SimpleNamespace
+    from unittest.mock import AsyncMock
+    import jev_sc2.jev as module
+    response = SimpleNamespace(usage=SimpleNamespace(cost=0),
+                               model_dump=lambda **kwargs: {'answers': {}})
+    request = AsyncMock(return_value=response)
+    monkeypatch.setenv('OPENROUTER_API_KEY', 'test-key-not-a-credential')
+    monkeypatch.setattr(module, 'OpenRouter', lambda **kwargs: SimpleNamespace(
+        alpha=SimpleNamespace(decisions=SimpleNamespace(create_async=request))))
+    model = module.Jev(lambda *a, **k: None, 'test', max_calls=1)
+    async def two_stages():
+        await model.ask({}, {})
+        with pytest.raises(module.CallBudgetReached):
+            await model.ask({}, {})
+    asyncio.run(two_stages())
+    assert request.await_count == 1
