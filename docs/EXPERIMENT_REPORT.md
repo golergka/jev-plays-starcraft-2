@@ -14,9 +14,10 @@ and submits only Jev-derived commands. Fog stays enabled; no debug commands or
 hidden enemy observations are used. Raw control is information-fair, but bypasses
 human mouse/selection mechanics. See [the procedure](PROCEDURE.md).
 
-Two scenarios ran: Blizzard's MarineMicro and the installed first Liberty campaign
-mission, repackaged without changing its base/English components. The latter is a
-standalone mission, not a verified recreation of campaign progression.
+The scenarios include Blizzard's MarineMicro and installed Liberty campaign
+missions, repackaged without changing their base/English components. Both the first
+and second mission have loaded through the API. These are standalone missions,
+not a verified recreation of campaign progression.
 
 ## Experiments and measured lessons
 
@@ -29,6 +30,8 @@ standalone mission, not a verified recreation of campaign progression.
 | Add measured displacement history | Jev eventually changed direction | Longer trial crossed the same corridor repeatedly |
 | Add visited-area counts | A different route emerged | Units spread apart; centroid movement hid separation |
 | Offer regroup intent and friendly-unit movement | Local friendly approaches occurred; squad intent never selected regroup | Ended with Raynor and two wounded Marines; no victory |
+| Name a regroup anchor | Four surviving units ended close together with unchanged health | Sequential trial; no victory |
+| Offer stop and hold commands | Jev selected both; the engine accepted them | Fixes an action-interface gap, not a demonstrated strategy improvement |
 | Sample navigation probabilities | Initial run selected regroup and moved north; sustained run lost Raynor | Runs 015–016; UI-confirmed defeat, despite missing protocol result |
 
 Successful calls in these live trials had per-run median latency between 355 and
@@ -69,8 +72,9 @@ labels, masked by current player visibility; it does not compute a route.
 - Evaluate sustained sampling behavior and compare fresh mission runs if useful.
 - Improve the observation/action representation based on measured failures, while
   keeping every tactical choice with Jev.
-- Mission victory, build/train mechanics, and full campaign progression remain
-  unachieved. Research, armory and unlock state are not implemented.
+- Mission victory, building placement, and full campaign progression remain
+  unachieved. Training and mineral gathering are newly available choices; research,
+  armory and unlock state are not implemented.
 
 The public stream was verified with the API-controlled game and conversation
 visible together, plus SC2 application audio. Microphone and webcam toggles remain

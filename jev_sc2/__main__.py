@@ -69,6 +69,8 @@ async def run(args):
         started = time.monotonic()
         failures = 0
         empty_since = None
+        last_loop = None
+        clock_changed_at = time.monotonic()
         while time.monotonic()-started < args.seconds and jev.calls < args.max_calls:
             try:
                 revision = loader.refresh()
@@ -77,10 +79,20 @@ async def run(args):
             except Exception as exc:
                 log('reload_error',error=str(exc),retained_revision=loader.revision)
             observation = await client.observe()
+            if observation.action_errors:
+                log('engine_action_error',errors=[str(e) for e in observation.action_errors])
             if observation.player_result or client.status == sc.ended:
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
                                      for r in observation.player_result])
                 break
+            if observation.observation.game_loop == last_loop:
+                if time.monotonic()-clock_changed_at >= 10:
+                    log('stopped',reason='Game clock stalled for ten seconds; inspect pause/tutorial UI')
+                    break
+                await asyncio.sleep(0.2)
+                continue
+            last_loop = observation.observation.game_loop
+            clock_changed_at = time.monotonic()
             view = await make_view(client,observation,data,info,args.objective)
             empty_since = None if view['self'] else (empty_since or time.monotonic())
             if empty_since is not None and time.monotonic()-empty_since >= 10:

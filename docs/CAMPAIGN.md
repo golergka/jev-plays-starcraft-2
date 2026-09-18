@@ -55,3 +55,27 @@ Resume without reloading the map using `--attach` alone. Load another mission wi
 `--attach --map ...`. A campaign sequencer can use this boundary, but Hyperion,
 research, difficulty selection, mission unlocks and persistence between maps are
 not implemented or verified. Do not claim the whole vanilla campaign works.
+
+## Second mission smoke test
+
+The same extractor CLI with `--mission traynor02` produced 41 components and a
+1,246,964-byte MPQ. `--attach --map maps/traynor02.SC2Map` successfully joined it.
+The player screen shows **Destroy the Dominion Base** and the starting Terran base.
+No campaign unlock bypass command or modified trigger was used; this is another
+standalone scenario load, not evidence of persistent campaign progression.
+
+```sh
+uv run python scripts/extract_campaign.py --casc /tmp/jev-research/CascLib/build/casc.framework/casc --storm /tmp/jev-research/StormLib/build/storm.framework/storm --mission traynor02
+uv run python -m jev_sc2 --attach --map maps/traynor02.SC2Map --follow-camera --objective 'Destroy the Dominion Base.'
+```
+
+The player now offers engine-advertised training actions and gathering from visible
+mineral fields. Jev decides whether and where to use them. Building placement,
+gas harvesting, upgrades, research and cross-mission progression are still absent.
+
+The second mission opens a tutorial/help panel that pauses the game clock. During
+that pause, API actions can report success without resource or unit changes until
+play resumes. Close the panel through the game UI; this is menu handling, not a
+model-controlled tactical choice. The harness now avoids inference on unchanged
+game loops and stops after ten seconds of a stalled clock, requesting UI inspection.
+The first economic trial remained at loop 354 and is not evidence of production.
