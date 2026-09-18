@@ -535,3 +535,23 @@ def test_support_controls_use_owned_visible_compatible_targets_and_available_abi
     actor.cargo_space_taken=2
     commands=[c['command'] for c in offered({3,4})]
     assert commands==[{'unit_tag':1,'ability_id':4}]
+
+
+def test_support_capability_is_visible_before_jev_selects_contribution():
+    import player
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions:
+                return {'strategy':{'choice':'hold'}}
+            if 'purpose_Carrier' in questions:
+                assert 'load owned units' in questions['purpose_Carrier']['criteria']['other']
+                assert state['units'][0]['cargo']['capacity']==4
+                return {'purpose_Carrier':{'choice':'other'}}
+            return {'Carrier':{'choice':'group_ability_3_2'}}
+    command={'unit_tag':1,'ability_id':3,'target_tag':2}
+    view={'loop':1,'self':[{'tag':1,'type':'Carrier','position':[0,0],
+        'cargo':{'used':0,'capacity':4,'passengers':[]},'candidates':[
+            {'id':'ability_3_2','description':'Load target',
+             'capability_description':'Load: load owned units into available cargo space','command':command}]}]}
+    assert asyncio.run(player.decide(view,Model(),{}))==[command]

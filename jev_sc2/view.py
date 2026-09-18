@@ -89,6 +89,7 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names):
                 continue
             candidates.append({'id':f'ability_{ability}_unload',
                 'description':f'{label}: request unloading passengers here; engine checks space',
+                'capability_description':f'{label}: unload carried passengers',
                 'command':command})
             continue
         if meta.target not in (3,4):
@@ -111,6 +112,7 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names):
                 effect = f'load into this unit; needs {product.cargo_size} cargo slots'
             candidates.append({'id':f'ability_{ability}_{target.tag}',
                 'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
+                'capability_description':f'{label}: '+('restore damaged owned units' if kind in ('repair','heal') else 'load owned units into available cargo space'),
                 'command':{'unit_tag':unit.tag,'ability_id':ability,'target_tag':target.tag}})
     return candidates
 

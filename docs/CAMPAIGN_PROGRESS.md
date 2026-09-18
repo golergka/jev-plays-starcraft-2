@@ -739,3 +739,20 @@ Thirty-six tests pass, including unavailable abilities, hidden targets, full
 cargo, and undamaged recipients. Commit this adapter/player pair during the
 running game to verify atomic live reload. This expands controls; effectiveness
 of Jev's support decisions is still unproven.
+
+## Lab 081: show capability meaning before hierarchical selection
+
+Lab 080's committed player and adapter reloaded at runtime (revision 76d588d),
+and subsequent requests contained cargo observations without a restart. The
+Bunker contribution question now offered `other`, proving support candidates
+were present, but its description was merely “Use another available ability.”
+In the first inspected post-reload sample, all 21 Bunker contribution choices
+were `continue`. This does not prove a model weakness: the hierarchy concealed
+what the new category could do until after Jev selected it.
+
+Expose deduplicated support capability descriptions in selection facts and in
+the `other` contribution option. Preserve all competing choices and leave the
+specific order/recipient to Jev. This is an information-preservation fix for
+hierarchical decisions, applicable to support abilities in every scenario.
+Thirty-seven tests pass; a test checks that the capability and cargo state are
+visible at the contribution decision, before choosing the concrete order.

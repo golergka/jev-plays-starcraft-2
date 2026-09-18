@@ -212,6 +212,7 @@ def selection_facts(view, cohorts, previous_counts):
             'available_build_abilities':sorted({a for u in selected for a in u.get('available_build_abilities',[])}),
             'available_projects':list({c['project']['type']:c['project'] for u in economic_selected for c in u['candidates']
                                        if c.get('project')}.values()),
+            'available_support_abilities':sorted({c['capability_description'] for u in selected for c in u['candidates'] if c.get('capability_description')}),
             'some_can_train_units':any(c['description'].startswith('Train ') for u in economic_selected for c in u['candidates']),
         }
     return facts
@@ -380,7 +381,8 @@ async def decide(view, jev, memory):
         'instructions':f'Choose how the {len(cohorts[kind])} {kind} units should contribute to completing the mission now. '
                        'Different unit types can make different contributions to the same strategy. '
                        'Use their capabilities, current orders, resources and threats.',
-        'criteria':{p:meanings[p] for p in sorted({purpose(kind,k) for k in q['criteria']})},
+        'criteria':{p:meanings[p]+((' Available: '+'; '.join(state['selection_facts'][kind]['available_support_abilities'])) if p=='other' else '')
+                    for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
     async def choose_orders():
         roles = await jev.ask(state,purpose_questions) if purpose_questions else {}
