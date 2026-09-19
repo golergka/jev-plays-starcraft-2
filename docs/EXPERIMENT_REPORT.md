@@ -2,7 +2,7 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** Zero Hour has three
+**Liberation Day and The Outlaws are verified won.** Zero Hour has four
 UI-confirmed defeats; the current policy is being evaluated from a fresh start. The most
 persistent difficulty is converting local choices into coordinated, sustained
 objective progress. Earlier sections below retain the unsuccessful trials; the

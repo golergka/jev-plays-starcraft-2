@@ -1028,3 +1028,22 @@ filter as an improvement. Other groups' facts can contain useful economic and
 support context; smaller input alone is not an accuracy guarantee. Do not deploy
 this probe transformation. Evidence: `065-selection-context-probe.json`.
 The live player remains frozen throughout this attempt.
+
+## Lab 095: frozen policy lost; correct unfinished-construction controls
+
+The unchanged-policy fourth attempt ended in UI-confirmed Defeat at 10:02,
+with 10:07 remaining for evacuation. It made 918 successful Jev calls costing
+$0.554785476. Income commitments yielded intermittent income but not survival.
+Runtime source stayed unchanged from f17432b throughout this attempt; intervening
+commits changed only reports/docs/offline probes. Full outcome and measurements:
+`066-zero-hour-frozen-policy-defeat.json`. No campaign advancement is claimed.
+
+The engine rejected repairs on unfinished structures. Exclude those repair
+candidates. Offer the normal Smart/context interaction on owned unfinished
+structures only when Smart is engine-advertised and the actor has an observed
+building capability (including resource-ignored capability discovery). The engine
+determines contextual behavior; this is not a guarantee that every builder/race
+can resume construction. Jev selects the target/executor, and no command is sent
+from capability discovery alone. This addresses a general action-interface gap,
+not a mission-specific build rule. Forty-eight tests pass. Live Smart availability
+and successful resumed construction remain to be verified in the next attempt.

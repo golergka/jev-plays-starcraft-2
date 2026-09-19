@@ -520,7 +520,7 @@ def test_support_controls_use_owned_visible_compatible_targets_and_available_abi
              3:data.UnitTypeData(unit_id=3,attributes=[data.Mechanical,data.Structure],cargo_size=0)}
     actor=raw.Unit(tag=1,alliance=raw.Self,display_type=raw.Visible,cargo_space_max=2)
     targets=[raw.Unit(tag=tag,unit_type=kind,alliance=raw.Self,display_type=display,
-                      health=hp,health_max=100)
+                      health=hp,health_max=100,build_progress=1)
              for tag,kind,display,hp in [(2,1,raw.Visible,50),(3,2,raw.Visible,60),
                                         (4,3,raw.Visible,70),(5,1,raw.Hidden,20),
                                         (6,1,raw.Visible,100)]]
@@ -646,3 +646,20 @@ def test_jev_contribution_commitment_retains_sample_and_rechecks_unavailable_cho
     q['purpose_Test']['criteria'].pop('income')
     assert asyncio.run(player.choose_contributions({'loop':101},state,q,model,memory))['purpose_Test']['choice']=='positioning'
     assert model.calls==2
+
+
+def test_unfinished_construction_has_context_action_not_repair_when_engine_offers_it():
+    from s2clientprotocol import data_pb2 as data
+    from jev_sc2.view import support_candidates
+    actor=raw.Unit(tag=1,alliance=raw.Self,display_type=raw.Visible)
+    target=raw.Unit(tag=2,unit_type=10,alliance=raw.Self,display_type=raw.Visible,
+                    health=30,health_max=100,build_progress=.3)
+    types={10:data.UnitTypeData(unit_id=10,attributes=[data.Structure,data.Mechanical])}
+    abilities={1:data.AbilityData(ability_id=1,friendly_name='Smart',target=3),
+               316:data.AbilityData(ability_id=316,friendly_name='Effect Repair SCV',target=3)}
+    choices=support_candidates(actor,{1,316},abilities,types,[actor,target],{},builder=True)
+    assert [c['command']['ability_id'] for c in choices]==[1]
+    assert support_candidates(actor,{316},abilities,types,[actor,target],{},builder=True)==[]
+    assert support_candidates(actor,{1},abilities,types,[actor,target],{},builder=False)==[]
+    target.build_progress=1
+    assert [c['command']['ability_id'] for c in support_candidates(actor,{1,316},abilities,types,[actor,target],{},builder=True)]==[316]

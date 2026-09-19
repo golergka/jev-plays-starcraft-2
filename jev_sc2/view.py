@@ -57,7 +57,7 @@ def explored_map(visibility, pathing, area, cell_size=6):
             'legend': '? unexplored; ~ partly explored; . walkable; # blocked; + mixed walkable/blocked. Columns west to east. Static terrain only; not a route or current unit occupancy.'}
 
 
-def support_candidates(unit, legal, catalog, unit_catalog, own, names):
+def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=False):
     """Expose support controls, without selecting a recipient or issuing an order.
 
     Available ability queries don't validate particular targets. Restrict these
@@ -76,7 +76,8 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names):
         kind = ('repair' if verb.startswith('repair') else
                 'heal' if verb.startswith('heal') else
                 'unload' if verb.startswith('unloadall') else
-                'load' if verb.startswith('load') else None)
+                'load' if verb.startswith('load') else
+                'construction_interaction' if builder and verb.startswith('smart') else None)
         if kind is None:
             continue
         if kind == 'unload':
@@ -100,7 +101,13 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names):
             product = unit_catalog.get(target.unit_type)
             if product is None:
                 continue
-            if kind in ('repair','heal'):
+            if kind == 'construction_interaction':
+                if target.build_progress >= 1 or data_proto.Structure not in product.attributes:
+                    continue
+                effect = 'contextual interaction with unfinished construction; engine determines whether this worker can resume it'
+            elif kind in ('repair','heal'):
+                if kind=='repair' and target.build_progress < 1:
+                    continue  # Engine rejects repair on unfinished construction.
                 attribute = data_proto.Mechanical if kind=='repair' else data_proto.Biological
                 if attribute not in product.attributes or not (0 < target.health < target.health_max):
                     continue
@@ -112,7 +119,7 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names):
                 effect = f'load into this unit; needs {product.cargo_size} cargo slots'
             candidates.append({'id':f'ability_{ability}_{target.tag}',
                 'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
-                'capability_description':f'{label}: '+('restore damaged owned units' if kind in ('repair','heal') else 'load owned units into available cargo space'),
+                'capability_description':f'{label}: '+('restore damaged owned units' if kind in ('repair','heal') else 'interact with unfinished owned construction' if kind=='construction_interaction' else 'load owned units into available cargo space'),
                 'exclusive_target':kind=='load',
                 'command':{'unit_tag':unit.tag,'ability_id':ability,'target_tag':target.tag}})
     return candidates
@@ -156,6 +163,8 @@ async def make_view(client, observation, data, info, objective):
                 potential[product.name] = {'type':product.name,'minerals':product.mineral_cost,
                     'vespene':product.vespene_cost,'supply':product.food_required,
                     'supply_provided':product.food_provided}
+    builder_tags = {offered.unit_tag for offered in possible.abilities
+                    if any(ability_names.get(a.ability_id,'').startswith('Build ') for a in offered.abilities)}
     placements, placement_candidates = [], []
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
@@ -205,7 +214,7 @@ async def make_view(client, observation, data, info, objective):
         gather = next((a for a in sorted(legal) if a in {295,3666} or remaps.get(a)==3666), None)
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
-        candidates = support_candidates(unit,legal,catalog,unit_catalog,own,names)
+        candidates = support_candidates(unit,legal,catalog,unit_catalog,own,names,builder=unit.tag in builder_tags)
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
             product = product_for(ability)
