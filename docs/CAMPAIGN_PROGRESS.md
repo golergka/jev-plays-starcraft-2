@@ -3634,3 +3634,22 @@ identities or targets; other-role continue can preserve harvesting, so counts ar
 not actual miner totals. Three unreplicated pairs and probabilities are not a
 calibrated causal outcome comparison. Keep live policy unchanged and let current
 production-commitment trial continue. No budget increase or ledger reset.
+
+### Lab247 — first extended batch loses its producer; log release reasons
+
+Live244trial selects Marine batch at8201 with review_at10217, confirming2016-loop
+horizon in real play. Requests at8201 and8439; by9169 only2SCVs,3Depots andCommandCenter
+remain observed, so no Marine training control remains. Native9:27 shows base
+overrun and36minerals. This does not demonstrate successful third-request reuse
+or failure of the extended deadline: production became unavailable first.
+
+Earlier Bunker proposals at5/3471/4893 retain BuildBunker in next observed worker
+orders, and those next tick command lists do not overwrite the builder. The
+observed failure is not evidence to rewrite construction protection. Jev mostly
+selected bunkers before the late Marine batch; no direct strategy intervention.
+
+Batch removal previously omitted its reason. Add production_batch_released event
+with original loop/deadline/remaining count plus current_loop and cause: control
+unavailable, deadline, rewind, exhausted requests, or strategy change. This changes
+observability only, with no retry or relaxed commitment. Already-cleared livebatch
+cannot retroactively emit the event. All125tests pass. Budget unchanged.

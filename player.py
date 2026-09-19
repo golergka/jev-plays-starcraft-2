@@ -369,8 +369,15 @@ async def choose_investment(view, state, jev, memory=None):
                 jev.log('production_batch_wait',loop=view['loop'],target_project=target,remaining_attempts=batch['remaining'],review_at=batch['review_at'])
                 return []
             else:
+                jev.log('production_batch_released',current_loop=view['loop'],
+                        reason='training control no longer offered',**batch)
                 memory.pop('production_batch',None)
         else:
+            reason = ('game loop rewound' if view['loop'] < batch['loop'] else
+                      'review deadline reached' if view['loop'] >= batch['review_at'] else
+                      'no requests remaining' if batch['remaining'] <= 0 else
+                      'strategic priority changed')
+            jev.log('production_batch_released',current_loop=view['loop'],reason=reason,**batch)
             memory.pop('production_batch',None)
     plan = (memory or {}).get('investment_intent',{})
     if (not carried and plan.get('mode')=='save_for_project' and
