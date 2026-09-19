@@ -3365,3 +3365,22 @@ extend the deadline. This may save a small number of questions,not all worker
 calls; batching means question savings are not equal to dollar savings.121tests
 pass,including reuse at measured373loop spacing and expiry at672. Live impact
 still requires measurement; no new tactical policy or budget change.
+
+### Lab231 — harvesting reuse observed; visual checks distinguish empty defenses
+
+Live lab230 run20260919T212055.773706Z/session42746 remains active. Five
+routine_execution events through loop5109 (1278,2502,2902,4620,5109) confirm
+672-loop harvesting review can survive paced decision intervals. These avoid
+concrete questions, not necessarily entire calls; no dollar-saving causal claim.
+Read-only five-minute ledger snapshot was $.073500210 against $.142569458
+allowance, including reservations. No cap, taper or policy change this check.
+
+Native screenshots at4:41 and5:27 show Marines clustered beside the bridge and
+an explicitly EMPTY BUNKER nearby. API support context at5109 reports one Marine
+aboard across four bunkers (15 free slots). Earlier1679 load choice reserved its
+passenger and suppressed that Marine's conflicting Hold order. Thus boarding
+coordination is exercised, but an occupied bunker elsewhere does not establish
+effective use of the visibly empty forward defense. Recent Marine choices were
+repeated continue after holding, then a bunker-position join at5639. No manual
+orders issued. Continue the unchanged trial and correlate later survival with
+actual production and cargo, rather than interpreting accepted commands as success.
