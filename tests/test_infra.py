@@ -1212,3 +1212,33 @@ def test_catalog_dependencies_use_available_units_and_explicit_tech_aliases():
     description = investment_description('Addon', {'catalog_tech_requirement_for':deps}, {})
     assert 'Aliased (requires attached addon)' in description
     assert 'does not guarantee current trainability' in description
+
+
+def test_individual_history_survives_paced_reviews_but_expires_and_rewinds():
+    import json
+    import player
+
+    class Model:
+        facts = []
+
+        def log(self, *args, **kwargs):
+            pass
+
+        async def ask(self, state, questions):
+            if 'navigation' in questions:
+                return {'navigation': {'choice': 'hold'}}
+            self.facts.append(json.loads(questions['1']['instructions'].split('Unit facts: ', 1)[1]))
+            return {'1': {'choice': 'continue'}}
+
+    model, memory = Model(), {}
+    unit = {'tag': 1, 'type': 'SCV', 'position': [1, 2],
+            'health_fraction': 1, 'surroundings': [], 'candidates': []}
+    for loop in (5, 305, 1000, 2):
+        view = {'loop': loop, 'objective': 'Complete the mission',
+                'resources': {}, 'self': [unit]}
+        assert asyncio.run(player.decide_individual(view, model, memory)) == []
+    assert 'recent_progress' not in model.facts[0]
+    assert model.facts[1]['recent_progress']['game_loops'] == 300
+    assert model.facts[1]['recent_progress']['last_choices'] == ['continue']
+    assert 'recent_progress' not in model.facts[2]
+    assert 'recent_progress' not in model.facts[3]

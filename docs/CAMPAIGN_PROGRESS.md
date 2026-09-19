@@ -3969,3 +3969,12 @@ samples after rewind, and label prior selections as not proof of execution.
 No automatic regrouping, assigned worker roles, new model calls or spending
 increase. This addresses missing context, not proven cause of defeat; individual
 questions are a small fraction of this run's decisions. Test suite passes136.
+
+### Lab270 — verify paced-history behavior without paid probes
+
+Regression drives the actual individual decision path using a deterministic
+fake Jev: first observation5 has no invented history; review305 receives the
+prior continue selection across a300loopgap; review1000 expires stale history;
+rewind2 excludes future observations. No action is synthesized in any case.
+Targeted test passes. This proves context plumbing, not improved model decisions.
+Live lab269 session60910 remains running; no runtime policy change in this commit.
