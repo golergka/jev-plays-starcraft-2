@@ -1825,3 +1825,30 @@ faster exploratory isolation, but a stepped negative result cannot exclude a
 real-time-specific failure; any proposed repair needs real-time confirmation.
 Validation: CLI help loads and 70 existing tests pass. Stepped integration has
 not yet run because the real-time no-AI probe still owns the live game/socket.
+
+### Lab 155 — timing mode matters; test stock map without controller traffic
+
+No-AI-handoff real-time probe exited 0 at loop 14,153, all samples in_game,
+36 owned units, no results (/tmp/jev-without-ai-probe.jsonl). UI confirmed the
+holdout objective and running evacuation timer, so StartGame executed.
+Stepped counterpart passed through 16,384 with 36 owned units and no results
+(/tmp/jev-without-ai-stepped.jsonl).
+
+A second copy replaces the withheld StartAI handoff with its three original
+AICampaignStart calls, retaining other mission startup but withholding scripted
+wave/research routines. Stepped test passed through 16,384, 35 owned, no results
+(/tmp/jev-native-ai-stepped.jsonl). This does NOT exclude a real-time AI issue.
+
+Unmodified stock map, stepped, observation only: passed through 16,384 despite
+0 owned units in the final samples, no API results (/tmp/jev-stock-stepped.jsonl).
+This demonstrates that stepped timing does not reproduce the real-time failure
+under this setup. The script uses real-time waits as well as game-time waits;
+therefore these fast negative probes cannot identify or clear a root cause.
+
+Started unmodified stock map in real time with observation traffic only, no
+Jev calls, actions or queries: /tmp/jev-stock-realtime-idle.jsonl. This controls
+for player-harness traffic, a confound shared by all earlier isolation probes.
+Losing an idle stock map is expected; compare terminal loop, owned-unit count
+and visible UI state rather than treating any defeat as the API defect.
+All these runs are infrastructure diagnostics and leave campaign checkpoint
+unchanged. No weakened map is being proposed for actual campaign play.
