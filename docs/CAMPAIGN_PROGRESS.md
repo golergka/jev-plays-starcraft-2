@@ -2307,3 +2307,21 @@ Outlaws map. Fresh attempt uses1200seconds/3000calls with compact roster commit
 97178b9 and otherwise unchanged Jev policy. Prior attempt remains incomplete in
 its original result; the later defeat marker is separate evidence. No campaign
 advancement or verified win claimed. This retries Outlaws, not Liberation Day.
+
+### Lab174 — compare roster encodings without changing gameplay facts
+
+Added scripts/probe_roster_encoding.py. Selected first/middle/last successful
+object-roster order requests from run20260919T074549.368696Z, replayed identical
+questions with object versus columnar rosters, alternating request order. Six
+calls,$0.006584004. Across6 questions (1/2/3 per state), chosen actions matched6/6.
+State character counts:43436→36366,46448→39485,53782→44679 for68/67/87 units.
+Artifact docs/experiments/174-roster-encoding.json includes full answer distributions.
+Single trials on successful recorded requests do not demonstrate identical policy
+quality, universal token safety, or performance improvement. No game orders came
+from the probe. This tests representational sensitivity, not a strategic override.
+
+Fresh Outlaws attempt is still running. At loop1918 it has10SCVs,2Barracks,
+1CommandCenter,1Refinery,2SupplyDepots and no Marines. No decision errors or
+request rejections yet. Early army loss is evidence of a gameplay weakness;
+compact context has not by itself solved campaign play. Retain unchanged policy
+for this attempt while collecting the actual outcome.
