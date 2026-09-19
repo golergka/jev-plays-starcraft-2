@@ -3180,3 +3180,20 @@ cannot be attributed solely to this conflict. Next general coordination test:
 resolve Jev-selected multi-unit job participant conflicts instead of independently
 issuing incompatible orders to both sides. Keep this allocation trial unchanged
 until its outcome is verified. No hardcoded garrison tactic or unit preference.
+
+### Lab219 — loud budget stop exposes unpaced failed-request reservations
+
+Allocation trial20260919T202955.161373Z stopped with exit2 at10447:
+473calls/$0.289111662,ledger$.222174832 against$.226497977 allowance; next
+reservation refused. Partial decision$.001157394 discarded,no automatic retry.
+Paused native game11:25,evacuation8:45. Not a mission outcome. Replay saved.
+
+Inspection found pacing counted billed cost only while unknown/failed requests
+retain reservations, and decision_error paths skipped pacing entirely. Add local
+RollingSpend.charged accounting: admissions debit reserved estimate,known bills
+reconcile once,unknown bills retain debit. Pace successful and failed decisions
+using max(reported billing,accounted debit),still80% of current allowance. Log
+accounted_usd and after_decision_error separately from actual bills. No cap,
+ledger or taper reset; guard remains fatal.119tests pass, including reservation
+retention and reconciliation without double accounting. Resume same world with
+remaining3527calls. This interrupts controlled comparison; do not hide it.

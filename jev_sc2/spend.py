@@ -18,6 +18,8 @@ class RollingSpend:
         if not all(math.isfinite(v) and v > 0 for v in (limit, window, reserve)):
             raise ValueError('Spend limit, window and reservation must be positive finite numbers')
         self.path, self.base_limit, self.window, self.reserve, self.clock = Path(path), limit, window, reserve, clock
+        self.charged = 0.0  # Local pacing accounting, including unknown bills.
+        self._pending = {}
         self.config_path = Path(config_path) if config_path else None
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.connect() as db:
@@ -86,6 +88,8 @@ class RollingSpend:
                 raise SpendThrottled(max(0.05,retry_at-now),spent,limit)
             token = uuid.uuid4().hex
             db.execute('INSERT INTO spend VALUES (?,?,?)', (token,now,estimate))
+            self.charged += estimate
+            self._pending[token] = estimate
             return token
 
     def settle(self, token, cost):
@@ -94,3 +98,5 @@ class RollingSpend:
             return
         with self.connect() as db:
             db.execute('UPDATE spend SET cost=?, time=? WHERE id=?', (cost,self.clock(),token))
+        if token in self._pending:
+            self.charged += cost-self._pending.pop(token)

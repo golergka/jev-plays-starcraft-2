@@ -231,6 +231,7 @@ async def run(args):
                 continue
             decision_start = time.monotonic()
             decision_cost_before = jev.cost
+            decision_charge_before = jev.spend.charged
             try:
                 commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),
                                                   max(3,args.max_age_loops/22.4))
@@ -257,6 +258,15 @@ async def run(args):
                 if failures >= 5:
                     log('stopped',reason='five consecutive decision failures')
                     break
+                paid = max(0, jev.cost-decision_cost_before)
+                charged = max(paid, jev.spend.charged-decision_charge_before)
+                interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.8))
+                memory['spend_resume_at'] = decision_start+interval
+                log('spend_pacing', decision_usd=paid, accounted_usd=charged,
+                    target_interval_seconds=interval, rolling_limit_usd=jev.spend.limit,
+                    requested_interval_seconds=args.interval, pacing_budget_fraction=0.8,
+                    after_decision_error=True,
+                    planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
                 await asyncio.sleep(0.5)
                 continue
             fresh = await client.observe()
@@ -290,9 +300,10 @@ async def run(args):
             paid = max(0, jev.cost-decision_cost_before)
             # Leave room for pre-dispatch reservations and variable decision cost.
             # Admission remains fail-fast if a burst still exceeds this headroom.
-            interval = max(args.interval, paid*jev.spend.window/(jev.spend.limit*0.8))
+            charged = max(paid, jev.spend.charged-decision_charge_before)
+            interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.8))
             memory['spend_resume_at'] = decision_start+interval
-            log('spend_pacing', decision_usd=paid, target_interval_seconds=interval,
+            log('spend_pacing', decision_usd=paid, accounted_usd=charged, target_interval_seconds=interval,
                 rolling_limit_usd=jev.spend.limit,
                 requested_interval_seconds=args.interval, pacing_budget_fraction=0.8,
                 planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))

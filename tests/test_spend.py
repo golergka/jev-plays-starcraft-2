@@ -97,3 +97,16 @@ def test_cli_budget_failure_is_loud_and_nonzero(monkeypatch, capsys):
     assert error.value.code==2
     assert len(attempts)==1
     assert 'Controller stopped; no automatic retry' in capsys.readouterr().err
+
+
+def test_pacing_charge_includes_unknown_bills_and_reconciles_known_cost(tmp_path):
+    spend=RollingSpend(tmp_path/'spend.db',limit=.1,reserve=.005)
+    unknown=spend.acquire()
+    spend.settle(unknown,None)
+    known=spend.acquire()
+    spend.settle(known,.001)
+    assert spend.charged==pytest.approx(.006)
+    spend.settle(known,.001)
+    assert spend.charged==pytest.approx(.006)
+    spend.settle(unknown,.002)
+    assert spend.charged==pytest.approx(.003)
