@@ -1743,3 +1743,25 @@ fog filtering and atomic camera reload. Camera module is part of the existing
 commit-triggered reload; visual quality still needs observation in an active
 campaign run. The separate trigger-free lifetime diagnostic is still running and
 has passed loop 12,980 in_game; this is not campaign progress.
+
+### Lab 150 — trigger-free API survives the stock mission cutoff
+
+The read-only, zero-action lifetime probe completed normally (process exit 0):
+65 samples, loops 1 through 14,324, all status in_game, 36 owned units, no player
+results. Output: /tmp/jev-lifetime-probe.log. This exceeds the reproducible stock
+Zero Hour cutoff near 12,500. It weakens the generic API lifetime-limit hypothesis
+and implicates something initialized by the original map script; it does not
+identify a particular trigger or prove a repair. No campaign progress credited.
+
+Started a second isolated copy, maps/api-libraries-probe.SC2Map, retaining stock
+map assets but replacing MapScript.galaxy with the three original includes
+(NativeLib, LibertyLib, CampaignLib) and InitMap calling libNtve_InitLib,
+libLbty_InitLib, libCamp_InitLib. This separates shared library initialization
+from mission-specific globals/triggers. Same observation-only 65-sample protocol,
+output /tmp/jev-libraries-probe.jsonl. Initial sample in_game, loop 1, 36 owned.
+Original maps and progression checkpoint unchanged; no Jev spend on these tests.
+
+Read-only CASC extraction of installed CampaignLib found its explicit defeat
+GameOver call in the AbortMission event handler, rather than a visible duration
+limit. This is a search result, not proof that the library cannot cause the cutoff.
+Local diagnostic builders and extracted copyrighted sources stay outside Git.
