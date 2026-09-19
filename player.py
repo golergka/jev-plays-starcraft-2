@@ -317,22 +317,11 @@ def investment_description(name, project, state):
 
 
 def investment_sampling_probabilities(weights):
-    """Preserve Jev's purchase/wait mass; sharpen only within each family."""
+    """Normalize Jev's positive legal weights without changing relative odds."""
     largest = max(weights.values())
     scaled = {key:value/largest for key,value in weights.items()}
     total = sum(scaled.values())
-    result = {}
-    for purchase in (False, True):
-        family = {k:v for k,v in weights.items()
-                  if k.startswith(('project_', 'batch_')) == purchase}
-        if not family:
-            continue
-        mass = sum(scaled[k] for k in family) / total
-        peak = max(family.values())
-        sharpened = {k:(v/peak)**2 for k,v in family.items()}
-        denominator = sum(sharpened.values())
-        result.update({k:mass*v/denominator for k,v in sharpened.items()})
-    return {key:result[key] for key in weights}
+    return {key:value/total for key,value in scaled.items()}
 
 
 async def choose_investment(view, state, jev, memory=None):
@@ -426,7 +415,7 @@ async def choose_investment(view, state, jev, memory=None):
                                   weights=list(sampling_probabilities.values()),k=1)[0]
             jev.log('investment_sample',loop=view['loop'],top_choice=choice,
                     sampled_choice=sampled,probabilities=weights,
-                    sampling_exponent=2, sampling_scope='within_purchase_or_wait',
+                    sampling_exponent=1, sampling_scope='jev_legal_distribution',
                     sampling_probabilities=sampling_probabilities,seed=20260918)
             choice = sampled
     if choice in criteria and choice.startswith('batch_'):

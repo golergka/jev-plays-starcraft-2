@@ -1081,15 +1081,15 @@ def test_individual_worker_grouping_uses_observed_capabilities_and_preserves_oth
     assert len(control_groups(units,'by_current_order',{}))==3
 
 
-def test_investment_sharpens_within_families_without_amplifying_wait():
+def test_investment_preserves_jev_relative_odds_and_family_mass():
     from player import investment_sampling_probabilities
     p = investment_sampling_probabilities({'save':.4,'save_for_0':.1,
                                          'project_0':.3,'batch_1':.2})
     assert sum(p.values()) == pytest.approx(1)
     assert p['save']+p['save_for_0'] == pytest.approx(.5)
     assert p['project_0']+p['batch_1'] == pytest.approx(.5)
-    assert p['project_0']/p['batch_1'] == pytest.approx(2.25)
-    assert p['save']/p['save_for_0'] == pytest.approx(16)
+    assert p['project_0']/p['batch_1'] == pytest.approx(1.5)
+    assert p['save']/p['save_for_0'] == pytest.approx(4)
     assert investment_sampling_probabilities({'save':1e300}) == {'save':1}
     assert investment_sampling_probabilities({'project_0':1e-300}) == {'project_0':1}
 

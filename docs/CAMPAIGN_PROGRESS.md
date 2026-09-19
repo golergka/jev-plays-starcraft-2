@@ -3916,3 +3916,20 @@ but no resulting victory. Stable runtime policy after startup; later commits
 changed journal/docs and future history summaries. Verified checkpoint retains
 two completed missions. Next test must retain explicit Jev authorization rather
 than forcing a batch solely to obtain execution evidence.
+
+### Lab267 — remove framework sharpening that suppresses job probability
+
+Offline last262run:27investment samples. Before producer losses, raw Jev batch
+mass mostly.08–.17; within-family squaring often reduces it to.013–.111 (one.169).
+No selected batch is not evidence Jev assigned zero probability. Lab176 introduced
+squaring to reduce low-ranked capacity purchases;216 preserved purchase/wait mass
+but retained conditional sharpening. Neither established a controlled survival
+benefit, and today's fixed-producer executor adds a materially different option.
+
+Next trial uses normalized legal positive Jev weights directly, preserving every
+relative odd rather than specifically boosting jobs or units. Stable scaling
+handles extreme finite weights. Log exponent1/scopejev_legal_distribution. This
+can increase low-ranked extra-capacity choices—the old reason for sharpening—so
+monitor rather than promise improvement. No forced batch, changed seed, hardcoded
+tactic, additional model call or higher spending limit.136tests pass, covering
+relative odds, family totals, extreme values and existing execution boundaries.
