@@ -1,0 +1,25 @@
+{
+  "source": "runs/20260919T003856.465157Z/events.jsonl",
+  "revision": "64567af",
+  "partial": true,
+  "ticks": 48,
+  "median_latency_ms": 630.0,
+  "stale_ticks": 3,
+  "coordination_choices": {
+    "by_type": 5,
+    "by_current_order": 3
+  },
+  "latest_resources": {
+    "minerals": 0,
+    "vespene": 208,
+    "estimated_minerals_per_minute": 0.0,
+    "estimated_vespene_per_minute": 0.0,
+    "food_used": 10,
+    "food_cap": 35,
+    "supply_in_construction": 0,
+    "supply_remaining": 25,
+    "supply_blocked": false
+  },
+  "last_loop": 8144,
+  "interpretation": "Observational deployment check, not controlled performance comparison. Changing force size and game state confound latency. Current mineral income remains zero; no victory claimed."
+}

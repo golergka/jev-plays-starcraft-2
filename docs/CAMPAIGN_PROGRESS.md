@@ -1206,3 +1206,14 @@ Existing economic facts remain type-based. This can increase question count and
 job groups can change as orders cycle; latency and adoption need live measurement.
 56 tests pass, including split/merge by existing target, unchanged input orders,
 and preservation of by-type mode. No gameplay improvement claimed.
+
+### Lab105 — live adoption of job grouping, economy still failing
+
+Partial seventh-attempt measurement at loop 8144: revision64567af produced48ticks,
+median630ms,3stale ticks. Jev chose by_current_order three times and by_type five
+times in this segment. Separate SCV idle and Move selections received distinct
+choices, confirming the new grouping reaches concrete execution. However latest
+minerals and mineral income were both zero, vespene208, supply used10. This is
+working control plumbing, not an economic or mission success. Force shrinkage
+and evolving game state confound latency comparisons. Artifact070 preserves the
+partial sample. Keep runtime policy unchanged while observing this attempt.
