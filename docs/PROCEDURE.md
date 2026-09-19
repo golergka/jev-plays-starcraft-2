@@ -14,8 +14,13 @@ experiment would instead use feature-layer actions and observations.
 
 The API itself also contains cheating/debug features. Merely using the API does
 not prevent cheating. Our wrapper permits only setup, player observations,
-queries, ordinary actions and replay saving. No debug requests, map commands,
-observer slots, fog disabling, quick-load, or resource overrides. Both game creation
+queries, ordinary actions and replay saving. An opt-in infrastructure experiment
+(`--api-bookmark-recovery`, lab 160) additionally saves an in-memory bookmark every
+45 seconds and allows one logged restore for an anomalous all-player API defeat
+while owned structures remain. This can rewind recent play; it clears policy memory
+and never supplies tactical orders. It is disabled by default and remains unproven
+as a fix. No debug requests, map commands, observer slots, fog disabling, or resource
+overrides. Both game creation
 and observations explicitly set `disable_fog=False`. Cloaked/burrowed extras are
 disabled. Hidden units and enemy orders are not sent to Jev. As of lab 046,
 snapshots are exposed as explicitly stale type/location facts without health or
