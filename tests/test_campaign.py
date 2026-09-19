@@ -169,3 +169,19 @@ def test_replay_failure_does_not_erase_terminal_run_result(tmp_path, monkeypatch
     assert result['replay'] is None
     assert 'Not currently recording' in result['replay_error']
     assert json.loads(next((tmp_path/'runs').glob('*/result.json')).read_text())==result
+
+
+def test_unanimous_campaign_objective_results_do_not_verify_completion():
+    for result in ['Victory','Defeat']:
+        assert result_for_player([{'player':1,'result':result},
+                                  {'player':2,'result':result}],1)=='incomplete'
+
+
+def test_checkpoint_under_verification_review_cannot_advance(tmp_path):
+    import pytest
+    path=manifest(tmp_path);state=tmp_path/'progress.json'
+    state.write_text(json.dumps({'completed':[],'attempts':[],
+                                'verification_review_required':['first']}))
+    async def should_not_run(args):raise AssertionError('must not launch a map')
+    with pytest.raises(ValueError,match='independent verification'):
+        asyncio.run(run_sequence(path,state,mission_runner=should_not_run))

@@ -70,10 +70,14 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
   --objective 'Destroy the Logistics Headquarters. Raynor must survive.'
 ```
 
-Omit `--map` to resume the running mission. This has loaded successfully and
-produced a verified **Victory in Liberation Day**, recorded with an API result and
-replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**. Zero Hour remains uncompleted after fourteen fresh attempts (some ended without a verified game result); attempt fifteen is evaluating smaller Jev request context. See the progression journal for per-attempt evidence. All three main campaigns are the target; stock campaign menus,
-research and unlock persistence are not implemented.
+Omit `--map` to resume the running mission. API-reported wins in Liberation Day
+and The Outlaws are **under verification review**: an isolated test proved that
+completing or failing a bonus objective can report victory or defeat for every
+player and terminate API control while the main objective remains active. Zero
+Hour remains uncompleted after eighteen fresh attempts. The progression journal
+preserves the evidence and diagnostic experiments. All three campaigns remain
+the target; no campaign is complete. Native research/unlock persistence is not
+implemented.
 
 The current policy asks Jev for a strategic priority, a contribution and concrete
 order for each unit-type selection, and one shared investment across the economy.

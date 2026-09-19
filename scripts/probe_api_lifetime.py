@@ -18,7 +18,7 @@ from jev_sc2.sc2 import SC2
 from s2clientprotocol import sc2api_pb2 as sc, common_pb2 as common
 
 
-def diagnostic_copy(source, destination, storm):
+def diagnostic_copy(source, destination, storm, script_text="void InitMap () {}\n"):
     if destination.exists():raise FileExistsError(destination)
     shutil.copy2(source,destination)
     library=c.CDLL(str(storm));pointer=c.c_void_p;uint=c.c_uint32
@@ -31,7 +31,7 @@ def diagnostic_copy(source, destination, storm):
         raise RuntimeError('Cannot open diagnostic copy')
     try:
         with tempfile.TemporaryDirectory(prefix='jev-lifetime-') as directory:
-            script=Path(directory)/'MapScript.galaxy';script.write_text('void InitMap () {}\n')
+            script=Path(directory)/'MapScript.galaxy';script.write_text(script_text)
             if not library.SFileAddFileEx(handle,str(script).encode(),b'MapScript.galaxy',0x80000200,2,2):
                 raise RuntimeError('Cannot replace diagnostic trigger script')
     finally:library.SFileCloseArchive(handle)

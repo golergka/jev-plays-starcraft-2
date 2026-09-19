@@ -21,6 +21,8 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def result_for_player(players, player_id):
     """An ally's win or an ended clock is not proof of our mission result."""
+    if len(players)>1 and len({p['result'] for p in players})==1 and players[0]['result'] in {'Victory','Defeat'}:
+        return 'incomplete'  # Campaign objective transitions can synthesize these results.
     own = next((p['result'] for p in players if p['player']==player_id),None)
     return {'Victory':'victory','Defeat':'defeat','Tie':'tie'}.get(own,'incomplete')
 
@@ -67,6 +69,8 @@ async def run(args):
         if event=='result':
             outcome['players'] = fields['players']
             outcome['status'] = result_for_player(fields['players'],outcome['player_id'])
+            if outcome['status']=='incomplete':
+                outcome['reason']='API result does not verify campaign completion; inspect objective/UI outcome'
         elif event=='replay_unavailable':
             outcome['replay_error'] = fields['error']
         elif event=='api_bookmark_restored':

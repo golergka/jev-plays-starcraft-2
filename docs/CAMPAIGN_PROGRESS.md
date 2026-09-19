@@ -1,17 +1,19 @@
 # Three-campaign objective
 
 Scope confirmed by the user: Wings of Liberty, Heart of the Swarm, and Legacy of
-the Void. No campaign has been completed. Two mission victories are verified.
+the Void. No campaign has been completed. Two previously credited API victories
+are under independent verification review after lab 163 demonstrated false API
+terminal results from optional objective transitions.
 
 The user subsequently authorized individual campaign missions played in sequence
 with progression recorded here. Native campaign controls and account achievement
 credit are not required. The standalone-map route is therefore the active route.
 Only verified victories advance this journal; merely loading a later map does not.
 
-| Campaign | Mission | Verified result |
+| Campaign | Mission | Current evidence |
 | --- | --- | --- |
-| Wings of Liberty | Liberation Day (`traynor01`) | **Victory**, API player 1, loop 3512; lab 048 |
-| Wings of Liberty | The Outlaws (`traynor02`) | **Victory**, API player 1; lab 079 |
+| Wings of Liberty | Liberation Day (`traynor01`) | **API victory; verification under review**, loop 3512; labs 048, 163 |
+| Wings of Liberty | The Outlaws (`traynor02`) | **API victory; verification under review**; labs 079, 163 |
 | Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
 | Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
 
@@ -2002,3 +2004,44 @@ loss; the UI later displays that bonus objective in red while main holdout remai
 active. This is correlation, not proof. A small isolated objective-state test can
 check the engine behavior without another full Jev run. Do not yet change stock
 objectives or credit this attempt as won/lost from the contradictory API alone.
+
+### Lab 163 — reproduced: objective state alone terminates API, including bonuses
+
+A tiny isolated map script creates an optional objective, waits five game seconds,
+then marks it Failed. At the next sample (loop 225), API changed in_game to ended
+and reported Defeat for all nine players, with all 36 owned units unchanged and
+no combat. Repeated with a separate main objective explicitly still Active:
+same result. Repeated with optional objective Completed: all nine players instead
+reported Victory at loop 226. Control keeping both objectives Active remained
+in_game through loop 674. Evidence files:
+/tmp/jev-objective-failure-probe.jsonl,
+/tmp/jev-objective-mixed-failure-probe.jsonl,
+/tmp/jev-objective-mixed-complete-probe.jsonl,
+/tmp/jev-objective-active-control.jsonl.
+Disabling InterfaceOptions.score did NOT prevent this (/tmp/jev-objective-no-score.jsonl).
+
+This directly reproduces the premature API termination without waves, combat,
+Jev or controller actions. Zero Hour's ObjectiveRescueFailed calls this native
+ObjectiveSetState on the bonus rescue objective; the observed mission UI showed
+that bonus failed while main holdout continued. This explains the earlier negative
+isolation probes: they avoided the combat that failed the optional objective.
+The recovery bookmark repeats the same mission event, so cannot fix it.
+
+Preserve a reusable reproduction: scripts/probe_objective_result.py copies a
+local source map, replaces only its diagnostic script, and runs four real-time
+samples. --state Active/Failed/Completed selects the control or terminal variant.
+These copies never count as campaign missions. Example:
+uv run python scripts/probe_objective_result.py maps/traynor03.SC2Map maps/new-objective-test.SC2Map --storm /tmp/jev-research/StormLib/build/storm.framework/storm --output /tmp/new-objective-test.jsonl --state Failed
+
+Consequences for verification: both previously credited opening wins used
+unanimous API Victory, which is now proven insufficient. Preserve the historical
+records but mark completion verification under review; checkpoint has an explicit
+review gate before further progression. README and journal headline corrected.
+Unanimous multi-player Victory/Defeat now yields incomplete rather than a verified
+mission result. 77 tests pass, including rejection of these false terminal results
+and prevention of advancement from a checkpoint awaiting independent review.
+Independent evidence must establish real mission completion; do not assume those
+wins were either genuine or false solely from this reproduction.
+
+Attempt 18 later truly lost: UI DEFEAT at 19:17, evacuation 00:52, all structures
+destroyed. Added this independent outcome to its raw API/recovery record.

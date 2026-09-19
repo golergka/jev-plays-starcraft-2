@@ -18,8 +18,8 @@ queries, ordinary actions and replay saving. An opt-in infrastructure experiment
 (`--api-bookmark-recovery`, lab 160) additionally saves an in-memory bookmark every
 45 seconds and allows one logged restore for an anomalous all-player API defeat
 while owned structures remain. This can rewind recent play; it clears policy memory
-and never supplies tactical orders. It is disabled by default and remains unproven
-as a fix. No debug requests, map commands, observer slots, fog disabling, or resource
+and never supplies tactical orders. It is disabled by default; lab 162 found that
+control returned briefly but the same failure repeated, so this is not a durable fix. No debug requests, map commands, observer slots, fog disabling, or resource
 overrides. Both game creation
 and observations explicitly set `disable_fog=False`. Cloaked/burrowed extras are
 disabled. Hidden units and enemy orders are not sent to Jev. As of lab 046,

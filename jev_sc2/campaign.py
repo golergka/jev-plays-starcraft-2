@@ -29,6 +29,8 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
     digest = hashlib.sha256(payload).hexdigest()
     progress = (json.loads(state_path.read_text()) if state_path.exists() else
                 {'manifest_sha256':digest,'completed':[],'attempts':[]})
+    if progress.get('verification_review_required'):
+        raise ValueError('Recorded completion requires independent verification before campaign progression')
     if progress['completed']!=ids[:len(progress['completed'])]:
         raise ValueError('Completed missions are not a prefix of this sequence')
     if progress['manifest_sha256']!=digest:
