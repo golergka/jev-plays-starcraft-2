@@ -959,3 +959,23 @@ Forty-seven tests pass, including retention of a sampled choice, exclusion of
 unoffered/zero-probability choices, and reconsideration when controls disappear.
 Also prepared the next local map asset (`ttychus01.SC2Map`, 43 components) without
 loading it or feeding its scripts to Jev. Zero Hour must be won before advancing.
+
+## Lab 091: two small probes did not change contribution choices
+
+A general one-minute evaluation horizon plus opportunity-cost instruction did
+not change the top answer in any of three recorded-state pairs. Income remained
+low (.01/.00/.06 original versus .02/.01/.07 changed). Six calls: $0.001491126.
+See `062-contribution-horizon-probe.json` and its reproducible script.
+
+A separate probe replaced “SCV units” with “resource-harvesting SCV workers,”
+asserting actual harvesting capability in every sampled state. Income probability
+rose .18→.35, .04→.12 and .03→.08, but positioning remained the top answer in all
+pairs. Six calls: $0.001420062. See `063-capability-label-probe.json`. This specific
+unit-name substitution exists only in the offline diagnostic, not the player.
+
+Neither wording change is applied to the live policy. Samples are small, taken
+from evolving pressured states, and do not establish that gathering was feasible
+or optimal in those particular moments. The earlier economic failure and later
+survival reactions must not be conflated. Evaluate the current sampled commitment
+policy from the beginning of another attempt if this one fails; its mid-mission
+introduction cannot establish fresh-run performance.

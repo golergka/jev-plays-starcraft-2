@@ -1,0 +1,111 @@
+{
+  "source": "runs/20260919T000342.653000Z/events.jsonl",
+  "question": "purpose_SCV",
+  "pairs": [
+    {
+      "sample": 0,
+      "recorded_strategy": {
+        "loop": 6134,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.55,
+        "probabilities": {
+          "other": 0.33,
+          "continue": 0.03,
+          "individual": 0.01,
+          "positioning": 0.62,
+          "income": 0.01,
+          "combat": 0.0
+        }
+      },
+      "longer_horizon": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.61,
+        "probabilities": {
+          "continue": 0.03,
+          "combat": 0.01,
+          "positioning": 0.67,
+          "other": 0.26,
+          "individual": 0.01,
+          "income": 0.02
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "recorded_strategy": {
+        "loop": 6372,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "longer_horizon": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.64,
+        "probabilities": {
+          "individual": 0.0,
+          "income": 0.01,
+          "positioning": 0.23,
+          "other": 0.7,
+          "continue": 0.06,
+          "combat": 0.0
+        }
+      },
+      "original": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.6,
+        "probabilities": {
+          "income": 0.0,
+          "other": 0.68,
+          "positioning": 0.26,
+          "combat": 0.0,
+          "continue": 0.06,
+          "individual": 0.0
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "recorded_strategy": {
+        "loop": 6612,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.53,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.03,
+          "individual": 0.01,
+          "income": 0.06,
+          "other": 0.29,
+          "positioning": 0.61
+        }
+      },
+      "longer_horizon": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.52,
+        "probabilities": {
+          "income": 0.07,
+          "other": 0.28,
+          "positioning": 0.6,
+          "individual": 0.01,
+          "continue": 0.04,
+          "combat": 0.0
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.001491126,
+  "method": "Three latest recorded states, unchanged choices and observations. Add only a general one-minute evaluation horizon and opportunity-cost instruction. Alternate pair order; no game commands."
+}

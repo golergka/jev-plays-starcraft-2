@@ -1,0 +1,105 @@
+{
+  "source": "runs/20260919T000342.653000Z/events.jsonl",
+  "question": "purpose_SCV",
+  "pairs": [
+    {
+      "sample": 0,
+      "recorded_strategy": {
+        "loop": 7324,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.47,
+        "probabilities": {
+          "combat": 0.0,
+          "individual": 0.0,
+          "income": 0.18,
+          "continue": 0.24,
+          "positioning": 0.58
+        }
+      },
+      "capability_label": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.26,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.25,
+          "positioning": 0.39999999999999997,
+          "income": 0.35,
+          "individual": 0.0
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "recorded_strategy": {
+        "loop": 7565,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "capability_label": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.44,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.32,
+          "positioning": 0.56,
+          "income": 0.12,
+          "individual": 0.0
+        }
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.56,
+        "probabilities": {
+          "individual": 0.0,
+          "continue": 0.3,
+          "combat": 0.0,
+          "income": 0.04,
+          "positioning": 0.66
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "recorded_strategy": {
+        "loop": 7802,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.71,
+        "probabilities": {
+          "individual": 0.0,
+          "continue": 0.2,
+          "combat": 0.0,
+          "income": 0.03,
+          "positioning": 0.77
+        }
+      },
+      "capability_label": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.67,
+        "probabilities": {
+          "income": 0.08,
+          "combat": 0.0,
+          "individual": 0.0,
+          "positioning": 0.74,
+          "continue": 0.18
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0014200620000000001,
+  "method": "Three latest recorded states, unchanged choices and observations. Replace SCV units with resource-harvesting SCV workers, after asserting observed harvesting capability. Alternate pair order; no game commands."
+}
