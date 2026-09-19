@@ -297,6 +297,12 @@ def investment_description(name, project, state):
         effects.append('Enables workers to harvest gas from this site after construction')
     if project and project.get('supply_provided',0):
         effects.append(f'Adds {project["supply_provided"]:g} supply capacity when complete')
+    occupied = facts.get('cargo_slots_used', 0)
+    available = facts.get('cargo_slots_available', 0)
+    if occupied or available:
+        effects.append(f'Existing owned {name} cargo: {occupied} slots occupied, {available} available; '
+                       f'passengers by type: {facts.get("passengers_by_type", {})}. '
+                       'This purchase does not issue loading commands; loading is a separate decision')
     weapons = (state.get('unit_type_facts') or {}).get(name,{}).get('catalog_weapons',[])
     if weapons:
         effects.append('Has weapons: '+', '.join(f'{w["targets"]} targets at range {w["range"]}' for w in weapons))

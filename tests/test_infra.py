@@ -1132,3 +1132,15 @@ def test_friendly_destination_facts_use_only_current_visible_local_enemies():
     assert friendly_destination_facts(anchor,entities,{999:'ExampleEnemy'}) == (
         'anchor health 75/100; visible enemies within 12 of anchor: 1 ExampleEnemy')
     assert friendly_destination_facts(anchor,entities[1:],{}).endswith('none observed')
+
+
+def test_purchase_description_exposes_observed_cargo_without_assigning_passengers():
+    from player import investment_description
+    state = {'type_selection_facts': {'Carrier': {
+        'cargo_slots_used': 2, 'cargo_slots_available': 6,
+        'passengers_by_type': {'Passenger': 2}}}}
+    description = investment_description('Carrier', {}, state)
+    assert '2 slots occupied, 6 available' in description
+    assert "'Passenger': 2" in description
+    assert 'loading is a separate decision' in description
+    assert 'cargo:' not in investment_description('Unknown', {}, state)

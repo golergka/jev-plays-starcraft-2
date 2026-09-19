@@ -3664,3 +3664,17 @@ no demonstrated longer-window benefit in this attempt. Startup expanded history
 and random trajectory differ from prior13:22 trial; not a controlled causal result.
 Camera correction improved visual monitoring; observations expose weak early
 production and later loss of mining rather than a transport/command failure.
+
+### Lab249 — place observed cargo utilization beside purchase choices
+
+Last completed244trial repeatedly purchases bunkers and loses its army before
+late Marine production. Existing investment options mention loading capability
+but omit current cargo occupancy from their local descriptions; the facts exist
+elsewhere in context. Add observed occupied/available cargo slots and passenger
+types to any owned cargo-capable type's purchase description. Explicitly state
+that purchasing does not issue a loading command. No bunker-specific rule,
+recommended purchase, automatic boarding, or assumed passenger combat effect.
+This is factual context placement, not new information or proven policy benefit.
+126tests pass, including fictional carrier and unknown-capacity cases. Next live
+trial retains extended production batches, histories and all budget settings.
+Retained rolling ledger $.044183538 before restart, below $.06 pacing target.
