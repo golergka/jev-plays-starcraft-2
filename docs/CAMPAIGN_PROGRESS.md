@@ -1674,3 +1674,18 @@ inventory contains only terrain GameData, not a map-local gameplay duration XML
 override. This narrows the next inspection to dependency/MapInfo configuration or
 protocol behavior; it does not rule either out. No map content or gameplay policy
 changed. No additional full-length trial started on these negative findings.
+
+### Lab145 — installed protocol schema exposes a recovery candidate
+
+Read-only decoded the FileDescriptorProto embedded in installed Base97563 binary
+at byte69656712 (12034bytes). RequestCreateGame,RequestJoinGame,
+RequestObservation,InterfaceOptions fields match current client; no extra duration
+field identified. Installed Request/Response include warmstart_game field23,
+absent from our published Python package. RequestWarmstartGame fields are
+replay_data1(bytes),player_id2(int32),disable_fog3(bool),is_host4(bool),
+map_data5(bytes). Response has error1(enum LoadReplayFailed=1),error_details2.
+This is evidence of a possible replay-based recovery interface, not evidence that
+it works or preserves campaign triggers. No warmstart request sent yet. Any test
+must be isolated, keep fog enabled, preserve original replay/results, and not
+credit progression unless the actual mission is verified won. Embedded schema
+inspection does not provide implementation semantics or official support.
