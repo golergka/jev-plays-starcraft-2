@@ -137,3 +137,12 @@ The root paths differ: Swarm and Void insert `swarm/` or `void/` under
 handle those observed main-map paths. Nested evolution maps are not covered by
 that simple path construction. Later-campaign loading, dependencies, ownership
 and progress remain unverified; no victory is inferred from installed assets.
+
+
+The opening sequence now references the prepared outcome adapters for its two
+uncompleted entries, Zero Hour and Smash and Grab. Completed prefix definitions
+are preserved so the existing verified wins remain transferable. The local
+adapter files and their sidecars are still required; they are not distributed
+in this repository. Instrumented endings still require the documented independent
+verification before victory credit. Changing these map paths does not grant
+campaign completion or solve cross-mission unlock persistence.

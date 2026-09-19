@@ -2801,3 +2801,22 @@ This trial tests the different independent-worker regime introduced lab187;
 monitor income and contribution diversity explicitly rather than assuming less
 sampling is better.108tests pass including top-choice retention and re-review
 when unavailable. No paid offline probes or budget reset.
+
+
+### Lab199 — direct role trial has early income; repair future sequence paths
+
+Verified live session91982,run20260919T192012.180852Z uses top_choice role mode.
+Early matched-loop observation:prior sampled trial1390loops,137calls/$0.073345440,
+80estimated minerals/minute;current1378loops,132calls/$0.069009906,200/minute.
+Direct worker role reviews include income10,continue19,positioning4,other2.
+Unlike the old grouped-worker result in lab090, no immediate complete income
+neglect. This single uncontrolled comparison does not establish superiority.
+Laterloop4009:327calls/$0.202917960,27 routine questions avoided,no ending or
+budget failure;11SCVs,18Marines,2Bunkers,2Barracks among owned raw units.
+
+The sequence manifest still referenced original next maps with known API outcome
+incompatibility. Updated only Zero Hour and Smash and Grab to their prepared
+lab170/lab178 adapters. Completed first-two definitions exactly match checkpoint;
+both new local map hashes validate through OutcomeMonitor. No victory credit or
+progression gate bypass, and no live mission reset. Updated campaign docs with
+local asset and independent outcome verification requirements. Budget unchanged.
