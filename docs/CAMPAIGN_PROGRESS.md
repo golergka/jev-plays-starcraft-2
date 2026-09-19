@@ -3832,3 +3832,20 @@ exceptions (such as one anchor holds while followers move). No action removed or
 new tactical selector.130tests pass. Less repeated text can change tournament
 partitions and model choices; this is not behavior-identical inference or a proven
 survival gain. The modest character savings are cumulative, not dollar savings.
+
+### Lab261 — distinguish decision pacing from execution of authorized jobs
+
+Live256run at8517 has8Marines,10SCVs,twoBarracks andReactor;121successful calls/
+$0.075467406. Native9:15 shows1552minerals and seven miners. Menu compaction is
+loaded. No new execution failure observed beyond earlier provider529.
+
+Code audit: production batches retain authorization but choose/issue their next
+request only inside the next paid decision cycle. Long2016window fixes expiry,
+not execution cadence. Candidate next experiment: Jev explicitly chooses bounded
+quantity and producer, then a mechanical executor fulfills that exact job between
+model reviews with fresh advertised ability/resources/supply/freshness checks.
+No automatic choice of replacement producer, unit or new job; cancellation and
+budget accounting must remain visible. This is a hypothesis, not implemented here.
+Current multiple-command validation intentionally rejects repeated unit tags, so
+blindly emitting three same-frame commands would not implement it. Do not silently
+change existing commitments' meaning or call selection delays transport errors.
