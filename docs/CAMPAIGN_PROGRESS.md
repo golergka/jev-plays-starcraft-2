@@ -1621,3 +1621,16 @@ inside ask at every recursion. Only apply when every question name exactly match
 a summary; strategic/purpose/investment requests remain unchanged. Preserve all
 raw units, enemies, type facts and choices.67tests pass, including split-state
 projection and source immutability. SDK wrapper requires controller reconnect.
+
+### Lab140 — reproduce early API termination near the same mission loop
+
+Attempt16 resumed segment runs/20260919T020844.782490Z first transitioned
+in_game→ended on observation request574 at loop12531. All9players returned
+Defeat. Preceding tick12463 still had55owned units and35submitted commands,
+including successful actions. UI afterwards showed13:24 elapsed,06:45evacuation,
+a living base and no defeat overlay. This repeats attempt15's control loss near
+12500loops; it is not a five-error controller stop. Recursive context projection
+allowed508successful resumed calls with no decision errors before termination.
+The controller has exited. Keep the discrepancy distinct from a later UI outcome.
+Read-only termination-plumbing inspection found campaign autosave calls, but no
+causal connection is established; do not alter map triggers based on speculation.
