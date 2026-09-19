@@ -899,3 +899,15 @@ mixed control selections with type selections. Add a separate control-context
 wrapper retaining both views. All 45 tests now pass. The initial pass claim above
 applies to this correction, not the first commit. Retain this mistake in the lab
 record rather than rewriting deployed history.
+
+### Lab 087 measured continuation
+
+In the archived live snapshot, pre-compaction revision 1cce5da dropped 28/73 ticks
+as stale (median 1281ms, median purpose state 39407 characters). Corrected ae3b5f6
+dropped 4/50 (median 1015.5ms, purpose state 21676 characters). Different force
+sizes/threats and sequential timing prevent causal attribution. This is practical
+freshness evidence, not a victory or proof of robust strategy. The force continued
+shrinking while Jev chose support despite zero reported mineral income. Future
+work must distinguish actionable feedback from data the model fails to connect.
+Full phase counts, including the intermediate buggy revision, are in
+`docs/experiments/059-compact-control-context.json`.

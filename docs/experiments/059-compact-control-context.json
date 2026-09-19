@@ -1,0 +1,36 @@
+{
+  "run": "runs/20260918T235343.057346Z",
+  "phases": [
+    {
+      "revision": "1cce5da",
+      "ticks": 73,
+      "stale_ticks": 28,
+      "median_tick_ms": 1281,
+      "purpose_calls": 72,
+      "median_purpose_state_chars": 39407.0,
+      "first_loop": 5090,
+      "last_loop": 7451
+    },
+    {
+      "revision": "c136825",
+      "ticks": 21,
+      "stale_ticks": 2,
+      "median_tick_ms": 1076,
+      "purpose_calls": 20,
+      "median_purpose_state_chars": 17054.5,
+      "first_loop": 7488,
+      "last_loop": 8039
+    },
+    {
+      "revision": "ae3b5f6",
+      "ticks": 50,
+      "stale_ticks": 4,
+      "median_tick_ms": 1015.5,
+      "purpose_calls": 49,
+      "median_purpose_state_chars": 21676,
+      "first_loop": 8069,
+      "last_loop": 9370
+    }
+  ],
+  "limitation": "Sequential live samples at different force sizes and threats, not a controlled latency benchmark. c136825 had a mixed-group context bug, corrected by ae3b5f6. Mission outcome unverified."
+}
