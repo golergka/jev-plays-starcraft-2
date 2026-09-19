@@ -3263,3 +3263,11 @@ charged accounting and fatal admission. Deliberate slower decisions,explicitly
 logged; no silent retry,cap increase,ledger/taper reset.121tests pass. Resume
 same world with remaining3503call allowance. This second interruption limits
 survival comparisons; do not present this as an uninterrupted trial.
+
+Lab224 follow-up: first resume20260919T205704.758812Z failed on retained rolling
+history after3calls/$.001593480,exit2. Lower future pacing does not clear existing
+charges; resuming immediately was premature. Paused again native14:35,
+evacuation5:34. At inspection ledger$.174325312/currentlimit$.191665165;
+read-only projection estimated119seconds until history falls below60% allowance.
+Next resume must recheck actual ledger headroom first; do not reset it or assume
+elapsed time alone guarantees admission. Remainingcall allowance3500.
