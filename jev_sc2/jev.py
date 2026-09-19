@@ -27,6 +27,11 @@ class Jev:
         self.cost = 0.0
 
     async def ask(self, state, questions):
+        # Concrete-order question names exactly identify job summaries. Reapply
+        # projection after every recursive split, retaining all other world facts.
+        facts = state.get('selection_facts', {})
+        if questions and set(questions) <= set(facts) and set(facts) != set(questions):
+            state = {**state, 'selection_facts':{key:facts[key] for key in questions}}
         # Conservative transport-size heuristic, not a token-count guarantee.
         # Preserve every question/criterion and the identical fair state.
         if len(questions) > 1 and len(json.dumps([state, questions])) > 80000:

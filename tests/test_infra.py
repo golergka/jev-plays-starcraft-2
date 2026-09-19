@@ -932,3 +932,29 @@ def test_concrete_orders_keep_only_queried_job_summaries_and_all_world_facts():
     for key in ('units','visible_entities','type_selection_facts'):
         assert model.state[key]==state[key]
     assert len(state['selection_facts'])==2
+
+
+def test_split_requests_scope_job_summaries_without_removing_world_facts():
+    import asyncio
+    from types import SimpleNamespace
+    from jev_sc2.jev import Jev
+    requests=[]
+    async def create_async(**kw):
+        requests.append(kw)
+        return SimpleNamespace(usage=SimpleNamespace(cost=0),model_dump=lambda **unused:
+            {'answers':{k:{'choice':'keep'} for k in kw['questions']}})
+    model=Jev.__new__(Jev)
+    model.client=SimpleNamespace(alpha=SimpleNamespace(decisions=SimpleNamespace(create_async=create_async)))
+    model.log=lambda *a,**k:None
+    model.session='test';model.model='typesafe/jev-1.13'
+    model.max_calls=10;model.calls=0;model.inflight=0;model.cost=0
+    questions={str(i):{'criteria':{'keep':'x'*25000}} for i in range(4)}
+    state={'selection_facts':{k:{'count':1} for k in questions},'units':[{'tag':1}],
+           'visible_entities':[{'tag':9}]}
+    assert set(asyncio.run(model.ask(state,questions)))==set(questions)
+    assert len(requests)==2
+    for request in requests:
+        assert set(request['state']['selection_facts'])==set(request['questions'])
+        assert request['state']['units']==state['units']
+        assert request['state']['visible_entities']==state['visible_entities']
+    assert len(state['selection_facts'])==4

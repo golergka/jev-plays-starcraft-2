@@ -1610,3 +1610,14 @@ Add status-transition telemetry with request name/id, previous/current status;
 result events now include exact observation loop and API status.66tests pass.
 Start attempt16 with unchanged Jev policy to gather first-transition evidence,
 2500call budget,64loop age limit and camera enabled. No mission data modified.
+
+### Lab139 — reproject job summaries after recursive request splitting
+
+Attempt16 reached61owned units, then concrete questions again exceeded tokens:
+59,946state characters plus17,399question characters in a single-question retry.
+The caller scoped state to the original batch, but transport splitting retained
+all of that batch's job summaries. Reapply exact-name selection_facts projection
+inside ask at every recursion. Only apply when every question name exactly matches
+a summary; strategic/purpose/investment requests remain unchanged. Preserve all
+raw units, enemies, type facts and choices.67tests pass, including split-state
+projection and source immutability. SDK wrapper requires controller reconnect.
