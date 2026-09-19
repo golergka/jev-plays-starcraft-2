@@ -3872,3 +3872,14 @@ Full suite134passed before final added integration test; focused5job tests pass
 including explicit Jev batch authorization, initial success gating, fixedproducer,
 spacing, exhaustion, expiry, rewind, strategy, missingcontrols and affordability.
 No extra Jev calls, dollar-limit change, queue-command bypass or unit-tag duplicate.
+
+### Lab263 — Jev-built Tech Lab is followed by Medic availability
+
+Run26220260919T223706.942817Z/session97960 is live. Jev selects BarracksTechLab
+at2182. At2713 investment projects first include Medic; previous recorded lists
+through2182 did not. Native3:47 shows the attached lab and fighting at the base,
+512minerals/75gas,two assigned miners. This verifies a newly reachable control
+path, not forced research or a claim that Medic production has occurred. One
+ConnectTimeout earlier; later decisions complete. Through2713 reportedcost$.023653686.
+No production_job events yet: executor mechanism remains unverified live until
+Jev chooses a batch. Keep trial stable; do not force a convenient validation choice.
