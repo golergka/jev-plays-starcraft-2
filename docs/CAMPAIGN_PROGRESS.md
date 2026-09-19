@@ -1700,3 +1700,17 @@ was sent. Preserve response bytes locally. Added isolated probe with nested erro
 parsing; verified parser against actual response. No fake second player or replay
 modification attempted. This interface is not a working campaign recovery path;
 do not repeat it without new evidence about supported player configurations.
+
+### Lab147 — isolate campaign triggers from API lifetime
+
+Read-only binary constant inspection did not establish a12500-loop limit; no
+executable edits. Start separate infrastructure diagnostic, not a campaign attempt:
+copy maps/traynor03.SC2Map to ignored maps/api-lifetime-probe.SC2Map, replace only
+MapScript.galaxy with void InitMap(){}. Original map remains untouched. This
+intentionally removes mission triggers, so no outcome can count toward campaign
+progress. API create/join realtime,fog enabled; issue observations only, no Jev
+calls or gameplay commands. Sample every10seconds up to65samples (~640seconds),
+stop early if APIended. Early sample in_game,loop1,36owned units. Process session
+65274; output /tmp/jev-lifetime-probe.log. This tests whether the cutoff survives
+without the campaign trigger script; a negative result would not identify which
+trigger or dependency caused it. Compare to unchanged stock runs, not win rates.
