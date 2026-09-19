@@ -1469,3 +1469,16 @@ improvement: continue can preserve gas assignments and this is an evolving singl
 run with research controls also added. Artifact084. Reports now expose resource
 category counts and latest own completed-upgrade observations (which can include
 initial campaign upgrades; do not mistake them for newly researched upgrades).
+
+### Lab127 — thirteenth defeat despite live resource-category exposure
+
+UI confirmed defeat7:16, evacuation12:53,all structures destroyed. Report085;
+699calls,$0.534815316,zero ticks beyond configured64-loop cutoff. The hierarchy
+was exercised:129continue and14gather_minerals choices, no explicit gather_vespene.
+Initial gas assignments can still persist through continue. Neither intermittent
+income nor eliminating stale discards sustained the force. Infantry research was
+offered but never selected, so research execution/completion remains unverified.
+Do not credit pre-existing campaign upgrade IDs as research performed by this bot.
+Controller exited. Two earlier victories remain saved; all three campaigns remain
+incomplete. Next experiment must address useful task persistence/allocation beyond
+mere execution speed or adding more available controls.
