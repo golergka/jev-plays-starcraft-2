@@ -92,5 +92,13 @@ class Jev:
                 return {key:value for half in halves for key,value in half.items()}
             finally:
                 self.inflight += 1
+        except (Exception, asyncio.CancelledError) as exc:
+            self.log('jev_request_failed', error=type(exc).__name__,
+                     question_names=list(questions),
+                     state_chars=len(json.dumps(state)),
+                     question_chars=len(json.dumps(questions)),
+                     latency_ms=round((time.monotonic()-started)*1000),
+                     billing_status='unknown; rolling reservation retained')
+            raise
         finally:
             self.inflight -= 1

@@ -3485,3 +3485,18 @@ Keep Heal separate, all legal targets and commands unchanged. No repair prohibit
 spending threshold or preferred target.123tests pass; existing compatibility test
 now checks both repair descriptions and ensures Heal inherits no resource claim.
 Next test this from startup under unchanged ledger/taper; current game is terminal.
+
+### Lab238 — early timeout is a comparison confound; improve failure diagnostics
+
+Repair-cost run20260919T214242.370076Z/session72032 started on76ee166. At585,
+TimeoutError aborts decision after$.006602274known cost plus$.005unknown reservation.
+Pacing accounts$.011602274,explicit46.93second idle. No retry or cap reset. Next
+successful tick1765 proves controller resumed; no restart from a wait timeout.
+This long early gap confounds comparison with preceding trial; record it rather
+than attribute eventual survival solely to repair wording.
+
+SDK failure log previously named only outer decision_error. Add jev_request_failed
+with exception type,question names,state/question character counts,latency and
+unknown-billing reservation note, then re-raise. No credentials/full payload added,
+no retry or error suppression. Compile check passes. Harness-side wrapper change
+activates next process, not this live trial; no player behavior change in this commit.
