@@ -1107,3 +1107,27 @@ mission reference https://starcraft.fandom.com/wiki/Smash_and_Grab . No route,
 location, build or target prescription is added. Assets were repackaged unchanged;
 live loading remains unverified. Earlier wins must remain intact and Zero Hour
 must receive verified Victory before this fourth map is played.
+
+## Lab 099: fifth defeat, live gas verification, reject a mistaken bug diagnosis
+
+The fifth attempt ended in UI-confirmed Defeat at 11:58 (08:11 remaining), with
+all structures destroyed. It made 1111 successful Jev calls costing $0.713233584.
+Earlier wins persist. Summary with explicit UI result source: 067.
+
+The new gas interface was exercised: Jev selected Refinery, observed unit
+4321181704 appeared at loop 8753 with .01 build progress and completed at 9251.
+The gas balance later rose from 100 to 108. This verifies a Terran gas-building
+path in a live campaign map, not all races or successful resource allocation.
+
+An initial commentary misdiagnosed repeated carried Refinery requests as reuse
+of one savings commitment. Inspection disproved that: the code already changes
+its mode to request_purchase, and new Jev save_for choices at loops 9222 and 9368
+preceded the requests at 9251 and 9386. No fix was made for a nonexistent bug.
+Retain this correction as part of the experiment record.
+
+Start another bounded batch with the current general policy and --retry-stalls,
+allowing up to three further fresh attempts (historical cap eight), sharing 6000
+calls. Only the pending mission restarts. Recovery records remain unknown unless
+separate evidence confirms an outcome. Only verified Victory advances to the
+prepared fourth mission. Observe actual automatic recovery before calling that
+path live-verified.

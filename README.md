@@ -71,7 +71,7 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
 
 Omit `--map` to resume the running mission. This has loaded successfully and
 produced a verified **Victory in Liberation Day**, recorded with an API result and
-replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**. Zero Hour has four recorded defeats; further experiments are ongoing. All three main campaigns are the target; stock campaign menus,
+replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**. Zero Hour has five recorded defeats; further experiments are ongoing. All three main campaigns are the target; stock campaign menus,
 research and unlock persistence are not implemented.
 
 The current policy asks Jev for a strategic priority, a contribution and concrete
