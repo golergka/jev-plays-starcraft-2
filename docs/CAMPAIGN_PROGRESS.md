@@ -3738,3 +3738,15 @@ synthetic coverage now exercises both types;128tests pass. No chosen addon, gues
 producer, or strategic directive. Live exposure and execution still need evidence.
 Other observed gaps include rally, lift, salvage, patrol and cancel; report does
 not authorize automatically issuing them. Current249trial remains mixedrevision.
+
+### Lab254 — expose advertised resource-return control
+
+Coverage at6907 reports HarvestReturnSCV296 as available without a candidate.
+Add generic HarvestReturn no-target commands to the income action family when
+currently engine-advertised. No automatic return, guessed carried amount, fixed
+worker-type selector or assumed subsequent harvesting. Existing gathering and
+return orders continue mechanically when Jev chooses to keep them.129tests pass;
+coverage verifies only the advertised worker gets the exact untargeted command.
+Native8:05 shows remaining CommandCenter under attack,17minerals,zero assigned
+miners. This capability addition does not demonstrate it would avert the defeat.
+The live trial remains mixedrevision; budget and decision selection unchanged.

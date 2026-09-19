@@ -314,6 +314,11 @@ async def make_view(client, observation, data, info, objective):
             details = '' if product is None else (
                 f'; costs {product.mineral_cost} minerals and {product.vespene_cost} gas'
                 f'; requires {product.food_required:g} supply; provides {product.food_provided:g} supply')
+            if label.startswith('Harvest Return') and catalog[ability].target == 1:
+                candidates.append({'id':f'gather_return_{ability}',
+                    'description':'Return carried resources using the engine-selected resource drop-off',
+                    'capability_description':'Return carried resources to a resource drop-off',
+                    'command':command(ability)})
             if label.startswith('Train '):
                 candidates.append({'id':f'ability_{ability}', 'description':label+details,
                                    'command':command(ability),'resource_cost':cost,'project':project})

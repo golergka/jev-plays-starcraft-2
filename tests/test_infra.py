@@ -1175,3 +1175,23 @@ def test_untargeted_build_requires_executable_ability_and_known_product(target):
     assert any(p['type'] == 'UnaffordableAddon' for p in view['potential_projects'])
 
     assert view['unrepresented_controls'] == {'21': {'902': {'name': 'Build UnknownAddon', 'target': target}}}
+
+
+def test_return_resources_is_offered_only_to_engine_advertised_worker():
+    from s2clientprotocol import query_pb2 as query
+    class Client:
+        async def request(self, name, body):
+            result = query.ResponseQuery()
+            result.abilities.add(unit_tag=1).abilities.add(ability_id=296)
+            result.abilities.add(unit_tag=2)
+            return result
+    obs = sc.ResponseObservation()
+    for tag in (1, 2):
+        obs.observation.raw_data.units.add(tag=tag, unit_type=45, alliance=raw.Self)
+    data = sc.ResponseData()
+    data.abilities.add(ability_id=296, friendly_name='Harvest Return SCV', target=1)
+    view = asyncio.run(make_view(Client(), obs, data, sc.ResponseGameInfo(), 'test'))
+    assert view['self'][0]['candidates'][0]['command'] == {'unit_tag': 1, 'ability_id': 296}
+    assert view['self'][0]['candidates'][0]['id'].startswith('gather_')
+    assert view['self'][1]['candidates'] == []
+    assert not view['unrepresented_controls']
