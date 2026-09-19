@@ -19,10 +19,30 @@ def recent_outcomes(view, memory, window=672):
     history = memory.setdefault('outcome_history', [])
     if history and loop < history[-1]['loop']:
         history.clear()
+        memory.pop('cumulative_outcomes', None)
     current = {'loop':loop, 'resources':dict(view.get('resources', {})),
                'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0),
                                      'position':u.get('position'), 'build_progress':u.get('build_progress')}
                         for u in view['self']}}
+    cumulative = memory.setdefault('cumulative_outcomes', {
+        'since_loop': history[0]['loop'] if history else loop,
+        'through_loop': history[0]['loop'] if history else loop,
+        'appeared_by_type': {}, 'disappeared_by_type': {},
+    })
+    # Seed from retained history on hot reload, then count each transition once.
+    # This deliberately does not reconstruct observations we no longer retain.
+    for before, after in zip(history, history[1:] + [current]):
+        if after['loop'] <= cumulative['through_loop']:
+            continue
+        a, b = before['units'], after['units']
+        for field, tags, units in (
+            ('appeared_by_type', b.keys()-a.keys(), b),
+            ('disappeared_by_type', a.keys()-b.keys(), a),
+        ):
+            counts = Counter(cumulative[field])
+            counts.update(units[tag]['type'] for tag in tags)
+            cumulative[field] = dict(counts)
+        cumulative['through_loop'] = after['loop']
     if not history or history[-1]['loop'] != loop:
         history.append(current)
     while len(history)>1 and history[1]['loop'] < loop-window:
@@ -69,6 +89,10 @@ def recent_outcomes(view, memory, window=672):
         unfinished.append({'tag':tag,'type':unit['type'],'progress':round(progress,3),
             'observed_loops':loop-oldest_loop,'progress_change':round(progress-oldest_progress,3)})
     return {'observed_game_loops':loop-history[0]['loop'],
+            'cumulative_observed_unit_changes': {
+                **cumulative,
+                'interpretation': 'Counts of observed appearances and disappearances since since_loop, not kills or production totals. Loading, unloading, morphing and mission triggers can change presence. Earlier unretained history is unknown.',
+            },
             'completed_from_observed_incomplete_by_type':dict(completions),
             'currently_incomplete_projects':unfinished,
             'construction_interpretation':'Only observed progress transitions count as completion. Newly appearing completed units are not attributed to construction. No progress over a short interval does not establish abandonment.',

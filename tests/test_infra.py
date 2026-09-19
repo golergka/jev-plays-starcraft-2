@@ -960,3 +960,23 @@ def test_split_requests_scope_job_summaries_without_removing_world_facts():
         assert request['state']['units']==state['units']
         assert request['state']['visible_entities']==state['visible_entities']
     assert len(state['selection_facts'])==4
+
+
+def test_cumulative_outcomes_survive_window_without_recount_and_reset_on_rewind():
+    from player import recent_outcomes
+    memory={}
+    def view(loop,tags):
+        return {'loop':loop,'self':[{'tag':t,'type':'Marine','health':45} for t in tags]}
+    recent_outcomes(view(1,[1,2]),memory,window=5)
+    recent_outcomes(view(3,[2,3]),memory,window=5)
+    recent_outcomes(view(3,[2,3]),memory,window=5)
+    recent_outcomes(view(10,[2,3]),memory,window=5)
+    result=recent_outcomes(view(20,[2,3]),memory,window=5)
+    assert result['own_units_disappeared_by_type']=={}
+    cumulative=result['cumulative_observed_unit_changes']
+    assert cumulative['appeared_by_type']=={'Marine':1}
+    assert cumulative['disappeared_by_type']=={'Marine':1}
+    assert cumulative['since_loop']==1
+    reset=recent_outcomes(view(1,[1]),memory)['cumulative_observed_unit_changes']
+    assert reset['disappeared_by_type']=={}
+    assert reset['through_loop']==1

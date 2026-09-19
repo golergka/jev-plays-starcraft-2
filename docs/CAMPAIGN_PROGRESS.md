@@ -2325,3 +2325,20 @@ Fresh Outlaws attempt is still running. At loop1918 it has10SCVs,2Barracks,
 request rejections yet. Early army loss is evidence of a gameplay weakness;
 compact context has not by itself solved campaign play. Retain unchanged policy
 for this attempt while collecting the actual outcome.
+
+### Lab175 — retain measured attrition beyond the short outcome window
+
+Live Outlaws loop3221:12SCVs,3Marines,3Barracks,2Depots,1Refinery,1CommandCenter;
+315calls,$0.176979642, no decision errors. Its recent_outcomes window reported
+no disappearances because the initial army loss had aged out of the672-loop
+window. This is a context limitation, not evidence that Jev would make better
+choices with longer memory.
+
+Added cumulative observed unit appearances/disappearances by type to the outcome
+summary. Every observation transition is counted once; counts survive rolling
+window pruning and reset on loop rewind. On hot reload only retained history is
+seeded, with an explicit since_loop: discarded earlier evidence is not invented.
+Counts are not presented as kills, deaths or production totals because transport,
+morphs and triggers can change presence. Jev still chooses all gameplay actions.
+This changes general temporal context, not a mission-specific strategic directive.
+93 tests pass, including duplicate observations, window expiry and rewind.
