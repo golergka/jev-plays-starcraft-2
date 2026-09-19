@@ -1396,3 +1396,15 @@ attribute these defeats to the unexercised branch or repeat identical runs merel
 to hope for branch coverage. Controller has exited; both earlier victories remain
 saved. Next experiment must target general role/continuation reasoning, using
 recorded fair states before another live trial. Campaign completion remains unproven.
+
+### Lab121 — literal continuation consequences do not change role choices
+
+Offline paired probe of first three purpose_SCV states with idle units in run12.
+Append observed idle/total counts and current orders to continue criterion, explaining
+that it assigns no new task to idle units while automatic behavior may continue.
+Same state/all other options, alternating pair order. Idle counts5/5,4/5,5/6.
+Top choices remained positioning,other,continue in both variants. Continue
+probabilities .08→.17,.19→.16,.44→.31; income .35→.36,.06→.11,.16→.19.
+Six calls,$0.001994496,artifact080. No consistent decision-level benefit; do not
+deploy as a fix or restart a live trial on this basis. Controller remains stopped
+after verified twelfth defeat; next work is a different general abstraction probe.

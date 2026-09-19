@@ -1,0 +1,100 @@
+{
+  "source": "runs/20260919T011741.162325Z/events.jsonl",
+  "question": "purpose_SCV",
+  "pairs": [
+    {
+      "sample": 0,
+      "idle_count": 5,
+      "count": 5,
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.41,
+        "probabilities": {
+          "continue": 0.08,
+          "individual": 0.04,
+          "positioning": 0.53,
+          "income": 0.35,
+          "combat": 0.0
+        }
+      },
+      "clarified": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.28,
+        "probabilities": {
+          "combat": 0.0,
+          "positioning": 0.42,
+          "individual": 0.05,
+          "income": 0.36,
+          "continue": 0.17
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "idle_count": 4,
+      "count": 5,
+      "clarified": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.4,
+        "probabilities": {
+          "individual": 0.01,
+          "other": 0.51,
+          "positioning": 0.21,
+          "continue": 0.16,
+          "combat": 0.0,
+          "income": 0.11
+        }
+      },
+      "original": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.52,
+        "probabilities": {
+          "positioning": 0.14,
+          "other": 0.6,
+          "combat": 0.0,
+          "continue": 0.19,
+          "income": 0.06,
+          "individual": 0.01
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "idle_count": 5,
+      "count": 6,
+      "original": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.32,
+        "probabilities": {
+          "other": 0.26,
+          "positioning": 0.13,
+          "income": 0.16,
+          "continue": 0.44,
+          "individual": 0.01,
+          "combat": 0.0
+        }
+      },
+      "clarified": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.17,
+        "probabilities": {
+          "continue": 0.31,
+          "positioning": 0.21,
+          "income": 0.19,
+          "other": 0.27,
+          "individual": 0.02,
+          "combat": 0.0
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.001994496,
+  "method": "First three recorded states with idle units. Append observed idle count and current orders to continue description; state and all other choices identical. Alternate pair order; no game commands."
+}
