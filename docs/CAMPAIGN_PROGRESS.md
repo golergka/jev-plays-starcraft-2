@@ -3034,3 +3034,24 @@ Verified live session35733 at6922:428calls/$0.249360762 total,$0.225807792 in
 trailing300seconds,no budget or ending event.13SCVs,11Marines,3Bunkers,2Barracks,
 4Turrets,3Depots,1Refinery,1CommandCenter,1EngineeringBay in raw owned sample.
 Policy and budget unchanged; continue to actual outcome before another change.
+
+
+### Lab211 — verified16:37 defeat; no-purchase identifier probe is negative
+
+Construction trialsession35733 ended normally at15964loops. Independent native
+UI confirmsDEFEAT16:37,evacuation03:32,all structures destroyed.827calls/
+$0.529390890. Checkpoint records defeat, retaining two verified wins. Longer
+survival than recent trials and successful retained-job completions are useful
+observations, but one trial does not isolate construction handling as the cause.
+Army replacement remained poor despite available Marine purchase and accumulated
+resources. No mission-specific instructions or manual unit control were applied.
+
+Tested a narrowly isolated identifier hypothesis using first/middle/last recorded
+investment top-save states with>=500minerals. Identical state,descriptions and
+option order; only save→option_0,alternating pair request order. All3pairs still
+choose no purchase. Its probability.42→.43,.59→.61,.81→.79. Six shared-governor
+calls,$0.002281272,zero game commands. Script probe_investment_identifier.py and
+result experiments/211-investment-identifier.json make the method reviewable.
+Single draws,not statistical proof; no support for an identifier-only fix.
+Do not apply a live rename or repeat this same hypothesis without new evidence.
+Next investigate substantive decision/task structure rather than cosmetic keys.

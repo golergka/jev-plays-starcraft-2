@@ -1,0 +1,178 @@
+{
+  "source": "runs/20260919T195823.023203Z/events.jsonl",
+  "method": "First/middle/last eligible recorded save decisions with >=500 minerals. Identical state, descriptions and option order; rename only save to option_0. Alternate request order. Six calls maximum. No gameplay commands. Single draws, not statistical evidence.",
+  "pairs": [
+    {
+      "recorded_time": 1789848325.614513,
+      "resources": {
+        "minerals": 544,
+        "vespene": 468,
+        "estimated_minerals_per_minute": 320.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 28,
+        "food_cap": 43,
+        "supply_in_construction": 0,
+        "supply_remaining": 15,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.42,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "project_2": 0.04,
+            "project_7": 0.01,
+            "project_5": 0.23,
+            "project_8": 0.01,
+            "project_3": 0.0,
+            "save": 0.42,
+            "project_1": 0.05,
+            "project_0": 0.01,
+            "project_9": 0.16,
+            "project_6": 0.04,
+            "project_4": 0.01,
+            "project_10": 0.02
+          }
+        }
+      },
+      "renamed": {
+        "choice": "option_0",
+        "no_purchase_probability": 0.43,
+        "answer": {
+          "choice": "option_0",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "project_0": 0.01,
+            "project_10": 0.02,
+            "project_4": 0.02,
+            "project_6": 0.04,
+            "project_3": 0.0,
+            "project_1": 0.04,
+            "project_8": 0.01,
+            "project_7": 0.01,
+            "project_9": 0.18,
+            "project_5": 0.2,
+            "project_2": 0.04,
+            "option_0": 0.43
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789848498.179491,
+      "resources": {
+        "minerals": 1071,
+        "vespene": 536,
+        "estimated_minerals_per_minute": 200.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 16,
+        "food_cap": 43,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 27,
+        "supply_blocked": false
+      },
+      "renamed": {
+        "choice": "option_0",
+        "no_purchase_probability": 0.61,
+        "answer": {
+          "choice": "option_0",
+          "type": "choice",
+          "confidence": 0.56,
+          "probabilities": {
+            "project_8": 0.01,
+            "project_9": 0.14,
+            "project_6": 0.01,
+            "project_3": 0.0,
+            "project_7": 0.0,
+            "project_0": 0.01,
+            "project_5": 0.03,
+            "project_4": 0.09,
+            "option_0": 0.61,
+            "project_10": 0.01,
+            "project_2": 0.04,
+            "project_1": 0.05
+          }
+        }
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.59,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.56,
+          "probabilities": {
+            "project_9": 0.12,
+            "project_7": 0.0,
+            "save": 0.59,
+            "project_6": 0.01,
+            "project_1": 0.06,
+            "project_8": 0.01,
+            "project_2": 0.05,
+            "project_0": 0.01,
+            "project_10": 0.01,
+            "project_3": 0.0,
+            "project_5": 0.03,
+            "project_4": 0.11
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789848608.530968,
+      "resources": {
+        "minerals": 500,
+        "vespene": 536,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 11,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 24,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.81,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.78,
+          "probabilities": {
+            "project_4": 0.09,
+            "save": 0.81,
+            "project_0": 0.01,
+            "project_5": 0.04,
+            "project_3": 0.01,
+            "project_1": 0.03,
+            "project_2": 0.0
+          }
+        }
+      },
+      "renamed": {
+        "choice": "option_0",
+        "no_purchase_probability": 0.79,
+        "answer": {
+          "choice": "option_0",
+          "type": "choice",
+          "confidence": 0.75,
+          "probabilities": {
+            "project_2": 0.01,
+            "project_1": 0.03,
+            "option_0": 0.79,
+            "project_3": 0.02,
+            "project_5": 0.05,
+            "project_0": 0.01,
+            "project_4": 0.09
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0022812720000000004
+}
