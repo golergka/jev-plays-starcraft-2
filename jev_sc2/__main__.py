@@ -67,12 +67,15 @@ async def run(args):
         if event=='result':
             outcome['players'] = fields['players']
             outcome['status'] = result_for_player(fields['players'],outcome['player_id'])
+        elif event=='replay_unavailable':
+            outcome['replay_error'] = fields['error']
         elif event=='api_bookmark_restored':
             outcome['api_bookmark_restores'] = outcome.get('api_bookmark_restores',0)+1
         elif event=='stopped':
             outcome['reason'] = fields['reason']
         elif event=='finished':
-            outcome.update(calls=fields['calls'],cost=fields['cost'],replay=str(directory/'game.SC2Replay'))
+            outcome.update(calls=fields['calls'],cost=fields['cost'],
+                           replay=str(directory/'game.SC2Replay') if (directory/'game.SC2Replay').exists() else None)
             if outcome['status']=='incomplete' and 'reason' not in outcome:
                 outcome['reason']='call budget reached' if fields['calls']>=args.max_calls else 'time limit reached'
             (directory/'result.json').write_text(json.dumps(outcome,indent=2)+'\n')
@@ -93,6 +96,13 @@ async def run(args):
                       args.window_size, args.window_position)
     client = await SC2.connect(args.port, process=proc)
     client.log = log
+    async def save_replay():
+        try:
+            replay = await client.request('save_replay',sc.RequestSaveReplay())
+            (directory/'game.SC2Replay').write_bytes(replay.data)
+        except Exception as exc:
+            # QuickLoad can stop replay recording; keep the actual run result.
+            log('replay_unavailable',error=str(exc))
     try:
         ping = await client.request('ping',sc.RequestPing())
         log('connected',version=ping.game_version,revision=loader.revision,
@@ -114,8 +124,7 @@ async def run(args):
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
                                      for r in existing.player_result],source='attach_to_ended_game',
                     loop=existing.observation.game_loop,api_status=sc.Status.Name(client.status))
-                replay = await client.request('save_replay',sc.RequestSaveReplay())
-                (directory/'game.SC2Replay').write_bytes(replay.data)
+                await save_replay()
                 log('finished',calls=0,cost=0,run=str(directory))
                 return outcome
             if client.status != sc.in_game:
@@ -234,8 +243,7 @@ async def run(args):
                 action_errors=[str(e) for e in fresh.action_errors],
                 latency_ms=round((time.monotonic()-decision_start)*1000))
             await asyncio.sleep(max(0,args.interval-(time.monotonic()-decision_start)))
-        replay = await client.request('save_replay',sc.RequestSaveReplay())
-        (directory/'game.SC2Replay').write_bytes(replay.data)
+        await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
         return outcome
     finally:

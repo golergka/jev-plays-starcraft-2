@@ -138,3 +138,34 @@ def test_campaign_passes_configured_decision_age_to_runner(tmp_path):
     asyncio.run(run_sequence(manifest(tmp_path),tmp_path/'age.json',
         max_age_loops=64,mission_runner=mission))
     assert seen==[64]
+
+
+def test_replay_failure_does_not_erase_terminal_run_result(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    import jev_sc2.__main__ as runner
+    from s2clientprotocol import sc2api_pb2 as sc
+    class Client:
+        status = sc.ended
+        async def request(self, name, body):
+            if name == 'ping':return SimpleNamespace(game_version='test')
+            if name == 'save_replay':raise RuntimeError('Not currently recording a replay')
+            raise AssertionError(name)
+        async def observe(self):
+            o=sc.ResponseObservation()
+            o.observation.player_common.player_id=1
+            o.player_result.add(player_id=1,result=sc.Defeat)
+            return o
+        async def close(self):pass
+    client=Client();client.ws=client
+    async def connect(*args,**kwargs):return client
+    monkeypatch.setattr(runner,'ROOT',tmp_path)
+    monkeypatch.setattr(runner.SC2,'connect',connect)
+    monkeypatch.setattr(runner,'PlayerLoader',lambda root:SimpleNamespace(refresh=lambda:None,revision='test'))
+    monkeypatch.setattr(runner,'Jev',lambda *args,**kwargs:SimpleNamespace(calls=0,cost=0))
+    args=SimpleNamespace(doctor=False,attach=True,map=None,port=5001,objective='test',
+                         seconds=30,max_calls=10,max_age_loops=32)
+    result=asyncio.run(runner.run(args))
+    assert result['status']=='defeat'
+    assert result['replay'] is None
+    assert 'Not currently recording' in result['replay_error']
+    assert json.loads(next((tmp_path/'runs').glob('*/result.json')).read_text())==result

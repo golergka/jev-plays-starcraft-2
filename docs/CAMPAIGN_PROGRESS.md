@@ -1977,3 +1977,28 @@ pipeline. Every command still undergoes fresh legality/ownership/target validati
 stale decisions beyond the configured age remain discarded. This tests the
 latency/recency tradeoff, not a mission-specific tactical change. Remaining call
 budget for the resume is 2,086, preserving the original combined 3,200-call cap.
+
+### Lab 162 — bookmark restores control briefly, repeats failure; keep results without replay
+
+Attempt 18 resume runs/20260919T042410.044420Z saved at loop 12,057. API all-player
+Defeat appeared at 12,563. QuickLoad succeeded and restored in_game at loop 2;
+Jev issued fresh validated orders after memory reset. About 21 seconds later,
+the same all-player Defeat returned at new loop 478 (roughly the same mission
+point). The one-restore ceiling correctly stopped further restores. This is NOT
+a durable fix. Resume used 114 calls, $0.085138074; combined attempt 1,228 calls,
+$0.91121877. Later UI still showed active play at 15:53, evacuation 04:16.
+
+QuickLoad disabled replay recording; SaveReplay returned 'Not currently recording
+a replay. May be caused by using RequestQuickLoad.' That exception previously
+prevented finished/result.json and checkpoint accounting. Preserve the outcome
+and cost even if replay saving fails, recording replay=null and replay_error.
+A regression test exercises terminal attach with replay failure and verifies the
+persisted result. Reconstructed this interrupted resume summary and checkpoint
+entry directly from events, explicitly labeled, retaining API/UI discrepancy.
+
+New concrete hypothesis: failing the optional rescue objective may be interpreted
+as terminal by the API. The script marks that objective failed on a rebel-group
+loss; the UI later displays that bonus objective in red while main holdout remains
+active. This is correlation, not proof. A small isolated objective-state test can
+check the engine behavior without another full Jev run. Do not yet change stock
+objectives or credit this attempt as won/lost from the contradictory API alone.
