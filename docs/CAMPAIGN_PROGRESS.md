@@ -1663,3 +1663,14 @@ no defeat overlay. Record discrepancy without advancing the mission. Controller
 exited after1434Jev calls. Future investigation should target a per-game/API
 limit or mission interaction; neither is established yet. Repeating the same
 process restart is not a justified next experiment.
+
+### Lab144 — duration-setting search yields no supported workaround
+
+Read-only installed-client string search exposed generic Battle.net duration fields
+but no verified configurable API12500-loop limit. Do not set guessed variables.
+Paginated all upstream s2client-proto issues and searched campaign/time-limit/
+premature-end/12500 terms; no matching issue identified. Local map component
+inventory contains only terrain GameData, not a map-local gameplay duration XML
+override. This narrows the next inspection to dependency/MapInfo configuration or
+protocol behavior; it does not rule either out. No map content or gameplay policy
+changed. No additional full-length trial started on these negative findings.
