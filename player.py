@@ -659,7 +659,7 @@ def continuing_income(view, selected, role, strategy, key, memory):
     threatened = any(e.get('alliance')=='Enemy' for e in view.get('visible_entities', []))
     if (role=='income' and harvesting and not threatened and previous
         and previous['strategy']==strategy
-        and 0 <= view['loop']-previous['loop'] < 112
+        and 0 <= view['loop']-previous['loop'] < 672
         and snapshot['health'].keys()==previous['health'].keys()
         and all(h >= previous['health'][tag] for tag,h in snapshot['health'].items())):
         return True

@@ -11,9 +11,13 @@ def test_income_continuation_expires_and_reacts_to_changes():
     view['loop']=150
     unit['orders'][0]['ability']='Harvest Return SCV'
     assert check()  # Return trips are part of the same engine task.
-    view['loop']=212
+    view['loop']=473
+    assert check()  # Measured paced decisions are about373loops apart.
+    view['loop']=771
+    assert check()
+    view['loop']=772
     assert not check()  # No indefinite rolling extension.
-    view['loop']=213
+    view['loop']=773
     unit['health_fraction']=.9
     assert not check()
     view['visible_entities']=[{'alliance':'Enemy'}]

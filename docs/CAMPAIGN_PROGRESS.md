@@ -3347,3 +3347,21 @@ army and use defenses effectively. Repeating unchanged is not justified now.
 Next inspect call distribution and routine execution expiry against actual
 inter-decision time,then target general decision efficiency/combat behavior.
 Do not compensate by increasing the dollar cap or injecting mission tactics.
+
+### Lab230 — harvesting review expires before paced decisions can reuse it
+
+Offline accounting of lab229:305calls/$.181441512. Strategy/grouping37calls/
+$.014590422,investment32/$.011664786,roles36/$.017813838,orders/assignment200/
+$.137372466(about76%).38ticks,median373loop interval,zero routine_execution
+skips. Income continuation deadline112loops could never cover the median next
+review. Nine of37 strategic snapshots had no currently visible enemy,so the
+conservative global-threat veto also limits applicability. No paid probe needed.
+
+Extend only existing harvest-cycle review window112→672loops. Preserve first
+review,chosen income role,unchanged strategy/membership,no health loss,no visible
+enemy,active engine harvesting,rewind and fixed-deadline expiry guards. Never
+assign idle workers or select a resource automatically. Routine skips cannot
+extend the deadline. This may save a small number of questions,not all worker
+calls; batching means question savings are not equal to dollar savings.121tests
+pass,including reuse at measured373loop spacing and expiry at672. Live impact
+still requires measurement; no new tactical policy or budget change.
