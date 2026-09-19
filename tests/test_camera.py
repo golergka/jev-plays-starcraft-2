@@ -80,3 +80,21 @@ def test_camera_cuts_to_shield_damage_and_rotates_quiet_scenes():
     view['self'][1]['shield'] = 80
     assert choose_shot(view, memory, now=3)['position'][0] == 80
     assert choose_shot(view, memory, now=11)['position'][0] == 10
+
+
+def test_camera_leaves_quiet_subject_for_firing_without_waiting_full_dwell():
+    memory = {}
+    view = {'self': [unit(1, 10), unit(2, 80)]}
+    choose_shot(view, memory, now=0)
+    view['self'][1]['weapon_cooldown'] = 1
+    assert choose_shot(view, memory, now=1) is None
+    assert choose_shot(view, memory, now=3)['position'] == [80, 10]
+    view['self'][0]['weapon_cooldown'] = 1
+    assert choose_shot(view, memory, now=6) is None
+
+
+def test_camera_immediately_replaces_disappeared_subject():
+    memory = {}
+    choose_shot({'self': [unit(1, 10), unit(2, 80)]}, memory, now=0)
+    shot = choose_shot({'self': [unit(2, 80)]}, memory, now=1)
+    assert shot['position'] == [80, 10]

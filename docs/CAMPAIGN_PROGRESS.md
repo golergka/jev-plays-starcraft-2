@@ -2045,3 +2045,16 @@ wins were either genuine or false solely from this reproduction.
 
 Attempt 18 later truly lost: UI DEFEAT at 19:17, evacuation 00:52, all structures
 destroyed. Added this independent outcome to its raw API/recovery record.
+
+### Lab164 — camera cuts when combat starts, replaces lost subjects
+
+Continue the presentation-only director from lab149: moving-force tracking,
+army preference over idle bases, visible engagement framing and shield/health
+damage cuts. A quiet shot previously held for seven seconds even when another
+force began firing. Now permit that transition after 2.5 seconds, while holding
+between simultaneous fights to avoid rapid cuts. Immediately replace a subject
+that disappears instead of watching its empty location for the remaining dwell.
+Nine camera tests pass, including these transitions and committed-module reload
+failure recovery. No unit orders or Jev decision policy changed. This incremental
+change is test-verified, not yet validated in a new live campaign run; campaign
+control still needs the objective/API compatibility fix described in lab163.

@@ -48,7 +48,8 @@ def choose_shot(view, memory, now=None):
                       if math.dist(cell, key) <= 1.5), default=-1000)
         score *= .65 if now-recent < 24 else 1
         shots.append({'position':center, 'reason':reason, 'score':score,
-                      'key':key, 'urgent':damaged, 'tag':unit['tag']})
+                      'key':key, 'urgent':damaged, 'active':firing or damaged,
+                      'tag':unit['tag']})
     memory['units'] = {u['tag']:{'position':u['position'][:], 'health':u.get('health', 0),
                               'vitality':u.get('health', 0)+u.get('shield', 0)} for u in units}
     memory['moving_until'] = {tag:deadline for tag,deadline in memory.get('moving_until', {}).items()
@@ -60,7 +61,10 @@ def choose_shot(view, memory, now=None):
         close = math.dist(best['position'], current['position']) < 7
         # Tracking is separate from cutting: keep an army on screen during a shot.
         tracked = next((s for s in shots if s['tag'] == current.get('tag')), None)
-        urgent_cut = best['urgent'] and not close and age >= 2.5
+        # Switch from a quiet subject to actual combat promptly, but avoid
+        # bouncing between two simultaneous fights on every observation.
+        combat_started = best['active'] and tracked and not tracked['active']
+        urgent_cut = (best['urgent'] or combat_started) and not close and age >= 2.5
         if tracked and (age < 7 or (close and age < 12)) and not urgent_cut:
             if (now-memory.get('pan_at', -1000) >= 1 and
                     math.dist(tracked['position'], current['position']) >= 2):
@@ -68,10 +72,10 @@ def choose_shot(view, memory, now=None):
                 memory['pan_at'] = now
                 return {'position':tracked['position'], 'reason':'tracking ' + tracked['reason']}
             return None
-        # Keep a readable shot; only a new damage event elsewhere can cut early.
-        if age < 7 and not (best['urgent'] and not close and age >= 2.5):
+        # A vanished subject should never leave the audience watching empty ground.
+        if tracked and age < 7 and not urgent_cut:
             return None
-        if close and age < 12:
+        if tracked and close and age < 12:
             return None
     memory['shot'] = best
     memory['cut_at'] = now
