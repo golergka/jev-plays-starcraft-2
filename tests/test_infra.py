@@ -1036,3 +1036,15 @@ def test_depot_state_controls_require_current_engine_offer_and_no_target():
         assert offered[0]['command']=={'unit_tag':7,'ability_id':ability}
     catalog[556].target=2
     assert support_candidates(unit,{556},catalog,{},[],{})==[]
+
+
+def test_individual_worker_grouping_uses_observed_capabilities_and_preserves_other_groups():
+    from player import control_groups
+    units=[{'tag':i,'type':'Worker','candidates':[{'id':'gather_10'}],
+            'orders':[{'ability':'Repair','target_tag':99}]} for i in (1,2)]
+    units += [{'tag':i,'type':'Soldier','candidates':[]} for i in (3,4)]
+    groups=control_groups(units,'individual_workers',{})
+    assert [u['tag'] for u in groups['Worker / unit 1']]==[1]
+    assert [u['tag'] for u in groups['Worker / unit 2']]==[2]
+    assert [u['tag'] for u in groups['Soldier']]==[3,4]
+    assert len(control_groups(units,'by_type',{}))==2

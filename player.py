@@ -488,6 +488,8 @@ def control_groups(units, mode, learned, harvest_targets=None):
             harvest_targets.pop(unit['tag'], None)
         if mode == 'by_current_order':
             key = f'{unit["type"]} / {job}' + (f' / target {target}' if target else '')
+        elif mode == 'individual_workers' and economic:
+            key = f'{unit["type"]} / unit {unit["tag"]}'
         groups.setdefault(key, []).append(unit)
     return groups
 
@@ -617,6 +619,7 @@ async def decide(view, jev, memory):
             'criteria':{
                 'by_type':'Keep different unit types in separate selections, allowing different shared orders.',
                 'by_current_order':'Separate each unit type by its current first order and unit target, with idle units separate and observed gather/return cycles kept together by their known resource target. Choose distinct orders for those job selections to retain or change existing assignments independently.',
+                'individual_workers':'Give each observed harvesting/building worker its own contribution and order decisions, allowing mixed assignments even when workers currently share one job. Other units remain grouped by type. This requires more model decisions.',
                 'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
             },
         }})
@@ -626,7 +629,7 @@ async def decide(view, jev, memory):
             memory['strategy'] = strategy
             jev.log('strategy_choice',**strategy)
         grouping = decision.get('coordination',{}).get('choice')
-        if grouping in ('by_type','mobile_combat','by_current_order'):
+        if grouping in ('by_type','mobile_combat','by_current_order','individual_workers'):
             memory['coordination'] = grouping
             jev.log('coordination_choice',loop=view['loop'],choice=grouping)
             cohorts = control_groups(units,grouping,learned,memory.setdefault('harvest_targets',{}))

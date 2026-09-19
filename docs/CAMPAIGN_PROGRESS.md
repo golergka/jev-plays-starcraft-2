@@ -2514,3 +2514,22 @@ harvesting. At loop4134:13Marines,1SCV,1Bunker,2Turrets,2Barracks,3loweredDepots
 1CommandCenter,1EngineeringBay;442calls,no decision errors,no ending marker.
 No tactical patch during this observation interval. The fresh defensive trial is
 not yet a completed mission or a verified defeat.
+
+### Lab185 — let Jev choose independent worker roles
+
+Reviewed labs083 and121 before changing worker control: support executors already
+allow one or all eligible units; explicit idle-continuation wording previously
+left top choices unchanged. Current repair-heavy defensive run is not explained
+by absent income telemetry. A remaining representational constraint is that a
+same-job worker cohort receives one contribution choice, encouraging all-or-none
+role changes even though specific support executors are selectable afterward.
+
+Added optional coordination choice individual_workers. Jev itself must select it.
+Observed harvesting/building capabilities identify workers; each then receives an
+independent contribution and concrete-order decision. Other units stay grouped by
+type. No fixed miner/repairer counts, priority override or type-name whitelist.
+Existing grouping modes remain. This exposes a finer decision space, at additional
+inference cost; it neither guarantees Jev will use it nor fixes prior losses.
+97 tests pass, including two workers with identical repair jobs getting distinct
+selections while soldiers remain grouped. This is a general control experiment,
+not a direction to harvest in this particular mission.
