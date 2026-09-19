@@ -1047,3 +1047,20 @@ can resume construction. Jev selects the target/executor, and no command is sent
 from capability discovery alone. This addresses a general action-interface gap,
 not a mission-specific build rule. Forty-eight tests pass. Live Smart availability
 and successful resumed construction remain to be verified in the next attempt.
+
+## Lab 096: explicit weapon/target facts and live construction evidence
+
+Lab 095's Smart interaction is present in live Jev menus and has been selected.
+Observed SupplyDepot 4395368449 progressed from .054 at loop 1191 to complete at
+1680; Jev issued Smart interactions for it. Bunker 4358144002 also progressed
+(.008 at 1811 to .902 at 2240). This proves the affordance was offered and used,
+and construction completed/progressed; it does not isolate whether an original
+builder would have completed it without the additional interactions.
+
+Earlier runs logged MustTargetAirUnits. Attack descriptions named targets but
+required a separate join to catalog weapon facts. Add target altitude and catalog
+weapon classes directly to each visible unit-target attack description, and
+expose is_flying for visible entities. Do not infer a complete target-legality
+predicate: catalog omissions, garrisons and special target rules exist. The engine
+remains authoritative; Jev still chooses commands. Forty-nine tests pass.
+This is a general observation/action-description change, not a target preference.

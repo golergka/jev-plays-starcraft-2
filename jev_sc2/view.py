@@ -57,6 +57,20 @@ def explored_map(visibility, pathing, area, cell_size=6):
             'legend': '? unexplored; ~ partly explored; . walkable; # blocked; + mixed walkable/blocked. Columns west to east. Static terrain only; not a route or current unit occupancy.'}
 
 
+def attack_target_facts(unit, target, unit_catalog):
+    """Name observed target altitude and catalog weapon classes, not legality."""
+    product = unit_catalog.get(unit.unit_type)
+    classes = set()
+    if product:
+        for weapon in product.weapons:
+            if weapon.type in (data_proto.Weapon.Ground,data_proto.Weapon.Any):
+                classes.add('ground')
+            if weapon.type in (data_proto.Weapon.Air,data_proto.Weapon.Any):
+                classes.add('air')
+    return (f'target is {"airborne" if target.is_flying else "ground"}; '
+            f'catalog weapons target {" and ".join(sorted(classes)) if classes else "unspecified classes"}')
+
+
 def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=False):
     """Expose support controls, without selecting a recipient or issuing an order.
 
@@ -190,7 +204,7 @@ async def make_view(client, observation, data, info, objective):
             'visible_entities': [
                 {'tag':u.tag,'type':names.get(u.unit_type,str(u.unit_type)),
                  'alliance':raw.Alliance.Name(u.alliance),
-                 'position':[u.pos.x,u.pos.y],'health':u.health,'shield':u.shield}
+                 'position':[u.pos.x,u.pos.y],'health':u.health,'shield':u.shield,'is_flying':u.is_flying}
                 for u in visible],
             'explored_map': explored_map(obs.raw_data.map_state.visibility,
                                          info.start_raw.pathing_grid,area),
@@ -273,7 +287,7 @@ async def make_view(client, observation, data, info, objective):
                                  'health':target.health, 'shield':target.shield})
             if target.alliance == raw.Enemy and attack is not None:
                 candidates.append({'id':f'attack_{target.tag}',
-                                   'description':f'Attack visible {label} tag {target.tag}, distance {distance}',
+                                   'description':f'Attack visible {label} tag {target.tag}, distance {distance}; '+attack_target_facts(unit,target,unit_catalog),
                                    'command':command(attack, target_tag=target.tag)})
             if target.alliance == raw.Neutral and move is not None:
                 candidates.append({'id':f'move_{target.tag}',
@@ -285,7 +299,7 @@ async def make_view(client, observation, data, info, objective):
                 if target.alliance != raw.Enemy or f'attack_{target.tag}' in offered_ids:
                     continue
                 candidates.append({'id':f'attack_{target.tag}',
-                                   'description':f'Attack visible {names.get(target.unit_type,str(target.unit_type))} tag {target.tag} at [{target.pos.x:.1f},{target.pos.y:.1f}]',
+                                   'description':f'Attack visible {names.get(target.unit_type,str(target.unit_type))} tag {target.tag} at [{target.pos.x:.1f},{target.pos.y:.1f}]; '+attack_target_facts(unit,target,unit_catalog),
                                    'command':command(attack,target_tag=target.tag)})
         if gather is not None:
             for target in visible+own:

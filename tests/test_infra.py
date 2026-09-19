@@ -663,3 +663,15 @@ def test_unfinished_construction_has_context_action_not_repair_when_engine_offer
     assert support_candidates(actor,{1},abilities,types,[actor,target],{},builder=False)==[]
     target.build_progress=1
     assert [c['command']['ability_id'] for c in support_candidates(actor,{1,316},abilities,types,[actor,target],{},builder=True)]==[316]
+
+
+def test_attack_target_facts_expose_air_ground_without_asserting_legality():
+    from s2clientprotocol import data_pb2 as data
+    from jev_sc2.view import attack_target_facts
+    attacker=raw.Unit(unit_type=1); target=raw.Unit(is_flying=False)
+    product=data.UnitTypeData(unit_id=1);product.weapons.add(type=data.Weapon.Air)
+    description=attack_target_facts(attacker,target,{1:product})
+    assert description=='target is ground; catalog weapons target air'
+    target.is_flying=True
+    assert 'target is airborne' in attack_target_facts(attacker,target,{1:product})
+    assert 'unspecified classes' in attack_target_facts(attacker,target,{})
