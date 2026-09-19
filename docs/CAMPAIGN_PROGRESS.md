@@ -4093,3 +4093,18 @@ underscores variation and weak causal evidence for recent prompt improvements.
 Some observed bunker cargo was occupied; army later collapsed while substantial
 resources remained. First two missions remain the only campaign victories.
 Do not confuse error-free command submission with competent resource allocation.
+
+### Lab279 — let Jev choose strategic review interval
+
+Last277run:22strategic reviews all selected protect, costing$0.009630852 of
+$0.084694512 total. This is measurable repetition, not proof priority was correct.
+Add strategy_review choice to the existing strategic request:112/672/2016loops.
+Jev chooses the interval; invalid/missing answers preserve112legacy behavior.
+Priority and grouping persist until chosen deadline, reviewed at next affordable
+control decision; tactical orders and investment continue with fresh observations.
+Rewind triggers immediate review. No extra request, automatic tactical override,
+fixed strategy, or budget increase. Longer review may delay useful strategic change.
+
+Full existing137tests pass; new regression also passes, proving a Jev long horizon
+suppresses a review at500 while orders still execute, reviews at2017, and resets
+on rewind. Live cost/behavior benefit untested. Previous trial is terminal.

@@ -729,7 +729,8 @@ async def decide(view, jev, memory):
     cohorts = control_groups(units,memory.get('coordination','by_type'),learned,memory.setdefault('harvest_targets',{}))
     state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
     strategy = memory.get('strategy')
-    if strategy is None or view['loop']-strategy['loop'] >= 112:
+    if (strategy is None or view['loop'] < strategy['loop']
+            or view['loop'] >= strategy.get('review_at',strategy['loop']+112)):
         options = {
             'attack':'Commit forces to damaging or destroying the enemy base.',
             'strengthen':'Increase military strength through resource collection and production.',
@@ -746,6 +747,14 @@ async def decide(view, jev, memory):
                            'Consider resources, own force, known enemy force, and recent_outcomes. Reassess your previous strategy using these measured outcomes. '
                            'This priority will inform further Jev decisions; it does not execute a scripted plan.',
             'criteria':options,
+        }, 'strategy_review': {
+            'type':'choice',
+            'instructions':'Choose when to review this high-level priority and selection grouping again. Tactical orders and investment decisions continue during this interval using fresh observations. Longer intervals reduce repeated model spending but delay revising the priority. The next review occurs at the first budget-permitted decision after the selected interval.',
+            'criteria':{
+                'soon':'Review after 112 game loops (about five game seconds).',
+                'medium':'Retain for 672 game loops (about thirty game seconds).',
+                'long':'Retain for 2016 game loops (about ninety game seconds).',
+            },
         }, 'coordination': {
             'type':'choice',
             'instructions':'Choose how to organize non-worker control selections. Observed harvesting/building units always receive independent contribution and order decisions. This chooses grouping only; further Jev decisions choose every order.',
@@ -757,7 +766,10 @@ async def decide(view, jev, memory):
         }})
         selected = decision.get('strategy',{}).get('choice')
         if selected in options:
-            strategy = {'loop':view['loop'],'choice':selected,'description':options[selected]}
+            horizon = {'soon':112,'medium':672,'long':2016}.get(
+                decision.get('strategy_review',{}).get('choice'),112)
+            strategy = {'loop':view['loop'],'choice':selected,'description':options[selected],
+                        'review_at':view['loop']+horizon}
             memory['strategy'] = strategy
             jev.log('strategy_choice',**strategy)
         grouping = decision.get('coordination',{}).get('choice')

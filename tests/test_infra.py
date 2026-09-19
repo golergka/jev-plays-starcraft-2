@@ -1242,3 +1242,33 @@ def test_individual_history_survives_paced_reviews_but_expires_and_rewinds():
     assert model.facts[1]['recent_progress']['last_choices'] == ['continue']
     assert 'recent_progress' not in model.facts[2]
     assert 'recent_progress' not in model.facts[3]
+
+
+def test_jev_strategy_horizon_retains_priority_without_stopping_orders():
+    import player
+
+    class Model:
+        strategy_calls = 0
+        order_calls = 0
+
+        def log(self, *args, **kwargs):
+            pass
+
+        async def ask(self, state, questions):
+            if 'strategy' in questions:
+                self.strategy_calls += 1
+                return {'strategy': {'choice': 'protect'},
+                        'strategy_review': {'choice': 'long'}}
+            if 'purpose_Marine' in questions:
+                return {'purpose_Marine': {'choice': 'positioning'}}
+            self.order_calls += 1
+            return {'Marine': {'choice': 'group_north'}}
+
+    model, memory = Model(), {}
+    command = {'unit_tag': 1, 'ability_id': 16, 'point': [1, 6]}
+    unit = {'tag': 1, 'type': 'Marine', 'position': [1, 0],
+            'candidates': [{'id': 'north', 'description': 'Move north', 'command': command}]}
+    for loop, expected_reviews in ((1, 1), (500, 1), (2017, 2), (1, 3)):
+        assert asyncio.run(player.decide({'self': [unit], 'loop': loop}, model, memory)) == [command]
+        assert model.strategy_calls == expected_reviews
+    assert model.order_calls == 4
