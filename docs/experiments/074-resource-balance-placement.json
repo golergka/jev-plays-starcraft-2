@@ -1,0 +1,158 @@
+{
+  "source": "runs/20260919T010244.878752Z/events.jsonl",
+  "pairs": [
+    {
+      "question": "SCV / Harvest cycle / target 4395106305",
+      "resources": {
+        "minerals": 0,
+        "vespene": 520,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 112.0,
+        "food_used": 24,
+        "food_cap": 43,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.74,
+        "probabilities": {
+          "group_gather_4294967297": 0.01,
+          "group_gather_4395106305": 0.18,
+          "continue": 0.77,
+          "group_gather_4297326593": 0.0,
+          "group_gather_4296802305": 0.01,
+          "group_gather_4299685889": 0.0,
+          "group_gather_4297588737": 0.02,
+          "group_gather_4295229441": 0.0,
+          "group_gather_4296015873": 0.01,
+          "group_gather_4298637313": 0.0,
+          "group_gather_4298899457": 0.0
+        }
+      },
+      "inline_balance": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.68,
+        "probabilities": {
+          "group_gather_4299685889": 0.0,
+          "group_gather_4297326593": 0.0,
+          "group_gather_4295229441": 0.0,
+          "group_gather_4296015873": 0.01,
+          "group_gather_4294967297": 0.03,
+          "continue": 0.72,
+          "group_gather_4395106305": 0.2,
+          "group_gather_4298899457": 0.0,
+          "group_gather_4297588737": 0.03,
+          "group_gather_4298637313": 0.0,
+          "group_gather_4296802305": 0.01
+        }
+      }
+    },
+    {
+      "question": "SCV / Harvest cycle / target 4395106305",
+      "resources": {
+        "minerals": 0,
+        "vespene": 524,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 112.0,
+        "food_used": 24,
+        "food_cap": 43,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "inline_balance": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.78,
+        "probabilities": {
+          "group_gather_4297326593": 0.0,
+          "group_gather_4296015873": 0.0,
+          "group_gather_4299685889": 0.0,
+          "continue": 0.81,
+          "group_gather_4294967297": 0.02,
+          "group_gather_4296802305": 0.01,
+          "group_gather_4298637313": 0.0,
+          "group_gather_4297588737": 0.02,
+          "group_gather_4395106305": 0.13,
+          "group_gather_4295229441": 0.0,
+          "group_gather_4298899457": 0.0
+        }
+      },
+      "original": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.85,
+        "probabilities": {
+          "continue": 0.86,
+          "group_gather_4297326593": 0.0,
+          "group_gather_4298899457": 0.0,
+          "group_gather_4294967297": 0.01,
+          "group_gather_4298637313": 0.0,
+          "group_gather_4395106305": 0.1,
+          "group_gather_4296802305": 0.01,
+          "group_gather_4296015873": 0.0,
+          "group_gather_4299685889": 0.0,
+          "group_gather_4297588737": 0.02,
+          "group_gather_4295229441": 0.0
+        }
+      }
+    },
+    {
+      "question": "SCV / Harvest cycle / target 4395106305",
+      "resources": {
+        "minerals": 0,
+        "vespene": 532,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 128.0,
+        "food_used": 24,
+        "food_cap": 43,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.78,
+        "probabilities": {
+          "group_gather_4294967297": 0.01,
+          "group_gather_4296802305": 0.01,
+          "continue": 0.81,
+          "group_gather_4395106305": 0.15,
+          "group_gather_4296015873": 0.0,
+          "group_gather_4298899457": 0.0,
+          "group_gather_4295229441": 0.0,
+          "group_gather_4297326593": 0.0,
+          "group_gather_4297588737": 0.01,
+          "group_gather_4299685889": 0.0,
+          "group_gather_4298637313": 0.0
+        }
+      },
+      "inline_balance": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.69,
+        "probabilities": {
+          "group_gather_4297326593": 0.0,
+          "group_gather_4299685889": 0.01,
+          "group_gather_4298637313": 0.01,
+          "continue": 0.71,
+          "group_gather_4296015873": 0.01,
+          "group_gather_4395106305": 0.16,
+          "group_gather_4296802305": 0.02,
+          "group_gather_4295229441": 0.01,
+          "group_gather_4298899457": 0.01,
+          "group_gather_4297588737": 0.01,
+          "group_gather_4294967297": 0.05
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.005615148,
+  "method": "Last three recorded gas-gather menus. Same state and choices; append observed relevant balance and literal single-resource effect. Alternate pair order. No gameplay commands."
+}

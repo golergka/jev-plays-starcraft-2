@@ -1323,3 +1323,15 @@ passed normal validation and were submitted. This verifies the experimental
 mechanism, not better play. Reports now expose configured_max_age_loops and counts
 older than that actual limit, retaining the32-loop count only for comparison.
 Verified report output on the active run. Runtime player policy unchanged.
+
+### Lab115 — inline resource balance does not change three gas-worker decisions
+
+A live idle-worker menu showed gas probability.77 with minerals0 and gas368.
+Probe the last three available recorded gas-gather menus with identical state and
+choices, appending each gathered resource's current balance and literal effect
+(only that balance increases) to its description. These selected samples were
+already-working gas groups at gas520/524/532, not the earlier idle worker. All
+three pairs chose continue in both variants. Six calls,$0.005615148,artifact074.
+This does not test the earlier idle case or establish the general irrelevance of
+balance placement. No player change deployed. Probe script initially rejected a
+non-string criterion locally before any model call; fixed string handling.
