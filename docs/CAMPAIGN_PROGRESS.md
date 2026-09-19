@@ -2924,3 +2924,22 @@ available; Jev chooses mode and destination. No automatic attack orders or targe
 priorities. Queries still use fair owned positions and engine offered ability.
 113tests pass, including attack-moving followers to an anchor while the anchor
 holds and no self-targeted attack is synthesized. Live effect unproven.
+
+
+### Lab205 — live anchor-option trial; distinguish finalists from executed orders
+
+Fresh Zero Hour session52730,run20260919T194619.721038Z,policy11298a4.
+Normal API quit completed and old process absence was checked before Battle.net
+relaunch. Same adapted map,4000call/1800sec bounds,persistent taper untouched.
+Atloop3650:256calls/$0.140078904,16Marines,8SCVs,4Bunkers,2Barracks among owned
+units; no budget failure or terminal marker.
+
+New attack-move-anchor options are visible to Jev and selected in intermediate
+menu tournaments. Initial commentary counted four such answers as selections;
+corrected after checking final group_choice events:zero final selections through
+loop3650. Do not count tournament finalists as executed orders. Final combat
+choices mostly continue/hold, with some ordinary regrouping. Earlier cumulative
+score sample528.37damage dealt/60taken illustrates automatic fighting while
+holding; not evidence that the new attack-move command itself helped.
+Menu expansion creates additional tournament calls. Keep policy unchanged and
+measure outcome/cost before deciding whether this interface is useful.
