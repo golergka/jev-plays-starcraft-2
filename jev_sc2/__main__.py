@@ -191,7 +191,8 @@ async def run(args):
                     log('camera_shot',loop=view['loop'],**shot)
             decision_start = time.monotonic()
             try:
-                commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),3)
+                commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),
+                                                  max(3,args.max_age_loops/22.4))
                 failures = 0
             except CallBudgetReached:
                 log('stopped',reason='Jev call budget reached')

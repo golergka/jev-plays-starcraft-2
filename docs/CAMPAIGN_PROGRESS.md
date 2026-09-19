@@ -1959,3 +1959,21 @@ This uses a save/load feature rather than changing waves, resources or fog.
 exclusion of victories/mixed results/missing structures, and failed-load limits.
 Next trial is the unmodified Zero Hour map with this experimental recovery on;
 no claim that a bookmark fixes the premature end until verified there.
+
+### Lab 161 — timeout ceiling prevented testing recovery; resume same mission
+
+Attempt 18 stopped incomplete after five consecutive outer decision timeouts,
+last submitted tick 9,919 (59 units), last bookmark 10,319. 1,114 Jev calls,
+$0.826080696. Run runs/20260919T041506.465238Z. No API end or restore occurred.
+Successful subrequests near the stop typically took 0.6–0.8 seconds, occasionally
+1.45 seconds; the decision pipeline has multiple sequential stages and split
+requests. The fixed three-second outer deadline can cancel otherwise successful
+stages repeatedly as the view grows.
+
+Let the outer deadline follow the configured observation-age budget (22.4 loops
+per real-time second), retaining the old three-second minimum. Resume this same
+mission with max age 128 rather than 64, giving about 5.7 seconds for the complete
+pipeline. Every command still undergoes fresh legality/ownership/target validation;
+stale decisions beyond the configured age remain discarded. This tests the
+latency/recency tradeoff, not a mission-specific tactical change. Remaining call
+budget for the resume is 2,086, preserving the original combined 3,200-call cap.
