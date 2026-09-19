@@ -3239,3 +3239,14 @@ events had discarded_commands empty, so this does not yet demonstrate benefit
 from conflict suppression. Third requested passenger4356308993 not yet verified
 aboard.141calls/$0.081970854,no budget/terminal event. Native2:24 visual check
 showed Zerg at the ramp and bunker nearby; no tactical intervention.
+
+### Lab223 — suppressed conflicting hold followed by verified boarding
+
+Same live run/session98718. At4570, Jev selected bunker4297850881 to load
+Marine4342153217 while the Marine selection chose Hold18. Coordinator retained
+Load407 and discarded that hold. Later model-state observations showed that exact
+Marine inside that exact bunker,cargo1/4,health45. This exercises the conflict
+path and verifies successful entry; not a counterfactual proof the hold would
+have prevented it. Earlier loaded bunker4295491585 remained healthy but Jev
+explicitly unloaded it at3705,demonstrating that coordination does not force
+continued garrisoning. Through4941,$.134337798,no budget/terminal event.
