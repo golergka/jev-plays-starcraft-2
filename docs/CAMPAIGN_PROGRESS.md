@@ -4006,3 +4006,15 @@ structure or upgrade, leaves resources available and existing orders unchanged.
 Keep all options, distributions, sampling, producer selection, budget and jobs.
 Hypothesis only: reduced implicit benefit for waiting; no causal claim before
 trial.137tests pass. No paid probe calls.
+
+### Lab273 — first fully executed background batch observed
+
+Live lab272 run20260919T231030.247545Z/session63654: Jev authorized SCV batch
+at6, initial request accepted/armed. Same CommandCenter4299948033 ability524
+accepted background requests at120and238 (114/118loop spacing, freshness4/5).
+Allowance exhausted and released250. Observed SCVs5at6,6at471,8at1006.
+This is live evidence of a full three-request batch and corresponding increased
+worker count, without new model decisions for the two background requests.
+Native screenshot1:24 shows24/35supply and4miners. It does not establish that
+changed save wording caused the selection or that the economy/mission will
+succeed. Trial remains running; this commit changes only the journal.
