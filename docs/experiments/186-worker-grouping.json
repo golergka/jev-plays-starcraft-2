@@ -1,0 +1,209 @@
+{
+  "source": "runs/20260919T183229.944090Z/events.jsonl",
+  "method": "First/middle/last qualifying strategy request with at least four observed harvesting workers; identical state and existing choices; add individual worker grouping; alternate request order. No commands, single trials.",
+  "results": [
+    {
+      "recorded_time": 1789842759.7064378,
+      "resources": {
+        "minerals": 400,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 21,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 14,
+        "supply_blocked": false
+      },
+      "original": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "explore": 0.06,
+            "recover": 0.01,
+            "protect": 0.6,
+            "strengthen": 0.01,
+            "assemble": 0.27,
+            "attack": 0.0,
+            "continue_operations": 0.05
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "by_current_order": 0.09,
+            "by_type": 0.67,
+            "mobile_combat": 0.24
+          }
+        }
+      },
+      "expanded": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.56,
+          "probabilities": {
+            "protect": 0.63,
+            "explore": 0.04,
+            "strengthen": 0.01,
+            "continue_operations": 0.06,
+            "recover": 0.0,
+            "attack": 0.0,
+            "assemble": 0.26
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "by_type": 0.71,
+            "individual_workers": 0.01,
+            "by_current_order": 0.07,
+            "mobile_combat": 0.21
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789842842.4519958,
+      "resources": {
+        "minerals": 250,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 22,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      },
+      "expanded": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.66,
+          "probabilities": {
+            "continue_operations": 0.02,
+            "protect": 0.72,
+            "attack": 0.0,
+            "explore": 0.0,
+            "strengthen": 0.01,
+            "assemble": 0.22,
+            "recover": 0.03
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "mobile_combat": 0.11,
+            "by_current_order": 0.29,
+            "by_type": 0.59,
+            "individual_workers": 0.01
+          }
+        }
+      },
+      "original": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.6,
+          "probabilities": {
+            "strengthen": 0.01,
+            "assemble": 0.27,
+            "continue_operations": 0.02,
+            "explore": 0.0,
+            "protect": 0.66,
+            "attack": 0.0,
+            "recover": 0.03
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "by_type": 0.56,
+            "mobile_combat": 0.18,
+            "by_current_order": 0.26
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789842926.1209369,
+      "resources": {
+        "minerals": 0,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 18,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 17,
+        "supply_blocked": false
+      },
+      "original": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.72,
+          "probabilities": {
+            "assemble": 0.15,
+            "explore": 0.0,
+            "protect": 0.77,
+            "continue_operations": 0.02,
+            "attack": 0.0,
+            "recover": 0.06,
+            "strengthen": 0.0
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "by_type": 0.47,
+            "mobile_combat": 0.18,
+            "by_current_order": 0.35
+          }
+        }
+      },
+      "expanded": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.72,
+          "probabilities": {
+            "assemble": 0.15,
+            "continue_operations": 0.03,
+            "attack": 0.0,
+            "protect": 0.77,
+            "explore": 0.0,
+            "recover": 0.05,
+            "strengthen": 0.0
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "individual_workers": 0.01,
+            "by_type": 0.54,
+            "by_current_order": 0.32,
+            "mobile_combat": 0.13
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.002333226
+}

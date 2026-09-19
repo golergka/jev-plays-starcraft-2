@@ -2533,3 +2533,22 @@ inference cost; it neither guarantees Jev will use it nor fixes prior losses.
 97 tests pass, including two workers with identical repair jobs getting distinct
 selections while soldiers remain grouped. This is a general control experiment,
 not a direction to harvest in this particular mission.
+
+### Lab186 — verified defensive defeat; optional worker granularity unused
+
+Zero Hour run20260919T183229.944090Z ended via genuine defeat instrumentation,
+corroborated by native DEFEAT dialog at9:27: all structures destroyed, evacuation
+still10:42 away.1022calls,$0.615295170,replay saved. Added UI evidence, marked
+result defeat and appended checkpoint attempt. Opening victories remain intact;
+retry Zero Hour only. No inference/controller exception caused this ending.
+
+New scripts/probe_worker_grouping.py replayed first/middle/last recorded strategy
+states with at least4 harvesting-capable workers, alternating original versus
+added individual_workers option. Same state and other choices.6calls,$0.002333226.
+All3 pairs chose by_type in both variants. Artifact186-worker-grouping.json.
+This small negative probe does not establish model incapacity; it shows merely
+adding the option did not change these choices. Live grouping also did not select
+it before the force collapsed. Earlier repair allocation with zero income remains
+a measured failure. Avoid re-running wording-only fixes or claiming the added
+option solved staffing. Next experiment should evaluate finer decision granularity
+as an interface design, retaining Jev decisions for every worker's actual task.
