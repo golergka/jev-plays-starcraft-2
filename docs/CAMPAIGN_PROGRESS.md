@@ -3695,3 +3695,19 @@ remains authoritative. Unknown product is omitted. New synthetic coverage initia
 caught missing potential-project parity; fixed it.127tests pass. Actual campaign
 addon availability/success not yet verified. Hot reload may change offered menus,
 so ongoing run is no longer a cargo-wording-only comparison. Budgets unchanged.
+
+### Lab251 — extended production commitment completes beyond old deadline
+
+Live249run first SCV batch chosen atloop5 with deadline2021. Requests at5,448,813;
+last two explicitly carried_jev_commitment rather than new investment choices.
+The old672-loop window would have ended at677, before third request813. Commands
+receive success codes with no action errors at these ticks; observed SCVs5→6→7
+then8 by2292 corroborate actual production. This verifies bounded reuse at paced
+intervals, not a survival benefit or causal cargo-wording improvement.
+
+Through2292:47successful calls/$0.026995458,16Marines,8SCVs,260 estimated mineral
+income/minute. Native2:57 shows619minerals and two miners at that instant. Three
+historical episodes and changing choices mean this is not a controlled baseline.
+Untargeted-build adapter6c60033 is loaded; no engine-defined-location option found
+in recorded Jev questions yet, so actual addon execution remains unverified.
+Continue the live trial without an additional gameplay-policy change.
