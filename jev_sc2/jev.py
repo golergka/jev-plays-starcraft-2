@@ -1,5 +1,7 @@
 """Only Jev, via the documented OpenRouter Decisions SDK endpoint."""
 import os
+import json
+import asyncio
 import time
 from openrouter import OpenRouter
 
@@ -24,6 +26,17 @@ class Jev:
         self.cost = 0.0
 
     async def ask(self, state, questions):
+        # Conservative transport-size heuristic, not a token-count guarantee.
+        # Preserve every question/criterion and the identical fair state.
+        if len(questions) > 1 and len(json.dumps([state, questions])) > 80000:
+            items = list(questions.items())
+            middle = len(items)//2
+            self.log('jev_request_split', questions=len(items),
+                     request_chars=len(json.dumps([state, questions])))
+            halves = await asyncio.gather(
+                self.ask(state, dict(items[:middle])),
+                self.ask(state, dict(items[middle:])))
+            return {key:value for half in halves for key,value in half.items()}
         if self.max_calls is not None and self.calls + self.inflight >= self.max_calls:
             raise CallBudgetReached()
         self.inflight += 1

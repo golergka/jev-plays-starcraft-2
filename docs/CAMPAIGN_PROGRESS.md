@@ -1266,3 +1266,16 @@ not any command, worker quota or resource priority. Jev chooses grouping and act
 57 tests pass, covering phase continuity, resource switching, interrupted work,
 unknown return targets, absent-unit cleanup and unchanged legacy grouping.
 Launch one further bounded fresh attempt (maximum attempt9,2500calls) on Zero Hour.
+
+### Lab110 — ninth trial request-size failure; split large question batches
+
+Ninth run20260919T005251.873352Z stopped incomplete after five HTTP400
+max_tokens_exceeded responses, not a mission result. Prior requests showed concrete
+state around62k characters plus52k question characters as job selections expanded.
+Add recursive parallel splitting of multi-question requests above80k serialized
+characters, preserving state and every criterion exactly. This is a conservative
+size heuristic, explicitly not a token guarantee; an oversized single question
+can still fail. It adds calls and repeats state, so cost/latency need observation.
+58 tests pass including no dropped questions/criteria and normal call accounting.
+Resume same pending mission rather than resetting its progress after infrastructure
+failure; fresh attempt slot is not consumed. Runtime SDK change needs reconnect.
