@@ -1383,3 +1383,16 @@ still occur without gas overinvestment. Record UI evidence separately from absen
 protocol player_result. Run one more bounded fresh attempt12 with identical policy,
 64-loop cutoff and2500call budget. Do not force construction just to activate the
 experimental branch, and do not credit any result to an unexercised branch.
+
+### Lab120 — twelfth defeat; stop repeating an unexercised branch experiment
+
+UI confirmed defeat7:08, evacuation13:01,all structures destroyed. Report079;
+checkpoint/result record UI evidence separately from empty API results. The
+resource-category stage again had zero logged invocations. Two unchanged-policy
+trials now failed without exercising the gas/mineral hierarchy. Thus gas preference
+is not the sole cause of poor economy: role selection and regroup/continue behavior
+prevent sustained work even when only mineral harvesting is available. Do not
+attribute these defeats to the unexercised branch or repeat identical runs merely
+to hope for branch coverage. Controller has exited; both earlier victories remain
+saved. Next experiment must target general role/continuation reasoning, using
+recorded fair states before another live trial. Campaign completion remains unproven.
