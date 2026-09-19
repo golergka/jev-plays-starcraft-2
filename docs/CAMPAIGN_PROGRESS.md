@@ -1644,3 +1644,11 @@ API control ended minutes before the visible loss. Next experiment should use a
 fresh SC2 process with unchanged map and Jev policy, to separate process-state
 accumulation from a mission-specific API cutoff. Do not interpret this as proof
 that a process restart will fix it.
+
+### Lab142 — fresh-process comparison for repeated API cutoff
+
+Quit old SC2 through RequestQuit after the visible defeat and completed probe.
+Relaunch through Battle.net Play. Verified new PID73800 (13seconds uptime when
+checked), API ping5.0.16.97563,status launched. Start attempt17 with same map,
+Jev policy and64-loop cutoff,2500calls. This tests process-state accumulation;
+no assertion that it is the cause. Preserve two verified campaign victories.
