@@ -1012,3 +1012,19 @@ its output on the active trace. Refresh README and the consolidated experiment
 report: two wins, three Zero Hour defeats, atomic camera reload, checked resume,
 and remaining model/harness limitations. These are reporting/documentation changes
 only; the current policy remains unchanged.
+
+## Lab 094: smaller contribution context was not clearly better
+
+TypeSafe's Jev 1.13 guidance recommends reducing irrelevant context and indirection:
+https://docs.typesafe.ai/model-jaggedness/jev-1.13 . Test this locally rather than
+assuming all filtering helps. On the first three worker-contribution states from
+the frozen run, retain only the queried selection in four type/capability fact
+dictionaries while leaving other fields and the question unchanged.
+
+State size fell from 20–22k characters to 5–7k. Income probabilities changed
+.22→.06, .11→.13, .24→.18; one top answer changed from support to positioning,
+with the other two unchanged. These six calls ($0.001323294) do not support this
+filter as an improvement. Other groups' facts can contain useful economic and
+support context; smaller input alone is not an accuracy guarantee. Do not deploy
+this probe transformation. Evidence: `065-selection-context-probe.json`.
+The live player remains frozen throughout this attempt.

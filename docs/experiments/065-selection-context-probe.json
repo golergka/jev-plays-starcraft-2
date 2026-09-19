@@ -1,0 +1,115 @@
+{
+  "source": "runs/20260919T001135.197354Z/events.jsonl",
+  "question": "purpose_SCV",
+  "pairs": [
+    {
+      "original_state_chars": 20173,
+      "scoped_state_chars": 4859,
+      "sample": 0,
+      "recorded_strategy": {
+        "loop": 2,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.63,
+        "probabilities": {
+          "positioning": 0.7,
+          "continue": 0.06,
+          "combat": 0.0,
+          "income": 0.22,
+          "individual": 0.02
+        }
+      },
+      "scoped": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.84,
+        "probabilities": {
+          "combat": 0.0,
+          "positioning": 0.87,
+          "continue": 0.06,
+          "individual": 0.01,
+          "income": 0.06
+        }
+      }
+    },
+    {
+      "original_state_chars": 20293,
+      "scoped_state_chars": 5379,
+      "sample": 1,
+      "recorded_strategy": {
+        "loop": 248,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "scoped": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.44,
+        "probabilities": {
+          "continue": 0.3,
+          "other": 0.02,
+          "combat": 0.0,
+          "positioning": 0.54,
+          "income": 0.13,
+          "individual": 0.01
+        }
+      },
+      "original": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.51,
+        "probabilities": {
+          "continue": 0.14,
+          "combat": 0.0,
+          "positioning": 0.15,
+          "individual": 0.01,
+          "other": 0.59,
+          "income": 0.11
+        }
+      }
+    },
+    {
+      "original_state_chars": 22022,
+      "scoped_state_chars": 6664,
+      "sample": 2,
+      "recorded_strategy": {
+        "loop": 487,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.26,
+        "probabilities": {
+          "other": 0.29,
+          "combat": 0.0,
+          "income": 0.24,
+          "continue": 0.08,
+          "individual": 0.01,
+          "positioning": 0.38
+        }
+      },
+      "scoped": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.35,
+        "probabilities": {
+          "income": 0.18,
+          "other": 0.02,
+          "positioning": 0.47000000000000003,
+          "combat": 0.0,
+          "continue": 0.32,
+          "individual": 0.01
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.001323294,
+  "method": "First three recorded states. Restrict selection/type/capability dictionaries to the selection being asked about; retain all other fields and exact question. Alternate pair order; no game commands."
+}
