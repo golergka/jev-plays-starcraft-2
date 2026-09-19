@@ -1229,3 +1229,16 @@ are not proof of useful completion. Full report071. Previous two victories remai
 unchanged. The orchestrator automatically started eighth fresh attempt
 20260919T004542.876416Z, verified advancing at loop804 with40 owned units.
 This attempt starts with current runtime policy; leave it unchanged for evaluation.
+
+### Lab107 — distinguish harvest cycles from interrupted work
+
+Read-only inspection of eighth-run full-state unit records through loop3371 found
+27 observed Gather→Return and22 Return→Gather worker-order transitions, plus10
+Gather→Move and5 Return→Move transitions. Repeated state snapshots are not
+independent samples or a time-weighted utilization measure. Natural gather/return
+cycles demonstrate the harvest control works; some later movement interrupts it.
+The new by_current_order grouping treats gather and return as different jobs and
+unit targets also differ between deposit and resource. Thus stable work can change
+selection identity, undermining retained contribution commitments. This is a
+control abstraction limitation to address after the frozen trial, not evidence
+that every return transition is an interruption. Runtime policy remains unchanged.
