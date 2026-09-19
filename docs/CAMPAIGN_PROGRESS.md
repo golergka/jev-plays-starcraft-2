@@ -3320,3 +3320,17 @@ Three single pairs do not establish statistical significance. Nevertheless this
 version adds a call without evidence it remedies underspending; do not deploy.
 Script scripts/probe_investment_stages.py; full outputs in
  docs/experiments/227-investment-stages.json. Keep current live policy unchanged.
+
+### Lab228 — compact investment context increases saving; retain current policy
+
+Six-call paired lossy context ablation on same three recorded states. Retain
+questions,objective,resources,force counts/health/orders/cargo,observed capabilities,
+outcome history and strategy; omit catalog,raw action feedback,spatial dispersion
+and duplicate project/support lists. State chars20704/20605/21013 become
+9790/9865/9839. Save probabilities.42→.53,.41→.52,.26→.32;all top save.
+Cost$.001962198. This is not equivalent-information compression and three pairs
+cannot establish significance. No evidence for deploying it. Script and outputs
+saved as probe_investment_compact.py and228-investment-compact.json.
+Next full run retains current policy with60% pacing from startup to obtain an
+uninterrupted comparison; prior18:40 attempt had two budget stops and memory
+resets. No further paid framing probes until new live evidence changes the question.

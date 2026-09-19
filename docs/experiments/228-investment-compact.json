@@ -1,0 +1,212 @@
+{
+  "source": "runs/20260919T204546.942041Z/events.jsonl",
+  "method": "First/middle/last eligible recorded save decisions with >=500 minerals. Identical questions; compact variant omits catalog, duplicate project lists, spatial detail, and raw action feedback while retaining objective, resources, force counts/health/orders/cargo, capabilities, outcome history and strategy. Lossy context ablation, not equivalent facts. Alternate request order. Six calls maximum. No gameplay commands. Single draws, not statistical evidence.",
+  "pairs": [
+    {
+      "recorded_time": 1789850913.1081522,
+      "resources": {
+        "minerals": 576,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 30,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 5,
+        "supply_blocked": false
+      },
+      "state_chars": {
+        "original": 20704,
+        "compact": 9790
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.42,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "project_1": 0.17,
+            "project_7": 0.01,
+            "project_9": 0.08,
+            "project_2": 0.03,
+            "project_6": 0.02,
+            "project_8": 0.01,
+            "batch_4": 0.05,
+            "project_0": 0.01,
+            "project_3": 0.0,
+            "save": 0.42,
+            "batch_9": 0.09,
+            "project_5": 0.01,
+            "project_10": 0.08,
+            "project_4": 0.02
+          }
+        }
+      },
+      "compact": {
+        "choice": "save",
+        "no_purchase_probability": 0.53,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "project_9": 0.07,
+            "project_0": 0.01,
+            "project_4": 0.02,
+            "project_7": 0.0,
+            "project_1": 0.12,
+            "project_2": 0.04,
+            "project_5": 0.02,
+            "project_8": 0.0,
+            "project_6": 0.01,
+            "save": 0.53,
+            "project_10": 0.07,
+            "batch_9": 0.07,
+            "project_3": 0.0,
+            "batch_4": 0.04
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789851091.274452,
+      "resources": {
+        "minerals": 1575,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 27,
+        "food_cap": 35,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 8,
+        "supply_blocked": false
+      },
+      "state_chars": {
+        "original": 20605,
+        "compact": 9865
+      },
+      "compact": {
+        "choice": "save",
+        "no_purchase_probability": 0.52,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.48,
+          "probabilities": {
+            "project_4": 0.02,
+            "save": 0.52,
+            "project_2": 0.03,
+            "project_9": 0.06,
+            "project_1": 0.11,
+            "project_7": 0.0,
+            "project_10": 0.06,
+            "batch_4": 0.03,
+            "project_6": 0.01,
+            "project_5": 0.05,
+            "batch_9": 0.1,
+            "project_3": 0.0,
+            "project_0": 0.01,
+            "project_8": 0.0
+          }
+        }
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.41,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "save": 0.41,
+            "project_10": 0.07,
+            "project_5": 0.07,
+            "project_0": 0.01,
+            "project_4": 0.03,
+            "project_3": 0.0,
+            "project_6": 0.01,
+            "project_1": 0.1,
+            "project_9": 0.07,
+            "project_8": 0.01,
+            "batch_4": 0.05,
+            "project_7": 0.01,
+            "batch_9": 0.13,
+            "project_2": 0.03
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789851360.422168,
+      "resources": {
+        "minerals": 3319,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 600.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 28,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 7,
+        "supply_blocked": false
+      },
+      "state_chars": {
+        "original": 21013,
+        "compact": 9839
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.26,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "project_7": 0.01,
+            "project_6": 0.02,
+            "project_8": 0.01,
+            "batch_4": 0.19,
+            "project_9": 0.07,
+            "project_3": 0.0,
+            "save": 0.26,
+            "project_1": 0.14,
+            "project_10": 0.07,
+            "project_4": 0.14,
+            "project_2": 0.02,
+            "project_5": 0.01,
+            "batch_9": 0.05,
+            "project_0": 0.01
+          }
+        }
+      },
+      "compact": {
+        "choice": "save",
+        "no_purchase_probability": 0.32,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "project_7": 0.01,
+            "batch_4": 0.15,
+            "project_9": 0.05,
+            "save": 0.32,
+            "project_10": 0.09,
+            "project_4": 0.1,
+            "project_2": 0.05,
+            "project_6": 0.01,
+            "project_1": 0.13,
+            "project_8": 0.01,
+            "project_5": 0.01,
+            "batch_9": 0.05,
+            "project_0": 0.01,
+            "project_3": 0.01
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.001962198
+}
