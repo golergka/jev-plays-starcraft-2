@@ -1108,3 +1108,20 @@ def test_shared_attack_move_description_compacts_distances_without_changing_orde
             return {'Unit':{'choice':'group_attack_move_join_99'}}
     commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
     assert commands==[u['candidates'][0]['command'] for u in units]
+
+
+def test_friendly_destination_facts_use_only_current_visible_local_enemies():
+    from jev_sc2.view import friendly_destination_facts
+    anchor=raw.Unit(tag=1,alliance=raw.Self,health=75,health_max=100)
+    anchor.pos.x=10;anchor.pos.y=10
+    entities=[]
+    for tag,alliance,display,x in [(2,raw.Enemy,raw.Visible,22),
+                                  (3,raw.Enemy,raw.Visible,23),
+                                  (4,raw.Enemy,raw.Hidden,10),
+                                  (5,raw.Enemy,raw.Snapshot,10),
+                                  (6,raw.Ally,raw.Visible,10)]:
+        e=raw.Unit(tag=tag,unit_type=999,alliance=alliance,display_type=display)
+        e.pos.x=x;e.pos.y=10;entities.append(e)
+    assert friendly_destination_facts(anchor,entities,{999:'ExampleEnemy'}) == (
+        'anchor health 75/100; visible enemies within 12 of anchor: 1 ExampleEnemy')
+    assert friendly_destination_facts(anchor,entities[1:],{}).endswith('none observed')

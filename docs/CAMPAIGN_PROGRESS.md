@@ -3437,3 +3437,16 @@ The supported failure is persistent choice of the same forward area despite
 visible enemies destroying the base. General spatial context around offered
 friendly anchors (health and currently visible nearby threats) is a potential
 next experiment, giving Jev measured destination facts rather than human tactics.
+
+### Lab235 — expose measured local conditions on friendly movement destinations
+
+Add anchor health and visible enemy type counts within12map units to friendly
+move/attack-move candidate descriptions. Same facts for every acting unit, computed
+once per anchor. Uses only currently visible enemies; hidden,snapshot,ally and
+outside-radius entities excluded. No threat score, route, priority, forced order,
+mission identifier or unit-name policy. Empty neighborhood means none observed,
+not safe. Keeps exact commands and all choices. Existing distance normalization
+can still combine shared text. This adds context/cost; test whether clearer local
+relations help choices enough to justify it.123tests pass, including visibility
+and radius boundary. Prior trial terminal; next run uses this from startup.
+Read-only retained ledger$.044499798/limit$.130777725 is below60%headroom threshold.

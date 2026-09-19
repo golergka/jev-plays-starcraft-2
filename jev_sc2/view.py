@@ -1,5 +1,6 @@
 """Player-visible facts, mechanical action candidates and legality checks."""
 import math
+from collections import Counter
 from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc, query_pb2 as query, data_pb2 as data_proto
 
 
@@ -188,6 +189,16 @@ def research_candidates(unit, legal, catalog, upgrades, completed):
     return result
 
 
+def friendly_destination_facts(unit, entities, names):
+    """Local observed facts, not a destination recommendation or safety score."""
+    nearby = Counter(names.get(e.unit_type, str(e.unit_type)) for e in entities
+                     if e.alliance == raw.Enemy and e.display_type == raw.Visible
+                     and math.hypot(e.pos.x-unit.pos.x, e.pos.y-unit.pos.y) <= 12)
+    enemies = ', '.join(f'{count} {kind}' for kind,count in sorted(nearby.items())) or 'none observed'
+    return (f'anchor health {unit.health:g}/{unit.health_max:g}; '
+            f'visible enemies within 12 of anchor: {enemies}')
+
+
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
@@ -205,6 +216,7 @@ async def make_view(client, observation, data, info, objective):
         abilities=[query.RequestQueryAvailableAbilities(unit_tag=u.tag) for u in own],
         ignore_resource_requirements=True))
     names = {u.unit_id: u.name for u in data.units}
+    destination_facts = {u.tag:friendly_destination_facts(u, visible, names) for u in own}
     unit_catalog = {u.unit_id:u for u in data.units}
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
@@ -410,11 +422,11 @@ async def make_view(client, observation, data, info, objective):
                     continue
                 distance = math.hypot(teammate.pos.x-unit.pos.x, teammate.pos.y-unit.pos.y)
                 candidates.append({'id': f'join_{teammate.tag}',
-                                   'description': f'Move to friendly {names.get(teammate.unit_type, str(teammate.unit_type))} tag {teammate.tag}, distance {distance:.1f}',
+                                   'description': f'Move to friendly {names.get(teammate.unit_type, str(teammate.unit_type))} tag {teammate.tag}, distance {distance:.1f}; {destination_facts[teammate.tag]}',
                                    'command': command(move, point=[teammate.pos.x, teammate.pos.y])})
                 if attack is not None:
                     candidates.append({'id':f'attack_move_join_{teammate.tag}',
-                        'description':f'Attack-move to friendly {names.get(teammate.unit_type,str(teammate.unit_type))} tag {teammate.tag} observed position, engaging enemies encountered; distance {distance:.1f}',
+                        'description':f'Attack-move to friendly {names.get(teammate.unit_type,str(teammate.unit_type))} tag {teammate.tag} observed position, engaging enemies encountered; distance {distance:.1f}; {destination_facts[teammate.tag]}',
                         'command':command(attack,point=[teammate.pos.x,teammate.pos.y])})
             for label, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
                 x,y = unit.pos.x+dx, unit.pos.y+dy
