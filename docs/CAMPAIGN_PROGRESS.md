@@ -2247,3 +2247,28 @@ over the sampled alternative (loops7696,7727,7773). Artifact:
 docs/experiments/170-investment-comparison.json. This small descriptive probe does
 not establish strategic utility or a better live policy; two preferred choices
 were save. No game commands or live-policy change resulted from the probe.
+
+### Lab171 — provider funding stop; preserve Outlaws for continuation
+
+Outlaws run20260919T051054.128301Z ended incomplete when OpenRouter rejected paid
+inference. Recorded1085 calls,$0.732872406; replay saved normally. The key still
+has spending-cap room, but the account balance is exhausted (checked read-only;
+account-wide billing details are not published here). Requested a top-up from the
+user. No alternative model or non-Jev gameplay policy was substituted.
+
+Last controlled tick11152:38SCVs,8Marines,9Depots,7Barracks,1Refinery,1CommandCenter.
+Three isolated ReadTimeout errors occurred and recovered before the billing stop.
+No campaign ending marker was observed. This is not a defeat or a verified win.
+After confirming the controller process exited, opened the game menu to preserve
+the running mission. UI13:44; two API observations one second apart both loop13191,
+status in_game,68 owned units. Pause evidence saved in the run's paused.json.
+Do not restart this mission simply because funding stopped.
+
+Resume after confirming credits are available: return from the game menu, then
+attach without --map to preserve this exact world. Use the same objective and
+camera, with at most1915 additional calls to retain the original3000-call cap:
+uv run python -m jev_sc2 --attach --seconds 690 --max-calls 1915 --max-age-loops 128 --follow-camera --objective 'Destroy the Dominion Base.'
+The current map must remain traynor02-outcomes-lab169c.SC2Map. The new reconnect
+monitor can arm from its active ending bank. Verify actual UI outcome before
+clearing the remaining checkpoint review gate. All three campaigns remain the
+goal; funding currently prevents further Jev-driven play.
