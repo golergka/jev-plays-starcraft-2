@@ -1,0 +1,25 @@
+// Observability only. The original campaign continues its normal ending.
+// BANK_NAME is replaced with a unique build-specific name by the local builder.
+bank JevOutcomeBank;
+bool JevOutcomeFinal = false;
+
+void JevOutcomeRecord (string result) {
+    if (JevOutcomeBank == null || JevOutcomeFinal) { return; }
+    BankValueSetFromString(JevOutcomeBank, "Outcome", "result", result);
+    BankValueSetFromInt(JevOutcomeBank, "Outcome", "engine_time", CurrentSynchronousGameTimeGet());
+    BankSave(JevOutcomeBank);
+    if (result != "active") { JevOutcomeFinal = true; }
+}
+
+void JevOutcomeInit () {
+    JevOutcomeBank = BankLoad("BANK_NAME", 1);
+    JevOutcomeFinal = false;
+    JevOutcomeRecord("active");
+}
+
+void JevGameOver (int player, int result, bool showDialog, bool showScore) {
+    if (player == 1 && result == c_gameOverDefeat) {
+        JevOutcomeRecord("defeat");
+    }
+    GameOver(player, result, showDialog, showScore);
+}

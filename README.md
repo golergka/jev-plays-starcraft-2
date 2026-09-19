@@ -70,8 +70,9 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
   --objective 'Destroy the Logistics Headquarters. Raynor must survive.'
 ```
 
-Omit `--map` to resume the running mission. API-reported wins in Liberation Day
-and The Outlaws are **under verification review**: an isolated test proved that
+Omit `--map` to resume the running mission. Liberation Day has a fresh **UI-verified
+victory at 3:44**, using the objective compatibility adapter (lab169). The earlier
+Outlaws API win remains **under verification review**: an isolated test proved that
 completing or failing a bonus objective can report victory or defeat for every
 player and terminate API control while the main objective remains active. Zero
 Hour remains uncompleted after eighteen fresh attempts. The progression journal
@@ -130,8 +131,9 @@ scenario dependencies, full ability coverage and unattended UI recovery remain
 unfinished. Sequence completion means only the explicitly listed missions.
 
 The active evaluation checkpoint is `runs/campaign-lab069/progress.json`. To resume
-that sequence after its process exits, use the same `--state` path. Its verified
-Liberation Day and Outlaws wins are preserved; failures in Zero Hour do not
+that sequence after its process exits, use the same `--state` path. Liberation Day
+is now independently verified; Outlaws is still gated pending verification. Historical
+attempts are preserved; failures in Zero Hour do not
 return to the opening. Appending missions preserves the completed prefix when those completed
 scenario definitions are unchanged.
 

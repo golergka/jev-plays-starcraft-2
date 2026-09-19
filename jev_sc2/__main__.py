@@ -15,6 +15,7 @@ from .jev import Jev, CallBudgetReached
 from .reload import PlayerLoader
 from .view import make_view, validate_commands
 from .camera import choose_shot
+from .outcome import OutcomeMonitor
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -71,6 +72,11 @@ async def run(args):
             outcome['status'] = result_for_player(fields['players'],outcome['player_id'])
             if outcome['status']=='incomplete':
                 outcome['reason']='API result does not verify campaign completion; inspect objective/UI outcome'
+        elif event=='campaign_outcome':
+            outcome['status'] = fields['status'] if fields.get('credit_enabled') else 'incomplete'
+            outcome['verification'] = fields
+            if not fields.get('credit_enabled'):
+                outcome['reason'] = 'Instrumented mission ending detected; experimental build requires independent UI verification'
         elif event=='replay_unavailable':
             outcome['replay_error'] = fields['error']
         elif event=='api_bookmark_restored':
@@ -113,6 +119,7 @@ async def run(args):
             objective=args.objective,seconds=args.seconds,max_calls=args.max_calls,
             max_age_loops=args.max_age_loops)
         attached_info = None
+        outcome_monitor = OutcomeMonitor.for_map(args.map, time.time())
         if args.map:
             log('loading_map',map=Path(args.map).name,opponent=args.opponent)
             joined = await client.start(args.map,args.opponent,getattr(args,'race','terran').capitalize())
@@ -162,6 +169,11 @@ async def run(args):
             except Exception as exc:
                 log('reload_error',error=str(exc),retained_revision=loader.revision)
             observation = await client.observe()
+            if outcome_monitor:
+                ending = outcome_monitor.poll()
+                if ending:
+                    log('campaign_outcome',**ending,loop=observation.observation.game_loop)
+                    break
             if observation.action_errors:
                 log('engine_action_error',errors=[str(e) for e in observation.action_errors])
             if observation.player_result or client.status == sc.ended:

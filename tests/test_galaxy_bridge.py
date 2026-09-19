@@ -54,3 +54,23 @@ def test_dependency_audit_rejects_unresolvable_remote_only_dependencies():
         dependencies(document)
     assert dependencies(document.replace(b'bnet:Example/0.0/1', b'bnet:Example/0.0/1,file:Mods/Example.SC2Mod')) == [
         'mods\\example.sc2mod']
+
+
+def test_outcome_hook_preserves_original_call_and_ignores_declarations_and_comments():
+    from jev_sc2.galaxy_bridge import append_after_unique_call, prepend_to_init_map
+    source = 'void Save();\nvoid InitMap () { /* Save(); */ Save(); }'
+    result = append_after_unique_call(source, 'Save', 'Record();')
+    assert result == 'void Save();\nvoid InitMap () { /* Save(); */ Save();\n    Record(); }'
+    assert prepend_to_init_map(result, 'Start();') == result.replace('{ /*', '{\n    Start(); /*')
+    with pytest.raises(ValueError):
+        append_after_unique_call('Save(); Save();', 'Save', 'Record();')
+    with pytest.raises(ValueError):
+        append_after_unique_call('Save(argument);', 'Save', 'Record();')
+
+
+def test_gameover_interception_is_opt_in_and_preserves_native_declaration():
+    source = 'native void GameOver(int p, int r, bool d, bool s); GameOver(1, result, true, false);'
+    assert rewrite_objective_calls(source) == (source, {})
+    rewritten, counts = rewrite_objective_calls(source, extra_calls=('GameOver',))
+    assert rewritten == source.replace('; GameOver', '; JevGameOver')
+    assert counts == {'GameOver':1}

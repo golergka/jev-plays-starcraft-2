@@ -1,9 +1,9 @@
 # Three-campaign objective
 
 Scope confirmed by the user: Wings of Liberty, Heart of the Swarm, and Legacy of
-the Void. No campaign has been completed. Two previously credited API victories
-are under independent verification review after lab 163 demonstrated false API
-terminal results from optional objective transitions.
+the Void. No campaign has been completed. Liberation Day has a fresh, UI-verified
+victory (lab169). The previously credited Outlaws API victory remains under
+review after lab163 demonstrated false results from objective transitions.
 
 The user subsequently authorized individual campaign missions played in sequence
 with progression recorded here. Native campaign controls and account achievement
@@ -12,7 +12,7 @@ Only verified victories advance this journal; merely loading a later map does no
 
 | Campaign | Mission | Current evidence |
 | --- | --- | --- |
-| Wings of Liberty | Liberation Day (`traynor01`) | **API victory; verification under review**, loop 3512; labs 048, 163 |
+| Wings of Liberty | Liberation Day (`traynor01`) | **Verified victory**, actual mission score screen, 3:44; fresh Jev run with objective compatibility adapter, lab169 |
 | Wings of Liberty | The Outlaws (`traynor02`) | **API victory; verification under review**; labs 079, 163 |
 | Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
 | Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
@@ -2169,3 +2169,49 @@ disabled; observe actual mission-ending UI and preserve replay/outcome evidence.
 The per-map sidecars explicitly retain experimental=true and campaign_credit=false
 until broader equivalence/outcome handling is verified. Two additional dependency
 parser tests pass; no gameplay policy changes in this experiment.
+
+### Lab169 — Liberation Day genuinely won; detect real campaign endings
+
+Fresh unchanged Jev policy on the objective-adapted Liberation Day reached the
+actual VICTORY score screen: mission time 3:44, Dominion Marines killed20/22,
+civilians liberated59/61, units lost9, holoboards0/6, Raynor kills6. Verified via
+computer-use screenshot, independently of API results. Run:
+runs/20260919T045655.274174Z. 470 Jev calls, $0.162332226. Replay saved24781bytes;
+map identity checked through GameInfo. ui-outcome.json records screen evidence;
+result.json reconstructed from event totals and that independent ending evidence.
+This verifies a fresh main-objective win, not the historical API-only win.
+Removed Liberation Day from the checkpoint review gate; Outlaws remains under
+review. No campaign is complete. Optional holoboards were not completed.
+
+API remained in_game even on the victory screen (observed loop7966), and the
+controller continued to spend calls. Stopped that owned controller with SIGINT
+after preserving the UI evidence, then saved its replay via the API. This shows
+we need a genuine ending channel as well as suppressing objective-based false
+ends. Camera logs and screenshots showed mobile forces and combat, rather than
+an idle base. Temporary loss of owned observations during a cinematic recovered.
+
+Added optional --record-outcomes to the builder. For the audited Liberty campaign
+library, a unique call to TS_SaveMissionCompletion inside RunMissionVictorySequence
+is followed by a bank marker; original victory logic continues. Player1 GameOver
+Defeat is similarly recorded before the original call. InitMap creates a unique
+build-specific bank with active state. No objective success alone writes victory.
+Other campaign libraries fail closed until their ending semantics are audited.
+
+OutcomeMonitor verifies map hash and bank filename, requires a freshly observed
+active state before any terminal marker, and tolerates incomplete XML writes.
+The harness stops on the marker and saves the replay. Experimental sidecars still
+have campaign_credit=false, so detected endings remain incomplete pending UI
+verification; this avoids silently advancing from a new unvalidated hook.
+
+Native marker tests passed for victory and player-defeat, each after fresh active:
+/tmp/jev-outcome-victory-lab169c.json and /tmp/jev-outcome-defeat-lab169.json.
+The first marker test could not find its bank: SC2 removes underscores from bank
+filenames. Changed generated names to alphanumerics and retested. Raw native
+DateTime value is now labeled engine_time, not a simulation loop. These synthetic
+tests have no campaign credit and issue no Jev/unit orders.
+
+The first transition away from the genuine victory screen disconnected and
+exited SC2. Confirmed process absent, relaunched through Battle.net, then ran the
+marker tests successfully. New process PID84249. Prepared Outlaws with preserved
+mission rules and ending markers: maps/traynor02-outcomes-lab169c.SC2Map. Next run
+will verify both the disputed second win and marker timing against actual UI.

@@ -13,10 +13,11 @@ import re
 import shutil
 import sys
 import tempfile
+import uuid
 import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jev_sc2.galaxy_bridge import TOKEN, rewrite_objective_calls
+from jev_sc2.galaxy_bridge import TOKEN, rewrite_objective_calls, append_after_unique_call, prepend_to_init_map
 
 P, U, B = c.c_void_p, c.c_uint32, c.c_char_p
 
@@ -154,24 +155,43 @@ def build(args):
             return candidates[-1]
 
         records, changed = {}, {}
+        # SC2 normalizes punctuation out of bank filenames; use only alphanumerics.
+        outcome_bank = 'JevOutcome' + uuid.uuid4().hex if args.record_outcomes else None
+        victory_hooks = []
         def visit(name):
             if name in records:
                 return
             data, origin = resolve(name)
             source = data.decode('utf-8-sig')
-            rewritten, counts = rewrite_objective_calls(source)
+            rewritten, counts = rewrite_objective_calls(source, extra_calls=('GameOver',) if outcome_bank else ())
+            hooks = []
+            if outcome_bank and origin.lower() == 'campaigns\\libertystory.sc2campaign\\base.sc2data\\triggerlibs\\campaignlib.galaxy':
+                # Installed source audit: this unique call is in the genuine
+                # mission-victory sequence, after the development-mode guard.
+                rewritten = append_after_unique_call(rewritten, 'libCamp_gf_TS_SaveMissionCompletion',
+                                                       'JevOutcomeRecord("victory");')
+                victory_hooks.append(name)
+                hooks.append('after campaign victory completion record')
+            if outcome_bank and name == 'mapscript.galaxy':
+                rewritten = prepend_to_init_map(rewritten, 'JevOutcomeInit();')
+                hooks.append('initialize outcome bank')
             records[name] = {'origin':origin, 'sha256':hashlib.sha256(data).hexdigest(),
-                             'replacements':counts}
+                             'replacements':counts, 'outcome_hooks':hooks}
             for dependency in includes(source):
                 visit(dependency)
-            if counts:
+            if counts or hooks:
                 output = ('include "TriggerLibs/JevObjectiveBridge"\n' + rewritten).encode()
                 changed[name] = output
                 records[name]['output_sha256'] = hashlib.sha256(output).hexdigest()
         visit('mapscript.galaxy')
+        if outcome_bank and len(victory_hooks) != 1:
+            raise ValueError('Outcome recording requires the audited Wings of Liberty campaign library')
         if not changed:
             raise ValueError('No objective calls found; refusing a meaningless build')
         bridge = (Path(__file__).with_name('objective_state_bridge.galaxy')).read_bytes()
+        if outcome_bank:
+            bridge += b'\n' + Path(__file__).with_name('mission_outcome_bridge.galaxy').read_text().replace(
+                'BANK_NAME', outcome_bank).encode()
         changed['triggerlibs\\jevobjectivebridge.galaxy'] = b'include "TriggerLibs/natives"\n' + bridge
         shutil.copy2(args.source, args.destination)
         archive = P()
@@ -191,6 +211,7 @@ def build(args):
                   'source':str(args.source), 'source_sha256':hashlib.sha256(args.source.read_bytes()).hexdigest(),
                   'output_sha256':hashlib.sha256(args.destination.read_bytes()).hexdigest(),
                   'modules':modules, 'scripts':records, 'changed':list(changed),
+                  'outcome_bank':outcome_bank,
                   'bridge_sha256':hashlib.sha256(bridge).hexdigest()}
         report_path.write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps({'map':str(args.destination),'audited_scripts':len(records),
@@ -206,4 +227,6 @@ if __name__ == '__main__':
     parser.add_argument('--storm', required=True, type=Path)
     parser.add_argument('--casc', required=True, type=Path)
     parser.add_argument('--storage', type=Path, default=Path('/Applications/StarCraft II'))
+    parser.add_argument('--record-outcomes', action='store_true',
+                        help='Experimental Wings of Liberty hooks: record real victory sequence/player defeat to a unique local bank')
     build(parser.parse_args())

@@ -18,7 +18,7 @@ TOKEN = re.compile(
 )
 
 
-def rewrite_objective_calls(source):
+def rewrite_objective_calls(source, extra_calls=()):
     """Return rewritten source and per-native replacement counts.
 
     Reject objective declarations outside the native library rather than silently
@@ -32,7 +32,7 @@ def rewrite_objective_calls(source):
     for position, index in enumerate(significant):
         token = tokens[index]
         name = token.group()
-        if token.lastgroup != 'identifier' or name not in OBJECTIVE_CALLS:
+        if token.lastgroup != 'identifier' or name not in OBJECTIVE_CALLS | frozenset(extra_calls):
             continue
         if position + 1 >= len(significant) or tokens[significant[position+1]].group() != '(':
             raise ValueError(f'Unsupported reference to {name}; expected a direct call')
@@ -45,3 +45,33 @@ def rewrite_objective_calls(source):
         replacements[index] = 'Jev' + name
         counts[name] += 1
     return ''.join(replacements.get(i, token.group()) for i, token in enumerate(tokens)), dict(counts)
+
+
+def append_after_unique_call(source, name, statement):
+    """Instrument one audited zero-argument call; reject missing/changed sites."""
+    tokens = [t for t in TOKEN.finditer(source) if t.lastgroup not in {'space', 'comment'}]
+    sites = []
+    for i, token in enumerate(tokens):
+        if token.lastgroup != 'identifier' or token.group() != name:
+            continue
+        if i and tokens[i-1].group() in {'void','int','bool','text'}:
+            continue
+        if [t.group() for t in tokens[i+1:i+4]] != ['(',')',';']:
+            raise ValueError(f'Unsupported instrumentation site for {name}')
+        sites.append(tokens[i+3].end())
+    if len(sites) != 1:
+        raise ValueError(f'Expected one audited {name} call, found {len(sites)}')
+    end = sites[0]
+    return source[:end] + '\n    ' + statement + source[end:]
+
+
+def prepend_to_init_map(source, statement):
+    tokens = [t for t in TOKEN.finditer(source) if t.lastgroup not in {'space','comment'}]
+    sites = []
+    for i, token in enumerate(tokens):
+        if token.group() == 'InitMap' and [t.group() for t in tokens[max(0,i-1):i+4]] == ['void','InitMap','(',')','{']:
+            sites.append(tokens[i+3].end())
+    if len(sites) != 1:
+        raise ValueError('Expected exactly one InitMap definition')
+    end = sites[0]
+    return source[:end] + '\n    ' + statement + source[end:]
