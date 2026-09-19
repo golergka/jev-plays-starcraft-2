@@ -181,7 +181,9 @@ Use equal start/target values for a constant allowance. Malformed settings fail
 closed. The active experiment's settings live in that ignored local JSON file.
 
 The harness paces new decision cycles according to measured decision cost and the
-current allowance. Planned pacing is explicit in `spend_pacing`: target interval,
+80% of the current allowance, leaving headroom for concurrent request reservations
+and variable decision costs. This reduces planned decision frequency; it does not
+guarantee admission. Planned pacing is explicit in `spend_pacing`: target interval,
 requested interval and planned idle seconds. Reports expose median/maximum target
 interval and total planned idle time; these are not measures of tactical success.
 

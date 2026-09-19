@@ -246,14 +246,26 @@ def order_state(state):
     compact = presentation_coordinates(state)
     # A columnar roster preserves every field while avoiding the same keys once
     # per unit. This matters when large economies exceed Jev's context window.
-    units = compact.get('units')
-    if units and all(isinstance(unit, dict) for unit in units):
-        columns = list(dict.fromkeys(key for unit in units for key in unit))
-        compact['units'] = {
-            'encoding': 'Each row is one unit; values correspond to columns in order.',
-            'columns': columns,
-            'rows': [[unit.get(key) for key in columns] for unit in units],
-        }
+    for field, noun in (('units','unit'),('visible_entities','visible entity'),
+                        ('last_known_entities','stale entity')):
+        items = compact.get(field)
+        if (isinstance(items,list) and items and all(isinstance(item,dict) for item in items)
+                and all(item.keys()==items[0].keys() for item in items)):
+            columns = list(items[0])
+            compact[field] = {
+                'encoding': f'Each row is one {noun}; values correspond to columns in order.',
+                'columns':columns,
+                'rows':[[item[key] for key in columns] for item in items],
+            }
+    for field in ('type_selection_facts','unit_type_facts'):
+        mapping = compact.get(field)
+        if isinstance(mapping,dict) and len(mapping)>1 and all(isinstance(v,dict) for v in mapping.values()):
+            values=list(mapping.values())
+            if all(value.keys()==values[0].keys() for value in values):
+                columns=list(values[0])
+                compact[field]={'encoding':'Each row begins with its type name, followed by values in column order.',
+                    'columns':['type_name']+columns,
+                    'rows':[[name]+[value[key] for key in columns] for name,value in mapping.items()]}
     repeated = {'available_projects', 'available_support_abilities', 'available_build_abilities'}
     compact['selection_facts'] = {name:{k:v for k,v in facts.items() if k not in repeated}
                                   for name,facts in compact.get('selection_facts',{}).items()}

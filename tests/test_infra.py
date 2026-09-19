@@ -370,7 +370,9 @@ def test_jev_can_choose_a_mixed_combat_selection_without_unit_name_rules():
                 assert 'coordination' in questions
                 return {'strategy':{'choice':'attack'},'coordination':{'choice':'mobile_combat'}}
             assert state['selection_facts']['MobileCombat']['count']==2
-            assert state['type_selection_facts']['Alpha']['count']==1
+            table=state['type_selection_facts']
+            types={row[0]:dict(zip(table['columns'][1:],row[1:])) for row in table['rows']}
+            assert types['Alpha']['count']==1
             if 'purpose_MobileCombat' in questions:
                 return {'purpose_MobileCombat':{'choice':'combat'}}
             return {'MobileCombat':{'choice':'group_attack_move_north'}}
@@ -807,7 +809,8 @@ def test_order_context_deduplicates_capabilities_but_preserves_jobs_and_targets(
         'units':[{'tag':1,'position':[2,3]}],'visible_entities':[{'tag':9}]}
     compact=order_state(source)
     assert compact['selection_facts']['Worker / Harvest cycle']=={'count':3,'current_order_counts':{'Gather':3}}
-    for key in ('type_selection_facts','visible_entities'):assert compact[key]==source[key]
+    assert compact['type_selection_facts']==source['type_selection_facts']
+    assert [dict(zip(compact['visible_entities']['columns'],row)) for row in compact['visible_entities']['rows']]==source['visible_entities']
     assert [dict(zip(compact['units']['columns'], row)) for row in compact['units']['rows']]==source['units']
     assert 'available_projects' in source['selection_facts']['Worker / Harvest cycle']
 
@@ -910,7 +913,7 @@ def test_order_context_rounds_spatial_text_without_mutating_execution_facts():
     result=order_state(source)
     unit=dict(zip(result['units']['columns'],result['units']['rows'][0]))
     assert unit['position']==[53.72,21.01]
-    assert result['visible_entities'][0]['position']==[1.12,2.99]
+    assert dict(zip(result['visible_entities']['columns'],result['visible_entities']['rows'][0]))['position']==[1.12,2.99]
     assert unit['tag']==4399038467
     assert unit['health_fraction']==0.123456
     assert source['units'][0]['position'][0]==53.71894073486328

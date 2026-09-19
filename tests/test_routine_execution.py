@@ -69,3 +69,26 @@ def test_player_score_keeps_explicit_zero_and_missing_distinct():
     score.lost_minerals.army=50
     assert player_score_summary(score)=={'killed_value_units':0,
         'total_damage_dealt':{'life':42},'lost_minerals':{'army':50}}
+
+
+def test_entity_tables_preserve_visible_and_stale_facts_without_mutation():
+    from player import order_state
+    source={'visible_entities':[{'tag':1,'alliance':'Enemy','position':[1,2],'health':0},
+                                {'tag':2,'alliance':'Neutral','position':[3,4],'health':100}],
+            'last_known_entities':[{'tag':3,'position':[5,6],'last_seen_loop':12}]}
+    result=order_state(source)
+    for field in source:
+        assert [dict(zip(result[field]['columns'],row)) for row in result[field]['rows']]==source[field]
+        assert isinstance(source[field],list)
+    heterogeneous={'visible_entities':[{'tag':1},{'tag':2,'health':None}]}
+    assert order_state(heterogeneous)['visible_entities']==heterogeneous['visible_entities']
+
+
+def test_type_tables_round_trip_and_reencoding_is_idempotent():
+    from player import order_state
+    facts={'Fighter':{'count':3,'capabilities':['attack']},'Worker':{'count':2,'capabilities':['harvest']}}
+    result=order_state({'type_selection_facts':facts,'unit_type_facts':facts})
+    for field in ('type_selection_facts','unit_type_facts'):
+        table=result[field]
+        assert {row[0]:dict(zip(table['columns'][1:],row[1:])) for row in table['rows']}==facts
+    assert order_state(result)==result

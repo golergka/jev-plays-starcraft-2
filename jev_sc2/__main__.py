@@ -288,11 +288,13 @@ async def run(args):
             # allowance tapers. Bursts within a decision remain permitted; the
             # shared ledger separately guards concurrent and probe spending.
             paid = max(0, jev.cost-decision_cost_before)
-            interval = max(args.interval, paid*jev.spend.window/jev.spend.limit)
+            # Leave room for pre-dispatch reservations and variable decision cost.
+            # Admission remains fail-fast if a burst still exceeds this headroom.
+            interval = max(args.interval, paid*jev.spend.window/(jev.spend.limit*0.8))
             memory['spend_resume_at'] = decision_start+interval
             log('spend_pacing', decision_usd=paid, target_interval_seconds=interval,
                 rolling_limit_usd=jev.spend.limit,
-                requested_interval_seconds=args.interval,
+                requested_interval_seconds=args.interval, pacing_budget_fraction=0.8,
                 planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))

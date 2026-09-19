@@ -2879,3 +2879,27 @@ model context so this observation change does not alter policy decisions.
 Report exposes latest score sample. Aggregate scores do not identify per-unit
 shots, causes of loss or hidden locations.110tests pass, including explicit-zero
 versus absent-field behavior. Hot reload enables measurement in this trial.
+
+
+### Lab203 — loud budget failure exposes oversized batches and no headroom
+
+Lab201 controller stopped with exit2 atloop6663:454calls/$0.319807110. Ledger
+charges/reservations$0.329807110 versus$0.333832374 allowance; next reservation
+denied,partial decision$0.000510174 discarded,no automatic retry. Saved replay.
+Paused same native mission at7:15,evacuation12:54 for repair; no defeat or restart.
+Last measured score interval4582–6437:damage dealt+791.41,taken+913.42.
+
+Concrete requests duplicated large lists of visible entities and type facts across
+split calls. Extend columnar encoding to visible/stale entities and homogeneous
+type maps, retaining every value and type identity. Heterogeneous records remain
+unaltered, preserving missing versus null. One reconstructed actual ten-question
+batch shrinks91419→78897chars,state44949→32427,under the80000split heuristic.
+No paid probe.112tests pass including roundtrip,idempotence,spatial precision and
+existing selection/action behavior. Context representation can affect model
+choices; lower billed cost is not yet established by this offline size result.
+
+Cost pacing had targeted100% allowance, leaving no room for in-flight reservation
+bursts. Target80% now,explicit pacing_budget_fraction telemetry; this is slower
+planned decision frequency, not hidden deferral. Admission still fails loudly.
+Original dollar cap,taper clock and target unchanged. Resume same mission with
+remaining3546call allowance; do not erase prior spend or restart the scenario.
