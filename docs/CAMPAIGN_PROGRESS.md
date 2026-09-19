@@ -1335,3 +1335,13 @@ three pairs chose continue in both variants. Six calls,$0.005615148,artifact074.
 This does not test the earlier idle case or establish the general irrelevance of
 balance placement. No player change deployed. Probe script initially rejected a
 non-string criterion locally before any model call; fixed string handling.
+
+### Lab116 — targeted idle-worker balance probe remains negative
+
+Added optional exact question filtering to the resource-label probe and reran it
+on the last three recorded `SCV / idle` gather menus. Balances were50minerals/140gas,
+0/184 and0/368. Original and inline-balance variants all selected the same Refinery
+(gas target4395106305). Six calls,$0.005568234,artifact075. This closes the sampling
+gap in lab115: the negative result also holds for these idle-worker states, not only
+already-working gas groups. No runtime description change deployed. Attempt10
+remained live at loop5272 with36 owned units during this analysis.

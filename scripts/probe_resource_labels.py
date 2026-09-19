@@ -16,6 +16,7 @@ async def main():
         row=json.loads(line)
         if row['event']!='jev' or not row['state'].get('resources'): continue
         for key,q in row['questions'].items():
+            if len(sys.argv)>3 and key != sys.argv[3]: continue
             if any(isinstance(d,str) and 'Gather vespene gas' in d for d in q.get('criteria',{}).values()):
                 samples.append((row,key));break
     samples=samples[-3:]
@@ -33,7 +34,7 @@ async def main():
         result={'question':key,'resources':row['state']['resources']}
         for label,q in variants:result[label]=(await model.ask(row['state'],{key:q}))[key]
         pairs.append(result)
-    result={'source':str(source),'pairs':pairs,'calls':model.calls,'cost':model.cost,
+    result={'source':str(source),'question_filter':sys.argv[3] if len(sys.argv)>3 else None,'pairs':pairs,'calls':model.calls,'cost':model.cost,
             'method':'Last three recorded gas-gather menus. Same state and choices; append observed relevant balance and literal single-resource effect. Alternate pair order. No gameplay commands.'}
     output.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))
