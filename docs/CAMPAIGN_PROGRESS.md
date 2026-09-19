@@ -2058,3 +2058,21 @@ Nine camera tests pass, including these transitions and committed-module reload
 failure recovery. No unit orders or Jev decision policy changed. This incremental
 change is test-verified, not yet validated in a new live campaign run; campaign
 control still needs the objective/API compatibility fix described in lab163.
+
+### Lab165 — invisible objectives still terminate control; banks inconclusive
+
+Extended the isolated objective reproduction with --hide-before-update. Native
+ObjectiveShow(objective, PlayerGroupAll(), false) immediately before marking the
+bonus Failed still produced ended / all-nine Defeat at loop 224 with 36 owned
+units. Evidence: /tmp/jev-objective-hidden-lab165.jsonl. This is a diagnostic map,
+not a campaign attempt. Together with score=False in lab163, this rules out two
+simple observation/display workarounds; no mission rules have been changed.
+
+Read the local TCampaign, TRaynor01 and TRaynor02 banks. TCampaign has completed
+age entries for maps 1 and 2, but MissionCompletion and MissionBestTime sections
+are empty, and all three banks have recent diagnostic-era modification times.
+Installed LibertyCampaignLib explicitly records difficulty completion and best
+time from RunMissionVictorySequence via TS_SaveMissionCompletion. Current bank
+contents therefore do not independently verify either earlier credited run;
+leave the review gate intact. A replay/outcome audit or fresh instrumented stock
+run remains necessary. No gameplay calls or paid Jev calls during this probe.
