@@ -1874,3 +1874,27 @@ three original AICampaignStart calls, but withheld scripted attack-wave/research
 routines. This controls the stepping-mode confound from lab155 and aims to reach
 the cutoff without early idle defeat. Output /tmp/jev-native-ai-realtime.jsonl.
 No campaign credit, unit orders, Jev calls or changes to the stock map.
+
+### Lab 157 — native AI and post-cutoff view queries remain healthy
+
+Native-AI-only real-time probe completed, exit 0, 65 samples through loop 14,153,
+36 owned units, all in_game, no results (/tmp/jev-native-ai-realtime.jsonl).
+So native AICampaignStart plus mission timers does not reproduce the cutoff
+without the scripted wave/research routines and normal player action traffic.
+
+After the probe closed, the same game received the normal game_info/data and
+make_view observation/query pipeline for 20 iterations, with no unit commands.
+It remained in_game through loop 14,987 after 83 requests, 36 owned units and no
+results (/tmp/jev-post-cutoff-view-pipeline.jsonl). This rules out an immediate
+termination merely from asking for the rich view after the numerical cutoff;
+it does not test long-running query traffic from mission start.
+GameInfo confirms player 1 Participant and players 2–9 Computer under our current
+single Participant create_game configuration; extra computer setup is not needed
+simply to obtain those player types.
+
+Re-read prior failure logs: attempts 15/16/17 retained two CommandCenters at their
+last pre-terminal tick, plus differing other structures and workers. Visible
+allied Marines also remained. No evidence supports a simple 'no town hall' or
+'all allies gone' explanation. Attempts 16/17 terminated about 560 seconds after
+join_game despite different connection/request histories. Root cause unresolved.
+Do not turn the isolated diagnostic map into a campaign solution.
