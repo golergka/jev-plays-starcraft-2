@@ -1131,3 +1131,14 @@ calls. Only the pending mission restarts. Recovery records remain unknown unless
 separate evidence confirms an outcome. Only verified Victory advances to the
 prepared fourth mission. Observe actual automatic recovery before calling that
 path live-verified.
+
+### Lab100 — retain rejection evidence across contribution commitments
+
+The live sixth Zero Hour attempt remained active during this change. Engine feedback
+previously contained only eight harness cycles, shorter than a 224-loop contribution
+commitment at fast decision rates. Player now retains rejection-bearing entries for
+672 game loops, capped at 32 entries, merged by observation loop with current feedback.
+It clears retained evidence when the clock resets. This supplies historical facts;
+it does not forbid actions, choose tactics, or assume a rejection remains applicable.
+54 tests pass, including retention, deduplication, expiry and clock-reset coverage.
+No gameplay improvement is claimed before observing the deployed policy.

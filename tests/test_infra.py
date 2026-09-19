@@ -698,3 +698,26 @@ def test_gas_building_uses_visible_geyser_tag_and_resource_aware_availability(af
     assert view['potential_projects'][0]['allows_vespene_harvesting']
     commands=[c['command'] for c in view['self'][0]['candidates']]
     assert commands==([{'unit_tag':1,'ability_id':55,'target_tag':2}] if affordable else [])
+
+
+def test_failure_feedback_survives_harness_window_without_double_counting():
+    import player
+    failure = {'loop':100,'failures':[{'ability_id':1,'result':'InvalidTarget','unit_tags':[1]}]}
+    memory = {'action_feedback':[failure]}
+    view = {'loop':101,'self':[{'tag':1,'type':'Test','candidates':[]}]}
+    assert len(player.describe_action_feedback(view,memory)) == 1
+    assert len(player.describe_action_feedback(view,memory)) == 1
+    memory['action_feedback'] = [{'loop':300,'failures':[]}]
+    view['loop'] = 301
+    feedback = player.describe_action_feedback(view,memory)
+    assert [e['loop'] for e in feedback] == [100,300]
+    assert feedback[0]['failures'][0]['rejected_commands'] == 1
+    view['loop'] = 773
+    memory['action_feedback'] = []
+    assert player.describe_action_feedback(view,memory) == []
+    view['loop'] = 101
+    memory['action_feedback'] = [failure]
+    player.describe_action_feedback(view,memory)
+    view['loop'] = 1
+    memory['action_feedback'] = []
+    assert player.describe_action_feedback(view,memory) == []

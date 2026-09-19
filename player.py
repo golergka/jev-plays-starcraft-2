@@ -64,7 +64,21 @@ def describe_action_feedback(view, memory):
                 kind = types.get(tag,'no longer in current observation')
                 item['unit_types'][kind] = item['unit_types'].get(kind,0)+1
         history.append({**entry,'failures':list(grouped.values())})
-    return history
+    # Keep rejection evidence beyond a contribution commitment, without replaying
+    # the same harness entry every tick or treating old failures as current rules.
+    loop = view.get('loop', max((e['loop'] for e in history), default=0))
+    retained = memory.setdefault('retained_action_failures', {})
+    if loop < memory.get('feedback_last_loop', loop):
+        retained.clear()
+    memory['feedback_last_loop'] = loop
+    for entry in history:
+        if entry['failures']:
+            retained[entry['loop']] = entry
+    retained = {k:v for k,v in retained.items() if 0 <= loop-k <= 672}
+    retained = dict(sorted(retained.items())[-32:])
+    memory['retained_action_failures'] = retained
+    combined = {**retained, **{e['loop']:e for e in history}}
+    return [combined[k] for k in sorted(combined)]
 
 
 def is_purchase(candidate):
