@@ -2108,3 +2108,31 @@ signal. Leaving any native state readers unadapted could change mission behavior
 Do not apply this partial wrapper to a campaign yet. Preserve all trigger
 conditions, objective states, combat and rewards; never count this diagnostic's
 native Completed signal as a campaign victory.
+
+### Lab167 — lifecycle proof and conservative source rewriting
+
+Expanded the experimental objective adapter with terminal-state creation,
+player-scoped creation, preserved LastCreated, original-name getters/renaming,
+single destruction and native group destruction. Getters validate native IDs;
+creation clears old cached state before any possible ID reuse. Terminal states
+are still presentation-only Active plus a label, while script reads retain the
+original state. This remains uninstalled in production campaign maps.
+
+Live probe scripts/probe_objective_lifecycle.py covers creation Completed, state
+Failed, renaming without losing state, Hidden/Active transitions, destroyed-ID
+Unknown, scoped Failed creation, DestroyAll and a fresh Active creation. The first
+diagnostic accidentally destroyed its own result objective with DestroyAll; it
+stayed in_game through672 and did not prove assertions passed. Corrected the test
+to create the result carrier after destruction. The corrected test remained
+in_game at225 and emitted the expected all-player diagnostic Victory at449 only
+after all assertions passed. Evidence: /tmp/jev-objective-lifecycle-lab167b.jsonl.
+Neither diagnostic has campaign credit; no Jev calls or gameplay orders issued.
+
+Added a lexical call rewriter with five tests: comments, strings and native
+declarations remain unchanged; only known objective call identifiers change.
+Unexpected user declarations or indirect references fail closed. Dry-running
+against installed source found ten objective calls in Zero Hour's MapScript and
+two state readers in CampaignLib. NativeLib and LibertyLib implementation/header
+files have no affected calls. This confirms patching only the map would leave
+campaign-library reads inconsistent. Packaging the full include closure and
+independent genuine mission-end signaling still remain before campaign use.

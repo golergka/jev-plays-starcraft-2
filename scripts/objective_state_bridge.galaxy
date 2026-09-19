@@ -7,10 +7,19 @@ string JevObjectiveStateKey (int objective) {
 
 int JevObjectiveGetState (int objective) {
     string key = JevObjectiveStateKey(objective);
+    if (ObjectiveGetState(objective) == c_objectiveStateUnknown) {
+        return c_objectiveStateUnknown;
+    }
     if (DataTableValueExists(true, key)) {
         return DataTableGetInt(true, key);
     }
     return ObjectiveGetState(objective);
+}
+
+void JevObjectiveForget (int objective) {
+    string key = JevObjectiveStateKey(objective);
+    DataTableValueRemove(true, key);
+    DataTableValueRemove(true, key + ".Name");
 }
 
 void JevObjectiveSetState (int objective, int state) {
@@ -35,4 +44,44 @@ void JevObjectiveSetState (int objective, int state) {
         ObjectiveSetName(objective, name);
         ObjectiveSetState(objective, state);
     }
+}
+
+int JevObjectiveCreate (text name, text description, int state, bool primary) {
+    int objective = ObjectiveCreate(name, description, c_objectiveStateActive, primary);
+    JevObjectiveForget(objective);
+    JevObjectiveSetState(objective, state);
+    return objective;
+}
+
+int JevObjectiveCreateForPlayers (text name, text description, int state, bool primary, playergroup players) {
+    int objective = ObjectiveCreateForPlayers(name, description, c_objectiveStateActive, primary, players);
+    JevObjectiveForget(objective);
+    JevObjectiveSetState(objective, state);
+    return objective;
+}
+
+text JevObjectiveGetName (int objective) {
+    string key = JevObjectiveStateKey(objective) + ".Name";
+    if (ObjectiveGetState(objective) != c_objectiveStateUnknown && DataTableValueExists(true, key)) {
+        return DataTableGetText(true, key);
+    }
+    return ObjectiveGetName(objective);
+}
+
+void JevObjectiveSetName (int objective, text name) {
+    int state = JevObjectiveGetState(objective);
+    if (state == c_objectiveStateUnknown) { return; }
+    DataTableSetText(true, JevObjectiveStateKey(objective) + ".Name", name);
+    JevObjectiveSetState(objective, state);
+}
+
+void JevObjectiveDestroy (int objective) {
+    ObjectiveDestroy(objective);
+    JevObjectiveForget(objective);
+}
+
+// DestroyAll retains its native player-group semantics. GetState/GetName first
+// check native validity; a later Create clears cached state before ID reuse.
+void JevObjectiveDestroyAll (playergroup players) {
+    ObjectiveDestroyAll(players);
 }
