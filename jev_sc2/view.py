@@ -201,6 +201,14 @@ def friendly_destination_facts(unit, entities, names):
             f'visible enemies within 12 of anchor: {enemies}')
 
 
+def catalog_dependencies(product, units):
+    """Static technology relationships, not current unlock/production guarantees."""
+    aliases = {product.unit_id, *product.tech_alias}
+    return [{'unit': u.name, 'requires_attached': u.require_attached}
+            for u in units if u.available and u.tech_requirement
+            and u.tech_requirement in aliases]
+
+
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
@@ -246,7 +254,8 @@ async def make_view(client, observation, data, info, objective):
                         (catalog[ability.ability_id].target in (3,4) and product.has_vespene)))):
                 potential[product.name] = {'type':product.name,'minerals':product.mineral_cost,
                     'vespene':product.vespene_cost,'supply':product.food_required,
-                    'supply_provided':product.food_provided,'allows_vespene_harvesting':product.has_vespene}
+                    'supply_provided':product.food_provided,'allows_vespene_harvesting':product.has_vespene,
+                    'catalog_tech_requirement_for':catalog_dependencies(product,data.units)}
     builder_tags = {offered.unit_tag for offered in possible.abilities
                     if any(ability_names.get(a.ability_id,'').startswith('Build ') for a in offered.abilities)}
     placements, placement_candidates = [], []
@@ -309,7 +318,8 @@ async def make_view(client, observation, data, info, objective):
             cost = ({'minerals':product.mineral_cost,'vespene':product.vespene_cost,
                      'supply':product.food_required} if product is not None else None)
             project = ({'type':product.name,**cost,'supply_provided':product.food_provided,
-                        'allows_vespene_harvesting':product.has_vespene}
+                        'allows_vespene_harvesting':product.has_vespene,
+                        'catalog_tech_requirement_for':catalog_dependencies(product,data.units)}
                        if product is not None else None)
             details = '' if product is None else (
                 f'; costs {product.mineral_cost} minerals and {product.vespene_cost} gas'

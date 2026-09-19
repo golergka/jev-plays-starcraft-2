@@ -1195,3 +1195,20 @@ def test_return_resources_is_offered_only_to_engine_advertised_worker():
     assert view['self'][0]['candidates'][0]['id'].startswith('gather_')
     assert view['self'][1]['candidates'] == []
     assert not view['unrepresented_controls']
+
+
+def test_catalog_dependencies_use_available_units_and_explicit_tech_aliases():
+    from jev_sc2.view import catalog_dependencies
+    from player import investment_description
+    data = sc.ResponseData()
+    product = data.units.add(unit_id=100, name='Addon')
+    product.tech_alias.append(101)
+    data.units.add(unit_id=1, name='Direct', available=True, tech_requirement=100)
+    data.units.add(unit_id=2, name='Aliased', available=True, tech_requirement=101, require_attached=True)
+    data.units.add(unit_id=3, name='Unavailable', available=False, tech_requirement=100)
+    data.units.add(unit_id=4, name='Unrelated', available=True, tech_requirement=102)
+    deps = catalog_dependencies(product, data.units)
+    assert deps == [{'unit':'Direct', 'requires_attached':False}, {'unit':'Aliased', 'requires_attached':True}]
+    description = investment_description('Addon', {'catalog_tech_requirement_for':deps}, {})
+    assert 'Aliased (requires attached addon)' in description
+    assert 'does not guarantee current trainability' in description

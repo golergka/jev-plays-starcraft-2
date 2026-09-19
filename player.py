@@ -295,6 +295,11 @@ def investment_description(name, project, state):
         effects.append('Its action capabilities have not yet been observed')
     if project and project.get('allows_vespene_harvesting'):
         effects.append('Enables workers to harvest gas from this site after construction')
+    if project and project.get('catalog_tech_requirement_for'):
+        effects.append('Satisfies a catalog technology prerequisite for '+
+                       ', '.join(d['unit']+(' (requires attached addon)' if d['requires_attached'] else '')
+                                 for d in project['catalog_tech_requirement_for'])+
+                       '; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability')
     if project and project.get('supply_provided',0):
         effects.append(f'Adds {project["supply_provided"]:g} supply capacity when complete')
     occupied = facts.get('cargo_slots_used', 0)

@@ -3771,3 +3771,20 @@ product mapping was needed. OpeningchoiceBunker,then save498; no addon selected
 or completed yet, no decision errors. This verifies interface exposure only.
 The standalone campaign/control-coverage work still does not establish full
 campaign progression or later-campaign readiness. Keep policy/budget unchanged.
+
+### Lab257 — catalog prerequisites explain otherwise opaque technology purchases
+
+Fresh256trial through1406 has20successful calls/$0.011803638,16Marines,5SCVs,
+5Bunkers. One ProviderOverloadedResponseError529 logged; later decisions succeed.
+Native1:54 shows fighting around an empty bunker. No concealment or manual orders.
+
+Addon options currently say action capabilities unobserved, without their catalog
+technology relationships. Expose available unit types whose tech_requirement
+matches the product ID or explicit tech_alias; preserve requires_attached flag.
+Both potential and executable project descriptions say other requirements and
+appropriate producers may still be needed. Never claim full unlock/current
+trainability, prescribe a purchase, or infer hidden entities. Source semantics:
+Blizzard data.proto UnitTypeData tech_requirement/require_attached/tech_alias.
+130tests pass, including exact/alias matches, unavailable/unrelated exclusions and
+conditional wording. Actual catalog can omit relationships; do not fabricate them.
+Commit hot-reloads during256trial; no isolated survival attribution or budget change.
