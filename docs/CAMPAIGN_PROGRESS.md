@@ -1521,3 +1521,14 @@ candidate command tables remain unchanged, as do unit tags and non-spatial
 numbers. This removes floating-point representation noise without introducing
 an action preference.65tests pass including source immutability. Commit reloads
 this policy during the resumed attempt; improvement remains to be measured.
+
+### Lab131 — concrete questions need their own job summaries
+
+Lab130 remained incomplete: Bunker/idle alone exceeded the request limit with
+63,507 state characters and15,337 question characters. Rounding alone did not
+solve it. Concrete order requests now retain selection_facts only for selections
+actually named by the request. All raw own units, visible entities, type summaries,
+resources and outcomes remain available. This removes unrelated duplicate job
+aggregates without dropping enemy targets or action choices.66tests pass,
+including preservation of world facts and source immutability. Resume the same
+attempt; no victory/defeat inferred from request failure.

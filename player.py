@@ -123,6 +123,11 @@ def describe_action_feedback(view, memory):
 
 async def choose_concrete_orders(state, questions, jev):
     """Jev chooses resource kind before location when both kinds are offered."""
+    # Concrete questions name their selections exactly. Other selections retain
+    # their full raw units and type summaries, but need no duplicate job summary.
+    state = {**state, 'selection_facts': {
+        name:facts for name,facts in state.get('selection_facts',{}).items()
+        if name in questions}}
     first = dict(questions)
     resources = {}
     for key, question in questions.items():

@@ -912,3 +912,23 @@ def test_order_context_rounds_spatial_text_without_mutating_execution_facts():
     assert result['units'][0]['tag']==4399038467
     assert result['units'][0]['health_fraction']==0.123456
     assert source['units'][0]['position'][0]==53.71894073486328
+
+
+def test_concrete_orders_keep_only_queried_job_summaries_and_all_world_facts():
+    import asyncio
+    from player import choose_concrete_orders
+    class Model:
+        async def ask(self,state,questions):
+            self.state=state
+            return {'Worker / idle':{'choice':'continue'}}
+        def log(self,*a,**k):pass
+    model=Model()
+    state={'selection_facts':{'Worker / idle':{'count':1},'Marine / idle':{'count':7}},
+           'units':[{'tag':1},{'tag':2}], 'visible_entities':[{'tag':3}],
+           'type_selection_facts':{'Marine':{'count':7}}}
+    questions={'Worker / idle':{'criteria':{'continue':'Keep orders'},'type':'choice'}}
+    asyncio.run(choose_concrete_orders(state,questions,model))
+    assert model.state['selection_facts']=={'Worker / idle':{'count':1}}
+    for key in ('units','visible_entities','type_selection_facts'):
+        assert model.state[key]==state[key]
+    assert len(state['selection_facts'])==2
