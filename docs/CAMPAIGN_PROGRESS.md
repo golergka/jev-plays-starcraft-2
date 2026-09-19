@@ -3000,3 +3000,20 @@ Telemetry distinguishes construction_retained from construction_interruption_cho
 suppression when Jev retains work, and explicit replacement when Jev chooses it.
 Extra producer query can cost more in sole-busy cases; keep rolling budget intact.
 Live efficacy still requires a new trial.
+
+
+### Lab209 — Jev explicitly retains ongoing construction in live play
+
+New trialsession35733,run20260919T195823.023203Z,policy593593a. Atloop3727,
+249calls/$0.136148166; no budget stop or mission ending. Observed new bunkers
+4395106305 and4388814850 reach completion at1159/2297 before the new branch
+was exercised; do not attribute those completions to the interruption fix.
+
+Then Jev selected construction_retained at3918 forworker4400349186 and4340
+forworker4372824065. Matching tick command lists contained zero commands for
+those retained workers, confirming the explicit choice survives parallel order
+assembly. No construction_interruption_chosen event in this inspected sample.
+This demonstrates execution behavior, not proof of eventual completion or win.
+Two visible engine errors earlier:NotSupported ability340 andCouldntReachTarget
+ability324 forworker4372561921. They remain logged rather than counted as success.
+Keep policy and budget unchanged while the trial proceeds.
