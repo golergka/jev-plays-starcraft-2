@@ -48,3 +48,20 @@ def test_history_is_bounded_newest_first_and_excludes_current_run(tmp_path):
     current=write_attempt(tmp_path,'03')
     result=previous_attempts(tmp_path,'mission.SC2Map',exclude=current,limit=1)
     assert [a['result'] for a in result['attempts']]==['victory']
+
+
+def test_history_distinguishes_background_attempts_from_accepted_commands(tmp_path):
+    directory=write_attempt(tmp_path,'01')
+    rows=[{'event':'production_job_armed','job':{'target_project':'Unit'}},
+          {'event':'production_job_request'},
+          {'event':'production_job_execution','results':[1]},
+          {'event':'production_job_request'},
+          {'event':'production_job_execution','results':[9]},
+          {'event':'production_job_released'},
+          {'event':'production_job_request'}]
+    with (directory/'events.jsonl').open('a') as stream:
+        for row in rows:stream.write(json.dumps(row)+'\n')
+    attempt=previous_attempts(tmp_path,'mission.SC2Map')['attempts'][0]
+    assert attempt['purchase_proposal_counts']=={'Unit':1}
+    assert attempt['background_training_attempt_counts']=={'Unit':2}
+    assert attempt['background_training_accepted_counts']=={'Unit':1}

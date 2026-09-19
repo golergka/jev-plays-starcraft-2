@@ -23,6 +23,8 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
             investment_choices = Counter()
             peak_minerals = None
             errors = 0
+            job_project = None
+            job_attempts, job_accepted = Counter(), Counter()
             joined = False
             with (result_path.parent/'events.jsonl').open() as stream:
                 for line in stream:
@@ -44,6 +46,14 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                         investment_choices['purchase' if choice.startswith('project_') else 'save_for_project' if choice.startswith('save_for_') else choice] += 1
                         if choice.startswith('project_'):
                             purchases[row['projects'][int(choice.split('_')[1])]] += 1
+                    elif event == 'production_job_armed':
+                        job_project = row.get('job', {}).get('target_project')
+                    elif event == 'production_job_request' and job_project:
+                        job_attempts[job_project] += 1
+                    elif event == 'production_job_execution' and job_project:
+                        job_accepted[job_project] += sum(result == 1 for result in row.get('results', []))
+                    elif event == 'production_job_released':
+                        job_project = None
                     elif event == 'decision_error':
                         errors += 1
                     elif event == 'jev':
@@ -62,6 +72,8 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                 'contribution_choice_counts': dict(roles),
                 'purchase_proposal_counts': dict(purchases),
                 'investment_choice_counts': dict(investment_choices),
+                'background_training_attempt_counts': dict(job_attempts),
+                'background_training_accepted_counts': dict(job_accepted),
                 'peak_observed_minerals': peak_minerals,
                 'last_observed_resources': {k: resources[k] for k in
                     ('minerals', 'vespene', 'estimated_minerals_per_minute', 'food_used', 'food_cap') if k in resources},
@@ -74,5 +86,5 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
     return {'attempts': summaries,
             'interpretation': 'Previous independently verified complete attempts on the same map filename, newest first. '
             'Observed counts are not kills or production totals; cargo and morphing change presence. '
-            'Purchase proposals are not confirmed completions. Policies and timing may differ. '
+            'Purchase proposals and background attempts/engine acceptances are not confirmed completions. Background counts exclude the initial purchase request. Policies and timing may differ. '
             'These are measured associations, not causal lessons or recommended actions.'}

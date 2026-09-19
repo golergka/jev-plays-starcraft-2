@@ -3892,3 +3892,15 @@ rather than forcing authorization. README incorrectly retained80% pacing from an
 older experiment; corrected to implemented60%. Documented bounded fixed-producer
 job semantics, acceptance gating, fresh checks, release causes, observability and
 controller-restart boundary. Documentation only; no runtime policy/budget change.
+
+### Lab265 — retain executor attempts separately in episode summaries
+
+Run262 still active through7753,7Marines/5SCVs; no batch authorized. Audit found
+previous_attempts counts investment_choice but would omit background job requests.
+Add separate background_training_attempt_counts and background_training_accepted_counts
+using the armed project's identity until release. Initial purchase stays in the
+existing proposal count; no double counting. Explicitly distinguish attempted,
+engine-accepted and completed production. Malformed/unarmed request events do not
+invent a project attribution. Three episode tests pass including one success,one
+rejection and a post-release event. Startup history loads only on next controller;
+current trial unchanged. No extra model calls or policy selection changes.
