@@ -66,6 +66,7 @@ print(json.dumps({
         'median_target_decision_interval_seconds':statistics.median(r['target_interval_seconds'] for r in paced) if paced else None,
     },
     'recorded_outcome':recorded_outcome,
+    'latest_player_score':next((r for r in reversed(rows) if r['event']=='player_score'),None),
     'latest_observed_resources':resource_samples[-1] if resource_samples else None,
     'max_observed_mineral_income_estimate_per_minute':max(income_samples) if income_samples else None,
     'contribution_sampling':{

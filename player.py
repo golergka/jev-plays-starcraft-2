@@ -588,6 +588,9 @@ def continuing_income(view, selected, role, strategy, key, memory):
 
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
+    if view.get('player_score_telemetry'):
+        jev.log('player_score',loop=view['loop'],values=view['player_score_telemetry'],
+                note='API-reported cumulative player score; telemetry only, not policy context')
     units = [{**u,'candidates':[c for c in u['candidates'] if not is_purchase(c)]}
              for u in view['self']]
     if not units:

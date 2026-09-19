@@ -3,6 +3,20 @@ import math
 from s2clientprotocol import raw_pb2 as raw, sc2api_pb2 as sc, query_pb2 as query, data_pb2 as data_proto
 
 
+def player_score_summary(details):
+    """Present API score fields only; absent values are not measured zeros."""
+    scalars=('killed_value_units','killed_value_structures','collected_minerals',
+             'collected_vespene','spent_minerals','spent_vespene')
+    nested=('total_damage_dealt','total_damage_taken','total_healed',
+            'lost_minerals','lost_vespene')
+    result={name:getattr(details,name) for name in scalars if details.HasField(name)}
+    for name in nested:
+        if details.HasField(name):
+            value=getattr(details,name)
+            result[name]={field.name:number for field,number in value.ListFields()}
+    return result
+
+
 def pixel(image, x, y):
     x, y = math.floor(x), math.floor(y)
     if not (0 <= x < image.size.x and 0 <= y < image.size.y):
@@ -224,6 +238,7 @@ async def make_view(client, observation, data, info, objective):
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
             'potential_projects':list(potential.values()),
+            'player_score_telemetry':player_score_summary(obs.score.score_details),
             'completed_upgrades':[{'id':uid,'name':next((u.name for u in data.upgrades if u.upgrade_id==uid),str(uid))}
                                   for uid in sorted(completed)],
             'unit_type_facts': {

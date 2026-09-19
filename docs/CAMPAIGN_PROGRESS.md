@@ -2861,3 +2861,21 @@ This removes a role-question layer but can enlarge concrete menus; tournaments,
 age validation and loud budget failure still apply. No guaranteed cost saving.
 109tests pass, including a fictional combat unit that exposes both movement and
 attack to the same Jev question and executes only Jev's selected command.
+
+
+### Lab202 — distinguish issued attacks from actual fighting
+
+Live lab201 trial session44504,run20260919T193228.381406Z initially still favors
+regroup/hold despite direct access to attack options. At one sample36 Marine
+menus contained attack choices; two recent menus offered19 attack options out
+of43 yet selected join. This weakens role filtering as a sufficient explanation,
+not proof it is irrelevant. Atloop2953:218calls/$0.145299420,120estimated mineral
+income/minute,no terminal or budget failure. Policy remains unchanged.
+
+Added telemetry-only player score summaries from the installed API protobuf:
+damage dealt/taken/healed, lost minerals/gas, killed value and economy totals.
+Capture present fields only; absent fields are not zeros. Log separately from
+model context so this observation change does not alter policy decisions.
+Report exposes latest score sample. Aggregate scores do not identify per-unit
+shots, causes of loss or hidden locations.110tests pass, including explicit-zero
+versus absent-field behavior. Hot reload enables measurement in this trial.

@@ -57,3 +57,15 @@ def test_combat_controls_reach_jev_without_abstract_role_filter():
     model=Model()
     assert asyncio.run(decide({'self':[unit],'loop':1},model,{}))==[commands['attack_target']]
     assert model.seen
+
+
+def test_player_score_keeps_explicit_zero_and_missing_distinct():
+    from s2clientprotocol import score_pb2
+    from jev_sc2.view import player_score_summary
+    score=score_pb2.ScoreDetails()
+    assert player_score_summary(score)=={}
+    score.killed_value_units=0
+    score.total_damage_dealt.life=42
+    score.lost_minerals.army=50
+    assert player_score_summary(score)=={'killed_value_units':0,
+        'total_damage_dealt':{'life':42},'lost_minerals':{'army':50}}
