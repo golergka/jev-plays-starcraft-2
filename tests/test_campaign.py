@@ -185,3 +185,35 @@ def test_checkpoint_under_verification_review_cannot_advance(tmp_path):
     async def should_not_run(args):raise AssertionError('must not launch a map')
     with pytest.raises(ValueError,match='independent verification'):
         asyncio.run(run_sequence(path,state,mission_runner=should_not_run))
+
+
+def test_budget_error_preserves_attempt_without_retry_or_advance(tmp_path):
+    from jev_sc2.spend import SpendThrottled
+    calls=[]
+    async def mission(args):
+        calls.append(args)
+        error=SpendThrottled(20,.1,.1)
+        error.outcome={'status':'incomplete','calls':7,'cost':.04,
+                       'run':'example','replay':'example/game.SC2Replay',
+                       'controller_error':'SpendThrottled'}
+        raise error
+    state=tmp_path/'progress.json'
+    result=asyncio.run(run_sequence(manifest(tmp_path),state,mission_runner=mission))
+    assert len(calls)==1 and result['completed']==[]
+    assert result['status']=='needs_attention'
+    assert result['attempts'][0]['cost']==.04
+    assert result['attempts'][0]['calls']==7
+    assert result['attempts'][0]['replay']=='example/game.SC2Replay'
+    assert json.loads(state.read_text())==result
+
+
+def test_campaign_cli_attention_is_nonzero(monkeypatch,capsys):
+    import pytest
+    from jev_sc2 import campaign
+    async def stopped(*args,**kwargs):
+        return {'status':'needs_attention','reason':'SpendThrottled'}
+    monkeypatch.setattr(campaign,'run_sequence',stopped)
+    monkeypatch.setattr('sys.argv',['campaign','unused.json'])
+    with pytest.raises(SystemExit) as error:campaign.main()
+    assert error.value.code==2
+    assert 'SpendThrottled' in capsys.readouterr().out

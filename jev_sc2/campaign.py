@@ -7,6 +7,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from .__main__ import ROOT, run
+from .spend import SpendThrottled
 
 
 def save_progress(path, progress):
@@ -68,6 +69,13 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
             save_progress(state_path, progress)
             try:
                 result = await mission_runner(args)
+            except SpendThrottled as exc:
+                result = getattr(exc,'outcome',None)
+                if result is not None:
+                    progress['attempts'].append({'mission':mission['id'],'resumed':was_resume,**result})
+                progress.update(status='needs_attention',reason=f'SpendThrottled: {exc}')
+                save_progress(state_path, progress)
+                return progress
             except Exception as exc:
                 progress.update(status='needs_attention',reason=f'{type(exc).__name__}: {exc}')
                 save_progress(state_path, progress)
@@ -123,6 +131,8 @@ def main():
         call_budget=args.call_budget,seconds_per_attempt=args.seconds_per_attempt,
         max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current,retry_stalls=args.retry_stalls,max_age_loops=args.max_age_loops,api_bookmark_recovery=args.api_bookmark_recovery))
     print(json.dumps(result,indent=2))
+    if result.get('status')=='needs_attention':
+        raise SystemExit(2)
 
 
 if __name__=='__main__':

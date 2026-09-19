@@ -2743,3 +2743,21 @@ previously stalled saving, so do not conflate these different decision layers.
 Added contribution_sampling reviews/departures/transition counts to report.py
 and generated the report on real events. No paid probes. Keep current trial
 policy and original spending taper unchanged while observing its outcome.
+
+
+### Lab196 — campaign wrapper must not hide controller failure
+
+While the unchanged Zero Hour trial runs, found campaign.py catches controller
+exceptions and its CLI exits0 even for needs_attention. Budget-failed attempts
+also lost their saved run/cost/replay reference in the sequence checkpoint.
+Controller now attaches its completed run result to SpendThrottled after replay
+and result persistence. Sequencer retains that attempt and stops without retry
+or advancement. Its CLI exits2 for needs_attention. Shared ledger/taper unchanged.
+108tests pass, including checkpoint persistence/no retry and CLI nonzero exit.
+This harness change applies on next launch; current player policy is unchanged.
+
+Verified live session44407 atloop8608:657calls/$0.454862730 total,
+$0.353335962 actual cost in trailing300seconds,84 routine questions avoided.
+No budget rejection or mission ending. Earlier total crossed the rolling limit
+without rejection because older charges expired, as intended. This does not
+imply the total experiment is capped at a single window allowance.

@@ -297,6 +297,7 @@ async def run(args):
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
         if budget_error is not None:
+            budget_error.outcome = dict(outcome)
             raise budget_error
         return outcome
     finally:
