@@ -1723,3 +1723,23 @@ uses realtime/fog-enabled create/join and observations only. Never changes a
 campaign checkpoint. Port the setup and observation loop already executing in
 lab147; CLI import/help verified, no second game launched. The existing diagnostic
 continues unchanged. This is infrastructure isolation, not a no-Jev campaign bot.
+
+### Lab 149 — camera follows the story without issuing orders
+
+User reports the stream camera lingered around the base. The director previously
+held world coordinates between cuts, allowing a moving subject to leave the shot;
+quiet combat units also tied with buildings and workers. Track the selected unit
+at most once per second after two world units of displacement, without resetting
+the shot's dwell timer. Prefer combat units during quiet moments; persist movement
+interest for four seconds across observation samples. Frame the subject instead
+of averaging it with nearby workers, count shield loss as damage, and apply revisit
+penalties to nearby scene cells to encourage spatial variety. All inputs remain
+owned units and currently visible enemies. Camera output contains only position
+and reason; Jev's strategic and tactical authority is unchanged.
+
+Validation: 70 tests pass, including tracking while preserving cut dwell, army
+framing beside a crowded base, shield-damage cuts, quiet-scene rotation, existing
+fog filtering and atomic camera reload. Camera module is part of the existing
+commit-triggered reload; visual quality still needs observation in an active
+campaign run. The separate trigger-free lifetime diagnostic is still running and
+has passed loop 12,980 in_game; this is not campaign progress.

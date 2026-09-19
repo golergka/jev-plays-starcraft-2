@@ -53,3 +53,30 @@ def test_camera_reload_retains_previous_pair_if_camera_is_broken(tmp_path):
     with pytest.raises(SyntaxError): loader.refresh()
     assert loader.revision==previous
     assert loader.camera_module.choose_shot()==1
+
+
+def test_camera_tracks_subject_during_hold_without_resetting_cut_timer():
+    memory = {}
+    view = {'self': [unit(1, 10)]}
+    choose_shot(view, memory, now=0)
+    view['self'][0]['position'] = [14, 10]
+    shot = choose_shot(view, memory, now=2)
+    assert shot['position'] == [14, 10]
+    assert shot['reason'].startswith('tracking ')
+    assert memory['cut_at'] == 0
+
+
+def test_idle_army_beats_base_and_frames_subject_not_workers():
+    workers = [dict(unit(i, 10), candidates=[{'id': 'gather_minerals'}]) for i in range(30)]
+    shot = choose_shot({'self': workers + [unit(100, 18)]}, {}, now=0)
+    assert shot['position'] == [18, 10]
+    assert shot['reason'] == 'army overview'
+
+
+def test_camera_cuts_to_shield_damage_and_rotates_quiet_scenes():
+    memory = {}
+    view = {'self': [unit(1, 10), dict(unit(2, 80), shield=100)]}
+    choose_shot(view, memory, now=0)
+    view['self'][1]['shield'] = 80
+    assert choose_shot(view, memory, now=3)['position'][0] == 80
+    assert choose_shot(view, memory, now=11)['position'][0] == 10
