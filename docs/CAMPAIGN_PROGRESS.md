@@ -2399,3 +2399,21 @@ same objective/outcome adapter. Builder audited121 included scripts and changed
 only MapScript, CampaignLib and our bridge. Sidecar provenance recorded locally.
 The map has not been run or credited. Zero Hour remains the next mission after a
 verified Outlaws win; no advancement or completed-prefix change made.
+
+### Lab179 — larger army exposes the remaining context ceiling
+
+Kept policy unchanged while observing the live process. At loop12774:30Marines,
+33SCVs;1762calls,$1.261968372. Jev repeatedly chose attack. UI later showed many
+units near the base, but recorded orders included attack-move toward remembered
+locations, so a screenshot alone did not establish tactical inactivity. At
+loop15484:43Marines;40 continuously observed Marines had mean net displacement6.9
+and sampled travel15.7 over the recent window. No manual unit orders were issued.
+
+At loop16371:47Marines,38SCVs,5Barracks,10Depots,1Refinery,1CommandCenter;
+2390calls,$1.8154185. Single-question max_tokens_exceeded errors have reappeared:
+about46–47k state characters plus29–30k question characters. Successful decisions
+still occurred between errors; process session45217 remained live on polling.
+The roster change delayed, but does not solve, scaling limits. Next investigation
+must address large concrete choice menus as well as state representation. No
+verified ending or campaign advancement. Do not restart this live mission solely
+because some observations or inference calls fail.
