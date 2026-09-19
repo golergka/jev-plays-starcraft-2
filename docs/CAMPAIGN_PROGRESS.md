@@ -3788,3 +3788,18 @@ Blizzard data.proto UnitTypeData tech_requirement/require_attached/tech_alias.
 130tests pass, including exact/alias matches, unavailable/unrelated exclusions and
 conditional wording. Actual catalog can omit relationships; do not fabricate them.
 Commit hot-reloads during256trial; no isolated survival attribution or budget change.
+
+### Lab258 — Jev-selected Reactor completes in the live mission
+
+Run256 chooses BarracksReactor at1896. Observed addon tag4388814850 appears at2383
+with build_progress.519 and reaches1.0/400health at2922, stillpresent3351. This
+verifies actual addon construction through the new no-target path, not merely an
+accepted action or a test fixture. Selection belongs to Jev; no forced purchase.
+Through3351:52successful calls/$0.029042076,16Marines,7SCVs,5Bunkers,2Barracks.
+One earlier529 provider overload remains the only decision error observed so far.
+Native3:49 shows forward empty-bunker prompts and560minerals/50gas.
+
+No 'Satisfies a catalog' purchase text found after257reload: current catalog has
+not supplied matching available-unit relationships. Do not credit prerequisite
+text for the reactor choice or fabricate absent data. Construction success does
+not establish efficient utilization, survival benefit, or campaign completion.
