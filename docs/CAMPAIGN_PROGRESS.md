@@ -1765,3 +1765,18 @@ Read-only CASC extraction of installed CampaignLib found its explicit defeat
 GameOver call in the AbortMission event handler, rather than a visible duration
 limit. This is a search result, not proof that the library cannot cause the cutoff.
 Local diagnostic builders and extracted copyrighted sources stay outside Git.
+
+### Lab 151 — shared-library initialization also survives
+
+The libraries-only probe exited 0 after 65 samples, ending at loop 14,311 with
+status in_game, 36 owned units and no player results throughout. Evidence:
+/tmp/jev-libraries-probe.jsonl. Initializing NativeLib, LibertyLib and CampaignLib
+alone did not reproduce stock Zero Hour's approximately 12,500-loop termination.
+
+Next isolated diagnostic: maps/api-campaign-data-probe.SC2Map adds a MapInit event
+callback invoking the original libCamp_gf_LoadCampaignData(MapTRaynor03) to those
+same library initializers. No original mission combat/objective triggers run.
+This function enables CampaignMode and loads tech, bank and UI state, so this
+boundary distinguishes campaign setup from the remaining mission script. Output
+/tmp/jev-campaign-data-probe.jsonl, same observation-only 65-sample protocol.
+The source map remains untouched; this is not an attempt or campaign win.
