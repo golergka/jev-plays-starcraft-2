@@ -21,19 +21,23 @@ def recent_outcomes(view, memory, window=672):
         history.clear()
     current = {'loop':loop, 'resources':dict(view.get('resources', {})),
                'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0),
-                                     'position':u.get('position')}
+                                     'position':u.get('position'), 'build_progress':u.get('build_progress')}
                         for u in view['self']}}
     if not history or history[-1]['loop'] != loop:
         history.append(current)
     while len(history)>1 and history[1]['loop'] < loop-window:
         history.pop(0)
     appeared, disappeared, damage = Counter(), Counter(), Counter()
+    completions = Counter()
     for before,after in zip(history,history[1:]):
         a,b = before['units'],after['units']
         appeared.update(b[t]['type'] for t in b.keys()-a.keys())
         disappeared.update(a[t]['type'] for t in a.keys()-b.keys())
         for t in a.keys() & b.keys():
             damage[b[t]['type']] += max(0,a[t]['health']-b[t]['health'])
+            old_progress,new_progress = a[t].get('build_progress'),b[t].get('build_progress')
+            if old_progress is not None and new_progress is not None and old_progress < 1 <= new_progress:
+                completions[b[t]['type']] += 1
     movement = {}
     continuous = set.intersection(*(set(h['units']) for h in history))
     for tag in continuous:
@@ -50,7 +54,24 @@ def recent_outcomes(view, memory, window=672):
     for item in movement.values():
         for key in ('mean_net_displacement','mean_sampled_distance_travelled'):
             item[key] = round(item[key]/item['units_observed_throughout_window'],1)
+    unfinished = []
+    for tag,unit in current['units'].items():
+        progress = unit.get('build_progress')
+        if progress is None or progress >= 1:
+            continue
+        samples = []
+        for entry in reversed(history):
+            previous = entry['units'].get(tag)
+            if previous is None or previous.get('build_progress') is None:
+                break
+            samples.append((entry['loop'],previous['build_progress']))
+        oldest_loop,oldest_progress = samples[-1]
+        unfinished.append({'tag':tag,'type':unit['type'],'progress':round(progress,3),
+            'observed_loops':loop-oldest_loop,'progress_change':round(progress-oldest_progress,3)})
     return {'observed_game_loops':loop-history[0]['loop'],
+            'completed_from_observed_incomplete_by_type':dict(completions),
+            'currently_incomplete_projects':unfinished,
+            'construction_interpretation':'Only observed progress transitions count as completion. Newly appearing completed units are not attributed to construction. No progress over a short interval does not establish abandonment.',
             'movement_by_type':movement,
             'movement_interpretation':'Map units over the observed window, only units present at every sample. Sampled travel is a lower bound; net displacement can be zero after useful round trips. Neither measure alone indicates success or failure.',
             'own_units_appeared_by_type':dict(appeared),
@@ -329,7 +350,8 @@ def selection_facts(view, cohorts, previous_counts):
             'max_separation':round(max(math.dist(a['position'],b['position']) for a in selected for b in selected),1),
             'largest_distance_to_nearest_selection_member':round(max(min(math.dist(a['position'],b['position']) for b in selected if b['tag']!=a['tag']) for a in selected),1) if len(selected)>1 else None,
             'count_change_since_previous_decision':len(selected)-previous_counts.get(kind,len(selected)),
-            'damaged_count':sum(u.get('health_fraction',1)<1 for u in selected),
+            'damaged_count':sum(u.get('health_fraction',1)<1 and u.get('build_progress',1)>=1 for u in selected),
+            'incomplete_count':sum(u.get('build_progress',1)<1 for u in selected),
             'lowest_health_percent':round(100*min(u.get('health_fraction',1) for u in selected)),
             'current_order_counts':dict(Counter(o['ability'] for u in selected for o in u.get('orders',[]))),
             'idle_count':sum(not u.get('orders') for u in selected),

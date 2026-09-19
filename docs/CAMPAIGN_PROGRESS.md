@@ -1482,3 +1482,17 @@ Do not credit pre-existing campaign upgrade IDs as research performed by this bo
 Controller exited. Two earlier victories remain saved; all three campaigns remain
 incomplete. Next experiment must address useful task persistence/allocation beyond
 mere execution speed or adding more available controls.
+
+### Lab128 — distinguish started work from completed construction
+
+Add build_progress to observation history. Report only transitions from observed
+incomplete to complete as completions, and report each currently incomplete owned
+project's progress delta over its contiguous observed history. Missing/disappearing
+units break that interval; fresh complete arrivals are not credited to construction.
+Short zero-delta intervals are explicitly not proof of abandonment. Selection
+facts now separate incomplete_count from damaged_count for completed units, avoiding
+labeling natural low construction health as damage needing repair. No automatic
+worker reassignment or project priority.63 tests pass with starts, completion,
+clock reset and discontinuous observation coverage. Start attempt14,2500calls,
+64-loop cutoff. More truthful task feedback is the change under examination;
+performance benefit remains unproven.

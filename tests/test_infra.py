@@ -847,3 +847,22 @@ def test_research_controls_require_exact_offered_ability_and_unfinished_upgrade(
     assert research_candidates(unit,{123},catalog,{123:upgrade},{5})==[]
     catalog[123].target=2
     assert research_candidates(unit,{123},catalog,{123:upgrade},set())==[]
+
+
+def test_outcomes_distinguish_started_completed_and_discontinuous_construction():
+    from player import recent_outcomes
+    memory={}
+    def view(loop,progress):
+        return {'loop':loop,'resources':{},'self':[] if progress is None else
+            [{'tag':1,'type':'Project','build_progress':progress,'health':10}]}
+    recent_outcomes(view(1,.2),memory)
+    pending=recent_outcomes(view(20,.4),memory)
+    assert pending['currently_incomplete_projects'][0]['progress_change']==.2
+    assert pending['completed_from_observed_incomplete_by_type']=={}
+    done=recent_outcomes(view(30,1),memory)
+    assert done['completed_from_observed_incomplete_by_type']=={'Project':1}
+    assert done['currently_incomplete_projects']==[]
+    assert recent_outcomes(view(1,1),memory)['completed_from_observed_incomplete_by_type']=={}
+    recent_outcomes(view(2,None),memory)
+    pending=recent_outcomes(view(10,.3),memory)
+    assert pending['currently_incomplete_projects'][0]['observed_loops']==0
