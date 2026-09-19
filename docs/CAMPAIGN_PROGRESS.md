@@ -3540,3 +3540,15 @@ Counts describe logged decisions including carried proposals, not completed spen
 No heuristic recommendation or altered purchasing policy. Focused2episode tests
 pass, including123→7mineral history and separate save/purchase counts. Loader change
 only applies next controllerprocess. Current live run still tests originalsummary.
+
+### Lab241 — paired history ablation modestly lowers saving, no top-choice change
+
+New scripts/probe_episode_history.py samples first/middle/last recorded investment
+states containing prior_attempts from live239run. Remove only previous_attempts,
+retain exact question/allotherstate,alternate pairorder. Six calls through shared
+persistent governor,$.002322222,no gamecommands. Withhistory saveprobabilities
+.43/.43/.31 versus without .52/.48/.32;all six topchoices remain save. Artifact
+241-episode-history.json. Small unreplicated probe,not calibrated utilities or
+proof of improved survival. It supports at most a modest shift in these states;
+early Marine purchases cannot simply be credited to history. Continue current
+trial unchanged; do not crank sampling or spending to turn this into a win claim.
