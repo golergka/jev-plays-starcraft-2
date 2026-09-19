@@ -2980,3 +2980,23 @@ its own unfinished construction, despite current orders being shown in producer
 criteria. Investigate preserving Jev-selected jobs or making interruption an
 explicit separate choice. Do not infer all economic failure comes from this,
 and do not keep repeating role-temperature/menu-only experiments unchanged.
+
+
+### Lab208 — make construction replacement an explicit Jev choice
+
+Address lab207's observed interrupted jobs without prescribing a build order.
+Investment executor now detects candidates whose producer currently has an
+observed Build order. A sole busy builder no longer auto-executes a new purchase;
+Jev must choose its producer/site. Replacement criteria explicitly label the
+interruption and show the old order. Alternative keep_construction makes no
+purchase and preserves those workers' current jobs for this decision. That
+explicit choice outranks parallel role orders for the same workers, avoiding
+contradictory execution. Idle sole-producer shortcut remains. Jev may still
+choose interruption; no permanent builder lock, forced construction completion,
+worker type whitelist, coordinates or mission-specific rule.
+
+Telemetry distinguishes construction_retained from construction_interruption_chosen.
+114tests pass, including the single-busy-builder case, parallel conflicting move
+suppression when Jev retains work, and explicit replacement when Jev chooses it.
+Extra producer query can cost more in sole-busy cases; keep rolling budget intact.
+Live efficacy still requires a new trial.

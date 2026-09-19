@@ -92,3 +92,34 @@ def test_type_tables_round_trip_and_reencoding_is_idempotent():
         table=result[field]
         assert {row[0]:dict(zip(table['columns'][1:],row[1:])) for row in table['rows']}==facts
     assert order_state(result)==result
+
+
+def test_busy_builder_requires_jev_interruption_choice_and_keep_wins_over_parallel_orders():
+    import asyncio
+    from player import decide
+    build={'unit_tag':1,'ability_id':324,'point':[4,5]}
+    unit={'tag':1,'type':'Worker','position':[0,0],'health_fraction':1,
+          'orders':[{'ability':'Build ExistingStructure','target_point':[2,3]}],
+          'candidates':[{'id':'build_new','description':'Build NewStructure',
+                         'project':{'type':'NewStructure'},'command':build},
+                        {'id':'north','description':'Move north',
+                         'command':{'unit_tag':1,'ability_id':16,'point':[0,6]}}]}
+    class Model:
+        selection='keep_construction'
+        producer_calls=0
+        def log(self,*args,**kwargs):pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions:return {'strategy':{'choice':'strengthen'}}
+            if 'investment' in questions:return {'investment':{'choice':'project_0'}}
+            if 'producer_site' in questions:
+                self.producer_calls+=1
+                assert 'Interrupt' in questions['producer_site']['criteria']['option_0']
+                assert 'keep_construction' in questions['producer_site']['criteria']
+                return {'producer_site':{'choice':self.selection}}
+            key=next(iter(questions))
+            return {key:{'choice':'positioning' if key.startswith('purpose_') else 'group_north'}}
+    model=Model();view={'loop':1,'self':[unit]}
+    assert asyncio.run(decide(view,model,{}))==[]
+    assert model.producer_calls==1  # A sole busy builder cannot bypass Jev.
+    model.selection='option_0'
+    assert asyncio.run(decide(view,model,{}))==[build]  # Jev can explicitly interrupt.

@@ -383,10 +383,18 @@ async def choose_investment(view, state, jev, memory=None):
     if choice not in criteria or choice=='save':
         return []
     options = projects[names[int(choice.split('_')[1])]]
-    if len(options)==1:
+    constructing = {u['tag']:u['orders'][0] for u,c in options
+                    if u.get('orders') and u['orders'][0].get('ability','').startswith('Build ')}
+    if len(options)==1 and not constructing:
         return [options[0][1]['command']]
-    criteria = {f'option_{i}':f'Unit {u["tag"]} at {u["position"]}, current orders {u.get("orders",[])}: {c["description"]}'
+    criteria = {f'option_{i}':
+                (f'Interrupt this worker’s existing construction {constructing[u["tag"]]} with a replacement order. '
+                 if u['tag'] in constructing else '')+
+                f'Unit {u["tag"]} at {u["position"]}, current orders {u.get("orders",[])}: {c["description"]}'
                 for i,(u,c) in enumerate(options)}
+    if constructing:
+        criteria['keep_construction'] = ('Make no new purchase and keep these workers on their existing construction: '
+                                        f'{constructing}. Their concurrent role orders will also be left unchanged this decision.')
     answer = await jev.ask({'objective':state.get('objective'),
                             'selected_investment':names[int(choice.split('_')[1])],
                             'visible_entities':state.get('visible_entities',[])}, {'producer_site': {
@@ -394,8 +402,17 @@ async def choose_investment(view, state, jev, memory=None):
         'criteria':criteria,
     }})
     choice=answer.get('producer_site',{}).get('choice')
+    if choice=='keep_construction' and constructing:
+        if memory is not None:
+            memory['construction_retained']={'loop':view['loop'],'tags':list(constructing)}
+        jev.log('construction_retained',loop=view['loop'],unit_tags=list(constructing))
+        return []
     if choice in criteria:
-        return [options[int(choice.split('_')[1])][1]['command']]
+        selected=options[int(choice.split('_')[1])]
+        if selected[0]['tag'] in constructing:
+            jev.log('construction_interruption_chosen',loop=view['loop'],unit_tag=selected[0]['tag'],
+                    previous_order=constructing[selected[0]['tag']])
+        return [selected[1]['command']]
     return []
 
 
@@ -842,7 +859,9 @@ async def decide(view, jev, memory):
     investment, commands = await asyncio.gather(choose_investment(view,state,jev,memory), choose_orders())
     # A selected purchase assigns its producer; preserve other Jev-selected orders.
     producer_tags = {c['unit_tag'] for c in investment}
-    return [c for c in commands if c['unit_tag'] not in producer_tags]+investment
+    retained = memory.get('construction_retained',{})
+    retained_tags = set(retained.get('tags',[])) if retained.get('loop')==view['loop'] else set()
+    return [c for c in commands if c['unit_tag'] not in producer_tags | retained_tags]+investment
 
 
 async def decide_individual(view, jev, memory):
