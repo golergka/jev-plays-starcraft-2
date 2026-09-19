@@ -2382,3 +2382,20 @@ this run cannot isolate the sampling exponent's effect. At loop7871 before this
 change:22SCVs,4Marines,4Barracks,8Depots,1Refinery,1CommandCenter;862 calls,
 $0.53322255, no decision errors. Screenshot confirmed active Outlaws at8:31 and
 substantial excess supply. No ending marker yet.
+
+### Lab178 — observe army recovery; prepare the next unplayed map
+
+Held gameplay policy at bf52b48. At loop10054:30SCVs,14Marines,5Barracks,
+8Depots,1Refinery,1CommandCenter;1199calls,$0.78694203, no decision errors.
+Since the capability-label correction, an intermediate sample contained34
+investment samples,9 non-top selections,10 Marine purchase requests,2 SCV
+requests,1 Refinery request and22 save decisions. Strategy selections included
+strengthen3/attack5/assemble1. At loop11438 the army reached22Marines, with31SCVs.
+No ending marker. These are observations, not proof of improvement caused by any
+one patch: earlier sampling and memory changes confound this single live attempt.
+
+Prepared maps/ttychus01-outcomes-lab178.SC2Map for later Smash and Grab using the
+same objective/outcome adapter. Builder audited121 included scripts and changed
+only MapScript, CampaignLib and our bridge. Sidecar provenance recorded locally.
+The map has not been run or credited. Zero Hour remains the next mission after a
+verified Outlaws win; no advancement or completed-prefix change made.
