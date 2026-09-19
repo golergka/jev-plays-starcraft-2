@@ -3077,3 +3077,20 @@ A batch avoids repeated investment deliberation but producer queries may remain;
 no guaranteed savings or claim that three units were built. Construction retention
 and persistent dollar taper unchanged.117tests pass, including cap,legal-control
 wait,strategy cancellation,deadline and rewind. Live usefulness unproven.
+
+
+### Lab213 — bounded production jobs execute; Jev initially favors workers
+
+Verified live session14186,run20260919T201622.753722Z. First production batch
+selected SCV at633,then requests at633/820/985 consumed remaining2/1/0.
+Matching ticks submitted actions with all Success results,ages82/86/74loops
+within128limit. The second and third investments were carried_jev_commitment,
+not newly queried investments. Engine acceptance is not proof all units finished.
+This confirms a bounded job can reduce repeated investment questions while
+retaining Jev's initial allocation and normal action validation.
+
+Through2931:180calls/$0.100523346; batches selected SCV at633,2129,2931,none
+Marine yet.9SCVs,12Marines,2CommandCenters,2Barracks,2Bunkers among owned units.
+No budget/mission terminal event. Job execution alone does not solve composition;
+do not claim army replacement success merely because batches run. Keep policy
+and persistent spending taper fixed while observing the attempt.
