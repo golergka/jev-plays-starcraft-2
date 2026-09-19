@@ -1532,3 +1532,8 @@ resources and outcomes remain available. This removes unrelated duplicate job
 aggregates without dropping enemy targets or action choices.66tests pass,
 including preservation of world facts and source immutability. Resume the same
 attempt; no victory/defeat inferred from request failure.
+
+Lab131 reconnect returned the controlled player's API Defeat immediately, before
+any new Jev call: runs/20260919T014615.161270Z. This verifies attempt14 ended in
+loss, unlike the earlier request failures which were correctly incomplete.
+Start attempt15 to evaluate scoped job context. Earlier two wins remain intact.
