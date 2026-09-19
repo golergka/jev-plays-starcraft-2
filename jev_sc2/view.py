@@ -155,7 +155,8 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
                 if (target.is_flying or data_proto.Structure in product.attributes or
                     not product.cargo_size or product.cargo_size > unit.cargo_space_max-unit.cargo_space_taken):
                     continue
-                effect = f'load into this unit; needs {product.cargo_size} cargo slots'
+                effect = (f'load into this unit; needs {product.cargo_size} cargo slots; '
+                          'this joint action reserves the passenger for this control cycle, overriding its separate movement/combat order')
             candidates.append({'id':f'ability_{ability}_{target.tag}',
                 'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
                 'capability_description':f'{label}: '+('restore damaged owned units' if kind in ('repair','heal') else 'interact with unfinished owned construction' if kind=='construction_interaction' else 'load owned units into available cargo space'),

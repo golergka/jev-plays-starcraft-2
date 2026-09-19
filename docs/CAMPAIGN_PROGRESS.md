@@ -3212,3 +3212,19 @@ with a budget pause,policy-memory reset and pacing repair is not a causal rankin
 No further budget error in resumed segment. Next experiment addresses observed
 boarding/passenger command conflicts. Preserve Jev's tactical choices; resolve
 only contradictory execution requests and verify cargo entry in live evidence.
+
+### Lab221 — coordinate Jev-selected boarding participants for one cycle
+
+Use existing candidate exclusive_target metadata,not ability IDs or unit names,
+to recognize selected multi-unit boarding jobs. After existing purchase/retained
+construction priority, a selected job suppresses separate passenger commands in
+that control cycle. No job is created automatically,no persistent boarding lock,
+no unload restriction. Candidate description tells Jev this execution contract.
+Jobs conflicting with protected work or sharing participants with another joint
+job are rejected and logged instead of arbitrarily choosing a carrier. Other
+orders remain unchanged. Log accepted/rejected jobs and discarded commands.
+This is an execution-priority experiment; suppressing an escape order can matter,
+and one-cycle coordination may not suffice for travel to the carrier. Jev must
+still decide the tactic and can revise it next cycle.121tests pass, including
+fictional ability,protected work,competing carriers and unchanged unrelated orders.
+Test in fresh mission with factored investment and repaired spend pacing retained.

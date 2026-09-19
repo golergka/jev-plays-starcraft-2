@@ -182,3 +182,27 @@ def test_training_batch_expiry_or_rewind_requires_fresh_jev_choice():
             'candidates':[{'description':'Train Unit','project':{'type':'Unit'},'command':{'unit_tag':1,'ability_id':560}}]}]}
         assert asyncio.run(choose_investment(view,{},model,memory))==[]
         assert model.calls==1 and 'production_batch' not in memory
+
+
+def test_exclusive_job_suppresses_passenger_order_without_creating_actions():
+    from player import coordinate_exclusive_jobs
+    load={'unit_tag':1,'ability_id':777,'target_tag':2}
+    move={'unit_tag':2,'ability_id':16,'point':[3,4]}
+    other={'unit_tag':3,'ability_id':18}
+    view={'loop':1,'self':[{'candidates':[{'exclusive_target':True,'command':load}]}]}
+    class Log:
+        def log(self,*args,**kwargs): pass
+    assert coordinate_exclusive_jobs(view,[load,move,other],set(),Log())==[load,other]
+    assert coordinate_exclusive_jobs(view,[move,other],set(),Log())==[move,other]
+    assert coordinate_exclusive_jobs(view,[load,move],{2},Log())==[move]
+    assert coordinate_exclusive_jobs(view,[load,move],set(),Log())==[load]
+
+
+def test_competing_exclusive_jobs_do_not_arbitrarily_choose_a_carrier():
+    from player import coordinate_exclusive_jobs
+    jobs=[{'unit_tag':tag,'ability_id':777,'target_tag':2} for tag in (1,3)]
+    move={'unit_tag':2,'ability_id':16,'point':[3,4]}
+    view={'loop':1,'self':[{'candidates':[{'exclusive_target':True,'command':j} for j in jobs]}]}
+    class Log:
+        def log(self,*args,**kwargs): pass
+    assert coordinate_exclusive_jobs(view,jobs+[move],set(),Log())==[move]

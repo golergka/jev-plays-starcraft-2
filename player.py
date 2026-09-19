@@ -915,7 +915,27 @@ async def decide(view, jev, memory):
     producer_tags = {c['unit_tag'] for c in investment}
     retained = memory.get('construction_retained',{})
     retained_tags = set(retained.get('tags',[])) if retained.get('loop')==view['loop'] else set()
-    return [c for c in commands if c['unit_tag'] not in producer_tags | retained_tags]+investment
+    protected = producer_tags | retained_tags
+    commands = [c for c in commands if c['unit_tag'] not in protected]+investment
+    return coordinate_exclusive_jobs(view,commands,protected,jev)
+
+
+def coordinate_exclusive_jobs(view, commands, protected, jev):
+    """Honor selected multi-unit jobs for this cycle, without choosing new jobs."""
+    offered = [c['command'] for unit in view['self'] for c in unit['candidates']
+               if c.get('exclusive_target')]
+    jobs = [c for c in commands if c in offered]
+    participants = Counter(tag for c in jobs for tag in (c['unit_tag'],c['target_tag']))
+    rejected = [c for c in jobs if c['target_tag'] in protected or
+                any(participants[tag]>1 for tag in (c['unit_tag'],c['target_tag']))]
+    accepted = [c for c in jobs if c not in rejected]
+    reserved = {c['target_tag'] for c in accepted}
+    discarded = [c for c in commands if c in rejected or c['unit_tag'] in reserved]
+    if jobs:
+        jev.log('exclusive_job_coordination',loop=view['loop'],accepted_jobs=accepted,
+                rejected_jobs=rejected,discarded_commands=discarded,
+                reason='Selected joint job reserves its passenger for this cycle; competing joint jobs or protected work are not overridden')
+    return [c for c in commands if c not in discarded]
 
 
 async def decide_individual(view, jev, memory):
