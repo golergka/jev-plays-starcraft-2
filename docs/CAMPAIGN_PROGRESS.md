@@ -1558,3 +1558,18 @@ protect. Latest observed snapshot still contained2CommandCenters (combined healt
 ended. Do not infer all-structures-destroyed from the API result alone. Inspect
 mission UI/defeat explanation before changing policy on that assumption. The
 context fix survived this run; it did not yield victory. Two earlier wins remain.
+
+### Lab135 — API terminal result conflicts with continuing campaign simulation
+
+Read-only UI inspection after attempt15 showed game clock14:04 then14:36,
+evacuation06:05 then05:33, workers gathering and no defeat overlay. Two fresh
+API observations reported status ended and all9players Defeat, yet game_loop
+advanced13897→13908. An empty RequestAction (no gameplay command) was rejected
+with Game has already ended. Thus API control really is unavailable, but the
+previous claim of campaign gameplay defeat is not established by the UI. Preserve
+raw result and add result_discrepancy evidence to both result.json and checkpoint.
+Do not advance the mission or silently replace protocol results. Official protocol
+state table allows observation in ended but actions only in_game:
+https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/sc2api.proto
+The cause of the early API termination remains unresolved. Do not change Jev
+strategy based on an invented all-structures-destroyed explanation.
