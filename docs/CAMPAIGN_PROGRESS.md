@@ -3384,3 +3384,22 @@ effective use of the visibly empty forward defense. Recent Marine choices were
 repeated continue after holding, then a bunker-position join at5639. No manual
 orders issued. Continue the unchanged trial and correlate later survival with
 actual production and cargo, rather than interpreting accepted commands as success.
+
+### Lab232 — remove redundant attack-move distance variants from group menus
+
+Lab230 native8:46 shows command center under attack,1227minerals,25/11supply.
+Recorded Marine context includes enemies throughout the base; repeated chosen
+forward-bunker joins were submitted, not lost at the command boundary. Tournament
+finalists repeatedly join/stop; this alone cannot prove tournament bias.
+
+Found a concrete presentation bug while tracing these menus: shared-description
+normalization removed comma-prefixed distance but not semicolon-prefixed distance
+used by attack-move anchors. One option repeated four otherwise identical long
+sentences plus a variation disclaimer, then also included the exact group distance
+range (example597characters). Accept both separators in the existing normalization.
+Keep all candidates, targeting, attack-move semantics and computed distance range.
+No tactical choice or budget change.122tests pass; regression verifies one shared
+description, range6–10, and unchanged exact per-unit commands. This changes menu
+length and potentially tournament partitions, so the current trial becomes mixed
+revision after commit; do not present its outcome as harvest-window-only evidence.
+Savings and behavioral effect require live measurement.

@@ -759,7 +759,7 @@ async def decide(view, jev, memory):
         for key in sorted(common):
             if any(t[key].get('capability_description') for t in tables[kind]):
                 continue
-            descriptions = list(dict.fromkeys(re.sub(r', distance [0-9.]+','',c[key]['description']) for c in tables[kind]))
+            descriptions = list(dict.fromkeys(re.sub(r'[,;] distance [0-9.]+','',c[key]['description']) for c in tables[kind]))
             description = ' | '.join(descriptions[:4])
             if len(descriptions)>4:
                 description += f' (descriptions vary across {len(descriptions)} units; apply each offered version)'

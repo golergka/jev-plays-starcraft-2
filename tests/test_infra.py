@@ -1087,3 +1087,24 @@ def test_investment_sharpens_within_families_without_amplifying_wait():
     assert investment_sampling_probabilities({'project_0':1e-300}) == {'project_0':1}
 
     assert investment_sampling_probabilities({'save':1e300,'project_0':1e-300}) == {'save':1,'project_0':0}
+
+
+def test_shared_attack_move_description_compacts_distances_without_changing_orders():
+    import player
+    units = [{'tag':tag, 'type':'Unit', 'position':[x,0], 'candidates':[
+        {'id':'attack_move_join_99',
+         'description':f'Attack-move to friendly Tower tag 99 observed position, engaging enemies encountered; distance {10-x:.1f}',
+         'command':{'unit_tag':tag,'ability_id':23,'point':[10,0]}}]}
+        for tag,x in [(1,0),(2,4)]]
+    class Model:
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions: return {'strategy':{'choice':'assemble'}}
+            if 'purpose_Unit' in questions: return {'purpose_Unit':{'choice':'combat'}}
+            description=questions['Unit']['criteria']['group_attack_move_join_99']
+            assert description.count('Attack-move to friendly Tower')==1
+            assert 'engaging enemies encountered' in description
+            assert 'travel distances across selection: 6.0 to 10.0' in description
+            return {'Unit':{'choice':'group_attack_move_join_99'}}
+    commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
+    assert commands==[u['candidates'][0]['command'] for u in units]
