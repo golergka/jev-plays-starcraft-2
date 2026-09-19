@@ -1191,3 +1191,18 @@ neither metric alone proves success/failure. No stagnation threshold, automatic
 rerouting or role override is added. Jev remains responsible for interpreting it.
 55 tests pass, including round-trip, stationary, intermittent visibility and
 clock-reset cases. Gameplay effect unmeasured at deployment.
+
+### Lab104 — Jev may organize selections by existing jobs
+
+Recent seventh-attempt worker choices included whole-selection gas gathering and
+regrouping, with zero measured mineral income. The existing by-type grouping makes
+one shared order affect every worker, while individual control adds calls. Add an
+optional Jev-selected middle granularity: each type split by first observed order
+and unit target, with idle units separate. No worker quotas, resource preference,
+new destinations or assignments are encoded. Grouping only partitions owned units;
+Jev still chooses every command and may retain by-type or mixed-combat grouping.
+Point coordinates are not grouping keys, avoiding splitting each relative move.
+Existing economic facts remain type-based. This can increase question count and
+job groups can change as orders cycle; latency and adoption need live measurement.
+56 tests pass, including split/merge by existing target, unchanged input orders,
+and preservation of by-type mode. No gameplay improvement claimed.

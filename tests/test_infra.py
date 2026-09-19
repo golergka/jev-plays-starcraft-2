@@ -739,3 +739,15 @@ def test_movement_outcomes_distinguish_round_trip_from_stationary_and_missing_un
     assert outcome['Stationary']['mean_sampled_distance_travelled']==0
     assert 'Intermittent' not in outcome
     assert recent_outcomes(view(1,0),memory)['movement_by_type']=={}
+
+
+def test_job_grouping_separates_assignments_without_choosing_actions():
+    from player import control_groups
+    units=[{'tag':i,'type':'WorkerLike','candidates':[], 'orders':orders}
+           for i,orders in enumerate([[],[{'ability':'Gather','target_tag':10}],
+               [{'ability':'Gather','target_tag':11}], [{'ability':'Gather','target_tag':10}]],1)]
+    original=__import__('copy').deepcopy(units)
+    groups=control_groups(units,'by_current_order',{})
+    assert sorted(sorted(u['tag'] for u in group) for group in groups.values())==[[1],[2,4],[3]]
+    assert units==original
+    assert len(control_groups(units,'by_type',{}))==1

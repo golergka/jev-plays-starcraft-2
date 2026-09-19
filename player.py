@@ -306,6 +306,12 @@ def control_groups(units, mode, learned):
                     or unit.get('available_build_abilities')
                     or any(c.startswith(('Build ', 'Harvest')) for c in learned.get(unit['type'],[])))
         key = 'MobileCombat' if mode=='mobile_combat' and has_attack and has_move and not economic else unit['type']
+        if mode == 'by_current_order':
+            orders = unit.get('orders') or []
+            order = orders[0] if orders else {}
+            job = order.get('ability', 'idle')
+            target = order.get('target_tag')
+            key = f'{unit["type"]} / {job}' + (f' / target {target}' if target else '')
         groups.setdefault(key, []).append(unit)
     return groups
 
@@ -426,6 +432,7 @@ async def decide(view, jev, memory):
             'instructions':'Choose how to organize the next control selections. This chooses grouping only; further Jev decisions choose every order.',
             'criteria':{
                 'by_type':'Keep different unit types in separate selections, allowing different shared orders.',
+                'by_current_order':'Separate each unit type by its current first order and unit target, with idle units separate. Choose distinct orders for those job selections to retain or change existing assignments independently.',
                 'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
             },
         }})
@@ -435,7 +442,7 @@ async def decide(view, jev, memory):
             memory['strategy'] = strategy
             jev.log('strategy_choice',**strategy)
         grouping = decision.get('coordination',{}).get('choice')
-        if grouping in ('by_type','mobile_combat'):
+        if grouping in ('by_type','mobile_combat','by_current_order'):
             memory['coordination'] = grouping
             jev.log('coordination_choice',loop=view['loop'],choice=grouping)
             cohorts = control_groups(units,grouping,learned)
