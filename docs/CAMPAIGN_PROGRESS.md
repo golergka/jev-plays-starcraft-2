@@ -1537,3 +1537,12 @@ Lab131 reconnect returned the controlled player's API Defeat immediately, before
 any new Jev call: runs/20260919T014615.161270Z. This verifies attempt14 ended in
 loss, unlike the earlier request failures which were correctly incomplete.
 Start attempt15 to evaluate scoped job context. Earlier two wins remain intact.
+
+### Lab133 — count request failures separately from gameplay decisions
+
+Reports now count request rejections, single-question rejections, maximum rejected
+state size, affected question names and split reasons. Verify against lab130:
+10 rejected requests,8 single-question rejections,19 heuristic splits and2
+server-triggered splits. Early attempt15 snapshot:113 successful calls,zero
+rejections; this is not yet evidence under late-mission load. Latest mineral
+income estimate remains zero, so successful transport does not imply sound play.

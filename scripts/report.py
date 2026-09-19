@@ -95,6 +95,13 @@ print(json.dumps({
     'ticks_older_than_configured_limit':sum(r['decision_age_loops']>age_limit for r in ticks),
     'submitted_commands_from_decisions_older_than_32_loops':sum(r['submitted'] for r in ticks if r['decision_age_loops']>32),
     'ticks_older_than_32_loops':sum(r['decision_age_loops']>32 for r in ticks),
+    'request_rejections':{
+        'total':sum(r['event']=='jev_request_rejected' for r in rows),
+        'single_question':sum(r['event']=='jev_request_rejected' and r.get('question_count')==1 for r in rows),
+        'max_state_chars':max((r.get('state_chars',0) for r in rows if r['event']=='jev_request_rejected'),default=0),
+        'question_names':dict(collections.Counter(k for r in rows if r['event']=='jev_request_rejected'
+                                                  for k in r.get('question_chars',{})))},
+    'request_splits_by_reason':dict(collections.Counter(r.get('reason','size_heuristic') for r in rows if r['event']=='jev_request_split')),
     'errors':[r for r in rows if r['event'].endswith('error')],
     'results':[r for r in rows if r['event']=='result'],
     'reloads':[r for r in rows if r['event']=='reload'],
