@@ -3228,3 +3228,14 @@ and one-cycle coordination may not suffice for travel to the carrier. Jev must
 still decide the tactic and can revise it next cycle.121tests pass, including
 fictional ability,protected work,competing carriers and unchanged unrelated orders.
 Test in fresh mission with factored investment and repaired spend pacing retained.
+
+### Lab222 — actual passenger entry observed; conflict suppression not yet exercised
+
+Run20260919T204546.942041Z/session98718 confirmed live. Boarding selections at
+1961/2547/2922 targeted bunker4295491585. Subsequent Jev state observations
+showed Marine4341104641 inside,then both4341104641 and4302569473 (cargo1 then2).
+This verifies entry rather than just accepted requests. All three coordination
+events had discarded_commands empty, so this does not yet demonstrate benefit
+from conflict suppression. Third requested passenger4356308993 not yet verified
+aboard.141calls/$0.081970854,no budget/terminal event. Native2:24 visual check
+showed Zerg at the ramp and bunker nearby; no tactical intervention.
