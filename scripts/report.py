@@ -11,6 +11,7 @@ path = Path(sys.argv[1]) if len(sys.argv)>1 else max(Path('runs').glob('*/events
 rows = [json.loads(line) for line in path.read_text().splitlines()]
 calls = [r for r in rows if r['event']=='jev']
 ticks = [r for r in rows if r['event']=='tick']
+age_limit = next((r['max_age_loops'] for r in rows if r['event']=='connected' and 'max_age_loops' in r),32)
 latencies = sorted(r['latency_ms'] for r in calls)
 decision_latencies = sorted(r['latency_ms'] for r in ticks)
 choices = collections.Counter(a.get('choice','unknown') for r in calls for a in r['response']['answers'].values())
@@ -88,6 +89,9 @@ print(json.dumps({
     'last_distribution':distribution(ticks[-1]) if ticks else None,
     'action_result_names':dict(collections.Counter(error_pb2.ActionResult.Name(code) for r in ticks for code in r.get('action_results',[]))),
     'action_result_counts':dict(collections.Counter(str(code) for r in ticks for code in r.get('action_results',[]))),
+    'configured_max_age_loops':age_limit,
+    'ticks_older_than_configured_limit':sum(r['decision_age_loops']>age_limit for r in ticks),
+    'submitted_commands_from_decisions_older_than_32_loops':sum(r['submitted'] for r in ticks if r['decision_age_loops']>32),
     'ticks_older_than_32_loops':sum(r['decision_age_loops']>32 for r in ticks),
     'errors':[r for r in rows if r['event'].endswith('error')],
     'results':[r for r in rows if r['event']=='result'],

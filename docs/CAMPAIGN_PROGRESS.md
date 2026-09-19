@@ -1314,3 +1314,12 @@ Two earlier victories remain intact. Start attempt10 from the same pending missi
 allowing older Jev decisions to reach fresh command validation reduces starvation.
 Ownership/visibility validation and engine legality remain enforced. No tactical
 orders or mission-specific logic added. Policy benefit remains unproven.
+
+### Lab114 — verify 64-loop execution and correct reporting
+
+Attempt10 connected event confirms max_age_loops64. Early live sample has10ticks
+older than32loops, none older than64;77 commands from decisions older than32loops
+passed normal validation and were submitted. This verifies the experimental
+mechanism, not better play. Reports now expose configured_max_age_loops and counts
+older than that actual limit, retaining the32-loop count only for comparison.
+Verified report output on the active run. Runtime player policy unchanged.
