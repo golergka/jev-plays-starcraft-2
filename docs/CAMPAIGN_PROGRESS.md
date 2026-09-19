@@ -3305,3 +3305,18 @@ this result. No gameplay commands or policy changes. Next investigate whether
 joint purchase-versus-wait and project ranking in one large menu is the harder
 representation problem; any new decomposition must still leave both decisions
 to Jev and report added call cost.
+
+### Lab227 — project-ranking then binary authorization reinforces waiting
+
+Nine-call paired recorded-state probe on same three states aslab226. Conditional
+ranking among executable project/batch options,then explicit binary purchase/wait
+for Jev's top-ranked project. Ranking does not authorize spending; same observed
+state and strategic context. Alternate original/staged order. No game commands.
+Cost$.003476928,shared governor. Original save probabilities.48/.37/.30;
+staged wait.87/.98/.88,all top wait. Proposed projects were Bunker,CommandCenter,
+Bunker respectively. This tests top-project authorization,not every possible
+investment or calibrated equivalence between multiclass and binary probabilities.
+Three single pairs do not establish statistical significance. Nevertheless this
+version adds a call without evidence it remedies underspending; do not deploy.
+Script scripts/probe_investment_stages.py; full outputs in
+ docs/experiments/227-investment-stages.json. Keep current live policy unchanged.

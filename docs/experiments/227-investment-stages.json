@@ -1,0 +1,209 @@
+{
+  "source": "runs/20260919T204546.942041Z/events.jsonl",
+  "method": "First/middle/last high-balance recorded top-save states. Original menu versus project ranking followed by binary authorization. Alternate baseline/staged order. Ranking is conditional, not a purchase authorization. Identical observed state; no gameplay commands. Three single pairs cannot establish significance.",
+  "pairs": [
+    {
+      "recorded_time": 1789850913.1081522,
+      "resources": {
+        "minerals": 576,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 30,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 5,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.45,
+        "probabilities": {
+          "project_6": 0.02,
+          "project_1": 0.13,
+          "batch_4": 0.06,
+          "project_2": 0.03,
+          "project_10": 0.08,
+          "project_3": 0.0,
+          "project_9": 0.07,
+          "save": 0.48,
+          "project_0": 0.01,
+          "project_4": 0.02,
+          "project_5": 0.01,
+          "batch_9": 0.07,
+          "project_8": 0.01,
+          "project_7": 0.01
+        }
+      },
+      "staged": {
+        "ranking": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "project_3": 0.0,
+            "project_5": 0.01,
+            "project_9": 0.18000000000000002,
+            "project_7": 0.0,
+            "project_2": 0.14,
+            "project_0": 0.0,
+            "project_10": 0.09,
+            "project_6": 0.01,
+            "project_1": 0.44,
+            "project_4": 0.05,
+            "batch_9": 0.06,
+            "project_8": 0.0,
+            "batch_4": 0.02
+          }
+        },
+        "proposal": "Purchase one Bunker. Adds another unit able to: Attack visible targets, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False}. Already owned: 2; idle: 2; current orders: {}.",
+        "authorization": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.74,
+          "probabilities": {
+            "purchase": 0.13,
+            "wait": 0.87
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789851091.274452,
+      "resources": {
+        "minerals": 1575,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 27,
+        "food_cap": 35,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 8,
+        "supply_blocked": false
+      },
+      "staged": {
+        "ranking": {
+          "choice": "project_2",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "project_5": 0.14,
+            "batch_4": 0.02,
+            "project_1": 0.26,
+            "project_8": 0.01,
+            "project_0": 0.01,
+            "project_9": 0.08,
+            "project_2": 0.27,
+            "batch_9": 0.08,
+            "project_7": 0.0,
+            "project_3": 0.0,
+            "project_6": 0.01,
+            "project_10": 0.07,
+            "project_4": 0.04
+          }
+        },
+        "proposal": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Adds 11 supply capacity when complete. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False}. Already owned: 1; idle: 1; current orders: {}.",
+        "authorization": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.95,
+          "probabilities": {
+            "purchase": 0.02,
+            "wait": 0.98
+          }
+        }
+      },
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.34,
+        "probabilities": {
+          "project_3": 0.01,
+          "project_5": 0.08,
+          "project_9": 0.07,
+          "project_7": 0.01,
+          "project_2": 0.03,
+          "project_0": 0.01,
+          "project_10": 0.1,
+          "project_6": 0.02,
+          "batch_9": 0.13,
+          "project_4": 0.02,
+          "save": 0.37,
+          "project_1": 0.08,
+          "project_8": 0.01,
+          "batch_4": 0.06
+        }
+      }
+    },
+    {
+      "recorded_time": 1789851360.422168,
+      "resources": {
+        "minerals": 3319,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 600.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 28,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 7,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.24,
+        "probabilities": {
+          "project_5": 0.01,
+          "project_2": 0.03,
+          "save": 0.3,
+          "project_8": 0.01,
+          "project_9": 0.06,
+          "project_1": 0.11,
+          "batch_4": 0.21000000000000002,
+          "batch_9": 0.05,
+          "project_0": 0.01,
+          "project_3": 0.0,
+          "project_10": 0.08,
+          "project_6": 0.01,
+          "project_7": 0.01,
+          "project_4": 0.11
+        }
+      },
+      "staged": {
+        "ranking": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "project_0": 0.01,
+            "project_9": 0.1,
+            "project_7": 0.0,
+            "project_1": 0.35000000000000003,
+            "batch_9": 0.03,
+            "project_3": 0.0,
+            "project_4": 0.24000000000000002,
+            "batch_4": 0.12,
+            "project_8": 0.0,
+            "project_10": 0.04,
+            "project_6": 0.01,
+            "project_2": 0.09,
+            "project_5": 0.01
+          }
+        },
+        "proposal": "Purchase one Bunker. Adds another unit able to: Attack visible targets, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False}. Already owned: 4; idle: 4; current orders: {}.",
+        "authorization": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.77,
+          "probabilities": {
+            "wait": 0.88,
+            "purchase": 0.12
+          }
+        }
+      }
+    }
+  ],
+  "calls": 9,
+  "cost": 0.003476928
+}
