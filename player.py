@@ -336,7 +336,7 @@ async def choose_investment(view, state, jev, memory=None):
     if not projects and not potential:
         return []
     names = sorted(projects)
-    criteria = {'save':'Make no new purchase now; preserve resources and let existing production/construction finish.'}
+    criteria = {'save':'Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.'}
     for i,name in enumerate(names):
         example = projects[name][0][1]
         criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)

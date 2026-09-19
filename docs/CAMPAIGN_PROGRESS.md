@@ -3992,3 +3992,17 @@ base, construction including another CommandCenter, and eventual army collapse.
 Do not infer tactical effectiveness from accepted requests or completion alone.
 Stable runtime policy throughout; lab270 added only regression test/journal.
 First two missions remain the only verified campaign victories.
+
+### Lab272 — describe no-purchase by actual effect
+
+Last269run investment top answer was save on20of23reviews (including late empty
+menus); sampled construction/training often had much lower individual probability.
+This does not prove a calibration problem or justify forcing a purchase. Earlier
+rank-then-buy and strategy ablations failed to remove waiting reliably.
+
+One wording confound remains: save unconditionally says to let existing production
+finish, even when none exists. Replace with literal effects: requests no new unit,
+structure or upgrade, leaves resources available and existing orders unchanged.
+Keep all options, distributions, sampling, producer selection, budget and jobs.
+Hypothesis only: reduced implicit benefit for waiting; no causal claim before
+trial.137tests pass. No paid probe calls.
