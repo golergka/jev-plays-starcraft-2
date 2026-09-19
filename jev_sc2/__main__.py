@@ -102,7 +102,7 @@ async def run(args):
     loader = PlayerLoader(ROOT)
     loader.refresh()
     budget_error = None
-    memory = {}
+    memory = {"production_executor_enabled": True}
     camera_memory = {}
     jev = Jev(log, stamp, max_calls=args.max_calls)
     proc = None
@@ -229,6 +229,24 @@ async def run(args):
                     camera.action_raw.camera_move.center_world_space.y = shot['position'][1]
                     await client.request('action',sc.RequestAction(actions=[camera]))
                     log('camera_shot',loop=view['loop'],**shot)
+            from .jobs import next_request, acknowledge_initial, cancel as cancel_job
+            job_commands = next_request(view, memory, log)
+            if job_commands:
+                job_fresh = await client.observe()
+                job_age = job_fresh.observation.game_loop-view['loop']
+                job_actions = (validate_commands(job_commands,view,job_fresh)
+                               if not job_fresh.player_result and client.status != sc.ended
+                               and 0 <= job_age <= args.max_age_loops else [])
+                job_results = []
+                if job_actions:
+                    job_response = await client.request('action',sc.RequestAction(actions=job_actions))
+                    job_results = list(job_response.result)
+                log('production_job_execution',loop=view['loop'],commands=job_commands,
+                    submitted=len(job_actions),results=job_results,age=job_age)
+                if len(job_results) != len(job_commands) or any(r != 1 for r in job_results):
+                    cancel_job(memory,log,view['loop'],'request rejected or stale; no automatic retry')
+                await asyncio.sleep(0.2)
+                continue
             if time.monotonic() < memory.get('spend_resume_at', 0):
                 await asyncio.sleep(0.2)
                 continue
@@ -256,6 +274,8 @@ async def run(args):
                 log('stopped',reason='OpenRouter credits unavailable; replenish account credits or check the key cap')
                 break
             except Exception as exc:
+                if memory.get('production_batch',{}).get('executor') and not memory['production_batch'].get('armed'):
+                    cancel_job(memory,log,view['loop'],'decision failed before initial request')
                 log('decision_error',error=type(exc).__name__,detail=str(exc)[:200])
                 failures += 1
                 if failures >= 5:
@@ -286,6 +306,7 @@ async def run(args):
             if actions:
                 response = await client.request('action',sc.RequestAction(actions=actions))
                 results = list(response.result)
+            acknowledge_initial(memory,actions,results,view['loop'],log)
             feedback = action_feedback(actions,results,view['loop'],len(commands),age,args.max_age_loops)
             history = memory.setdefault('action_feedback',[])
             history.append(feedback)

@@ -356,6 +356,8 @@ async def choose_investment(view, state, jev, memory=None):
                 'using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. '
                 'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
                 +investment_description(name,example.get('project'),state))
+            if memory.get('production_executor_enabled'):
+                criteria[f'batch_{i}'] += ' The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.'
     future_names = sorted(set(potential)-set(projects))
     for i,name in enumerate(future_names):
         project = potential[name]
@@ -370,6 +372,8 @@ async def choose_investment(view, state, jev, memory=None):
     strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
     batch = (memory or {}).get('production_batch')
     if batch:
+        if batch.get('executor') and batch['loop'] <= view['loop'] < batch['review_at'] and batch['remaining'] > 0 and batch['strategy'] == strategy:
+            return []  # Explicit job owns purchases; framework executes its fixed command.
         if (batch['loop'] <= view['loop'] < batch['review_at'] and batch['remaining']>0
                 and batch['strategy']==strategy):
             target=batch['target_project']
@@ -435,6 +439,8 @@ async def choose_investment(view, state, jev, memory=None):
     def propose(command):
         batch=(memory or {}).get('production_batch')
         if batch and batch['target_project']==chosen_project:
+            if memory.get('production_executor_enabled') and not batch.get('executor'):
+                batch.update(executor=True, armed=False, command=dict(command), last_request_loop=view['loop'])
             batch['remaining']-=1
             jev.log('production_batch_request',loop=view['loop'],target_project=batch['target_project'],
                     remaining_attempts=batch['remaining'],command=command)

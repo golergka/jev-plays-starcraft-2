@@ -3849,3 +3849,26 @@ budget accounting must remain visible. This is a hypothesis, not implemented her
 Current multiple-command validation intentionally rejects repeated unit tags, so
 blindly emitting three same-frame commands would not implement it. Do not silently
 change existing commitments' meaning or call selection delays transport errors.
+
+### Lab262 — fixed-producer jobs execute between paid reviews
+
+Run256 terminated; native DEFEAT independently verified13:15,06:54remaining,
+1546minerals,allstructuresdestroyed.172successful calls/$0.108483480 plus earlier
+unknown529 reservation. Checkpoint records defeat, still only two verified wins.
+
+New controller enables explicit fixed-producer batch semantics. Jev sees that its
+first producer remains fixed and up to two remaining requests can execute between
+paid reviews, at least112loops apart, within original2016deadline. First request
+must receive engine success before arming. Executor matches exact observed owned
+producer/command/project, checks advertised candidate and resources/supply, uses
+fresh-observation validation, consumes bounded attempts, logs execution. No new
+producer/type selected. Missing producer, rewind, strategy change, deadline or
+exhaustion releases it; unavailable/unaffordable command waits visibly. Rejected
+or stale submission cancels without retry. Decision failure cannot arm a partial
+job. Old controllers lack feature flag, so their existing commitments retain old
+semantics. Requires next controller process; not tested live yet.
+
+Full suite134passed before final added integration test; focused5job tests pass
+including explicit Jev batch authorization, initial success gating, fixedproducer,
+spacing, exhaustion, expiry, rewind, strategy, missingcontrols and affordability.
+No extra Jev calls, dollar-limit change, queue-command bypass or unit-tag duplicate.
