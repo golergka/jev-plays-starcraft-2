@@ -2725,3 +2725,21 @@ planned idle3.1286seconds total. These are avoided questions, not necessarily
 avoided API calls or measured dollar savings because requests can batch.
 Mineral income estimate40/min,gas0 at this sample; early state is not evidence
 of victory or improved economy. Continue observation under unchanged policy.
+
+
+### Lab195 — routine savings resume between threats; expose role sampling
+
+Verified controller session44407 remains live. Atloop3758:310calls/$0.198523500,
+54 routine questions avoided, no controller/budget errors or ending marker.
+Earlier skipped-question count stayed37 during visible threats, then resumed;
+this guard deliberately limits savings in combat. Recent resource sample had
+140 estimated minerals/minute,0gas. No direct commands or policy changes.
+
+Worker contribution reviews at one snapshot:72, with32 sampled choices differing
+from Jev's top choice. Across all selections at a later report snapshot:180reviews,
+74 departures. This is a separate hypothesis about exploration versus stable
+execution, not proof that top-choice selection would win; investment argmax
+previously stalled saving, so do not conflate these different decision layers.
+Added contribution_sampling reviews/departures/transition counts to report.py
+and generated the report on real events. No paid probes. Keep current trial
+policy and original spending taper unchanged while observing its outcome.

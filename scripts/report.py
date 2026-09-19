@@ -68,6 +68,11 @@ print(json.dumps({
     'recorded_outcome':recorded_outcome,
     'latest_observed_resources':resource_samples[-1] if resource_samples else None,
     'max_observed_mineral_income_estimate_per_minute':max(income_samples) if income_samples else None,
+    'contribution_sampling':{
+        'reviews':len(commitments),
+        'departures_from_top_choice':sum(r.get('sampled_choice')!=r.get('top_choice') for r in commitments),
+        'top_to_sampled':dict(collections.Counter(str(r.get('top_choice'))+' -> '+str(r.get('sampled_choice')) for r in commitments)),
+        'note':'Role sampling diagnostic, not evidence that either choice is tactically better.'},
     'contribution_commitments':{key:dict(collections.Counter(r.get('sampled_choice') for r in commitments if r['question']==key))
                               for key in sorted({r['question'] for r in commitments})},
     'resource_category_choices':dict(collections.Counter(r.get('choice') for r in rows if r['event']=='resource_category_choice')),
