@@ -3978,3 +3978,17 @@ prior continue selection across a300loopgap; review1000 expires stale history;
 rewind2 excludes future observations. No action is synthesized in any case.
 Targeted test passes. This proves context plumbing, not improved model decisions.
 Live lab269 session60910 remains running; no runtime policy change in this commit.
+
+### Lab271 — history delivered live; verified defeat at11:22
+
+Run20260919T225822.677784Z/session60910 terminal with native DEFEAT11:22,
+08:47remaining,0minerals,allstructuresdestroyed.166successful calls cost
+$0.097955844; zero decision errors. Independent UI result/checkpoint saved.
+Seven individual questions, one with recent_progress: extended history reached
+live Jev, but no survival benefit established. No background training executions.
+Most control remained cohort-level, limiting scope of the individual-history fix.
+Visual inspections found fluctuating worker utilization, force concentrated near
+base, construction including another CommandCenter, and eventual army collapse.
+Do not infer tactical effectiveness from accepted requests or completion alone.
+Stable runtime policy throughout; lab270 added only regression test/journal.
+First two missions remain the only verified campaign victories.
