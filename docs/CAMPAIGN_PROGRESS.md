@@ -1546,3 +1546,15 @@ state size, affected question names and split reasons. Verify against lab130:
 server-triggered splits. Early attempt15 snapshot:113 successful calls,zero
 rejections; this is not yet evidence under late-mission load. Latest mineral
 income estimate remains zero, so successful transport does not imply sound play.
+
+### Lab134 — fifteenth attempt ends in API defeat without token rejection
+
+runs/20260919T014635.114048Z returned player1 Defeat.1463 successful Jev
+calls,$1.138453596,zero request rejections,309 heuristic batch splits,5 decision
+errors and6 ticks beyond the64-loop age limit.2972 successful action results,
+33 TargetIsOutOfRange,11 NotSupported,1 TooMuchLife. All94 strategic choices were
+protect. Latest observed snapshot still contained2CommandCenters (combined health
+2169.15),other buildings,22SCVs and3Marines; this does not establish why the map
+ended. Do not infer all-structures-destroyed from the API result alone. Inspect
+mission UI/defeat explanation before changing policy on that assumption. The
+context fix survived this run; it did not yield victory. Two earlier wins remain.
