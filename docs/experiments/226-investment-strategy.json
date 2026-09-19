@@ -1,0 +1,215 @@
+{
+  "source": "runs/20260919T204546.942041Z/events.jsonl",
+  "method": "First/middle/last eligible recorded save decisions with >=500 minerals. Identical questions and state except removing strategy_chosen_by_jev. No replacement strategic advice. Alternate request order. Six calls maximum. No gameplay commands. Single draws, not statistical evidence.",
+  "pairs": [
+    {
+      "recorded_time": 1789850913.1081522,
+      "resources": {
+        "minerals": 576,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 30,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 5,
+        "supply_blocked": false
+      },
+      "removed_strategy": {
+        "loop": 3322,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.42,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "project_6": 0.02,
+            "batch_9": 0.07,
+            "project_7": 0.01,
+            "batch_4": 0.06,
+            "project_5": 0.01,
+            "project_10": 0.08,
+            "project_3": 0.0,
+            "project_4": 0.02,
+            "project_1": 0.15,
+            "project_8": 0.01,
+            "project_9": 0.11,
+            "save": 0.42,
+            "project_2": 0.03,
+            "project_0": 0.01
+          }
+        }
+      },
+      "without_strategy": {
+        "choice": "save",
+        "no_purchase_probability": 0.35,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "project_5": 0.01,
+            "project_6": 0.03,
+            "batch_9": 0.12,
+            "save": 0.35,
+            "project_3": 0.0,
+            "project_7": 0.01,
+            "project_0": 0.01,
+            "batch_4": 0.07,
+            "project_9": 0.08,
+            "project_1": 0.12,
+            "project_8": 0.01,
+            "project_2": 0.06,
+            "project_4": 0.02,
+            "project_10": 0.11
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789851091.274452,
+      "resources": {
+        "minerals": 1575,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 27,
+        "food_cap": 35,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 8,
+        "supply_blocked": false
+      },
+      "removed_strategy": {
+        "loop": 7302,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "without_strategy": {
+        "choice": "save",
+        "no_purchase_probability": 0.35,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "project_7": 0.01,
+            "batch_9": 0.2,
+            "project_9": 0.07,
+            "project_10": 0.06,
+            "save": 0.35,
+            "project_4": 0.03,
+            "project_2": 0.04,
+            "project_6": 0.03,
+            "project_3": 0.01,
+            "batch_4": 0.05,
+            "project_8": 0.01,
+            "project_1": 0.07,
+            "project_5": 0.06,
+            "project_0": 0.01
+          }
+        }
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.45,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.4,
+          "probabilities": {
+            "project_5": 0.06,
+            "project_7": 0.01,
+            "project_2": 0.02,
+            "batch_4": 0.05,
+            "save": 0.45,
+            "project_3": 0.0,
+            "project_8": 0.01,
+            "project_1": 0.09,
+            "project_0": 0.01,
+            "project_9": 0.07,
+            "batch_9": 0.14,
+            "project_4": 0.02,
+            "project_6": 0.01,
+            "project_10": 0.06
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789851360.422168,
+      "resources": {
+        "minerals": 3319,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 600.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 28,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 7,
+        "supply_blocked": false
+      },
+      "removed_strategy": {
+        "loop": 13202,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.25,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.19,
+          "probabilities": {
+            "project_4": 0.15,
+            "project_5": 0.01,
+            "project_9": 0.08,
+            "project_2": 0.02,
+            "batch_4": 0.19,
+            "save": 0.25,
+            "project_8": 0.01,
+            "project_0": 0.01,
+            "project_3": 0.0,
+            "project_6": 0.02,
+            "batch_9": 0.06,
+            "project_7": 0.01,
+            "project_10": 0.06,
+            "project_1": 0.13
+          }
+        }
+      },
+      "without_strategy": {
+        "choice": "save",
+        "no_purchase_probability": 0.27,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "project_0": 0.01,
+            "batch_4": 0.21,
+            "project_9": 0.07,
+            "save": 0.27,
+            "project_10": 0.09,
+            "project_4": 0.1,
+            "project_2": 0.03,
+            "project_6": 0.02,
+            "project_1": 0.08,
+            "project_8": 0.01,
+            "project_7": 0.01,
+            "batch_9": 0.09,
+            "project_5": 0.01,
+            "project_3": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.002468676
+}

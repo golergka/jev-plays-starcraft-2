@@ -3289,3 +3289,19 @@ units/structures and strengthen as increasing force through production,though
 these can be simultaneous means to survival. Hypothesis: mutually exclusive
 labels bias downstream allocation. Test framing with recorded states before
 another full run; do not issue a live tactical directive or assume causality.
+
+### Lab226 — strategic-context ablation has mixed, modest effects
+
+Six-call paired probe on first/middle/last eligible recorded investment decisions
+from20260919T204546.942041Z (>=500minerals,recorded top save). Same question,
+criteria/order,state except removal of strategy_chosen_by_jev; alternating request
+order. Results in docs/experiments/226-investment-strategy.json and reproducible
+scripts/probe_investment_strategy.py. Shared persistent governor applies.
+Cost$.002468676. Save probabilities original→removed:.42→.35,.45→.35,.25→.27.
+Save remains top choice in all six responses; removing protect does not clearly
+redirect investment to the army. Three single pairs on selected states do not
+establish significance or live benefit. Do not remove strategic context based on
+this result. No gameplay commands or policy changes. Next investigate whether
+joint purchase-versus-wait and project ranking in one large menu is the harder
+representation problem; any new decomposition must still leave both decisions
+to Jev and report added call cost.
