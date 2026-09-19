@@ -2683,3 +2683,28 @@ loop15692, 760 calls/$0.588134316 in the resumed segment. No independent UI
 verification yet, so campaign credit/result classification is unchanged.
 Validation: 104 tests passed, including CLI nonzero exit/no retry on budget
 failure. Generated the report on the completed segment without paid calls.
+
+
+### Lab193 — continue observed harvesting without repeated target deliberation
+
+Native UI verifies the latest Zero Hour defeat at16:20, evacuation03:49, all
+structures destroyed. Two controller segments total1375calls/$1.006953948.
+Checkpoint records defeat, retaining the two verified opening victories.
+The resumed segment spent$0.450096738 of$0.588134316 (~77%) on concrete/other
+questions, versus$0.057183126 on contributions,$0.043172430 investment and
+$0.037682022 strategy. This coarse classification is not an attribution to
+workers alone; serial executor and other questions share the largest category.
+
+First routine execution utility: after Jev selects income, visibly harvesting
+units can keep their current engine orders without a concrete-order question
+for at most112loops between reviews. Gather/return transitions count as the
+same activity. Any visible enemy, health decline, changed membership, strategic
+priority, role, idle state or clock rewind forces review. No worker assignment
+or resource target is chosen by code. Initial observation requires review.
+This conservative scope may save little during continuous combat; measure
+routine_execution events before claiming cost savings. Report adds avoided
+question count, not an invented dollar saving. Budget taper unchanged.
+
+Validation:106tests pass, including expiration, harvest-return transitions,
+health/threat/role/strategy invalidation, idle workers, membership and rewind.
+No paid inference was used for this change. Live campaign benefit unproven.

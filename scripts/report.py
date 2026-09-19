@@ -81,6 +81,7 @@ print(json.dumps({
     'cost_usd':sum(r['response']['usage'].get('cost',0) or 0 for r in calls),
     'actions_submitted':sum(r['submitted'] for r in ticks),
     'decision_batches':len(batches),
+    'routine_execution_questions_avoided':sum(r['event']=='routine_execution' and r.get('avoided_concrete_question',False) for r in rows),
     'group_decisions':len(groups),
     'group_choices':dict(collections.Counter(r['choice'] for r in groups)),
     'investment_choices':dict(collections.Counter(

@@ -561,6 +561,30 @@ async def assign_support(view, state, jev, requests):
     return commands
 
 
+def continuing_income(view, selected, role, strategy, key, memory):
+    """Keep an observed harvesting cycle; never choose a worker or resource."""
+    reviews = memory.setdefault('income_execution_reviews', {})
+    if role != 'income' or any(u.get('health_fraction') is None for u in selected):
+        reviews.pop(key,None)
+        return False
+    previous = reviews.get(key)
+    snapshot = {'loop':view['loop'], 'strategy':strategy,
+                'health':{u['tag']:u['health_fraction'] for u in selected}}
+    harvesting = bool(selected) and all(
+        u.get('orders') and u['orders'][0].get('ability','').startswith(('Harvest Gather', 'Harvest Return'))
+        for u in selected)
+    threatened = any(e.get('alliance')=='Enemy' for e in view.get('visible_entities', []))
+    if (role=='income' and harvesting and not threatened and previous
+        and previous['strategy']==strategy
+        and 0 <= view['loop']-previous['loop'] < 112
+        and snapshot['health'].keys()==previous['health'].keys()
+        and all(h >= previous['health'][tag] for tag,h in snapshot['health'].items())):
+        return True
+    # Only an actual review resets this deadline. Skips cannot extend it forever.
+    reviews[key] = snapshot if role=='income' and harvesting and not threatened else None
+    return False
+
+
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
     units = [{**u,'candidates':[c for c in u['candidates'] if not is_purchase(c)]}
@@ -759,7 +783,11 @@ async def decide(view, jev, memory):
         for kind,q in questions.items():
             role=roles.get(f'purpose_{kind}',{}).get('choice')
             jev.log('purpose_choice',loop=view['loop'],cohort=kind,choice=role)
-            if role in ('continue','individual'):
+            if continuing_income(view,cohorts[kind],role,(strategy or {}).get('choice'),kind,memory):
+                answers[kind]={'choice':'continue'}
+                jev.log('routine_execution',loop=view['loop'],cohort=kind,
+                        reason='Jev income role; observed harvest cycle continues', avoided_concrete_question=True)
+            elif role in ('continue','individual'):
                 answers[kind]={'choice':role}
             else:
                 criteria={k:v for k,v in q['criteria'].items() if purpose(kind,k)==role}
