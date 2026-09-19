@@ -721,3 +721,21 @@ def test_failure_feedback_survives_harness_window_without_double_counting():
     view['loop'] = 1
     memory['action_feedback'] = []
     assert player.describe_action_feedback(view,memory) == []
+
+
+def test_movement_outcomes_distinguish_round_trip_from_stationary_and_missing_units():
+    from player import recent_outcomes
+    memory = {}
+    def view(loop,x,extra=False):
+        units=[{'tag':1,'type':'Traveler','position':[x,0]},
+               {'tag':2,'type':'Stationary','position':[0,0]}]
+        if extra: units.append({'tag':3,'type':'Intermittent','position':[5,5]})
+        return {'loop':loop,'self':units,'resources':{}}
+    recent_outcomes(view(1,0,True),memory)
+    recent_outcomes(view(10,3),memory)
+    outcome=recent_outcomes(view(20,0,True),memory)['movement_by_type']
+    assert outcome['Traveler']['mean_net_displacement']==0
+    assert outcome['Traveler']['mean_sampled_distance_travelled']==6
+    assert outcome['Stationary']['mean_sampled_distance_travelled']==0
+    assert 'Intermittent' not in outcome
+    assert recent_outcomes(view(1,0),memory)['movement_by_type']=={}

@@ -1178,3 +1178,16 @@ An initial six-call pilot ($0.002157960) used an overbroad sentence saying all
 positioning orders only change/hold location, overlooking Hold's combat behavior.
 Discarded that wording and reran the three pairs with the statement explicitly
 restricted to ordinary Move. Only the corrected wording enters the player.
+
+### Lab103 — expose observed movement outcomes
+
+The seventh attempt confirmed revision 090651e live. Existing recent_outcomes
+summarized resource and health changes but not movement. Added per-type mean net
+displacement and sampled travel distance, restricted to tags observed at every
+sample in the existing 672-loop history. Missing positions (including pre-reload
+history) omit the measurement rather than inventing zero. Round trips have zero
+net displacement but nonzero sampled travel; the description explicitly says
+neither metric alone proves success/failure. No stagnation threshold, automatic
+rerouting or role override is added. Jev remains responsible for interpreting it.
+55 tests pass, including round-trip, stationary, intermittent visibility and
+clock-reset cases. Gameplay effect unmeasured at deployment.

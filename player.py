@@ -20,7 +20,8 @@ def recent_outcomes(view, memory, window=672):
     if history and loop < history[-1]['loop']:
         history.clear()
     current = {'loop':loop, 'resources':dict(view.get('resources', {})),
-               'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0)}
+               'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0),
+                                     'position':u.get('position')}
                         for u in view['self']}}
     if not history or history[-1]['loop'] != loop:
         history.append(current)
@@ -33,7 +34,25 @@ def recent_outcomes(view, memory, window=672):
         disappeared.update(a[t]['type'] for t in a.keys()-b.keys())
         for t in a.keys() & b.keys():
             damage[b[t]['type']] += max(0,a[t]['health']-b[t]['health'])
+    movement = {}
+    continuous = set.intersection(*(set(h['units']) for h in history))
+    for tag in continuous:
+        samples = [h['units'][tag] for h in history]
+        if len(samples) < 2 or any(u.get('position') is None for u in samples):
+            continue
+        kind = samples[-1]['type']
+        item = movement.setdefault(kind, {'units_observed_throughout_window':0,
+            'mean_net_displacement':0, 'mean_sampled_distance_travelled':0})
+        item['units_observed_throughout_window'] += 1
+        item['mean_net_displacement'] += math.dist(samples[0]['position'],samples[-1]['position'])
+        item['mean_sampled_distance_travelled'] += sum(math.dist(a['position'],b['position'])
+            for a,b in zip(samples,samples[1:]))
+    for item in movement.values():
+        for key in ('mean_net_displacement','mean_sampled_distance_travelled'):
+            item[key] = round(item[key]/item['units_observed_throughout_window'],1)
     return {'observed_game_loops':loop-history[0]['loop'],
+            'movement_by_type':movement,
+            'movement_interpretation':'Map units over the observed window, only units present at every sample. Sampled travel is a lower bound; net displacement can be zero after useful round trips. Neither measure alone indicates success or failure.',
             'own_units_appeared_by_type':dict(appeared),
             'own_units_disappeared_by_type':dict(disappeared),
             'health_decreases_on_continuously_observed_units':dict(damage),
