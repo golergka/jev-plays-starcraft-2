@@ -1449,3 +1449,12 @@ are not guessed across upgrade levels.62 tests pass covering costs, exact offere
 ability, completion exclusion and unsupported target forms. This closes a real
 control gap; it does not prove the active campaign map offers research or that
 research solves the prior defeats. Start attempt13,2500calls,64-loop cutoff.
+
+### Lab125 — expose own completed upgrades to Jev
+
+Attempt13 confirmed live and offering infantry research, with no research selection
+in the early sample. Add observed own-player completed upgrade IDs and catalog
+names to the fair view and both full/compact decision contexts. This distinguishes
+completed research from merely requested or accepted research; no effect magnitudes
+are inferred and no opponent upgrades are exposed.62 tests still pass. Changes
+hot-reload with the normal player/view pair. Live completion remains to be observed.

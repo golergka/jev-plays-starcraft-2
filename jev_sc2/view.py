@@ -213,6 +213,8 @@ async def make_view(client, observation, data, info, objective):
     area = info.start_raw.playable_area
     view = {'loop': obs.game_loop, 'objective': objective, 'self': [],
             'potential_projects':list(potential.values()),
+            'completed_upgrades':[{'id':uid,'name':next((u.name for u in data.upgrades if u.upgrade_id==uid),str(uid))}
+                                  for uid in sorted(completed)],
             'unit_type_facts': {
                 names.get(kind,str(kind)): {
                     'mineral_cost':unit_catalog[kind].mineral_cost,
