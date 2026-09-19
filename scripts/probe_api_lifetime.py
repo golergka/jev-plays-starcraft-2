@@ -15,7 +15,7 @@ import time
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from jev_sc2.sc2 import SC2
-from s2clientprotocol import sc2api_pb2 as sc
+from s2clientprotocol import sc2api_pb2 as sc, common_pb2 as common
 
 
 def diagnostic_copy(source, destination, storm):
@@ -37,6 +37,20 @@ def diagnostic_copy(source, destination, storm):
     finally:library.SFileCloseArchive(handle)
 
 
+async def advance_diagnostic(client, count):
+    """Explicitly diagnostic-only stepping; production client still forbids step."""
+    async with client.lock:
+        client.counter += 1
+        request = sc.Request(id=client.counter, step=sc.RequestStep(count=count))
+        await client.ws.send(request.SerializeToString())
+        reply = sc.Response.FromString(await asyncio.wait_for(client.ws.recv(), 120))
+        if reply.error:
+            raise RuntimeError('; '.join(reply.error))
+        if reply.HasField('id') and reply.id != request.id:
+            raise RuntimeError('Diagnostic step response ID mismatch')
+        client.status = reply.status
+
+
 async def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('map',type=Path)
@@ -44,6 +58,8 @@ async def main():
     parser.add_argument('--storm',type=Path)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--samples',type=int,default=65)
+    parser.add_argument('--stepped', action='store_true',
+        help='Non-real-time diagnostic only: advance 256 loops per sample instead of waiting 10 seconds')
     args=parser.parse_args()
     if args.samples<1:parser.error('samples must be positive')
     if args.output.exists():raise FileExistsError(args.output)
@@ -55,17 +71,31 @@ async def main():
     client=await SC2.connect(5001)
     try:
         await client.request('ping',sc.RequestPing())
-        await client.start(map_path)
+        if args.stepped:
+            if client.status == sc.in_game:
+                await client.request('leave_game', sc.RequestLeaveGame())
+            await client.request('create_game', sc.RequestCreateGame(
+                local_map=sc.LocalMap(map_path=map_path.name, map_data=map_path.read_bytes()),
+                player_setup=[sc.PlayerSetup(type=sc.Participant)],
+                disable_fog=False, realtime=False))
+            await client.request('join_game', sc.RequestJoinGame(
+                race=common.Terran, player_name='Lifetime diagnostic',
+                options=sc.InterfaceOptions(raw=True, score=True)))
+        else:
+            await client.start(map_path)
         with args.output.open('x') as output:
             for index in range(args.samples):
                 observation=await client.observe()
-                record={'time':time.time(),'status':sc.Status.Name(client.status),
+                record={'mode':'stepped' if args.stepped else 'realtime',
+                    'time':time.time(),'status':sc.Status.Name(client.status),
                     'loop':observation.observation.game_loop,
                     'owned':sum(u.alliance==1 for u in observation.observation.raw_data.units),
                     'results':[(r.player_id,sc.Result.Name(r.result)) for r in observation.player_result]}
                 line=json.dumps(record);output.write(line+'\n');output.flush();print(line,flush=True)
                 if client.status==sc.ended:break
-                if index+1<args.samples:await asyncio.sleep(10)
+                if index+1<args.samples:
+                    if args.stepped:await advance_diagnostic(client,256)
+                    else:await asyncio.sleep(10)
     finally:await client.ws.close()
 
 if __name__=='__main__':asyncio.run(main())

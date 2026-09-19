@@ -1813,3 +1813,15 @@ Map: maps/api-without-ai-probe.SC2Map. Output: /tmp/jev-without-ai-probe.jsonl.
 This remains an observation-only isolation test, never a campaign attempt.
 These negative tests do not yet exclude an interaction with the player harness:
 none issue its normal action/query traffic. No claim of a specific root cause.
+
+### Lab 154 — speed up subsequent isolation experiments
+
+Add optional --stepped to the standalone lifetime probe: create a non-real-time
+single-player game and advance 256 loops between observations. The default
+remains real-time; records now identify mode. Production SC2 client and campaign
+runner retain their request allowlist (step forbidden) and real-time behavior.
+This mode does not issue unit orders or update campaign progress. It permits
+faster exploratory isolation, but a stepped negative result cannot exclude a
+real-time-specific failure; any proposed repair needs real-time confirmation.
+Validation: CLI help loads and 70 existing tests pass. Stepped integration has
+not yet run because the real-time no-AI probe still owns the live game/socket.
