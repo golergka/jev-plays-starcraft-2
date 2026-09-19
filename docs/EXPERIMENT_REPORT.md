@@ -2,7 +2,8 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day is now verified won.** The Outlaws remains in progress. The most
+**Liberation Day and The Outlaws are verified won.** Zero Hour has three
+UI-confirmed defeats; the current policy is being evaluated from a fresh start. The most
 persistent difficulty is converting local choices into coordinated, sustained
 objective progress. Earlier sections below retain the unsuccessful trials; the
 latest results appear at the end.
@@ -17,8 +18,7 @@ hidden enemy observations are used. Raw control is information-fair, but bypasse
 human mouse/selection mechanics. See [the procedure](PROCEDURE.md).
 
 The scenarios include Blizzard's MarineMicro and installed Liberty campaign
-missions, repackaged without changing their base/English components. Both the first
-and second mission have loaded through the API. These are standalone missions,
+missions, repackaged without changing their base/English components. The first three Liberty missions have loaded through the API. These are standalone missions,
 not a verified recreation of campaign progression.
 
 ## Experiments and measured lessons
@@ -76,7 +76,7 @@ labels, masked by current player visibility; it does not compute a route.
 - Evaluate sustained sampling behavior and compare fresh mission runs if useful.
 - Improve the observation/action representation based on measured failures, while
   keeping every tactical choice with Jev.
-- Full campaign progression remains unachieved. Liberation Day is won. Training,
+- Full campaign progression remains unachieved. Liberation Day and The Outlaws are won. Training,
   mineral gathering and visible engine-checked building sites are available;
   research, armory and unlock state are not implemented.
 
@@ -148,3 +148,40 @@ The Outlaws adds an economy, and exposed several failures and interface omission
 These trials resume evolving games. Resource accumulation while the harness is
 stopped, policy-memory resets on restart, and prior losses confound comparisons.
 The public summary files and progression journal preserve those qualifications.
+
+
+## Findings through lab 092
+
+Two verified wins do not demonstrate a general campaign player. Zero Hour's three
+losses at 12:22, 12:25 and 9:44 expose sustained resource/force-management failures.
+The API returned no player_result for these losses; the actual defeat screens
+were inspected and recorded separately. No ambiguous timeout is counted as defeat
+or victory without supporting evidence.
+
+| Experiment | Observed result | Practical limit |
+| --- | --- | --- |
+| Rename `hold` to `continue_operations`, same description/state | Three paired queries switched top choice from hold to protect | Choice keys affect answers; no demonstrated survival gain. [Data](experiments/058-choice-label-probe.json) |
+| Reveal support capability before selecting its category | Bunker category changed from continue to other; actual passengers later observed | Sequential observation, not a controlled comparison. Missing controls must not be blamed on Jev. [Data](experiments/055-live-support-affordances.json) |
+| Compact strategic/contribution context | Stale ticks fell from 28/73 to 4/50; median cycles 1281ms to 1015.5ms | Evolving force sizes confound comparison; economy still failed. [Data](experiments/059-compact-control-context.json) |
+| Remove global strategy hint | No top-choice change in three pairs | Does not support deleting the hierarchy. [Data](experiments/061-strategy-hint-probe.json) |
+| Add longer evaluation horizon | No top-choice change in three pairs | Generic planning language did not solve these states. [Data](experiments/062-contribution-horizon-probe.json) |
+| Describe observed harvesting capability in the unit label | Income probabilities increased, top choices unchanged | A distribution shift is not demonstrated successful work. [Data](experiments/063-capability-label-probe.json) |
+
+The current experiment samples Jev's offered contribution probabilities and
+retains each contribution for at most 224 game loops. Concrete orders still come
+from Jev. The fourth Zero Hour attempt is the first to use that policy from the
+start; keep it unchanged for evaluation. It is not a scripted worker allocation.
+
+The harness now exposes support actions, own income estimates, harvester counts,
+cargo/passengers, and named engine rejection feedback. A repair request accepted
+by the model is not necessarily affordable; an engine-accepted request is not
+necessarily completed. UI defeat recovery remains supervised, cross-mission
+upgrade/research state is missing, later campaigns remain unverified, and many
+abilities are still absent. These are harness limitations, distinct from the
+model's measured choice behavior.
+
+Player, observation adapter and camera reload together from commits. Live logs
+verified adapter changes without a reconnect. A separate presentation director
+frames local visible action; it never selects unit orders. Source commits remain
+the experiment journal, with full per-mission history in
+[CAMPAIGN_PROGRESS.md](CAMPAIGN_PROGRESS.md).

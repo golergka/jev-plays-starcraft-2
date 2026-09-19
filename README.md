@@ -29,16 +29,20 @@ results, failed approaches, and current limitations.
 Defaults: real time, 180 seconds, at most 300 successful Jev calls, no automatic
 retries, and decisions older than 32 game loops discarded. SC2 keeps running after
 the harness exits. Stop it through its UI when finished. Runs and replays live in
-`runs/` and stay out of Git. The dedicated local OpenRouter key has a $5 total cap.
+`runs/` and stay out of Git. The provider-side key spending cap is separate from the per-run call budget.
 
 ## Live experiments
 
 Edit **player.py**, then commit. The orchestrator loads the source from the new Git
 commit at the next decision boundary while keeping the socket and `memory` dict.
 Uncommitted edits do not run. A syntax/import error retains the previous policy.
-The observation adapter `jev_sc2/view.py` reloads atomically with `player.py`; if
-either source is invalid, both previous components remain active. Other harness
-modules require restarting the controller.
+The observation adapter `jev_sc2/view.py` and stream director `jev_sc2/camera.py`
+reload atomically with `player.py`; if any source is invalid, the previous set
+remains active. Other harness modules require restarting the controller.
+
+`--follow-camera` follows visible engagements, damage and moving forces, with
+readable shot holds. It moves only the display camera and supplies no gameplay
+decisions. Camera memory is separate from Jev policy memory.
 
 Enable auto-push with `git config core.hooksPath .githooks`. Every commit is pushed
 to origin. Failed pushes print an error and preserve the local commit and reload.
@@ -67,7 +71,7 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
 
 Omit `--map` to resume the running mission. This has loaded successfully and
 produced a verified **Victory in Liberation Day**, recorded with an API result and
-replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**; Zero Hour is next. All three main campaigns are the target; stock campaign menus,
+replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**. Zero Hour has three recorded defeats; a fourth attempt is running. All three main campaigns are the target; stock campaign menus,
 research and unlock persistence are not implemented.
 
 The current policy asks Jev for a strategic priority, a contribution and concrete
@@ -85,15 +89,16 @@ SC2 ability surface is not yet covered. See the progression journal for outcomes
 
 ## Resume the current experiment
 
-The last running scenario is the second Liberty mission. With the API-enabled
-SC2 instance still open, resume Jev control using:
+The pending mission is Zero Hour. After an incomplete controller run has exited,
+and with that same game still open, resume through the checked sequence path:
 
 ```sh
-uv run python -m jev_sc2 --attach --follow-camera --seconds 180 --max-calls 300 \
-  --objective 'Destroy the Dominion Base.'
+uv run python -m jev_sc2.campaign campaigns/opening.json \
+  --state runs/campaign-lab069/progress.json --resume-current --follow-camera \
+  --seconds-per-attempt 1800 --call-budget 6000 --max-attempts 4
 ```
 
-See [the verified delivery status](docs/DELIVERY.md) and the experiment report
+See [the progression journal](docs/CAMPAIGN_PROGRESS.md) and the experiment report
 for what is working, what failed, and what remains for future campaign work.
 
 ## Autonomous mission sequencing
@@ -104,7 +109,7 @@ With SC2 already running in API mode:
 uv run python -m jev_sc2.campaign campaigns/opening.json --follow-camera --call-budget 3000
 ```
 
-The initial manifest contains the two verified-loadable opening missions; it is
+The initial manifest contains the three verified-loadable opening missions; it is
 not the full campaign inventory. The runner uses the same general player for each
 mission, retries confirmed defeats, and advances only on its own player's API
 Victory. It saves durable progress under `runs/campaign/progress.json`; rerunning
@@ -120,8 +125,8 @@ unfinished. Sequence completion means only the explicitly listed missions.
 
 The active evaluation checkpoint is `runs/campaign-lab069/progress.json`. To resume
 that sequence after its process exits, use the same `--state` path. Its verified
-Liberation Day win is preserved; failures in The Outlaws do not return to the
-opening. Appending missions preserves the completed prefix when those completed
+Liberation Day and Outlaws wins are preserved; failures in Zero Hour do not
+return to the opening. Appending missions preserves the completed prefix when those completed
 scenario definitions are unchanged.
 
 Use `--resume-current` with that checkpoint after a budget/time stop to retain the

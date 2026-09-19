@@ -994,3 +994,21 @@ policy unchanged for this evaluation. Raise this invocation's attempt cap from
 three to four to permit the next authorized retry. Earlier mission victories
 remain preserved. Distinguish full-run evidence from post-hoc reasoning about
 mid-run patches and evolving damage.
+
+## Lab 093: reporting cleanup during the frozen-policy attempt
+
+The fourth run opened with an income commitment. Early observations reported
+160 minerals/minute and 60 minerals on hand; a later reporting snapshot reached
+180/minute. Income was intermittent (latest snapshot zero), so this is an early
+mechanical observation, not a stable economy or mission success. The report saw
+seven income commitments and accepted actions, alongside 35
+CantTargetUnderConstructionUnits rejections. Inspect that adapter limitation
+after this frozen-policy evaluation; no runtime policy change is made here.
+
+Extend the report with latest resources, peak observed income estimate, contribution
+commitment counts, support executor choices, named engine results, camera reasons,
+and any explicit result.json (including separately labeled UI evidence). Verify
+its output on the active trace. Refresh README and the consolidated experiment
+report: two wins, three Zero Hour defeats, atomic camera reload, checked resume,
+and remaining model/harness limitations. These are reporting/documentation changes
+only; the current policy remains unchanged.

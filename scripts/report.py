@@ -4,6 +4,7 @@ import json
 import math
 import statistics
 import sys
+from s2clientprotocol import error_pb2
 from pathlib import Path
 
 path = Path(sys.argv[1]) if len(sys.argv)>1 else max(Path('runs').glob('*/events.jsonl'),key=lambda p:p.stat().st_mtime)
@@ -16,6 +17,12 @@ choices = collections.Counter(a.get('choice','unknown') for r in calls for a in 
 navigation = [r for r in calls if 'navigation' in r['questions']]
 batches = [r for r in rows if r['event']=='decision_batch']
 groups = [r for r in rows if r['event']=='group_choice']
+resource_samples = [r['state']['resources'] for r in calls if isinstance(r['state'].get('resources'),dict)]
+income_samples = [r['estimated_minerals_per_minute'] for r in resource_samples
+                  if r.get('estimated_minerals_per_minute') is not None]
+commitments = [r for r in rows if r['event']=='contribution_commitment']
+outcome_path = path.parent/'result.json'
+recorded_outcome = json.loads(outcome_path.read_text()) if outcome_path.is_file() else None
 seen_at, update_gaps = {}, []
 for batch in batches:
     for tag in batch['unit_tags']:
@@ -37,6 +44,13 @@ def distribution(tick):
                        for selected in [[u for u in units if u['type']==kind]]}}
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
+    'recorded_outcome':recorded_outcome,
+    'latest_observed_resources':resource_samples[-1] if resource_samples else None,
+    'max_observed_mineral_income_estimate_per_minute':max(income_samples) if income_samples else None,
+    'contribution_commitments':{key:dict(collections.Counter(r.get('sampled_choice') for r in commitments if r['question']==key))
+                              for key in sorted({r['question'] for r in commitments})},
+    'support_executor_choices':dict(collections.Counter(r.get('choice') for r in rows if r['event']=='support_assignment')),
+    'camera_shot_reasons':dict(collections.Counter(r['reason'] for r in rows if r['event']=='camera_shot')),
     'latency_median_ms':statistics.median(latencies) if latencies else None,
     'latency_p95_ms':latencies[min(len(latencies)-1,int(len(latencies)*.95))] if latencies else None,
     'decision_median_ms':statistics.median(decision_latencies) if decision_latencies else None,
@@ -72,6 +86,7 @@ print(json.dumps({
     'navigation_centers':[r['state']['squad_center'] for r in navigation],
     'first_distribution':distribution(ticks[0]) if ticks else None,
     'last_distribution':distribution(ticks[-1]) if ticks else None,
+    'action_result_names':dict(collections.Counter(error_pb2.ActionResult.Name(code) for r in ticks for code in r.get('action_results',[]))),
     'action_result_counts':dict(collections.Counter(str(code) for r in ticks for code in r.get('action_results',[]))),
     'ticks_older_than_32_loops':sum(r['decision_age_loops']>32 for r in ticks),
     'errors':[r for r in rows if r['event'].endswith('error')],
