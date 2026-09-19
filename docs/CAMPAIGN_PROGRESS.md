@@ -3500,3 +3500,28 @@ with exception type,question names,state/question character counts,latency and
 unknown-billing reservation note, then re-raise. No credentials/full payload added,
 no retry or error suppression. Compile check passes. Harness-side wrapper change
 activates next process, not this live trial; no player behavior change in this commit.
+
+### Lab239 — verified12:33 defeat; give Jev factual memory of prior attempts
+
+Run20260919T214242.370076Z/session72032 ended normally; native12:33 defeat,
+evac7:36,203minerals,all structures destroyed.181successfulcalls/$.101484768reported
+cost; early timeout had an unknown retained reservation, not included in reported
+usage. UI and ending marker agree; checkpoint records defeat, no advance. Income
+improved transiently, but replacements arrived late. Marine controls were available
+during repeated saving/bunker purchases. Do not attribute survival difference to
+repair wording alone given early47second decision gap and stochastic choices.
+
+Add generic episode-history reader: latest3same-map-filename completed attempts
+with matching independent UI result,fresh join and firstobservedtick<=128.
+Exclude unverified results,other maps,current run,resumed-only terminal segments.
+Whitelist own observed peak counts,role/strategy counts,purchase proposal counts,
+last observed resources,loop span and decision errors. No enemy locations,hidden
+map scripts,manual lessons or chosen strategy. Clearly label associations and
+proposal-vs-completion ambiguity; changing policies/timing prevent causal claims.
+
+Load once at controllerstartup and feed only strategy/coordination and investment
+queries, not repeated concrete-order or contribution queries. Three real prior
+attempts measured2394chars before adding the latest verified result.125tests pass,
+covering filtering,boundedrecency,exclusion and no rawstate leakage. Startup/harness
+change requires next process; never silently claims a lesson was learned. Next
+trial will test whether this factual cross-attempt context changes choices.

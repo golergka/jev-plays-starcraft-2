@@ -384,7 +384,8 @@ async def choose_investment(view, state, jev, memory=None):
             jev.log('investment_wait',loop=view['loop'],target_project=target,review_at=plan['review_at'])
             return []
     if not carried:
-        answer = await jev.ask(investment_state(state), {'investment': {
+        answer = await jev.ask({**investment_state(state),
+            **({'previous_attempts':memory['previous_attempts']} if memory and memory.get('previous_attempts') else {})}, {'investment': {
             'type':'choice',
             'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
                            'This decision controls all new training and construction; no other selection will spend resources this tick. '
@@ -720,7 +721,8 @@ async def decide(view, jev, memory):
             'recover':'Restore income and replace losses.',
             'continue_operations':'Let current tasks progress before changing commitment.',
         }
-        decision = await jev.ask({**control_state(state),'previous_strategy':strategy}, {'strategy': {
+        decision = await jev.ask({**control_state(state),'previous_strategy':strategy,
+            **({'previous_attempts':memory['previous_attempts']} if memory.get('previous_attempts') else {})}, {'strategy': {
             'type':'choice',
             'instructions':'Choose the current strategic priority for completing the mission. '
                            'Consider resources, own force, known enemy force, and recent_outcomes. Reassess your previous strategy using these measured outcomes. '

@@ -1,5 +1,6 @@
 """uv run python -m jev_sc2 --map /absolute/path/to/mission.SC2Map"""
 from .bookmark import BookmarkRecovery
+from .episodes import previous_attempts
 import argparse
 import asyncio
 import json
@@ -148,6 +149,8 @@ async def run(args):
                 raise RuntimeError('--attach without --map needs an API game already in progress')
         info = attached_info if attached_info is not None else await client.request('game_info',sc.RequestGameInfo())
         outcome.update(map_name=info.map_name,local_map_path=info.local_map_path)
+        memory['previous_attempts'] = previous_attempts(ROOT/'runs', info.local_map_path, directory)
+        log('episode_history_loaded', attempts=len(memory['previous_attempts']['attempts']))
         if not args.map:
             # A reconnect must keep ending telemetry. The current API map name
             # selects a local, hash-checked build; an existing ACTIVE marker may
