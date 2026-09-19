@@ -1,0 +1,2148 @@
+{
+  "run": "runs/20260919T005814.542606Z/events.jsonl",
+  "calls": 580,
+  "recorded_outcome": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260919T005814.542606Z",
+    "map_name": "Zero Hour",
+    "local_map_path": "traynor03.SC2Map",
+    "reason": "UI-confirmed defeat; API omitted player_result",
+    "calls": 580,
+    "cost": 0.45863664000000026,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260919T005814.542606Z/game.SC2Replay",
+    "evidence_source": "SC2 defeat screen observed through computer-use screenshot",
+    "evidence_text": "DEFEAT! All of your structures have been destroyed. Clock 12:45; evacuation 07:24."
+  },
+  "latest_observed_resources": {
+    "minerals": 17,
+    "vespene": 100,
+    "estimated_minerals_per_minute": 0.0,
+    "estimated_vespene_per_minute": 0.0,
+    "food_used": 2,
+    "food_cap": 8,
+    "supply_in_construction": 0,
+    "supply_remaining": 6,
+    "supply_blocked": false
+  },
+  "max_observed_mineral_income_estimate_per_minute": 320.0,
+  "contribution_commitments": {
+    "purpose_Barracks / idle": {
+      "continue": 4,
+      "other": 7,
+      "individual": 1
+    },
+    "purpose_Bunker": {
+      "other": 2
+    },
+    "purpose_Bunker / idle": {
+      "other": 17
+    },
+    "purpose_Marine": {
+      "positioning": 1
+    },
+    "purpose_Marine / Attack Attack": {
+      "positioning": 1
+    },
+    "purpose_Marine / Attack Attack / target 4314890243": {
+      "positioning": 1
+    },
+    "purpose_Marine / Attack Attack / target 4319084545": {
+      "positioning": 1
+    },
+    "purpose_Marine / Attack Attack / target 4319346689": {
+      "positioning": 1
+    },
+    "purpose_Marine / Attack Attack / target 4321181697": {
+      "combat": 1
+    },
+    "purpose_Marine / Attack Attack / target 4321443841": {
+      "positioning": 2
+    },
+    "purpose_Marine / Attack Attack / target 4330618881": {
+      "continue": 1
+    },
+    "purpose_Marine / Attack Attack / target 4348968961": {
+      "positioning": 1
+    },
+    "purpose_Marine / Attack Attack / target 4350279681": {
+      "continue": 1
+    },
+    "purpose_Marine / Attack Attack / target 4401135622": {
+      "positioning": 1
+    },
+    "purpose_Marine / HoldPosition Hold": {
+      "continue": 1,
+      "positioning": 1
+    },
+    "purpose_Marine / Move Move": {
+      "positioning": 11
+    },
+    "purpose_Marine / Move Move / target 4297850882": {
+      "positioning": 1
+    },
+    "purpose_Marine / Move Move / target 4341366787": {
+      "positioning": 3,
+      "continue": 1
+    },
+    "purpose_Marine / Move Move / target 4357357569": {
+      "individual": 1
+    },
+    "purpose_Marine / Move Move / target 4399300613": {
+      "positioning": 3,
+      "combat": 1,
+      "continue": 3
+    },
+    "purpose_Marine / idle": {
+      "positioning": 12,
+      "combat": 1,
+      "continue": 1
+    },
+    "purpose_MissileTurret": {
+      "continue": 2,
+      "positioning": 1
+    },
+    "purpose_MissileTurret / Attack Attack / target 4338745345": {
+      "combat": 1
+    },
+    "purpose_MissileTurret / Attack Attack / target 4339007489": {
+      "positioning": 1
+    },
+    "purpose_MissileTurret / Attack Attack / target 4339269633": {
+      "continue": 1
+    },
+    "purpose_MissileTurret / idle": {
+      "combat": 5,
+      "individual": 1,
+      "continue": 7,
+      "positioning": 6
+    },
+    "purpose_SCV": {
+      "continue": 1,
+      "positioning": 3,
+      "other": 1
+    },
+    "purpose_SCV / Attack Attack / target 4320133121": {
+      "positioning": 1
+    },
+    "purpose_SCV / Build Barracks": {
+      "continue": 5
+    },
+    "purpose_SCV / Build Bunker": {
+      "continue": 5,
+      "other": 3
+    },
+    "purpose_SCV / Build MissileTurret": {
+      "continue": 2
+    },
+    "purpose_SCV / Build SupplyDepot": {
+      "continue": 3,
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV": {
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4295753729": {
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4296278017": {
+      "positioning": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4297850881": {
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4297850882": {
+      "continue": 1,
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4299948033": {
+      "other": 1,
+      "continue": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4300996609": {
+      "continue": 1,
+      "other": 1,
+      "positioning": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4320919553": {
+      "other": 1,
+      "continue": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4341366787": {
+      "continue": 6,
+      "positioning": 2
+    },
+    "purpose_SCV / Effect Repair SCV / target 4357357569": {
+      "positioning": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4372824065": {
+      "continue": 2
+    },
+    "purpose_SCV / Effect Repair SCV / target 4397203458": {
+      "continue": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4397465602": {
+      "continue": 1,
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4398514179": {
+      "positioning": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4399300613": {
+      "combat": 1,
+      "other": 1
+    },
+    "purpose_SCV / Effect Repair SCV / target 4401135637": {
+      "continue": 1
+    },
+    "purpose_SCV / Harvest cycle / target 4294967297": {
+      "positioning": 2,
+      "continue": 6,
+      "income": 2,
+      "individual": 1
+    },
+    "purpose_SCV / Harvest cycle / target 4295229441": {
+      "continue": 4,
+      "income": 3,
+      "other": 1
+    },
+    "purpose_SCV / Harvest cycle / target 4296015873": {
+      "positioning": 1,
+      "continue": 3,
+      "income": 1
+    },
+    "purpose_SCV / Harvest cycle / target 4296802305": {
+      "continue": 4,
+      "income": 2,
+      "positioning": 2
+    },
+    "purpose_SCV / Harvest cycle / target 4297588737": {
+      "income": 2,
+      "continue": 2,
+      "positioning": 1
+    },
+    "purpose_SCV / Harvest cycle / target 4298637313": {
+      "continue": 2,
+      "income": 3
+    },
+    "purpose_SCV / Harvest cycle / target 4298899457": {
+      "positioning": 1,
+      "income": 5,
+      "continue": 2
+    },
+    "purpose_SCV / Harvest cycle / target 4299685889": {
+      "continue": 1,
+      "other": 1
+    },
+    "purpose_SCV / Harvest return / resource unknown / unit 4323540994": {
+      "other": 1
+    },
+    "purpose_SCV / Harvest return / resource unknown / unit 4372561921": {
+      "continue": 1
+    },
+    "purpose_SCV / Harvest return / resource unknown / unit 4395106305": {
+      "income": 1
+    },
+    "purpose_SCV / Harvest return / resource unknown / unit 4395892737": {
+      "continue": 1
+    },
+    "purpose_SCV / Harvest return / resource unknown / unit 4397203458": {
+      "continue": 1
+    },
+    "purpose_SCV / HoldPosition Hold": {
+      "combat": 1
+    },
+    "purpose_SCV / Move Move": {
+      "positioning": 7,
+      "income": 1,
+      "other": 3,
+      "individual": 1,
+      "continue": 1
+    },
+    "purpose_SCV / Move Move / target 4297850881": {
+      "individual": 1
+    },
+    "purpose_SCV / Move Move / target 4297850882": {
+      "continue": 1
+    },
+    "purpose_SCV / Move Move / target 4338221065": {
+      "positioning": 2,
+      "income": 1
+    },
+    "purpose_SCV / Move Move / target 4341366787": {
+      "positioning": 2,
+      "income": 1,
+      "other": 1
+    },
+    "purpose_SCV / Move Move / target 4348706818": {
+      "other": 1,
+      "positioning": 2
+    },
+    "purpose_SCV / Move Move / target 4357357569": {
+      "continue": 1
+    },
+    "purpose_SCV / Move Move / target 4397465602": {
+      "continue": 1
+    },
+    "purpose_SCV / Move Move / target 4399300613": {
+      "positioning": 2,
+      "income": 1
+    },
+    "purpose_SCV / idle": {
+      "other": 7,
+      "income": 3,
+      "positioning": 5
+    }
+  },
+  "support_executor_choices": {
+    "continue": 1
+  },
+  "camera_shot_reasons": {
+    "visible engagement": 1,
+    "base overview": 1,
+    "moving force": 3,
+    "taking damage": 25
+  },
+  "latency_median_ms": 523.5,
+  "latency_p95_ms": 900,
+  "decision_median_ms": 1227.5,
+  "decision_p95_ms": 2174,
+  "cost_usd": 0.45863664,
+  "actions_submitted": 472,
+  "decision_batches": 19,
+  "group_decisions": 1715,
+  "group_choices": {
+    "group_join_4299948033": 17,
+    "null": 553,
+    "support_ability_407_4395630593_only_4397465602": 1,
+    "continue": 662,
+    "support_ability_316_4320919553_only_4373348353": 5,
+    "support_ability_408_unload_only_4295491585": 3,
+    "individual": 19,
+    "group_join_4301520897": 3,
+    "support_ability_407_4395630593_only_4295491585": 1,
+    "support_ability_407_4395630593_only_4297850881": 1,
+    "support_ability_407_4395630593_only_4357357569": 1,
+    "support_ability_1_4399300613_only_4395106305": 2,
+    "group_join_4357357569": 18,
+    "support_ability_1_4399300613_only_4373348353": 2,
+    "support_ability_316_4320919553_only_4395106305": 1,
+    "group_join_4295491585": 1,
+    "support_ability_407_4341366785_only_4398514179": 1,
+    "support_ability_407_4353687553_only_4357357569": 1,
+    "group_join_4353687553": 2,
+    "group_gather_4296015873": 1,
+    "group_join_4341366785": 1,
+    "support_ability_407_4341366785_only_4357357569": 6,
+    "support_ability_408_unload_only_4357357569": 3,
+    "support_ability_407_4341366785_only_4295491585": 1,
+    "group_stop": 46,
+    "support_ability_1_4399300613_all": 6,
+    "group_join_4399300613": 58,
+    "support_ability_407_4353687553_only_4295491585": 1,
+    "support_ability_316_4320919553_all": 1,
+    "support_ability_1_4338221065_all": 2,
+    "support_ability_1_4399300613_only_4397203458": 2,
+    "support_ability_407_4353687553_only_4397465602": 1,
+    "support_ability_1_4338221065_only_4295753729": 6,
+    "support_ability_408_unload_all": 10,
+    "group_join_4338221065": 3,
+    "support_ability_316_4320919553_only_4330356738": 3,
+    "support_ability_1_4338221065_only_4373348353": 3,
+    "support_ability_407_4395630593": 1,
+    "support_ability_1_4338221065_only_4397203458": 1,
+    "support_ability_1_4338221065_only_4395106305": 1,
+    "group_join_4395106305": 2,
+    "support_ability_407_4330356738_only_4357357569": 2,
+    "support_ability_1_4341366787_only_4295753729": 4,
+    "support_ability_1_4341366787_only_4373348353": 8,
+    "group_join_4372824065": 5,
+    "support_ability_1_4341366787_all": 5,
+    "support_ability_407_4379639809_only_4398514179": 1,
+    "support_ability_407_4379901953_only_4397465602": 2,
+    "support_ability_407_4373348353_only_4397465602": 1,
+    "group_join_4341366787": 25,
+    "support_ability_1_4341366787_only_4330356738": 1,
+    "support_ability_407_4323540994_only_4399300613": 1,
+    "support_ability_1_4338221065_only_4379901953": 2,
+    "support_ability_407_4372824065_only_4297850881": 3,
+    "group_gather_4296802305": 1,
+    "group_join_4373348353": 6,
+    "support_ability_407_4393795587_only_4397465602": 1,
+    "support_ability_1_4341366787_only_4379901953": 1,
+    "support_ability_407_4393795587_only_4398514179": 1,
+    "support_ability_1_4341366787_only_4323540994": 1,
+    "support_ability_408_unload_only_4399300613": 6,
+    "support_ability_316_4295491585_all": 1,
+    "support_ability_407_4393795587_only_4297850881": 1,
+    "support_ability_316_4297850881_all": 2,
+    "support_ability_1_4341366787_only_4372824065": 1,
+    "support_ability_407_4395892737_only_4398514179": 1,
+    "support_ability_407_4295491591_only_4341366787": 1,
+    "group_join_4397203458": 1,
+    "support_ability_1_4297850882_only_4295753729": 11,
+    "group_gather_4294967297": 4,
+    "support_ability_407_4405854220_only_4399300613": 2,
+    "group_join_4379639809": 2,
+    "group_join_4395368449": 7,
+    "support_ability_407_4323540994_only_4397465602": 1,
+    "support_ability_407_4373348353_only_4341366787": 1,
+    "group_join_4323540994": 1,
+    "support_ability_407_4323540994_only_4341366787": 4,
+    "support_ability_316_4397465602_only_4395892737": 1,
+    "support_ability_1_4297850882_only_4373348353": 7,
+    "support_ability_1_4297850882_only_4323540994": 1,
+    "support_ability_407_4393795587_only_4399300613": 6,
+    "support_ability_316_4398514179_all": 1,
+    "support_ability_1_4297850882_all": 2,
+    "group_attack_4307025922": 2,
+    "support_ability_316_4397465602_only_4379901953": 2,
+    "support_ability_407_4295491591_only_4398514179": 1,
+    "group_map_attack_move_south_east": 2,
+    "support_ability_1_4401135637_only_4295753729": 12,
+    "group_join_4398514179": 1,
+    "support_ability_316_4397465602_only_4379639809": 1,
+    "support_ability_407_4295491591_only_4397465602": 1,
+    "support_ability_407_4295491591_only_4297850882": 1,
+    "group_attack_4339269633": 3,
+    "support_ability_1_4401135637_only_4379639809": 2,
+    "group_attack_4320133121": 1,
+    "group_attack_4339007489": 2,
+    "support_ability_407_4393795587_only_4341366787": 6,
+    "support_ability_407_4393795587_only_4297850882": 3,
+    "support_ability_1_4401135637_only_4295491593": 2,
+    "group_attack_4350279681": 1,
+    "support_ability_316_4297850882_all": 2,
+    "group_attack_4338745345": 3,
+    "group_join_4295491593": 2,
+    "support_ability_407_4398514187_only_4297850882": 3,
+    "support_ability_1_4401135637_all": 1,
+    "support_ability_407_4398514187_only_4341366787": 1,
+    "support_ability_407_4372824065_only_4341366787": 3,
+    "support_ability_407_4339007497_only_4399300613": 3,
+    "support_ability_407_4339007497_only_4341366787": 7,
+    "support_ability_1_4401135637_only_4379901953": 1,
+    "support_ability_316_4341366787_all": 2,
+    "group_attack_move_west": 1,
+    "support_ability_316_4341366787_only_4323540994": 1,
+    "group_hold_position": 5,
+    "support_ability_316_4399300613_all": 1,
+    "support_ability_407_4350541829_only_4399300613": 9,
+    "group_gather_4295229441": 1,
+    "support_ability_1_4348706818_only_4395368449": 4,
+    "support_ability_1_4348706818_all": 6,
+    "support_ability_1_4348706818_only_4379901953": 2,
+    "support_ability_1_4348706818_only_4323540994": 1,
+    "support_ability_408_unload_only_4341366787": 1,
+    "group_join_4372561921": 1,
+    "support_ability_316_4297064449_only_4323540994": 1,
+    "group_join_4339007497": 1,
+    "support_ability_316_4341366787_only_4395106305": 1,
+    "group_join_4395892737": 1,
+    "support_ability_407_4350541829_only_4341366787": 2,
+    "group_join_4348706818": 1,
+    "group_join_4401135637": 1,
+    "support_ability_407_4358144006_only_4399300613": 4,
+    "support_ability_407_4358144006_only_4341366787": 1,
+    "support_ability_407_4395368449_only_4341366787": 1,
+    "support_ability_407_4379639809_only_4399300613": 1,
+    "support_ability_407_4373348353_only_4399300613": 1,
+    "support_ability_407_4395892737_only_4341366787": 1,
+    "support_ability_407_4379901953_only_4341366787": 1,
+    "support_ability_316_4299948033_all": 1,
+    "support_ability_316_4299948033_only_4395106305": 1,
+    "support_ability_316_4401135637_only_4373348353": 1,
+    "group_join_4396154881": 1
+  },
+  "investment_choices": {
+    "SCV": 10,
+    "save": 60,
+    "Bunker": 12,
+    "SupplyDepot": 4,
+    "CommandCenter": 2,
+    "Marine": 14,
+    "Barracks": 1,
+    "MissileTurret": 3,
+    "Refinery": 2
+  },
+  "saving_targets": {
+    "CommandCenter": 2,
+    "Marine": 1,
+    "Bunker": 1,
+    "SupplyDepot": 1
+  },
+  "investment_commitment_waits": 42,
+  "investment_commitment_requests": {},
+  "producer_site_deferrals": 0,
+  "strategy_choices": {
+    "protect": 38
+  },
+  "purposes_by_cohort": {
+    "Barracks / idle": {
+      "continue": 25,
+      "other": 39,
+      "individual": 4
+    },
+    "Bunker": {
+      "other": 15
+    },
+    "Bunker / idle": {
+      "other": 103
+    },
+    "Marine": {
+      "positioning": 6
+    },
+    "Marine / Attack Attack": {
+      "positioning": 1
+    },
+    "Marine / Attack Attack / target 4314890243": {
+      "positioning": 1
+    },
+    "Marine / Attack Attack / target 4319084545": {
+      "positioning": 2
+    },
+    "Marine / Attack Attack / target 4319346689": {
+      "positioning": 1
+    },
+    "Marine / Attack Attack / target 4321181697": {
+      "combat": 3
+    },
+    "Marine / Attack Attack / target 4321443841": {
+      "positioning": 3
+    },
+    "Marine / Attack Attack / target 4330618881": {
+      "continue": 2
+    },
+    "Marine / Attack Attack / target 4348968961": {
+      "positioning": 1
+    },
+    "Marine / Attack Attack / target 4350279681": {
+      "continue": 1
+    },
+    "Marine / Attack Attack / target 4401135622": {
+      "positioning": 1
+    },
+    "Marine / HoldPosition Hold": {
+      "continue": 5,
+      "positioning": 2
+    },
+    "Marine / Move Move": {
+      "positioning": 29
+    },
+    "Marine / Move Move / target 4297850882": {
+      "positioning": 3
+    },
+    "Marine / Move Move / target 4341366787": {
+      "positioning": 5,
+      "continue": 5
+    },
+    "Marine / Move Move / target 4357357569": {
+      "individual": 1
+    },
+    "Marine / Move Move / target 4399300613": {
+      "positioning": 7,
+      "combat": 2,
+      "continue": 5
+    },
+    "Marine / idle": {
+      "positioning": 50,
+      "combat": 5,
+      "continue": 1
+    },
+    "MissileTurret": {
+      "continue": 19,
+      "positioning": 1
+    },
+    "MissileTurret / Attack Attack / target 4338745345": {
+      "combat": 2
+    },
+    "MissileTurret / Attack Attack / target 4339007489": {
+      "positioning": 2
+    },
+    "MissileTurret / Attack Attack / target 4339269633": {
+      "continue": 2
+    },
+    "MissileTurret / idle": {
+      "combat": 25,
+      "individual": 4,
+      "continue": 42,
+      "positioning": 32
+    },
+    "SCV": {
+      "continue": 10,
+      "positioning": 30,
+      "other": 12
+    },
+    "SCV / Attack Attack / target 4320133121": {
+      "positioning": 1
+    },
+    "SCV / Build Barracks": {
+      "continue": 23
+    },
+    "SCV / Build Bunker": {
+      "continue": 26,
+      "other": 21
+    },
+    "SCV / Build MissileTurret": {
+      "continue": 13
+    },
+    "SCV / Build SupplyDepot": {
+      "continue": 18,
+      "other": 3
+    },
+    "SCV / Effect Repair SCV": {
+      "other": 1
+    },
+    "SCV / Effect Repair SCV / target 4295753729": {
+      "other": 4
+    },
+    "SCV / Effect Repair SCV / target 4296278017": {
+      "positioning": 1
+    },
+    "SCV / Effect Repair SCV / target 4297850881": {
+      "other": 1
+    },
+    "SCV / Effect Repair SCV / target 4297850882": {
+      "continue": 6,
+      "other": 1
+    },
+    "SCV / Effect Repair SCV / target 4299948033": {
+      "other": 1,
+      "continue": 1
+    },
+    "SCV / Effect Repair SCV / target 4300996609": {
+      "continue": 2,
+      "other": 5,
+      "positioning": 5
+    },
+    "SCV / Effect Repair SCV / target 4320919553": {
+      "other": 4,
+      "continue": 3
+    },
+    "SCV / Effect Repair SCV / target 4341366787": {
+      "continue": 37,
+      "positioning": 11
+    },
+    "SCV / Effect Repair SCV / target 4357357569": {
+      "positioning": 1
+    },
+    "SCV / Effect Repair SCV / target 4372824065": {
+      "continue": 6
+    },
+    "SCV / Effect Repair SCV / target 4397203458": {
+      "continue": 1
+    },
+    "SCV / Effect Repair SCV / target 4397465602": {
+      "continue": 7,
+      "other": 5
+    },
+    "SCV / Effect Repair SCV / target 4398514179": {
+      "positioning": 1
+    },
+    "SCV / Effect Repair SCV / target 4399300613": {
+      "combat": 1,
+      "other": 3
+    },
+    "SCV / Effect Repair SCV / target 4401135637": {
+      "continue": 1
+    },
+    "SCV / Harvest cycle / target 4294967297": {
+      "positioning": 9,
+      "continue": 35,
+      "income": 12,
+      "individual": 5
+    },
+    "SCV / Harvest cycle / target 4295229441": {
+      "continue": 24,
+      "income": 18,
+      "other": 1
+    },
+    "SCV / Harvest cycle / target 4296015873": {
+      "positioning": 5,
+      "continue": 20,
+      "income": 5
+    },
+    "SCV / Harvest cycle / target 4296802305": {
+      "continue": 25,
+      "income": 13,
+      "positioning": 7
+    },
+    "SCV / Harvest cycle / target 4297588737": {
+      "income": 11,
+      "continue": 13,
+      "positioning": 6
+    },
+    "SCV / Harvest cycle / target 4298637313": {
+      "continue": 11,
+      "income": 21
+    },
+    "SCV / Harvest cycle / target 4298899457": {
+      "positioning": 4,
+      "income": 33,
+      "continue": 11
+    },
+    "SCV / Harvest cycle / target 4299685889": {
+      "continue": 4,
+      "other": 3
+    },
+    "SCV / Harvest return / resource unknown / unit 4323540994": {
+      "other": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4372561921": {
+      "continue": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4395106305": {
+      "income": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4395892737": {
+      "continue": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4397203458": {
+      "continue": 1
+    },
+    "SCV / HoldPosition Hold": {
+      "combat": 2
+    },
+    "SCV / Move Move": {
+      "positioning": 29,
+      "income": 2,
+      "other": 12,
+      "individual": 2,
+      "continue": 1
+    },
+    "SCV / Move Move / target 4297850881": {
+      "individual": 3
+    },
+    "SCV / Move Move / target 4297850882": {
+      "continue": 4
+    },
+    "SCV / Move Move / target 4338221065": {
+      "positioning": 5,
+      "income": 6
+    },
+    "SCV / Move Move / target 4341366787": {
+      "positioning": 4,
+      "income": 3,
+      "other": 1
+    },
+    "SCV / Move Move / target 4348706818": {
+      "other": 5,
+      "positioning": 5
+    },
+    "SCV / Move Move / target 4357357569": {
+      "continue": 1
+    },
+    "SCV / Move Move / target 4397465602": {
+      "continue": 2
+    },
+    "SCV / Move Move / target 4399300613": {
+      "positioning": 8,
+      "income": 2
+    },
+    "SCV / idle": {
+      "other": 23,
+      "income": 6,
+      "positioning": 18
+    }
+  },
+  "group_calls": 88,
+  "choices_by_cohort": {
+    "Barracks": {
+      "null": 38
+    },
+    "Barracks / Train Marine": {
+      "null": 72
+    },
+    "Barracks / idle": {
+      "null": 23,
+      "continue": 25,
+      "support_ability_1_4399300613_all": 5,
+      "support_ability_1_4338221065_all": 1,
+      "support_ability_1_4338221065_only_4295753729": 6,
+      "support_ability_1_4341366787_only_4295753729": 4,
+      "support_ability_1_4297850882_only_4295753729": 11,
+      "support_ability_1_4401135637_only_4295753729": 12,
+      "individual": 4
+    },
+    "Bunker": {
+      "support_ability_407_4358144006_only_4341366787": 1,
+      "support_ability_407_4395368449_only_4341366787": 1,
+      "support_ability_408_unload_only_4399300613": 2,
+      "support_ability_407_4358144006_only_4399300613": 3,
+      "support_ability_407_4350541829_only_4399300613": 1,
+      "support_ability_408_unload_all": 1,
+      "support_ability_407_4379639809_only_4399300613": 1,
+      "support_ability_407_4373348353_only_4399300613": 1,
+      "support_ability_407_4395892737_only_4341366787": 1,
+      "support_ability_407_4379901953_only_4341366787": 1,
+      "support_ability_407_4323540994_only_4341366787": 2
+    },
+    "Bunker / idle": {
+      "support_ability_407_4395630593_only_4397465602": 1,
+      "support_ability_408_unload_only_4295491585": 3,
+      "support_ability_407_4395630593_only_4295491585": 1,
+      "support_ability_407_4395630593_only_4297850881": 1,
+      "support_ability_407_4395630593_only_4357357569": 1,
+      "support_ability_407_4341366785_only_4398514179": 1,
+      "support_ability_407_4353687553_only_4357357569": 1,
+      "support_ability_407_4341366785_only_4357357569": 6,
+      "support_ability_408_unload_only_4357357569": 3,
+      "support_ability_407_4341366785_only_4295491585": 1,
+      "support_ability_407_4353687553_only_4295491585": 1,
+      "support_ability_407_4353687553_only_4397465602": 1,
+      "support_ability_408_unload_all": 9,
+      "support_ability_407_4395630593": 1,
+      "support_ability_407_4330356738_only_4357357569": 2,
+      "support_ability_407_4379639809_only_4398514179": 1,
+      "support_ability_407_4379901953_only_4397465602": 2,
+      "support_ability_407_4373348353_only_4397465602": 1,
+      "support_ability_407_4323540994_only_4399300613": 1,
+      "support_ability_407_4372824065_only_4297850881": 3,
+      "support_ability_407_4393795587_only_4397465602": 1,
+      "support_ability_407_4393795587_only_4398514179": 1,
+      "support_ability_408_unload_only_4399300613": 4,
+      "support_ability_407_4393795587_only_4297850881": 1,
+      "support_ability_407_4395892737_only_4398514179": 1,
+      "support_ability_407_4295491591_only_4341366787": 1,
+      "support_ability_407_4405854220_only_4399300613": 2,
+      "support_ability_407_4323540994_only_4397465602": 1,
+      "support_ability_407_4373348353_only_4341366787": 1,
+      "support_ability_407_4323540994_only_4341366787": 2,
+      "support_ability_407_4393795587_only_4399300613": 6,
+      "support_ability_407_4295491591_only_4398514179": 1,
+      "support_ability_407_4295491591_only_4397465602": 1,
+      "support_ability_407_4295491591_only_4297850882": 1,
+      "support_ability_407_4393795587_only_4341366787": 6,
+      "support_ability_407_4393795587_only_4297850882": 3,
+      "support_ability_407_4398514187_only_4297850882": 3,
+      "support_ability_407_4398514187_only_4341366787": 1,
+      "support_ability_407_4372824065_only_4341366787": 3,
+      "support_ability_407_4339007497_only_4399300613": 3,
+      "support_ability_407_4339007497_only_4341366787": 7,
+      "support_ability_407_4350541829_only_4399300613": 8,
+      "support_ability_408_unload_only_4341366787": 1,
+      "support_ability_407_4350541829_only_4341366787": 2,
+      "support_ability_407_4358144006_only_4399300613": 1
+    },
+    "CommandCenter": {
+      "null": 34
+    },
+    "CommandCenter / Train SCV": {
+      "null": 23
+    },
+    "CommandCenter / idle": {
+      "null": 80
+    },
+    "EngineeringBay": {
+      "null": 27
+    },
+    "EngineeringBay / idle": {
+      "null": 102
+    },
+    "Marine": {
+      "group_join_4399300613": 6
+    },
+    "Marine / Attack Attack": {
+      "group_join_4301520897": 1
+    },
+    "Marine / Attack Attack / target 4314890243": {
+      "group_join_4399300613": 1
+    },
+    "Marine / Attack Attack / target 4319084545": {
+      "group_stop": 2
+    },
+    "Marine / Attack Attack / target 4319346689": {
+      "group_join_4341366787": 1
+    },
+    "Marine / Attack Attack / target 4321181697": {
+      "continue": 3
+    },
+    "Marine / Attack Attack / target 4321443841": {
+      "group_join_4357357569": 2,
+      "group_join_4399300613": 1
+    },
+    "Marine / Attack Attack / target 4330618881": {
+      "continue": 2
+    },
+    "Marine / Attack Attack / target 4348968961": {
+      "group_join_4341366787": 1
+    },
+    "Marine / Attack Attack / target 4350279681": {
+      "continue": 1
+    },
+    "Marine / Attack Attack / target 4401135622": {
+      "group_join_4357357569": 1
+    },
+    "Marine / HoldPosition Hold": {
+      "continue": 5,
+      "group_join_4357357569": 2
+    },
+    "Marine / Move Move": {
+      "continue": 4,
+      "group_join_4341366785": 1,
+      "group_join_4301520897": 1,
+      "group_join_4357357569": 6,
+      "group_join_4399300613": 15,
+      "group_join_4341366787": 1
+    },
+    "Marine / Move Move / target 4297850882": {
+      "continue": 3
+    },
+    "Marine / Move Move / target 4341366787": {
+      "continue": 7,
+      "group_join_4341366787": 1,
+      "group_join_4399300613": 2
+    },
+    "Marine / Move Move / target 4357357569": {
+      "individual": 1
+    },
+    "Marine / Move Move / target 4399300613": {
+      "continue": 13,
+      "group_join_4399300613": 1
+    },
+    "Marine / idle": {
+      "group_join_4299948033": 6,
+      "group_join_4295491585": 1,
+      "group_join_4353687553": 2,
+      "group_join_4357357569": 7,
+      "group_join_4301520897": 1,
+      "group_join_4399300613": 31,
+      "group_attack_4307025922": 2,
+      "group_map_attack_move_south_east": 2,
+      "group_attack_4320133121": 1,
+      "continue": 1,
+      "group_join_4339007497": 1,
+      "group_join_4401135637": 1
+    },
+    "MissileTurret": {
+      "continue": 19,
+      "group_stop": 1
+    },
+    "MissileTurret / Attack Attack / target 4338745345": {
+      "continue": 2
+    },
+    "MissileTurret / Attack Attack / target 4339007489": {
+      "group_stop": 2
+    },
+    "MissileTurret / Attack Attack / target 4339269633": {
+      "continue": 2
+    },
+    "MissileTurret / idle": {
+      "continue": 59,
+      "individual": 4,
+      "group_stop": 32,
+      "group_attack_4339269633": 3,
+      "group_attack_4339007489": 2,
+      "group_attack_4338745345": 3
+    },
+    "SCV": {
+      "continue": 33,
+      "group_join_4299948033": 10,
+      "group_stop": 1,
+      "group_hold_position": 3,
+      "support_ability_316_4299948033_all": 1,
+      "support_ability_316_4299948033_only_4395106305": 1,
+      "support_ability_316_4401135637_only_4373348353": 1,
+      "group_join_4338221065": 1,
+      "group_join_4396154881": 1
+    },
+    "SCV / Attack Attack / target 4320133121": {
+      "group_stop": 1
+    },
+    "SCV / Build Barracks": {
+      "continue": 23
+    },
+    "SCV / Build Bunker": {
+      "continue": 25,
+      "support_ability_1_4399300613_only_4397203458": 2,
+      "support_ability_316_4320919553_only_4373348353": 1,
+      "support_ability_1_4338221065_only_4373348353": 3,
+      "support_ability_1_4341366787_only_4373348353": 8,
+      "support_ability_1_4297850882_only_4373348353": 7
+    },
+    "SCV / Build MissileTurret": {
+      "continue": 13
+    },
+    "SCV / Build SupplyDepot": {
+      "continue": 18,
+      "support_ability_1_4338221065_only_4379901953": 2,
+      "support_ability_1_4341366787_only_4379901953": 1
+    },
+    "SCV / Effect Repair SCV": {
+      "support_ability_316_4341366787_all": 1
+    },
+    "SCV / Effect Repair SCV / target 4295753729": {
+      "continue": 4
+    },
+    "SCV / Effect Repair SCV / target 4296278017": {
+      "continue": 1
+    },
+    "SCV / Effect Repair SCV / target 4297850881": {
+      "support_ability_1_4341366787_only_4372824065": 1
+    },
+    "SCV / Effect Repair SCV / target 4297850882": {
+      "continue": 6,
+      "support_ability_1_4401135637_all": 1
+    },
+    "SCV / Effect Repair SCV / target 4299948033": {
+      "support_ability_1_4401135637_only_4379639809": 1,
+      "continue": 1
+    },
+    "SCV / Effect Repair SCV / target 4300996609": {
+      "continue": 7,
+      "support_ability_1_4348706818_only_4323540994": 1,
+      "support_ability_1_4348706818_all": 2,
+      "support_ability_316_4297064449_only_4323540994": 1,
+      "group_join_4341366787": 1
+    },
+    "SCV / Effect Repair SCV / target 4320919553": {
+      "continue": 4,
+      "support_ability_1_4399300613_only_4373348353": 2,
+      "support_ability_1_4399300613_only_4395106305": 1
+    },
+    "SCV / Effect Repair SCV / target 4341366787": {
+      "continue": 41,
+      "group_join_4341366787": 6,
+      "group_join_4372824065": 1
+    },
+    "SCV / Effect Repair SCV / target 4357357569": {
+      "continue": 1
+    },
+    "SCV / Effect Repair SCV / target 4372824065": {
+      "continue": 6
+    },
+    "SCV / Effect Repair SCV / target 4397203458": {
+      "continue": 1
+    },
+    "SCV / Effect Repair SCV / target 4397465602": {
+      "continue": 7,
+      "support_ability_316_4398514179_all": 1,
+      "support_ability_1_4297850882_all": 2,
+      "support_ability_316_4397465602_only_4379901953": 2
+    },
+    "SCV / Effect Repair SCV / target 4398514179": {
+      "group_join_4398514179": 1
+    },
+    "SCV / Effect Repair SCV / target 4399300613": {
+      "group_attack_4350279681": 1,
+      "continue": 1,
+      "support_ability_1_4348706818_only_4395368449": 2
+    },
+    "SCV / Effect Repair SCV / target 4401135637": {
+      "continue": 1
+    },
+    "SCV / Harvest cycle / target 4294967297": {
+      "continue": 53,
+      "individual": 5,
+      "group_stop": 2
+    },
+    "SCV / Harvest cycle / target 4295229441": {
+      "continue": 41,
+      "support_ability_316_4397465602_only_4395892737": 1
+    },
+    "SCV / Harvest cycle / target 4296015873": {
+      "continue": 30
+    },
+    "SCV / Harvest cycle / target 4296802305": {
+      "continue": 39,
+      "group_stop": 2,
+      "group_join_4379639809": 1,
+      "group_join_4395368449": 2
+    },
+    "SCV / Harvest cycle / target 4297588737": {
+      "continue": 27,
+      "group_stop": 2,
+      "group_join_4299948033": 1
+    },
+    "SCV / Harvest cycle / target 4298637313": {
+      "continue": 32
+    },
+    "SCV / Harvest cycle / target 4298899457": {
+      "continue": 48
+    },
+    "SCV / Harvest cycle / target 4299685889": {
+      "continue": 5,
+      "support_ability_1_4399300613_only_4395106305": 1,
+      "support_ability_316_4320919553_only_4395106305": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4323540994": {
+      "support_ability_1_4341366787_only_4323540994": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4372561921": {
+      "continue": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4395106305": {
+      "continue": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4395892737": {
+      "continue": 1
+    },
+    "SCV / Harvest return / resource unknown / unit 4397203458": {
+      "continue": 1
+    },
+    "SCV / HoldPosition Hold": {
+      "continue": 1,
+      "group_attack_move_west": 1
+    },
+    "SCV / Move Move": {
+      "continue": 9,
+      "support_ability_1_4338221065_only_4395106305": 1,
+      "support_ability_1_4341366787_all": 1,
+      "support_ability_316_4320919553_only_4330356738": 2,
+      "support_ability_1_4341366787_only_4330356738": 1,
+      "group_join_4341366787": 12,
+      "group_join_4373348353": 2,
+      "individual": 2,
+      "support_ability_316_4297850882_all": 2,
+      "support_ability_1_4401135637_only_4295491593": 1,
+      "group_join_4395106305": 1,
+      "group_stop": 1,
+      "group_join_4372824065": 2,
+      "group_hold_position": 2,
+      "support_ability_316_4399300613_all": 1,
+      "support_ability_1_4348706818_all": 2,
+      "support_ability_1_4348706818_only_4379901953": 1,
+      "group_join_4372561921": 1,
+      "group_join_4395892737": 1
+    },
+    "SCV / Move Move / target 4297850881": {
+      "individual": 3
+    },
+    "SCV / Move Move / target 4297850882": {
+      "continue": 4
+    },
+    "SCV / Move Move / target 4338221065": {
+      "continue": 9,
+      "group_join_4338221065": 2
+    },
+    "SCV / Move Move / target 4341366787": {
+      "continue": 5,
+      "group_join_4341366787": 1,
+      "group_gather_4294967297": 1,
+      "support_ability_1_4297850882_only_4323540994": 1
+    },
+    "SCV / Move Move / target 4348706818": {
+      "support_ability_1_4348706818_only_4395368449": 2,
+      "support_ability_1_4348706818_all": 2,
+      "support_ability_1_4348706818_only_4379901953": 1,
+      "continue": 4,
+      "group_join_4348706818": 1
+    },
+    "SCV / Move Move / target 4357357569": {
+      "continue": 1
+    },
+    "SCV / Move Move / target 4397465602": {
+      "continue": 2
+    },
+    "SCV / Move Move / target 4399300613": {
+      "continue": 8,
+      "group_join_4399300613": 1,
+      "group_gather_4296802305": 1
+    },
+    "SCV / idle": {
+      "support_ability_316_4320919553_only_4373348353": 4,
+      "continue": 1,
+      "group_gather_4296015873": 1,
+      "support_ability_1_4399300613_all": 1,
+      "support_ability_316_4320919553_all": 1,
+      "support_ability_1_4338221065_all": 1,
+      "support_ability_316_4320919553_only_4330356738": 1,
+      "support_ability_1_4338221065_only_4397203458": 1,
+      "group_join_4395106305": 1,
+      "group_join_4372824065": 2,
+      "support_ability_1_4341366787_all": 4,
+      "support_ability_316_4295491585_all": 1,
+      "support_ability_316_4297850881_all": 2,
+      "group_join_4373348353": 4,
+      "group_join_4397203458": 1,
+      "group_join_4323540994": 1,
+      "group_gather_4294967297": 3,
+      "support_ability_316_4397465602_only_4379639809": 1,
+      "support_ability_1_4401135637_only_4379639809": 1,
+      "support_ability_1_4401135637_only_4295491593": 1,
+      "group_join_4395368449": 5,
+      "group_join_4295491593": 2,
+      "group_join_4379639809": 1,
+      "support_ability_1_4401135637_only_4379901953": 1,
+      "support_ability_316_4341366787_all": 1,
+      "support_ability_316_4341366787_only_4323540994": 1,
+      "group_gather_4295229441": 1,
+      "group_join_4341366787": 1,
+      "support_ability_316_4341366787_only_4395106305": 1
+    },
+    "SupplyDepot": {
+      "null": 52
+    },
+    "SupplyDepot / idle": {
+      "null": 102
+    }
+  },
+  "units_scheduled": 11,
+  "median_scheduled_update_loops": 49,
+  "max_scheduled_update_loops": 62,
+  "ticks_with_zero_submissions": 86,
+  "choices": {
+    "protect": 38,
+    "by_current_order": 29,
+    "positioning": 104,
+    "other": 47,
+    "continue": 345,
+    "combat": 5,
+    "save": 112,
+    "group_join_4299948033": 18,
+    "support_ability_407_4395630593_only_4397465602": 1,
+    "support_ability_316_4320919553_only_4373348353": 5,
+    "project_7": 1,
+    "income": 37,
+    "group_join_4301520897": 3,
+    "support_ability_408_unload_only_4295491585": 3,
+    "hold": 8,
+    "support_ability_407_4395630593_only_4295491585": 1,
+    "support_ability_407_4395630593_only_4297850881": 1,
+    "option_0": 11,
+    "east": 1,
+    "group_join_4357357569": 18,
+    "support_ability_1_4399300613_only_4373348353": 2,
+    "support_ability_1_4399300613_only_4395106305": 2,
+    "support_ability_407_4395630593_only_4357357569": 1,
+    "support_ability_316_4320919553_only_4395106305": 1,
+    "group_join_4295491585": 1,
+    "support_ability_407_4341366785_only_4398514179": 1,
+    "group_join_4353687553": 2,
+    "group_gather_4296015873": 1,
+    "support_ability_407_4353687553_only_4357357569": 1,
+    "support_ability_407_4341366785_only_4357357569": 6,
+    "group_join_4341366785": 1,
+    "support_ability_408_unload_only_4357357569": 3,
+    "support_ability_407_4341366785_only_4295491585": 1,
+    "group_stop": 46,
+    "support_ability_1_4399300613_all": 6,
+    "hold_position": 1,
+    "group_join_4399300613": 58,
+    "option_4": 2,
+    "support_ability_407_4353687553_only_4295491585": 1,
+    "support_ability_316_4320919553_all": 1,
+    "support_ability_1_4338221065_all": 2,
+    "support_ability_1_4399300613_only_4397203458": 2,
+    "support_ability_407_4353687553_only_4397465602": 1,
+    "support_ability_1_4338221065_only_4295753729": 6,
+    "option_2": 2,
+    "support_ability_408_unload_all": 10,
+    "option_10": 1,
+    "support_ability_1_4338221065_only_4373348353": 3,
+    "group_join_4338221065": 3,
+    "support_ability_316_4320919553_only_4330356738": 3,
+    "option_22": 1,
+    "support_ability_1_4338221065_only_4395106305": 1,
+    "support_ability_407_4395630593": 1,
+    "support_ability_1_4338221065_only_4397203458": 1,
+    "group_join_4395106305": 2,
+    "option_13": 1,
+    "support_ability_1_4341366787_only_4295753729": 4,
+    "support_ability_1_4341366787_only_4373348353": 8,
+    "group_join_4372824065": 5,
+    "support_ability_407_4330356738_only_4357357569": 2,
+    "option_12": 2,
+    "support_ability_1_4341366787_all": 5,
+    "support_ability_407_4379639809_only_4398514179": 1,
+    "support_ability_407_4379901953_only_4397465602": 2,
+    "option_1": 6,
+    "support_ability_1_4341366787_only_4330356738": 1,
+    "support_ability_407_4373348353_only_4397465602": 1,
+    "group_join_4341366787": 25,
+    "support_ability_1_4338221065_only_4379901953": 2,
+    "support_ability_407_4323540994_only_4399300613": 1,
+    "group_gather_4296802305": 1,
+    "group_join_4373348353": 6,
+    "support_ability_407_4372824065_only_4297850881": 3,
+    "option_21": 1,
+    "support_ability_407_4393795587_only_4397465602": 1,
+    "support_ability_1_4341366787_only_4379901953": 1,
+    "support_ability_1_4341366787_only_4323540994": 1,
+    "support_ability_407_4393795587_only_4398514179": 1,
+    "north": 3,
+    "south": 2,
+    "support_ability_408_unload_only_4399300613": 6,
+    "support_ability_316_4295491585_all": 1,
+    "option_6": 2,
+    "support_ability_316_4297850881_all": 2,
+    "support_ability_407_4393795587_only_4297850881": 1,
+    "support_ability_1_4341366787_only_4372824065": 1,
+    "support_ability_407_4395892737_only_4398514179": 1,
+    "support_ability_1_4297850882_only_4295753729": 11,
+    "support_ability_407_4295491591_only_4341366787": 1,
+    "group_gather_4294967297": 4,
+    "group_join_4397203458": 1,
+    "support_ability_407_4405854220_only_4399300613": 2,
+    "group_join_4379639809": 2,
+    "support_ability_407_4323540994_only_4397465602": 1,
+    "group_join_4395368449": 7,
+    "support_ability_407_4373348353_only_4341366787": 1,
+    "group_join_4323540994": 1,
+    "support_ability_407_4323540994_only_4341366787": 4,
+    "support_ability_316_4397465602_only_4395892737": 1,
+    "support_ability_1_4297850882_only_4373348353": 7,
+    "option_7": 1,
+    "support_ability_1_4297850882_only_4323540994": 1,
+    "support_ability_407_4393795587_only_4399300613": 6,
+    "support_ability_316_4398514179_all": 1,
+    "support_ability_1_4297850882_all": 2,
+    "group_attack_4307025922": 2,
+    "support_ability_316_4397465602_only_4379901953": 2,
+    "support_ability_407_4295491591_only_4398514179": 1,
+    "group_join_4398514179": 1,
+    "group_map_attack_move_south_east": 2,
+    "support_ability_1_4401135637_only_4295753729": 12,
+    "join_4395892737": 1,
+    "support_ability_316_4397465602_only_4379639809": 1,
+    "support_ability_407_4295491591_only_4397465602": 1,
+    "option_31": 1,
+    "support_ability_407_4295491591_only_4297850882": 1,
+    "group_attack_4339269633": 3,
+    "support_ability_1_4401135637_only_4379639809": 2,
+    "group_attack_4320133121": 1,
+    "group_attack_4339007489": 2,
+    "support_ability_407_4393795587_only_4341366787": 6,
+    "gather_4294967297": 1,
+    "support_ability_407_4393795587_only_4297850882": 3,
+    "support_ability_1_4401135637_only_4295491593": 2,
+    "group_attack_4350279681": 1,
+    "west": 4,
+    "support_ability_316_4297850882_all": 2,
+    "group_attack_4338745345": 3,
+    "option_19": 1,
+    "group_join_4295491593": 2,
+    "support_ability_407_4398514187_only_4297850882": 3,
+    "support_ability_1_4401135637_all": 1,
+    "option_5": 1,
+    "support_ability_407_4398514187_only_4341366787": 1,
+    "support_ability_407_4372824065_only_4341366787": 3,
+    "support_ability_407_4339007497_only_4399300613": 3,
+    "option_11": 1,
+    "support_ability_407_4339007497_only_4341366787": 7,
+    "support_ability_1_4401135637_only_4379901953": 1,
+    "support_ability_316_4341366787_all": 2,
+    "group_attack_move_west": 1,
+    "support_ability_316_4341366787_only_4323540994": 1,
+    "group_hold_position": 5,
+    "option_34": 1,
+    "support_ability_316_4399300613_all": 1,
+    "support_ability_407_4350541829_only_4399300613": 9,
+    "group_gather_4295229441": 1,
+    "support_ability_1_4348706818_only_4395368449": 4,
+    "support_ability_1_4348706818_all": 6,
+    "support_ability_1_4348706818_only_4379901953": 2,
+    "support_ability_1_4348706818_only_4323540994": 1,
+    "support_ability_408_unload_only_4341366787": 1,
+    "support_ability_316_4297064449_only_4323540994": 1,
+    "group_join_4372561921": 1,
+    "option_35": 1,
+    "group_join_4339007497": 1,
+    "support_ability_316_4341366787_only_4395106305": 1,
+    "group_join_4395892737": 1,
+    "support_ability_407_4350541829_only_4341366787": 2,
+    "option_33": 1,
+    "group_join_4348706818": 1,
+    "group_join_4401135637": 1,
+    "support_ability_407_4358144006_only_4399300613": 4,
+    "by_type": 9,
+    "support_ability_407_4358144006_only_4341366787": 1,
+    "support_ability_407_4395368449_only_4341366787": 1,
+    "support_ability_407_4379639809_only_4399300613": 1,
+    "support_ability_407_4373348353_only_4399300613": 1,
+    "support_ability_407_4395892737_only_4341366787": 1,
+    "support_ability_407_4379901953_only_4341366787": 1,
+    "support_ability_316_4299948033_all": 1,
+    "support_ability_316_4299948033_only_4395106305": 1,
+    "support_ability_316_4401135637_only_4373348353": 1,
+    "group_join_4396154881": 1
+  },
+  "navigation_choices": {
+    "hold": 8,
+    "east": 1,
+    "west": 1
+  },
+  "sampled_navigation_choices": {
+    "regroup_4320919553": 1,
+    "regroup_4357619713": 1,
+    "hold": 3,
+    "north": 2,
+    "east": 1,
+    "west": 2
+  },
+  "navigation_samples": [
+    {
+      "time": 1789779499.5513222,
+      "event": "navigation_sample",
+      "loop": 7161,
+      "top_choice": "hold",
+      "sampled_choice": "regroup_4320919553",
+      "probabilities": {
+        "north": 0.11,
+        "regroup_4350017537": 0.04,
+        "west": 0.1,
+        "regroup_4357619713": 0.02,
+        "hold": 0.34,
+        "east": 0.17,
+        "neutral": 0.02,
+        "regroup_4320919553": 0.16,
+        "south": 0.04
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779505.915191,
+      "event": "navigation_sample",
+      "loop": 7302,
+      "top_choice": "east",
+      "sampled_choice": "regroup_4357619713",
+      "probabilities": {
+        "regroup_4320919553": 0.11,
+        "hold": 0.22,
+        "regroup_4350017537": 0.17,
+        "neutral": 0.01,
+        "north": 0.1,
+        "east": 0.23,
+        "regroup_4357619713": 0.06,
+        "west": 0.06,
+        "south": 0.04
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779521.4217951,
+      "event": "navigation_sample",
+      "loop": 7651,
+      "top_choice": "hold",
+      "sampled_choice": "hold",
+      "probabilities": {
+        "west": 0.15,
+        "south": 0.06,
+        "east": 0.04,
+        "neutral": 0.01,
+        "north": 0.15,
+        "regroup_4341366785": 0.23,
+        "hold": 0.36
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779550.638442,
+      "event": "navigation_sample",
+      "loop": 8310,
+      "top_choice": "hold",
+      "sampled_choice": "north",
+      "probabilities": {
+        "engage": 0.01,
+        "neutral": 0.01,
+        "regroup_4372824065": 0.07,
+        "hold": 0.4,
+        "south": 0.01,
+        "east": 0.11,
+        "west": 0.12,
+        "north": 0.27
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779580.89443,
+      "event": "navigation_sample",
+      "loop": 8989,
+      "top_choice": "hold",
+      "sampled_choice": "east",
+      "probabilities": {
+        "regroup_4395106305": 0.04,
+        "hold": 0.47,
+        "south": 0.02,
+        "regroup_4395892737": 0.05,
+        "north": 0.27,
+        "engage": 0.01,
+        "east": 0.03,
+        "neutral": 0.02,
+        "west": 0.09
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779587.471209,
+      "event": "navigation_sample",
+      "loop": 9132,
+      "top_choice": "hold",
+      "sampled_choice": "hold",
+      "probabilities": {
+        "north": 0.19,
+        "west": 0.14,
+        "regroup_4395368449": 0.13,
+        "east": 0.06,
+        "neutral": 0.01,
+        "engage": 0.01,
+        "hold": 0.44,
+        "south": 0.02
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779589.665456,
+      "event": "navigation_sample",
+      "loop": 9190,
+      "top_choice": "hold",
+      "sampled_choice": "hold",
+      "probabilities": {
+        "regroup_4379639809": 0.11,
+        "south": 0.04,
+        "west": 0.14,
+        "east": 0.27,
+        "neutral": 0.01,
+        "north": 0.1,
+        "engage": 0.03,
+        "hold": 0.3
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779592.886205,
+      "event": "navigation_sample",
+      "loop": 9250,
+      "top_choice": "hold",
+      "sampled_choice": "west",
+      "probabilities": {
+        "east": 0.09,
+        "south": 0.02,
+        "north": 0.18,
+        "neutral": 0.02,
+        "regroup_4395368449": 0.01,
+        "hold": 0.4,
+        "west": 0.19,
+        "engage": 0.09
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779616.3135629,
+      "event": "navigation_sample",
+      "loop": 9785,
+      "top_choice": "hold",
+      "sampled_choice": "north",
+      "probabilities": {
+        "regroup_4295753729": 0.05,
+        "regroup_4401135637": 0.04,
+        "neutral": 0.02,
+        "east": 0.12,
+        "hold": 0.36,
+        "engage": 0.03,
+        "west": 0.11,
+        "south": 0.01,
+        "north": 0.26
+      },
+      "seed": 20260918
+    },
+    {
+      "time": 1789779622.464759,
+      "event": "navigation_sample",
+      "loop": 9923,
+      "top_choice": "west",
+      "sampled_choice": "west",
+      "probabilities": {
+        "engage": 0.09,
+        "south": 0.11,
+        "hold": 0.16,
+        "east": 0.19,
+        "north": 0.1,
+        "regroup_4295753729": 0.02,
+        "west": 0.25,
+        "neutral": 0.04,
+        "regroup_4401135637": 0.04
+      },
+      "seed": 20260918
+    }
+  ],
+  "navigation_centers": [
+    [
+      64.3,
+      37.3
+    ],
+    [
+      64.3,
+      37.3
+    ],
+    [
+      67.1,
+      45.7
+    ],
+    [
+      77.1,
+      18.5
+    ],
+    [
+      86.1,
+      25.2
+    ],
+    [
+      83.3,
+      16.4
+    ],
+    [
+      81.6,
+      19.0
+    ],
+    [
+      83.3,
+      16.3
+    ],
+    [
+      76.5,
+      24.5
+    ],
+    [
+      76.5,
+      24.5
+    ]
+  ],
+  "first_distribution": {
+    "health_total": 8874.0,
+    "max_separation": 43.8,
+    "by_type": {
+      "Barracks": {
+        "count": 2,
+        "health_total": 2000.0,
+        "center": [
+          72.0,
+          26.0
+        ],
+        "max_separation": 7.1
+      },
+      "Bunker": {
+        "count": 5,
+        "health_total": 2000.0,
+        "center": [
+          72.7,
+          33.1
+        ],
+        "max_separation": 23.3
+      },
+      "CommandCenter": {
+        "count": 1,
+        "health_total": 1500.0,
+        "center": [
+          79.5,
+          21.5
+        ],
+        "max_separation": 0.0
+      },
+      "EngineeringBay": {
+        "count": 1,
+        "health_total": 850.0,
+        "center": [
+          80.5,
+          28.5
+        ],
+        "max_separation": 0.0
+      },
+      "Marine": {
+        "count": 3,
+        "health_total": 135.0,
+        "center": [
+          70.8,
+          37.2
+        ],
+        "max_separation": 29.0
+      },
+      "MissileTurret": {
+        "count": 3,
+        "health_total": 584.0,
+        "center": [
+          64.3,
+          37.3
+        ],
+        "max_separation": 26.1
+      },
+      "SCV": {
+        "count": 9,
+        "health_total": 405.0,
+        "center": [
+          82.2,
+          19.8
+        ],
+        "max_separation": 16.1
+      },
+      "SupplyDepot": {
+        "count": 4,
+        "health_total": 1400.0,
+        "center": [
+          73.2,
+          15.5
+        ],
+        "max_separation": 13.6
+      }
+    }
+  },
+  "last_distribution": {
+    "health_total": 47.392578125,
+    "max_separation": 14.1,
+    "by_type": {
+      "SCV": {
+        "count": 2,
+        "health_total": 13.392578125,
+        "center": [
+          82.2,
+          23.7
+        ],
+        "max_separation": 1.1
+      },
+      "SupplyDepot": {
+        "count": 1,
+        "health_total": 34.0,
+        "center": [
+          80.0,
+          10.0
+        ],
+        "max_separation": 0.0
+      }
+    }
+  },
+  "action_result_names": {
+    "Success": 455,
+    "Error": 2,
+    "NotSupported": 1,
+    "TargetIsOutOfRange": 2,
+    "NotEnoughMinerals": 12
+  },
+  "action_result_counts": {
+    "1": 455,
+    "3": 2,
+    "2": 1,
+    "209": 2,
+    "9": 12
+  },
+  "ticks_older_than_32_loops": 60,
+  "errors": [
+    {
+      "time": 1789779506.801832,
+      "event": "decision_error",
+      "error": "TimeoutError",
+      "detail": ""
+    }
+  ],
+  "results": [],
+  "reloads": [
+    {
+      "time": 1789779583.328091,
+      "event": "reload",
+      "revision": "7aa6cad418d59a59016d26bb893dad6dad5b6da1"
+    }
+  ],
+  "first_tick": {
+    "time": 1789779497.2351449,
+    "event": "tick",
+    "loop": 7107,
+    "revision": "47d61b71abd203c80dca32727c67e03df6208f7b",
+    "own_units": 28,
+    "units": [
+      {
+        "tag": 4395630593,
+        "type": "Marine",
+        "position": [
+          77.39404296875,
+          19.63134765625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4296540161,
+        "type": "SupplyDepot",
+        "position": [
+          71.0,
+          16.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4300996609,
+        "type": "Barracks",
+        "position": [
+          74.5,
+          28.5
+        ],
+        "health": 1000.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4397465602,
+        "type": "Bunker",
+        "position": [
+          79.5,
+          25.5
+        ],
+        "health": 400.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4379639809,
+        "type": "SCV",
+        "position": [
+          82.08152770996094,
+          16.645278930664062
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4373348353,
+        "type": "SCV",
+        "position": [
+          78.6875,
+          31.78369140625
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4395106305,
+        "type": "SCV",
+        "position": [
+          81.7120361328125,
+          19.488540649414062
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4320919553,
+        "type": "MissileTurret",
+        "position": [
+          60.0,
+          49.0
+        ],
+        "health": 84.0,
+        "health_fraction": 0.34,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4295491585,
+        "type": "Bunker",
+        "position": [
+          69.5,
+          33.5
+        ],
+        "health": 400.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4357357569,
+        "type": "Bunker",
+        "position": [
+          69.5,
+          46.5
+        ],
+        "health": 400.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4395892737,
+        "type": "SCV",
+        "position": [
+          84.42041015625,
+          20.7442626953125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4353687553,
+        "type": "Marine",
+        "position": [
+          67.62158203125,
+          45.148193359375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4379901953,
+        "type": "SCV",
+        "position": [
+          83.31640625,
+          16.34375
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4299948033,
+        "type": "CommandCenter",
+        "position": [
+          79.5,
+          21.5
+        ],
+        "health": 1500.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4398514179,
+        "type": "Bunker",
+        "position": [
+          80.5,
+          31.5
+        ],
+        "health": 400.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4372561921,
+        "type": "SCV",
+        "position": [
+          83.61044311523438,
+          19.602243423461914
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4350017537,
+        "type": "MissileTurret",
+        "position": [
+          75.0,
+          40.0
+        ],
+        "health": 250.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4357619713,
+        "type": "MissileTurret",
+        "position": [
+          58.0,
+          23.0
+        ],
+        "health": 250.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297064449,
+        "type": "SupplyDepot",
+        "position": [
+          69.0,
+          18.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4372824065,
+        "type": "SCV",
+        "position": [
+          85.630615234375,
+          21.52783203125
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4395368449,
+        "type": "SCV",
+        "position": [
+          80.7841796875,
+          16.354248046875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4297850881,
+        "type": "Bunker",
+        "position": [
+          64.5,
+          28.5
+        ],
+        "health": 400.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4295753729,
+        "type": "Barracks",
+        "position": [
+          69.5,
+          23.5
+        ],
+        "health": 1000.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4396154881,
+        "type": "SupplyDepot",
+        "position": [
+          80.0,
+          10.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4397203458,
+        "type": "SCV",
+        "position": [
+          79.10806274414062,
+          16.008512496948242
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4298113025,
+        "type": "SupplyDepot",
+        "position": [
+          73.0,
+          18.0
+        ],
+        "health": 350.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4296278017,
+        "type": "EngineeringBay",
+        "position": [
+          80.5,
+          28.5
+        ],
+        "health": 850.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4301520897,
+        "type": "Marine",
+        "position": [
+          67.479736328125,
+          46.854248046875
+        ],
+        "health": 45.0,
+        "health_fraction": 1.0,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 4720,
+    "decision_age_loops": 53,
+    "commands": [
+      {
+        "unit_tag": 4395630593,
+        "ability_id": 16,
+        "point": [
+          79.5,
+          21.5
+        ]
+      },
+      {
+        "unit_tag": 4397465602,
+        "ability_id": 407,
+        "target_tag": 4395630593
+      },
+      {
+        "unit_tag": 4373348353,
+        "ability_id": 316,
+        "target_tag": 4320919553
+      },
+      {
+        "unit_tag": 4299948033,
+        "ability_id": 524
+      }
+    ],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 2237
+  },
+  "last_tick": {
+    "time": 1789779720.439969,
+    "event": "tick",
+    "loop": 12142,
+    "revision": "7aa6cad418d59a59016d26bb893dad6dad5b6da1",
+    "own_units": 3,
+    "units": [
+      {
+        "tag": 4372824065,
+        "type": "SCV",
+        "position": [
+          81.695068359375,
+          24.01171875
+        ],
+        "health": 5.67724609375,
+        "health_fraction": 0.13,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4395892737,
+        "type": "SCV",
+        "position": [
+          82.61328125,
+          23.34619140625
+        ],
+        "health": 7.71533203125,
+        "health_fraction": 0.17,
+        "build_progress": 1.0
+      },
+      {
+        "tag": 4396154881,
+        "type": "SupplyDepot",
+        "position": [
+          80.0,
+          10.0
+        ],
+        "health": 34.0,
+        "health_fraction": 0.1,
+        "build_progress": 1.0
+      }
+    ],
+    "score": 117,
+    "decision_age_loops": 13,
+    "commands": [
+      {
+        "unit_tag": 4372824065,
+        "ability_id": 16,
+        "point": [
+          80.0,
+          10.0
+        ]
+      },
+      {
+        "unit_tag": 4395892737,
+        "ability_id": 16,
+        "point": [
+          80.0,
+          10.0
+        ]
+      }
+    ],
+    "submitted": 0,
+    "action_results": [],
+    "action_errors": [],
+    "latency_ms": 490
+  }
+}

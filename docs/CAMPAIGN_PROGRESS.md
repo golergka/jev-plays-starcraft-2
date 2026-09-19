@@ -1301,3 +1301,16 @@ keeping default32 and all fresh ownership/visibility/command validation. This en
 a bounded later64-loop experiment; it does not change the currently running trial.
 60 tests pass including propagation to the runner. No evidence yet that a longer
 cutoff improves performance; it accepts older strategic context as a tradeoff.
+
+### Lab113 — ninth attempt defeated; start 64-loop freshness trial
+
+UI confirmed all structures destroyed at12:45, evacuation07:24. Final resumed run
+20260919T005814.542606Z recorded as defeat with separate UI evidence; API omitted
+player_result. Report073 covers only that resumed segment. Ninth fresh attempt
+also contains the initial token-limit failure and one failed splitting-only resume;
+do not treat its duration as a clean controlled comparison against attempt8.
+Two earlier victories remain intact. Start attempt10 from the same pending mission,
+2500call budget,64-loop age cutoff, unchanged player policy. This tests whether
+allowing older Jev decisions to reach fresh command validation reduces starvation.
+Ownership/visibility validation and engine legality remain enforced. No tactical
+orders or mission-specific logic added. Policy benefit remains unproven.
