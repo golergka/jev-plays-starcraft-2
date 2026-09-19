@@ -3094,3 +3094,22 @@ Marine yet.9SCVs,12Marines,2CommandCenters,2Barracks,2Bunkers among owned units.
 No budget/mission terminal event. Job execution alone does not solve composition;
 do not claim army replacement success merely because batches run. Keep policy
 and persistent spending taper fixed while observing the attempt.
+
+### Lab214 — visual checks reveal what command acceptance misses
+
+User requested periodic direct visual inspection. Inspected the native SC2 window
+with computer-use screenshots during live session14186 (run20260919T201622.753722Z).
+At native8:37,1404minerals/712gas/24of46supply, Zerg and muzzle flashes were visible
+inside the base beside Command Centers and bunker construction. Nearby tick8231
+issued ordinary Move16 commands to nine Marines toward79.5,25.5,all accepted.
+This suggests potentially disruptive repositioning during contact; acceptance
+alone does not establish useful combat, and a still screenshot cannot prove the
+moves prevented firing. No tactical intervention or policy change made.
+
+Second screenshot at9:08 showed the local fight subsided, Marines clustered near
+the bunker,1441minerals/752gas/26of46supply. Through8885:458calls/$0.284740512,
+15SCVs/9Marines in the raw owned sample, no terminal/budget error. A Marine batch
+was selected at3710, so the earlier worker-only selection pattern did not persist;
+SCV batches returned at7987/8885. Large resource bank remains unresolved.
+Continue periodic native visual checks alongside logs, particularly during combat
+and after behavior changes; distinguish observations from causal conclusions.
