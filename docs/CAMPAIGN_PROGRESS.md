@@ -2595,3 +2595,34 @@ single live attempts with stochastic choices, not a controlled efficacy estimate
 At loop3324 current run has13SCVs/18Marines/4Bunkers/2Turrets,406calls,no errors,
 income220/48. Some defenses have disappeared; no ending yet. Keep policy fixed
 for the defensive outcome rather than infer campaign success from early growth.
+
+### Lab189 — user-directed rolling spending governor and gradual taper
+
+User requested longer experiment runtime through a gentle five-minute rolling
+dollar budget, then asked to measure current spend and taper over a few hours.
+Paused native Zero Hour at5:13 while implementing; controller exited normally on
+stalled clock and saved replay/result (615calls,$0.418819632). Preserve this world.
+Measured repository Jev telemetry: last active5min615calls/$0.418820 (~$5.03/hour),
+last active minute159calls/$0.113598 (~$6.82/hour burst), preceding wall-clock hour
+5408calls/$4.053994. These are local logged calls, not account-wide charges.
+
+Added shared SQLite admission ledger in runs/jev-spend.sqlite3, used by every
+Jev wrapper instance including probes and recursive splits. Transactional
+reservations prevent concurrent callers from independently spending the same
+allowance. Responses settle actual provider cost; uncertain/failed/cancelled calls
+retain conservative reservations. Import recent existing usage once. Ledger and
+budget taper persist across reconnects. This is a soft cap because exact billed
+cost is returned after dispatch; unexpectedly expensive responses may overshoot
+reservations, then block new dispatch. Other apps/direct SDK use are not covered.
+
+Active local runs/jev-budget.json starts at$0.42 per300seconds and linearly tapers
+to$0.10 over10800seconds, then holds (~$1.20/hour). Nominal integrated allowance
+about$9.36 over the taper; rolling-window burst headroom and post-response billing
+mean this is not a hard cumulative cap. Config is reread at each admission and
+never reset by controller restarts. Missing config defaults to$0.10/5min.
+Harness additionally paces decision cycles by measured cost/current allowance.
+Throttling preserves existing game orders, observes endings and controls camera,
+without incrementing decision failure count or queuing stale tactical commands.
+103 tests pass, including concurrent admission, actual-cost settlement, unknown
+charges, rolling expiry, startup seeding, persistent taper and pre-SDK denial.
+No gameplay-policy change. Resume the same paused Zero Hour with the governor.

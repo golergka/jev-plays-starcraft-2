@@ -12,6 +12,7 @@ from openrouter.errors import PaymentRequiredResponseError
 from s2clientprotocol import sc2api_pb2 as sc, error_pb2
 from .sc2 import SC2, launch, find_executable
 from .jev import Jev, CallBudgetReached
+from .spend import SpendThrottled
 from .reload import PlayerLoader
 from .view import make_view, validate_commands
 from .camera import choose_shot
@@ -220,11 +221,21 @@ async def run(args):
                     camera.action_raw.camera_move.center_world_space.y = shot['position'][1]
                     await client.request('action',sc.RequestAction(actions=[camera]))
                     log('camera_shot',loop=view['loop'],**shot)
+            if time.monotonic() < memory.get('spend_resume_at', 0):
+                await asyncio.sleep(0.2)
+                continue
             decision_start = time.monotonic()
+            decision_cost_before = jev.cost
             try:
                 commands = await asyncio.wait_for(loader.module.decide(view,jev,memory),
                                                   max(3,args.max_age_loops/22.4))
                 failures = 0
+            except SpendThrottled as exc:
+                memory['spend_resume_at'] = time.monotonic()+exc.retry_after
+                log('spend_throttled', retry_after=exc.retry_after,
+                    rolling_usd=exc.spent, limit_usd=exc.limit)
+                failures = 0
+                continue
             except CallBudgetReached:
                 log('stopped',reason='Jev call budget reached')
                 break
@@ -264,7 +275,14 @@ async def run(args):
                 commands=commands,submitted=len(actions),action_results=results,
                 action_errors=[str(e) for e in fresh.action_errors],
                 latency_ms=round((time.monotonic()-decision_start)*1000))
-            await asyncio.sleep(max(0,args.interval-(time.monotonic()-decision_start)))
+            # Pace completed decisions by their measured cost as the dollar
+            # allowance tapers. Bursts within a decision remain permitted; the
+            # shared ledger separately guards concurrent and probe spending.
+            paid = max(0, jev.cost-decision_cost_before)
+            interval = max(args.interval, paid*jev.spend.window/jev.spend.limit)
+            memory['spend_resume_at'] = decision_start+interval
+            log('spend_pacing', decision_usd=paid, target_interval_seconds=interval,
+                rolling_limit_usd=jev.spend.limit)
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
         return outcome

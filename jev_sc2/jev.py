@@ -3,6 +3,8 @@ import os
 import json
 import asyncio
 import time
+from pathlib import Path
+from .spend import RollingSpend
 from openrouter import OpenRouter
 from openrouter.errors import BadRequestResponseError
 
@@ -25,6 +27,13 @@ class Jev:
         self.inflight = 0
         self.max_calls = max_calls
         self.cost = 0.0
+        root = Path(__file__).resolve().parents[1]
+        self.spend = RollingSpend(root/'runs/jev-spend.sqlite3',
+                                 limit=float(os.getenv('JEV_USD_PER_5_MIN', '0.10')),
+                                 config_path=root/'runs/jev-budget.json')
+        self.spend.seed(root/'runs')
+        self.log('spend_governor', usd_per_5_min=self.spend.limit,
+                 window_seconds=self.spend.window, reservation_usd=self.spend.reserve)
 
     async def ask(self, state, questions):
         # Concrete-order question names exactly identify job summaries. Reapply
@@ -45,6 +54,7 @@ class Jev:
             return {key:value for half in halves for key,value in half.items()}
         if self.max_calls is not None and self.calls + self.inflight >= self.max_calls:
             raise CallBudgetReached()
+        token = self.spend.acquire() if hasattr(self, 'spend') else None
         self.inflight += 1
         try:
             started = time.monotonic()
@@ -55,6 +65,8 @@ class Jev:
                 server_url='https://openrouter.ai',
             )
             self.calls += 1
+            if token is not None:
+                self.spend.settle(token, response.usage.cost)
             self.cost += response.usage.cost or 0
             result = response.model_dump(mode='json')
             self.log('jev', latency_ms=round((time.monotonic()-started)*1000),

@@ -150,3 +150,39 @@ remains recorded as incomplete/unknown; this does not establish defeat or victor
 Existing call and attempt caps still apply, and prior wins remain preserved.
 Budget stops and other unknown failures do not trigger this recovery. A genuinely
 paused mission can also meet the clock-stall condition, so this mode is opt-in.
+
+## Spending governor
+
+All requests through `jev_sc2.jev.Jev` share a persistent five-minute dollar ledger
+at `runs/jev-spend.sqlite3`, including offline probes and recursive request splits.
+Concurrent requests reserve an estimated cost before dispatch; successful replies
+replace that reservation with reported actual cost. Unknown/cancelled/failed replies
+retain their reservation for five minutes. This is a **soft** cap: the provider bills
+after dispatch, so an unexpectedly expensive response can exceed its reservation.
+The ledger then blocks further dispatch until room returns. This is not an
+OpenRouter account-wide cap and cannot limit other applications or direct SDK calls.
+
+Default allowance: `JEV_USD_PER_5_MIN=0.10` ($1.20/hour at a sustained rate).
+An optional `runs/jev-budget.json` overrides it and is reread on each admission:
+
+```json
+{
+  "start_usd_per_5_min": 0.42,
+  "target_usd_per_5_min": 0.10,
+  "ramp_seconds": 10800,
+  "started_at": 1789840000
+}
+```
+
+`started_at` is the actual Unix timestamp when the taper starts; do not copy this
+example timestamp for a new taper. The allowance interpolates linearly, then stays
+at the target. Restarting the controller does not reset the clock or spending.
+Use equal start/target values for a constant allowance. Malformed settings fail
+closed. The active experiment's settings live in that ignored local JSON file.
+
+The harness paces new decision cycles according to measured decision cost and the
+current allowance. When admission is blocked it keeps observing, moving the camera
+and checking mission endings; existing game orders continue, and it takes a fresh
+observation before trying again. Budget waits are not controller failures. No
+paid fallback model is used. Watch `spend_governor`, `spend_pacing` and
+`spend_throttled` events. Lower budgets necessarily mean less frequent new decisions.
