@@ -3334,3 +3334,16 @@ saved as probe_investment_compact.py and228-investment-compact.json.
 Next full run retains current policy with60% pacing from startup to obtain an
 uninterrupted comparison; prior18:40 attempt had two budget stops and memory
 resets. No further paid framing probes until new live evidence changes the question.
+
+### Lab229 — uninterrupted60% pacing survives budget but loses13:04
+
+Run20260919T210819.747053Z/session39575 ended normally. Native defeat verified
+13:04,evacuation7:05,all structures destroyed,801minerals remaining.305calls/
+$.181441512,replay saved,UI evidence and checkpoint attempt recorded. No campaign
+advance. No budget stop this run. Lower rate is operationally cheaper,but survival
+worse than prior18:40 interrupted trial. Different random choices,pacing,memory
+continuity prevent a one-variable attribution. Policy still failed to replace the
+army and use defenses effectively. Repeating unchanged is not justified now.
+Next inspect call distribution and routine execution expiry against actual
+inter-decision time,then target general decision efficiency/combat behavior.
+Do not compensate by increasing the dollar cap or injecting mission tactics.
