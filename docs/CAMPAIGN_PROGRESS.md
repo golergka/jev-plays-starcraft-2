@@ -3150,3 +3150,18 @@ extreme finite values overflowing; tests cover family mass,conditional odds,
 legal-option filtering,executed non-top choice and extreme ranges.118tests pass.
 This is still a sampling heuristic, not a calibrated utility interpretation.
 Persistent spending taper unchanged. Activate after baseline trial ended.
+
+### Lab217 — factored allocation executes a Marine batch; outcome pending
+
+Live session37394,run20260919T202955.161373Z,policyf3a8f7e. New sampler's
+sampling_scope confirmed within_purchase_or_wait. At matched early loops3574
+versus baseline3522, current raw sample14Marines/12SCVs/5Bunkers/1CommandCenter
+versus13/11/2/2; costs$.106936830 versus$.113555778. These single snapshots are
+not causal evidence; cargo, trigger changes and stochastic decisions matter.
+
+Jev selected Marine batch4953, then carried requests5185/5405; all matching ticks
+accepted actions,ages69/72/63 within128. Native5:54 screenshot showed supply27/27,
+550minerals and combat near remaining Barracks. Through6513 raw sample15Marines,
+11SCVs,oneBarracks,315calls/$0.189702114. This is more encouraging than accepted
+requests alone, but appearances do not establish a production count. No budget
+or terminal event. Keep trial unchanged and verify eventual native outcome.
