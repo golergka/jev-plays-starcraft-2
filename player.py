@@ -513,7 +513,7 @@ async def decide(view, jev, memory):
         'production':'Produce more units.',
         'construction':'Construct one of the available_projects buildings, including any supply capacity listed there.',
         'combat':'Attack enemies or attack-move toward a location.',
-        'positioning':'Move, regroup, scout, stop or hold position.',
+        'positioning':'Move, regroup, scout, stop or hold position. Ordinary Move changes location only: moving near a resource does not harvest it, moving near a building does not repair or enter it, and ordinary Move does not attack along the route.',
         'other':'Use another available ability.',
         'individual':'Let separate Jev decisions choose orders for individual units.',
         'continue':'Keep the existing orders unchanged, whatever those orders currently are.',

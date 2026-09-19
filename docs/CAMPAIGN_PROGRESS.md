@@ -1163,3 +1163,18 @@ renamed were .21/.24, .23/.22, .12/.13. Six calls cost $0.002153046.
 Unlike the earlier hold/continue_operations probe, this rename did not change the
 decision category. Do not deploy it as a fix. Artifact:
 `docs/experiments/068-positioning-key-probe.json`. No game commands were issued.
+
+### Lab102 — clarify ordinary Move semantics
+
+Observed repeated worker Move-to-CommandCenter choices at distances 2.8–3.9,
+while these commands cannot themselves initiate mining. Tested a literal action
+clarification in three recorded purpose states. All top choices remained movement;
+income probabilities changed .22→.31, .22→.31, .15→.17. Six calls $0.002157708;
+artifact 069. This does not establish a gameplay improvement. Deploy the mechanical
+clarification because it describes what the offered command does, without choosing
+a role, destination, worker allocation or mission tactic.
+
+An initial six-call pilot ($0.002157960) used an overbroad sentence saying all
+positioning orders only change/hold location, overlooking Hold's combat behavior.
+Discarded that wording and reran the three pairs with the statement explicitly
+restricted to ordinary Move. Only the corrected wording enters the player.
