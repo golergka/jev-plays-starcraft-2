@@ -40,6 +40,7 @@ class SC2:
         self.ws, self.counter = ws, 0
         self.status = None
         self.lock = asyncio.Lock()
+        self.log = None
 
     @classmethod
     async def connect(cls, port, timeout=90, process=None):
@@ -65,7 +66,12 @@ class SC2:
             req = sc.Request(id=self.counter, **{name: body})
             await self.ws.send(req.SerializeToString())
             reply = sc.Response.FromString(await asyncio.wait_for(self.ws.recv(), 120))
+            previous_status = self.status
             self.status = reply.status
+            if self.log and self.status != previous_status:
+                self.log('sc2_status_transition', request=name, request_id=req.id,
+                         previous=sc.Status.Name(previous_status) if previous_status is not None else None,
+                         current=sc.Status.Name(self.status))
             if reply.error:
                 raise RuntimeError('; '.join(reply.error))
             if reply.HasField('id') and reply.id != req.id:

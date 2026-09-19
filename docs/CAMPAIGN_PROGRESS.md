@@ -1599,3 +1599,14 @@ measure uninterrupted Jev control through the full mission. No win recorded.
 The probe requests only observations, records own-unit count/results/clock and
 never sends actions or changes a game. Live execution verified its output and
 clean exit. Cause of premature API termination remains an infrastructure target.
+
+### Lab138 — capture the exact request that first reports terminal status
+
+Official sc2api.proto documents an end-of-time ceiling of1<<19 simulation loops
+and restart hard-reset guidance, but current observed mission loops are far lower;
+this is not a demonstrated explanation. Existing process uptime about4h19m.
+https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/sc2api.proto
+Add status-transition telemetry with request name/id, previous/current status;
+result events now include exact observation loop and API status.66tests pass.
+Start attempt16 with unchanged Jev policy to gather first-transition evidence,
+2500call budget,64loop age limit and camera enabled. No mission data modified.

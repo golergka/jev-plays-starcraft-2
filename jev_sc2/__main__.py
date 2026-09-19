@@ -89,6 +89,7 @@ async def run(args):
         proc = launch(sc2root,args.port,(directory/'sc2.log').open('w'),
                       args.window_size, args.window_position)
     client = await SC2.connect(args.port, process=proc)
+    client.log = log
     try:
         ping = await client.request('ping',sc.RequestPing())
         log('connected',version=ping.game_version,revision=loader.revision,
@@ -108,7 +109,8 @@ async def run(args):
                 check_map_identity(attached_info,args.expected_map)
             if client.status == sc.ended:
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
-                                     for r in existing.player_result],source='attach_to_ended_game')
+                                     for r in existing.player_result],source='attach_to_ended_game',
+                    loop=existing.observation.game_loop,api_status=sc.Status.Name(client.status))
                 replay = await client.request('save_replay',sc.RequestSaveReplay())
                 (directory/'game.SC2Replay').write_bytes(replay.data)
                 log('finished',calls=0,cost=0,run=str(directory))
@@ -135,7 +137,8 @@ async def run(args):
                 log('engine_action_error',errors=[str(e) for e in observation.action_errors])
             if observation.player_result or client.status == sc.ended:
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
-                                     for r in observation.player_result])
+                                     for r in observation.player_result],loop=observation.observation.game_loop,
+                    api_status=sc.Status.Name(client.status))
                 break
             if observation.observation.game_loop == last_loop:
                 if time.monotonic()-clock_changed_at >= 10:
@@ -188,7 +191,8 @@ async def run(args):
             fresh = await client.observe()
             if fresh.player_result or client.status == sc.ended:
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
-                                     for r in fresh.player_result])
+                                     for r in fresh.player_result],loop=fresh.observation.game_loop,
+                    api_status=sc.Status.Name(client.status))
                 break
             age = fresh.observation.game_loop-view['loop']
             actions = validate_commands(commands,view,fresh) if age <= args.max_age_loops else []
