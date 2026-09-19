@@ -50,6 +50,8 @@ print(json.dumps({
     'max_observed_mineral_income_estimate_per_minute':max(income_samples) if income_samples else None,
     'contribution_commitments':{key:dict(collections.Counter(r.get('sampled_choice') for r in commitments if r['question']==key))
                               for key in sorted({r['question'] for r in commitments})},
+    'resource_category_choices':dict(collections.Counter(r.get('choice') for r in rows if r['event']=='resource_category_choice')),
+    'latest_observed_completed_upgrades':next((r['state']['completed_upgrades'] for r in reversed(calls) if 'completed_upgrades' in r['state']),None),
     'support_executor_choices':dict(collections.Counter(r.get('choice') for r in rows if r['event']=='support_assignment')),
     'camera_shot_reasons':dict(collections.Counter(r['reason'] for r in rows if r['event']=='camera_shot')),
     'latency_median_ms':statistics.median(latencies) if latencies else None,

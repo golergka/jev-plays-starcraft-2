@@ -1458,3 +1458,14 @@ names to the fair view and both full/compact decision contexts. This distinguish
 completed research from merely requested or accepted research; no effect magnitudes
 are inferred and no opponent upgrades are exposed.62 tests still pass. Changes
 hot-reload with the normal player/view pair. Live completion remains to be observed.
+
+### Lab126 — resource-category path exercised live
+
+Attempt13 now invokes the previously unexercised hierarchy. Partial report at
+loop3302:84continue and13gather_minerals category selections, no gather_vespene;
+minerals6,gas160,income estimates120minerals/min and48gas/min.342calls,$0.245717346,
+zero ticks beyond64-loop cutoff. This establishes live branch exposure, not causal
+improvement: continue can preserve gas assignments and this is an evolving single
+run with research controls also added. Artifact084. Reports now expose resource
+category counts and latest own completed-upgrade observations (which can include
+initial campaign upgrades; do not mistake them for newly researched upgrades).

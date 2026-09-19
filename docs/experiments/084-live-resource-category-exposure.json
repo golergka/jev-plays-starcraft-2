@@ -1,0 +1,25 @@
+{
+  "run": "runs/20260919T012920.946820Z/events.jsonl",
+  "calls": 342,
+  "cost_usd": 0.245717346,
+  "resource_category_choices": {
+    "continue": 84,
+    "gather_minerals": 13
+  },
+  "latest_observed_resources": {
+    "minerals": 6,
+    "vespene": 160,
+    "estimated_minerals_per_minute": 120.0,
+    "estimated_vespene_per_minute": 48.0,
+    "food_used": 25,
+    "food_cap": 43,
+    "supply_in_construction": 0,
+    "supply_remaining": 18,
+    "supply_blocked": false
+  },
+  "configured_max_age_loops": 64,
+  "ticks_older_than_configured_limit": 0,
+  "partial": true,
+  "last_loop": 3302,
+  "interpretation": "Live branch exposure only; not a controlled outcome comparison or proof of research completion."
+}
