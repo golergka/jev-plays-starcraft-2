@@ -3816,3 +3816,19 @@ worker-containing mixed menus$.009686 and role menus$.004865 at the earlier same
 inspection. Mixed menus cannot attribute their entire cost to workers. This
 contradicts assuming worker roles dominate current costs and does not justify a
 worker-only rate cut. No paid probe or policy change; preserve the live trajectory.
+
+### Lab260 — state shared executor scope once per order question
+
+Current256trial Marine-only request totals at inspection:34calls,967100statechars,
+322571questionchars. State repetition dominates; do not promise dramatic savings
+from descriptions. Across1410 recorded Marine options, repeated executor prefix
+accounts43000chars of279636descriptionchars. Existing singleton compaction does
+not cover multi-unit selections.
+
+Move the universal shared-order scope into question instructions once: every unit
+receives it unless the option explicitly says otherwise. Preserve exact candidates,
+command maps, distance facts, singleton/individual behavior and explicit subset
+exceptions (such as one anchor holds while followers move). No action removed or
+new tactical selector.130tests pass. Less repeated text can change tournament
+partitions and model choices; this is not behavior-identical inference or a proven
+survival gain. The modest character savings are cumulative, not dollar savings.

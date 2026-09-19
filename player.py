@@ -792,9 +792,9 @@ async def decide(view, jev, memory):
                          for u,t in zip(selected,tables[kind]) if 'point' in t[key]['command']]
             if distances:
                 description += f'; travel distances across selection: {min(distances):.1f} to {max(distances):.1f}'
-            # A singleton question already names its only executor.
-            criteria['group_'+key] = (description if len(selected)==1 else
-                                     f'Every one of the {len(selected)} {kind} units receives: ' + description)
+            # Shared executor scope is stated once in the question. Options that
+            # affect only a subset continue to name that subset explicitly.
+            criteria['group_'+key] = description
             plans[kind]['group_'+key] = [c[key]['command'] for c in tables[kind]]
         # Support need not redirect an entire cohort. Collect each offered
         # target once; a later Jev answer chooses its executor(s).
@@ -851,6 +851,7 @@ async def decide(view, jev, memory):
             'type':'choice',
             'instructions':f'Choose the next order for the {len(selected)} {kind} units to advance the mission objective. '
                            'You may choose a shared order for this selection or individual control. '
+                           'Unless an option explicitly says otherwise, every unit in this selection receives the chosen shared order. '
                            'Other selections receive their own decisions in parallel. '
                            'Consider current orders, health, resources and known entities. '
                            'Count alone is not local fighting strength: max_separation and nearest-selection-member distances describe dispersion. '
