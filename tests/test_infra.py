@@ -980,3 +980,25 @@ def test_cumulative_outcomes_survive_window_without_recount_and_reset_on_rewind(
     reset=recent_outcomes(view(1,[1]),memory)['cumulative_observed_unit_changes']
     assert reset['disappeared_by_type']=={}
     assert reset['through_loop']==1
+
+
+def test_investment_sharpening_retains_non_top_choices_and_logs_actual_distribution():
+    from player import choose_investment
+    view={'loop':1,'self':[{'tag':1,'position':[0,0],'candidates':[
+        {'description':'Train Unit','project':{'type':'Unit'},'command':{'unit_tag':1,'ability_id':1}}]}]}
+    class Rng:
+        def choices(self,options,weights,k):
+            assert options==['save','project_0']
+            assert weights==pytest.approx([1,1/9])
+            return ['project_0']
+    class Model:
+        events=[]
+        def log(self,event,**values): self.events.append((event,values))
+        async def ask(self,state,questions):
+            return {'investment':{'choice':'save','probabilities':{'save':.75,'project_0':.25,'invalid':100}}}
+    model=Model()
+    commands=asyncio.run(choose_investment(view,{},model,{'investment_rng':Rng()}))
+    assert commands==[{'unit_tag':1,'ability_id':1}]
+    sample=next(v for e,v in model.events if e=='investment_sample')
+    assert sample['sampling_probabilities']==pytest.approx({'save':.9,'project_0':.1})
+    assert sample['probabilities']=={'save':.75,'project_0':.25}

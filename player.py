@@ -315,9 +315,16 @@ async def choose_investment(view, state, jev, memory=None):
                    if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
         if memory is not None and weights:
             rng = memory.setdefault('investment_rng',random.Random(20260918))
-            sampled = rng.choices(list(weights),weights=list(weights.values()),k=1)[0]
+            # Sharpen model preferences without returning to deterministic saving
+            # stalls. This is an experimental sampling policy, not calibration.
+            largest_weight = max(weights.values())
+            sampling_weights = {key:(value/largest_weight)**2 for key,value in weights.items()}
+            total_weight = sum(sampling_weights.values())
+            sampling_probabilities = {key:value/total_weight for key,value in sampling_weights.items()}
+            sampled = rng.choices(list(sampling_weights),weights=list(sampling_weights.values()),k=1)[0]
             jev.log('investment_sample',loop=view['loop'],top_choice=choice,
-                    sampled_choice=sampled,probabilities=weights,seed=20260918)
+                    sampled_choice=sampled,probabilities=weights,
+                    sampling_exponent=2, sampling_probabilities=sampling_probabilities,seed=20260918)
             choice = sampled
     jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names,
             source='carried_jev_commitment' if carried else 'jev_distribution')

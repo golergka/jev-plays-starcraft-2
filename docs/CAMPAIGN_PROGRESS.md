@@ -2342,3 +2342,25 @@ Counts are not presented as kills, deaths or production totals because transport
 morphs and triggers can change presence. Jev still chooses all gameplay actions.
 This changes general temporal context, not a mission-specific strategic directive.
 93 tests pass, including duplicate observations, window expiry and rewind.
+
+### Lab176 — temper investment exploration without replacing Jev
+
+At live loop5366:17SCVs,5Marines,4Barracks,5Depots,1Refinery,1CommandCenter;
+551calls, no decision errors.47 of87 investment samples differed from Jev's top
+choice. This is a policy-level intervention, not proof that every deviation was
+bad. Reviewed labs068/074/076 and lab170: deterministic top-choice spending
+previously stalled on save; unrestricted sampling can select low-ranked extra
+capacity; pairwise preference probes alone did not establish better outcomes.
+
+Experiment: square Jev's positive legal investment probabilities before sampling.
+For example,.75/.25 becomes.9/.1, retaining non-top possibilities without making
+them equally frequent as before. Normalize by the largest weight first to avoid
+numerical under/overflow. Preserve original model probabilities and log the actual
+sampling probabilities/exponent separately. No unit-specific weights, build order,
+mission coordinates, or LLM-selected tactical commands. Savings commitments remain
+unchanged. This is a heuristic exploration tradeoff, not calibrated utility.
+
+94 tests pass, including the ability to select a lower-ranked legal action and
+matching telemetry for the actual sampling distribution. Compare subsequent
+spending, saving stalls, army retention and verified outcome; mid-run context
+changes and prior losses prevent treating this attempt as a controlled A/B test.
