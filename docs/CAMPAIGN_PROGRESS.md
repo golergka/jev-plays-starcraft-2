@@ -936,3 +936,26 @@ Lab 088 loaded just before the loss, too late to evaluate named rejection feedba
 Retry only Zero Hour using the complete current policy from the beginning,
 preserving prior wins and both failed attempts. No opening tactic is hardcoded.
 The camera director and player-only observation rules remain in force.
+
+## Lab 090: negative strategy-hint probe and bounded contribution sampling
+
+Three paired offline contribution queries all chose positioning with and without
+the global protect hint. Removing only `strategy_chosen_by_jev` did not change the
+top choice; this small probe does not support deleting that hierarchy. Six calls
+cost $0.001977948; full distributions are in `061-strategy-hint-probe.json`.
+The unchanged queries assigned income .22, .36, .38, yet deterministic top-choice
+selection never exercised that alternative in these samples.
+
+Test sampling positive finite probabilities over offered contribution options,
+with fixed reproducible seed 20260919. Tell Jev that its selected contribution is
+a commitment for up to 224 game loops, with reconsideration on priority change,
+expiry, or unavailable controls. Concrete orders remain fresh Jev choices. This
+lets sampled work persist long enough to have an effect and saves repeated role
+queries. No contribution receives a Python preference, and no unit allocation or
+resource-gathering rule is scripted. The ten-second commitment may respond too
+slowly to threats; measure that risk rather than assume it helps.
+
+Forty-seven tests pass, including retention of a sampled choice, exclusion of
+unoffered/zero-probability choices, and reconsideration when controls disappear.
+Also prepared the next local map asset (`ttychus01.SC2Map`, 43 components) without
+loading it or feeding its scripts to Jev. Zero Hour must be won before advancing.

@@ -628,3 +628,21 @@ def test_feedback_names_and_counts_rejected_actions_without_prescribing_response
     assert len(feedback[0]['failures'])==1
     view['self'][0]['candidates']=[]
     assert player.describe_action_feedback(view,memory)[0]['failures'][0]['action']==failure['action']
+
+
+def test_jev_contribution_commitment_retains_sample_and_rechecks_unavailable_choice():
+    import player
+    class Model:
+        calls=0
+        def log(self,*args,**kwargs): pass
+        async def ask(self,state,questions):
+            self.calls+=1
+            assert '224 game loops' in questions['purpose_Test']['instructions']
+            return {'purpose_Test':{'choice':'positioning','probabilities':{'income':1,'positioning':0,'unoffered':100}}}
+    model=Model();memory={};state={};q={'purpose_Test':{'instructions':'Choose role','criteria':{'income':'Gather','positioning':'Move'}}}
+    assert asyncio.run(player.choose_contributions({'loop':1},state,q,model,memory))['purpose_Test']['choice']=='income'
+    assert asyncio.run(player.choose_contributions({'loop':100},state,q,model,memory))['purpose_Test']['choice']=='income'
+    assert model.calls==1
+    q['purpose_Test']['criteria'].pop('income')
+    assert asyncio.run(player.choose_contributions({'loop':101},state,q,model,memory))['purpose_Test']['choice']=='positioning'
+    assert model.calls==2

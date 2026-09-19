@@ -1,0 +1,105 @@
+{
+  "source": "runs/20260919T000342.653000Z/events.jsonl",
+  "question": "purpose_SCV",
+  "pairs": [
+    {
+      "sample": 0,
+      "recorded_strategy": {
+        "loop": 2,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "with_hint": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.55,
+        "probabilities": {
+          "income": 0.22,
+          "continue": 0.08,
+          "positioning": 0.65,
+          "individual": 0.05,
+          "combat": 0.0
+        }
+      },
+      "without_hint": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.53,
+        "probabilities": {
+          "continue": 0.07,
+          "individual": 0.05,
+          "combat": 0.0,
+          "income": 0.25,
+          "positioning": 0.63
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "recorded_strategy": {
+        "loop": 2,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "without_hint": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.48,
+        "probabilities": {
+          "combat": 0.0,
+          "individual": 0.06,
+          "income": 0.3,
+          "positioning": 0.58,
+          "continue": 0.06
+        }
+      },
+      "with_hint": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.43,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.05,
+          "individual": 0.04,
+          "income": 0.36,
+          "positioning": 0.55
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "recorded_strategy": {
+        "loop": 2,
+        "choice": "protect",
+        "description": "Preserve owned units and structures from current threats."
+      },
+      "with_hint": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.33,
+        "probabilities": {
+          "continue": 0.1,
+          "individual": 0.06,
+          "combat": 0.0,
+          "income": 0.38,
+          "positioning": 0.46
+        }
+      },
+      "without_hint": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.38,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.11,
+          "individual": 0.05,
+          "positioning": 0.5,
+          "income": 0.34
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.001977948,
+  "method": "Remove only strategy_chosen_by_jev from three recorded states. Same contribution question, alternating pair order. No game commands."
+}

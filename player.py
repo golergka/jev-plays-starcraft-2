@@ -275,6 +275,37 @@ def control_groups(units, mode, learned):
     return groups
 
 
+async def choose_contributions(view, state, questions, jev, memory):
+    """Sample Jev's distribution and retain its declared short commitment."""
+    plans = memory.setdefault('contribution_plans',{})
+    pending, answers = {}, {}
+    strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
+    for key,question in questions.items():
+        plan = plans.get(key,{})
+        if (plan.get('choice') in question['criteria'] and
+            plan.get('strategy')==strategy and
+            plan.get('loop',0)<=view['loop']<plan.get('review_at',0)):
+            answers[key] = {'choice':plan['choice']}
+        else:
+            pending[key] = {**question,'instructions':question['instructions']+
+                ' Commit to this contribution for up to 224 game loops (about ten seconds), '
+                'unless its controls become unavailable or the strategic priority changes. '
+                'Concrete orders are still selected separately during the commitment.'}
+    predictions = await jev.ask(control_state(state),pending) if pending else {}
+    rng = memory.setdefault('contribution_rng',random.Random(20260919))
+    for key,question in pending.items():
+        answer = predictions.get(key,{})
+        weights = {k:float(v) for k,v in answer.get('probabilities',{}).items()
+                   if k in question['criteria'] and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
+        choice = rng.choices(list(weights),weights=list(weights.values()),k=1)[0] if weights else answer.get('choice')
+        if choice in question['criteria']:
+            plans[key] = {'choice':choice,'loop':view['loop'],'review_at':view['loop']+224,'strategy':strategy}
+            answers[key] = {'choice':choice}
+        jev.log('contribution_commitment',loop=view['loop'],question=key,
+                top_choice=answer.get('choice'),sampled_choice=choice,probabilities=weights,review_at=view['loop']+224)
+    return answers
+
+
 async def assign_support(view, state, jev, requests):
     """Jev selects executors; unselected units keep their current work."""
     questions, plans = {}, {}
@@ -493,7 +524,7 @@ async def decide(view, jev, memory):
                     for p in sorted({purpose(kind,k) for k in q['criteria']})},
     } for kind,q in questions.items()}
     async def choose_orders():
-        roles = await jev.ask(control_state(state),purpose_questions) if purpose_questions else {}
+        roles = await choose_contributions(view,state,purpose_questions,jev,memory)
         answers, concrete_questions = {}, {}
         for kind,q in questions.items():
             role=roles.get(f'purpose_{kind}',{}).get('choice')
