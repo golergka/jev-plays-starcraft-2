@@ -1345,3 +1345,16 @@ on the last three recorded `SCV / idle` gather menus. Balances were50minerals/14
 gap in lab115: the negative result also holds for these idle-worker states, not only
 already-working gas groups. No runtime description change deployed. Attempt10
 remained live at loop5272 with36 owned units during this analysis.
+
+### Lab117 — resource-category choice changes two of three idle decisions
+
+After balance-placement probes failed, test a different action abstraction on the
+same last three idle-worker gather menus: replace nine mineral-location options
+and one gas-location option with mineral category, gas category and continue.
+Preserve full recorded state and instructions; later location selection is not
+executed in this offline probe. Original choices all selected gas. Category choices
+selected minerals in two states (.66,.62), gas in the third (.62). Six calls,
+$0.005470584,artifact076. This changes menu semantics/size and descriptions together,
+so it does not isolate choice-count bias. It supports testing a Jev-only resource
+then-location hierarchy, with no scripted resource priority. No live policy change
+yet; attempt10 still runs the freshness comparison.

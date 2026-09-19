@@ -1,0 +1,135 @@
+{
+  "source": "runs/20260919T010244.878752Z/events.jsonl",
+  "question_filter": "SCV / idle",
+  "pairs": [
+    {
+      "question": "SCV / idle",
+      "resources": {
+        "minerals": 50,
+        "vespene": 140,
+        "estimated_minerals_per_minute": 40.0,
+        "estimated_vespene_per_minute": 128.0,
+        "food_used": 24,
+        "food_cap": 35,
+        "supply_in_construction": 8.0,
+        "supply_remaining": 11,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "group_gather_4395106305",
+        "type": "choice",
+        "confidence": 0.26,
+        "probabilities": {
+          "group_gather_4296015873": 0.03,
+          "group_gather_4298637313": 0.02,
+          "group_gather_4299685889": 0.06,
+          "group_gather_4297326593": 0.02,
+          "continue": 0.11,
+          "group_gather_4295229441": 0.04,
+          "group_gather_4294967297": 0.08,
+          "group_gather_4297588737": 0.09,
+          "group_gather_4395106305": 0.33,
+          "group_gather_4298899457": 0.05,
+          "group_gather_4296802305": 0.17
+        }
+      },
+      "resource_category": {
+        "choice": "gather_minerals",
+        "type": "choice",
+        "confidence": 0.49,
+        "probabilities": {
+          "gather_vespene": 0.31,
+          "continue": 0.03,
+          "gather_minerals": 0.66
+        }
+      }
+    },
+    {
+      "question": "SCV / idle",
+      "resources": {
+        "minerals": 0,
+        "vespene": 184,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 80.0,
+        "food_used": 25,
+        "food_cap": 43,
+        "supply_in_construction": 0,
+        "supply_remaining": 18,
+        "supply_blocked": false
+      },
+      "resource_category": {
+        "choice": "gather_minerals",
+        "type": "choice",
+        "confidence": 0.42,
+        "probabilities": {
+          "gather_minerals": 0.62,
+          "continue": 0.06,
+          "gather_vespene": 0.32
+        }
+      },
+      "original": {
+        "choice": "group_gather_4395106305",
+        "type": "choice",
+        "confidence": 0.37,
+        "probabilities": {
+          "group_gather_4298899457": 0.01,
+          "group_gather_4299685889": 0.12,
+          "group_gather_4296015873": 0.1,
+          "group_gather_4296802305": 0.08,
+          "group_gather_4395106305": 0.43,
+          "group_gather_4294967297": 0.05,
+          "group_gather_4297588737": 0.07,
+          "group_gather_4295229441": 0.01,
+          "group_gather_4298637313": 0.01,
+          "continue": 0.11,
+          "group_gather_4297326593": 0.01
+        }
+      }
+    },
+    {
+      "question": "SCV / idle",
+      "resources": {
+        "minerals": 0,
+        "vespene": 368,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 128.0,
+        "food_used": 25,
+        "food_cap": 43,
+        "supply_in_construction": 0,
+        "supply_remaining": 18,
+        "supply_blocked": false
+      },
+      "original": {
+        "choice": "group_gather_4395106305",
+        "type": "choice",
+        "confidence": 0.66,
+        "probabilities": {
+          "group_gather_4298899457": 0.01,
+          "group_gather_4296015873": 0.04,
+          "group_gather_4294967297": 0.03,
+          "continue": 0.11,
+          "group_gather_4298637313": 0.02,
+          "group_gather_4297326593": 0.0,
+          "group_gather_4299685889": 0.01,
+          "group_gather_4395106305": 0.69,
+          "group_gather_4297588737": 0.04,
+          "group_gather_4295229441": 0.01,
+          "group_gather_4296802305": 0.04
+        }
+      },
+      "resource_category": {
+        "choice": "gather_vespene",
+        "type": "choice",
+        "confidence": 0.43,
+        "probabilities": {
+          "continue": 0.06,
+          "gather_vespene": 0.62,
+          "gather_minerals": 0.32
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.005470584,
+  "method": "Last three filtered gas-gather menus. Same state; replace individual resource locations with one mineral and one gas category plus continue. Later target decision not run. Alternate pair order; no gameplay commands."
+}
