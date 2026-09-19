@@ -109,7 +109,8 @@ With SC2 already running in API mode:
 uv run python -m jev_sc2.campaign campaigns/opening.json --follow-camera --call-budget 3000
 ```
 
-The initial manifest contains the three verified-loadable opening missions; it is
+The initial manifest contains three verified-loadable opening missions and the
+prepared Smash and Grab map (not yet loaded); it is
 not the full campaign inventory. The runner uses the same general player for each
 mission, retries confirmed defeats, and advances only on its own player's API
 Victory. It saves durable progress under `runs/campaign/progress.json`; rerunning
@@ -134,3 +135,10 @@ running mission and army. It checks SC2's reported map path before submitting an
 orders or accepting a result. A continuation is recorded separately and does not
 consume a new-attempt slot. Omitting the flag starts a fresh attempt at the pending
 mission; completed missions stay skipped.
+
+For bounded unattended recovery, `--retry-stalls` permits restarting the same
+pending mission after the harness reports a stalled game clock. The attempt
+remains recorded as incomplete/unknown; this does not establish defeat or victory.
+Existing call and attempt caps still apply, and prior wins remain preserved.
+Budget stops and other unknown failures do not trigger this recovery. A genuinely
+paused mission can also meet the clock-stall condition, so this mode is opt-in.

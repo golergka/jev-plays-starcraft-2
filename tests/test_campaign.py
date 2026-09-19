@@ -104,3 +104,27 @@ def test_resume_map_identity_rejects_other_or_unknown_map():
     for actual in ('Maps/first.SC2Map',''):
         with pytest.raises(RuntimeError,match='map mismatch'):
             check_map_identity(SimpleNamespace(local_map_path=actual),'second.SC2Map')
+
+
+def test_opt_in_stall_recovery_is_bounded_and_preserves_completed_missions(tmp_path):
+    path=manifest(tmp_path);calls=[]
+    async def mission(args):
+        calls.append(args)
+        if args.map.endswith('first.SC2Map'): return {'status':'victory','calls':1}
+        return {'status':'incomplete','calls':2,'reason':'Game clock stalled for ten seconds; inspect pause/tutorial UI'}
+    result=asyncio.run(run_sequence(path,tmp_path/'progress.json',call_budget=20,
+        max_attempts=2,retry_stalls=True,mission_runner=mission))
+    assert result['completed']==['first'] and result['status']=='needs_attention'
+    assert len(calls)==3 and calls[1].map==calls[2].map
+    assert [c.max_calls for c in calls]==[20,19,17]
+    assert all(a['status']=='incomplete' and a['recovery']=='restart_same_mission_after_clock_stall' for a in result['attempts'][1:])
+
+
+def test_stall_recovery_does_not_restart_budget_or_unknown_failures(tmp_path):
+    calls=[]
+    async def mission(args):
+        calls.append(args)
+        return {'status':'incomplete','calls':1,'reason':'Jev call budget reached'}
+    result=asyncio.run(run_sequence(manifest(tmp_path),tmp_path/'progress.json',
+        retry_stalls=True,mission_runner=mission))
+    assert len(calls)==1 and result['completed']==[]

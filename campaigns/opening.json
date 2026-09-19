@@ -18,6 +18,12 @@
       "map": "../maps/traynor03.SC2Map",
       "race": "terran",
       "objective": "Hold out for evacuation."
+    },
+    {
+      "id": "smash-and-grab",
+      "map": "../maps/ttychus01.SC2Map",
+      "race": "terran",
+      "objective": "Secure the artifact before the zerg reach it."
     }
   ]
 }

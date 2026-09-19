@@ -18,7 +18,7 @@ def save_progress(path, progress):
 
 async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                        seconds_per_attempt=600, max_attempts=3, port=5001,
-                       follow_camera=False, resume_current=False, mission_runner=run):
+                       follow_camera=False, resume_current=False, retry_stalls=False, mission_runner=run):
     manifest_path, state_path = Path(manifest_path), Path(state_path)
     payload = manifest_path.read_bytes()
     manifest = json.loads(payload)
@@ -78,6 +78,13 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                 progress['completed'].append(mission['id'])
                 save_progress(state_path, progress)
                 break
+            if (retry_stalls and result['status']=='incomplete'
+                    and result.get('reason','').startswith('Game clock stalled')):
+                # Administrative recovery, not a claim of defeat. Never advance
+                # unknown outcomes. Existing attempt and call caps still apply.
+                progress['attempts'][-1]['recovery'] = 'restart_same_mission_after_clock_stall'
+                save_progress(state_path,progress)
+                continue
             if result['status']!='defeat':
                 progress.update(status='needs_attention',reason=result.get('reason',result['status']))
                 save_progress(state_path, progress)
@@ -104,11 +111,12 @@ def main():
     parser.add_argument('--max-attempts',type=int,default=3)
     parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--follow-camera',action='store_true')
+    parser.add_argument('--retry-stalls',action='store_true',help='Bounded restart of the current map after clock stalls; records unknown outcome, never advances it')
     parser.add_argument('--resume-current',action='store_true',help='Continue the checkpointed incomplete game after verifying its map')
     args = parser.parse_args()
     result = asyncio.run(run_sequence(args.manifest,args.state,
         call_budget=args.call_budget,seconds_per_attempt=args.seconds_per_attempt,
-        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current))
+        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current,retry_stalls=args.retry_stalls))
     print(json.dumps(result,indent=2))
 
 

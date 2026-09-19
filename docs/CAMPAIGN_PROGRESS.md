@@ -1085,3 +1085,25 @@ Fifty-one tests pass, including unaffordable discovery and hidden/snapshot targe
 This closes a command-shape gap relevant to later missions and all races; live
 gas construction, race-specific cost accounting and full later-campaign behavior
 are still unverified. It is not a scripted gas-building trigger.
+
+## Lab 098: bounded unattended stall recovery and prepared next scenario
+
+Add opt-in `--retry-stalls` to the sequencer. A harness clock-stall stop can restart
+only the pending mission within existing call/attempt caps. Keep the recorded
+status incomplete with explicit recovery metadata; never convert a stall into a
+defeat or advance it as a win. Other unknown/budget failures still stop. Default
+behavior remains unchanged. Tests verify bounded retries, shared budget, preserved
+completed prefix, and no retry for budget stops. Fifty-three tests pass.
+
+This is administrative recovery, not tactical control. It can also restart a
+legitimate paused mission, so opt-in use and caps matter. It does not solve native
+UI result recognition or permit counting an unverified campaign completion.
+The new sequencer option takes effect on the next controller invocation.
+
+Append the prepared fourth scenario, Smash and Grab, to the manifest. Read-only
+installed metadata confirmed `DocInfo/Name=Smash and Grab` for ttychus01. Its input
+objective is to secure the artifact before the zerg, as described by the public
+mission reference https://starcraft.fandom.com/wiki/Smash_and_Grab . No route,
+location, build or target prescription is added. Assets were repackaged unchanged;
+live loading remains unverified. Earlier wins must remain intact and Zero Hour
+must receive verified Victory before this fourth map is played.
