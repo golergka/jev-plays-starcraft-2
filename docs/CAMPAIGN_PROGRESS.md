@@ -2661,3 +2661,25 @@ wait. Existing orders continued and the harness did not treat budget admission
 as a decision error or restart the game. This corroborates runtime throttling,
 in addition to the unit tests. Exact billed cost and reservations remain distinct.
 One earlier decision timeout recovered. Taper and target remain unchanged.
+
+
+### Lab192 — budget denial is a failure, not a hidden wait
+
+User correctly challenged silent deterioration under automatic budget deferral.
+Admission rejection now emits budget_error to stderr and JSONL, records the
+controller error in result.json, saves the replay, and exits status 2 without
+retrying. Partial decision commands are discarded. SC2 remains running; this
+is not a pause. The rolling ledger, taper start and target are unchanged.
+Planned cost pacing remains explicit, now including requested interval and
+planned idle time; reports show maximum interval and budget failure count.
+This exposes reduced responsiveness but does not itself reduce requests per
+meaningful decision. Do not mistake a lower bill from less frequent decisions
+for improved efficiency. Next changes should reduce redundant deliberation and
+use routine execution utilities while keeping hard choices with Jev, as the
+user's revised objective explicitly permits.
+
+The previous controller ended with a native instrumentation defeat marker at
+loop15692, 760 calls/$0.588134316 in the resumed segment. No independent UI
+verification yet, so campaign credit/result classification is unchanged.
+Validation: 104 tests passed, including CLI nonzero exit/no retry on budget
+failure. Generated the report on the completed segment without paid calls.

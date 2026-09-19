@@ -4,6 +4,7 @@ import argparse
 import asyncio
 import json
 import os
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -84,6 +85,8 @@ async def run(args):
             outcome['api_bookmark_restores'] = outcome.get('api_bookmark_restores',0)+1
         elif event=='stopped':
             outcome['reason'] = fields['reason']
+            if fields.get('error'):
+                outcome['controller_error'] = fields['error']
         elif event=='finished':
             outcome.update(calls=fields['calls'],cost=fields['cost'],
                            replay=str(directory/'game.SC2Replay') if (directory/'game.SC2Replay').exists() else None)
@@ -93,9 +96,11 @@ async def run(args):
         row = {'time':time.time(), 'event':event, **fields}
         events.write(json.dumps(row)+'\n')
         if event != 'jev':
-            print(json.dumps(row),flush=True)
+            print(json.dumps(row),flush=True,
+                  file=sys.stderr if fields.get('severity')=='error' else sys.stdout)
     loader = PlayerLoader(ROOT)
     loader.refresh()
+    budget_error = None
     memory = {}
     camera_memory = {}
     jev = Jev(log, stamp, max_calls=args.max_calls)
@@ -231,11 +236,15 @@ async def run(args):
                                                   max(3,args.max_age_loops/22.4))
                 failures = 0
             except SpendThrottled as exc:
-                memory['spend_resume_at'] = time.monotonic()+exc.retry_after
-                log('spend_throttled', retry_after=exc.retry_after,
-                    rolling_usd=exc.spent, limit_usd=exc.limit)
-                failures = 0
-                continue
+                budget_error = exc
+                log('budget_error', severity='error', error=type(exc).__name__,
+                    detail=str(exc), retry_after=exc.retry_after,
+                    rolling_usd=exc.spent, limit_usd=exc.limit,
+                    loop=view['loop'], partial_decision_usd=max(0,jev.cost-decision_cost_before),
+                    commands_discarded=True, automatic_retry=False)
+                log('stopped', severity='error', error='SpendThrottled',
+                    reason='Decision exceeded rolling spending allowance; fix request rate before resuming')
+                break
             except CallBudgetReached:
                 log('stopped',reason='Jev call budget reached')
                 break
@@ -282,9 +291,13 @@ async def run(args):
             interval = max(args.interval, paid*jev.spend.window/jev.spend.limit)
             memory['spend_resume_at'] = decision_start+interval
             log('spend_pacing', decision_usd=paid, target_interval_seconds=interval,
-                rolling_limit_usd=jev.spend.limit)
+                rolling_limit_usd=jev.spend.limit,
+                requested_interval_seconds=args.interval,
+                planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
+        if budget_error is not None:
+            raise budget_error
         return outcome
     finally:
         await client.ws.close()
@@ -312,6 +325,9 @@ def main():
     args=parser.parse_args()
     try:
         asyncio.run(run(args))
+    except SpendThrottled as exc:
+        print(f'ERROR: {exc}. Controller stopped; no automatic retry. SC2 remains running.',file=sys.stderr)
+        raise SystemExit(2) from exc
     except KeyboardInterrupt:
         print('Harness stopped. SC2 was left running.')
 

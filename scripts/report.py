@@ -58,6 +58,9 @@ print(json.dumps({
     'spend_governor': {
         'scope':'This run only; excludes other runs/probes and unresolved reservations. Shared admission uses the SQLite ledger.',
         'peak_actual_usd_in_any_300_seconds':round(peak_window_cost,9),
+        'budget_failure_events':sum(r['event']=='budget_error' for r in rows),
+        'planned_idle_seconds':sum(r.get('planned_idle_seconds',0) for r in paced) if any('planned_idle_seconds' in r for r in paced) else None,
+        'max_target_decision_interval_seconds':max((r['target_interval_seconds'] for r in paced),default=None),
         'throttle_events':sum(r['event']=='spend_throttled' for r in rows),
         'latest_limit_usd_per_300_seconds':next((r['rolling_limit_usd'] for r in reversed(paced)),None),
         'median_target_decision_interval_seconds':statistics.median(r['target_interval_seconds'] for r in paced) if paced else None,

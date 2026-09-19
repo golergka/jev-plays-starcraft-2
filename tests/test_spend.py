@@ -82,3 +82,18 @@ def test_wrapper_throttles_before_sdk_and_settles_actual_cost(tmp_path):
     with pytest.raises(SpendThrottled):
         asyncio.run(model.ask({}, {'q':{'criteria':{'keep':'Continue'}}}))
     assert len(requests)==1 and model.calls==1 and model.inflight==0
+
+
+def test_cli_budget_failure_is_loud_and_nonzero(monkeypatch, capsys):
+    from jev_sc2 import __main__ as harness
+    attempts=[]
+    async def denied(args):
+        attempts.append(args)
+        raise SpendThrottled(12,.1,.1)
+    monkeypatch.setattr(harness,'run',denied)
+    monkeypatch.setattr('sys.argv',['jev_sc2','--attach'])
+    with pytest.raises(SystemExit) as error:
+        harness.main()
+    assert error.value.code==2
+    assert len(attempts)==1
+    assert 'Controller stopped; no automatic retry' in capsys.readouterr().err

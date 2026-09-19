@@ -181,8 +181,13 @@ Use equal start/target values for a constant allowance. Malformed settings fail
 closed. The active experiment's settings live in that ignored local JSON file.
 
 The harness paces new decision cycles according to measured decision cost and the
-current allowance. When admission is blocked it keeps observing, moving the camera
-and checking mission endings; existing game orders continue, and it takes a fresh
-observation before trying again. Budget waits are not controller failures. No
-paid fallback model is used. Watch `spend_governor`, `spend_pacing` and
-`spend_throttled` events. Lower budgets necessarily mean less frequent new decisions.
+current allowance. Planned pacing is explicit in `spend_pacing`: target interval,
+requested interval and planned idle seconds. Reports expose median/maximum target
+interval and total planned idle time; these are not measures of tactical success.
+
+A denied request is a **controller error**, not a deferred decision. The harness
+emits `budget_error` to stderr and the event log, discards the partial decision,
+saves its replay/result, and exits with status 2. It does not automatically retry.
+SC2 stays running with existing orders, so this is not a game pause. Fix request
+rate before reconnecting; never raise/reset the allowance to hide a failure.
+Reports include budget errors alongside other errors. No paid fallback is used.
