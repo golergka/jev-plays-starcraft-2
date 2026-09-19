@@ -2364,3 +2364,21 @@ unchanged. This is a heuristic exploration tradeoff, not calibrated utility.
 matching telemetry for the actual sampling distribution. Compare subsequent
 spending, saving stalls, army retention and verified outcome; mid-run context
 changes and prior losses prevent treating this attempt as a controlled A/B test.
+
+### Lab177 — correct asymmetric observed capability descriptions
+
+While monitoring the tempered sampling trial, recorded investment criteria still
+said Marine action capabilities had not been observed, despite earlier legal
+movement/attack candidates. The capability accumulator retained only Train/Build
+and gather candidates. Workers therefore received rich capability descriptions
+while combat/support observations were omitted. Weapon catalog facts were present,
+so the omission is not proof of the cause of poor investment decisions.
+
+Added generic observed Move, Attack-visible, Attack-move and existing support
+capability descriptions to the same accumulator. No invented powers or prescribed
+unit ratios; these labels derive only from offered candidates.94 tests pass.
+This corrects a factual presentation asymmetry across all missions. It also means
+this run cannot isolate the sampling exponent's effect. At loop7871 before this
+change:22SCVs,4Marines,4Barracks,8Depots,1Refinery,1CommandCenter;862 calls,
+$0.53322255, no decision errors. Screenshot confirmed active Outlaws at8:31 and
+substantial excess supply. No ending marker yet.

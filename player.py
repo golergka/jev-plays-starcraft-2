@@ -548,6 +548,14 @@ async def decide(view, jev, memory):
                 capabilities.add(label.split(';')[0].split(' at visible')[0])
             if candidate['id'].startswith('gather_'):
                 capabilities.add('Harvest resources')
+            if label.startswith('Attack-move '):
+                capabilities.add('Attack-move, engaging encountered enemies')
+            elif label.startswith('Attack visible '):
+                capabilities.add('Attack visible targets')
+            elif label.startswith('Move '):
+                capabilities.add('Move to locations or entities')
+            if candidate.get('capability_description'):
+                capabilities.add(candidate['capability_description'])
         learned[unit['type']] = sorted(capabilities)
     state['observed_capabilities_by_type'] = learned
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress','cargo','energy','harvesters')}
