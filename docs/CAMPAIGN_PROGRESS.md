@@ -1217,3 +1217,15 @@ minerals and mineral income were both zero, vespene208, supply used10. This is
 working control plumbing, not an economic or mission success. Force shrinkage
 and evolving game state confound latency comparisons. Artifact070 preserves the
 partial sample. Keep runtime policy unchanged while observing this attempt.
+
+### Lab106 — seventh attempt incomplete; eighth starts with current policy
+
+Seventh run20260919T003856.465157Z ended after a ten-second game-clock stall,
+with no API player_result. Preserve status incomplete; UI was not inspected before
+automatic recovery, so no defeat claim.808calls,$0.522373404,median tick1028.5ms,
+75stale ticks,peak observed mineral income300/min. Engine results included190
+NotEnoughMinerals,4MustTargetAirUnits and2YouCantControlThatUnit; accepted commands
+are not proof of useful completion. Full report071. Previous two victories remain
+unchanged. The orchestrator automatically started eighth fresh attempt
+20260919T004542.876416Z, verified advancing at loop804 with40 owned units.
+This attempt starts with current runtime policy; leave it unchanged for evaluation.
