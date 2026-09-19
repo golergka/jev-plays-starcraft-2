@@ -96,6 +96,8 @@ print(json.dumps({
         and (r['choice']=='save' or r['choice'].startswith('project_')))),
     'saving_targets':dict(collections.Counter(r.get('future_projects',[])[int(r['choice'].split('_')[-1])]
                          for r in rows if r['event']=='investment_choice' and (r.get('choice') or '').startswith('save_for_'))),
+    'training_batches_chosen':sum(r['event']=='production_batch_chosen' for r in rows),
+    'training_batch_requests':sum(r['event']=='production_batch_request' for r in rows),
     'investment_commitment_waits':sum(r['event']=='investment_wait' for r in rows),
     'investment_commitment_requests':dict(collections.Counter(r['target_project'] for r in rows if r['event']=='investment_plan_ready')),
     'producer_site_deferrals':sum(r['response']['answers'].get('producer_site',{}).get('choice')=='defer' for r in calls),

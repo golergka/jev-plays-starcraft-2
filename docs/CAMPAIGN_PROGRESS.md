@@ -3055,3 +3055,25 @@ result experiments/211-investment-identifier.json make the method reviewable.
 Single draws,not statistical proof; no support for an identifier-only fix.
 Do not apply a live rename or repeat this same hypothesis without new evidence.
 Next investigate substantive decision/task structure rather than cosmetic keys.
+
+
+### Lab212 — Jev can authorize a bounded production job
+
+Identifier-only experiment was negative. Test a substantive task representation:
+every currently executable Train project offers its existing single purchase and
+an optional batch of up to3requests over672loops. Jev chooses type/commitment via
+the existing investment distribution; no unit-type whitelist or hardcoded army
+composition. Normal producer selection remains Jev-controlled. Executor reuses
+the chosen investment while its controls are offered, waits without investment
+calls if only potential controls remain, and releases on deadline,clock rewind,
+changed strategic priority,unavailable project or three proposed requests.
+No other new purchase overrides this bounded commitment while active.
+
+Requests,not successful units,consume the three-attempt allowance:stale/rejected
+proposals still count, preventing automatic unlimited retries. Normal fresh-state
+validation/resource checks remain in force. Active commitment is visible in
+subsequent policy context. Log chosen/request/wait events and report batch counts.
+A batch avoids repeated investment deliberation but producer queries may remain;
+no guaranteed savings or claim that three units were built. Construction retention
+and persistent dollar taper unchanged.117tests pass, including cap,legal-control
+wait,strategy cancellation,deadline and rewind. Live usefulness unproven.

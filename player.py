@@ -222,7 +222,7 @@ def investment_state(state):
     """Keep economic/force facts; raw terrain and repeated unit coordinates distract."""
     compact = {k:state[k] for k in ('objective','resources','completed_upgrades','selection_facts',
                'unit_type_facts','recent_outcomes','recent_action_feedback','observed_capabilities_by_type','previous_investment_intent',
-               'strategy_chosen_by_jev') if k in state}
+               'strategy_chosen_by_jev','production_commitment') if k in state}
     for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
                           ('last_known_entities','stale_entities_by_alliance_and_type')]:
         compact[target] = dict(Counter(e['alliance']+' '+e['type'] for e in (state.get(source) or [])))
@@ -321,6 +321,11 @@ async def choose_investment(view, state, jev, memory=None):
     for i,name in enumerate(names):
         example = projects[name][0][1]
         criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)
+        if memory is not None and example['description'].startswith('Train '):
+            criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 672 game loops (about30 seconds), '
+                'using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. '
+                'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
+                +investment_description(name,example.get('project'),state))
     future_names = sorted(set(potential)-set(projects))
     for i,name in enumerate(future_names):
         project = potential[name]
@@ -332,8 +337,24 @@ async def choose_investment(view, state, jev, memory=None):
             f'Resource shortfall: {shortfall}. '+investment_description(name,project,state))
     carried = False
     choice = None
+    strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
+    batch = (memory or {}).get('production_batch')
+    if batch:
+        if (batch['loop'] <= view['loop'] < batch['review_at'] and batch['remaining']>0
+                and batch['strategy']==strategy):
+            target=batch['target_project']
+            if target in projects:
+                choice=f'project_{names.index(target)}'
+                carried=True
+            elif target in potential:
+                jev.log('production_batch_wait',loop=view['loop'],target_project=target,remaining_attempts=batch['remaining'],review_at=batch['review_at'])
+                return []
+            else:
+                memory.pop('production_batch',None)
+        else:
+            memory.pop('production_batch',None)
     plan = (memory or {}).get('investment_intent',{})
-    if (plan.get('mode')=='save_for_project' and
+    if (not carried and plan.get('mode')=='save_for_project' and
             plan.get('loop',0)<=view['loop']<plan.get('review_at',0)):
         target = plan['target_project']
         if target in projects:
@@ -346,7 +367,7 @@ async def choose_investment(view, state, jev, memory=None):
     if not carried:
         answer = await jev.ask(investment_state(state), {'investment': {
             'type':'choice',
-            'instructions':'Allocate the shared resources across the entire force. Choose the single next investment, or save. '
+            'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
                            'This decision controls all new training and construction; no other selection will spend resources this tick. '
                            'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
             'criteria':criteria,
@@ -369,6 +390,22 @@ async def choose_investment(view, state, jev, memory=None):
                     sampled_choice=sampled,probabilities=weights,
                     sampling_exponent=2, sampling_probabilities=sampling_probabilities,seed=20260918)
             choice = sampled
+    if choice in criteria and choice.startswith('batch_'):
+        index=int(choice.split('_')[1])
+        memory['production_batch']={'target_project':names[index],'remaining':3,
+            'loop':view['loop'],'review_at':view['loop']+672,'strategy':strategy}
+        jev.log('production_batch_chosen',**memory['production_batch'])
+        choice=f'project_{index}'
+    chosen_project = names[int(choice.split('_')[1])] if choice in criteria and choice.startswith('project_') else None
+    def propose(command):
+        batch=(memory or {}).get('production_batch')
+        if batch and batch['target_project']==chosen_project:
+            batch['remaining']-=1
+            jev.log('production_batch_request',loop=view['loop'],target_project=batch['target_project'],
+                    remaining_attempts=batch['remaining'],command=command)
+            if batch['remaining']==0:
+                memory.pop('production_batch',None)
+        return [command]
     jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names,
             source='carried_jev_commitment' if carried else 'jev_distribution')
     if memory is not None:
@@ -386,7 +423,7 @@ async def choose_investment(view, state, jev, memory=None):
     constructing = {u['tag']:u['orders'][0] for u,c in options
                     if u.get('orders') and u['orders'][0].get('ability','').startswith('Build ')}
     if len(options)==1 and not constructing:
-        return [options[0][1]['command']]
+        return propose(options[0][1]['command'])
     criteria = {f'option_{i}':
                 (f'Interrupt this worker’s existing construction {constructing[u["tag"]]} with a replacement order. '
                  if u['tag'] in constructing else '')+
@@ -412,7 +449,7 @@ async def choose_investment(view, state, jev, memory=None):
         if selected[0]['tag'] in constructing:
             jev.log('construction_interruption_chosen',loop=view['loop'],unit_tag=selected[0]['tag'],
                     previous_order=constructing[selected[0]['tag']])
-        return [selected[1]['command']]
+        return propose(selected[1]['command'])
     return []
 
 
@@ -631,6 +668,7 @@ async def decide(view, jev, memory):
     state['recent_outcomes'] = recent_outcomes(view, memory)
     state['recent_action_feedback'] = describe_action_feedback(view,memory)
     state['previous_investment_intent'] = memory.get('investment_intent')
+    state['production_commitment'] = memory.get('production_batch')
     learned = memory.setdefault('observed_capabilities_by_type', {})
     for unit in view['self']:
         capabilities = set(learned.get(unit['type'], []))

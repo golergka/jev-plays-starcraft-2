@@ -123,3 +123,62 @@ def test_busy_builder_requires_jev_interruption_choice_and_keep_wins_over_parall
     assert model.producer_calls==1  # A sole busy builder cannot bypass Jev.
     model.selection='option_0'
     assert asyncio.run(decide(view,model,{}))==[build]  # Jev can explicitly interrupt.
+
+
+def test_training_batch_is_jev_selected_bounded_and_reuses_investment_choice():
+    import asyncio
+    from player import choose_investment
+    command={'unit_tag':1,'ability_id':560}
+    unit={'tag':1,'position':[0,0],'orders':[],
+          'candidates':[{'description':'Train FictionalUnit','project':{'type':'FictionalUnit'},'command':command}]}
+    class Model:
+        calls=0
+        def log(self,*a,**k):pass
+        async def ask(self,state,questions):
+            self.calls+=1
+            assert 'batch_0' in questions['investment']['criteria']
+            return {'investment':{'choice':'batch_0' if self.calls==1 else 'save'}}
+    model=Model();memory={};view={'loop':1,'self':[unit]};state={'strategy_chosen_by_jev':{'choice':'strengthen'}}
+    for loop in (1,2,3):
+        view['loop']=loop
+        assert asyncio.run(choose_investment(view,state,model,memory))==[command]
+    assert model.calls==1 and 'production_batch' not in memory
+    view['loop']=4
+    assert asyncio.run(choose_investment(view,state,model,memory))==[]
+    assert model.calls==2
+
+
+def test_training_batch_waits_for_legal_controls_and_expires_on_strategy_change():
+    import asyncio
+    from player import choose_investment
+    memory={'production_batch':{'target_project':'FictionalUnit','remaining':2,'loop':1,'review_at':673,'strategy':'strengthen'}}
+    view={'loop':2,'self':[],'resources':{},'potential_projects':[{'type':'FictionalUnit','minerals':50,'vespene':0,'supply':1}]}
+    class Model:
+        calls=0
+        def log(self,*a,**k):pass
+        async def ask(self,state,questions):
+            self.calls+=1
+            return {'investment':{'choice':'save'}}
+    model=Model()
+    assert asyncio.run(choose_investment(view,{'strategy_chosen_by_jev':{'choice':'strengthen'}},model,memory))==[]
+    assert model.calls==0 and memory['production_batch']['remaining']==2
+    assert asyncio.run(choose_investment(view,{'strategy_chosen_by_jev':{'choice':'protect'}},model,memory))==[]
+    assert model.calls==1 and 'production_batch' not in memory
+
+
+def test_training_batch_expiry_or_rewind_requires_fresh_jev_choice():
+    import asyncio
+    from player import choose_investment
+    class Model:
+        calls=0
+        def log(self,*a,**k):pass
+        async def ask(self,state,questions):
+            self.calls+=1
+            return {'investment':{'choice':'save'}}
+    for loop in (0,673):
+        model=Model()
+        memory={'production_batch':{'target_project':'Unit','remaining':2,'loop':1,'review_at':673,'strategy':None}}
+        view={'loop':loop,'self':[{'tag':1,'position':[0,0],
+            'candidates':[{'description':'Train Unit','project':{'type':'Unit'},'command':{'unit_tag':1,'ability_id':560}}]}]}
+        assert asyncio.run(choose_investment(view,{},model,memory))==[]
+        assert model.calls==1 and 'production_batch' not in memory
