@@ -2761,3 +2761,19 @@ $0.353335962 actual cost in trailing300seconds,84 routine questions avoided.
 No budget rejection or mission ending. Earlier total crossed the rolling limit
 without rejection because older charges expired, as intended. This does not
 imply the total experiment is capped at a single window allowance.
+
+
+### Lab197 — stable-policy trial continues beyond optional-objective failure
+
+Verified live controller44407 repeatedly; no restart or tactical intervention.
+Native screenshot showed13:12 elapsed,06:57 until evacuation, main objective
+active and optional rescue failed. The bridge again avoids the historical false
+API ending. Laterloop13699:1025calls/$0.711525360 total,$0.342699462 in trailing
+300seconds against$0.370026908 allowance,161 routine questions avoided, no
+budget/controller termination. Actual useful dollar savings remain unmeasured
+against a matched control. Raw force counts shrank and production was lost;
+no claim of tactical success while the attempt remains unfinished.
+
+Two logged asynchronous engine rejections were NotSupported on construction
+abilities319 and323. These remain visible in telemetry; no blind retry override
+or interpretation as victory. Kept policy unchanged to observe the trial outcome.
