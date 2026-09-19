@@ -4079,3 +4079,17 @@ sends actions. Detected endings break to existing result recording; no retry,
 strategy choice or extra Jev call. This reduces terminal-dispatch races but cannot
 make observations and commands atomic.137tests pass; live race prevention not
 yet demonstrated. Previous outcome still requires/has independent UI verification.
+
+### Lab278 — clean action results, but defeat10:03
+
+Run20260919T233634.103153Z/session81198 terminal with native DEFEAT10:03,
+10:06remaining,21minerals,allstructuresdestroyed.148successful model calls cost
+$0.084694512. Zero decision errors and no non-success tick action results.
+Independent native result saved with checkpoint. New pre-dispatch ending checks
+ran, but one clean ending cannot establish elimination of all timing races.
+
+Player policy unchanged from275;14:53then10:03 survival under the same policy
+underscores variation and weak causal evidence for recent prompt improvements.
+Some observed bunker cargo was occupied; army later collapsed while substantial
+resources remained. First two missions remain the only campaign victories.
+Do not confuse error-free command submission with competent resource allocation.
