@@ -2136,3 +2136,36 @@ two state readers in CampaignLib. NativeLib and LibertyLib implementation/header
 files have no affected calls. This confirms patching only the map would leave
 campaign-library reads inconsistent. Packaging the full include closure and
 independent genuine mission-end signaling still remain before campaign use.
+
+### Lab168 — package the complete include audit and prove library interception
+
+scripts/build_objective_bridge.py reads map dependencies and recursively resolves
+all Galaxy includes from installed assets. It refuses ambiguous differing module
+overrides, unresolved includes, indirect objective references and overwrites.
+Records original/rewritten hashes and every replaced call in a local map sidecar.
+It copies the original map, changing only objective call names plus bridge
+includes and adding our adapter. Original triggers, conditions, units, terrain,
+combat and rewards are retained; scripts are never given to Jev.
+
+Zero Hour and Liberation Day each resolved 121 script files. Only MapScript and
+CampaignLib need changes, plus the new adapter file. Root TriggerLibs archive
+paths work. Zero Hour startup showed its normal evacuation objective, timer and
+resources with no visible script error. Startup alone did not prove interception.
+
+Added scripts/probe_campaign_bridge.py: synthetic mission objective Completed
+through the adapter must still be native Active, while the UNCHANGED existing
+CampaignLib all-objectives-completed helper must return true. The first test
+assigned a constant and failed to execute, so its empty-UI/in_game result is not
+success. Removed that invalid test assignment. The corrected probe stayed active
+at225 and emitted expected diagnostic Victory at450, proving the embedded library
+override actually executes and reads the shadow state. Evidence:
+/tmp/jev-campaign-library-bridge-lab168c.jsonl. A Base.SC2Data placement variant
+was built during diagnosis but is unused; reverted builder to the proven root
+layout. No diagnostic counts as campaign completion.
+
+Prepared maps/traynor01-bridge-lab168.SC2Map and matching .bridge.json for a fresh
+Jev-driven verification run of the disputed first win. Automatic credit remains
+disabled; observe actual mission-ending UI and preserve replay/outcome evidence.
+The per-map sidecars explicitly retain experimental=true and campaign_credit=false
+until broader equivalence/outcome handling is verified. Two additional dependency
+parser tests pass; no gameplay policy changes in this experiment.

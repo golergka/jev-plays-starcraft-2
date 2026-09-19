@@ -37,3 +37,20 @@ def test_unrecognized_objective_usage_fails_closed(source):
 def test_nonobjective_gameplay_and_strings_are_identical():
     source = 'UnitIssueOrder(u, order, false); /* objective */\nLog("ObjectiveGetState");\n'
     assert rewrite_objective_calls(source) == (source, {})
+
+
+def test_include_audit_ignores_comments_and_normalizes_explicit_extensions():
+    from scripts.build_objective_bridge import includes
+    source = '// include "bogus"\ninclude "TriggerLibs/NativeLib"\ninclude "Other.galaxy"'
+    assert list(includes(source)) == ['triggerlibs\\nativelib.galaxy', 'other.galaxy']
+    with pytest.raises(ValueError):
+        list(includes('include "../unknown"'))
+
+
+def test_dependency_audit_rejects_unresolvable_remote_only_dependencies():
+    from scripts.build_objective_bridge import dependencies
+    document = b'<DocInfo><Dependencies><Value>bnet:Example/0.0/1</Value></Dependencies></DocInfo>'
+    with pytest.raises(ValueError, match='no local path'):
+        dependencies(document)
+    assert dependencies(document.replace(b'bnet:Example/0.0/1', b'bnet:Example/0.0/1,file:Mods/Example.SC2Mod')) == [
+        'mods\\example.sc2mod']
