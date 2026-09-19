@@ -305,6 +305,25 @@ def investment_description(name, project, state):
             f'idle: {facts.get("idle_count",0)}; current orders: {facts.get("current_order_counts",{})}.')
 
 
+def investment_sampling_probabilities(weights):
+    """Preserve Jev's purchase/wait mass; sharpen only within each family."""
+    largest = max(weights.values())
+    scaled = {key:value/largest for key,value in weights.items()}
+    total = sum(scaled.values())
+    result = {}
+    for purchase in (False, True):
+        family = {k:v for k,v in weights.items()
+                  if k.startswith(('project_', 'batch_')) == purchase}
+        if not family:
+            continue
+        mass = sum(scaled[k] for k in family) / total
+        peak = max(family.values())
+        sharpened = {k:(v/peak)**2 for k,v in family.items()}
+        denominator = sum(sharpened.values())
+        result.update({k:mass*v/denominator for k,v in sharpened.items()})
+    return {key:result[key] for key in weights}
+
+
 async def choose_investment(view, state, jev, memory=None):
     """Jev allocates the common budget, then selects the actual producer/site."""
     projects = {}
@@ -379,16 +398,13 @@ async def choose_investment(view, state, jev, memory=None):
                    if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
         if memory is not None and weights:
             rng = memory.setdefault('investment_rng',random.Random(20260918))
-            # Sharpen model preferences without returning to deterministic saving
-            # stalls. This is an experimental sampling policy, not calibration.
-            largest_weight = max(weights.values())
-            sampling_weights = {key:(value/largest_weight)**2 for key,value in weights.items()}
-            total_weight = sum(sampling_weights.values())
-            sampling_probabilities = {key:value/total_weight for key,value in sampling_weights.items()}
-            sampled = rng.choices(list(sampling_weights),weights=list(sampling_weights.values()),k=1)[0]
+            sampling_probabilities = investment_sampling_probabilities(weights)
+            sampled = rng.choices(list(sampling_probabilities),
+                                  weights=list(sampling_probabilities.values()),k=1)[0]
             jev.log('investment_sample',loop=view['loop'],top_choice=choice,
                     sampled_choice=sampled,probabilities=weights,
-                    sampling_exponent=2, sampling_probabilities=sampling_probabilities,seed=20260918)
+                    sampling_exponent=2, sampling_scope='within_purchase_or_wait',
+                    sampling_probabilities=sampling_probabilities,seed=20260918)
             choice = sampled
     if choice in criteria and choice.startswith('batch_'):
         index=int(choice.split('_')[1])

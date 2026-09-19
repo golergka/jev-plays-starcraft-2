@@ -1005,14 +1005,14 @@ def test_cumulative_outcomes_survive_window_without_recount_and_reset_on_rewind(
     assert reset['through_loop']==1
 
 
-def test_investment_sharpening_retains_non_top_choices_and_logs_actual_distribution():
+def test_investment_sampling_retains_purchase_mass_and_logs_actual_distribution():
     from player import choose_investment
     view={'loop':1,'self':[{'tag':1,'position':[0,0],'candidates':[
         {'description':'Train Unit','project':{'type':'Unit'},'command':{'unit_tag':1,'ability_id':1}}]}]}
     class Rng:
         def choices(self,options,weights,k):
             assert options==['save','project_0']
-            assert weights==pytest.approx([1,1/9])
+            assert weights==pytest.approx([.75,.25])
             return ['project_0']
     class Model:
         events=[]
@@ -1023,7 +1023,7 @@ def test_investment_sharpening_retains_non_top_choices_and_logs_actual_distribut
     commands=asyncio.run(choose_investment(view,{},model,{'investment_rng':Rng()}))
     assert commands==[{'unit_tag':1,'ability_id':1}]
     sample=next(v for e,v in model.events if e=='investment_sample')
-    assert sample['sampling_probabilities']==pytest.approx({'save':.9,'project_0':.1})
+    assert sample['sampling_probabilities']==pytest.approx({'save':.75,'project_0':.25})
     assert sample['probabilities']=={'save':.75,'project_0':.25}
 
 
@@ -1072,3 +1072,18 @@ def test_individual_worker_grouping_uses_observed_capabilities_and_preserves_oth
     assert [u['tag'] for u in groups['Soldier']]==[3,4]
     assert len(control_groups(units,'by_type',{}))==3
     assert len(control_groups(units,'by_current_order',{}))==3
+
+
+def test_investment_sharpens_within_families_without_amplifying_wait():
+    from player import investment_sampling_probabilities
+    p = investment_sampling_probabilities({'save':.4,'save_for_0':.1,
+                                         'project_0':.3,'batch_1':.2})
+    assert sum(p.values()) == pytest.approx(1)
+    assert p['save']+p['save_for_0'] == pytest.approx(.5)
+    assert p['project_0']+p['batch_1'] == pytest.approx(.5)
+    assert p['project_0']/p['batch_1'] == pytest.approx(2.25)
+    assert p['save']/p['save_for_0'] == pytest.approx(16)
+    assert investment_sampling_probabilities({'save':1e300}) == {'save':1}
+    assert investment_sampling_probabilities({'project_0':1e-300}) == {'project_0':1}
+
+    assert investment_sampling_probabilities({'save':1e300,'project_0':1e-300}) == {'save':1,'project_0':0}

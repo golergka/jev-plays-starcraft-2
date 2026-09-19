@@ -3130,3 +3130,23 @@ contribution to inactivity, not evidence Jev alone insisted on 90% inactivity.
 No paid probe or mid-trial policy change. Next allocation experiment should
 remove or factor this sharpening while preserving Jev's purchase/type decisions;
 compare against this completed trial, not just accepted command counts.
+
+### Lab216 — 16:58 defeat; preserve Jev's purchase-versus-wait mass
+
+Native defeat verified at16:58,evacuation3:11,all structures destroyed.
+Run20260919T201622.753722Z:731calls/$0.488083722,replay saved,checkpoint attempt
+appended; only first two missions remain credited. Bounded training jobs did not
+solve army replacement. Twenty-one seconds later than the prior16:37 defeat is
+not enough evidence of improvement; randomness and other decisions vary.
+
+Next general experiment factors investment sampling into purchase (project/batch)
+and wait (save/save_for) families. Preserve each family's total legal positive
+Jev probability; square and renormalize preferences only within that family.
+This avoids amplifying a single save option against many purchase alternatives,
+while retaining the prior attempt to reduce low-ranked extra-capacity purchases.
+No unit-specific preference,forced purchase,mission override or extra model call.
+Log sampling_scope alongside actual distribution. Numerical scaling prevents
+extreme finite values overflowing; tests cover family mass,conditional odds,
+legal-option filtering,executed non-top choice and extreme ranges.118tests pass.
+This is still a sampling heuristic, not a calibrated utility interpretation.
+Persistent spending taper unchanged. Activate after baseline trial ended.
