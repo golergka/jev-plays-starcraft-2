@@ -866,3 +866,36 @@ def test_outcomes_distinguish_started_completed_and_discontinuous_construction()
     recent_outcomes(view(2,None),memory)
     pending=recent_outcomes(view(10,.3),memory)
     assert pending['currently_incomplete_projects'][0]['observed_loops']==0
+
+
+def test_server_token_rejection_splits_exact_questions_and_releases_budget(monkeypatch):
+    import asyncio
+    from types import SimpleNamespace
+    import jev_sc2.jev as module
+    class Rejected(Exception): pass
+    monkeypatch.setattr(module, 'BadRequestResponseError', Rejected)
+    requests=[]
+    async def create_async(**kw):
+        requests.append(kw)
+        if len(kw['questions']) > 1:
+            raise Rejected('max_tokens_exceeded')
+        return SimpleNamespace(usage=SimpleNamespace(cost=0),
+            model_dump=lambda **unused:{'answers':{k:{'choice':'keep'} for k in kw['questions']}})
+    model=module.Jev.__new__(module.Jev)
+    model.client=SimpleNamespace(alpha=SimpleNamespace(decisions=SimpleNamespace(create_async=create_async)))
+    model.log=lambda *a,**k:None
+    model.session='test';model.model='typesafe/jev-1.13'
+    model.max_calls=2;model.calls=0;model.inflight=0;model.cost=0
+    state={'fact':'visible only'}
+    questions={str(i):{'criteria':{'keep':'Continue'}} for i in range(2)}
+    assert set(asyncio.run(model.ask(state,questions)))==set(questions)
+    assert len(requests)==3 and model.calls==2 and model.inflight==0
+    assert all(r['state'] is state for r in requests)
+    assert {k:v for r in requests[1:] for k,v in r['questions'].items()}==questions
+    model.max_calls=None
+    async def always_reject(**kw): raise Rejected('max_tokens_exceeded')
+    model.client.alpha.decisions.create_async=always_reject
+    import pytest
+    with pytest.raises(Rejected):
+        asyncio.run(model.ask(state,{'single':questions['0']}))
+    assert model.inflight==0

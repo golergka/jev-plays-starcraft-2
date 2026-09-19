@@ -1496,3 +1496,17 @@ worker reassignment or project priority.63 tests pass with starts, completion,
 clock reset and discontinuous observation coverage. Start attempt14,2500calls,
 64-loop cutoff. More truthful task feedback is the change under examination;
 performance benefit remains unproven.
+
+### Lab129 — recover from authoritative batch token-limit rejection
+
+Attempt14 stopped incomplete after five consecutive max_tokens_exceeded errors,
+874 successful calls costing $0.687209544. No victory or defeat is inferred.
+The last successful concrete requests carried about 63k characters of state;
+character sizing is not a reliable token boundary. Add recursive batch splitting
+on the server's specific token-limit rejection, preserving identical state and
+all question choices/criteria. Single-question rejection still fails explicitly;
+log state and per-question character sizes to distinguish the remaining cause.
+Release the parent call reservation before retrying children. Tests exercise a
+server rejection below the heuristic threshold, exact question preservation,
+budget accounting, and terminal single-question rejection. All64tests pass.
+Resume the same mission to test recovery; no gameplay policy changed.

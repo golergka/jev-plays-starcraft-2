@@ -4,6 +4,7 @@ import json
 import asyncio
 import time
 from openrouter import OpenRouter
+from openrouter.errors import BadRequestResponseError
 
 
 class CallBudgetReached(Exception):
@@ -54,5 +55,25 @@ class Jev:
             self.log('jev', latency_ms=round((time.monotonic()-started)*1000),
                      state=state, questions=questions, response=result)
             return result['answers']
+        except BadRequestResponseError as exc:
+            self.log('jev_request_rejected', request_chars=len(json.dumps([state, questions])),
+                     state_chars=len(json.dumps(state)), question_count=len(questions),
+                     question_chars={k:len(json.dumps(v)) for k,v in questions.items()},
+                     detail=str(exc)[:200])
+            if 'max_tokens_exceeded' not in str(exc) or len(questions) <= 1:
+                raise
+            # The server is authoritative about token limits. Splitting a rejected
+            # batch retains the exact state, choices and criteria for each question.
+            # Release this reservation before children reserve their own requests.
+            self.inflight -= 1
+            try:
+                items = list(questions.items())
+                middle = len(items)//2
+                self.log('jev_request_split', questions=len(items), reason='server_token_limit')
+                halves = await asyncio.gather(self.ask(state, dict(items[:middle])),
+                                              self.ask(state, dict(items[middle:])))
+                return {key:value for half in halves for key,value in half.items()}
+            finally:
+                self.inflight += 1
         finally:
             self.inflight -= 1
