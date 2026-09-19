@@ -260,11 +260,11 @@ async def run(args):
                     break
                 paid = max(0, jev.cost-decision_cost_before)
                 charged = max(paid, jev.spend.charged-decision_charge_before)
-                interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.8))
+                interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.6))
                 memory['spend_resume_at'] = decision_start+interval
                 log('spend_pacing', decision_usd=paid, accounted_usd=charged,
                     target_interval_seconds=interval, rolling_limit_usd=jev.spend.limit,
-                    requested_interval_seconds=args.interval, pacing_budget_fraction=0.8,
+                    requested_interval_seconds=args.interval, pacing_budget_fraction=0.6,
                     after_decision_error=True,
                     planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
                 await asyncio.sleep(0.5)
@@ -301,11 +301,11 @@ async def run(args):
             # Leave room for pre-dispatch reservations and variable decision cost.
             # Admission remains fail-fast if a burst still exceeds this headroom.
             charged = max(paid, jev.spend.charged-decision_charge_before)
-            interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.8))
+            interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.6))
             memory['spend_resume_at'] = decision_start+interval
             log('spend_pacing', decision_usd=paid, accounted_usd=charged, target_interval_seconds=interval,
                 rolling_limit_usd=jev.spend.limit,
-                requested_interval_seconds=args.interval, pacing_budget_fraction=0.8,
+                requested_interval_seconds=args.interval, pacing_budget_fraction=0.6,
                 planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))

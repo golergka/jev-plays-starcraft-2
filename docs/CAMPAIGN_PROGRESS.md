@@ -3250,3 +3250,16 @@ path and verifies successful entry; not a counterfactual proof the hold would
 have prevented it. Earlier loaded bunker4295491585 remained healthy but Jev
 explicitly unloaded it at3705,demonstrating that coordination does not force
 continued garrisoning. Through4941,$.134337798,no budget/terminal event.
+
+### Lab224 — taper requires more burst headroom despite reservation accounting
+
+Trial20260919T204546.942041Z stopped exit2 at13202,497calls/$.320468484.
+Ledger$.191085046 against$.194664018 allowance; next reservation denied,
+partialdecision$.001728804 discarded. Paused native13:57,evacuation6:12.
+No mission outcome. Correct reservation accounting is not sufficient to guarantee
+headroom for concurrent request bursts as allowance shrinks. Reduce planned
+throughput from80% to60% of allowance on both successful/failed decisions; retain
+charged accounting and fatal admission. Deliberate slower decisions,explicitly
+logged; no silent retry,cap increase,ledger/taper reset.121tests pass. Resume
+same world with remaining3503call allowance. This second interruption limits
+survival comparisons; do not present this as an uninterrupted trial.
