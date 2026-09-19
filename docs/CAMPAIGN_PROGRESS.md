@@ -922,3 +922,17 @@ retain labels when the ability disappears, and aggregate identical rejections
 with counts and affected unit types. This reports what happened without selecting
 a replacement action or suppressing choices. Forty-six tests pass. Observe
 whether the more explicit feedback changes behavior; no improvement is assumed.
+
+## Lab 089: second Zero Hour defeat; evaluate current policy from the start
+
+The second attempt ended in UI-confirmed Defeat at 12:25 (07:44 evacuation time
+remaining), again with all structures destroyed. The API omitted player_result
+and stopped on a stalled clock. Explicit UI evidence is attached to the local
+checkpoint/result; the public measured API summary remains honest about its
+missing terminal result. Survival was essentially unchanged from the first
+12:22 defeat, despite fewer stale decisions. This is not campaign progress.
+
+Lab 088 loaded just before the loss, too late to evaluate named rejection feedback.
+Retry only Zero Hour using the complete current policy from the beginning,
+preserving prior wins and both failed attempts. No opening tactic is hardcoded.
+The camera director and player-only observation rules remain in force.
