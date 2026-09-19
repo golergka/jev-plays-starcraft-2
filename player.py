@@ -1072,13 +1072,16 @@ async def decide_individual(view, jev, memory):
         candidates[tag] = actions
         local = {k: v for k, v in unit.items() if k not in {'candidates', 'tag'}}
         history = memory.setdefault('history', {}).setdefault(tag, [])
-        history[:] = [h for h in history if view['loop']-h['loop'] <= 112]
+        # Budget pacing can put consecutive reviews beyond the former 112-loop
+        # horizon. Keep bounded factual history over the outcome window instead.
+        history[:] = [h for h in history if 0 <= view['loop']-h['loop'] <= 672][-8:]
         if history:
             origin = history[0]['position']
             local['recent_progress'] = {
                 'game_loops': view['loop']-history[0]['loop'],
                 'displacement': round(math.dist(unit['position'], origin), 1),
                 'last_choices': [h['choice'] for h in history[-4:]],
+                'interpretation': 'Previous selections, not proof of execution or success. Displacement is net movement; useful round trips may return to the same position.',
             }
         history.append({'loop': view['loop'], 'position': unit['position'], 'choice': 'pending'})
         questions[tag] = {

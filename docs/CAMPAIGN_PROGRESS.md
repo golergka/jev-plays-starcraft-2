@@ -3952,3 +3952,20 @@ simple count-based attribution of every training completion. No forced batch
 or extra model decision was used to exercise the executor. Army loss thereafter
 means execution success is not strategic success. At10045,162successful calls
 cost$0.091197330; run not yet terminal. No policy changes in this entry.
+
+### Lab269 — verified defeat; retain individual history across paced reviews
+
+Lab267 run20260919T224749.369540Z ended with native DEFEAT12:27,
+07:42remaining,0minerals,allstructuresdestroyed.193successful calls cost
+$0.104546274. Independent UI verification recorded in ignored run/checkpoint;
+only first two campaign missions remain completed. Raw investment sampling
+allowed a batch this time, but one episode does not establish a survival benefit.
+
+Offline audit found reciprocal SCV move pairs at9646and9867. All6 individual
+unit questions in this attempt lacked recent_progress. Individual history expired
+at112loops, shorter than many paced review intervals. Extend its factual window
+to672loops (same as aggregate outcomes), bound to8prior samples, reject future
+samples after rewind, and label prior selections as not proof of execution.
+No automatic regrouping, assigned worker roles, new model calls or spending
+increase. This addresses missing context, not proven cause of defeat; individual
+questions are a small fraction of this run's decisions. Test suite passes136.
