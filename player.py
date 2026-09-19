@@ -727,17 +727,18 @@ async def decide(view, jev, memory):
         # A member cannot join itself, so intersection alone hid in-selection
         # anchors. Expose the exact legal hold + join combination to Jev.
         for anchor,anchor_table in zip(selected,tables[kind]):
-            key = f'join_{anchor["tag"]}'
-            if key in common or 'hold_position' not in anchor_table:
-                continue
-            followers = [(u,t) for u,t in zip(selected,tables[kind]) if u['tag']!=anchor['tag']]
-            if not followers or not all(key in t for _,t in followers):
-                continue
-            option = 'group_'+key
-            criteria[option] = (f'Regroup this selection at {anchor["type"]} unit {anchor["tag"]} '
-                                f'position {anchor["position"]}: that unit holds position; '
-                                f'the other {len(followers)} units move to its observed position.')
-            plans[kind][option] = [anchor_table['hold_position']['command']]+[t[key]['command'] for _,t in followers]
+            for prefix,verb in (('join_','move'),('attack_move_join_','attack-move, engaging enemies encountered')):
+                key = f'{prefix}{anchor["tag"]}'
+                if key in common or 'hold_position' not in anchor_table:
+                    continue
+                followers = [(u,t) for u,t in zip(selected,tables[kind]) if u['tag']!=anchor['tag']]
+                if not followers or not all(key in t for _,t in followers):
+                    continue
+                option = 'group_'+key
+                criteria[option] = (f'Regroup this selection at {anchor["type"]} unit {anchor["tag"]} '
+                                    f'position {anchor["position"]}: that unit holds position; '
+                                    f'the other {len(followers)} units {verb} to its observed position.')
+                plans[kind][option] = [anchor_table['hold_position']['command']]+[t[key]['command'] for _,t in followers]
         # A construction order need not apply to every member of a selection.
         # Offer actual legal individual builder/site pairs; Jev chooses the pair.
         for unit,table in zip(selected,tables[kind]):

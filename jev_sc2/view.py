@@ -411,6 +411,10 @@ async def make_view(client, observation, data, info, objective):
                 candidates.append({'id': f'join_{teammate.tag}',
                                    'description': f'Move to friendly {names.get(teammate.unit_type, str(teammate.unit_type))} tag {teammate.tag}, distance {distance:.1f}',
                                    'command': command(move, point=[teammate.pos.x, teammate.pos.y])})
+                if attack is not None:
+                    candidates.append({'id':f'attack_move_join_{teammate.tag}',
+                        'description':f'Attack-move to friendly {names.get(teammate.unit_type,str(teammate.unit_type))} tag {teammate.tag} observed position, engaging enemies encountered; distance {distance:.1f}',
+                        'command':command(attack,point=[teammate.pos.x,teammate.pos.y])})
             for label, dx, dy in [('north',0,6),('south',0,-6),('east',6,0),('west',-6,0)]:
                 x,y = unit.pos.x+dx, unit.pos.y+dy
                 if area.p0.x <= x < area.p1.x and area.p0.y <= y < area.p1.y:

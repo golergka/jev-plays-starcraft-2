@@ -2903,3 +2903,24 @@ bursts. Target80% now,explicit pacing_budget_fraction telemetry; this is slower
 planned decision frequency, not hidden deferral. Admission still fails loudly.
 Original dollar cap,taper clock and target unchanged. Resume same mission with
 remaining3546call allowance; do not erase prior spend or restart the scenario.
+
+
+### Lab204 — verified10:51 defeat; complete friendly-anchor movement choices
+
+Same lab201 mission ended in native defeat at10:51,evacuation09:18. Controller
+95717 exited normally; independent UI agrees with ending marker. Two segments
+643calls/$0.444082884 combined. Resumed segment189calls/$0.124275774 with no
+further budget denial. Checkpoint records defeat. The pause, memory reset,
+encoding and pacing changes prevent a clean isolated policy comparison.
+Exposing all combat controls did not rescue this attempt; neither lower spend
+nor successful API control is campaign success.
+
+Found concrete action-space asymmetry: friendly anchor destinations offered only
+ordinary Move, while map sectors/directional destinations offered Move and
+Attack-move. Jev frequently chose those anchor options. Add attack-move variants
+for every engine-legal friendly-anchor point, including the existing hold-anchor
+plus followers construction for anchors within the selection. Both variants stay
+available; Jev chooses mode and destination. No automatic attack orders or target
+priorities. Queries still use fair owned positions and engine offered ability.
+113tests pass, including attack-moving followers to an anchor while the anchor
+holds and no self-targeted attack is synthesized. Live effect unproven.
