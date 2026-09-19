@@ -3420,3 +3420,20 @@ feedback/path-accessibility question: accepted orders do not establish arrival.
 Do not assume Jev is simply choosing to stand still or inject a mission waypoint.
 Next inspect general group-intent progress feedback and reachability support.
 Current session42746 still live; no terminal outcome credited.
+
+### Lab234 — verified12:23 defeat; position history weakens pathfinding hypothesis
+
+Run20260919T212055.773706Z/session42746 exited normally. Native defeat at12:23,
+evac7:46,349minerals,all structures destroyed.264calls/$.150865596. Ending bank
+and native UI agree; saved ui-outcome,result and campaign attempt, no advance.
+Harvest-window change plus midrun menu compaction make this a mixed trial.
+
+Full position series corrects lab233's tentative movement interpretation. Marines
+averaged5.6distance from selected bunker center at5639; after submitted join,
+2.6at6249,remaining roughly2.6–2.8through10819. Near-building occupancy/group
+spacing can explain residual distance. Low later displacement does not establish
+path failure. Do not introduce arbitrary unstuck orders or suppress the target.
+The supported failure is persistent choice of the same forward area despite
+visible enemies destroying the base. General spatial context around offered
+friendly anchors (health and currently visible nearby threats) is a potential
+next experiment, giving Jev measured destination facts rather than human tactics.
