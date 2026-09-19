@@ -5,7 +5,8 @@ observations, geometry, validation, transport and logging. No other inference mo
 participates in the game loop. This is an experimental player, not a complete campaign bot.
 
 Read [the experiment report](docs/EXPERIMENT_REPORT.md) for measured
-results, failed approaches, and current limitations.
+results and failed approaches. The [progression journal](docs/CAMPAIGN_PROGRESS.md)
+contains the latest experiments and current limitations.
 
 ## Run
 
@@ -57,7 +58,7 @@ Use `uv run python scripts/report.py` for the latest run's measured summary.
 `uv run pytest -q` checks committed-source reload and command/visibility boundaries.
 
 See [the researched procedure and limits](docs/PROCEDURE.md). Nothing here claims
-that stock campaign progression or combat performance has already been validated.
+that the full campaign has been completed; verified mission outcomes are listed below.
 
 ## First campaign mission
 
@@ -71,7 +72,7 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
 
 Omit `--map` to resume the running mission. This has loaded successfully and
 produced a verified **Victory in Liberation Day**, recorded with an API result and
-replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**. Zero Hour has five recorded defeats; further experiments are ongoing. All three main campaigns are the target; stock campaign menus,
+replay in [the progression journal](docs/CAMPAIGN_PROGRESS.md). **The Outlaws is also verified won**. Zero Hour remains uncompleted after fourteen fresh attempts (some ended without a verified game result); attempt fifteen is evaluating smaller Jev request context. See the progression journal for per-attempt evidence. All three main campaigns are the target; stock campaign menus,
 research and unlock persistence are not implemented.
 
 The current policy asks Jev for a strategic priority, a contribution and concrete
