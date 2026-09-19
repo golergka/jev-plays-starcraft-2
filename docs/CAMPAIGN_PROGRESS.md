@@ -979,3 +979,18 @@ or optimal in those particular moments. The earlier economic failure and later
 survival reactions must not be conflated. Evaluate the current sampled commitment
 policy from the beginning of another attempt if this one fails; its mid-mission
 introduction cannot establish fresh-run performance.
+
+## Lab 092: third defeat; freeze policy for a fresh full attempt
+
+The third Zero Hour attempt ended in UI-confirmed Defeat at 9:44, with 10:25
+remaining until evacuation. All structures destroyed. This is worse survival
+than the prior 12:22 and 12:25 attempts; it is not progress toward a win. The API
+again omitted a terminal player result. Its 925 successful Jev calls cost
+$0.534900030; replay and explicit UI evidence remain local, with public measured
+summary 064. Lab 090 was introduced partway through the attempt.
+
+Run one fresh attempt with the entire current policy from the start, keeping the
+policy unchanged for this evaluation. Raise this invocation's attempt cap from
+three to four to permit the next authorized retry. Earlier mission victories
+remain preserved. Distinguish full-run evidence from post-hoc reasoning about
+mid-run patches and evolving damage.
