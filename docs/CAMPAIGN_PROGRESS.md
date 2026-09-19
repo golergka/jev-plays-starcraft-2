@@ -1372,3 +1372,14 @@ Other control menus retain their existing path.61 tests pass, including preservi
 all mineral targets and requiring Jev to select category and exact target.
 Start fresh attempt11 with2500calls and64-loop cutoff; added stage may increase
 latency and remains a measured tradeoff, not a proven improvement.
+
+### Lab119 — eleventh defeat without resource-category exposure
+
+UI confirmed defeat7:21, evacuation12:48,all structures destroyed. Report078.
+No refinery/gas gathering menu appeared in the monitored trial and no
+resource_category_choice events were recorded. Thus this failure does not test
+the new mineral-versus-gas hierarchy; income interruptions and military attrition
+still occur without gas overinvestment. Record UI evidence separately from absent
+protocol player_result. Run one more bounded fresh attempt12 with identical policy,
+64-loop cutoff and2500call budget. Do not force construction just to activate the
+experimental branch, and do not credit any result to an unexercised branch.
