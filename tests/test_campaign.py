@@ -128,3 +128,13 @@ def test_stall_recovery_does_not_restart_budget_or_unknown_failures(tmp_path):
     result=asyncio.run(run_sequence(manifest(tmp_path),tmp_path/'progress.json',
         retry_stalls=True,mission_runner=mission))
     assert len(calls)==1 and result['completed']==[]
+
+
+def test_campaign_passes_configured_decision_age_to_runner(tmp_path):
+    seen=[]
+    async def mission(args):
+        seen.append(args.max_age_loops)
+        return {'status':'incomplete','calls':0,'run':'test'}
+    asyncio.run(run_sequence(manifest(tmp_path),tmp_path/'age.json',
+        max_age_loops=64,mission_runner=mission))
+    assert seen==[64]

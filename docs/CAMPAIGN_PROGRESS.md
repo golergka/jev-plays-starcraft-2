@@ -1289,3 +1289,15 @@ lists from per-selection facts sent for role and concrete-order decisions. Keep
 complete type-level capability facts, actual criteria, unit positions/orders and
 visible entities. Source state remains intact for constructing legal criteria.
 59 tests pass; reconnect to same pending mission to verify actual endpoint behavior.
+
+### Lab112 — make campaign freshness cutoff experimentally configurable
+
+After context deduplication, resumed segment initially produced15ticks with no
+token-limit errors, one timeout and7stale ticks (median1352ms). Minerals1869 with
+260/min income while Jev requested purchases: staleness is now a distinct possible
+execution bottleneck. Campaign runner hardcoded32loops although the single-mission
+CLI already exposed a cutoff. Thread --max-age-loops through the campaign runner,
+keeping default32 and all fresh ownership/visibility/command validation. This enables
+a bounded later64-loop experiment; it does not change the currently running trial.
+60 tests pass including propagation to the runner. No evidence yet that a longer
+cutoff improves performance; it accepts older strategic context as a tradeoff.

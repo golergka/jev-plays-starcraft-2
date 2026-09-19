@@ -18,7 +18,7 @@ def save_progress(path, progress):
 
 async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                        seconds_per_attempt=600, max_attempts=3, port=5001,
-                       follow_camera=False, resume_current=False, retry_stalls=False, mission_runner=run):
+                       follow_camera=False, resume_current=False, retry_stalls=False, max_age_loops=32, mission_runner=run):
     manifest_path, state_path = Path(manifest_path), Path(state_path)
     payload = manifest_path.read_bytes()
     manifest = json.loads(payload)
@@ -59,7 +59,7 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                 expected_map=map_path.name if was_resume else None,
                 opponent=False, race=mission['race'], objective=mission['objective'],
                 port=port, seconds=seconds_per_attempt, max_calls=remaining,
-                follow_camera=follow_camera, max_age_loops=32, interval=.35)
+                follow_camera=follow_camera, max_age_loops=max_age_loops, interval=.35)
             progress.update(status='running',current_mission=mission['id'])
             progress.pop('reason',None)
             save_progress(state_path, progress)
@@ -109,6 +109,7 @@ def main():
     parser.add_argument('--call-budget',type=int,default=1000)
     parser.add_argument('--seconds-per-attempt',type=float,default=600)
     parser.add_argument('--max-attempts',type=int,default=3)
+    parser.add_argument('--max-age-loops',type=int,default=32,help='Discard decisions older than this many game loops; fresh command validation still applies')
     parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--follow-camera',action='store_true')
     parser.add_argument('--retry-stalls',action='store_true',help='Bounded restart of the current map after clock stalls; records unknown outcome, never advances it')
@@ -116,7 +117,7 @@ def main():
     args = parser.parse_args()
     result = asyncio.run(run_sequence(args.manifest,args.state,
         call_budget=args.call_budget,seconds_per_attempt=args.seconds_per_attempt,
-        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current,retry_stalls=args.retry_stalls))
+        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current,retry_stalls=args.retry_stalls,max_age_loops=args.max_age_loops))
     print(json.dumps(result,indent=2))
 
 
