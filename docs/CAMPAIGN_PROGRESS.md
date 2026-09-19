@@ -1898,3 +1898,19 @@ allied Marines also remained. No evidence supports a simple 'no town hall' or
 'all allies gone' explanation. Attempts 16/17 terminated about 560 seconds after
 join_game despite different connection/request histories. Root cause unresolved.
 Do not turn the isolated diagnostic map into a campaign solution.
+
+### Lab 158 — restore full Jev/controller traffic on isolated native-AI map
+
+Started the unchanged normal player harness against api-native-ai-probe.SC2Map,
+with real-time control, camera following, max age 64, 650 seconds and 2,500-call
+ceiling. Run: runs/20260919T035753.415530Z; stdout:
+/tmp/jev-native-ai-controller.log. This restores ordinary Jev decisions, raw unit
+actions, query traffic and camera actions to the configuration that passed the
+observation-only test. It is a diagnostic, not a stock mission attempt; its run
+folder contains diagnostic.json with campaign_credit=false and the campaign
+runner/checkpoint are not involved. No tactical instructions or player patches.
+
+Initial telemetry confirms successful decisions and camera army overview plus
+tracking moving force shots. No initial decision errors. This run also provides
+live validation of lab149 camera integration, though the lack of scripted waves
+means it cannot assess camera behavior in a full campaign battle.
