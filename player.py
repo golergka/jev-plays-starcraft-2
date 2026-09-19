@@ -341,7 +341,7 @@ async def choose_investment(view, state, jev, memory=None):
         example = projects[name][0][1]
         criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)
         if memory is not None and example['description'].startswith('Train '):
-            criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 672 game loops (about30 seconds), '
+            criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 2016 game loops (about90 seconds), '
                 'using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. '
                 'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
                 +investment_description(name,example.get('project'),state))
@@ -410,7 +410,7 @@ async def choose_investment(view, state, jev, memory=None):
     if choice in criteria and choice.startswith('batch_'):
         index=int(choice.split('_')[1])
         memory['production_batch']={'target_project':names[index],'remaining':3,
-            'loop':view['loop'],'review_at':view['loop']+672,'strategy':strategy}
+            'loop':view['loop'],'review_at':view['loop']+2016,'strategy':strategy}
         jev.log('production_batch_chosen',**memory['production_batch'])
         choice=f'project_{index}'
     chosen_project = names[int(choice.split('_')[1])] if choice in criteria and choice.startswith('project_') else None

@@ -143,11 +143,11 @@ def test_training_batch_is_jev_selected_bounded_and_reuses_investment_choice():
             assert 'batch_0' in questions['investment']['criteria']
             return {'investment':{'choice':'batch_0' if self.calls==1 else 'save'}}
     model=Model();memory={};view={'loop':1,'self':[unit]};state={'strategy_chosen_by_jev':{'choice':'strengthen'}}
-    for loop in (1,2,3):
+    for loop in (1,601,1201):
         view['loop']=loop
         assert asyncio.run(choose_investment(view,state,model,memory))==[command]
     assert model.calls==1 and 'production_batch' not in memory
-    view['loop']=4
+    view['loop']=1202
     assert asyncio.run(choose_investment(view,state,model,memory))==[]
     assert model.calls==2
 

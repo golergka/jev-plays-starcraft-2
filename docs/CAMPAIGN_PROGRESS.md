@@ -3569,3 +3569,20 @@ multi-unit scope,all action text,IDs,targets and command tables.125tests pass.
 Commit hot-reloads during current239trial. Record mixed revision,not a controlled
 history-only outcome. Model wording and tournament partitions can affect choices
 even though offered commands remain identical. Budget/cap/pacing unchanged.
+
+### Lab243 — three-request production commitments expire between paced reviews
+
+Audit of completed237/235runs and current239: batches at1304→1684,2305→2740,
+8692→9196 and436→1036 made onlytwo requests before their672loop deadlines;
+next decisions fall outside the window. Late terminal/ongoing batches cannot be
+classified as expiry failures. Cheap batching is underused at current pacing.
+
+Extend newly offered batch horizon672→2016loops (about90seconds), stillatmost3
+proposals. Update Jev-visible description explicitly; no new purchases while
+commitment active, stillreleaseson strategychange/unavailablecontrol/rewind/expiry.
+Do not extend existing memory commitments retroactively or guarantee accepted
+production. Longer commitment can delay a different needed purchase; Jev sees
+that tradeoff before choosing. Existing command legality/freshness/budget unchanged.
+125tests pass; boundedbatch test now exercises1/601/1201loop decisions, three
+requests with one investment choice, then fresh choice. Actual liveeffect unproven.
+Current239trial already mixedrevision; native11:31 shows base being overrun.
