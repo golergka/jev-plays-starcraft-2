@@ -58,6 +58,8 @@ async def main():
     parser.add_argument('--storm',type=Path)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--samples',type=int,default=65)
+    parser.add_argument('--explicit-computer', action='store_true',
+        help='Diagnostic only: explicitly include a computer slot in CreateGame')
     parser.add_argument('--stepped', action='store_true',
         help='Non-real-time diagnostic only: advance 256 loops per sample instead of waiting 10 seconds')
     args=parser.parse_args()
@@ -82,7 +84,7 @@ async def main():
                 race=common.Terran, player_name='Lifetime diagnostic',
                 options=sc.InterfaceOptions(raw=True, score=True)))
         else:
-            await client.start(map_path)
+            await client.start(map_path, opponent=args.explicit_computer)
         with args.output.open('x') as output:
             for index in range(args.samples):
                 observation=await client.observe()

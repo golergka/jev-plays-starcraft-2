@@ -2076,3 +2076,35 @@ time from RunMissionVictorySequence via TS_SaveMissionCompletion. Current bank
 contents therefore do not independently verify either earlier credited run;
 leave the review gate intact. A replay/outcome audit or fresh instrumented stock
 run remains necessary. No gameplay calls or paid Jev calls during this probe.
+
+### Lab166 — objective state bridge passes minimal live proof
+
+Explicit Computer in CreateGame did not bypass objective termination: hidden
+Failed diagnostic still ended at loop 225, all nine Defeat, 36 owned. Evidence:
+/tmp/jev-objective-computer-lab166.jsonl. Added --explicit-computer to the lifetime
+probe so this negative result is reproducible.
+
+New scripts/objective_state_bridge.galaxy is an experimental pair of wrappers,
+not yet installed in campaign maps. SetState stores the exact requested state in
+a separate data-table key; GetState returns it. Native presentation stays Active
+for Completed/Failed with an explicit name prefix, avoiding the API terminal hook.
+An isolated script sets a bonus state, waits, and checks the wrapper getter. Only
+a matching getter result then invokes a native Completed diagnostic end signal;
+a mismatch invokes Failed. These are artificial test outcomes, never campaign
+credit or weakened gameplay missions.
+
+Live Failed case: API still in_game at loop 225, then expected Victory at 449.
+Live Completed case: still in_game at 225, then expected Victory at 450. Both kept
+36 owned units. Baseline native calls ended at 224-226. Evidence:
+/tmp/jev-objective-bridge-lab166.jsonl and
+/tmp/jev-objective-bridge-complete-lab166.jsonl. Screenshot confirmed the diagnostic
+objective label exists. 79 Python tests pass; the Galaxy evidence is the live
+probe, not those tests. No paid Jev calls.
+
+Before campaign integration this proof needs full lifecycle support (creation in
+terminal states, name changes, destruction/ID reuse), interception of reads and
+writes in every included campaign library, and a separate genuine mission-ending
+signal. Leaving any native state readers unadapted could change mission behavior.
+Do not apply this partial wrapper to a campaign yet. Preserve all trigger
+conditions, objective states, combat and rewards; never count this diagnostic's
+native Completed signal as a campaign victory.

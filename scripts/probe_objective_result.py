@@ -13,6 +13,8 @@ parser.add_argument('--output', required=True, type=Path)
 parser.add_argument('--state', choices=['Active','Failed','Completed'], default='Failed')
 parser.add_argument('--hide-before-update', action='store_true',
                     help='Diagnostic: test whether invisible objectives still terminate API control')
+parser.add_argument('--bridge', action='store_true',
+                    help='Test experimental shadow state, then signal success only if readback matches')
 args = parser.parse_args()
 if args.output.exists():raise FileExistsError(args.output)
 script = '''include "TriggerLibs/NativeLib"
@@ -25,6 +27,7 @@ bool ProbeObjective (bool testConds, bool runActions) {
     Wait(5.0, c_timeGame);
     HIDE_OBJECTIVE
     ObjectiveSetState(objective, c_objectiveStateSTATE);
+    VERIFY_BRIDGE
     return true;
 }
 void InitMap () {
@@ -34,6 +37,20 @@ void InitMap () {
 '''.replace('c_objectiveStateSTATE', 'c_objectiveState'+args.state).replace(
     'HIDE_OBJECTIVE', 'ObjectiveShow(objective, PlayerGroupAll(), false);'
     if args.hide_before_update else '')
+if args.bridge:
+    # Deliberately narrow proof: this does not transform any campaign library.
+    script = script.replace('ObjectiveSetState(objective,', 'JevObjectiveSetState(objective,')
+    script = script.replace('VERIFY_BRIDGE', '''
+    Wait(10.0, c_timeGame);
+    if (JevObjectiveGetState(objective) == c_objectiveStateSTATE) {
+        ObjectiveSetState(objective, c_objectiveStateCompleted);
+    }
+    else { ObjectiveSetState(objective, c_objectiveStateFailed); }
+    '''.replace('c_objectiveStateSTATE', 'c_objectiveState'+args.state))
+    script = script.replace('bool ProbeObjective',
+        Path(__file__).with_name('objective_state_bridge.galaxy').read_text()+'\nbool ProbeObjective')
+else:
+    script = script.replace('VERIFY_BRIDGE', '')
 diagnostic_copy(args.source,args.copy,args.storm,script)
 subprocess.run([sys.executable,str(Path(__file__).with_name('probe_api_lifetime.py')),
                 str(args.copy),'--output',str(args.output),'--samples','4'],check=True)

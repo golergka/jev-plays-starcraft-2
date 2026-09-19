@@ -1,0 +1,38 @@
+// Experimental presentation adapter. NOT yet installed in campaign maps.
+// Mission scripts must use both wrappers together; native terminal objective
+// states otherwise end the external API episode before the actual mission ends.
+string JevObjectiveStateKey (int objective) {
+    return "JevApiCompatibility.ObjectiveState." + IntToString(objective);
+}
+
+int JevObjectiveGetState (int objective) {
+    string key = JevObjectiveStateKey(objective);
+    if (DataTableValueExists(true, key)) {
+        return DataTableGetInt(true, key);
+    }
+    return ObjectiveGetState(objective);
+}
+
+void JevObjectiveSetState (int objective, int state) {
+    string key = JevObjectiveStateKey(objective);
+    string nameKey = key + ".Name";
+    text name;
+    if (ObjectiveGetState(objective) == c_objectiveStateUnknown) { return; }
+    if (!DataTableValueExists(true, nameKey)) {
+        DataTableSetText(true, nameKey, ObjectiveGetName(objective));
+    }
+    name = DataTableGetText(true, nameKey);
+    DataTableSetInt(true, key, state);
+    if (state == c_objectiveStateFailed) {
+        ObjectiveSetName(objective, StringToText("[Failed] ") + name);
+        ObjectiveSetState(objective, c_objectiveStateActive);
+    }
+    else if (state == c_objectiveStateCompleted) {
+        ObjectiveSetName(objective, StringToText("[Completed] ") + name);
+        ObjectiveSetState(objective, c_objectiveStateActive);
+    }
+    else {
+        ObjectiveSetName(objective, name);
+        ObjectiveSetState(objective, state);
+    }
+}
