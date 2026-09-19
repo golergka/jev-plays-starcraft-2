@@ -2578,3 +2578,20 @@ Zero Hour map. Log /tmp/jev-zero-hour-lab187b.log; session37919. Joined successf
 At loop3, independent SCV contribution choices included income, positioning and
 individual control. This verifies distinct decisions are reaching the interface;
 it does not yet prove successful harvesting or better survival.
+
+### Lab188 — independent worker decisions produce actual income
+
+Live retry runs/20260919T184240.436736Z, session37919, policy unchanged since187.
+At loop1130:6SCVs,16Marines,4Bunkers,4Turrets,2Barracks,3loweredDepots,
+1Refinery,1EngineeringBay,1CommandCenter;137calls,no errors.5 submitted harvesting
+commands; measured income80minerals/112gas per minute. Distinct contributions
+therefore reached actual harvesting, not just verbal income intent.
+
+Compare nearby opening times in the two recorded runs. Prior baseline loop1740:
+6SCVs/16Marines/4Bunkers,noRefinery,176calls,0harvest commands,income0/0.
+Current loop1734:10SCVs/17Marines/5Bunkers/1Refinery,205calls,6harvest commands,
+income140/96. Observed resource balances differ because of spending. These are
+single live attempts with stochastic choices, not a controlled efficacy estimate.
+At loop3324 current run has13SCVs/18Marines/4Bunkers/2Turrets,406calls,no errors,
+income220/48. Some defenses have disappeared; no ending yet. Keep policy fixed
+for the defensive outcome rather than infer campaign success from early growth.
