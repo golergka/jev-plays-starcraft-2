@@ -1652,3 +1652,14 @@ Relaunch through Battle.net Play. Verified new PID73800 (13seconds uptime when
 checked), API ping5.0.16.97563,status launched. Start attempt17 with same map,
 Jev policy and64-loop cutoff,2500calls. This tests process-state accumulation;
 no assertion that it is the cause. Preserve two verified campaign victories.
+
+### Lab143 — fresh process does not remove the approximately12500-loop cutoff
+
+Attempt17 runs/20260919T021911.054534Z returned all9players Defeat at12504,
+first terminal response observation1815. Previous tick12464 had28owned units.
+Fresh-process PID73800 rules against the simple accumulated-process-state
+hypothesis for this reproduction. UI still showed13:21 elapsed,06:48evacuation,
+no defeat overlay. Record discrepancy without advancing the mission. Controller
+exited after1434Jev calls. Future investigation should target a per-game/API
+limit or mission interaction; neither is established yet. Repeating the same
+process restart is not a justified next experiment.
