@@ -1797,3 +1797,19 @@ remain; this is deliberately a broader boundary than the previous probe.
 Map: maps/api-mission-init-probe.SC2Map; output:
 /tmp/jev-mission-init-probe.jsonl. No player orders, no Jev calls, no checkpoint
 updates. This is diagnostic isolation, not a proposed easier campaign version.
+
+### Lab 153 — mission initialization passes; restore intro/timers without AI startup
+
+Mission-initialization probe completed, exit 0, 65 samples through loop 14,371,
+all in_game and no player results. UI independently showed the initialization's
+400 minerals, 100 gas and night lighting, supporting that the intended startup
+routines executed. Evidence: /tmp/jev-mission-init-probe.jsonl.
+
+Next diagnostic retains the original complete map script except the one
+`TriggerExecute(gt_StartAI, true, false)` call in IntroSequence. IntroSequence
+and StartGame now run, including mission timers and registered events; StartAI's
+campaign AI starts, attack-wave routines and difficulty research are withheld.
+Map: maps/api-without-ai-probe.SC2Map. Output: /tmp/jev-without-ai-probe.jsonl.
+This remains an observation-only isolation test, never a campaign attempt.
+These negative tests do not yet exclude an interaction with the player harness:
+none issue its normal action/query traffic. No claim of a specific root cause.
