@@ -2570,3 +2570,11 @@ correlated wrong choices or increase latency/cost; live measurement is required.
 Restart only the verified failed Zero Hour mission and compare income, role
 allocation, casualties and real outcome against lab184–186. Preserve both opening
 victories. No other policy change in this fresh attempt.
+
+Lab187 launch note: native Restart Mission (Normal difficulty unchanged) exited
+SC2 rather than restarting. Confirmed process absence, terminated the now-waiting
+attach-only controller, relaunched through Battle.net, then loaded the same adapted
+Zero Hour map. Log /tmp/jev-zero-hour-lab187b.log; session37919. Joined successfully.
+At loop3, independent SCV contribution choices included income, positioning and
+individual control. This verifies distinct decisions are reaching the interface;
+it does not yet prove successful harvesting or better survival.
