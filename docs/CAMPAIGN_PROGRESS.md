@@ -3904,3 +3904,15 @@ engine-accepted and completed production. Malformed/unarmed request events do no
 invent a project attribution. Three episode tests pass including one success,one
 rejection and a post-release event. Startup history loads only on next controller;
 current trial unchanged. No extra model calls or policy selection changes.
+
+### Lab266 — first executor-enabled trial ends without authorizing a job
+
+Run26220260919T223706.942817Z/session97960 ends with native DEFEAT11:34,
+08:35remaining,0minerals,allstructuresdestroyed.166successful calls/$0.093748410;
+one earlier ConnectTimeout with unknown billing retained under governor.
+No production batch selected and no production_job execution; do not label this
+an executor success or failure. TechLab completed and Medic became available,
+but no resulting victory. Stable runtime policy after startup; later commits
+changed journal/docs and future history summaries. Verified checkpoint retains
+two completed missions. Next test must retain explicit Jev authorization rather
+than forcing a batch solely to obtain execution evidence.
