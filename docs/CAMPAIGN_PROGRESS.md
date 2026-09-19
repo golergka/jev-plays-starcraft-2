@@ -3197,3 +3197,18 @@ accounted_usd and after_decision_error separately from actual bills. No cap,
 ledger or taper reset; guard remains fatal.119tests pass, including reservation
 retention and reconciliation without double accounting. Resume same world with
 remaining3527calls. This interrupts controlled comparison; do not hide it.
+
+### Lab220 — factored allocation ends in 16:27 defeat
+
+Native defeat verified16:27,evacuation3:42,all structures destroyed. Segments
+20260919T202955.161373Z(473calls/$.289111662) and
+20260919T204018.344050Z(167calls/$.122339406),total640calls/$.411451068.
+Recorded UI evidence and checkpoint attempt; no campaign advance. Last visual
+checks showed worker-heavy defense collapsing despite resources being spent;
+15:46 screenshot had0minerals,unlike prior large unspent endgame reserves.
+Neither spending nor accepted training requests alone establishes effective force
+allocation. Survival is31seconds shorter than prior16:58; one stochastic attempt
+with a budget pause,policy-memory reset and pacing repair is not a causal ranking.
+No further budget error in resumed segment. Next experiment addresses observed
+boarding/passenger command conflicts. Preserve Jev's tactical choices; resolve
+only contradictory execution requests and verify cargo entry in live evidence.
