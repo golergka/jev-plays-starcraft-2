@@ -1573,3 +1573,15 @@ state table allows observation in ended but actions only in_game:
 https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/sc2api.proto
 The cause of the early API termination remains unresolved. Do not change Jev
 strategy based on an invented all-structures-destroyed explanation.
+
+### Lab136 — inspect termination plumbing without tactical map leakage
+
+SC2 client sends only allowlisted requests and has no end-game/debug request.
+Official state table confirms actions unavailable after ended; reconnecting did
+not restore control. Read-only local MapScript inspection was restricted to
+DefeatBaseDead/Defeat handlers: the map tests whether any owned PreventDefeat
+units remain, displays MissionFailed, then invokes EndCampaignMission. This
+explains the normal scripted loss path but does not establish that it ran here.
+Do not feed map script, enemy plans or trigger locations into player context.
+Keep the live simulation for further UI outcome observation rather than restarting
+and erasing the evidence. No new gameplay policy or mission advancement.
