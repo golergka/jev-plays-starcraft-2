@@ -3403,3 +3403,20 @@ description, range6–10, and unchanged exact per-unit commands. This changes me
 length and potentially tournament partitions, so the current trial becomes mixed
 revision after commit; do not present its outcome as harvest-window-only evidence.
 Savings and behavioral effect require live measurement.
+
+### Lab233 — live menu compaction reduces tournament depth, defense still fails
+
+Reload1b274e9 confirmed at1789853309.095170. Before: Marine decisions8258/9415
+used5model calls each (whole decision13/11calls,$.00838921/$.00701807). After:
+9993/10407 used3Marine calls each (whole decision8/7calls,$.004986702/$.00492227).
+Different world states and candidate sets confound dollar attribution, but actual
+live tournament depth fell. No assertion of controlled savings or better tactics.
+Native10:46 still showed command center surrounded,658minerals,evac9:23. Jev's
+choices included hold then another forward-bunker join. Context contains visible
+base enemies, raw own unit facts and measured outcomes. At10819 outcomes record
+CommandCenter disappearance and Marine mean sampled travel/net displacement0.6
+over826loops despite repeated accepted joins. This raises a separate execution-
+feedback/path-accessibility question: accepted orders do not establish arrival.
+Do not assume Jev is simply choosing to stand still or inject a mission waypoint.
+Next inspect general group-intent progress feedback and reachability support.
+Current session42746 still live; no terminal outcome credited.
