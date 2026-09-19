@@ -3653,3 +3653,14 @@ with original loop/deadline/remaining count plus current_loop and cause: control
 unavailable, deadline, rewind, exhausted requests, or strategy change. This changes
 observability only, with no retry or relaxed commitment. Already-cleared livebatch
 cannot retroactively emit the event. All125tests pass. Budget unchanged.
+
+### Lab248 — extended-batch trial ends at9:58
+
+Run20260919T220825.429214Z/session68563 terminal. Native DEFEAT independently
+verified9:58,10:11 remaining,26minerals,all structures destroyed.171successful
+calls/$0.085608810. Checkpoint records defeat, retains two verified mission wins.
+First2016-loop Marine batch was late and lost its producer after two requests;
+no demonstrated longer-window benefit in this attempt. Startup expanded history
+and random trajectory differ from prior13:22 trial; not a controlled causal result.
+Camera correction improved visual monitoring; observations expose weak early
+production and later loss of mining rather than a transport/command failure.
