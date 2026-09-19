@@ -3803,3 +3803,16 @@ No 'Satisfies a catalog' purchase text found after257reload: current catalog has
 not supplied matching available-unit relationships. Do not credit prerequisite
 text for the reactor choice or fabricate absent data. Construction success does
 not establish efficient utilization, survival benefit, or campaign completion.
+
+### Lab259 — inspect actual request costs before further scheduling changes
+
+Live256run through4374 has14Marines,9SCVs,completedReactor; recent purchases are
+SCVs2383/2922/3351/3832/4374. No tick action_errors recorded. Native6:00 shows
+821minerals and ongoing combat at a damaged forward bunker. No survival claim.
+
+Read-only successful-request usage aggregation: exact Marine question category
+$0.019127 (rounded), strategy/coordination$.004477, investment$.002702. Broader
+worker-containing mixed menus$.009686 and role menus$.004865 at the earlier same
+inspection. Mixed menus cannot attribute their entire cost to workers. This
+contradicts assuming worker roles dominate current costs and does not justify a
+worker-only rate cut. No paid probe or policy change; preserve the live trajectory.
