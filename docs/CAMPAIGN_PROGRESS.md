@@ -3933,3 +3933,22 @@ can increase low-ranked extra-capacity choices—the old reason for sharpening�
 monitor rather than promise improvement. No forced batch, changed seed, hardcoded
 tactic, additional model call or higher spending limit.136tests pass, covering
 relative odds, family totals, extreme values and existing execution boundaries.
+
+### Lab268 — visual inspection and first authorized background training
+
+Ongoing stable lab267 run20260919T224749.369540Z: native screenshot at9:59
+shows1mineral,404gas,7/35supply,CommandCenter1/27workers,Refinery0/3.
+Tick9646 includes two SCVs moving toward each other's observed positions;
+accepted commands alone do not establish useful coordination. This is a general
+coordination observation, not a directive to select a mission-specific tactic.
+Continue periodic native visual inspection alongside telemetry, as requested.
+
+First live executor evidence: Jev Marine batch armed6265, exact same Barracks
+4382261250/ability560 requested again6382 (117loops later), engine accepted,
+freshness3loops. Final remaining request unavailable/unaffordable6500; deadline
+8281 reached8284 and job released without retry or producer substitution.
+A previously unseen Marine tag appears7024, but concurrent losses prevent a
+simple count-based attribution of every training completion. No forced batch
+or extra model decision was used to exercise the executor. Army loss thereafter
+means execution success is not strategic success. At10045,162successful calls
+cost$0.091197330; run not yet terminal. No policy changes in this entry.
