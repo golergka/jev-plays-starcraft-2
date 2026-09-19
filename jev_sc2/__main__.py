@@ -117,7 +117,7 @@ async def run(args):
                 raise RuntimeError('--attach without --map needs an API game already in progress')
         info = attached_info if attached_info is not None else await client.request('game_info',sc.RequestGameInfo())
         outcome.update(map_name=info.map_name,local_map_path=info.local_map_path)
-        data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True))
+        data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True,upgrade_id=True))
         started = time.monotonic()
         failures = 0
         empty_since = None

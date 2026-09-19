@@ -1433,3 +1433,19 @@ pair also retained other. Each pair2calls,$0.000679266; artifacts082/083 preserv
 both measurements. Catalog deficits explicitly do not certify current ability
 cost, prerequisites, producer, placement or supply. No deployment justified by
 these limited results. Do not count repeated queries as independent game states.
+
+### Lab124 — close the missing research-control path
+
+The adapter requested units/abilities but not upgrades, and offered no research
+purchases. Official protocol UpgradeData supplies upgrade_id,name,costs,research_time
+and ability_id: https://raw.githubusercontent.com/Blizzard/s2client-proto/master/s2clientprotocol/data.proto
+Request upgrade data and offer only exact engine-advertised no-target research
+abilities, excluding owned completed upgrade IDs. Resource-ignored availability
+may describe a future investment; only resource-aware legal abilities become
+executable candidates. Research enters the same Jev shared-budget/producer flow as
+other purchases, with zero supply and explicit upgrade—not unit—description.
+No undocumented combat effects are invented from names; generic ability remaps
+are not guessed across upgrade levels.62 tests pass covering costs, exact offered
+ability, completion exclusion and unsupported target forms. This closes a real
+control gap; it does not prove the active campaign map offers research or that
+research solves the prior defeats. Start attempt13,2500calls,64-loop cutoff.

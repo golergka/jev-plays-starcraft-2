@@ -139,6 +139,29 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
     return candidates
 
 
+def research_project(upgrade):
+    return {'type':'Research '+upgrade.name,'kind':'upgrade','upgrade_id':upgrade.upgrade_id,
+            'minerals':upgrade.mineral_cost,'vespene':upgrade.vespene_cost,'supply':0,
+            'research_time':upgrade.research_time}
+
+
+def research_candidates(unit, legal, catalog, upgrades, completed):
+    result=[]
+    for ability in sorted(legal):
+        upgrade=upgrades.get(ability)
+        if upgrade is None or upgrade.upgrade_id in completed:
+            continue
+        meta=catalog.get(ability)
+        if meta is None or meta.target != 1:
+            continue
+        project=research_project(upgrade)
+        result.append({'id':f'research_{ability}',
+            'description':f'Research {upgrade.name}; costs {upgrade.mineral_cost} minerals and {upgrade.vespene_cost} gas; upgrade, not another unit',
+            'command':{'unit_tag':unit.tag,'ability_id':ability},
+            'project':project,'resource_cost':{k:project[k] for k in ('minerals','vespene','supply')}})
+    return result
+
+
 async def make_view(client, observation, data, info, objective):
     obs = observation.observation
     own = [u for u in obs.raw_data.units if u.alliance == raw.Self]
@@ -160,6 +183,8 @@ async def make_view(client, observation, data, info, objective):
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
     catalog = {a.ability_id:a for a in data.abilities}
+    upgrades = {u.ability_id:u for u in data.upgrades if u.ability_id}
+    completed = set(obs.raw_data.player.upgrade_ids)
     products = {u.ability_id:u for u in data.units if u.ability_id}
     def product_for(ability):
         product = products.get(ability)
@@ -170,6 +195,10 @@ async def make_view(client, observation, data, info, objective):
     potential = {}
     for offered in possible.abilities:
         for ability in offered.abilities:
+            upgrade = upgrades.get(ability.ability_id)
+            if upgrade and upgrade.upgrade_id not in completed and catalog.get(ability.ability_id) and catalog[ability.ability_id].target == 1:
+                project = research_project(upgrade)
+                potential[project['type']] = project
             label = ability_names.get(ability.ability_id,'')
             product = product_for(ability.ability_id)
             if product is not None and (label.startswith('Train ') or
@@ -230,6 +259,7 @@ async def make_view(client, observation, data, info, objective):
         def command(ability, **target):
             return {'unit_tag': unit.tag, 'ability_id': ability, **target}
         candidates = support_candidates(unit,legal,catalog,unit_catalog,own,names,builder=unit.tag in builder_tags)
+        candidates.extend(research_candidates(unit,legal,catalog,upgrades,completed))
         for ability in sorted(legal):
             label = ability_names.get(ability, '')
             product = product_for(ability)

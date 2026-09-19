@@ -829,3 +829,21 @@ def test_resource_category_keeps_every_target_and_jev_selects_both_stages():
     assert set(model.calls[0]['workers']['criteria'])=={'gather_minerals','gather_vespene','continue'}
     assert set(model.calls[1]['workers']['criteria'])=={'field_a','field_b','continue'}
     assert 'gas_a' in question['criteria']
+
+
+def test_research_controls_require_exact_offered_ability_and_unfinished_upgrade():
+    from s2clientprotocol import data_pb2 as data
+    from jev_sc2.view import research_candidates
+    from player import is_purchase, investment_description
+    unit=raw.Unit(tag=1)
+    upgrade=data.UpgradeData(upgrade_id=5,name='TestUpgrade',ability_id=123,mineral_cost=100,vespene_cost=75,research_time=30)
+    catalog={123:data.AbilityData(ability_id=123,target=1)}
+    c=research_candidates(unit,{123},catalog,{123:upgrade},set())[0]
+    assert is_purchase(c)
+    assert c['command']=={'unit_tag':1,'ability_id':123}
+    assert c['resource_cost']=={'minerals':100,'vespene':75,'supply':0}
+    assert 'not an additional unit' in investment_description('Research TestUpgrade',c['project'],{})
+    assert research_candidates(unit,set(),catalog,{123:upgrade},set())==[]
+    assert research_candidates(unit,{123},catalog,{123:upgrade},{5})==[]
+    catalog[123].target=2
+    assert research_candidates(unit,{123},catalog,{123:upgrade},set())==[]

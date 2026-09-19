@@ -134,7 +134,7 @@ async def choose_concrete_orders(state, questions, jev):
 
 
 def is_purchase(candidate):
-    return candidate['description'].startswith(('Train ', 'Build '))
+    return candidate['description'].startswith(('Train ', 'Build ', 'Research '))
 
 
 def investment_state(state):
@@ -168,6 +168,10 @@ def control_state(state):
 
 
 def investment_description(name, project, state):
+    if project and project.get('kind') == 'upgrade':
+        return (f"Research upgrade {name.removeprefix('Research ')}. Costs {project['minerals']} minerals and {project['vespene']} gas; "
+                f"catalog research time {project['research_time']}. Produces an upgrade, not an additional unit. "
+                'The API provides its name but no detailed effect description; do not assume unlisted effects.')
     facts = state.get('type_selection_facts',state.get('selection_facts',{})).get(name,{})
     capabilities = state.get('observed_capabilities_by_type',{}).get(name,[])
     effects = []
