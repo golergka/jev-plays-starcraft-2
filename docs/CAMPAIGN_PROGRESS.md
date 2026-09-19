@@ -1852,3 +1852,25 @@ Losing an idle stock map is expected; compare terminal loop, owned-unit count
 and visible UI state rather than treating any defeat as the API defect.
 All these runs are infrastructure diagnostics and leave campaign checkpoint
 unchanged. No weakened map is being proposed for actual campaign play.
+
+### Lab 156 — stock idle defeat is visible but absent from API results
+
+Stock-map real-time observation-only baseline finished all 65 samples (exit 0).
+The idle force lost its structures; UI explicitly showed DEFEAT, 'All of your
+structures have been destroyed', game clock 10:58 and evacuation 09:11. API
+observations froze at loop 10,540 with four owned units, status in_game and no
+player results, persisting through the end of /tmp/jev-stock-realtime-idle.jsonl.
+Thus this run ended visibly BEFORE the approximately 12,500-loop cutoff. It
+cannot exclude controller traffic as a cause of that later phenomenon.
+
+After the probe closed, a separate connection issued ping, observation, empty
+query, empty action (zero commands), observation. All returned in_game; both
+observations remained at 10,540 with no results. Evidence:
+/tmp/jev-idle-terminal-requests.json. The API/UI disagreement can therefore go
+in both directions. Do not infer campaign victory/defeat solely from a stall.
+
+Next real-time probe uses api-native-ai-probe.SC2Map: full mission sequence,
+three original AICampaignStart calls, but withheld scripted attack-wave/research
+routines. This controls the stepping-mode confound from lab155 and aims to reach
+the cutoff without early idle defeat. Output /tmp/jev-native-ai-realtime.jsonl.
+No campaign credit, unit orders, Jev calls or changes to the stock map.
