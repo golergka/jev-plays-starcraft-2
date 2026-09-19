@@ -1420,3 +1420,16 @@ the tournament. Six calls,$0.002213946,artifact081. This is a changed decision
 structure rather than another wording tweak, but gives no evidence of economic
 recovery. Do not deploy increased question volume on that basis. No game commands
 issued; current controller remains stopped after the verified defeat.
+
+### Lab123 — computed shortfalls: limited negative evidence
+
+Test adding exact catalog resource deficits for previously observed Train/Build
+products, without selecting any resource or role. Filter run12 for idle-containing
+worker purpose states with fewer than50minerals. Only one recorded state qualifies,
+so this is a one-state probe, not the intended three-state comparison. Original
+and augmented decisions both selected other; income probability .07→.06 in first
+pair. Expanding the filter to worker-job prefixes found the same one state; second
+pair also retained other. Each pair2calls,$0.000679266; artifacts082/083 preserve
+both measurements. Catalog deficits explicitly do not certify current ability
+cost, prerequisites, producer, placement or supply. No deployment justified by
+these limited results. Do not count repeated queries as independent game states.

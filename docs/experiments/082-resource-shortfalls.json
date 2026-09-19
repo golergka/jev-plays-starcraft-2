@@ -1,0 +1,83 @@
+{
+  "source": "runs/20260919T011741.162325Z/events.jsonl",
+  "question": "purpose_SCV",
+  "pairs": [
+    {
+      "sample": 0,
+      "resources": {
+        "minerals": 0,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 23,
+        "food_cap": 35,
+        "supply_in_construction": 8.0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      },
+      "shortfalls": {
+        "Barracks": {
+          "additional_minerals": 150,
+          "additional_vespene": 0
+        },
+        "Bunker": {
+          "additional_minerals": 100,
+          "additional_vespene": 0
+        },
+        "CommandCenter": {
+          "additional_minerals": 400,
+          "additional_vespene": 0
+        },
+        "EngineeringBay": {
+          "additional_minerals": 125,
+          "additional_vespene": 0
+        },
+        "Marine": {
+          "additional_minerals": 50,
+          "additional_vespene": 0
+        },
+        "MissileTurret": {
+          "additional_minerals": 100,
+          "additional_vespene": 0
+        },
+        "SCV": {
+          "additional_minerals": 50,
+          "additional_vespene": 0
+        },
+        "SupplyDepot": {
+          "additional_minerals": 100,
+          "additional_vespene": 0
+        }
+      },
+      "original": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.47,
+        "probabilities": {
+          "income": 0.07,
+          "other": 0.56,
+          "continue": 0.2,
+          "individual": 0.01,
+          "positioning": 0.16,
+          "combat": 0.0
+        }
+      },
+      "computed_shortfalls": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.51,
+        "probabilities": {
+          "continue": 0.15,
+          "positioning": 0.19,
+          "individual": 0.01,
+          "combat": 0.0,
+          "income": 0.06,
+          "other": 0.59
+        }
+      }
+    }
+  ],
+  "calls": 2,
+  "cost": 0.000679266,
+  "method": "First three recorded states with idle units and fewer than50minerals. Same question; add computed catalog resource shortfalls for previously observed Train/Build products. Catalog arithmetic does not certify legal ability cost or eligibility. Alternate pair order; no game commands."
+}
