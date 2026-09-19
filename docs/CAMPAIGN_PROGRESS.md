@@ -1585,3 +1585,17 @@ explains the normal scripted loss path but does not establish that it ran here.
 Do not feed map script, enemy plans or trigger locations into player context.
 Keep the live simulation for further UI outcome observation rather than restarting
 and erasing the evidence. No new gameplay policy or mission advancement.
+
+### Lab137 — separate early API control loss from later visible defeat
+
+Add a read-only terminal-state probe, used only while controller is stopped.
+Seven samples over60seconds: API remained ended/all9Defeat while game_loop
+advanced17256→17920, then froze18012; owned unit count fell21→1. Subsequent
+SC2 UI showed DEFEAT, All of your structures have been destroyed, at18:45 with
+01:24 evacuation remaining. Attach later_ui_outcome to result/checkpoint while
+preserving the earlier discrepancy. API stopped accepting actions around12500,
+roughly5500loops before actual visible defeat. This trial therefore does not
+measure uninterrupted Jev control through the full mission. No win recorded.
+The probe requests only observations, records own-unit count/results/clock and
+never sends actions or changes a game. Live execution verified its output and
+clean exit. Cause of premature API termination remains an infrastructure target.
