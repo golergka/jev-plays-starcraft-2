@@ -1780,3 +1780,20 @@ This function enables CampaignMode and loads tech, bank and UI state, so this
 boundary distinguishes campaign setup from the remaining mission script. Output
 /tmp/jev-campaign-data-probe.jsonl, same observation-only 65-sample protocol.
 The source map remains untouched; this is not an attempt or campaign win.
+
+### Lab 152 — campaign-data setup survives; isolate mission startup
+
+The campaign-data-only probe completed (exit 0), 65 samples through loop 14,338,
+all in_game with 36 owned units and no results. Output:
+/tmp/jev-campaign-data-probe.jsonl. A UI inspection during the run showed the
+map without a visible script-error dialog. No mission credit.
+
+Next diagnostic copies the stock map and retains its entire script except the
+single initialization handoff `TriggerExecute(gt_IntroSequence, true, false)`.
+That call is replaced with a comment, so original library/global/trigger setup,
+LoadCampaignData and the seven mission initialization routines execute, but the
+intro's StartAI and StartGame handoffs do not. Registered periodic/event handlers
+remain; this is deliberately a broader boundary than the previous probe.
+Map: maps/api-mission-init-probe.SC2Map; output:
+/tmp/jev-mission-init-probe.jsonl. No player orders, no Jev calls, no checkpoint
+updates. This is diagnostic isolation, not a proposed easier campaign version.
