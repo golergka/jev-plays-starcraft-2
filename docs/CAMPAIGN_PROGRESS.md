@@ -1358,3 +1358,17 @@ $0.005470584,artifact076. This changes menu semantics/size and descriptions toge
 so it does not isolate choice-count bias. It supports testing a Jev-only resource
 then-location hierarchy, with no scripted resource priority. No live policy change
 yet; attempt10 still runs the freshness comparison.
+
+### Lab118 — tenth defeat; deploy Jev resource-then-location selection
+
+UI confirms tenth attempt defeated10:19, evacuation09:50,all structures destroyed.
+Gas1028 and minerals0 were visible on the final screen. Report077 and checkpoint
+retain separate UI evidence.64-loop cutoff allowed more execution but did not win.
+Add the abstraction tested in lab117: only when a concrete menu offers both mineral
+and gas gathering (plus continue), Jev first chooses resource category, then chooses
+an exact offered target within that category. No default resource, allocation ratio,
+new command or mission-specific rule. Continue/invalid responses issue no command.
+Other control menus retain their existing path.61 tests pass, including preserving
+all mineral targets and requiring Jev to select category and exact target.
+Start fresh attempt11 with2500calls and64-loop cutoff; added stage may increase
+latency and remains a measured tradeoff, not a proven improvement.

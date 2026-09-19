@@ -100,6 +100,39 @@ def describe_action_feedback(view, memory):
     return [combined[k] for k in sorted(combined)]
 
 
+async def choose_concrete_orders(state, questions, jev):
+    """Jev chooses resource kind before location when both kinds are offered."""
+    first = dict(questions)
+    resources = {}
+    for key, question in questions.items():
+        criteria = question['criteria']
+        groups = {resource:{option:description for option,description in criteria.items()
+                           if phrase in description}
+                  for resource,phrase in [('minerals','Gather minerals'),('vespene','Gather vespene gas')]}
+        if not all(groups.values()) or any(option != 'continue' and not any(option in g for g in groups.values()) for option in criteria):
+            continue
+        resources[key] = groups
+        first[key] = {**question,'criteria':{
+            'gather_minerals':'Gather minerals using one of the offered mineral-field targets; a later choice selects the field.',
+            'gather_vespene':'Gather vespene gas using one of the offered gas targets; a later choice selects the target.',
+            'continue':'Keep existing orders unchanged.'}}
+    answers = await jev.ask(state, first)
+    targets = {}
+    for key, groups in resources.items():
+        choice = answers.get(key,{}).get('choice')
+        resource = {'gather_minerals':'minerals','gather_vespene':'vespene'}.get(choice)
+        jev.log('resource_category_choice',selection=key,choice=choice)
+        if resource:
+            targets[key] = {**questions[key],'criteria':{**groups[resource],
+                'continue':'Keep existing orders unchanged.'}}
+            answers[key] = {'choice':'continue'}
+        elif choice != 'continue':
+            answers[key] = {'choice':'continue'}
+    if targets:
+        answers.update(await jev.ask(state, targets))
+    return answers
+
+
 def is_purchase(candidate):
     return candidate['description'].startswith(('Train ', 'Build '))
 
@@ -609,7 +642,7 @@ async def decide(view, jev, memory):
                     concrete_questions[kind]={**q,'criteria':criteria,
                                               'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
         if concrete_questions:
-            answers.update(await jev.ask(order_state(state),concrete_questions))
+            answers.update(await choose_concrete_orders(order_state(state),concrete_questions,jev))
         commands, support_requests = [], {}
         for kind, selected in cohorts.items():
             choice = answers.get(kind,{}).get('choice')

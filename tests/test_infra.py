@@ -809,3 +809,23 @@ def test_order_context_deduplicates_capabilities_but_preserves_jobs_and_targets(
     assert compact['selection_facts']['Worker / Harvest cycle']=={'count':3,'current_order_counts':{'Gather':3}}
     for key in ('type_selection_facts','units','visible_entities'):assert compact[key]==source[key]
     assert 'available_projects' in source['selection_facts']['Worker / Harvest cycle']
+
+
+def test_resource_category_keeps_every_target_and_jev_selects_both_stages():
+    import asyncio
+    from player import choose_concrete_orders
+    class Model:
+        calls=[]
+        def log(self,*a,**k):pass
+        async def ask(self,state,questions):
+            self.calls.append(questions)
+            return {'workers':{'choice':'gather_minerals' if len(self.calls)==1 else 'field_b'}}
+    model=Model()
+    question={'type':'choice','instructions':'Choose order','criteria':{
+        'field_a':'Gather minerals at A','field_b':'Gather minerals at B',
+        'gas_a':'Gather vespene gas at C','continue':'Keep orders'}}
+    answer=asyncio.run(choose_concrete_orders({}, {'workers':question},model))
+    assert answer['workers']['choice']=='field_b'
+    assert set(model.calls[0]['workers']['criteria'])=={'gather_minerals','gather_vespene','continue'}
+    assert set(model.calls[1]['workers']['criteria'])=={'field_a','field_b','continue'}
+    assert 'gas_a' in question['criteria']
