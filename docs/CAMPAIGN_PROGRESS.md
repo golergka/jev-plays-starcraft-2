@@ -3615,3 +3615,22 @@ visible contacts and damage still override so a fighting turret remains watchabl
 No gameplay order or Jev question changes. Nine camera tests pass, including quiet
 stationary attack-capable structure versus actual mobile army. Commit hot-reloads
 presentation only; batch and budget experiment remain unchanged.
+
+### Lab246 — joint worker income-count probe does not justify deployment
+
+Live244trial native4:21 shows two mining workers and combat at the main base.
+Through3954:75calls/$0.039540690,15Marines,5SCVs,estimated120minerals/minute.
+No batch selected yet. Camera-only245 is loaded. Do not infer worker deaths from
+raw counts alone or treat visible firing as proof issued attack commands caused it.
+
+New scripts/probe_worker_allocation.py compares independent income-role choices
+with a joint0..N income-worker count on first/middle/last eligible239recordedstates.
+Singleton scope validated from facts, exact same state for each pair, alternating
+order, six calls through retained governor, no game orders. Cost$0.001992564.
+Independent income probability sums2.26/1.83/.02 across5workers; joint top counts
+0/1/0. Artifact246-worker-allocation.json retains full responses. This offers no
+clear reason to deploy the extra allocation stage. Count choices do not select
+identities or targets; other-role continue can preserve harvesting, so counts are
+not actual miner totals. Three unreplicated pairs and probabilities are not a
+calibrated causal outcome comparison. Keep live policy unchanged and let current
+production-commitment trial continue. No budget increase or ledger reset.

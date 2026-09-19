@@ -1,0 +1,295 @@
+{
+  "source": "runs/20260919T215406.476956Z/events.jsonl",
+  "calls": 6,
+  "cost": 0.001992564,
+  "pairs": [
+    {
+      "recorded_time": 1789854864.791141,
+      "worker_count": 5,
+      "resources": {
+        "minerals": 400,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 21,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 14,
+        "supply_blocked": false
+      },
+      "independent": {
+        "purpose_SCV / unit 4379901953": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "continue": 0.15,
+            "positioning": 0.44,
+            "income": 0.38,
+            "combat": 0.0,
+            "individual": 0.03
+          }
+        },
+        "purpose_SCV / unit 4372561921": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.35,
+          "probabilities": {
+            "continue": 0.21,
+            "positioning": 0.27,
+            "income": 0.48,
+            "combat": 0.0,
+            "individual": 0.04
+          }
+        },
+        "purpose_SCV / unit 4372824065": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "continue": 0.23,
+            "positioning": 0.27,
+            "income": 0.45,
+            "combat": 0.0,
+            "individual": 0.05
+          }
+        },
+        "purpose_SCV / unit 4373348353": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.41,
+          "probabilities": {
+            "continue": 0.18,
+            "positioning": 0.26,
+            "income": 0.53,
+            "combat": 0.0,
+            "individual": 0.03
+          }
+        },
+        "purpose_SCV / unit 4379639809": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "positioning": 0.31,
+            "continue": 0.22,
+            "income": 0.42,
+            "combat": 0.0,
+            "individual": 0.05
+          }
+        }
+      },
+      "joint": {
+        "income_count": {
+          "choice": "count_0",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "count_3": 0.02,
+            "count_0": 0.52,
+            "count_1": 0.07,
+            "count_5": 0.33,
+            "count_2": 0.02,
+            "count_4": 0.04
+          }
+        }
+      },
+      "independent_income_probability_sum": 2.26,
+      "joint_top_choice": "count_0"
+    },
+    {
+      "recorded_time": 1789855186.014236,
+      "worker_count": 5,
+      "resources": {
+        "minerals": 284,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 40.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 22,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      },
+      "joint": {
+        "income_count": {
+          "choice": "count_1",
+          "type": "choice",
+          "confidence": 0.33,
+          "probabilities": {
+            "count_5": 0.15,
+            "count_4": 0.08,
+            "count_3": 0.06,
+            "count_2": 0.07,
+            "count_0": 0.2,
+            "count_1": 0.44
+          }
+        }
+      },
+      "independent": {
+        "purpose_SCV / unit 4372561921": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "income": 0.37,
+            "positioning": 0.28,
+            "continue": 0.31,
+            "individual": 0.04,
+            "combat": 0.0
+          }
+        },
+        "purpose_SCV / unit 4379639809": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "income": 0.08,
+            "positioning": 0.54,
+            "continue": 0.37,
+            "individual": 0.01,
+            "combat": 0.0
+          }
+        },
+        "purpose_SCV / unit 4379901953": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.4,
+          "probabilities": {
+            "positioning": 0.05,
+            "income": 0.42,
+            "continue": 0.53,
+            "individual": 0.0,
+            "combat": 0.0
+          }
+        },
+        "purpose_SCV / unit 4373348353": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.48,
+          "probabilities": {
+            "positioning": 0.19,
+            "income": 0.58,
+            "continue": 0.21,
+            "individual": 0.02,
+            "combat": 0.0
+          }
+        },
+        "purpose_SCV / unit 4372824065": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "positioning": 0.32,
+            "income": 0.38,
+            "continue": 0.28,
+            "individual": 0.02,
+            "combat": 0.0
+          }
+        }
+      },
+      "independent_income_probability_sum": 1.8299999999999998,
+      "joint_top_choice": "count_1"
+    },
+    {
+      "recorded_time": 1789855434.719867,
+      "worker_count": 5,
+      "resources": {
+        "minerals": 0,
+        "vespene": 100,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 5,
+        "food_cap": 0,
+        "supply_in_construction": 0,
+        "supply_remaining": 0,
+        "supply_blocked": true
+      },
+      "independent": {
+        "purpose_SCV / unit 4373348353": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.87,
+          "probabilities": {
+            "positioning": 0.89,
+            "continue": 0.01,
+            "other": 0.08,
+            "individual": 0.01,
+            "combat": 0.01,
+            "income": 0.0
+          }
+        },
+        "purpose_SCV / unit 4379901953": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.92,
+          "probabilities": {
+            "individual": 0.01,
+            "continue": 0.01,
+            "other": 0.01,
+            "positioning": 0.94,
+            "combat": 0.02,
+            "income": 0.01
+          }
+        },
+        "purpose_SCV / unit 4379639809": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.88,
+          "probabilities": {
+            "positioning": 0.9,
+            "continue": 0.01,
+            "other": 0.07,
+            "individual": 0.01,
+            "combat": 0.01,
+            "income": 0.0
+          }
+        },
+        "purpose_SCV / unit 4372824065": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.85,
+          "probabilities": {
+            "individual": 0.01,
+            "continue": 0.01,
+            "other": 0.1,
+            "positioning": 0.87,
+            "combat": 0.01,
+            "income": 0.0
+          }
+        },
+        "purpose_SCV / unit 4399300610": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.91,
+          "probabilities": {
+            "positioning": 0.91,
+            "continue": 0.02,
+            "other": 0.04,
+            "individual": 0.01,
+            "combat": 0.01,
+            "income": 0.01
+          }
+        }
+      },
+      "joint": {
+        "income_count": {
+          "choice": "count_0",
+          "type": "choice",
+          "confidence": 0.86,
+          "probabilities": {
+            "count_5": 0.02,
+            "count_4": 0.01,
+            "count_3": 0.01,
+            "count_2": 0.01,
+            "count_0": 0.89,
+            "count_1": 0.06
+          }
+        }
+      },
+      "independent_income_probability_sum": 0.02,
+      "joint_top_choice": "count_0"
+    }
+  ],
+  "method": "First/middle/last multi-worker recorded states; alternating paired order. Same state, different decision representation. Independent probability sum is descriptive, not calibrated expected utility. Count menu does not resolve identities or concrete orders. Continue can already harvest. Three unreplicated pairs, no survival claim, no game commands."
+}
