@@ -277,6 +277,11 @@ async def make_view(client, observation, data, info, objective):
                                         'damage_per_time_unit_before_armor_and_bonuses':round(w.damage*w.attacks/w.speed,2) if w.speed else None}
                                        for w in unit_catalog[kind].weapons],
                     'note':'Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).',
+                    **({'documented_mechanics': {
+                        'fact':'Loaded infantry gains protection and additional attack range from a Bunker. This describes loaded infantry, not an independent weapon on an empty structure.',
+                        'source':'https://news.blizzard.com/en-us/article/5838581/game-guide-terran-offensive-bunkering',
+                        'scope':'General unit mechanic; no assumed campaign upgrades or recommended action.',
+                    }} if names.get(kind)=='Bunker' else {}),
                 } for kind in {u.unit_type for u in own+visible+snapshots} if kind in unit_catalog},
             'last_known_entities': [
                 {'type':names.get(u.unit_type,str(u.unit_type)),

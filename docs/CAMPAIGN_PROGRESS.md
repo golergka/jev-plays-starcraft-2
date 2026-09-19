@@ -4033,3 +4033,18 @@ unspent minerals/gas and shrinking army.13:19 vs previous11:22 is one uncontroll
 episode difference, not proof neutral wording improves survival. The main unresolved
 problem remains allocation and coordination, not merely failed API execution or
 lack of workers. Do not respond by forcing a mission-specific production plan.
+
+### Lab275 — expose documented cargo combat semantics, not a tactic
+
+Audit lab272 Bunker choices:8unload selections; available only when occupied,
+so this was repeated load/unload behavior rather than an empty-cargo adapter bug.
+Cargo counts were present, but API weapon metadata only carried the generic
+warning that an empty weapon list need not mean harmless. Missing semantic fact:
+Blizzard documents loaded infantry gaining protection and added attack range:
+https://news.blizzard.com/en-us/article/5838581/game-guide-terran-offensive-bunkering
+
+Add this narrowly scoped, sourced general unit mechanic to observed Bunker type
+facts. No assumed upgrades, numerical bonuses, mission route, build recommendation,
+automatic loading or removal of unload options. Jev still chooses every job.
+No claim this will prevent cycling or win.137tests pass. Previous trial terminal;
+new fact has not yet been evaluated in a live attempt.
