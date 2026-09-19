@@ -2777,3 +2777,27 @@ no claim of tactical success while the attempt remains unfinished.
 Two logged asynchronous engine rejections were NotSupported on construction
 abilities319 and323. These remain visible in telemetry; no blind retry override
 or interpretation as victory. Kept policy unchanged to observe the trial outcome.
+
+
+### Lab198 — verified defeat; test direct role choices with independent workers
+
+Run20260919T190649.332784Z ended normally via native defeat marker atloop14572.
+UI independently confirms15:10, evacuation04:59, all structures destroyed.
+1087calls/$0.752170524;161 routine questions avoided; peak run-local rolling
+actual cost$0.356429220; zero budget failures. Planned idle206.803seconds,
+median target interval1.707seconds. Survival is worse than prior16:20, despite
+lower total spend; different duration/taper/stochastic trajectory prevent causal
+claims. Campaign checkpoint records the defeat and retains two verified wins.
+
+Role reviews692, sampled departures from top293 (~42%). Next trial uses Jev's
+returned offered choice directly, retaining the same224loop commitment. No
+worker count, target, tactic, purchase, or mission-specific rule is prescribed.
+Investment sampling and all other layers remain unchanged. Invalid role choices
+raise a visible error. Telemetry labels selection_mode=top_choice while retaining
+sampled_choice for report compatibility.
+
+Lab090 cautions that prior grouped-worker top-choice policy neglected income.
+This trial tests the different independent-worker regime introduced lab187;
+monitor income and contribution diversity explicitly rather than assuming less
+sampling is better.108tests pass including top-choice retention and re-review
+when unavailable. No paid offline probes or budget reset.
