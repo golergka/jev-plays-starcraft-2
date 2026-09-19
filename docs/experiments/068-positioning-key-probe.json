@@ -1,0 +1,125 @@
+{
+  "source": "runs/20260919T003856.465157Z/events.jsonl",
+  "pairs": [
+    {
+      "sample": 0,
+      "recorded_choice": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.65,
+        "probabilities": {
+          "combat": 0.0,
+          "income": 0.2,
+          "individual": 0.02,
+          "continue": 0.06,
+          "positioning": 0.72
+        }
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.63,
+        "probabilities": {
+          "positioning": 0.71,
+          "combat": 0.0,
+          "individual": 0.02,
+          "continue": 0.06,
+          "income": 0.21
+        }
+      },
+      "renamed": {
+        "choice": "relocate_units",
+        "type": "choice",
+        "confidence": 0.57,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.08,
+          "individual": 0.03,
+          "relocate_units": 0.65,
+          "income": 0.24
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "recorded_choice": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.53,
+        "probabilities": {
+          "continue": 0.11,
+          "positioning": 0.63,
+          "individual": 0.02,
+          "income": 0.24,
+          "combat": 0.0
+        }
+      },
+      "renamed": {
+        "choice": "relocate_units",
+        "type": "choice",
+        "confidence": 0.57,
+        "probabilities": {
+          "relocate_units": 0.67,
+          "income": 0.22,
+          "combat": 0.0,
+          "continue": 0.1,
+          "individual": 0.01
+        }
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.56,
+        "probabilities": {
+          "combat": 0.0,
+          "individual": 0.02,
+          "income": 0.23,
+          "positioning": 0.64,
+          "continue": 0.11
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "recorded_choice": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.64,
+        "probabilities": {
+          "combat": 0.0,
+          "continue": 0.09,
+          "individual": 0.02,
+          "income": 0.18,
+          "positioning": 0.71
+        }
+      },
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.74,
+        "probabilities": {
+          "continue": 0.07,
+          "positioning": 0.8,
+          "individual": 0.01,
+          "combat": 0.0,
+          "income": 0.12
+        }
+      },
+      "renamed": {
+        "choice": "relocate_units",
+        "type": "choice",
+        "confidence": 0.73,
+        "probabilities": {
+          "combat": 0.0,
+          "income": 0.13,
+          "continue": 0.07,
+          "individual": 0.01,
+          "relocate_units": 0.79
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0021530459999999996,
+  "method": "Only positioning key renamed to relocate_units in purpose_SCV; all descriptions and recorded state unchanged. Pair order alternates. Small sequential probe, not a gameplay performance claim."
+}

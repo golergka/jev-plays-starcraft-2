@@ -1142,3 +1142,24 @@ It clears retained evidence when the clock resets. This supplies historical fact
 it does not forbid actions, choose tactics, or assume a rejection remains applicable.
 54 tests pass, including retention, deduplication, expiry and clock-reset coverage.
 No gameplay improvement is claimed before observing the deployed policy.
+
+### Lab101 — movement preference survives a choice-key rename
+
+Confirmed lab100 active in the seventh fresh Zero Hour run
+`20260919T003856.465157Z`. Sixth attempt stopped incomplete after a clock stall;
+automatic recovery started the same map and preserved both verified prior wins.
+The sixth result remains incomplete, not an inferred defeat.
+
+Early seventh-attempt telemetry showed 19 shared worker regroup choices, four
+continue choices and four individual choices. A sampled purpose state had seven
+idle workers, no visible enemies and zero estimated mineral income. This suggests
+investigating the movement preference rather than assuming missing income facts.
+
+Generalized the existing offline choice-label probe to accept a question and key
+pair. In three recorded purpose_SCV states, renamed only `positioning` to
+`relocate_units`, preserving every criterion description and state field. All
+three pairs retained the movement top choice. Income probabilities original vs
+renamed were .21/.24, .23/.22, .12/.13. Six calls cost $0.002153046.
+Unlike the earlier hold/continue_operations probe, this rename did not change the
+decision category. Do not deploy it as a fix. Artifact:
+`docs/experiments/068-positioning-key-probe.json`. No game commands were issued.

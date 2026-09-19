@@ -17,28 +17,31 @@ async def main():
     parser.add_argument('events',type=Path)
     parser.add_argument('--samples',type=int,default=3)
     parser.add_argument('--output',required=True,type=Path)
+    parser.add_argument('--question',default='strategy')
+    parser.add_argument('--from-key',default='hold')
+    parser.add_argument('--to-key',default='continue_operations')
     args=parser.parse_args()
     load_dotenv(Path(__file__).resolve().parents[1]/'.env')
     rows=[json.loads(line) for line in args.events.read_text().splitlines()]
-    recorded=[r for r in rows if r['event']=='jev' and 'strategy' in r['questions']][:args.samples]
+    recorded=[r for r in rows if r['event']=='jev' and args.question in r['questions'] and args.from_key in r['questions'][args.question]['criteria']][:args.samples]
     log=[]
     jev=Jev(lambda event,**fields:log.append({'event':event,**fields}), 'choice-label-probe',max_calls=2*len(recorded))
     pairs=[]
     for index,row in enumerate(recorded):
-        original=row['questions']['strategy']
-        if 'hold' not in original['criteria']:
+        original=row['questions'][args.question]
+        if args.from_key not in original['criteria']:
             continue
-        renamed={**original,'criteria':{('continue_operations' if k=='hold' else k):v for k,v in original['criteria'].items()}}
+        renamed={**original,'criteria':{(args.to_key if k==args.from_key else k):v for k,v in original['criteria'].items()}}
         order=[('original',original),('renamed',renamed)]
         if index%2:
             order.reverse()
         results={}
         for label,question in order:
-            answer=await jev.ask(row['state'],{'strategy':question})
-            results[label]=answer['strategy']
-        pairs.append({'sample':index,'recorded_choice':row['response']['answers']['strategy'],**results})
+            answer=await jev.ask(row['state'],{args.question:question})
+            results[label]=answer[args.question]
+        pairs.append({'sample':index,'recorded_choice':row['response']['answers'][args.question],**results})
     args.output.write_text(json.dumps({'source':str(args.events),'pairs':pairs,'calls':jev.calls,'cost':jev.cost,
-        'method':'Only hold key renamed to continue_operations; all descriptions and recorded state unchanged. Pair order alternates. Small sequential probe, not a gameplay performance claim.'},indent=2)+'\n')
+        'method':f'Only {args.from_key} key renamed to {args.to_key} in {args.question}; all descriptions and recorded state unchanged. Pair order alternates. Small sequential probe, not a gameplay performance claim.'},indent=2)+'\n')
     print(json.dumps({'calls':jev.calls,'cost':jev.cost,'pairs':pairs},indent=2))
 
 
