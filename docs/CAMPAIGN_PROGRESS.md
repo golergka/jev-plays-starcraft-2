@@ -4048,3 +4048,19 @@ facts. No assumed upgrades, numerical bonuses, mission route, build recommendati
 automatic loading or removal of unload options. Jev still chooses every job.
 No claim this will prevent cycling or win.137tests pass. Previous trial terminal;
 new fact has not yet been evaluated in a live attempt.
+
+### Lab276 — sourced bunker fact delivered; defeat14:53
+
+Run20260919T232305.284634Z/session80498 ended with native DEFEAT14:53,
+05:16remaining,0minerals,allstructuresdestroyed.199successful calls cost
+$0.130917486; zero model decision errors. UI verification saved with checkpoint;
+first two missions remain the only completed missions. Policy stable throughout.
+
+Documented bunker mechanic reached Jev. Early cargo observations remained empty;
+rebuilt bunker later held a passenger. Three Bunker unload selections occurred,
+so added knowledge did not eliminate cycling. Longer survival than13:19 does not
+establish causality; worker counts, purchases and positioning differed.
+Native terminal screenshot also displays "You can't control that unit" three
+times, while tick action_errors lists were empty. Audit result codes and terminal
+observation timing before concluding API execution was error-free. This is an
+observability discrepancy, not evidence of hidden-unit control or a new tactic.
