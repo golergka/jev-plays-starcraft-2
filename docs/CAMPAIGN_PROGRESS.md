@@ -2708,3 +2708,20 @@ question count, not an invented dollar saving. Budget taper unchanged.
 Validation:106tests pass, including expiration, harvest-return transitions,
 health/threat/role/strategy invalidation, idle workers, membership and rewind.
 No paid inference was used for this change. Live campaign benefit unproven.
+
+
+### Lab194 — first live routine-execution evidence
+
+Restarted only Zero Hour after independently verified defeat. Native Quit left
+a black window; normal API RequestQuit completed and process absence was
+verified before Battle.net Play. Fresh SC2 PID12194 connected and loaded the
+same adapted map; controller session44407, run20260919T190649.332784Z.
+Policy8223371, no direct gameplay orders. Taper start/target and ledger unchanged;
+initial allowance$0.388771289/300seconds.
+
+Early live report:68calls/$0.037606044,12 routine concrete questions avoided,
+zero decision/budget errors. Median cost-paced target1.7598seconds,maximum3.1463,
+planned idle3.1286seconds total. These are avoided questions, not necessarily
+avoided API calls or measured dollar savings because requests can batch.
+Mineral income estimate40/min,gas0 at this sample; early state is not evidence
+of victory or improved economy. Continue observation under unchanged policy.
