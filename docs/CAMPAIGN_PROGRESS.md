@@ -1714,3 +1714,12 @@ stop early if APIended. Early sample in_game,loop1,36owned units. Process sessio
 65274; output /tmp/jev-lifetime-probe.log. This tests whether the cutoff survives
 without the campaign trigger script; a negative result would not identify which
 trigger or dependency caused it. Compare to unchanged stock runs, not win rates.
+
+### Lab148 — preserve the API lifetime experiment as a runnable probe
+
+Add scripts/probe_api_lifetime.py with explicit source map/output and optional
+--without-triggers-copy/--storm. Refuses existing map-copy/output destinations,
+uses realtime/fog-enabled create/join and observations only. Never changes a
+campaign checkpoint. Port the setup and observation loop already executing in
+lab147; CLI import/help verified, no second game launched. The existing diagnostic
+continues unchanged. This is infrastructure isolation, not a no-Jev campaign bot.
