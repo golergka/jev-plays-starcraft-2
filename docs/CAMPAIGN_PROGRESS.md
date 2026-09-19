@@ -2841,3 +2841,23 @@ manifest fixes. Label sampled mode explicitly in telemetry.108tests pass.
 No repeat of the same direct-role hypothesis is justified without a new reason.
 Campaign completion remains unachieved. Next experiment should address another
 measured failure mechanism rather than add mission-specific tactical orders.
+
+
+### Lab201 — remove abstract role filtering for mobile combat selections
+
+Measured Marine command requests in completed runs: sampled-role trial934Move,
+243Hold,93Attack,17Stop;direct-role trial1387Move,251Hold,zeroAttack. These are
+requested orders, not shots fired or proof movement caused defeat. Still, the
+abstract positioning role excludes attacks before concrete Jev choice and is a
+plausible decision-interface failure distinct from sampling temperature.
+
+New general experiment: selections whose members all expose movement+attack
+controls and lack observed economic/building capabilities bypass contribution
+classification. Jev sees all their currently offered concrete orders, including
+continue/individual, movement and attack alternatives. No automatic attack,
+target, location or unit-type whitelist. Workers retain sampled contributions;
+investment and all budget settings unchanged. Log direct_order_menu per choice.
+This removes a role-question layer but can enlarge concrete menus; tournaments,
+age validation and loud budget failure still apply. No guaranteed cost saving.
+109tests pass, including a fictional combat unit that exposes both movement and
+attack to the same Jev question and executes only Jev's selected command.

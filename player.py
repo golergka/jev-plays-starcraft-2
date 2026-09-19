@@ -770,6 +770,13 @@ async def decide(view, jev, memory):
         if tables[kind][0][action_id]['description'].startswith('Train '): return 'production'
         if action_id.startswith('ability_'): return 'other'
         return 'positioning'
+    direct_selections = {kind for kind,selected in cohorts.items()
+        if all(any(c['id'].startswith('attack') for c in u['candidates'])
+               and any(c['id'] in ('north','south','east','west') for c in u['candidates'])
+               and not any(c['id'].startswith('gather_') for c in u['candidates'])
+               and not u.get('available_build_abilities')
+               and not any(c.startswith(('Build ', 'Harvest')) for c in learned.get(u['type'],[]))
+               for u in selected)}
     purpose_questions = {f'purpose_{kind}': {
         'type':'choice',
         'instructions':f'Choose how the {len(cohorts[kind])} {kind} units should contribute to completing the mission now. '
@@ -777,11 +784,16 @@ async def decide(view, jev, memory):
                        'Use their capabilities, current orders, resources and threats.',
         'criteria':{p:meanings[p]+((' Available: '+'; '.join(state['selection_facts'][kind]['available_support_abilities'])) if p=='other' else '')
                     for p in sorted({purpose(kind,k) for k in q['criteria']})},
-    } for kind,q in questions.items()}
+    } for kind,q in questions.items() if kind not in direct_selections}
     async def choose_orders():
         roles = await choose_contributions(view,state,purpose_questions,jev,memory)
         answers, concrete_questions = {}, {}
         for kind,q in questions.items():
+            if kind in direct_selections:
+                concrete_questions[kind]=q
+                jev.log('direct_order_menu',loop=view['loop'],cohort=kind,
+                        reason='Movement/attack selection chooses among all offered orders without abstract role filtering')
+                continue
             role=roles.get(f'purpose_{kind}',{}).get('choice')
             jev.log('purpose_choice',loop=view['loop'],cohort=kind,choice=role)
             if continuing_income(view,cohorts[kind],role,(strategy or {}).get('choice'),kind,memory):
