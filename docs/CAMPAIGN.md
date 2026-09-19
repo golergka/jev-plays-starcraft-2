@@ -6,8 +6,9 @@ Lab163 showed that native objective Completed/Failed updates can end API control
 before the campaign mission ends. Use the local objective adapter for continued
 experiments. It preserves script-facing objective states and mission conditions,
 while displaying terminal objectives with an explicit text label. Lab169 verified
-Liberation Day's actual victory screen at3:44 with this adapter. Outlaws is being
-reverified; see CAMPAIGN_PROGRESS.md for current evidence.
+Liberation Day's actual victory screen at3:44 with this adapter. Lab183 verified
+The Outlaws at27:57 and corroborated the ending marker with its native victory UI.
+See CAMPAIGN_PROGRESS.md for current evidence.
 
 After extracting a source map with the procedure below, build a separate copy:
 

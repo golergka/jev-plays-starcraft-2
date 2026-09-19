@@ -71,8 +71,9 @@ uv run python -m jev_sc2 --attach --map maps/traynor01.SC2Map --follow-camera \
 ```
 
 Omit `--map` to resume the running mission. Liberation Day has a fresh **UI-verified
-victory at 3:44**, using the objective compatibility adapter (lab169). The earlier
-Outlaws API win remains **under verification review**: an isolated test proved that
+victory at 3:44**, using the objective compatibility adapter (lab169). The Outlaws
+also has a fresh **UI-verified victory at 27:57** (lab183). Earlier API-only results
+remain unreliable: an isolated test proved that
 completing or failing a bonus objective can report victory or defeat for every
 player and terminate API control while the main objective remains active. Zero
 Hour remains uncompleted after eighteen fresh attempts. The progression journal
@@ -132,7 +133,7 @@ unfinished. Sequence completion means only the explicitly listed missions.
 
 The active evaluation checkpoint is `runs/campaign-lab069/progress.json`. To resume
 that sequence after its process exits, use the same `--state` path. Liberation Day
-is now independently verified; Outlaws is still gated pending verification. Historical
+and The Outlaws are now independently verified; their review gate is cleared. Historical
 attempts are preserved; failures in Zero Hour do not
 return to the opening. Appending missions preserves the completed prefix when those completed
 scenario definitions are unchanged.

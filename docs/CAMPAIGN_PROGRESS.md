@@ -2,8 +2,8 @@
 
 Scope confirmed by the user: Wings of Liberty, Heart of the Swarm, and Legacy of
 the Void. No campaign has been completed. Liberation Day has a fresh, UI-verified
-victory (lab169). The previously credited Outlaws API victory remains under
-review after lab163 demonstrated false results from objective transitions.
+victory (lab169). The Outlaws has a fresh, UI-verified victory at27:57 (lab183),
+replacing reliance on the historical false-positive-prone API result.
 
 The user subsequently authorized individual campaign missions played in sequence
 with progression recorded here. Native campaign controls and account achievement
@@ -13,7 +13,7 @@ Only verified victories advance this journal; merely loading a later map does no
 | Campaign | Mission | Current evidence |
 | --- | --- | --- |
 | Wings of Liberty | Liberation Day (`traynor01`) | **Verified victory**, actual mission score screen, 3:44; fresh Jev run with objective compatibility adapter, lab169 |
-| Wings of Liberty | The Outlaws (`traynor02`) | **API victory; verification under review**; labs 079, 163 |
+| Wings of Liberty | The Outlaws (`traynor02`) | **Verified victory**, native mission score screen,27:57; fresh continuous Jev attempt across three controller segments, lab183 |
 | Heart of the Swarm | Campaign | Not started; normal UI offers purchase |
 | Legacy of the Void | Campaign | Not started; normal UI says Purchase To Play |
 
@@ -2472,3 +2472,28 @@ engine offers and incorrect target signatures. Building lift/land remain missing
 this does not claim a complete action space or prove depots caused the congestion.
 A parallel read-only API connection was rejected during live control; did not
 interrupt or restart the working controller because of that diagnostic failure.
+
+### Lab183 — verified Outlaws victory; advance to Zero Hour
+
+Native results screen explicitly showed VICTORY / THE OUTLAWS /27:57.31 enemy
+units killed,149 units trained,53 units lost,17 structures built,0 medics trained,
+0/9 resource pallets. Ending instrumentation reported victory and automatically
+stopped inference before the cinematic. UI independently corroborated it. Final
+segment runs/20260919T182630.478039Z:772calls,$0.68180889,replay77663bytes.
+Three continuous segments total3771calls,$3.019879296 (lab173,180,181); no world
+restart between them. Saved ui-outcome.json, updated final result, added verified
+run and cleared Outlaws review gate in runs/campaign-lab069/progress.json.
+Historical API-only attempts remain preserved rather than retroactively verified.
+
+Jev chose depot lowering after that control became available; screenshot showed
+the Marine column moving out, then victory followed. Some depot toggling persisted.
+This supports investigating action-space completeness, but is not a controlled
+proof that one change caused victory. All gameplay orders came from Jev-driven
+code. No manual routing or mission-specific build order was supplied.
+
+Attempting to leave the victory screen for Zero Hour caused SC2 process903 to
+exit, as previously observed after Liberation Day. Verified absence and failed
+controller exit before relaunching through Battle.net. Started Zero Hour with
+maps/traynor03-outcomes-lab170.SC2Map,1500seconds/4000calls, unchanged policy.
+This is the next uncompleted mission, not a restart of the campaign. No full
+campaign is complete; all three main campaigns remain the goal.
