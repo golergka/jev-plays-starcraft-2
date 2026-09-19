@@ -3525,3 +3525,18 @@ attempts measured2394chars before adding the latest verified result.125tests pas
 covering filtering,boundedrecency,exclusion and no rawstate leakage. Startup/harness
 change requires next process; never silently claims a lesson was learned. Next
 trial will test whether this factual cross-attempt context changes choices.
+
+### Lab240 — history reaches live decisions; retain saving and peak-resource evidence
+
+History trial20260919T215406.476956Z/session58593 starts on70d42c1. Logs confirm
+three attempts in strategy/coordination and investment requests. Openingprotect,
+save thenMarine purchase; native1:44 shows18army units. No causal benefit claim.
+The current trial keeps its startup-loaded history unchanged.
+
+Audit found summary omitted save-choice frequency and peakminerals, which can hide
+long stockpiling behind low terminal balances. Add investmentchoice counts grouped
+as purchase/save/save_for_project and peak observed minerals alongside lastresources.
+Counts describe logged decisions including carried proposals, not completed spending.
+No heuristic recommendation or altered purchasing policy. Focused2episode tests
+pass, including123→7mineral history and separate save/purchase counts. Loader change
+only applies next controllerprocess. Current live run still tests originalsummary.

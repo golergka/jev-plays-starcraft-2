@@ -20,6 +20,8 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
             first = last = None
             peaks, strategies, purchases, roles = Counter(), Counter(), Counter(), Counter()
             resources = {}
+            investment_choices = Counter()
+            peak_minerals = None
             errors = 0
             joined = False
             with (result_path.parent/'events.jsonl').open() as stream:
@@ -39,12 +41,16 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                         roles[row['sampled_choice']] += 1
                     elif event == 'investment_choice':
                         choice = row.get('choice', '')
+                        investment_choices['purchase' if choice.startswith('project_') else 'save_for_project' if choice.startswith('save_for_') else choice] += 1
                         if choice.startswith('project_'):
                             purchases[row['projects'][int(choice.split('_')[1])]] += 1
                     elif event == 'decision_error':
                         errors += 1
                     elif event == 'jev':
                         resources = row.get('state', {}).get('resources') or resources
+                        minerals = resources.get('minerals')
+                        if isinstance(minerals, (int, float)):
+                            peak_minerals = minerals if peak_minerals is None else max(peak_minerals, minerals)
             # Attach-only terminal segments omit earlier decisions; do not call
             # them full episodes or infer a fresh start from a small loop alone.
             if not joined or first is None or first > 128:
@@ -55,6 +61,8 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                 'strategy_choice_counts': dict(strategies),
                 'contribution_choice_counts': dict(roles),
                 'purchase_proposal_counts': dict(purchases),
+                'investment_choice_counts': dict(investment_choices),
+                'peak_observed_minerals': peak_minerals,
                 'last_observed_resources': {k: resources[k] for k in
                     ('minerals', 'vespene', 'estimated_minerals_per_minute', 'food_used', 'food_cap') if k in resources},
                 'decision_errors': errors,

@@ -13,6 +13,9 @@ def write_attempt(root, name, *, status='defeat', verified=True, map_name='missi
         {'event':'investment_choice','choice':'project_0','projects':['Unit']},
         {'event':'jev','state':{'resources':{'minerals':123,'food_cap':9},
                               'visible_entities':[{'secret_test_marker':'never copied'}]}},
+        {'event':'investment_choice','choice':'save','projects':['Unit']},
+        {'event':'investment_choice','choice':'save_for_0','projects':[]},
+        {'event':'jev','state':{'resources':{'minerals':7,'food_cap':9}}},
         {'event':'decision_error'},
         {'event':'tick','loop':1000,'units':[{'type':'Unit'}]}]
     (directory/'events.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
@@ -32,7 +35,9 @@ def test_history_filters_unverified_other_maps_and_partial_segments(tmp_path):
     assert a['peak_observed_owned_counts']=={'Unit':2}
     assert a['purchase_proposal_counts']=={'Unit':1}
     assert a['contribution_choice_counts']=={'income':1}
-    assert a['last_observed_resources']=={'minerals':123,'food_cap':9}
+    assert a['last_observed_resources']=={'minerals':7,'food_cap':9}
+    assert a['peak_observed_minerals']==123
+    assert a['investment_choice_counts']=={'purchase':1,'save':1,'save_for_project':1}
     assert a['decision_errors']==1
     assert 'secret_test_marker' not in json.dumps(output)
 
