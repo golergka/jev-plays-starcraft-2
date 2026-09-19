@@ -3450,3 +3450,20 @@ can still combine shared text. This adds context/cost; test whether clearer loca
 relations help choices enough to justify it.123tests pass, including visibility
 and radius boundary. Prior trial terminal; next run uses this from startup.
 Read-only retained ledger$.044499798/limit$.130777725 is below60%headroom threshold.
+
+### Lab236 — destination-context trial changes opening; economy still collapses
+
+Run20260919T213259.240534Z/session62605 active on69de773. Live requests contain
+anchor health/local visible enemies. Marine choices3/438/845/1304 join the command
+center; native0:47 confirms relocation. By5:07 Marines visibly fight near the base,
+rather than the previous forward-bunker area. This is one trial with stochastic
+choices, not causal proof.103calls/$.056853132 at4776; rollinglimit$.122040237.
+
+Load2081 lost both loader/passenger from observations before2548, outcomeunknown.
+Later bunker4395106305 contains Marines4301520897 and4303355905, verifying boarding.
+At4776 Jev explicitly unloads it. SupplyDepot selected5126 completes by5808,
+restoring19capacity; by native6:48 supply13/11 again. Last detailed worker snapshot
+6141 has twoSCVs,onegathering andonerepairing; losses and repair allocation constrain
+income. Do not mislabel every continue as idle or automatically replace Jev's work.
+One engineCantBuildLocationInvalid for depotraise558 was logged; no budget failure.
+Current survival unknown; keep policy unchanged to finish this comparison.
