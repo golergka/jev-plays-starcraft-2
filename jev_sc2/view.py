@@ -152,6 +152,8 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
                 if attribute not in product.attributes or not (0 < target.health < target.health_max):
                     continue
                 effect = f'restore missing health ({target.health:g}/{target.health_max:g})'
+                if kind == 'repair':
+                    effect += '; repair can consume resources while active, competing with purchases; this worker cannot harvest at the same time'
             else:
                 if (target.is_flying or data_proto.Structure in product.attributes or
                     not product.cargo_size or product.cargo_size > unit.cargo_space_max-unit.cargo_space_taken):
@@ -160,7 +162,7 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
                           'this joint action reserves the passenger for this control cycle, overriding its separate movement/combat order')
             candidates.append({'id':f'ability_{ability}_{target.tag}',
                 'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
-                'capability_description':f'{label}: '+('restore damaged owned units' if kind in ('repair','heal') else 'interact with unfinished owned construction' if kind=='construction_interaction' else 'load owned units into available cargo space'),
+                'capability_description':f'{label}: '+('restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting' if kind=='repair' else 'restore damaged owned units' if kind=='heal' else 'interact with unfinished owned construction' if kind=='construction_interaction' else 'load owned units into available cargo space'),
                 'exclusive_target':kind=='load',
                 'command':{'unit_tag':unit.tag,'ability_id':ability,'target_tag':target.tag}})
     return candidates

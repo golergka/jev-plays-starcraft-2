@@ -549,6 +549,13 @@ def test_support_controls_use_owned_visible_compatible_targets_and_available_abi
     def offered(legal):
         return support_candidates(actor,legal,catalog,types,[actor]+targets,{})
     commands=[c['command'] for c in offered({1,2,3,4})]
+    for candidate in offered({1,2}):
+        if candidate['command']['ability_id']==1:
+            assert 'consume resources' in candidate['description']
+            assert 'consume resources' in candidate['capability_description']
+            assert 'cannot harvest at the same time' in candidate['description']
+        else:
+            assert 'consume resources' not in candidate['description']
     assert [c['target_tag'] for c in commands if c['ability_id']==1]==[2,4]
     assert [c['target_tag'] for c in commands if c['ability_id']==2]==[3]
     assert [c['target_tag'] for c in commands if c['ability_id']==3]==[2,3,6]

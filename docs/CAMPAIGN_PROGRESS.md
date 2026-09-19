@@ -3467,3 +3467,21 @@ restoring19capacity; by native6:48 supply13/11 again. Last detailed worker snaps
 income. Do not mislabel every continue as idle or automatically replace Jev's work.
 One engineCantBuildLocationInvalid for depotraise558 was logged; no budget failure.
 Current survival unknown; keep policy unchanged to finish this comparison.
+
+### Lab237 — destination context loses10:32; expose individual repair tradeoffs
+
+Lab235 run20260919T213259.240534Z/session62605 terminal. Native10:32 defeat,
+evac9:37,4minerals,all structures destroyed.225calls/$.108312540. Ending marker
+and native UI corroborate; result,ui-outcome,checkpoint attempt recorded. Still
+only two verified campaign wins. Positioning changed, survival did not improve
+in this single trial. No budget interruption; lower total cost also reflects
+shorter survival and fewer remaining units, not necessarily improved efficiency.
+
+Repair concrete descriptions previously stated only health restoration, while
+only multi-executor text mentioned shared resources. Add resource consumption and
+foregone worker harvesting to both repair capability and concrete descriptions.
+Use 'can consume' without a fabricated exact tariff; API view has no repair price.
+Keep Heal separate, all legal targets and commands unchanged. No repair prohibition,
+spending threshold or preferred target.123tests pass; existing compatibility test
+now checks both repair descriptions and ensures Heal inherits no resource claim.
+Next test this from startup under unchanged ledger/taper; current game is terminal.
