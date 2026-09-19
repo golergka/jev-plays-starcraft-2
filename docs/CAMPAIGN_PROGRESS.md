@@ -2644,3 +2644,20 @@ marker and no spend-throttle event. Prior baseline around loop7517 had1SCV and
 4Marines, but this is not controlled causal evidence (worker granularity changed,
 then a pause/reconnect and spending governor were introduced). Continue within
 the taper without increasing budget or adding tactical rules.
+
+### Lab191 — governed play passes the former objective cutoff
+
+Kept player and budget settings unchanged; no paid probes. Native screen showed
+Zero Hour10:28 with9:41 until evacuation, beyond the previous fresh trial's9:27
+defeat. Continued controller session28727 passed loop13020, where earlier
+unadapted missions had ended API control around12500. No campaign-ending marker
+or false API stop occurred. Remaining force at13020:9SCVs,5Marines,4Bunkers,
+2Turrets,3Depots,1Refinery,1CommandCenter,1EngineeringBay,1Barracks. Defense is
+shrinking; this does not establish survival to evacuation.
+
+Live dollar admission activated: at recorded time1789844253.13463, rolling
+charges/reservations$0.40370833 against$0.405255676 allowance, requested6.529s
+wait. Existing orders continued and the harness did not treat budget admission
+as a decision error or restart the game. This corroborates runtime throttling,
+in addition to the unit tests. Exact billed cost and reservations remain distinct.
+One earlier decision timeout recovered. Taper and target remain unchanged.
