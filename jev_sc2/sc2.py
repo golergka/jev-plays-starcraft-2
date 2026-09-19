@@ -58,7 +58,8 @@ class SC2:
 
     async def request(self, name, body):
         allowed = {'ping', 'create_game', 'join_game', 'game_info', 'data', 'observation',
-                   'query', 'action', 'save_replay', 'available_maps', 'leave_game', 'quit'}
+                   'query', 'action', 'save_replay', 'available_maps', 'leave_game', 'quit',
+                   'quick_save', 'quick_load'}
         if name not in allowed:
             raise ValueError(f'Forbidden SC2 request: {name}')
         async with self.lock:

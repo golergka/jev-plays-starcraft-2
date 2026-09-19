@@ -1934,3 +1934,28 @@ Camera integration: 30 army overviews, 31 moving-force shots, 31 tracking moves,
 one visible engagement and one firing shot. The final UI inspection showed a
 running mission at 15:13, evacuation 04:56. This validates live camera actions,
 but combat cinematography still needs validation under the full stock attack load.
+
+### Lab 160 — ordinary API bookmark restores campaign world; opt-in recovery trial
+
+Installed AI.galaxy declares AIAttackWaveSend as native, so its implementation
+is not available in extracted scripts. Rather than weaken stock mission waves,
+test the documented API QuickSave/QuickLoad bookmark as infrastructure recovery.
+On the existing diagnostic campaign world, both calls succeeded. API loop reset
+from 18,499 to 2 while the UI retained the built-up world, resources and mission
+countdown (19:27 elapsed, 00:42 remaining shortly after). Evidence:
+/tmp/jev-bookmark-probe.json. Loading from actual API ended state is UNVERIFIED.
+
+Add --api-bookmark-recovery, disabled by default, to runner and campaign CLI.
+Save every 45 seconds while active; permit at most one restore when API says
+ended, at least two player results all say Defeat, and an owned completed live
+structure remains. Preserve the raw terminal observation in the journal event.
+Never restore a victory/mixed result or retry a failed restore. Clear policy,
+action-feedback and camera memory after restore because API loops reset; discard
+pending commands and observe afresh. Paid call/time budgets do not reset. The
+player policy itself receives no save/load controls or tactical instructions.
+This uses a save/load feature rather than changing waves, resources or fog.
+
+74 tests pass, covering opt-in behavior, save throttling, one-restore limit,
+exclusion of victories/mixed results/missing structures, and failed-load limits.
+Next trial is the unmodified Zero Hour map with this experimental recovery on;
+no claim that a bookmark fixes the premature end until verified there.

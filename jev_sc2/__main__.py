@@ -1,4 +1,5 @@
 """uv run python -m jev_sc2 --map /absolute/path/to/mission.SC2Map"""
+from .bookmark import BookmarkRecovery
 import argparse
 import asyncio
 import json
@@ -66,6 +67,8 @@ async def run(args):
         if event=='result':
             outcome['players'] = fields['players']
             outcome['status'] = result_for_player(fields['players'],outcome['player_id'])
+        elif event=='api_bookmark_restored':
+            outcome['api_bookmark_restores'] = outcome.get('api_bookmark_restores',0)+1
         elif event=='stopped':
             outcome['reason'] = fields['reason']
         elif event=='finished':
@@ -125,6 +128,19 @@ async def run(args):
         empty_since = None
         last_loop = None
         clock_changed_at = time.monotonic()
+        bookmark = BookmarkRecovery(client,data,log,getattr(args,'api_bookmark_recovery',False))
+        async def try_restore(observation):
+            nonlocal last_loop, empty_since, clock_changed_at, failures
+            if not await bookmark.recover(observation):
+                return False
+            # QuickLoad preserves the world but resets API loops; old policy
+            # deadlines, tags, action feedback and camera history must be discarded.
+            memory.clear()
+            camera_memory.clear()
+            last_loop = empty_since = None
+            clock_changed_at = time.monotonic()
+            failures = 0
+            return True
         while time.monotonic()-started < args.seconds and jev.calls < args.max_calls:
             try:
                 revision = loader.refresh()
@@ -136,10 +152,13 @@ async def run(args):
             if observation.action_errors:
                 log('engine_action_error',errors=[str(e) for e in observation.action_errors])
             if observation.player_result or client.status == sc.ended:
+                if await try_restore(observation):
+                    continue
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
                                      for r in observation.player_result],loop=observation.observation.game_loop,
                     api_status=sc.Status.Name(client.status))
                 break
+            await bookmark.maybe_save(observation)
             if observation.observation.game_loop == last_loop:
                 if time.monotonic()-clock_changed_at >= 10:
                     log('stopped',reason='Game clock stalled for ten seconds; inspect pause/tutorial UI')
@@ -190,6 +209,8 @@ async def run(args):
                 continue
             fresh = await client.observe()
             if fresh.player_result or client.status == sc.ended:
+                if await try_restore(fresh):
+                    continue
                 log('result',players=[{'player':r.player_id,'result':sc.Result.Name(r.result)}
                                      for r in fresh.player_result],loop=fresh.observation.game_loop,
                     api_status=sc.Status.Name(client.status))
@@ -231,6 +252,7 @@ def main():
     parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--window-size',type=int,nargs=2,default=(1280,800),metavar=('WIDTH','HEIGHT'))
     parser.add_argument('--window-position',type=int,nargs=2,metavar=('X','Y'))
+    parser.add_argument('--api-bookmark-recovery',action='store_true',help='Experimental: save periodically and restore once on anomalous all-player defeat with owned structures')
     parser.add_argument('--follow-camera',action='store_true',help='Center display camera on owned units; does not change raw policy observations')
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
