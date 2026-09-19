@@ -2943,3 +2943,19 @@ score sample528.37damage dealt/60taken illustrates automatic fighting while
 holding; not evidence that the new attack-move command itself helped.
 Menu expansion creates additional tournament calls. Keep policy unchanged and
 measure outcome/cost before deciding whether this interface is useful.
+
+
+### Lab206 — fewer movement commands accompany better early damage balance
+
+Verified live session52730 throughloop7168:474calls/$0.268258326,no ending or
+budget error. Raw owned force includes15Marines,10SCVs,3Bunkers,2Turrets and
+CommandCenter; production/supply structures have been lost, so do not infer a win.
+
+Matched approximate early loops:prior lab201 at4996 requested592MarineMoves,
+161Holds and reported1448.42damage dealt/6688.19taken;current lab205 at4922
+requested157Moves,50Holds,16Stops,1464.52dealt/267taken. Zero final new anchor
+attack-move selections at that comparison. Possible effect of changed menus on
+holding/movement, but context encoding,pacing from start,stochastic investments
+and varying trajectories confound causality. This is an observational comparison,
+not evidence the unexecuted new command caused better damage exchange.
+Keep policy fixed and observe the full attempt. Shared budget remains unchanged.
