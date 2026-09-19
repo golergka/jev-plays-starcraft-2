@@ -2959,3 +2959,24 @@ holding/movement, but context encoding,pacing from start,stochastic investments
 and varying trajectories confound causality. This is an observational comparison,
 not evidence the unexecuted new command caused better damage exchange.
 Keep policy fixed and observe the full attempt. Shared budget remains unchanged.
+
+
+### Lab207 — verified11:09 defeat; observed construction interruption
+
+Session52730 ended normally with native marker at10716loops. UI confirms Zero
+HourDEFEAT11:09,evacuation09:00,all structures destroyed.653calls/$0.383468148,
+no budget failure. Record in checkpoint; early better damage balance did not
+translate to success. Campaign still has only two verified opening victories.
+
+Concrete next hypothesis from events:worker4379901953 received BuildBunker at
+[81.5,25.5] loop4010. At4207 its observed order was still BuildBunker at that
+point; structure4338221060 was16.7% complete. A new BuildBunker at[81.5,17.5]
+was then requested for that same worker. Similarly BuildSupplyDepot loop7168
+at[82,25] was replaced at7368 by another depot at[82,31] while structure4346085389
+was15.8% complete and the worker still had its first BuildSupplyDepot order.
+These coordinates/tags are diagnostic evidence only, never policy constants.
+Harness uses queue_command=False. Independent investment execution can interrupt
+its own unfinished construction, despite current orders being shown in producer
+criteria. Investigate preserving Jev-selected jobs or making interruption an
+explicit separate choice. Do not infer all economic failure comes from this,
+and do not keep repeating role-temperature/menu-only experiments unchanged.
