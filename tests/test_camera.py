@@ -68,7 +68,8 @@ def test_camera_tracks_subject_during_hold_without_resetting_cut_timer():
 
 def test_idle_army_beats_base_and_frames_subject_not_workers():
     workers = [dict(unit(i, 10), candidates=[{'id': 'gather_minerals'}]) for i in range(30)]
-    shot = choose_shot({'self': workers + [unit(100, 18)]}, {}, now=0)
+    turret = dict(unit(99, 80), candidates=[{'id': 'attack_enemy'}])
+    shot = choose_shot({'self': workers + [turret, unit(100, 18)]}, {}, now=0)
     assert shot['position'] == [18, 10]
     assert shot['reason'] == 'army overview'
 

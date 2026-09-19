@@ -3602,3 +3602,16 @@ are close enough; its expiry problem is intermittent, not universal. f93a078 did
 not load before this ending. Next fresh trial exercises2016-loop batches and the
 expanded startup history. Retained rolling spend $.013785156 before restart;
 cap/taper/pacing unchanged. Continue periodic native visual checks.
+
+### Lab245 — visual check finds quiet turret counted as army camera subject
+
+Fresh244trial20260919T220825.429214Z/session68563 starts on ebde548 and loads
+three expanded historical summaries. Early decisions have no errors; no production
+batch chosen yet. Native1:30 screenshot shows mostly empty approach. Camera log
+at1352 identifies [60,49] as army overview; that is the observed stationary turret,
+not the mobile army. Camera classified any attack capability as army interest.
+Require observed movement capability as well for the quiet army score. Firing,
+visible contacts and damage still override so a fighting turret remains watchable.
+No gameplay order or Jev question changes. Nine camera tests pass, including quiet
+stationary attack-capable structure versus actual mobile army. Commit hot-reloads
+presentation only; batch and budget experiment remain unchanged.

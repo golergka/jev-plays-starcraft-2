@@ -20,11 +20,13 @@ def choose_shot(view, memory, now=None):
         contacts = [e for e in enemies if math.dist(pos, e['position']) <= 14]
         ids = {c['id'] for c in unit.get('candidates', [])}
         combat = any(i.startswith('attack') for i in ids)
+        mobile = any(i in ('north', 'south', 'east', 'west') or i.startswith('attack_move_') for i in ids)
+        army = combat and mobile
         economic = any(i.startswith(('gather_', 'build_')) for i in ids)
         firing = unit.get('weapon_cooldown', 0) > 0
         # Mobile combat units remain interesting even between movement samples.
-        score = 15 if combat and not economic else 1
-        reason = 'army overview' if combat and not economic else 'base overview'
+        score = 15 if army and not economic else 1
+        reason = 'army overview' if army and not economic else 'base overview'
         moving_until = memory.setdefault('moving_until', {})
         if moved and not economic:
             moving_until[unit['tag']] = now + 4
