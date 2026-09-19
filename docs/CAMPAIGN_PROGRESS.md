@@ -2438,3 +2438,19 @@ Recorded-state probe (no commands): SCV / Move Move,27030 question characters,
 46225 state characters, answered through3 calls,$0.003079062. Artifact
 180-menu-tournament.json. Acceptance does not establish strategic improvement.
 Resume same world with403 remaining calls from the initial3000-call allowance.
+
+### Lab181 — staged menus survive the continuation; preserve the large army
+
+Continuation runs/20260919T182412.951736Z stopped cleanly at the call allowance:
+402 successful calls,$0.339882564, no decision errors. At an intermediate snapshot
+29 menu tournaments had completed,115 owned units, maximum decision age76 loops
+(below configured128). At final controlled loop21445:55Marines,44SCVs,10Depots,
+4Barracks,1CommandCenter,1Refinery. No ending marker. Combined with the preceding
+2597-call segment,2999 successful calls used the original3000 allowance (inflight
+reservations can stop below the exact limit). Replay/result saved normally.
+
+Started a fresh bounded continuation with --attach and no --map,1200seconds,
+3000calls, same objective/camera. This extends the experiment allowance under the
+ongoing campaign task; it does not restart the map or credit progress. Gameplay
+policy unchanged from lab180. Controller memory starts fresh on reconnect, a
+remaining continuity limitation separate from the preserved native game world.
