@@ -4064,3 +4064,18 @@ Native terminal screenshot also displays "You can't control that unit" three
 times, while tick action_errors lists were empty. Audit result codes and terminal
 observation timing before concluding API execution was error-free. This is an
 observability discrepancy, not evidence of hidden-unit control or a new tactic.
+
+### Lab277 — resolve native errors and recheck ending before dispatch
+
+Last275run tick results:352Success,oneTooMuchLife(code28,repair at5640),
+fourYouCantControlThatUnit(code87,finaltick14284). Thus native error text was
+represented in immediate response codes; empty observation action_errors is a
+separate channel, not evidence of no rejected commands. No hidden-unit inference.
+
+Controller polled campaign ending only before inference, leaving a window until
+normal command submission after fresh observation. Add OutcomeMonitor poll after
+that fresh observation and after background job fresh observation, before either
+sends actions. Detected endings break to existing result recording; no retry,
+strategy choice or extra Jev call. This reduces terminal-dispatch races but cannot
+make observations and commands atomic.137tests pass; live race prevention not
+yet demonstrated. Previous outcome still requires/has independent UI verification.

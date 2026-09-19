@@ -233,6 +233,10 @@ async def run(args):
             job_commands = next_request(view, memory, log)
             if job_commands:
                 job_fresh = await client.observe()
+                ending = outcome_monitor.poll() if outcome_monitor else None
+                if ending:
+                    log('campaign_outcome',**ending,loop=job_fresh.observation.game_loop)
+                    break
                 job_age = job_fresh.observation.game_loop-view['loop']
                 job_actions = (validate_commands(job_commands,view,job_fresh)
                                if not job_fresh.player_result and client.status != sc.ended
@@ -293,6 +297,10 @@ async def run(args):
                 await asyncio.sleep(0.5)
                 continue
             fresh = await client.observe()
+            ending = outcome_monitor.poll() if outcome_monitor else None
+            if ending:
+                log('campaign_outcome',**ending,loop=fresh.observation.game_loop)
+                break
             if fresh.player_result or client.status == sc.ended:
                 if await try_restore(fresh):
                     continue
