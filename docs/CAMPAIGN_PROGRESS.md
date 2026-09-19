@@ -911,3 +911,14 @@ shrinking while Jev chose support despite zero reported mineral income. Future
 work must distinguish actionable feedback from data the model fails to connect.
 Full phase counts, including the intermediate buggy revision, are in
 `docs/experiments/059-compact-control-context.json`.
+
+## Lab 088: name rejected actions instead of requiring numeric joins
+
+At loop 10260 the live retry again requested six repairs with zero minerals;
+all six were rejected. Feedback identified only ability 316, while the control
+menu describes Repair. The model had to connect an opaque identifier to an action.
+Join failures to ability descriptions already observed in the candidate menus,
+retain labels when the ability disappears, and aggregate identical rejections
+with counts and affected unit types. This reports what happened without selecting
+a replacement action or suppressing choices. Forty-six tests pass. Observe
+whether the more explicit feedback changes behavior; no improvement is assumed.

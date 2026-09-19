@@ -610,3 +610,21 @@ def test_compact_contribution_retains_measured_threats_and_existing_work():
     compact=player.investment_state({'selection_facts':facts,'units':units,**view})
     assert 'units' not in compact and 'self' not in compact
     assert compact['selection_facts']['Worker']['current_order_counts']=={'Harvest':1}
+
+
+def test_feedback_names_and_counts_rejected_actions_without_prescribing_response():
+    import player
+    view={'self':[{'tag':1,'type':'Worker','candidates':[
+        {'command':{'ability_id':316},'description':'Repair target',
+         'capability_description':'Repair: restore damaged owned units'}]},
+        {'tag':2,'type':'Worker','candidates':[]}]}
+    memory={'action_feedback':[{'loop':5,'failures':[
+        {'ability_id':316,'unit_tags':[1],'result':'NotEnoughMinerals'},
+        {'ability_id':316,'unit_tags':[2],'result':'NotEnoughMinerals'}]}]}
+    feedback=player.describe_action_feedback(view,memory)
+    failure=feedback[0]['failures'][0]
+    assert failure['action']=='Repair: restore damaged owned units'
+    assert failure['rejected_commands']==2 and failure['unit_types']=={'Worker':2}
+    assert len(feedback[0]['failures'])==1
+    view['self'][0]['candidates']=[]
+    assert player.describe_action_feedback(view,memory)[0]['failures'][0]['action']==failure['action']

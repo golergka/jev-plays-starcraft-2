@@ -42,6 +42,31 @@ def recent_outcomes(view, memory, window=672):
             'interpretation':'Measured changes, not causal attribution. Disappearance can be death, transport loading, morphing or campaign triggers. Resource changes are net of income and spending. Consider whether your previous choices are producing mission progress.'}
 
 
+def describe_action_feedback(view, memory):
+    """Join numeric engine rejections to observed control names, not advice."""
+    labels = memory.setdefault('observed_ability_labels',{})
+    types = {u['tag']:u['type'] for u in view['self']}
+    for unit in view['self']:
+        for candidate in unit.get('candidates',[]):
+            ability = candidate['command'].get('ability_id')
+            if ability is not None:
+                labels[ability] = candidate.get('capability_description') or candidate['description'].split(';')[0]
+    history = []
+    for entry in memory.get('action_feedback',[]):
+        grouped = {}
+        for failure in entry.get('failures',[]):
+            key = (failure['ability_id'],failure['result'])
+            item = grouped.setdefault(key,{'ability_id':key[0],
+                'action':labels.get(key[0],f'Unknown observed ability {key[0]}'),
+                'result':key[1],'rejected_commands':0,'unit_types':{}})
+            item['rejected_commands'] += 1
+            for tag in failure.get('unit_tags',[]):
+                kind = types.get(tag,'no longer in current observation')
+                item['unit_types'][kind] = item['unit_types'].get(kind,0)+1
+        history.append({**entry,'failures':list(grouped.values())})
+    return history
+
+
 def is_purchase(candidate):
     return candidate['description'].startswith(('Train ', 'Build '))
 
@@ -295,7 +320,7 @@ async def decide(view, jev, memory):
         cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','resources','explored_map','visible_entities','last_known_entities','unit_type_facts')}
     state['recent_outcomes'] = recent_outcomes(view, memory)
-    state['recent_action_feedback'] = memory.get('action_feedback',[])
+    state['recent_action_feedback'] = describe_action_feedback(view,memory)
     state['previous_investment_intent'] = memory.get('investment_intent')
     learned = memory.setdefault('observed_capabilities_by_type', {})
     for unit in view['self']:
