@@ -3552,3 +3552,20 @@ persistent governor,$.002322222,no gamecommands. Withhistory saveprobabilities
 proof of improved survival. It supports at most a modest shift in these states;
 early Marine purchases cannot simply be credited to history. Continue current
 trial unchanged; do not crank sampling or spending to turn this into a win claim.
+
+### Lab242 — remove redundant singleton executor prefixes from concrete choices
+
+Current239run through7648 has133calls/$.075194658,15Marines,5SCVs,2Barracks,
+3Bunkers,3Depots,EngineeringBay,CommandCenter. Native8:41 shows fighting near base,
+341minerals. Largest concrete worker requests dominated by menu text, not history.
+
+Offline exact-prefix measurement:1668recorded singleton options total321585chars;
+removing 'Every one of the 1 <selection name> units receives: ' leaves226629,
+saving94956chars across these options. This is cumulative description size,not
+whole-request size or dollar savings. Question key/instructions already identify
+that exact sole executor. Omit prefix only for singleton selections; preserve
+multi-unit scope,all action text,IDs,targets and command tables.125tests pass.
+
+Commit hot-reloads during current239trial. Record mixed revision,not a controlled
+history-only outcome. Model wording and tournament partitions can affect choices
+even though offered commands remain identical. Budget/cap/pacing unchanged.

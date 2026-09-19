@@ -769,7 +769,9 @@ async def decide(view, jev, memory):
                          for u,t in zip(selected,tables[kind]) if 'point' in t[key]['command']]
             if distances:
                 description += f'; travel distances across selection: {min(distances):.1f} to {max(distances):.1f}'
-            criteria['group_'+key] = f'Every one of the {len(selected)} {kind} units receives: ' + description
+            # A singleton question already names its only executor.
+            criteria['group_'+key] = (description if len(selected)==1 else
+                                     f'Every one of the {len(selected)} {kind} units receives: ' + description)
             plans[kind]['group_'+key] = [c[key]['command'] for c in tables[kind]]
         # Support need not redirect an entire cohort. Collect each offered
         # target once; a later Jev answer chooses its executor(s).
