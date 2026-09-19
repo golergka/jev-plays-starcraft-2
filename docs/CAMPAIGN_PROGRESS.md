@@ -1064,3 +1064,24 @@ expose is_flying for visible entities. Do not infer a complete target-legality
 predicate: catalog omissions, garrisons and special target rules exist. The engine
 remains authoritative; Jev still chooses commands. Forty-nine tests pass.
 This is a general observation/action-description change, not a target preference.
+
+## Lab 097: expose unit-target gas construction
+
+The fifth attempt's initial post-lab-096 sample had 675 accepted action results
+and no rejections. This is not a controlled test of the description change and
+not proof that all invalid targeting is solved.
+
+A broader interface audit found that construction only supported point targets.
+Python-sc2's source documents that gas buildings require the geyser unit as target:
+https://github.com/BurnySc2/python-sc2/blob/develop/sc2/unit.py . Add unit-target
+Build candidates for engine-advertised gas-building products (catalog has_vespene)
+on currently visible neutral geysers with remaining gas. The command uses target_tag,
+never substitutes the geyser's coordinates. Resource-ignored discovery supplies
+only potential-project facts; executable choices require the resource-aware query.
+No hidden/snapshot geyser is offered. Final target validity remains the engine's
+responsibility. Jev chooses whether to invest and which worker/geyser to use.
+
+Fifty-one tests pass, including unaffordable discovery and hidden/snapshot targets.
+This closes a command-shape gap relevant to later missions and all races; live
+gas construction, race-specific cost accounting and full later-campaign behavior
+are still unverified. It is not a scripted gas-building trigger.

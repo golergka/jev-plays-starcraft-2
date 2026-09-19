@@ -173,10 +173,11 @@ async def make_view(client, observation, data, info, objective):
             label = ability_names.get(ability.ability_id,'')
             product = product_for(ability.ability_id)
             if product is not None and (label.startswith('Train ') or
-                    (label.startswith('Build ') and catalog[ability.ability_id].target==2)):
+                    (label.startswith('Build ') and (catalog[ability.ability_id].target==2 or
+                        (catalog[ability.ability_id].target in (3,4) and product.has_vespene)))):
                 potential[product.name] = {'type':product.name,'minerals':product.mineral_cost,
                     'vespene':product.vespene_cost,'supply':product.food_required,
-                    'supply_provided':product.food_provided}
+                    'supply_provided':product.food_provided,'allows_vespene_harvesting':product.has_vespene}
     builder_tags = {offered.unit_tag for offered in possible.abilities
                     if any(ability_names.get(a.ability_id,'').startswith('Build ') for a in offered.abilities)}
     placements, placement_candidates = [], []
@@ -234,7 +235,8 @@ async def make_view(client, observation, data, info, objective):
             product = product_for(ability)
             cost = ({'minerals':product.mineral_cost,'vespene':product.vespene_cost,
                      'supply':product.food_required} if product is not None else None)
-            project = ({'type':product.name,**cost,'supply_provided':product.food_provided}
+            project = ({'type':product.name,**cost,'supply_provided':product.food_provided,
+                        'allows_vespene_harvesting':product.has_vespene}
                        if product is not None else None)
             details = '' if product is None else (
                 f'; costs {product.mineral_cost} minerals and {product.vespene_cost} gas'
@@ -242,6 +244,16 @@ async def make_view(client, observation, data, info, objective):
             if label.startswith('Train '):
                 candidates.append({'id':f'ability_{ability}', 'description':label+details,
                                    'command':command(ability),'resource_cost':cost,'project':project})
+            if (label.startswith('Build ') and catalog[ability].target in (3,4)
+                    and product is not None and product.has_vespene):
+                for target in visible:
+                    if target.alliance!=raw.Neutral or target.vespene_contents<=0:
+                        continue
+                    candidates.append({'id':f'build_{ability}_geyser_{target.tag}',
+                        'description':f'{label} on visible gas geyser tag {target.tag} at [{target.pos.x:.1f},{target.pos.y:.1f}]; '
+                                      'enables worker gas harvesting when complete; engine validates the target'+details,
+                        'command':command(ability,target_tag=target.tag),
+                        'resource_cost':cost,'project':project})
             if label.startswith('Build ') and catalog[ability].target == 2:
                 radius = catalog[ability].footprint_radius or 1.5
                 offset = radius % 1

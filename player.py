@@ -98,6 +98,8 @@ def investment_description(name, project, state):
         effects.append('Adds another unit able to: '+', '.join(capabilities))
     else:
         effects.append('Its action capabilities have not yet been observed')
+    if project and project.get('allows_vespene_harvesting'):
+        effects.append('Enables workers to harvest gas from this site after construction')
     if project and project.get('supply_provided',0):
         effects.append(f'Adds {project["supply_provided"]:g} supply capacity when complete')
     weapons = (state.get('unit_type_facts') or {}).get(name,{}).get('catalog_weapons',[])

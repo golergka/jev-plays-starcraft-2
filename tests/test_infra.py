@@ -675,3 +675,26 @@ def test_attack_target_facts_expose_air_ground_without_asserting_legality():
     target.is_flying=True
     assert 'target is airborne' in attack_target_facts(attacker,target,{1:product})
     assert 'unspecified classes' in attack_target_facts(attacker,target,{})
+
+
+@pytest.mark.parametrize('affordable',[False,True])
+def test_gas_building_uses_visible_geyser_tag_and_resource_aware_availability(affordable):
+    from s2clientprotocol import query_pb2 as query
+    obs=sc.ResponseObservation()
+    obs.observation.raw_data.units.add(tag=1,alliance=raw.Self,display_type=raw.Visible)
+    for tag,display in [(2,raw.Visible),(3,raw.Hidden),(4,raw.Snapshot)]:
+        obs.observation.raw_data.units.add(tag=tag,alliance=raw.Neutral,display_type=display,vespene_contents=2000)
+    obs.observation.raw_data.units.add(tag=5,alliance=raw.Neutral,display_type=raw.Visible,mineral_contents=1000)
+    data=sc.ResponseData()
+    data.units.add(unit_id=100,name='GasPlant',ability_id=55,has_vespene=True,mineral_cost=75)
+    data.abilities.add(ability_id=55,friendly_name='Build GasPlant',target=3)
+    class Client:
+        async def request(self,name,body):
+            response=query.ResponseQuery()
+            if affordable or body.ignore_resource_requirements:
+                response.abilities.add(unit_tag=1).abilities.add(ability_id=55)
+            return response
+    view=asyncio.run(make_view(Client(),obs,data,sc.ResponseGameInfo(),'test'))
+    assert view['potential_projects'][0]['allows_vespene_harvesting']
+    commands=[c['command'] for c in view['self'][0]['candidates']]
+    assert commands==([{'unit_tag':1,'ability_id':55,'target_tag':2}] if affordable else [])
