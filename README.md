@@ -180,8 +180,8 @@ at the target. Restarting the controller does not reset the clock or spending.
 Use equal start/target values for a constant allowance. Malformed settings fail
 closed. The active experiment's settings live in that ignored local JSON file.
 
-The harness paces new decision cycles according to measured decision cost and the
-80% of the current allowance, leaving headroom for concurrent request reservations
+The harness paces new decision cycles according to measured decision cost and
+60% of the current allowance, leaving headroom for concurrent request reservations
 and variable decision costs. This reduces planned decision frequency; it does not
 guarantee admission. Planned pacing is explicit in `spend_pacing`: target interval,
 requested interval and planned idle seconds. Reports expose median/maximum target
@@ -193,3 +193,27 @@ saves its replay/result, and exits with status 2. It does not automatically retr
 SC2 stays running with existing orders, so this is not a game pause. Fix request
 rate before reconnecting; never raise/reset the allowance to hide a failure.
 Reports include budget errors alongside other errors. No paid fallback is used.
+
+
+## Bounded production jobs
+
+Jev can choose a three-request training commitment lasting up to 2016 game loops.
+With the production executor enabled, Jev also chooses the initial producer. The
+same producer and training command remain fixed for that job. The initial command
+must be accepted before the remaining requests can execute between paid decisions.
+Execution makes no extra model calls and does not reset or increase the dollar limit.
+
+Requests are at least 112 game loops apart and require the exact command to remain
+advertised, with sufficient observed resources and supply. A fresh observation
+still checks ownership and command age. Unavailable or unaffordable commands wait
+within the original deadline. The framework never picks another producer or unit
+type. Rejected or stale submissions cancel the job without automatic retry.
+Producer disappearance, deadline, clock rewind, changed strategy, or exhausted
+attempts also end it. Requests are attempts, not guaranteed completed units.
+
+Inspect `production_job_armed`, `production_job_request`,
+`production_job_execution`, `production_job_wait`, and `production_job_released`
+in the run's `events.jsonl`. The framework executor lives in `jev_sc2/jobs.py`;
+changes to it or the controller require a controller restart. Player decisions
+still reload on commits. Older controller processes keep the previous batching
+semantics rather than silently acquiring a new execution mode.

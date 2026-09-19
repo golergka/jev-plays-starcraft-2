@@ -3883,3 +3883,12 @@ path, not forced research or a claim that Medic production has occurred. One
 ConnectTimeout earlier; later decisions complete. Through2713 reportedcost$.023653686.
 No production_job events yet: executor mechanism remains unverified live until
 Jev chooses a batch. Keep trial stable; do not force a convenient validation choice.
+
+### Lab264 — correct operational pacing docs and document job execution
+
+Run262 confirmed live through6357,95successful calls/$0.056179620,12Marines,
+5SCVs,twoBarracks,TechLab,twoBunkers. No production_job event yet. Preserve trial
+rather than forcing authorization. README incorrectly retained80% pacing from an
+older experiment; corrected to implemented60%. Documented bounded fixed-producer
+job semantics, acceptance gating, fresh checks, release causes, observability and
+controller-restart boundary. Documentation only; no runtime policy/budget change.
