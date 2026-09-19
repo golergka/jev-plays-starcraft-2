@@ -1510,3 +1510,14 @@ Release the parent call reservation before retrying children. Tests exercise a
 server rejection below the heuristic threshold, exact question preservation,
 budget accounting, and terminal single-question rejection. All64tests pass.
 Resume the same mission to test recovery; no gameplay policy changed.
+
+### Lab130 — reduce spatial precision in model context only
+
+Lab129 diagnostics caught a single concrete question rejected with 63,483
+characters of state plus 13,818 characters of criteria. Batch splitting cannot
+resolve this case. Round position/center arrays in concrete-order context to two
+decimals, retaining all entities and facts. The exact observed coordinates and
+candidate command tables remain unchanged, as do unit tags and non-spatial
+numbers. This removes floating-point representation noise without introducing
+an action preference.65tests pass including source immutability. Commit reloads
+this policy during the resumed attempt; improvement remains to be measured.

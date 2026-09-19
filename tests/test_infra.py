@@ -899,3 +899,16 @@ def test_server_token_rejection_splits_exact_questions_and_releases_budget(monke
     with pytest.raises(Rejected):
         asyncio.run(model.ask(state,{'single':questions['0']}))
     assert model.inflight==0
+
+
+def test_order_context_rounds_spatial_text_without_mutating_execution_facts():
+    from player import order_state
+    source={'units':[{'tag':4399038467,'position':[53.71894073486328,21.01488494873047],
+                      'health_fraction':0.123456,'orders':[{'target_tag':4399038467}]}],
+            'visible_entities':[{'position':[1.123456,2.987654]}]}
+    result=order_state(source)
+    assert result['units'][0]['position']==[53.72,21.01]
+    assert result['visible_entities'][0]['position']==[1.12,2.99]
+    assert result['units'][0]['tag']==4399038467
+    assert result['units'][0]['health_fraction']==0.123456
+    assert source['units'][0]['position'][0]==53.71894073486328

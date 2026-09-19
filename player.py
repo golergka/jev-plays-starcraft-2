@@ -170,12 +170,23 @@ def investment_state(state):
     return compact
 
 
+def presentation_coordinates(value, field=None):
+    """Two-decimal spatial context; command tables retain engine precision."""
+    if isinstance(value, dict):
+        return {key:presentation_coordinates(item, key) for key,item in value.items()}
+    if isinstance(value, list):
+        if field in {'position', 'center', 'target_world_space_pos'}:
+            return [round(item, 2) if isinstance(item, float) else item for item in value]
+        return [presentation_coordinates(item) for item in value]
+    return value
+
+
 def order_state(state):
     """Avoid repeating type capabilities in every job selection's context."""
-    compact = dict(state)
+    compact = presentation_coordinates(state)
     repeated = {'available_projects', 'available_support_abilities', 'available_build_abilities'}
     compact['selection_facts'] = {name:{k:v for k,v in facts.items() if k not in repeated}
-                                  for name,facts in state.get('selection_facts',{}).items()}
+                                  for name,facts in compact.get('selection_facts',{}).items()}
     # Type-level facts retain the capability lists; concrete criteria name the
     # actual legal actions for each selection. Positions/orders remain intact.
     return compact
