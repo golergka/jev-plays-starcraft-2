@@ -3678,3 +3678,20 @@ This is factual context placement, not new information or proven policy benefit.
 126tests pass, including fictional carrier and unknown-capacity cases. Next live
 trial retains extended production batches, histories and all budget settings.
 Retained rolling ledger $.044183538 before restart, below $.06 pacing target.
+
+### Lab250 — cover catalog-known untargeted build controls
+
+Live249run20260919T221748.437060Z/session74302 confirms investment description
+contains0occupied/16available Bunker slots. Opening purchase SCV; native0:25 shows
+two miners. This alone does not establish cargo wording benefit.
+
+Audit for later-campaign controls finds Build abilities with target=None (1)
+omitted, despite support for point builds and gas targets. Add no-target build
+candidates only when currently offered with resources enforced and a catalog
+product identifies costs. Include these in potential-project information when
+only resource-ignored query offers them; never execute that availability alone.
+No automatic addon purchase, guessed cost, target or ability ID. Engine execution
+remains authoritative. Unknown product is omitted. New synthetic coverage initially
+caught missing potential-project parity; fixed it.127tests pass. Actual campaign
+addon availability/success not yet verified. Hot reload may change offered menus,
+so ongoing run is no longer a cargo-wording-only comparison. Budgets unchanged.

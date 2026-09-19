@@ -1144,3 +1144,31 @@ def test_purchase_description_exposes_observed_cargo_without_assigning_passenger
     assert "'Passenger': 2" in description
     assert 'loading is a separate decision' in description
     assert 'cargo:' not in investment_description('Unknown', {}, state)
+
+
+def test_untargeted_build_requires_executable_ability_and_known_product():
+    from s2clientprotocol import query_pb2 as query
+    from player import is_purchase
+    class Client:
+        async def request(self, name, body):
+            result = query.ResponseQuery()
+            offered = result.abilities.add(unit_tag=1)
+            for ability in (901, 902):
+                offered.abilities.add(ability_id=ability)
+            if body.ignore_resource_requirements:
+                offered.abilities.add(ability_id=903)
+            return result
+    obs = sc.ResponseObservation()
+    obs.observation.raw_data.units.add(tag=1, unit_type=21, alliance=raw.Self)
+    data = sc.ResponseData()
+    for ability, label in ((901, 'Build KnownAddon'), (902, 'Build UnknownAddon'), (903, 'Build UnaffordableAddon')):
+        data.abilities.add(ability_id=ability, friendly_name=label, target=1)
+    data.units.add(unit_id=9001, name='KnownAddon', ability_id=901, mineral_cost=50, vespene_cost=25)
+    data.units.add(unit_id=9003, name='UnaffordableAddon', ability_id=903, mineral_cost=100)
+    view = asyncio.run(make_view(Client(), obs, data, sc.ResponseGameInfo(), 'test'))
+    candidates = view['self'][0]['candidates']
+    assert len(candidates) == 1
+    assert candidates[0]['command'] == {'unit_tag': 1, 'ability_id': 901}
+    assert candidates[0]['resource_cost']['vespene'] == 25
+    assert is_purchase(candidates[0])
+    assert any(p['type'] == 'UnaffordableAddon' for p in view['potential_projects'])
