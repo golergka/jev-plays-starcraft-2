@@ -2626,3 +2626,21 @@ without incrementing decision failure count or queuing stale tactical commands.
 103 tests pass, including concurrent admission, actual-cost settlement, unknown
 charges, rolling expiry, startup seeding, persistent taper and pre-SDK denial.
 No gameplay-policy change. Resume the same paused Zero Hour with the governor.
+
+### Lab190 — verify governed continuation and report cost alongside gameplay
+
+Same Zero Hour world continues in runs/20260919T185136.024869Z, session28727.
+No extra paid probes. Report snapshot at loop6708:133calls,$0.108992058,median
+cost-paced decision interval4.30seconds,current allowance$0.413685/300seconds,
+no admission throttles yet. Added run-local rolling300-second actual-spend peak,
+throttle count,current allowance and median pacing interval to scripts/report.py.
+Scope explicitly excludes other runs and unresolved reservations; the SQLite
+ledger remains authoritative for shared admission. Generated and inspected the
+report on the live log; the short-run peak equals measured total cost as expected.
+
+At loop7695:17SCVs,16Marines,3Bunkers,2Turrets,2Barracks,3Depots,1Refinery,
+1EngineeringBay,1CommandCenter. One decision TimeoutError recovered; no ending
+marker and no spend-throttle event. Prior baseline around loop7517 had1SCV and
+4Marines, but this is not controlled causal evidence (worker granularity changed,
+then a pause/reconnect and spending governor were introduced). Continue within
+the taper without increasing budget or adding tactical rules.

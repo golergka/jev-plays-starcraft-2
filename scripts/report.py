@@ -10,6 +10,16 @@ from pathlib import Path
 path = Path(sys.argv[1]) if len(sys.argv)>1 else max(Path('runs').glob('*/events.jsonl'),key=lambda p:p.stat().st_mtime)
 rows = [json.loads(line) for line in path.read_text().splitlines()]
 calls = [r for r in rows if r['event']=='jev']
+spend_window = collections.deque()
+window_cost = peak_window_cost = 0.0
+for call in sorted(calls, key=lambda r:r['time']):
+    while spend_window and spend_window[0][0] <= call['time']-300:
+        window_cost -= spend_window.popleft()[1]
+    cost = call['response']['usage'].get('cost',0) or 0
+    spend_window.append((call['time'],cost))
+    window_cost += cost
+    peak_window_cost = max(peak_window_cost,window_cost)
+paced = [r for r in rows if r['event']=='spend_pacing']
 ticks = [r for r in rows if r['event']=='tick']
 age_limit = next((r['max_age_loops'] for r in rows if r['event']=='connected' and 'max_age_loops' in r),32)
 latencies = sorted(r['latency_ms'] for r in calls)
@@ -45,6 +55,13 @@ def distribution(tick):
                        for selected in [[u for u in units if u['type']==kind]]}}
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
+    'spend_governor': {
+        'scope':'This run only; excludes other runs/probes and unresolved reservations. Shared admission uses the SQLite ledger.',
+        'peak_actual_usd_in_any_300_seconds':round(peak_window_cost,9),
+        'throttle_events':sum(r['event']=='spend_throttled' for r in rows),
+        'latest_limit_usd_per_300_seconds':next((r['rolling_limit_usd'] for r in reversed(paced)),None),
+        'median_target_decision_interval_seconds':statistics.median(r['target_interval_seconds'] for r in paced) if paced else None,
+    },
     'recorded_outcome':recorded_outcome,
     'latest_observed_resources':resource_samples[-1] if resource_samples else None,
     'max_observed_mineral_income_estimate_per_minute':max(income_samples) if income_samples else None,
