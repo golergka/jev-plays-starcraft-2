@@ -807,7 +807,8 @@ def test_order_context_deduplicates_capabilities_but_preserves_jobs_and_targets(
         'units':[{'tag':1,'position':[2,3]}],'visible_entities':[{'tag':9}]}
     compact=order_state(source)
     assert compact['selection_facts']['Worker / Harvest cycle']=={'count':3,'current_order_counts':{'Gather':3}}
-    for key in ('type_selection_facts','units','visible_entities'):assert compact[key]==source[key]
+    for key in ('type_selection_facts','visible_entities'):assert compact[key]==source[key]
+    assert [dict(zip(compact['units']['columns'], row)) for row in compact['units']['rows']]==source['units']
     assert 'available_projects' in source['selection_facts']['Worker / Harvest cycle']
 
 
@@ -907,10 +908,11 @@ def test_order_context_rounds_spatial_text_without_mutating_execution_facts():
                       'health_fraction':0.123456,'orders':[{'target_tag':4399038467}]}],
             'visible_entities':[{'position':[1.123456,2.987654]}]}
     result=order_state(source)
-    assert result['units'][0]['position']==[53.72,21.01]
+    unit=dict(zip(result['units']['columns'],result['units']['rows'][0]))
+    assert unit['position']==[53.72,21.01]
     assert result['visible_entities'][0]['position']==[1.12,2.99]
-    assert result['units'][0]['tag']==4399038467
-    assert result['units'][0]['health_fraction']==0.123456
+    assert unit['tag']==4399038467
+    assert unit['health_fraction']==0.123456
     assert source['units'][0]['position'][0]==53.71894073486328
 
 

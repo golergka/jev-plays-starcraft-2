@@ -2272,3 +2272,23 @@ The current map must remain traynor02-outcomes-lab169c.SC2Map. The new reconnect
 monitor can arm from its active ending bank. Verify actual UI outcome before
 clearing the remaining checkpoint review gate. All three campaigns remain the
 goal; funding currently prevents further Jev-driven play.
+
+### Lab172 — funded continuation exposes per-question context growth
+
+Resumed the exact paused Outlaws world, without restarting the mission, after
+confirming provider credits. Run20260919T074549.368696Z made616 calls,
+$0.533949990, then stopped after five consecutive decision failures. Replay saved.
+Single concrete-order questions reached about79k characters (52k state plus27k
+criteria) and received max_tokens_exceeded. Batch splitting cannot fix a single
+oversized question. No victory or defeat is credited.
+
+Changed general order context to a columnar unit roster, retaining values and
+explicit column names instead of repeating field names for every unit. On the
+last recorded order batch, state size fell53782→44679 characters. A read-only
+Jev replay answered all3 questions in1 call,$0.001008294; this establishes request
+acceptance, not equivalent strategic quality or a universal token bound. All92
+tests pass, including roster reconstruction and preserving command precision.
+
+SC2 process84249 remains present but its window is black and an API observation
+is pending. Do not infer a mission loss or restart from this observation alone.
+Remaining original call allowance after both gameplay runs:1299 calls.

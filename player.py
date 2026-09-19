@@ -189,6 +189,16 @@ def presentation_coordinates(value, field=None):
 def order_state(state):
     """Avoid repeating type capabilities in every job selection's context."""
     compact = presentation_coordinates(state)
+    # A columnar roster preserves every field while avoiding the same keys once
+    # per unit. This matters when large economies exceed Jev's context window.
+    units = compact.get('units')
+    if units and all(isinstance(unit, dict) for unit in units):
+        columns = list(dict.fromkeys(key for unit in units for key in unit))
+        compact['units'] = {
+            'encoding': 'Each row is one unit; values correspond to columns in order.',
+            'columns': columns,
+            'rows': [[unit.get(key) for key in columns] for unit in units],
+        }
     repeated = {'available_projects', 'available_support_abilities', 'available_build_abilities'}
     compact['selection_facts'] = {name:{k:v for k,v in facts.items() if k not in repeated}
                                   for name,facts in compact.get('selection_facts',{}).items()}
