@@ -488,7 +488,9 @@ def control_groups(units, mode, learned, harvest_targets=None):
             harvest_targets.pop(unit['tag'], None)
         if mode == 'by_current_order':
             key = f'{unit["type"]} / {job}' + (f' / target {target}' if target else '')
-        elif mode == 'individual_workers' and economic:
+        # Economic actors get independent role decisions in every grouping mode.
+        # This changes granularity only; Jev still chooses each actor's task.
+        if economic:
             key = f'{unit["type"]} / unit {unit["tag"]}'
         groups.setdefault(key, []).append(unit)
     return groups
@@ -615,11 +617,10 @@ async def decide(view, jev, memory):
             'criteria':options,
         }, 'coordination': {
             'type':'choice',
-            'instructions':'Choose how to organize the next control selections. This chooses grouping only; further Jev decisions choose every order.',
+            'instructions':'Choose how to organize non-worker control selections. Observed harvesting/building units always receive independent contribution and order decisions. This chooses grouping only; further Jev decisions choose every order.',
             'criteria':{
                 'by_type':'Keep different unit types in separate selections, allowing different shared orders.',
                 'by_current_order':'Separate each unit type by its current first order and unit target, with idle units separate and observed gather/return cycles kept together by their known resource target. Choose distinct orders for those job selections to retain or change existing assignments independently.',
-                'individual_workers':'Give each observed harvesting/building worker its own contribution and order decisions, allowing mixed assignments even when workers currently share one job. Other units remain grouped by type. This requires more model decisions.',
                 'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
             },
         }})

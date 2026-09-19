@@ -1047,4 +1047,5 @@ def test_individual_worker_grouping_uses_observed_capabilities_and_preserves_oth
     assert [u['tag'] for u in groups['Worker / unit 1']]==[1]
     assert [u['tag'] for u in groups['Worker / unit 2']]==[2]
     assert [u['tag'] for u in groups['Soldier']]==[3,4]
-    assert len(control_groups(units,'by_type',{}))==2
+    assert len(control_groups(units,'by_type',{}))==3
+    assert len(control_groups(units,'by_current_order',{}))==3

@@ -2552,3 +2552,21 @@ it before the force collapsed. Earlier repair allocation with zero income remain
 a measured failure. Avoid re-running wording-only fixes or claiming the added
 option solved staffing. Next experiment should evaluate finer decision granularity
 as an interface design, retaining Jev decisions for every worker's actual task.
+
+### Lab187 — test independent economic actors as the default interface
+
+After lab186's negative grouping probe, changed control granularity for observed
+harvesting/building actors: each always gets its own contribution and order
+question. Jev still chooses every task, recipient, movement and purchase. No
+minimum miner count, resource threshold, repair cap or mission-specific rule.
+Non-economic grouping remains Jev-selected. Removed the redundant optional menu
+entry and made the coordination instructions explicit about the new interface.
+97 tests pass; same-job workers separate under type and current-order grouping,
+while ordinary units can still share selections.
+
+Hypothesis: independent choices can express simultaneous income and repair more
+easily than the previous cohort-wide contribution. This may instead amplify
+correlated wrong choices or increase latency/cost; live measurement is required.
+Restart only the verified failed Zero Hour mission and compare income, role
+allocation, casualties and real outcome against lab184–186. Preserve both opening
+victories. No other policy change in this fresh attempt.
