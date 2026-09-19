@@ -1408,3 +1408,15 @@ probabilities .08→.17,.19→.16,.44→.31; income .35→.36,.06→.11,.16→.1
 Six calls,$0.001994496,artifact080. No consistent decision-level benefit; do not
 deploy as a fix or restart a live trial on this basis. Controller remains stopped
 after verified twelfth defeat; next work is a different general abstraction probe.
+
+### Lab122 — pairwise role tournament does not recover income selection
+
+Offline first three idle-containing purpose_SCV states from run12. Compare original
+menu against all unordered pairs with identical descriptions, instructions and
+state. Aggregate selected pair winners by win count; report ties without a manual
+resource preference. Original winners positioning/other/continue; pairwise winners
+positioning/other/other. Income won2,1,3 individual pairs respectively but never
+the tournament. Six calls,$0.002213946,artifact081. This is a changed decision
+structure rather than another wording tweak, but gives no evidence of economic
+recovery. Do not deploy increased question volume on that basis. No game commands
+issued; current controller remains stopped after the verified defeat.

@@ -1,0 +1,454 @@
+{
+  "source": "runs/20260919T011741.162325Z/events.jsonl",
+  "question": "purpose_SCV",
+  "samples": [
+    {
+      "sample": 0,
+      "original": {
+        "choice": "positioning",
+        "type": "choice",
+        "confidence": 0.37,
+        "probabilities": {
+          "combat": 0.0,
+          "income": 0.37,
+          "continue": 0.09,
+          "individual": 0.04,
+          "positioning": 0.5
+        }
+      },
+      "pairwise_answers": {
+        "pair_0": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.84,
+          "probabilities": {
+            "combat": 0.08,
+            "continue": 0.92
+          }
+        },
+        "pair_1": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.82,
+          "probabilities": {
+            "combat": 0.09,
+            "income": 0.91
+          }
+        },
+        "pair_2": {
+          "choice": "individual",
+          "type": "choice",
+          "confidence": 0.93,
+          "probabilities": {
+            "individual": 0.96,
+            "combat": 0.04
+          }
+        },
+        "pair_3": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.99,
+          "probabilities": {
+            "positioning": 0.99,
+            "combat": 0.01
+          }
+        },
+        "pair_4": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "continue": 0.57,
+            "income": 0.43
+          }
+        },
+        "pair_5": {
+          "choice": "individual",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "individual": 0.65,
+            "continue": 0.35
+          }
+        },
+        "pair_6": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "positioning": 0.75,
+            "continue": 0.25
+          }
+        },
+        "pair_7": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.02,
+          "probabilities": {
+            "individual": 0.49,
+            "income": 0.51
+          }
+        },
+        "pair_8": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "positioning": 0.69,
+            "income": 0.31
+          }
+        },
+        "pair_9": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "individual": 0.36,
+            "positioning": 0.64
+          }
+        }
+      },
+      "wins": {
+        "continue": 2,
+        "income": 2,
+        "individual": 2,
+        "positioning": 4
+      },
+      "tied_winners": [
+        "positioning"
+      ],
+      "invalid_answers": []
+    },
+    {
+      "sample": 1,
+      "original": {
+        "choice": "other",
+        "type": "choice",
+        "confidence": 0.5,
+        "probabilities": {
+          "positioning": 0.17,
+          "other": 0.58,
+          "combat": 0.0,
+          "income": 0.05,
+          "individual": 0.01,
+          "continue": 0.19
+        }
+      },
+      "pairwise_answers": {
+        "pair_0": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.96,
+          "probabilities": {
+            "combat": 0.02,
+            "continue": 0.98
+          }
+        },
+        "pair_1": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.83,
+          "probabilities": {
+            "combat": 0.09,
+            "income": 0.91
+          }
+        },
+        "pair_2": {
+          "choice": "individual",
+          "type": "choice",
+          "confidence": 0.95,
+          "probabilities": {
+            "combat": 0.03,
+            "individual": 0.97
+          }
+        },
+        "pair_3": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.99,
+          "probabilities": {
+            "combat": 0.0,
+            "other": 1.0
+          }
+        },
+        "pair_4": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.99,
+          "probabilities": {
+            "combat": 0.01,
+            "positioning": 0.99
+          }
+        },
+        "pair_5": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.56,
+          "probabilities": {
+            "continue": 0.78,
+            "income": 0.22
+          }
+        },
+        "pair_6": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "continue": 0.67,
+            "individual": 0.33
+          }
+        },
+        "pair_7": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "other": 0.72,
+            "continue": 0.28
+          }
+        },
+        "pair_8": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.19,
+          "probabilities": {
+            "positioning": 0.41,
+            "continue": 0.59
+          }
+        },
+        "pair_9": {
+          "choice": "individual",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "individual": 0.63,
+            "income": 0.37
+          }
+        },
+        "pair_10": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.84,
+          "probabilities": {
+            "other": 0.92,
+            "income": 0.08
+          }
+        },
+        "pair_11": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "positioning": 0.72,
+            "income": 0.28
+          }
+        },
+        "pair_12": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.79,
+          "probabilities": {
+            "other": 0.89,
+            "individual": 0.11
+          }
+        },
+        "pair_13": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "positioning": 0.64,
+            "individual": 0.36
+          }
+        },
+        "pair_14": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "other": 0.79,
+            "positioning": 0.21
+          }
+        }
+      },
+      "wins": {
+        "continue": 4,
+        "income": 1,
+        "individual": 2,
+        "other": 5,
+        "positioning": 3
+      },
+      "tied_winners": [
+        "other"
+      ],
+      "invalid_answers": []
+    },
+    {
+      "sample": 2,
+      "original": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.31,
+        "probabilities": {
+          "positioning": 0.13,
+          "continue": 0.43,
+          "income": 0.14,
+          "individual": 0.01,
+          "combat": 0.0,
+          "other": 0.29
+        }
+      },
+      "pairwise_answers": {
+        "pair_0": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.95,
+          "probabilities": {
+            "continue": 0.98,
+            "combat": 0.02
+          }
+        },
+        "pair_1": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.93,
+          "probabilities": {
+            "income": 0.97,
+            "combat": 0.03
+          }
+        },
+        "pair_2": {
+          "choice": "individual",
+          "type": "choice",
+          "confidence": 0.93,
+          "probabilities": {
+            "individual": 0.96,
+            "combat": 0.04
+          }
+        },
+        "pair_3": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.99,
+          "probabilities": {
+            "other": 1.0,
+            "combat": 0.0
+          }
+        },
+        "pair_4": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.98,
+          "probabilities": {
+            "positioning": 0.99,
+            "combat": 0.01
+          }
+        },
+        "pair_5": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "income": 0.28,
+            "continue": 0.72
+          }
+        },
+        "pair_6": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.41,
+          "probabilities": {
+            "individual": 0.3,
+            "continue": 0.7
+          }
+        },
+        "pair_7": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.04,
+          "probabilities": {
+            "other": 0.52,
+            "continue": 0.48
+          }
+        },
+        "pair_8": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "positioning": 0.29,
+            "continue": 0.71
+          }
+        },
+        "pair_9": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.05,
+          "probabilities": {
+            "individual": 0.47,
+            "income": 0.53
+          }
+        },
+        "pair_10": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "other": 0.81,
+            "income": 0.19
+          }
+        },
+        "pair_11": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.06,
+          "probabilities": {
+            "positioning": 0.47,
+            "income": 0.53
+          }
+        },
+        "pair_12": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.61,
+          "probabilities": {
+            "individual": 0.2,
+            "other": 0.8
+          }
+        },
+        "pair_13": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.12,
+          "probabilities": {
+            "individual": 0.44,
+            "positioning": 0.56
+          }
+        },
+        "pair_14": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.65,
+          "probabilities": {
+            "other": 0.82,
+            "positioning": 0.18
+          }
+        }
+      },
+      "wins": {
+        "continue": 4,
+        "income": 3,
+        "individual": 1,
+        "other": 5,
+        "positioning": 2
+      },
+      "tied_winners": [
+        "other"
+      ],
+      "invalid_answers": []
+    }
+  ],
+  "calls": 6,
+  "cost": 0.002213946,
+  "method": "First three recorded states with idle units. Same state, instructions and role descriptions. Compare original menu with all unordered pairs, counting model-selected pair wins. Ties remain ties. Alternate variant order. No game commands."
+}
