@@ -3017,3 +3017,20 @@ This demonstrates execution behavior, not proof of eventual completion or win.
 Two visible engine errors earlier:NotSupported ability340 andCouldntReachTarget
 ability324 forworker4372561921. They remain logged rather than counted as success.
 Keep policy and budget unchanged while the trial proceeds.
+
+
+### Lab210 — retained construction reaches completion
+
+Followed lab209 retained jobs using producer_site criteria and raw structure
+progress. At3918worker4400349186 retained BuildRefinery; observed refinery
+4399562760 at[75.5,14.5] was49.6%complete and reached1.0 at4340. At4340worker
+4372824065 retained BuildMissileTurret at[84,33];structure4398776336 was20%complete
+and reached1.0 at4710. Producer choice text provides the current order; do not
+use an older unrelated concrete-state snapshot to infer an idle builder.
+No simultaneous replacement orders were submitted at either retention tick.
+This supports the execution path, not a counterfactual claim about winning.
+
+Verified live session35733 at6922:428calls/$0.249360762 total,$0.225807792 in
+trailing300seconds,no budget or ending event.13SCVs,11Marines,3Bunkers,2Barracks,
+4Turrets,3Depots,1Refinery,1CommandCenter,1EngineeringBay in raw owned sample.
+Policy and budget unchanged; continue to actual outcome before another change.
