@@ -3760,3 +3760,14 @@ completed across the extended window, but the force still collapsed. Cargo-conte
 placement has no demonstrated survival benefit; multiple adapter/diagnostic
 reloads and changed history prevent clean causal attribution. Next fresh run can
 validate advertised addon coverage from startup; no claim of full-campaign readiness.
+
+### Lab256 — addon projects reach the live investment menu
+
+Fresh run20260919T222529.029740Z/session24185 starts on5c95c98, after retained
+rolling spend$.044065980 headroom check. Atloop5 Jev's actual investment criteria
+include BarracksReactor50minerals/50gas and BarracksTechLab50minerals/25gas from
+engine catalog. Coverage no longer lists421/422 as unrepresented. No guessed
+product mapping was needed. OpeningchoiceBunker,then save498; no addon selected
+or completed yet, no decision errors. This verifies interface exposure only.
+The standalone campaign/control-coverage work still does not establish full
+campaign progression or later-campaign readiness. Keep policy/budget unchanged.
