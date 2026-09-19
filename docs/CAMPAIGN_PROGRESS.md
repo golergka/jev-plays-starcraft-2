@@ -1914,3 +1914,23 @@ Initial telemetry confirms successful decisions and camera army overview plus
 tracking moving force shots. No initial decision errors. This run also provides
 live validation of lab149 camera integration, though the lack of scripted waves
 means it cannot assess camera behavior in a full campaign battle.
+
+### Lab 159 — full Jev traffic passes without scripted waves
+
+Diagnostic runs/20260919T035753.415530Z exited normally at its 650-second limit,
+last controlled tick 14,500 with 67 owned units. No API ended transition and no
+player results. 1,658 Jev calls cost $1.1538156; four transient TimeoutErrors,
+all recovered. Result correctly remains incomplete, reason time limit reached;
+diagnostic.json excludes campaign credit. No progression checkpoint touched.
+
+This restores normal player choices, unit actions, query traffic, camera actions
+and live reload on the native-AI-only configuration and passes the former cutoff.
+Thus normal controller traffic alone is insufficient to reproduce the failure.
+The remaining comparison includes scripted wave/research routines and the combat
+outcomes they induce; interaction with controller behavior is still possible.
+No production change has been established as a fix.
+
+Camera integration: 30 army overviews, 31 moving-force shots, 31 tracking moves,
+one visible engagement and one firing shot. The final UI inspection showed a
+running mission at 15:13, evacuation 04:56. This validates live camera actions,
+but combat cinematography still needs validation under the full stock attack load.
