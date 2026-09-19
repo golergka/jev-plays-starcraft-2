@@ -1634,3 +1634,13 @@ allowed508successful resumed calls with no decision errors before termination.
 The controller has exited. Keep the discrepancy distinct from a later UI outcome.
 Read-only termination-plumbing inspection found campaign autosave calls, but no
 causal connection is established; do not alter map triggers based on speculation.
+
+### Lab141 — second visible defeat occurs well after API control loss
+
+Attempt16 UI eventually showed DEFEAT, All of your structures have been destroyed,
+at19:13 with00:58 evacuation remaining. Preserve later_ui_outcome in checkpoint
+and resumed result alongside API discrepancy. No victory. As with attempt15,
+API control ended minutes before the visible loss. Next experiment should use a
+fresh SC2 process with unchanged map and Jev policy, to separate process-state
+accumulation from a mission-specific API cutoff. Do not interpret this as proof
+that a process restart will fix it.
