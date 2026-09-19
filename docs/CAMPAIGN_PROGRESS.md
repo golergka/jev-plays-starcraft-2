@@ -2454,3 +2454,21 @@ Started a fresh bounded continuation with --attach and no --map,1200seconds,
 ongoing campaign task; it does not restart the map or credit progress. Gameplay
 policy unchanged from lab180. Controller memory starts fresh on reconnect, a
 remaining continuity limitation separate from the preserved native game world.
+
+### Lab182 — expose missing depot state controls to Jev
+
+Continuation remains live; loop22777 had55Marines/44SCVs and no decision errors.
+Investigating the dense base revealed a capability gap: the adapter offered no
+supply-depot lower/raise actions. Added both ordinary player controls, only when
+returned by the current legal ability query and catalogued as no-target. Jev
+chooses the state and executor through the existing support/order machinery.
+No automatic lowering, path choice, or mission-specific placement rule.
+
+Source: Blizzard s2client-api/include/sc2api/sc2_typeenums.h documents
+MORPH_SUPPLYDEPOT_LOWER556 and RAISE558, both Target None:
+https://github.com/Blizzard/s2client-api/blob/master/include/sc2api/sc2_typeenums.h
+Descriptions explain the movement consequence.96 tests pass, including absent
+engine offers and incorrect target signatures. Building lift/land remain missing;
+this does not claim a complete action space or prove depots caused the congestion.
+A parallel read-only API connection was rejected during live control; did not
+interrupt or restart the working controller because of that diagnostic failure.

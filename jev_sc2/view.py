@@ -84,6 +84,17 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
         if meta is None:
             continue
         label = meta.friendly_name or meta.button_name or meta.link_name
+        # Ordinary player controls; only offer IDs returned by the engine's
+        # current legal-ability query. Neither state is selected by this adapter.
+        depot_state = {556: 'Lower this supply depot so ground units can pass over its footprint',
+                       558: 'Raise this supply depot, blocking ground movement through its footprint'}
+        if ability in depot_state and meta.target == 1:
+            description = depot_state[ability]
+            candidates.append({'id':f'ability_{ability}_depot_state',
+                'description':description,
+                'capability_description':description,
+                'command':{'unit_tag':unit.tag,'ability_id':ability}})
+            continue
         verb = label.lower().replace('_', '').replace(' ', '')
         if verb.startswith('effect'):
             verb = verb[6:]

@@ -1022,3 +1022,17 @@ def test_order_menu_tournament_exposes_every_option_and_uses_only_jev_finalists(
     assert set(model.requests[-1]['squad']['criteria'])=={'3','7'}
     assert len(questions['squad']['criteria'])==8
     assert all(len(q['squad']['criteria'])<=2 for q in model.requests)
+
+
+def test_depot_state_controls_require_current_engine_offer_and_no_target():
+    from jev_sc2.view import support_candidates
+    from s2clientprotocol import data_pb2
+    unit=raw.Unit(tag=7)
+    catalog={a:data_pb2.AbilityData(ability_id=a,target=1) for a in (556,558)}
+    assert support_candidates(unit,set(),catalog,{},[],{})==[]
+    for ability in (556,558):
+        offered=support_candidates(unit,{ability},catalog,{},[],{})
+        assert len(offered)==1
+        assert offered[0]['command']=={'unit_tag':7,'ability_id':ability}
+    catalog[556].target=2
+    assert support_candidates(unit,{556},catalog,{},[],{})==[]
