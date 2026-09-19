@@ -3586,3 +3586,19 @@ that tradeoff before choosing. Existing command legality/freshness/budget unchan
 125tests pass; boundedbatch test now exercises1/601/1201loop decisions, three
 requests with one investment choice, then fresh choice. Actual liveeffect unproven.
 Current239trial already mixedrevision; native11:31 shows base being overrun.
+
+### Lab244 — visually verified 13:22 defeat; extended batch not yet exercised
+
+Run20260919T215406.476956Z ends with native DEFEAT, all structures destroyed,
+13:22 mission time,06:47 evacuation remaining,0 minerals.206 successful calls,
+$0.114836988 reported. No decision/error events found. History loaded at startup
+on70d42c1; singleton menu compaction c91a0ee loaded during play. This mixed trial
+outlasts recent runs but does not establish a causal history benefit. Last tick
+had five SCVs; remaining workers do not prevent defeat when all structures fall.
+
+Correction/nuance for lab243: final old-window batch at11376 (deadline12048)
+completed all three proposals by11960. The672-loop window can work when reviews
+are close enough; its expiry problem is intermittent, not universal. f93a078 did
+not load before this ending. Next fresh trial exercises2016-loop batches and the
+expanded startup history. Retained rolling spend $.013785156 before restart;
+cap/taper/pacing unchanged. Continue periodic native visual checks.
