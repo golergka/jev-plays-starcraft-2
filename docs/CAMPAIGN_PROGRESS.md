@@ -3271,3 +3271,21 @@ evacuation5:34. At inspection ledger$.174325312/currentlimit$.191665165;
 read-only projection estimated119seconds until history falls below60% allowance.
 Next resume must recheck actual ledger headroom first; do not reset it or assume
 elapsed time alone guarantees admission. Remainingcall allowance3500.
+
+### Lab225 — boarding trial reaches18:40 but still loses with3520minerals
+
+Native defeat verified18:40,evacuation1:29,all structures destroyed. Three segments
+20260919T204546.942041Z,20260919T205704.758812Z,20260919T210023.211320Z:
+586calls/$0.383097708,total. UI evidence and checkpoint attempt saved; first two
+missions remain the only credited wins. Last segment86calls/$.061035744,no
+further budget error. This reached farther than recent trials,but interruptions,
+policy-memory resets,pacing changes and stochastic choices prevent attribution
+to boarding coordination. Actual boarding and conflict suppression are verified
+mechanically; campaign success is not.
+
+Persistent underspending deserves decision-interface investigation beyond more
+execution patches. Current strategic choice frames protect as preserving owned
+units/structures and strengthen as increasing force through production,though
+these can be simultaneous means to survival. Hypothesis: mutually exclusive
+labels bias downstream allocation. Test framing with recorded states before
+another full run; do not issue a live tactical directive or assume causality.
