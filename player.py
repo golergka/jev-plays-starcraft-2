@@ -497,7 +497,7 @@ def control_groups(units, mode, learned, harvest_targets=None):
 
 
 async def choose_contributions(view, state, questions, jev, memory):
-    """Retain Jev's top role choice for its declared short commitment."""
+    """Sample Jev's distribution and retain its declared short commitment."""
     plans = memory.setdefault('contribution_plans',{})
     pending, answers = {}, {}
     strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
@@ -513,18 +513,17 @@ async def choose_contributions(view, state, questions, jev, memory):
                 'unless its controls become unavailable or the strategic priority changes. '
                 'Concrete orders are still selected separately during the commitment.'}
     predictions = await jev.ask(control_state(state),pending) if pending else {}
+    rng = memory.setdefault('contribution_rng',random.Random(20260919))
     for key,question in pending.items():
         answer = predictions.get(key,{})
         weights = {k:float(v) for k,v in answer.get('probabilities',{}).items()
                    if k in question['criteria'] and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
-        choice = answer.get('choice')
-        if choice not in question['criteria']:
-            raise ValueError(f'Jev returned an unoffered contribution for {key}: {choice!r}')
+        choice = rng.choices(list(weights),weights=list(weights.values()),k=1)[0] if weights else answer.get('choice')
         if choice in question['criteria']:
             plans[key] = {'choice':choice,'loop':view['loop'],'review_at':view['loop']+224,'strategy':strategy}
             answers[key] = {'choice':choice}
         jev.log('contribution_commitment',loop=view['loop'],question=key,
-                top_choice=answer.get('choice'),sampled_choice=choice,selection_mode='top_choice',
+                top_choice=answer.get('choice'),sampled_choice=choice,selection_mode='sampled',
                 probabilities=weights,review_at=view['loop']+224)
     return answers
 

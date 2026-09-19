@@ -2820,3 +2820,24 @@ lab170/lab178 adapters. Completed first-two definitions exactly match checkpoint
 both new local map hashes validate through OutcomeMonitor. No victory credit or
 progression gate bypass, and no live mission reset. Updated campaign docs with
 local asset and independent outcome verification requirements. Budget unchanged.
+
+
+### Lab200 — direct role choices lose earlier; restore sampled baseline
+
+Session91982 ended normally. Native UI confirms Zero Hour DEFEAT11:36 with08:33
+until evacuation, all structures destroyed. Run20260919T192012.180852Z:
+894calls/$0.540132684;39 routine questions avoided; peak trailing300sec actual
+cost$0.329625198; zero budget failures. Planned idle148.395sec,median cost-paced
+interval1.809sec,max6.521sec. Checkpoint records defeat and preserves two wins.
+Published compact result in experiments/200-direct-role-result.json.
+
+Direct role selection did maintain early income with independent workers, unlike
+old grouped-worker tests, but survival was worse than sampled-role15:10 and
+prior16:20. Not a causal estimate: one trial per variant, changing taper and
+stochastic investment paths. No evidence to retain direct roles for survival.
+Restore only the previous sampled role selector and its retention test, keeping
+independent workers, routine harvesting, budget enforcement, diagnostics and
+manifest fixes. Label sampled mode explicitly in telemetry.108tests pass.
+No repeat of the same direct-role hypothesis is justified without a new reason.
+Campaign completion remains unachieved. Next experiment should address another
+measured failure mechanism rather than add mission-specific tactical orders.

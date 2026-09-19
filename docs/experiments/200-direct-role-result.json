@@ -1,0 +1,63 @@
+{
+  "calls": 894,
+  "cost_usd": 0.540132684,
+  "routine_execution_questions_avoided": 39,
+  "contribution_sampling": {
+    "reviews": 608,
+    "departures_from_top_choice": 0,
+    "top_to_sampled": {
+      "positioning -> positioning": 103,
+      "other -> other": 154,
+      "income -> income": 53,
+      "continue -> continue": 293,
+      "combat -> combat": 5
+    },
+    "note": "Role sampling diagnostic, not evidence that either choice is tactically better."
+  },
+  "spend_governor": {
+    "scope": "This run only; excludes other runs/probes and unresolved reservations. Shared admission uses the SQLite ledger.",
+    "peak_actual_usd_in_any_300_seconds": 0.329625198,
+    "budget_failure_events": 0,
+    "planned_idle_seconds": 148.39508400167688,
+    "max_target_decision_interval_seconds": 6.521317673362344,
+    "throttle_events": 0,
+    "latest_limit_usd_per_300_seconds": 0.3496771905263265,
+    "median_target_decision_interval_seconds": 1.8094362856755473
+  },
+  "errors": [
+    {
+      "time": 1789846095.618504,
+      "event": "engine_action_error",
+      "errors": [
+        "unit_tag: 4396154881\nability_id: 558\nresult: CantBuildLocationInvalid\n"
+      ]
+    },
+    {
+      "time": 1789846120.599529,
+      "event": "engine_action_error",
+      "errors": [
+        "unit_tag: 4396154881\nability_id: 558\nresult: CantBuildLocationInvalid\n"
+      ]
+    },
+    {
+      "time": 1789846122.456067,
+      "event": "engine_action_error",
+      "errors": [
+        "unit_tag: 4396154881\nability_id: 558\nresult: CantBuildLocationInvalid\n"
+      ]
+    },
+    {
+      "time": 1789846123.8828878,
+      "event": "engine_action_error",
+      "errors": [
+        "unit_tag: 4396154881\nability_id: 558\nresult: CantBuildLocationInvalid\n"
+      ]
+    }
+  ],
+  "mission": "Zero Hour",
+  "policy": "Direct top-choice contributions with independent economic actors",
+  "native_result": "defeat",
+  "native_time": "11:36",
+  "evacuation_remaining": "08:33",
+  "comparison": "Previous sampled contribution trial defeated at15:10. Single trials with changing allowance and stochastic other layers; not a causal estimate."
+}
