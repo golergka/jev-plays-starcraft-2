@@ -1689,3 +1689,14 @@ it works or preserves campaign triggers. No warmstart request sent yet. Any test
 must be isolated, keep fog enabled, preserve original replay/results, and not
 credit progression unless the actual mission is verified won. Embedded schema
 inspection does not provide implementation semantics or official support.
+
+### Lab146 — replay warmstart rejects campaign player configuration
+
+Attempt17 visible defeat confirmed13:43,06:26evacuation remaining. Added later
+UI evidence to checkpoint/result. Then tested installed warmstart field23 using
+original replay/map,player1,is_hostTrue,disable_fogFalse. Response nested error1
+LoadReplayFailed: Not a two-player replay. API remained ended; no gameplay action
+was sent. Preserve response bytes locally. Added isolated probe with nested error
+parsing; verified parser against actual response. No fake second player or replay
+modification attempted. This interface is not a working campaign recovery path;
+do not repeat it without new evidence about supported player configurations.
