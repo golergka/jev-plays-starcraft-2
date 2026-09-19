@@ -1242,3 +1242,14 @@ unit targets also differ between deposit and resource. Thus stable work can chan
 selection identity, undermining retained contribution commitments. This is a
 control abstraction limitation to address after the frozen trial, not evidence
 that every return transition is an interruption. Runtime policy remains unchanged.
+
+### Lab108 — unchanged-policy eighth attempt defeated
+
+Controller session20437 exited normally at the configured attempt limit. UI
+inspection confirmed DEFEAT, all structures destroyed, clock7:33, evacuation12:36.
+API again omitted player_result. Recorded UI evidence separately in result and
+checkpoint without fabricating protocol results. Full report072. Runtime player
+policy stayed unchanged throughout this fresh attempt; later commits only journaled
+observations. The intermittent income recovery did not sustain the force. Two
+prior victories remain saved. Next experiment should stabilize harvest job identity
+across natural gather/return phases before spending on another bounded trial.
