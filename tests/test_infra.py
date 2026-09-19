@@ -1002,3 +1002,23 @@ def test_investment_sharpening_retains_non_top_choices_and_logs_actual_distribut
     sample=next(v for e,v in model.events if e=='investment_sample')
     assert sample['sampling_probabilities']==pytest.approx({'save':.9,'project_0':.1})
     assert sample['probabilities']=={'save':.75,'project_0':.25}
+
+
+def test_order_menu_tournament_exposes_every_option_and_uses_only_jev_finalists():
+    from player import ask_order_menus
+    questions={'squad':{'type':'choice','instructions':'Choose a legal order',
+        'criteria':{str(i):str(i)+'x'*5000 for i in range(8)}}}
+    class Model:
+        requests=[]
+        def log(self,*a,**kw):pass
+        async def ask(self,state,qs):
+            assert state=={'fact':'visible'}
+            self.requests.append(qs)
+            return {k:{'choice':max(q['criteria'],key=int)} for k,q in qs.items()}
+    model=Model()
+    answer=asyncio.run(ask_order_menus({'fact':'visible'},questions,model))
+    assert answer['squad']['choice']=='7'
+    assert {k for request in model.requests for k in request['squad']['criteria']}==set(map(str,range(8)))
+    assert set(model.requests[-1]['squad']['criteria'])=={'3','7'}
+    assert len(questions['squad']['criteria'])==8
+    assert all(len(q['squad']['criteria'])<=2 for q in model.requests)

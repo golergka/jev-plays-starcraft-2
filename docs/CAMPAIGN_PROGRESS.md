@@ -2417,3 +2417,24 @@ The roster change delayed, but does not solve, scaling limits. Next investigatio
 must address large concrete choice menus as well as state representation. No
 verified ending or campaign advancement. Do not restart this live mission solely
 because some observations or inference calls fail.
+
+### Lab180 — Jev-selected finalists for oversized concrete order menus
+
+Run20260919T180813.430207Z stopped after five consecutive input-limit errors:
+2597calls,$1.998187842, replay saved. Paused the same mission through the game
+menu; UI clock19:22. No restart or mission credit.
+
+Concrete order questions larger than16k characters now split their options into
+halves recursively. Jev chooses a finalist in each half, then Jev chooses between
+those finalists. Every original option is exposed; invalid finalists fail closed.
+State and descriptions remain unchanged. The transport's existing call budget
+and decision deadline still apply. No strategy/production menu change. This is
+not mathematically equivalent to a full-menu choice: grouping/order may affect
+preferences, and final probabilities refer only to finalists. Stage telemetry
+records that limitation. Larger state alone can still exceed the provider limit.
+
+95 tests pass, including full option coverage and Jev-only finalist selection.
+Recorded-state probe (no commands): SCV / Move Move,27030 question characters,
+46225 state characters, answered through3 calls,$0.003079062. Artifact
+180-menu-tournament.json. Acceptance does not establish strategic improvement.
+Resume same world with403 remaining calls from the initial3000-call allowance.

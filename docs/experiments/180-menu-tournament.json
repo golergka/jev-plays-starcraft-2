@@ -1,0 +1,32 @@
+{
+  "source": "runs/20260919T180813.430207Z/events.jsonl",
+  "recorded_time": 1789842113.686065,
+  "question": "SCV / Move Move",
+  "question_chars": 27030,
+  "state_chars": 46225,
+  "answer": {
+    "SCV / Move Move": {
+      "choice": "continue",
+      "type": "choice",
+      "confidence": 0.46,
+      "probabilities": {
+        "group_join_4302831618": 0.27,
+        "continue": 0.73
+      }
+    }
+  },
+  "stages": [
+    {
+      "question": "SCV / Move Move",
+      "options": 148,
+      "finalists": [
+        "group_join_4302831618",
+        "continue"
+      ],
+      "interpretation": "Final probabilities apply only to Jev-selected finalists, not the original full menu."
+    }
+  ],
+  "calls": 3,
+  "cost": 0.0030790619999999996,
+  "game_commands": false
+}

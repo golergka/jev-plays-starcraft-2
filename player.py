@@ -145,6 +145,37 @@ def describe_action_feedback(view, memory):
     return [combined[k] for k in sorted(combined)]
 
 
+async def ask_order_menus(state, questions, jev):
+    """Bound concrete menus with Jev-selected finalists, retaining every option."""
+    small, large = {}, {}
+    for key, question in questions.items():
+        criteria = question.get('criteria', {})
+        destination = large if len(criteria) > 2 and len(json.dumps(question)) > 16000 else small
+        destination[key] = question
+
+    async def tournament(key, question):
+        items = list(question['criteria'].items())
+        middle = len(items)//2
+        parts = [{**question, 'criteria': dict(items[:middle])},
+                 {**question, 'criteria': dict(items[middle:])}]
+        answers = await asyncio.gather(*(ask_order_menus(state, {key:part}, jev) for part in parts))
+        winners = []
+        for part, answer in zip(parts, answers):
+            choice = answer.get(key, {}).get('choice')
+            if choice not in part['criteria']:
+                raise ValueError('Jev returned an invalid order-menu finalist')
+            winners.append(choice)
+        jev.log('order_menu_tournament', question=key, options=len(items), finalists=winners,
+                interpretation='Final probabilities apply only to Jev-selected finalists, not the original full menu.')
+        return await jev.ask(state, {key:{**question,
+            'criteria':{choice:question['criteria'][choice] for choice in winners}}})
+
+    calls = ([jev.ask(state, small)] if small else [])
+    calls.extend(tournament(key, question) for key, question in large.items())
+    answers = await asyncio.gather(*calls)
+    return {key:value for answer in answers for key,value in answer.items()}
+
+
 async def choose_concrete_orders(state, questions, jev):
     """Jev chooses resource kind before location when both kinds are offered."""
     # Concrete questions name their selections exactly. Other selections retain
@@ -166,7 +197,7 @@ async def choose_concrete_orders(state, questions, jev):
             'gather_minerals':'Gather minerals using one of the offered mineral-field targets; a later choice selects the field.',
             'gather_vespene':'Gather vespene gas using one of the offered gas targets; a later choice selects the target.',
             'continue':'Keep existing orders unchanged.'}}
-    answers = await jev.ask(state, first)
+    answers = await ask_order_menus(state, first, jev)
     targets = {}
     for key, groups in resources.items():
         choice = answers.get(key,{}).get('choice')
@@ -179,7 +210,7 @@ async def choose_concrete_orders(state, questions, jev):
         elif choice != 'continue':
             answers[key] = {'choice':'continue'}
     if targets:
-        answers.update(await jev.ask(state, targets))
+        answers.update(await ask_order_menus(state, targets, jev))
     return answers
 
 
