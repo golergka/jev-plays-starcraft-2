@@ -3113,3 +3113,20 @@ was selected at3710, so the earlier worker-only selection pattern did not persis
 SCV batches returned at7987/8885. Large resource bank remains unresolved.
 Continue periodic native visual checks alongside logs, particularly during combat
 and after behavior changes; distinguish observations from causal conclusions.
+
+### Lab215 — resource allocation sharpening magnifies saving
+
+Same live trial, session14186 confirmed running. At11752 raw owned sample had
+20SCVs and no Marines (passengers are not counted as losses);570calls/$0.364805364.
+Native screenshot12:41 showed combat among base structures,2490minerals/984gas,
+21of46supply,7:29 evacuation remaining. Production remains inadequate despite
+legal Marine purchases/batches and idle Barracks in investment context.
+
+Offline examination of six recent investment distributions: raw save probability
+.45/.42/.53/.55/.49/.39 becomes .817/.767/.902/.900/.839/.712 under our squared
+sampling rule. One no-purchase alternative competes against many distinct
+purchases; sharpening amplifies this partition effect. This is a framework
+contribution to inactivity, not evidence Jev alone insisted on 90% inactivity.
+No paid probe or mid-trial policy change. Next allocation experiment should
+remove or factor this sharpening while preserving Jev's purchase/type decisions;
+compare against this completed trial, not just accepted command counts.
