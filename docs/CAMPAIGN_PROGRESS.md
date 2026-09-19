@@ -2497,3 +2497,20 @@ controller exit before relaunching through Battle.net. Started Zero Hour with
 maps/traynor03-outcomes-lab170.SC2Map,1500seconds/4000calls, unchanged policy.
 This is the next uncompleted mission, not a restart of the campaign. No full
 campaign is complete; all three main campaigns remain the goal.
+
+### Lab184 — Zero Hour baseline reveals economic allocation failure
+
+Fresh adapted Zero Hour attempt runs/20260919T183229.944090Z remains live under
+unchanged lab182 player policy. Loop1740:16Marines,6SCVs,4Bunkers,4Turrets,
+2Barracks,3Depots,1CommandCenter,1EngineeringBay;176calls,$0.112923174,no errors.
+Jev chose protect in all15 strategic decisions at that snapshot. Concrete actions
+were dominated by movement/stop, with no harvesting order yet.
+
+At about loop2929, observed mineral and gas income were both zero; all7 SCVs had
+repair orders. Jev received this income and current-order evidence. This is not
+an absent-income-telemetry explanation; group allocation and preferences remain
+suspects. Do not treat all disappearance as death or replace decisions with manual
+harvesting. At loop4134:13Marines,1SCV,1Bunker,2Turrets,2Barracks,3loweredDepots,
+1CommandCenter,1EngineeringBay;442calls,no decision errors,no ending marker.
+No tactical patch during this observation interval. The fresh defensive trial is
+not yet a completed mission or a verified defeat.
