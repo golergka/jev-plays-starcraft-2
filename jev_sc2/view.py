@@ -478,6 +478,17 @@ async def make_view(client, observation, data, info, objective):
                 if site_counts.get(key,0)<4:
                     candidates.append(candidate)
                     site_counts[key]=site_counts.get(key,0)+1
+    # Diagnostic only: available abilities can lack a currently valid target/site,
+    # or be unimplemented. Never infer that a missing candidate is executable.
+    missing = {}
+    for unit in view['self']:
+        represented = {c['command']['ability_id'] for c in unit['candidates']}
+        for ability in sorted(available.get(unit['tag'], set()) - represented):
+            missing.setdefault(unit['type'], {})[ability] = {
+                'name': ability_names.get(ability, str(ability)),
+                'target': catalog[ability].target if ability in catalog else None}
+    view['unrepresented_controls'] = {kind: {str(a): controls[a] for a in sorted(controls)}
+                                      for kind, controls in sorted(missing.items())}
     return view
 
 

@@ -684,6 +684,11 @@ def continuing_income(view, selected, role, strategy, key, memory):
 
 async def decide(view, jev, memory):
     """Jev chooses shared or individual orders for each unit-type selection."""
+    coverage = view.get('unrepresented_controls', {})
+    if coverage != memory.get('last_unrepresented_controls'):
+        jev.log('control_coverage', loop=view['loop'], unrepresented=coverage,
+                meaning='Advertised abilities without offered candidates; may lack targets/sites or adapter support')
+        memory['last_unrepresented_controls'] = coverage
     if view.get('player_score_telemetry'):
         jev.log('player_score',loop=view['loop'],values=view['player_score_telemetry'],
                 note='API-reported cumulative player score; telemetry only, not policy context')

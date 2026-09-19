@@ -3711,3 +3711,17 @@ historical episodes and changing choices mean this is not a controlled baseline.
 Untargeted-build adapter6c60033 is loaded; no engine-defined-location option found
 in recorded Jev questions yet, so actual addon execution remains unverified.
 Continue the live trial without an additional gameplay-policy change.
+
+### Lab252 — audit missing controls from actual advertised abilities
+
+Current249run remains active through3555 with15Marines/8SCVs,63calls/$0.037235394
+and no decision errors. To avoid guessing later-campaign coverage, view now reports
+engine-advertised resource-legal abilities with no offered command candidate,
+grouped by owned type and ability ID/name/target. Player emits control_coverage
+only when this diagnostic changes. No extra API/model request and no automatic
+command. This can mean missing adapter support OR no valid visible target/site;
+it is not proof the action could execute. Potential-only unaffordable abilities
+are excluded.127tests pass; synthetic addon coverage distinguishes unknown-product
+omission from a correctly represented purchase and an unaffordable ability.
+Diagnostic stays out of Jev's strategic state. Use live evidence to prioritize
+future adapters instead of adding arbitrary mission-specific behavior.

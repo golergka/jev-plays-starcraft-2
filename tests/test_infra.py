@@ -1172,3 +1172,5 @@ def test_untargeted_build_requires_executable_ability_and_known_product():
     assert candidates[0]['resource_cost']['vespene'] == 25
     assert is_purchase(candidates[0])
     assert any(p['type'] == 'UnaffordableAddon' for p in view['potential_projects'])
+
+    assert view['unrepresented_controls'] == {'21': {'902': {'name': 'Build UnknownAddon', 'target': 1}}}
