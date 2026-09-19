@@ -1146,7 +1146,8 @@ def test_purchase_description_exposes_observed_cargo_without_assigning_passenger
     assert 'cargo:' not in investment_description('Unknown', {}, state)
 
 
-def test_untargeted_build_requires_executable_ability_and_known_product():
+@pytest.mark.parametrize('target', [1, 5])
+def test_untargeted_build_requires_executable_ability_and_known_product(target):
     from s2clientprotocol import query_pb2 as query
     from player import is_purchase
     class Client:
@@ -1162,7 +1163,7 @@ def test_untargeted_build_requires_executable_ability_and_known_product():
     obs.observation.raw_data.units.add(tag=1, unit_type=21, alliance=raw.Self)
     data = sc.ResponseData()
     for ability, label in ((901, 'Build KnownAddon'), (902, 'Build UnknownAddon'), (903, 'Build UnaffordableAddon')):
-        data.abilities.add(ability_id=ability, friendly_name=label, target=1)
+        data.abilities.add(ability_id=ability, friendly_name=label, target=target)
     data.units.add(unit_id=9001, name='KnownAddon', ability_id=901, mineral_cost=50, vespene_cost=25)
     data.units.add(unit_id=9003, name='UnaffordableAddon', ability_id=903, mineral_cost=100)
     view = asyncio.run(make_view(Client(), obs, data, sc.ResponseGameInfo(), 'test'))
@@ -1173,4 +1174,4 @@ def test_untargeted_build_requires_executable_ability_and_known_product():
     assert is_purchase(candidates[0])
     assert any(p['type'] == 'UnaffordableAddon' for p in view['potential_projects'])
 
-    assert view['unrepresented_controls'] == {'21': {'902': {'name': 'Build UnknownAddon', 'target': 1}}}
+    assert view['unrepresented_controls'] == {'21': {'902': {'name': 'Build UnknownAddon', 'target': target}}}

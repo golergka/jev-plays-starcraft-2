@@ -242,7 +242,7 @@ async def make_view(client, observation, data, info, objective):
             label = ability_names.get(ability.ability_id,'')
             product = product_for(ability.ability_id)
             if product is not None and (label.startswith('Train ') or
-                    (label.startswith('Build ') and (catalog[ability.ability_id].target in (1,2) or
+                    (label.startswith('Build ') and (catalog[ability.ability_id].target in (1,2,5) or
                         (catalog[ability.ability_id].target in (3,4) and product.has_vespene)))):
                 potential[product.name] = {'type':product.name,'minerals':product.mineral_cost,
                     'vespene':product.vespene_cost,'supply':product.food_required,
@@ -317,7 +317,7 @@ async def make_view(client, observation, data, info, objective):
             if label.startswith('Train '):
                 candidates.append({'id':f'ability_{ability}', 'description':label+details,
                                    'command':command(ability),'resource_cost':cost,'project':project})
-            if label.startswith('Build ') and catalog[ability].target == 1 and product is not None:
+            if label.startswith('Build ') and catalog[ability].target in (1,5) and product is not None:
                 candidates.append({'id':f'build_{ability}_untargeted',
                     'description':label+' using the engine-defined location; engine validates execution'+details,
                     'command':command(ability),'resource_cost':cost,'project':project})

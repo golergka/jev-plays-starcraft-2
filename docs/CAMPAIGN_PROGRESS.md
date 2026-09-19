@@ -3725,3 +3725,16 @@ are excluded.127tests pass; synthetic addon coverage distinguishes unknown-produ
 omission from a correctly represented purchase and an unaffordable ability.
 Diagnostic stays out of Jev's strategic state. Use live evidence to prioritize
 future adapters instead of adding arbitrary mission-specific behavior.
+
+### Lab253 — observed addon target type is PointOrNone
+
+Live control_coverage at5285 identifies Barracks421 BuildTechLabBarracks and422
+BuildReactorBarracks as target5, so lab250's target1-only path cannot cover them.
+Blizzard's official data.proto documents PointOrNone=5 explicitly including addons:
+https://raw.githubusercontent.com/Blizzard/s2client-proto/master/s2clientprotocol/data.proto
+Extend no-target build and potential-project branches to1/5, retaining known-product
+cost requirement and engine-advertised resource-legal ability gating. Parameterized
+synthetic coverage now exercises both types;128tests pass. No chosen addon, guessed
+producer, or strategic directive. Live exposure and execution still need evidence.
+Other observed gaps include rally, lift, salvage, patrol and cancel; report does
+not authorize automatically issuing them. Current249trial remains mixedrevision.
