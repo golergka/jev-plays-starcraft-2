@@ -1253,3 +1253,16 @@ policy stayed unchanged throughout this fresh attempt; later commits only journa
 observations. The intermittent income recovery did not sustain the force. Two
 prior victories remain saved. Next experiment should stabilize harvest job identity
 across natural gather/return phases before spending on another bounded trial.
+
+### Lab109 — preserve observed harvest assignments across cargo return
+
+Normalize gather/return phases to a Harvest cycle selection, keyed by the last
+actually observed gathering target. Track that target under every grouping mode,
+so switching grouping does not discard known work. Return-to-base targets are
+never treated as resources. Unknown return assignments stay separate by unit;
+interrupted orders and absent units clear their cached targets. New observed
+gather targets replace old assignments. This changes selection identity only,
+not any command, worker quota or resource priority. Jev chooses grouping and actions.
+57 tests pass, covering phase continuity, resource switching, interrupted work,
+unknown return targets, absent-unit cleanup and unchanged legacy grouping.
+Launch one further bounded fresh attempt (maximum attempt9,2500calls) on Zero Hour.

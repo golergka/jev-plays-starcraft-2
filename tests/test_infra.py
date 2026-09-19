@@ -751,3 +751,25 @@ def test_job_grouping_separates_assignments_without_choosing_actions():
     assert sorted(sorted(u['tag'] for u in group) for group in groups.values())==[[1],[2,4],[3]]
     assert units==original
     assert len(control_groups(units,'by_type',{}))==1
+
+
+def test_harvest_job_identity_survives_return_and_forgets_interrupted_assignment():
+    from player import control_groups
+    memory={}
+    def unit(ability,target):
+        return {'tag':1,'type':'AnyWorker','candidates':[],
+                'orders':[{'ability':ability,'target_tag':target}]}
+    gather=unit('Harvest Gather Any',10)
+    control_groups([gather],'by_type',{},memory)
+    a=control_groups([gather],'by_current_order',{},memory)
+    b=control_groups([unit('Harvest Return Any',99)],'by_current_order',{},memory)
+    assert list(a)==list(b)
+    c=control_groups([unit('Harvest Gather Any',11)],'by_current_order',{},memory)
+    assert list(a)!=list(c)
+    control_groups([unit('Move Move',None)],'by_current_order',{},memory)
+    unknown=control_groups([unit('Harvest Return Any',99)],'by_current_order',{},memory)
+    assert 'resource unknown' in next(iter(unknown))
+    assert 'target 99' not in next(iter(unknown))
+    control_groups([gather],'by_type',{},memory)
+    control_groups([],'by_type',{},memory)
+    assert memory=={}

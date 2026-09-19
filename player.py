@@ -296,8 +296,13 @@ def selection_facts(view, cohorts, previous_counts):
     return facts
 
 
-def control_groups(units, mode, learned):
+def control_groups(units, mode, learned, harvest_targets=None):
     groups = {}
+    harvest_targets = {} if harvest_targets is None else harvest_targets
+    present = {u["tag"] for u in units}
+    for tag in list(harvest_targets):
+        if tag not in present:
+            harvest_targets.pop(tag)
     for unit in units:
         ids = {c['id'] for c in unit['candidates']}
         has_attack = any(k.startswith('attack') for k in ids)
@@ -306,11 +311,24 @@ def control_groups(units, mode, learned):
                     or unit.get('available_build_abilities')
                     or any(c.startswith(('Build ', 'Harvest')) for c in learned.get(unit['type'],[])))
         key = 'MobileCombat' if mode=='mobile_combat' and has_attack and has_move and not economic else unit['type']
+        orders = unit.get('orders') or []
+        order = orders[0] if orders else {}
+        job = order.get('ability', 'idle')
+        target = order.get('target_tag')
+        # Remember only observed resource targets, never infer a resource from a
+        # return-to-base target. Track this even while Jev uses another grouping.
+        if job.startswith('Harvest Gather'):
+            if target:
+                harvest_targets[unit['tag']] = target
+            else:
+                harvest_targets.pop(unit['tag'], None)
+            job = 'Harvest cycle'
+        elif job.startswith('Harvest Return'):
+            target = harvest_targets.get(unit['tag'])
+            job = 'Harvest cycle' if target else f'Harvest return / resource unknown / unit {unit["tag"]}'
+        else:
+            harvest_targets.pop(unit['tag'], None)
         if mode == 'by_current_order':
-            orders = unit.get('orders') or []
-            order = orders[0] if orders else {}
-            job = order.get('ability', 'idle')
-            target = order.get('target_tag')
             key = f'{unit["type"]} / {job}' + (f' / target {target}' if target else '')
         groups.setdefault(key, []).append(unit)
     return groups
@@ -408,7 +426,7 @@ async def decide(view, jev, memory):
     state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress','cargo','energy','harvesters')}
                       for u in units]
     state['type_selection_facts'] = selection_facts(view,cohorts,{})
-    cohorts = control_groups(units,memory.get('coordination','by_type'),learned)
+    cohorts = control_groups(units,memory.get('coordination','by_type'),learned,memory.setdefault('harvest_targets',{}))
     state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
     strategy = memory.get('strategy')
     if strategy is None or view['loop']-strategy['loop'] >= 112:
@@ -432,7 +450,7 @@ async def decide(view, jev, memory):
             'instructions':'Choose how to organize the next control selections. This chooses grouping only; further Jev decisions choose every order.',
             'criteria':{
                 'by_type':'Keep different unit types in separate selections, allowing different shared orders.',
-                'by_current_order':'Separate each unit type by its current first order and unit target, with idle units separate. Choose distinct orders for those job selections to retain or change existing assignments independently.',
+                'by_current_order':'Separate each unit type by its current first order and unit target, with idle units separate and observed gather/return cycles kept together by their known resource target. Choose distinct orders for those job selections to retain or change existing assignments independently.',
                 'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
             },
         }})
@@ -445,7 +463,7 @@ async def decide(view, jev, memory):
         if grouping in ('by_type','mobile_combat','by_current_order'):
             memory['coordination'] = grouping
             jev.log('coordination_choice',loop=view['loop'],choice=grouping)
-            cohorts = control_groups(units,grouping,learned)
+            cohorts = control_groups(units,grouping,learned,memory.setdefault('harvest_targets',{}))
             state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
     memory['previous_cohort_counts'] = {k:len(v) for k,v in cohorts.items()}
     state['strategy_chosen_by_jev'] = strategy
