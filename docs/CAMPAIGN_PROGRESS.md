@@ -2215,3 +2215,35 @@ exited SC2. Confirmed process absent, relaunched through Battle.net, then ran th
 marker tests successfully. New process PID84249. Prepared Outlaws with preserved
 mission rules and ending markers: maps/traynor02-outcomes-lab169c.SC2Map. Next run
 will verify both the disputed second win and marker timing against actual UI.
+
+### Lab170 — preserve ending monitoring on reconnect; probe investment sampling
+
+Outlaws verification remains live under unchanged Jev policy in
+runs/20260919T051054.128301Z, process session82717. At loop8852:51 owned units,
+29SCVs,8Marines,5Barracks,7Depots,1Refinery,1CommandCenter;743 calls and no observed
+controller errors. Jev changed its strategy to attack after prolonged strengthening.
+No ending marker yet, no victory credited. Prepared Zero Hour with the same
+objective/outcome adapter: maps/traynor03-outcomes-lab170.SC2Map.
+
+Fixed a reconnect gap in the harness: --attach without --map now resolves the
+current API map name to its local hash-checked bridge sidecar. A preexisting active
+bank can arm the monitor; an already-terminal bank alone cannot produce credit.
+No running controller restart was needed for this future reconnect fix. 92 tests
+pass. Added exact build/run/reconnect commands and limitations to CAMPAIGN.md.
+
+Observed a weak sampling decision at loop5022: with30 supply free, a7%-probability
+save-for-SupplyDepot option was sampled and later purchased. This is a policy
+sampling consequence, not proof that Jev's top choice requested that depot.
+Consulted git log and labs068/074/076: pure argmax previously hoarded resources;
+sampling and bounded named commitments were introduced deliberately. Do not
+blindly revert to an already-stalled method.
+
+New offline scripts/probe_investment_comparison.py selected the last three recorded
+investment samples differing from Jev's top choice. Same recorded states; compared
+full-menu replay to a two-option comparison between sampled/top alternatives;
+alternated option and request order. Six calls,$0.001744848. All three full-menu
+replays repeated the original top choice, and all three comparisons preferred it
+over the sampled alternative (loops7696,7727,7773). Artifact:
+docs/experiments/170-investment-comparison.json. This small descriptive probe does
+not establish strategic utility or a better live policy; two preferred choices
+were save. No game commands or live-policy change resulted from the probe.

@@ -1,5 +1,48 @@
 # Stock mission experiment on this Mac
 
+## Current API compatibility procedure
+
+Lab163 showed that native objective Completed/Failed updates can end API control
+before the campaign mission ends. Use the local objective adapter for continued
+experiments. It preserves script-facing objective states and mission conditions,
+while displaying terminal objectives with an explicit text label. Lab169 verified
+Liberation Day's actual victory screen at3:44 with this adapter. Outlaws is being
+reverified; see CAMPAIGN_PROGRESS.md for current evidence.
+
+After extracting a source map with the procedure below, build a separate copy:
+
+```sh
+uv run python scripts/build_objective_bridge.py maps/traynor02.SC2Map maps/traynor02-api.SC2Map \
+  --casc /tmp/jev-research/CascLib/build/casc.framework/casc \
+  --storm /tmp/jev-research/StormLib/build/storm.framework/storm --record-outcomes
+uv run python -m jev_sc2 --attach --map maps/traynor02-api.SC2Map \
+  --follow-camera --seconds 1200 --max-calls 3000 --max-age-loops 128 \
+  --objective 'Destroy the Dominion Base.'
+```
+
+The builder refuses overwrites and writes a `.bridge.json` provenance report
+beside the ignored map. It audits the entire script include closure; unresolved
+or ambiguous dependencies fail rather than silently leaving inconsistent reads.
+The ending hooks currently support the audited Wings of Liberty library only.
+They record the real victory-sequence call or player defeat in a unique native
+bank. The controller requires a fresh active marker followed by a terminal one,
+then stops and saves its replay. Experimental builds retain `campaign_credit=false`:
+the detected ending still needs a UI check before advancement. An API result by
+itself does not establish campaign completion.
+
+Resume the same running mission with `--attach` and the same objective/budgets,
+omitting `--map`. For maps in this repository's maps directory, the runner resolves
+the current API map name to its hash-checked sidecar and retains ending monitoring.
+An existing active bank can arm a resumed monitor; an already-terminal bank alone
+cannot credit a win. Player/view/camera commits continue to hot-reload normally.
+
+SC2 exited once when leaving an actual victory screen through the API. Its replay
+and verified result had already been saved. Confirm process exit before relaunching
+through Battle.net with the API arguments below; do not restart a still-live game
+because a request merely timed out. Source maps and installed game files stay intact.
+
+## Original extraction and smoke tests
+
 The Mac editor fails during video initialization. We instead used
 [CascLib](https://github.com/ladislav-zezula/CascLib) to read the installed game
 and [StormLib](https://github.com/ladislav-zezula/StormLib) to package a local MPQ

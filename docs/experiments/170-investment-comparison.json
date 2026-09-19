@@ -1,0 +1,176 @@
+{
+  "source": "runs/20260919T051054.128301Z/events.jsonl",
+  "method": "Last three recorded investment samples differing from top choice; unchanged state; alternate option and request order. No game commands.",
+  "results": [
+    {
+      "loop": 7696,
+      "resources": {
+        "minerals": 115,
+        "vespene": 528,
+        "estimated_minerals_per_minute": 740.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 30,
+        "food_cap": 59,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 29,
+        "supply_blocked": false
+      },
+      "recorded_top": "project_2",
+      "recorded_sample": "project_1",
+      "recorded_probabilities": {
+        "project_1": 0.06,
+        "save_for_0": 0.09,
+        "save": 0.19,
+        "save_for_1": 0.01,
+        "project_2": 0.38,
+        "project_0": 0.19,
+        "project_3": 0.08
+      },
+      "mapping": {
+        "option_a": "project_1",
+        "option_b": "project_2"
+      },
+      "descriptions": {
+        "option_a": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True}. Already owned: 1; idle: 1; current orders: {}.",
+        "option_b": "Purchase one SCV. Adds another unit able to: Build Barracks, Build Refinery on visible gas geyser tag 4299423745 at [70.5,14.5], Build SupplyDepot, Harvest resources. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False}. Already owned: 25; idle: 0; current orders: {'Harvest Gather SCV': 13, 'Move Move': 2, 'Harvest Return SCV': 9, 'Build Barracks': 2}."
+      },
+      "full_menu": {
+        "choice": "project_2",
+        "type": "choice",
+        "confidence": 0.2,
+        "probabilities": {
+          "project_1": 0.1,
+          "save": 0.19,
+          "project_3": 0.12,
+          "save_for_0": 0.07,
+          "project_2": 0.32,
+          "save_for_1": 0.01,
+          "project_0": 0.19
+        }
+      },
+      "comparison": {
+        "choice": "option_b",
+        "type": "choice",
+        "confidence": 0.55,
+        "probabilities": {
+          "option_b": 0.77,
+          "option_a": 0.23
+        }
+      }
+    },
+    {
+      "loop": 7727,
+      "resources": {
+        "minerals": 150,
+        "vespene": 528,
+        "estimated_minerals_per_minute": 780.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 30,
+        "food_cap": 59,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 29,
+        "supply_blocked": false
+      },
+      "recorded_top": "save",
+      "recorded_sample": "project_0",
+      "recorded_probabilities": {
+        "save": 0.31,
+        "project_0": 0.06,
+        "project_1": 0.27,
+        "project_2": 0.1,
+        "project_4": 0.09,
+        "save_for_0": 0.01,
+        "project_3": 0.16
+      },
+      "mapping": {
+        "option_a": "save",
+        "option_b": "project_0"
+      },
+      "descriptions": {
+        "option_a": "Make no new purchase now; preserve resources and let existing production/construction finish.",
+        "option_b": "Purchase one Barracks. Adds another unit able to: Train Marine. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False}. Already owned: 3; idle: 1; current orders: {'Train Marine': 6}."
+      },
+      "comparison": {
+        "choice": "option_a",
+        "type": "choice",
+        "confidence": 0.53,
+        "probabilities": {
+          "option_a": 0.76,
+          "option_b": 0.24
+        }
+      },
+      "full_menu": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.18,
+        "probabilities": {
+          "project_2": 0.1,
+          "save_for_0": 0.01,
+          "project_3": 0.17,
+          "project_0": 0.06,
+          "project_1": 0.26,
+          "project_4": 0.09,
+          "save": 0.31
+        }
+      }
+    },
+    {
+      "loop": 7773,
+      "resources": {
+        "minerals": 180,
+        "vespene": 528,
+        "estimated_minerals_per_minute": 760.0,
+        "estimated_vespene_per_minute": 32.0,
+        "food_used": 30,
+        "food_cap": 59,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 29,
+        "supply_blocked": false
+      },
+      "recorded_top": "save",
+      "recorded_sample": "project_1",
+      "recorded_probabilities": {
+        "project_1": 0.25,
+        "project_2": 0.09,
+        "project_3": 0.16,
+        "save": 0.25,
+        "project_4": 0.06,
+        "project_0": 0.18,
+        "save_for_0": 0.01
+      },
+      "mapping": {
+        "option_a": "project_1",
+        "option_b": "save"
+      },
+      "descriptions": {
+        "option_a": "Purchase one Marine. Its action capabilities have not yet been observed. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False}. Already owned: 2; idle: 0; current orders: {'Move Move': 2}.",
+        "option_b": "Make no new purchase now; preserve resources and let existing production/construction finish."
+      },
+      "full_menu": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.15,
+        "probabilities": {
+          "project_3": 0.16,
+          "project_0": 0.14,
+          "save": 0.27,
+          "project_4": 0.07,
+          "project_2": 0.1,
+          "save_for_0": 0.01,
+          "project_1": 0.25
+        }
+      },
+      "comparison": {
+        "choice": "option_b",
+        "type": "choice",
+        "confidence": 0.32,
+        "probabilities": {
+          "option_b": 0.66,
+          "option_a": 0.34
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0017448479999999998
+}

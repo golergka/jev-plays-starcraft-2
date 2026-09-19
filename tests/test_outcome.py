@@ -56,3 +56,15 @@ def test_manifest_requires_map_integrity_and_restricted_bank_name(tmp_path):
     manifest.write_text(json.dumps(metadata))
     with pytest.raises(ValueError, match='Invalid'):
         OutcomeMonitor.for_map(path, 0, tmp_path)
+
+
+def test_resume_can_arm_from_existing_active_but_never_existing_terminal(tmp_path):
+    path = tmp_path/'outcome.SC2Bank'
+    bank(path, 'victory', stamp=5)
+    assert OutcomeMonitor(path, 0).poll() is None
+    monitor = OutcomeMonitor(path, 0)
+    bank(path, 'active', stamp=5)
+    assert monitor.poll() is None
+    assert monitor.saw_active
+    bank(path, 'defeat', stamp=30)
+    assert monitor.poll()['status'] == 'defeat'

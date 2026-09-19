@@ -142,6 +142,12 @@ async def run(args):
                 raise RuntimeError('--attach without --map needs an API game already in progress')
         info = attached_info if attached_info is not None else await client.request('game_info',sc.RequestGameInfo())
         outcome.update(map_name=info.map_name,local_map_path=info.local_map_path)
+        if not args.map:
+            # A reconnect must keep ending telemetry. The current API map name
+            # selects a local, hash-checked build; an existing ACTIVE marker may
+            # arm the monitor, but an already-terminal bank alone never can.
+            local_name = info.local_map_path.replace('\\','/').split('/')[-1]
+            outcome_monitor = OutcomeMonitor.for_map(ROOT/'maps'/local_name, 0)
         data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True,upgrade_id=True))
         started = time.monotonic()
         failures = 0
