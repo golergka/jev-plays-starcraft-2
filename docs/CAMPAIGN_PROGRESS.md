@@ -4018,3 +4018,18 @@ worker count, without new model decisions for the two background requests.
 Native screenshot1:24 shows24/35supply and4miners. It does not establish that
 changed save wording caused the selection or that the economy/mission will
 succeed. Trial remains running; this commit changes only the journal.
+
+### Lab274 — neutral-save trial ends13:19; execution is not allocation
+
+Run20260919T231030.247545Z/session63654 terminal with native DEFEAT13:19,
+06:50remaining,385minerals,allstructuresdestroyed.181successful calls cost
+$0.114435048; zero decision errors; six background training execution events.
+Verified UI outcome saved to run and campaign checkpoint. Only first two missions
+completed. Stable policy throughout; lab273 changed journal only.
+
+Full first SCV batch verified inlab273. Later visual checks showed higher mineral
+income, lost supply capacity then recovery through construction, substantial
+unspent minerals/gas and shrinking army.13:19 vs previous11:22 is one uncontrolled
+episode difference, not proof neutral wording improves survival. The main unresolved
+problem remains allocation and coordination, not merely failed API execution or
+lack of workers. Do not respond by forcing a mission-specific production plan.
