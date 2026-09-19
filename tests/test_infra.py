@@ -797,3 +797,15 @@ def test_large_jev_batch_splits_without_losing_choices_or_state():
     assert len(requests)==2 and model.calls==2 and model.inflight==0
     assert all(r['state'] is state for r in requests)
     assert {k:v for r in requests for k,v in r['questions'].items()}==questions
+
+
+def test_order_context_deduplicates_capabilities_but_preserves_jobs_and_targets():
+    from player import order_state
+    source={'selection_facts':{'Worker / Harvest cycle':{'count':3,'current_order_counts':{'Gather':3},
+        'available_projects':[{'type':'Building'}],'available_support_abilities':['Repair']}},
+        'type_selection_facts':{'Worker':{'available_projects':[{'type':'Building'}]}},
+        'units':[{'tag':1,'position':[2,3]}],'visible_entities':[{'tag':9}]}
+    compact=order_state(source)
+    assert compact['selection_facts']['Worker / Harvest cycle']=={'count':3,'current_order_counts':{'Gather':3}}
+    for key in ('type_selection_facts','units','visible_entities'):assert compact[key]==source[key]
+    assert 'available_projects' in source['selection_facts']['Worker / Harvest cycle']

@@ -116,11 +116,22 @@ def investment_state(state):
     return compact
 
 
+def order_state(state):
+    """Avoid repeating type capabilities in every job selection's context."""
+    compact = dict(state)
+    repeated = {'available_projects', 'available_support_abilities', 'available_build_abilities'}
+    compact['selection_facts'] = {name:{k:v for k,v in facts.items() if k not in repeated}
+                                  for name,facts in state.get('selection_facts',{}).items()}
+    # Type-level facts retain the capability lists; concrete criteria name the
+    # actual legal actions for each selection. Positions/orders remain intact.
+    return compact
+
+
 def control_state(state):
     compact = investment_state(state)
     compact['selection_facts'] = state.get('selection_facts',{})
     compact['type_selection_facts'] = state.get('type_selection_facts',{})
-    return compact
+    return order_state(compact)
 
 
 def investment_description(name, project, state):
@@ -598,7 +609,7 @@ async def decide(view, jev, memory):
                     concrete_questions[kind]={**q,'criteria':criteria,
                                               'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
         if concrete_questions:
-            answers.update(await jev.ask(state,concrete_questions))
+            answers.update(await jev.ask(order_state(state),concrete_questions))
         commands, support_requests = [], {}
         for kind, selected in cohorts.items():
             choice = answers.get(kind,{}).get('choice')

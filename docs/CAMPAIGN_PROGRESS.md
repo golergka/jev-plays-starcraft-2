@@ -1279,3 +1279,13 @@ can still fail. It adds calls and repeats state, so cost/latency need observatio
 58 tests pass including no dropped questions/criteria and normal call accounting.
 Resume same pending mission rather than resetting its progress after infrastructure
 failure; fresh attempt slot is not consumed. Runtime SDK change needs reconnect.
+
+### Lab111 — splitting alone fails; deduplicate job capability context
+
+Resumed run20260919T005637.401840Z stopped after five token-limit failures despite
+39 batch-split events. Six successful ticks, four stale, median1929.5ms. Batch
+splitting alone is not a sufficient fix. Remove repeated project/support/build
+lists from per-selection facts sent for role and concrete-order decisions. Keep
+complete type-level capability facts, actual criteria, unit positions/orders and
+visible entities. Source state remains intact for constructing legal criteria.
+59 tests pass; reconnect to same pending mission to verify actual endpoint behavior.
