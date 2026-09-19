@@ -3165,3 +3165,18 @@ accepted actions,ages69/72/63 within128. Native5:54 screenshot showed supply27/2
 11SCVs,oneBarracks,315calls/$0.189702114. This is more encouraging than accepted
 requests alone, but appearances do not establish a production count. No budget
 or terminal event. Keep trial unchanged and verify eventual native outcome.
+
+### Lab218 — passenger orders can conflict with Jev boarding decisions
+
+Current run20260919T202955.161373Z/session37394 remains live. Through9142,
+428calls/$0.260495676. Native9:52 screenshot showed combat inside base and
+923minerals/20of35supply. Examined executed command proposals, not just menu
+choices: five LoadBunker407 requests. At4092 the same passenger also received
+Attack23 point79.5,21.5; at4376/8232/8825 it received Hold18; at9142 no simultaneous
+passenger command. All reported no action_errors. These parallel selection
+outputs may interfere with boarding; engine acceptance does not prove entry.
+Bunker group choices also include frequent explicit unloads, so empty bunkers
+cannot be attributed solely to this conflict. Next general coordination test:
+resolve Jev-selected multi-unit job participant conflicts instead of independently
+issuing incompatible orders to both sides. Keep this allocation trial unchanged
+until its outcome is verified. No hardcoded garrison tactic or unit preference.
