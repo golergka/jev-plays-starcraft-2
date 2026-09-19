@@ -3750,3 +3750,13 @@ coverage verifies only the advertised worker gets the exact untargeted command.
 Native8:05 shows remaining CommandCenter under attack,17minerals,zero assigned
 miners. This capability addition does not demonstrate it would avert the defeat.
 The live trial remains mixedrevision; budget and decision selection unchanged.
+
+### Lab255 — visually verified8:23 defeat despite completed worker batch
+
+Run20260919T221748.437060Z/session74302 terminal,129successful calls/$0.071061438.
+Native DEFEAT8:23,11:46 evacuation remaining,0minerals,all structures destroyed.
+Checkpoint records defeat and retains two verified wins. Three SCV requests really
+completed across the extended window, but the force still collapsed. Cargo-context
+placement has no demonstrated survival benefit; multiple adapter/diagnostic
+reloads and changed history prevent clean causal attribution. Next fresh run can
+validate advertised addon coverage from startup; no claim of full-campaign readiness.
