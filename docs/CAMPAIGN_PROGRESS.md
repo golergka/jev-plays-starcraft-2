@@ -2292,3 +2292,18 @@ tests pass, including roster reconstruction and preserving command precision.
 SC2 process84249 remains present but its window is black and an API observation
 is pending. Do not infer a mission loss or restart from this observation alone.
 Remaining original call allowance after both gameplay runs:1299 calls.
+
+### Lab173 — recover ended client and test compact roster in a fresh attempt
+
+The exact Outlaws outcome bank now contains defeat, engine_time1789807154,
+after the controller had stopped on input-limit errors. Copied bank and recovery
+evidence into runs/20260919T074549.368696Z. UI corroboration was unavailable:
+window remained black, observation exhausted its120-second timeout, and normal
+quit plus SIGTERM did not exit process84249. Forced termination only after this
+evidence, verified process absence, then relaunched through Battle.net.
+
+New client903 connected on the same API port and began loading the same adapted
+Outlaws map. Fresh attempt uses1200seconds/3000calls with compact roster commit
+97178b9 and otherwise unchanged Jev policy. Prior attempt remains incomplete in
+its original result; the later defeat marker is separate evidence. No campaign
+advancement or verified win claimed. This retries Outlaws, not Liberation Day.
