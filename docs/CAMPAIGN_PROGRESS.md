@@ -6677,3 +6677,11 @@ Jev can still load, unload, repair or leave current state unchanged.219tests pas
 No new test for a wording-only edit; paired454/455 evidence documents behavior.
 Next trial retains451flags includingfamilies to isolate this single change,
 not because451 established family benefit. Same budget; live benefit unproven.
+
+### Lab457 — live trial of removing other-role action pressure
+
+Run20260920T104430.451350Z/session38070 revisionca1cdf0. Same451 flags,
+including orderfamilies; only456wording changed. Native opening0:15 verified,
+controller live after restart. Cap$.10/300s unchanged. Follow thissession and
+/tmp/jev-smash-and-grab-lab457.log. Watch cargo retention and commands generally;
+no claim until measured.16priorSmashdefeats,firstthree missions onlyverifiedwins.
