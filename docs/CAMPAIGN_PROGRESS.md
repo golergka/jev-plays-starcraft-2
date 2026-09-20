@@ -6634,3 +6634,16 @@ checkpoint16thSmashdefeat and publicreport. No rootorders/midrunpolicychanges.
 Do not retry unchanged or promotefamilymode todefault. Investigate why general
 objective navigation dominates immediate survival/production dependencies;
 future experiment must address that behavior rather than merely more context.
+
+### Lab453 — empty snapshots hid repeated boarding/unloading cycles
+
+Offline451 Bunker concrete decisions24. LoadMarine4327211016 at2310,
+observedcargo1 and chooseunload2980; loadsameMarine3362, cargo1/unload3795;
+load4009,cargo1/unload4495; loadagain4729. LaterSCVload/unload cycles too.
+Thus452's zero-passenger snapshot9422 is true but cannot imply bunkers were
+never staffed. Controls existed and Jev repeatedly reversed assignments.
+Each unload menu includes continue, but its generic wording mentions current
+orders rather than maintaining cargo; idle/passive garrison activity may be
+poorly represented. Hypothesis, not proven cause. Next recorded-state probe
+should make continuation's persistent cargo state explicit without removing
+unload or forcing boarding. Zero paidcalls or gamecommands this audit.
