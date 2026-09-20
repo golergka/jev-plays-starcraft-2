@@ -4,6 +4,20 @@ from collections import Counter
 from pathlib import Path
 
 
+def verified_ui_result(result):
+    """Accept both recorded UI schemas, but never conflicting attestations."""
+    status = result.get('status')
+    ui = result.get('ui_verification', {})
+    if status not in ('victory', 'defeat') or not isinstance(ui, dict):
+        return False
+    values = []
+    if 'result' in ui:
+        values.append(ui['result'])
+    if 'outcome' in ui:
+        values.append({'VICTORY':'victory', 'DEFEAT':'defeat'}.get(ui['outcome']))
+    return bool(values) and all(value == status for value in values)
+
+
 def previous_attempts(runs, map_path, exclude=None, limit=3):
     name = map_path.replace('\\', '/').split('/')[-1]
     summaries = []
@@ -13,8 +27,7 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
         try:
             result = json.loads(result_path.read_text())
             status = result.get('status')
-            if (status not in ('victory', 'defeat')
-                    or result.get('ui_verification', {}).get('result') != status
+            if (not verified_ui_result(result)
                     or result.get('local_map_path', '').replace('\\', '/').split('/')[-1] != name):
                 continue
             first = last = None

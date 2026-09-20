@@ -117,3 +117,20 @@ def test_verified_defeat_preserves_controller_interruption(tmp_path):
     assert interrupted['controller_interrupted'] is True
     assert interrupted['controller_stop_status']=='incomplete'
     assert 'uncontrolled play' in history['interpretation']
+
+
+def test_native_screen_outcome_schema_is_accepted(tmp_path):
+    directory=write_attempt(tmp_path,'01')
+    path=directory/'result.json';result=json.loads(path.read_text())
+    result['ui_verification']={'outcome':'DEFEAT','native_time':'4:34'}
+    path.write_text(json.dumps(result))
+    assert len(previous_attempts(tmp_path,'mission.SC2Map')['attempts'])==1
+
+
+def test_conflicting_unknown_or_missing_ui_labels_rejected():
+    from jev_sc2.episodes import verified_ui_result
+    for ui in ({'result':'defeat','outcome':'VICTORY'},{'outcome':'unknown'}, {},
+               {'result':'victory'},{'outcome':'defeat'}):
+        assert not verified_ui_result({'status':'defeat','ui_verification':ui})
+    assert verified_ui_result({'status':'victory','ui_verification':{'outcome':'VICTORY'}})
+    assert verified_ui_result({'status':'defeat','ui_verification':{'result':'defeat','outcome':'DEFEAT'}})
