@@ -220,3 +220,17 @@ def test_selection_members_identify_mixed_and_overlapping_groups():
                           {'combined':units,'single':[units[1]]},{})
     assert facts['combined']['members']==[{'tag':101,'type':'Marine'},{'tag':202,'type':'Medic'}]
     assert facts['single']['members']==[{'tag':202,'type':'Medic'}]
+
+
+def test_distant_enemy_does_not_disable_existing_harvest_continuation():
+    unit={'tag':1,'health_fraction':1,'position':[0,0],
+          'orders':[{'ability':'Harvest Gather SCV'}]}
+    view={'loop':100,'visible_entities':[{'alliance':'Enemy','position':[80,80]}]}
+    memory={}
+    assert not continuing_income(view,[unit],'income','recover','worker',memory)
+    view['loop']=200
+    assert continuing_income(view,[unit],'income','recover','worker',memory)
+    view['visible_entities'][0]['position']=[12,0]
+    assert not continuing_income(view,[unit],'income','recover','worker',memory)
+    view['visible_entities'][0].pop('position')
+    assert not continuing_income(view,[unit],'income','recover','worker',memory)

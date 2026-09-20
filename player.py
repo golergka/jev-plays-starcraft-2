@@ -886,7 +886,12 @@ def continuing_income(view, selected, role, strategy, key, memory):
     harvesting = bool(selected) and all(
         u.get('orders') and u['orders'][0].get('ability','').startswith(('Harvest Gather', 'Harvest Return'))
         for u in selected)
-    threatened = any(e.get('alliance')=='Enemy' for e in view.get('visible_entities', []))
+    # Scheduling trigger, not a claim that distant enemies are harmless.
+    # Missing geometry forces review; never select a task or target here.
+    threatened = any(
+        not e.get('position') or any(not u.get('position') or
+            math.dist(u['position'], e['position']) <= 12 for u in selected)
+        for e in view.get('visible_entities', []) if e.get('alliance') == 'Enemy')
     if (role=='income' and harvesting and not threatened and previous
         and previous['strategy']==strategy
         and 0 <= view['loop']-previous['loop'] < 672
