@@ -6391,3 +6391,13 @@ can have affordability delayed by repairs; batches reserve purchase priority,
 not protection against repair costs. No executor or tactical rule changes.
 Full213tests pass. Zero paidcalls. These contract corrections make descriptions
 consistent; no claim of improved strategic behavior until tested live.
+
+### Lab435 — truthful repair-spending contract does not shift top choices
+
+First/middle/last431 investment requests, original shared state and menu kept.
+Treatment applies433/434 corrections to general instructions and Save/save-for/
+batch descriptions. Alternating order, sixcalls $0.003216612. Allthreepairs
+Save→Save. Keep factual corrections because they match executor behavior,
+but no evidence that they fix allocation; no full retry based on this probe.
+Script/artifact retained. No gameplay commands. Three single pairs cannot
+establish universal insensitivity or performance equivalence.
