@@ -6737,3 +6737,16 @@ CommandCenter destroyed8:01. Nativeending independentlyverified; result/checkpoi
 18thSmashdefeat/report reconciled. No rootorders or midrunpolicychanges. No
 causal claim from shorter duration. Next focus goal-to-prerequisite/purchase
 reasoning, not another unchanged retry or further restatement of known goals.
+
+### Lab462 — producer dependency table leaves sampled purchases unchanged
+
+Sixcalls $0.002729496 on460 first/middle/last investmentstates lackingBarracks
+and containingJevgoals:3540/6231/8412. Added reverseindex of rememberedTrain
+controls with currentproducer/incompletecounts; all state/questions otherwise
+unchanged. Explicit historical/prerequisite caveat, no selectedpurchase.
+Baseline andtreatment SCV/Save/Save.3540 has337minerals andimmediateBarracks
+option; laterstates have0minerals andnoimmediateBarracksoption, limitingthis
+comparison. Do not claim three affordable-rebuild failures. Notdeployed; no
+livecommands. One informative affordablecase unchanged, insufficient reason to
+add more context or retrylive. Next tests should select affordable rebuilding
+states explicitly and investigate goal priority rather than only fact repetition.

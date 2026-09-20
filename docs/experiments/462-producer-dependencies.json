@@ -1,0 +1,220 @@
+{
+  "source": "runs/20260920T110319.423869Z/events.jsonl",
+  "pairs": [
+    {
+      "loop": 3540,
+      "relationships": [
+        {
+          "producer_type": "Barracks",
+          "previously_observed_training_controls": [
+            "FlameMech",
+            "Marauder",
+            "Marine",
+            "Medic"
+          ],
+          "currently_observed_producer_count": 0,
+          "currently_incomplete_count": 0
+        },
+        {
+          "producer_type": "CommandCenter",
+          "previously_observed_training_controls": [
+            "SCV"
+          ],
+          "currently_observed_producer_count": 1,
+          "currently_incomplete_count": 0
+        }
+      ],
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.28,
+            "probabilities": {
+              "batch_3": 0.08,
+              "project_3": 0.38,
+              "save": 0.18,
+              "project_4": 0.14,
+              "project_0": 0.16,
+              "project_2": 0.04,
+              "save_for_0": 0.01,
+              "project_1": 0.01
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        },
+        "dependencies": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.23,
+            "probabilities": {
+              "batch_3": 0.08,
+              "project_3": 0.33,
+              "project_1": 0.01,
+              "project_2": 0.04,
+              "save": 0.16,
+              "project_4": 0.14,
+              "save_for_0": 0.02,
+              "project_0": 0.22
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        }
+      },
+      "resources": {
+        "minerals": 337,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 140.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 29,
+        "supply_blocked": false
+      },
+      "immediate_barracks_option": true
+    },
+    {
+      "loop": 6231,
+      "relationships": [
+        {
+          "producer_type": "Barracks",
+          "previously_observed_training_controls": [
+            "FlameMech",
+            "Marauder",
+            "Marine",
+            "Medic"
+          ],
+          "currently_observed_producer_count": 0,
+          "currently_incomplete_count": 0
+        },
+        {
+          "producer_type": "CommandCenter",
+          "previously_observed_training_controls": [
+            "SCV"
+          ],
+          "currently_observed_producer_count": 1,
+          "currently_incomplete_count": 0
+        }
+      ],
+      "answers": {
+        "dependencies": {
+          "answer": {
+            "choice": "save",
+            "type": "choice",
+            "confidence": 0.58,
+            "probabilities": {
+              "save_for_1": 0.01,
+              "save_for_4": 0.2,
+              "save_for_0": 0.11,
+              "save": 0.63,
+              "save_for_3": 0.03,
+              "save_for_5": 0.01,
+              "save_for_2": 0.01
+            }
+          },
+          "description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "save",
+            "type": "choice",
+            "confidence": 0.63,
+            "probabilities": {
+              "save_for_3": 0.03,
+              "save_for_2": 0.01,
+              "save_for_5": 0.01,
+              "save_for_1": 0.02,
+              "save_for_0": 0.06,
+              "save": 0.67,
+              "save_for_4": 0.2
+            }
+          },
+          "description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+        }
+      },
+      "resources": {
+        "minerals": 0,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 120.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 9,
+        "food_cap": 35,
+        "supply_in_construction": 0,
+        "supply_remaining": 26,
+        "supply_blocked": false
+      },
+      "immediate_barracks_option": false
+    },
+    {
+      "loop": 8412,
+      "relationships": [
+        {
+          "producer_type": "Barracks",
+          "previously_observed_training_controls": [
+            "FlameMech",
+            "Marauder",
+            "Marine",
+            "Medic"
+          ],
+          "currently_observed_producer_count": 0,
+          "currently_incomplete_count": 0
+        },
+        {
+          "producer_type": "CommandCenter",
+          "previously_observed_training_controls": [
+            "SCV"
+          ],
+          "currently_observed_producer_count": 0,
+          "currently_incomplete_count": 0
+        }
+      ],
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "save",
+            "type": "choice",
+            "confidence": 0.84,
+            "probabilities": {
+              "save": 0.88,
+              "save_for_0": 0.01,
+              "save_for_2": 0.03,
+              "save_for_1": 0.08
+            }
+          },
+          "description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+        },
+        "dependencies": {
+          "answer": {
+            "choice": "save",
+            "type": "choice",
+            "confidence": 0.86,
+            "probabilities": {
+              "save_for_0": 0.01,
+              "save_for_1": 0.07,
+              "save": 0.9,
+              "save_for_2": 0.02
+            }
+          },
+          "description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+        }
+      },
+      "resources": {
+        "minerals": 0,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 9,
+        "food_cap": 16,
+        "supply_in_construction": 0,
+        "supply_remaining": 7,
+        "supply_blocked": false
+      },
+      "immediate_barracks_option": false
+    }
+  ],
+  "method": "First/middle/last investment states without observed Barracks and with Jev goals. Same full questions and state; treatment adds factual reverse index of previously observed Train controls, current producer counts and incomplete counts for all known producers. No forced rebuild or action filtering. Alternating arms; exploratory only.",
+  "calls": 6,
+  "cost_usd": 0.0027294959999999997
+}
