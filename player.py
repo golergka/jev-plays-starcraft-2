@@ -253,7 +253,7 @@ def is_purchase(candidate):
 
 def investment_state(state):
     """Keep economic/force facts; raw terrain and repeated unit coordinates distract."""
-    compact = {k:state[k] for k in ('objective','mission_context','resources','completed_upgrades','selection_facts',
+    compact = {k:state[k] for k in ('objective','game_loop','mission_context','resources','completed_upgrades','selection_facts',
                'unit_type_facts','harvesting_assignments','recent_outcomes','recent_action_feedback','observed_capabilities_by_type','previous_investment_intent',
                'strategy_chosen_by_jev','production_commitment') if k in state}
     for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
@@ -803,6 +803,7 @@ async def decide(view, jev, memory):
     for unit in units:
         cohorts.setdefault(unit['type'], []).append(unit)
     state = {k:view.get(k) for k in ('objective','mission_context','resources','completed_upgrades','explored_map','visible_entities','last_known_entities','unit_type_facts')}
+    state['game_loop'] = view['loop']
     state['recent_outcomes'] = recent_outcomes(view, memory)
     state['recent_action_feedback'] = describe_action_feedback(view,memory)
     state['previous_investment_intent'] = memory.get('investment_intent')

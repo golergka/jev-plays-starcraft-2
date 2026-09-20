@@ -6331,3 +6331,14 @@ recovery. First/middle/last recorded investments, alternating arms, six calls
 $0.003376926. Save→Save, SCV→Save, save-for-SCV→save-for-SCV. No evidence of
 better preparation, so not deployed. No gameplay commands or new mission run.
 These small paired probes cannot establish significance or mission performance.
+
+### Lab430 — expose current loop alongside loop-based commitments
+
+Inspection found decide's projected shared state omitted view.loop, although
+commitments, strategy review deadlines and history use absolute loop numbers.
+Add game_loop from the current observation and preserve it in investment_state.
+Order state already preserves general fields. No seconds conversion (lab299's
+clock caveat retained), inferred mission deadline, urgency score, tactical order
+or menu change. This is a factual context repair, not proof of better allocation.
+Full213tests pass, including exact-loop preservation and absent-field behavior.
+No paid calls or new mission this turn. All campaigns remain incomplete.

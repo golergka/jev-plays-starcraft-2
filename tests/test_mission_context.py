@@ -105,3 +105,9 @@ def test_objective_startup_wait_is_bounded_and_latched():
     missing=ObjectiveInitializationGate(100)
     with pytest.raises(TimeoutError):missing.check({'objectives':[]},130)
     with pytest.raises(TimeoutError):missing.check({'objectives':[{}]},131)
+
+
+def test_investment_retains_exact_game_loop():
+    import player
+    assert player.investment_state({'game_loop': 29923})['game_loop'] == 29923
+    assert 'game_loop' not in player.investment_state({})
