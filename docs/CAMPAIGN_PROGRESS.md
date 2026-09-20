@@ -6401,3 +6401,18 @@ Save→Save. Keep factual corrections because they match executor behavior,
 but no evidence that they fix allocation; no full retry based on this probe.
 Script/artifact retained. No gameplay commands. Three single pairs cannot
 establish universal insensitivity or performance equivalence.
+
+### Lab436 — qualitative production intentions differ from numeric targets
+
+Reviewed241history ablation and294pairwise failures; no repeats. Lab349 used
+numeric desired counts and anchored currentzero. New recorded431 probe asks
+expand/replace/stop independently for each catalog-known type with an observed
+Train capability. First/middle/last eligible >=300mineral investments, same full
+state, alternating baseline/intent arms, sixcalls $0.003473652. Immediate choices
+Save/SCV/Save; qualitative answers allExpand (fourtypes,fourtypes,onetype).
+This expresses willingness to expand where immediate purchase often waits, but
+independent goals may be mutually unaffordable and don't select priorities.
+No deployment: need Jev arbitration across its own goals, and assess whether
+Expand is merely a generic response bias. No forced purchases or gamecommands.
+Script/artifact preserve question wording and distributions. Not evidence of
+better play, and task formulations are intentionally not equivalent.

@@ -1,0 +1,302 @@
+{
+  "source": "runs/20260920T093458.774878Z/events.jsonl",
+  "method": "First/middle/last investment states with at least300minerals and observed Train capability. Immediate investment versus qualitative expand/replace/stop intentions; not equivalent questions or proof of better play. Alternate arm order. No commands.",
+  "pairs": [
+    {
+      "time": 1789897048.527328,
+      "target_questions": {
+        "target_0": {
+          "type": "choice",
+          "instructions": "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned Marauder above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of Marauder; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more Marauder during this horizon, including replacements. Existing units remain available."
+          }
+        },
+        "target_1": {
+          "type": "choice",
+          "instructions": "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned Marine above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of Marine; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more Marine during this horizon, including replacements. Existing units remain available."
+          }
+        },
+        "target_2": {
+          "type": "choice",
+          "instructions": "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned Medic above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of Medic; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more Medic during this horizon, including replacements. Existing units remain available."
+          }
+        },
+        "target_3": {
+          "type": "choice",
+          "instructions": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of SCV; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more SCV during this horizon, including replacements. Existing units remain available."
+          }
+        }
+      },
+      "observed_counts": {
+        "SCV": 6,
+        "SupplyDepotLowered": 2,
+        "Bunker": 1,
+        "Refinery": 1,
+        "Barracks": 1,
+        "BarracksTechLab": 1,
+        "CommandCenter": 1
+      },
+      "investment": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "project_1": 0.06,
+            "save": 0.32,
+            "batch_9": 0.1,
+            "project_3": 0.01,
+            "project_6": 0.07,
+            "batch_6": 0.06,
+            "batch_5": 0.01,
+            "batch_4": 0.01,
+            "save_for_0": 0.01,
+            "project_7": 0.02,
+            "project_0": 0.01,
+            "batch_7": 0.01,
+            "project_4": 0.01,
+            "project_2": 0.07,
+            "project_5": 0.05,
+            "project_8": 0.03,
+            "project_9": 0.13999999999999999,
+            "project_10": 0.01
+          }
+        }
+      },
+      "targets": {
+        "target_0": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.68,
+          "probabilities": {
+            "expand": 0.78,
+            "replace": 0.07,
+            "stop": 0.15
+          }
+        },
+        "target_1": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.76,
+          "probabilities": {
+            "stop": 0.11,
+            "replace": 0.05,
+            "expand": 0.84
+          }
+        },
+        "target_2": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "expand": 0.75,
+            "replace": 0.1,
+            "stop": 0.15
+          }
+        },
+        "target_3": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.55,
+          "probabilities": {
+            "expand": 0.7,
+            "replace": 0.16,
+            "stop": 0.14
+          }
+        }
+      }
+    },
+    {
+      "time": 1789897564.248217,
+      "target_questions": {
+        "target_0": {
+          "type": "choice",
+          "instructions": "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned Marauder above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of Marauder; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more Marauder during this horizon, including replacements. Existing units remain available."
+          }
+        },
+        "target_1": {
+          "type": "choice",
+          "instructions": "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 1. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned Marine above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of Marine; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more Marine during this horizon, including replacements. Existing units remain available."
+          }
+        },
+        "target_2": {
+          "type": "choice",
+          "instructions": "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned Medic above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of Medic; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more Medic during this horizon, including replacements. Existing units remain available."
+          }
+        },
+        "target_3": {
+          "type": "choice",
+          "instructions": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 11. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of SCV; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more SCV during this horizon, including replacements. Existing units remain available."
+          }
+        }
+      },
+      "observed_counts": {
+        "SCV": 11,
+        "Refinery": 2,
+        "CommandCenter": 2,
+        "Marine": 1,
+        "SupplyDepotLowered": 3,
+        "BarracksTechLab": 1,
+        "Barracks": 1
+      },
+      "targets": {
+        "target_0": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.63,
+          "probabilities": {
+            "expand": 0.75,
+            "stop": 0.2,
+            "replace": 0.05
+          }
+        },
+        "target_1": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.8,
+          "probabilities": {
+            "expand": 0.86,
+            "stop": 0.03,
+            "replace": 0.11
+          }
+        },
+        "target_2": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "expand": 0.7,
+            "stop": 0.17,
+            "replace": 0.13
+          }
+        },
+        "target_3": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "expand": 0.67,
+            "stop": 0.12,
+            "replace": 0.21
+          }
+        }
+      },
+      "investment": {
+        "investment": {
+          "choice": "project_7",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "save": 0.21,
+            "project_0": 0.01,
+            "batch_6": 0.01,
+            "project_7": 0.21,
+            "project_10": 0.16,
+            "project_1": 0.07,
+            "project_6": 0.05,
+            "project_4": 0.01,
+            "batch_8": 0.02,
+            "project_3": 0.01,
+            "project_5": 0.02,
+            "project_2": 0.01,
+            "batch_5": 0.0,
+            "project_11": 0.01,
+            "project_8": 0.08,
+            "project_9": 0.02,
+            "batch_10": 0.06,
+            "batch_7": 0.04
+          }
+        }
+      }
+    },
+    {
+      "time": 1789897919.149514,
+      "target_questions": {
+        "target_0": {
+          "type": "choice",
+          "instructions": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 14. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "criteria": {
+            "expand": "Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow.",
+            "replace": "Maintain the current number of SCV; replace observed losses but do not expand this type above the current count.",
+            "stop": "Do not produce more SCV during this horizon, including replacements. Existing units remain available."
+          }
+        }
+      },
+      "observed_counts": {
+        "SupplyDepot": 1,
+        "Refinery": 1,
+        "MissileTurret": 1,
+        "SCV": 14,
+        "SupplyDepotLowered": 2,
+        "CommandCenter": 1,
+        "EngineeringBay": 1
+      },
+      "investment": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.15,
+          "probabilities": {
+            "batch_7": 0.13,
+            "project_2": 0.01,
+            "project_3": 0.17,
+            "project_4": 0.04,
+            "project_9": 0.02,
+            "project_8": 0.03,
+            "project_6": 0.01,
+            "project_7": 0.2,
+            "project_1": 0.1,
+            "project_5": 0.01,
+            "project_0": 0.06,
+            "save": 0.22
+          }
+        }
+      },
+      "targets": {
+        "target_0": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "stop": 0.08,
+            "replace": 0.24,
+            "expand": 0.68
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.003473652
+}
