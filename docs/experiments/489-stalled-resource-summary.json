@@ -1,0 +1,126 @@
+{
+  "source": "runs/20260920T122548.284381Z/events.jsonl",
+  "method": "First/middle/last distinct recorded states with an active batch and no further request for at least224loops. No future observations or mission-specific advice. Offline only, no orders.",
+  "reviews": [
+    {
+      "loop": 2772,
+      "resources": {
+        "minerals": 95,
+        "vespene": 0,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 15,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      },
+      "job": {
+        "target_project": "Marauder",
+        "remaining": 1,
+        "loop": 1970,
+        "review_at": 3986,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 563
+        },
+        "last_request_loop": 2197
+      },
+      "answer": {
+        "commitment_review": {
+          "choice": "release",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "keep": 0.39,
+            "release": 0.61
+          }
+        }
+      }
+    },
+    {
+      "loop": 3385,
+      "resources": {
+        "minerals": 200,
+        "vespene": 0,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 15,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      },
+      "job": {
+        "target_project": "Marauder",
+        "remaining": 1,
+        "loop": 1970,
+        "review_at": 3986,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 563
+        },
+        "last_request_loop": 2197
+      },
+      "answer": {
+        "commitment_review": {
+          "choice": "release",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "release": 0.61,
+            "keep": 0.39
+          }
+        }
+      }
+    },
+    {
+      "loop": 3923,
+      "resources": {
+        "minerals": 290,
+        "vespene": 0,
+        "estimated_minerals_per_minute": 180.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 15,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      },
+      "job": {
+        "target_project": "Marauder",
+        "remaining": 1,
+        "loop": 1970,
+        "review_at": 3986,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 563
+        },
+        "last_request_loop": 2197
+      },
+      "answer": {
+        "commitment_review": {
+          "choice": "release",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "release": 0.61,
+            "keep": 0.39
+          }
+        }
+      }
+    }
+  ],
+  "resource_summary": true,
+  "calls": 3,
+  "cost_usd": 0.001764336
+}
