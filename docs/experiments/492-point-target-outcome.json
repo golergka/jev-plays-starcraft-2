@@ -1,0 +1,62 @@
+{
+  "run": "runs/20260920T122548.284381Z",
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T122548.284381Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789897083",
+      "loop": 16396
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 209,
+    "cost": 0.12535055400000003,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T122548.284381Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "17:04",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 (last unobscured visual check15:11)"
+    }
+  },
+  "decision_errors": [
+    {
+      "time": 1789907371.232936,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789907433.207485,
+      "event": "decision_error",
+      "error": "TimeoutError",
+      "detail": ""
+    },
+    {
+      "time": 1789907630.141692,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789907894.896416,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "addon_requests": [],
+  "notes": [
+    "PointOrNone construction change was not exercised by an add-on request.",
+    "Optional stalled commitment review remained disabled.",
+    "General stale purchase-context correction lab491 was hot reloaded late in this run; not a perfectly isolated policy comparison.",
+    "Previous offline probes488/489 cost separate from this run."
+  ]
+}
