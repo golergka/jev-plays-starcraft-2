@@ -1,0 +1,38 @@
+{
+  "loop": 17260,
+  "cropped": true,
+  "playable": [
+    0,
+    0,
+    184,
+    96
+  ],
+  "visibility_size": [
+    184,
+    96
+  ],
+  "pathing_size": [
+    184,
+    96
+  ],
+  "own_samples": [
+    {
+      "tag": 4362338314,
+      "position": [
+        76.631591796875,
+        8.61181640625
+      ],
+      "visibility": 1,
+      "static_pathing": 1
+    },
+    {
+      "tag": 4299423745,
+      "position": [
+        76.271240234375,
+        17.495849609375
+      ],
+      "visibility": 1,
+      "static_pathing": 1
+    }
+  ]
+}
