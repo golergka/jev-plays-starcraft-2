@@ -1,0 +1,453 @@
+{
+  "lab": 601,
+  "run": "runs/20260920T181026.929294Z",
+  "status": "running",
+  "native_visual": {
+    "time": "3:26",
+    "relics": "1/4",
+    "supply": "5/27",
+    "observation": "Stalkers attacking burning Command Center, selected health269/1500; workers near minerals."
+  },
+  "combat_trace": [
+    {
+      "loop": 46,
+      "choice": "group_last_known_attack_move_8756723713",
+      "description": "attack move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4320657409
+          ],
+          "result": "Success",
+          "target_tag": 4298637313
+        },
+        {
+          "ability_id": 19,
+          "unit_tags": [
+            4383309825
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4299423745
+          ],
+          "result": "Success",
+          "target_tag": 4298375169
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4299161601
+          ],
+          "result": "Success",
+          "target_tag": 4298637313
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4323803137
+          ],
+          "result": "Success",
+          "target_tag": 4298113025
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4297326593
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4300210177
+          ],
+          "result": "Success",
+          "target_tag": 4298113025
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    },
+    {
+      "loop": 447,
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.0 to 94.5; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 19,
+          "unit_tags": [
+            4383309825
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    },
+    {
+      "loop": 638,
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.8; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 19,
+          "unit_tags": [
+            4383309825
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4330618882
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    },
+    {
+      "loop": 1266,
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 96.2 to 102.5; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4301783042
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4379377672
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4346085382
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4362862608
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 19,
+          "unit_tags": [
+            4348444678
+          ],
+          "result": "YouCantIssueCommandsToThatUnit",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4391698436
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 563,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    },
+    {
+      "loop": 1544,
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 101.8 to 107.7; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4346085382
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4379377672
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4372824067
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4362862608
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4301783042
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 563,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    },
+    {
+      "loop": 2103,
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 108.7 to 109.1; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4379377672
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4362862608
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    },
+    {
+      "loop": 2313,
+      "choice": "group_move_4374134785",
+      "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown",
+      "submitted_actions": [
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "maintained_current_orders": []
+    }
+  ],
+  "findings": [
+    "Repeated distant attack-move commands were accepted by SC2; no decision errors were present at inspection. One Medic Scan Move at1266 was rejected YouCantIssueCommandsToThatUnit.",
+    "At loop638 recorded Marine observations have two orders: Attack Attack on an enemy tag, then Attack Attack to selected destination. Medic has Effect MedicHeal followed by Scan Move to destination.",
+    "Current preservation utility only handles a sole active order, so it does not suppress these repeated commands during combat/healing. This identifies an execution limitation, not proof that reissuing caused losses. Safely distinguishing temporary engine suborders from deliberately queued orders needs further work."
+  ],
+  "interpretation": "Cheaper reviews have not prevented early collapse. Do not infer mission outcome before terminal verification."
+}
