@@ -6714,3 +6714,13 @@ units; no forced military target or purchase. Same current purchase controls.
 220tests pass, including lostproducer/zeroobservedcount and inputimmutability.
 No paidcalls/live run thisturn. Next bounded trial must test whether remembered
 military goals actually influence rebuilding; no claim from tests alone.
+
+### Lab460 — production-memory live trial starts
+
+Run20260920T110319.423869Z/session14667 revision7903f87. Same457flags,
+productionintentions/orderfamilies/eventreviews/contributiontopchoice/camera;
+only459productionmemory change. Nativeopening0:19 and1/4relics visuallyverified.
+Firstintentionrequest contains historical Marine/Medic/SCV facts.13calls
+$.006165642 atinitialcheck. Retention afterproducerloss and usefulpurchases not
+yet tested. Cap$.10/300s unchanged;17priorSmashdefeats. Followthissession and
+/tmp/jev-smash-and-grab-lab460.log; no duplicatecontroller or tacticaloverride.
