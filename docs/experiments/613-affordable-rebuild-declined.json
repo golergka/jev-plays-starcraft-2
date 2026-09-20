@@ -1,0 +1,135 @@
+{
+  "lab": 613,
+  "trial": 610,
+  "status": "running",
+  "evidence": [
+    {
+      "loop": 8548,
+      "resources": {
+        "minerals": 188,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 280.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 8,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "answer": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.28,
+        "probabilities": {
+          "save_for_0": 0.01,
+          "project_3": 0.23,
+          "project_4": 0.03,
+          "save": 0.37,
+          "project_0": 0.24,
+          "batch_3": 0.04,
+          "project_2": 0.06,
+          "project_1": 0.02
+        }
+      },
+      "barracks_option": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks, Build Reactor Barracks using the engine-defined location, Build TechLab Barracks, Build TechLab Barracks using the engine-defined location, Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 8744,
+      "resources": {
+        "minerals": 241,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 300.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 8,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "answer": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "project_4": 0.02,
+          "project_0": 0.28,
+          "project_3": 0.23,
+          "batch_3": 0.06,
+          "project_2": 0.03,
+          "project_1": 0.01,
+          "save_for_0": 0.01,
+          "save": 0.36
+        }
+      },
+      "barracks_option": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks, Build Reactor Barracks using the engine-defined location, Build TechLab Barracks, Build TechLab Barracks using the engine-defined location, Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 9317,
+      "resources": {
+        "minerals": 360,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 240.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 8,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "answer": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.33,
+        "probabilities": {
+          "batch_3": 0.06,
+          "project_3": 0.19,
+          "project_1": 0.02,
+          "project_2": 0.05,
+          "project_4": 0.03,
+          "save": 0.41,
+          "save_for_0": 0.04,
+          "project_0": 0.2
+        }
+      },
+      "barracks_option": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks, Build Reactor Barracks using the engine-defined location, Build TechLab Barracks, Build TechLab Barracks using the engine-defined location, Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 9517,
+      "resources": {
+        "minerals": 407,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 280.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 8,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "answer": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.28,
+        "probabilities": {
+          "project_2": 0.02,
+          "project_4": 0.19,
+          "batch_4": 0.04,
+          "project_0": 0.26,
+          "project_1": 0.04,
+          "save": 0.38,
+          "project_3": 0.04,
+          "project_5": 0.03
+        }
+      },
+      "barracks_option": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks, Build Reactor Barracks using the engine-defined location, Build TechLab Barracks, Build TechLab Barracks using the engine-defined location, Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+    }
+  ],
+  "native_visual": {
+    "time": "10:24",
+    "minerals": 514,
+    "gas": 50,
+    "supply": "8/16",
+    "observation": "Command Center visibly exploding under Stalker attack; other structures remain."
+  },
+  "interpretation": "Four recorded choices select save despite affordable offered Barracks rebuilding. Missing affordability or unlisted training capability does not explain these choices. This does not establish which alternative would win. No manual orders issued; mission ending remains unverified."
+}
