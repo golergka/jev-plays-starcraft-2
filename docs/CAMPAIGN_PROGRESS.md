@@ -5752,3 +5752,23 @@ of the adapter's benefit. Six Smash and Grab defeats; only the first three
 missions verified won. Local result/checkpoint and public report reconciled.
 Keep native screenshots in the evaluation loop, including independent terminal
 verification; accepted commands and a living economy do not establish success.
+
+### Lab393 — distinguish purchase preferences, submitted requests and sightings
+
+Offline audit of392, no paid calls or game commands. Added reusable
+scripts/audit_production_run.py and public artifact393 with exact investment
+labels, immediate command results, production-job releases and own-unit timeline.
+Jev top choices: save39/69, Marine8, SCV13. Actual sampled choices: save21,
+Marine8 singles plus3 batches, SCV14 singles plus7 batches. Simply replacing
+investment sampling with argmax would not demonstrate improved military intent;
+these alternatives are not counterfactual trajectories.
+
+All10 batch jobs exhausted their request allowance, rather than being lost to
+strategy changes or producer invalidation. Logs show17 immediate successful
+Marine train commands and35 SCV train commands; later first-seen own tags include
+12 Marines and35 SCVs. Initial3 Marines/5 SCVs excluded. First sightings are not
+attributed births: reinforcements, transformations and observation gaps matter;
+accepted requests do not establish completion. Thus military production was not
+entirely absent, but did not maintain a force. Investigate retention/tactical
+execution and investment priorities, rather than claiming the batch scheduler
+silently dropped all army production. No policy change or unchanged retry.

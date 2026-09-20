@@ -1,0 +1,1044 @@
+{
+  "run": "runs/20260920T063518.920993Z",
+  "top_investments": {
+    "save": 39,
+    "project:Marine": 8,
+    "project:SCV": 13,
+    "project:SupplyDepot": 2,
+    "project:Refinery": 1,
+    "save_for:SCV": 1,
+    "project:Barracks": 1,
+    "project:Bunker": 2,
+    "project:MissileTurret": 2
+  },
+  "selected_investments": {
+    "save": 21,
+    "project:SCV": 14,
+    "batch:Marine": 3,
+    "project:SupplyDepot": 3,
+    "batch:SCV": 7,
+    "project:Marine": 8,
+    "project:Barracks": 2,
+    "save_for:SCV": 1,
+    "save_for:Barracks": 1,
+    "project:Refinery": 2,
+    "project:Bunker": 2,
+    "project:EngineeringBay": 1,
+    "project:Research TerranInfantryWeaponsLevel1": 1,
+    "project:MissileTurret": 2,
+    "project:CommandCenter": 1
+  },
+  "submitted_command_results_by_ability": {
+    "295:Success": 20,
+    "16:Success": 74,
+    "556:Success": 95,
+    "23:Success": 17,
+    "19:Success": 2,
+    "524:Success": 35,
+    "558:Success": 95,
+    "19:YouCantIssueCommandsToThatUnit": 1,
+    "560:Success": 17,
+    "4:Success": 1,
+    "319:Success": 2,
+    "321:Success": 2,
+    "1:Success": 7,
+    "316:Success": 6,
+    "316:TooMuchLife": 1,
+    "320:Success": 1,
+    "324:Success": 2,
+    "407:Success": 5,
+    "408:Success": 4,
+    "320:NotSupported": 1,
+    "322:Success": 1,
+    "18:Success": 1,
+    "652:Success": 1,
+    "323:Success": 1,
+    "23:TargetIsOutOfRange": 2,
+    "318:Success": 1,
+    "316:NotEnoughMinerals": 1
+  },
+  "initial_observed_units": {
+    "Refinery": 1,
+    "CommandCenter": 1,
+    "SCV": 5,
+    "Marine": 3,
+    "SupplyDepot": 2,
+    "Barracks": 1,
+    "Medic": 1,
+    "BarracksTechLab": 1
+  },
+  "later_first_seen_units": {
+    "SCV": 35,
+    "Marauder": 4,
+    "SpecialOpsDropship": 1,
+    "SupplyDepot": 2,
+    "Marine": 12,
+    "Barracks": 2,
+    "Refinery": 1,
+    "Bunker": 1,
+    "EngineeringBay": 1,
+    "MissileTurret": 1,
+    "CommandCenter": 1
+  },
+  "production_job_releases": [
+    {
+      "loop": 1604,
+      "project": "Marine",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 2464,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 3958,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 5295,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 10208,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 12375,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 16164,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 18280,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 19830,
+      "project": "Marine",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 22532,
+      "project": "Marine",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    }
+  ],
+  "timeline": [
+    {
+      "loop": 49,
+      "owned": {
+        "Refinery": 1,
+        "CommandCenter": 1,
+        "SCV": 5,
+        "Marine": 3,
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "Medic": 1,
+        "BarracksTechLab": 1
+      },
+      "newly_observed": {
+        "Refinery": 1,
+        "CommandCenter": 1,
+        "SCV": 5,
+        "Marine": 3,
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "Medic": 1,
+        "BarracksTechLab": 1
+      }
+    },
+    {
+      "loop": 318,
+      "owned": {
+        "Refinery": 1,
+        "SupplyDepotLowered": 2,
+        "CommandCenter": 1,
+        "BarracksTechLab": 1,
+        "Marine": 3,
+        "SCV": 5,
+        "Medic": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 616,
+      "owned": {
+        "SCV": 5,
+        "Barracks": 1,
+        "Marine": 3,
+        "BarracksTechLab": 1,
+        "Medic": 1,
+        "SupplyDepotLowered": 2,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 1016,
+      "owned": {
+        "SCV": 7,
+        "SupplyDepot": 2,
+        "CommandCenter": 1,
+        "BarracksTechLab": 1,
+        "Barracks": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 2
+      }
+    },
+    {
+      "loop": 1339,
+      "owned": {
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 2,
+        "Marauder": 4,
+        "SCV": 7,
+        "BarracksTechLab": 1,
+        "Barracks": 1,
+        "SpecialOpsDropship": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "Marauder": 4,
+        "SpecialOpsDropship": 1
+      }
+    },
+    {
+      "loop": 1765,
+      "owned": {
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "SCV": 8,
+        "CommandCenter": 1,
+        "BarracksTechLab": 1,
+        "Marauder": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 2208,
+      "owned": {
+        "SCV": 8,
+        "SupplyDepotLowered": 2,
+        "Refinery": 1,
+        "SupplyDepot": 1,
+        "Barracks": 1,
+        "Marine": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SupplyDepot": 1,
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 2646,
+      "owned": {
+        "SCV": 8,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "Barracks": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 2986,
+      "owned": {
+        "SupplyDepotLowered": 3,
+        "SCV": 9,
+        "CommandCenter": 1,
+        "Refinery": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 3298,
+      "owned": {
+        "SCV": 10,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "Barracks": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 3695,
+      "owned": {
+        "Barracks": 1,
+        "SCV": 10,
+        "SupplyDepotLowered": 3,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "Barracks": 1
+      }
+    },
+    {
+      "loop": 3958,
+      "owned": {
+        "SupplyDepot": 3,
+        "SCV": 10,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 4196,
+      "owned": {
+        "SCV": 11,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 3,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 4446,
+      "owned": {
+        "SCV": 12,
+        "Refinery": 1,
+        "SupplyDepot": 3,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 4713,
+      "owned": {
+        "SCV": 13,
+        "SupplyDepotLowered": 3,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 5015,
+      "owned": {
+        "SCV": 14,
+        "Refinery": 1,
+        "SupplyDepot": 3,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 5329,
+      "owned": {
+        "SCV": 15,
+        "SupplyDepotLowered": 3,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 5728,
+      "owned": {
+        "SCV": 17,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 2
+      }
+    },
+    {
+      "loop": 6176,
+      "owned": {
+        "SCV": 15,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 3,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 6448,
+      "owned": {
+        "SCV": 16,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 6722,
+      "owned": {
+        "SCV": 16,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 3,
+        "Refinery": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 6975,
+      "owned": {
+        "SCV": 16,
+        "SupplyDepot": 3,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 7171,
+      "owned": {
+        "SCV": 16,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 3,
+        "Refinery": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 7701,
+      "owned": {
+        "SCV": 14,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 8098,
+      "owned": {
+        "SCV": 14,
+        "SupplyDepotLowered": 3,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 9160,
+      "owned": {
+        "SCV": 14,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 9522,
+      "owned": {
+        "SCV": 14,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 3,
+        "Barracks": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "Barracks": 1
+      }
+    },
+    {
+      "loop": 9794,
+      "owned": {
+        "SCV": 14,
+        "SupplyDepot": 3,
+        "CommandCenter": 1,
+        "Barracks": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 10224,
+      "owned": {
+        "SCV": 16,
+        "CommandCenter": 1,
+        "Refinery": 1,
+        "SupplyDepotLowered": 3,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "SCV": 2
+      }
+    },
+    {
+      "loop": 10792,
+      "owned": {
+        "SCV": 18,
+        "Refinery": 1,
+        "CommandCenter": 1,
+        "Barracks": 1,
+        "SupplyDepot": 3
+      },
+      "newly_observed": {
+        "SCV": 2
+      }
+    },
+    {
+      "loop": 11344,
+      "owned": {
+        "SCV": 19,
+        "SupplyDepotLowered": 3,
+        "Refinery": 1,
+        "CommandCenter": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 12085,
+      "owned": {
+        "SCV": 17,
+        "Marine": 1,
+        "SupplyDepot": 3,
+        "Barracks": 1,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 12624,
+      "owned": {
+        "SCV": 18,
+        "Barracks": 1,
+        "SupplyDepotLowered": 3,
+        "Refinery": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 13032,
+      "owned": {
+        "SCV": 20,
+        "Barracks": 1,
+        "SupplyDepot": 3,
+        "CommandCenter": 1,
+        "Refinery": 1
+      },
+      "newly_observed": {
+        "SCV": 2
+      }
+    },
+    {
+      "loop": 13301,
+      "owned": {
+        "SCV": 20,
+        "SupplyDepotLowered": 3,
+        "CommandCenter": 1,
+        "Marine": 1,
+        "Refinery": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 13907,
+      "owned": {
+        "SCV": 19,
+        "CommandCenter": 1,
+        "SupplyDepot": 3,
+        "Refinery": 1,
+        "Marine": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 14539,
+      "owned": {
+        "SCV": 19,
+        "Refinery": 2,
+        "SupplyDepotLowered": 3,
+        "Barracks": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "Refinery": 1
+      }
+    },
+    {
+      "loop": 14858,
+      "owned": {
+        "SCV": 18,
+        "Refinery": 2,
+        "SupplyDepot": 2,
+        "SupplyDepotLowered": 1,
+        "Barracks": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 15110,
+      "owned": {
+        "SCV": 20,
+        "CommandCenter": 1,
+        "Refinery": 2,
+        "Barracks": 1,
+        "SupplyDepotLowered": 3
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 15361,
+      "owned": {
+        "SCV": 21,
+        "SupplyDepotLowered": 1,
+        "Barracks": 1,
+        "Refinery": 2,
+        "CommandCenter": 1,
+        "SupplyDepot": 2
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 15906,
+      "owned": {
+        "SCV": 20,
+        "Refinery": 2,
+        "Barracks": 1,
+        "CommandCenter": 1,
+        "SupplyDepot": 1,
+        "SupplyDepotLowered": 2
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 16434,
+      "owned": {
+        "SCV": 19,
+        "SupplyDepotLowered": 1,
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "CommandCenter": 1,
+        "Refinery": 2
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 16752,
+      "owned": {
+        "SCV": 20,
+        "SupplyDepot": 1,
+        "Refinery": 2,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 2,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 17294,
+      "owned": {
+        "SCV": 20,
+        "CommandCenter": 1,
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "Marine": 2,
+        "SupplyDepotLowered": 1,
+        "Refinery": 2
+      },
+      "newly_observed": {
+        "SCV": 1,
+        "Marine": 2
+      }
+    },
+    {
+      "loop": 18001,
+      "owned": {
+        "SCV": 20,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 2,
+        "Refinery": 2,
+        "SupplyDepot": 1,
+        "Barracks": 1,
+        "Bunker": 1
+      },
+      "newly_observed": {
+        "Bunker": 1
+      }
+    },
+    {
+      "loop": 18583,
+      "owned": {
+        "Barracks": 1,
+        "Refinery": 2,
+        "SCV": 19,
+        "SupplyDepot": 2,
+        "SupplyDepotLowered": 1,
+        "CommandCenter": 1,
+        "Bunker": 1
+      },
+      "newly_observed": {
+        "SCV": 1
+      }
+    },
+    {
+      "loop": 19072,
+      "owned": {
+        "SCV": 20,
+        "SupplyDepotLowered": 2,
+        "Bunker": 1,
+        "Barracks": 1,
+        "SupplyDepot": 1,
+        "Refinery": 2,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "SCV": 2
+      }
+    },
+    {
+      "loop": 19566,
+      "owned": {
+        "SCV": 17,
+        "Bunker": 1,
+        "Refinery": 2,
+        "Barracks": 1,
+        "SupplyDepot": 2,
+        "Marine": 1,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 20068,
+      "owned": {
+        "SupplyDepotLowered": 2,
+        "SCV": 18,
+        "Barracks": 1,
+        "CommandCenter": 1,
+        "SupplyDepot": 1,
+        "Refinery": 2,
+        "Bunker": 1,
+        "Marine": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 20506,
+      "owned": {
+        "SCV": 19,
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "SupplyDepotLowered": 1,
+        "Bunker": 1,
+        "Refinery": 2,
+        "Marine": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 21154,
+      "owned": {
+        "SCV": 19,
+        "EngineeringBay": 1,
+        "CommandCenter": 1,
+        "Marine": 2,
+        "SupplyDepotLowered": 2,
+        "SupplyDepot": 1,
+        "Bunker": 1,
+        "Refinery": 2,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "EngineeringBay": 1,
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 21672,
+      "owned": {
+        "EngineeringBay": 1,
+        "SCV": 19,
+        "Refinery": 2,
+        "SupplyDepot": 2,
+        "Marine": 2,
+        "Bunker": 1,
+        "CommandCenter": 1,
+        "SupplyDepotLowered": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 22275,
+      "owned": {
+        "SCV": 16,
+        "Bunker": 1,
+        "Refinery": 2,
+        "SupplyDepotLowered": 2,
+        "SupplyDepot": 1,
+        "Marine": 2,
+        "Barracks": 1,
+        "EngineeringBay": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 22802,
+      "owned": {
+        "SCV": 15,
+        "SupplyDepotLowered": 1,
+        "SupplyDepot": 2,
+        "Refinery": 2,
+        "CommandCenter": 1,
+        "Barracks": 1,
+        "Marine": 1,
+        "EngineeringBay": 1
+      },
+      "newly_observed": {
+        "Marine": 1
+      }
+    },
+    {
+      "loop": 23300,
+      "owned": {
+        "SCV": 15,
+        "Refinery": 2,
+        "CommandCenter": 1,
+        "SupplyDepot": 1,
+        "SupplyDepotLowered": 2,
+        "EngineeringBay": 1,
+        "Barracks": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 23756,
+      "owned": {
+        "SCV": 15,
+        "SupplyDepot": 2,
+        "Barracks": 1,
+        "Refinery": 2,
+        "EngineeringBay": 1,
+        "SupplyDepotLowered": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 24182,
+      "owned": {
+        "SCV": 14,
+        "Refinery": 2,
+        "SupplyDepotLowered": 2,
+        "SupplyDepot": 1,
+        "EngineeringBay": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 24509,
+      "owned": {
+        "SCV": 14,
+        "SupplyDepot": 2,
+        "EngineeringBay": 1,
+        "SupplyDepotLowered": 1,
+        "Refinery": 2
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 24835,
+      "owned": {
+        "SCV": 13,
+        "SupplyDepotLowered": 2,
+        "SupplyDepot": 1,
+        "EngineeringBay": 1,
+        "Refinery": 2
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 25080,
+      "owned": {
+        "SCV": 13,
+        "Refinery": 2,
+        "SupplyDepot": 2,
+        "EngineeringBay": 1,
+        "SupplyDepotLowered": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 25365,
+      "owned": {
+        "SCV": 13,
+        "SupplyDepotLowered": 2,
+        "Refinery": 2,
+        "EngineeringBay": 1,
+        "SupplyDepot": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 25769,
+      "owned": {
+        "SupplyDepot": 2,
+        "SCV": 13,
+        "Refinery": 2,
+        "MissileTurret": 1,
+        "EngineeringBay": 1,
+        "SupplyDepotLowered": 1
+      },
+      "newly_observed": {
+        "MissileTurret": 1
+      }
+    },
+    {
+      "loop": 26172,
+      "owned": {
+        "Refinery": 2,
+        "EngineeringBay": 1,
+        "SCV": 13,
+        "SupplyDepotLowered": 2,
+        "SupplyDepot": 1,
+        "MissileTurret": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 26581,
+      "owned": {
+        "SupplyDepot": 2,
+        "Refinery": 2,
+        "EngineeringBay": 1,
+        "SCV": 13,
+        "MissileTurret": 1,
+        "CommandCenter": 1
+      },
+      "newly_observed": {
+        "CommandCenter": 1
+      }
+    },
+    {
+      "loop": 27002,
+      "owned": {
+        "SCV": 13,
+        "Refinery": 2,
+        "SupplyDepotLowered": 2,
+        "EngineeringBay": 1,
+        "MissileTurret": 1
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 27463,
+      "owned": {
+        "SCV": 12,
+        "EngineeringBay": 1,
+        "Refinery": 2,
+        "SupplyDepot": 3
+      },
+      "newly_observed": {
+        "SupplyDepot": 1
+      }
+    },
+    {
+      "loop": 27906,
+      "owned": {
+        "SCV": 8,
+        "SupplyDepotLowered": 2
+      },
+      "newly_observed": {}
+    },
+    {
+      "loop": 28303,
+      "owned": {
+        "SupplyDepot": 2,
+        "SCV": 1
+      },
+      "newly_observed": {}
+    }
+  ],
+  "limits": "Immediate Success is not completion. First sightings are not attributed births; scripts, transformations and observation gaps can confound them. Top-choice alternatives are not a simulated counterfactual trajectory."
+}
