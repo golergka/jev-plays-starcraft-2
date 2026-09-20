@@ -1,0 +1,30 @@
+{
+  "trial": 531,
+  "run": "runs/20260920T142033.211362Z",
+  "start_revision": "d609295187202ffe7b43df84a11f987eee22b699",
+  "intervention": "Preserve sole current Move/Attack orders with identical target tags or point axes within 0.0001 map units. No production deduplication, queued-order changes, tactical decisions or extra model calls.",
+  "first_verified_maintenance": {
+    "time": 1789914078.3772118,
+    "event": "orders_maintained",
+    "loop": 752,
+    "orders": [
+      {
+        "unit_tag": 4330618882,
+        "ability_id": 23,
+        "observed_loop": 817,
+        "coordinate_tolerance": 0.0001,
+        "point": [
+          153.3333282470703,
+          48.0
+        ]
+      }
+    ],
+    "reason": "Sole current Move/Attack order retained in fresh observation (point tolerance 0.0001)"
+  },
+  "visual_check": {
+    "native_time": "0:59",
+    "relics": "1/4",
+    "observation": "Own units visible at bottom edge of camera on Zerg creep; primary objective incomplete."
+  },
+  "interpretation": "Live maintenance mechanism verified. No survival, combat or mission benefit established. Keep other flags as trial527 and wait for terminal outcome."
+}
