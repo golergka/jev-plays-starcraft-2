@@ -1,0 +1,31 @@
+{
+  "lab": 561,
+  "trial": 559,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T155715.144395Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789909642",
+      "loop": 13484
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 184,
+    "cost": 0.10681998600000003,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T155715.144395Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "14:02",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at 12:39"
+    }
+  },
+  "interpretation": "Top-choice combat also lost. Nonempty point-order history reached model (lab560), but no mission benefit established. Longer survival than sampled trial554 is not a controlled causal result. No relic progress observed."
+}
