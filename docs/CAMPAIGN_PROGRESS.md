@@ -6272,3 +6272,18 @@ that air threats could never appear. No scripted counterorder, new paid
 probe, policy patch, or restart. Artifact preserves descriptions, weights,
 visible enemy flight facts and resources for a later representation probe.
 Current trial cost snapshot $0.096926928; not a final outcome or cost.
+
+### Lab426 — correct enemy evidence before drawing policy conclusions
+
+Lab425's audit read visible_entities, but purchase requests instead contain
+visible_entities_by_alliance_and_type. Its empty enemy arrays were an audit
+bug, not evidence of absent enemies. Artifact now preserves the actual input.
+At7922 the input includes two Mutalisks and one Overseer; at9752 one Mutalisk.
+At8765/9024 it includes one Overseer alongside ground enemies. Consequently,
+air-only purchases cannot be called intrinsically irrational from the ground
+attack screenshot. Native12:04 also shows mixed airborne/ground presence.
+The unresolved question is allocation among mixed threats, production recovery
+and objective progress, not simply whether Jev understands Air. No policy
+change or paid probe on the basis of the incomplete interpretation. Trial424
+still live; controller handle10774 verified. Correcting evidence avoids an
+unjustified tactical rule or misleading claim about Jev's limitations.

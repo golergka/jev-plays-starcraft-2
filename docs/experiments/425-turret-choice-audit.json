@@ -37,7 +37,6 @@
         ],
         "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
       },
-      "visible_enemies": [],
       "resources": {
         "minerals": 649,
         "vespene": 178,
@@ -48,7 +47,25 @@
         "supply_in_construction": 0,
         "supply_remaining": 12,
         "supply_blocked": false
-      }
+      },
+      "visible_entities_by_alliance_and_type": {
+        "Enemy PhotonCannon": 12,
+        "Enemy Stalker": 10,
+        "Neutral StoneZealot": 6,
+        "Enemy Zealot": 11,
+        "Neutral MineralField": 8,
+        "Enemy Pylon": 10,
+        "Neutral Beacon_Terran": 1,
+        "Enemy Zergling": 12,
+        "Neutral PathingBlocker2x2": 14,
+        "Neutral ArtifactPiece2": 1,
+        "Enemy CreepTumorBurrowed": 2,
+        "Enemy SpineCrawler": 5,
+        "Enemy HighTemplar": 1,
+        "Neutral VespeneGeyser": 2,
+        "Neutral ProtossRelic": 1
+      },
+      "flight_information_note": "Investment state aggregates entities by alliance/type; no per-entity flight flags supplied in this field."
     },
     {
       "loop": 7922,
@@ -85,7 +102,6 @@
         ],
         "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
       },
-      "visible_enemies": [],
       "resources": {
         "minerals": 597,
         "vespene": 198,
@@ -96,7 +112,28 @@
         "supply_in_construction": 0.0,
         "supply_remaining": 13,
         "supply_blocked": false
-      }
+      },
+      "visible_entities_by_alliance_and_type": {
+        "Neutral StoneZealot": 6,
+        "Enemy PhotonCannon": 12,
+        "Enemy Zergling": 8,
+        "Neutral MineralField": 8,
+        "Neutral PathingBlocker2x2": 14,
+        "Enemy Pylon": 10,
+        "Enemy Zealot": 12,
+        "Enemy SpineCrawler": 5,
+        "Neutral ProtossRelic": 1,
+        "Neutral Beacon_Terran": 1,
+        "Enemy Stalker": 8,
+        "Neutral ArtifactPiece2": 1,
+        "Enemy HighTemplar": 1,
+        "Neutral VespeneGeyser": 2,
+        "Enemy Mutalisk": 2,
+        "Enemy CreepTumorBurrowed": 2,
+        "Enemy SpineCrawlerUprooted": 1,
+        "Enemy Overseer": 1
+      },
+      "flight_information_note": "Investment state aggregates entities by alliance/type; no per-entity flight flags supplied in this field."
     },
     {
       "loop": 8765,
@@ -132,7 +169,6 @@
         ],
         "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
       },
-      "visible_enemies": [],
       "resources": {
         "minerals": 665,
         "vespene": 234,
@@ -143,7 +179,26 @@
         "supply_in_construction": 0,
         "supply_remaining": 13,
         "supply_blocked": false
-      }
+      },
+      "visible_entities_by_alliance_and_type": {
+        "Enemy Overseer": 1,
+        "Neutral PathingBlocker2x2": 14,
+        "Enemy Pylon": 10,
+        "Enemy PhotonCannon": 12,
+        "Enemy Zergling": 24,
+        "Neutral MineralField": 8,
+        "Enemy CreepTumorBurrowed": 2,
+        "Neutral ProtossRelic": 1,
+        "Enemy Zealot": 10,
+        "Neutral StoneZealot": 6,
+        "Enemy Stalker": 6,
+        "Enemy SpineCrawler": 6,
+        "Neutral VespeneGeyser": 2,
+        "Neutral Beacon_Terran": 1,
+        "Neutral ArtifactPiece2": 1,
+        "Enemy HighTemplar": 1
+      },
+      "flight_information_note": "Investment state aggregates entities by alliance/type; no per-entity flight flags supplied in this field."
     },
     {
       "loop": 9024,
@@ -180,7 +235,6 @@
         ],
         "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
       },
-      "visible_enemies": [],
       "resources": {
         "minerals": 580,
         "vespene": 246,
@@ -191,7 +245,27 @@
         "supply_in_construction": 0.0,
         "supply_remaining": 13,
         "supply_blocked": false
-      }
+      },
+      "visible_entities_by_alliance_and_type": {
+        "Enemy Zealot": 9,
+        "Neutral PathingBlocker2x2": 14,
+        "Neutral StoneZealot": 6,
+        "Enemy PhotonCannon": 12,
+        "Enemy Pylon": 10,
+        "Enemy Zergling": 15,
+        "Neutral MineralField": 8,
+        "Neutral ProtossRelic": 1,
+        "Enemy Stalker": 5,
+        "Enemy CreepTumorBurrowed": 2,
+        "Enemy SpineCrawler": 5,
+        "Neutral VespeneGeyser": 2,
+        "Enemy SpineCrawlerUprooted": 1,
+        "Enemy Overseer": 1,
+        "Enemy HighTemplar": 1,
+        "Neutral Beacon_Terran": 1,
+        "Neutral ArtifactPiece2": 1
+      },
+      "flight_information_note": "Investment state aggregates entities by alliance/type; no per-entity flight flags supplied in this field."
     },
     {
       "loop": 9752,
@@ -228,7 +302,6 @@
         ],
         "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
       },
-      "visible_enemies": [],
       "resources": {
         "minerals": 595,
         "vespene": 278,
@@ -239,9 +312,30 @@
         "supply_in_construction": 0,
         "supply_remaining": 13,
         "supply_blocked": false
-      }
+      },
+      "visible_entities_by_alliance_and_type": {
+        "Enemy PhotonCannon": 11,
+        "Enemy Mutalisk": 1,
+        "Neutral StoneZealot": 6,
+        "Enemy Hydralisk": 5,
+        "Enemy Zealot": 8,
+        "Enemy Zergling": 2,
+        "Neutral PathingBlocker2x2": 14,
+        "Neutral MineralField": 8,
+        "Enemy Pylon": 10,
+        "Enemy Stalker": 12,
+        "Enemy CreepTumorBurrowed": 2,
+        "Enemy SpineCrawler": 6,
+        "Neutral VespeneGeyser": 2,
+        "Neutral ArtifactPiece2": 1,
+        "Neutral ProtossRelic": 1,
+        "Enemy HighTemplar": 1,
+        "Neutral Beacon_Terran": 1
+      },
+      "flight_information_note": "Investment state aggregates entities by alliance/type; no per-entity flight flags supplied in this field."
     }
   ],
   "interpretation": "The first turret selection was sampled below the top SCV choice. At the next three recorded turret selections, turret was itself the highest-weight option. Air-only facts were present. Visible ground enemies do not prove air enemies could never arrive; this audit does not infer model reasoning or impose a counterstrategy.",
-  "extra_model_calls": 0
+  "extra_model_calls": 0,
+  "correction": "Original audit looked for the uncompressed visible_entities field and incorrectly emitted empty lists. Replaced with the actual aggregate supplied to investment. Empty original lists were not evidence of no visible enemies."
 }
