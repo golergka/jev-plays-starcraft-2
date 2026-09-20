@@ -1,0 +1,427 @@
+{
+  "source": "runs/20260920T074543.662730Z/events.jsonl",
+  "time": 1789890354.8729448,
+  "worker_keys": [
+    "purpose_SCV / unit 4320657409",
+    "purpose_SCV / unit 4323803137",
+    "purpose_SCV / unit 4299161601",
+    "purpose_SCV / unit 4299423745",
+    "purpose_SCV / unit 4300210177"
+  ],
+  "omitted_keys": [
+    "purpose_SupplyDepot"
+  ],
+  "method": "Three paired repeats of one recorded state, full original question batch versus unchanged economic-role subset. Alternating arm order. No peer context, commands or policy changes. Descriptive repeatability probe, not independent states or a performance test.",
+  "pairs": [
+    {
+      "full": {
+        "purpose_SCV / unit 4320657409": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.33,
+          "probabilities": {
+            "income": 0.42,
+            "positioning": 0.46,
+            "combat": 0.01,
+            "individual": 0.08,
+            "continue": 0.03
+          }
+        },
+        "purpose_SCV / unit 4323803137": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "income": 0.55,
+            "positioning": 0.35,
+            "combat": 0.01,
+            "individual": 0.06,
+            "continue": 0.03
+          }
+        },
+        "purpose_SCV / unit 4299161601": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "income": 0.53,
+            "positioning": 0.35,
+            "combat": 0.01,
+            "individual": 0.07,
+            "continue": 0.04
+          }
+        },
+        "purpose_SCV / unit 4299423745": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "income": 0.37,
+            "positioning": 0.48,
+            "combat": 0.01,
+            "individual": 0.09,
+            "continue": 0.05
+          }
+        },
+        "purpose_SupplyDepot": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.67,
+          "probabilities": {
+            "other": 0.78,
+            "individual": 0.07,
+            "continue": 0.15
+          }
+        },
+        "purpose_SCV / unit 4300210177": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "income": 0.48,
+            "positioning": 0.39,
+            "combat": 0.01,
+            "individual": 0.08,
+            "continue": 0.04
+          }
+        }
+      },
+      "subset": {
+        "purpose_SCV / unit 4320657409": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "individual": 0.09,
+            "positioning": 0.44,
+            "combat": 0.0,
+            "income": 0.44,
+            "continue": 0.03
+          }
+        },
+        "purpose_SCV / unit 4323803137": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "individual": 0.06,
+            "positioning": 0.37,
+            "combat": 0.01,
+            "income": 0.53,
+            "continue": 0.03
+          }
+        },
+        "purpose_SCV / unit 4299161601": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "individual": 0.06,
+            "positioning": 0.39,
+            "combat": 0.01,
+            "income": 0.5,
+            "continue": 0.04
+          }
+        },
+        "purpose_SCV / unit 4299423745": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.4,
+          "probabilities": {
+            "individual": 0.07,
+            "positioning": 0.52,
+            "combat": 0.01,
+            "income": 0.35,
+            "continue": 0.05
+          }
+        },
+        "purpose_SCV / unit 4300210177": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.35,
+          "probabilities": {
+            "individual": 0.08,
+            "positioning": 0.39,
+            "combat": 0.01,
+            "income": 0.48,
+            "continue": 0.04
+          }
+        }
+      }
+    },
+    {
+      "subset": {
+        "purpose_SCV / unit 4320657409": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "combat": 0.01,
+            "individual": 0.11,
+            "continue": 0.04,
+            "positioning": 0.42,
+            "income": 0.42
+          }
+        },
+        "purpose_SCV / unit 4323803137": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "combat": 0.01,
+            "individual": 0.07,
+            "continue": 0.03,
+            "positioning": 0.39,
+            "income": 0.5
+          }
+        },
+        "purpose_SCV / unit 4299161601": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "combat": 0.01,
+            "individual": 0.08,
+            "continue": 0.04,
+            "income": 0.49,
+            "positioning": 0.38
+          }
+        },
+        "purpose_SCV / unit 4299423745": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.41,
+          "probabilities": {
+            "combat": 0.01,
+            "individual": 0.08,
+            "continue": 0.05,
+            "positioning": 0.52,
+            "income": 0.34
+          }
+        },
+        "purpose_SCV / unit 4300210177": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "combat": 0.01,
+            "individual": 0.08,
+            "continue": 0.05,
+            "positioning": 0.41,
+            "income": 0.45
+          }
+        }
+      },
+      "full": {
+        "purpose_SCV / unit 4320657409": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "combat": 0.0,
+            "continue": 0.04,
+            "individual": 0.08,
+            "positioning": 0.46,
+            "income": 0.42
+          }
+        },
+        "purpose_SCV / unit 4323803137": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "combat": 0.0,
+            "positioning": 0.33,
+            "continue": 0.03,
+            "individual": 0.06,
+            "income": 0.58
+          }
+        },
+        "purpose_SCV / unit 4299161601": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.45,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.04,
+            "individual": 0.06,
+            "positioning": 0.34,
+            "income": 0.55
+          }
+        },
+        "purpose_SCV / unit 4299423745": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.05,
+            "individual": 0.06,
+            "positioning": 0.45,
+            "income": 0.43
+          }
+        },
+        "purpose_SupplyDepot": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.59,
+          "probabilities": {
+            "continue": 0.19,
+            "individual": 0.08,
+            "other": 0.73
+          }
+        },
+        "purpose_SCV / unit 4300210177": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.03,
+            "individual": 0.06,
+            "positioning": 0.41,
+            "income": 0.49
+          }
+        }
+      }
+    },
+    {
+      "full": {
+        "purpose_SCV / unit 4320657409": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.03,
+            "positioning": 0.5,
+            "individual": 0.08,
+            "income": 0.38
+          }
+        },
+        "purpose_SCV / unit 4323803137": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.03,
+            "positioning": 0.39,
+            "individual": 0.08,
+            "income": 0.49
+          }
+        },
+        "purpose_SCV / unit 4299161601": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.04,
+            "positioning": 0.38,
+            "individual": 0.06,
+            "income": 0.51
+          }
+        },
+        "purpose_SCV / unit 4299423745": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.04,
+            "positioning": 0.49,
+            "individual": 0.09,
+            "income": 0.37
+          }
+        },
+        "purpose_SupplyDepot": {
+          "choice": "other",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "individual": 0.09,
+            "other": 0.72,
+            "continue": 0.19
+          }
+        },
+        "purpose_SCV / unit 4300210177": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.33,
+          "probabilities": {
+            "combat": 0.01,
+            "continue": 0.05,
+            "positioning": 0.39,
+            "individual": 0.09,
+            "income": 0.46
+          }
+        }
+      },
+      "subset": {
+        "purpose_SCV / unit 4320657409": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "income": 0.41,
+            "positioning": 0.46,
+            "combat": 0.0,
+            "individual": 0.09,
+            "continue": 0.04
+          }
+        },
+        "purpose_SCV / unit 4323803137": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.41,
+          "probabilities": {
+            "individual": 0.07,
+            "positioning": 0.36,
+            "combat": 0.01,
+            "income": 0.52,
+            "continue": 0.04
+          }
+        },
+        "purpose_SCV / unit 4299161601": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.35,
+          "probabilities": {
+            "individual": 0.09,
+            "positioning": 0.39,
+            "combat": 0.0,
+            "income": 0.48,
+            "continue": 0.04
+          }
+        },
+        "purpose_SCV / unit 4299423745": {
+          "choice": "positioning",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "individual": 0.1,
+            "positioning": 0.48,
+            "combat": 0.01,
+            "income": 0.36,
+            "continue": 0.05
+          }
+        },
+        "purpose_SCV / unit 4300210177": {
+          "choice": "income",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "individual": 0.08,
+            "positioning": 0.37,
+            "combat": 0.01,
+            "income": 0.5,
+            "continue": 0.04
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.002453472
+}

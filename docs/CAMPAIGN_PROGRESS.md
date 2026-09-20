@@ -5961,3 +5961,16 @@ No evidence of better division of labor or viability; do not deploy added serial
 calls. Artifact404 retains outputs. No gameorders or newlivetrial. Next attention
 should include sensitivity to question-batch composition, not assuming identical
 worker state guarantees stable or coordinated roles.
+
+### Lab405 — repeated question-batch composition comparison
+
+Follow404with three paired repeats at exactly the same403openingstate. Full
+recorded mixedrole batch versus unchanged economic-role subset; alternating arm
+order, no peercontext. Sixcalls$0.002453472. Fullbatch consistentlythreeincome/
+twopositioning; subsetfourincome/onepositioning twice andthreeincome/twopositioning
+once. Original livebatch hadtwoincome/threepositioning, showing historicalresponse
+variation too. One worker's answer changes in2/3pairs; not a reliable allocation
+fix or evidence batching alone caused403workerlosses. Three repeats are one state,
+not three independent tests. No deployment or extra serialworkerqueries justified.
+Script/artifact405 committed; no gamecommands. This narrows404's confound without
+claiming a gameplay improvement. Campaign remains incomplete.
