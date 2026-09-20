@@ -1,0 +1,170 @@
+{
+  "source": "runs/20260920T125822.620646Z/events.jsonl",
+  "eligible": 12,
+  "method": "First/middle/last recorded Bunker-top investment states. All original state/options retained. Treatment repeats existing documented mechanics beside every matching purchase; no new tactical guidance. Alternating arms, six calls, offline only.",
+  "pairs": [
+    {
+      "loop": 5432,
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_1",
+            "type": "choice",
+            "confidence": 0.32,
+            "probabilities": {
+              "project_6": 0.07,
+              "project_7": 0.01,
+              "project_2": 0.02,
+              "project_4": 0.21,
+              "save": 0.18,
+              "save_for_0": 0.01,
+              "save_for_1": 0.0,
+              "save_for_3": 0.01,
+              "project_5": 0.01,
+              "batch_6": 0.01,
+              "project_3": 0.02,
+              "project_1": 0.36,
+              "batch_4": 0.03,
+              "save_for_2": 0.02,
+              "project_0": 0.04
+            }
+          },
+          "description": "Purchase one Bunker. Its action capabilities have not yet been observed. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+        },
+        "adjacent": {
+          "answer": {
+            "choice": "project_1",
+            "type": "choice",
+            "confidence": 0.29,
+            "probabilities": {
+              "project_1": 0.33,
+              "save_for_1": 0.0,
+              "save_for_0": 0.01,
+              "save_for_2": 0.02,
+              "project_7": 0.01,
+              "project_4": 0.21,
+              "project_3": 0.01,
+              "batch_4": 0.03,
+              "project_5": 0.01,
+              "save": 0.22,
+              "batch_6": 0.01,
+              "save_for_3": 0.01,
+              "project_0": 0.04,
+              "project_2": 0.02,
+              "project_6": 0.07
+            }
+          },
+          "description": "Purchase one Bunker. Its action capabilities have not yet been observed. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}. Documented mechanic: Loaded infantry gains protection and additional attack range from a Bunker. This describes loaded infantry, not an independent weapon on an empty structure."
+        }
+      }
+    },
+    {
+      "loop": 9836,
+      "answers": {
+        "adjacent": {
+          "answer": {
+            "choice": "project_1",
+            "type": "choice",
+            "confidence": 0.35,
+            "probabilities": {
+              "project_1": 0.4,
+              "save_for_2": 0.0,
+              "project_2": 0.01,
+              "project_0": 0.02,
+              "save": 0.23,
+              "save_for_3": 0.0,
+              "batch_3": 0.02,
+              "project_4": 0.01,
+              "save_for_0": 0.0,
+              "project_3": 0.17,
+              "project_5": 0.1,
+              "batch_5": 0.01,
+              "project_6": 0.01,
+              "save_for_1": 0.01
+            }
+          },
+          "description": "Purchase one Bunker. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Existing owned Bunker cargo: 1 slots occupied, 7 available; passengers by type: {'SCV': 1}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}. Documented mechanic: Loaded infantry gains protection and additional attack range from a Bunker. This describes loaded infantry, not an independent weapon on an empty structure."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "project_1",
+            "type": "choice",
+            "confidence": 0.35,
+            "probabilities": {
+              "save_for_3": 0.0,
+              "batch_3": 0.02,
+              "project_5": 0.11,
+              "project_3": 0.2,
+              "project_6": 0.01,
+              "project_1": 0.39,
+              "project_2": 0.01,
+              "batch_5": 0.01,
+              "project_4": 0.01,
+              "save": 0.21,
+              "save_for_0": 0.0,
+              "save_for_1": 0.01,
+              "project_0": 0.02,
+              "save_for_2": 0.0
+            }
+          },
+          "description": "Purchase one Bunker. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Existing owned Bunker cargo: 1 slots occupied, 7 available; passengers by type: {'SCV': 1}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}."
+        }
+      }
+    },
+    {
+      "loop": 12545,
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.4,
+            "probabilities": {
+              "project_0": 0.45,
+              "save_for_5": 0.0,
+              "project_4": 0.01,
+              "batch_3": 0.0,
+              "save_for_3": 0.0,
+              "batch_1": 0.03,
+              "project_3": 0.09,
+              "save_for_4": 0.03,
+              "save_for_0": 0.01,
+              "save_for_2": 0.01,
+              "project_1": 0.13,
+              "save_for_1": 0.01,
+              "save": 0.21,
+              "project_2": 0.02
+            }
+          },
+          "description": "Purchase one Bunker. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+        },
+        "adjacent": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.3,
+            "probabilities": {
+              "save_for_4": 0.04,
+              "save_for_1": 0.0,
+              "project_2": 0.02,
+              "project_1": 0.19,
+              "save_for_3": 0.0,
+              "save_for_2": 0.01,
+              "batch_1": 0.03,
+              "project_3": 0.11,
+              "save_for_5": 0.0,
+              "project_4": 0.01,
+              "batch_3": 0.0,
+              "save": 0.22,
+              "project_0": 0.36,
+              "save_for_0": 0.01
+            }
+          },
+          "description": "Purchase one Bunker. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}. Documented mechanic: Loaded infantry gains protection and additional attack range from a Bunker. This describes loaded infantry, not an independent weapon on an empty structure."
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0038116260000000003
+}
