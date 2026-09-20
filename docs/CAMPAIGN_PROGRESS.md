@@ -4745,3 +4745,19 @@ structures suffered attacks; sampled army absent byloop8520. Native11:08view
 confirmed enemies inside base,zero minerals,worker counter0/27. Do not interpret
 valid API actions, strategic protect wording, or clear descriptions as effective
 coordination. No mission advancement and no unchanged automatic retry.
+
+### Lab325 — full menus do not resolve repeated safe-anchor movement
+
+Trial321Marine tournaments:9of10finalist pairs were originalCommandCenter Move
+versusStop;lastpairwas originalCommandCenter Move versusfriendlyMarine Move.
+Reconstruct full criteria from exact two preceding same-state halves; validate
+union count matches tournament options. First/middle/last reconstructed menus,
+full menu vs recorded finalists,alternating order,six calls,$0.003715866.
+Full tops:join_original_center,continue,join_original_center. Finalist tops:
+join_original_center in all3. Full requests succeeded without token-limit errors.
+
+Partitioning changes one top decision but does not explain persistent anchor
+preference by itself. No evidence of better combat or survival; do not add a
+hand-selected offensive finalist. Script/artifact325 recorded,no live change.
+Full-menu cost versus whole tournament remains unmeasured in paired conditions;
+combined probe spend is not evidence of per-policy savings.
