@@ -5664,3 +5664,25 @@ orders orlivepolicyedits. Four verified Smashdefeats; firstthreecampaignmissions
 remaincompleted. UI/result/checkpoint/artifact387andreportupdated. No unchanged
 retrystarted; nextwork should investigate execution/planning structure ratherthan
 repeat primary-objective wording as if this negative trial had not happened.
+
+### Lab388 — sequential peer-role context changes no top choices
+
+Offline387opening trace:twoSCVs got accepted Move commands tomiddle-eastsector
+atloop304;fiveworkersat549becamethreeat833. These are observeddisappearances,
+not proof of exact deathcausality. Thus this economy loss cannot be explained
+solely as validator rejection. Actual live role selection sampled positioning
+forthreeworkers,continueforone,incomeforone atopening46.
+
+Inspect originalpaidresponse:allfiveworkers' topchoice wasincome (probabilities
+.53/.63/.47/.47/.52). Our probabilitysampling,not their topchoice,producedthat
+allocation. Earlier198/200directroletrialsnegative; do not claim a fresh proof
+that argmaxwins orforget those trials.
+
+New bounded structuralprobe firstfiveworkerstate:oneindependentbatch plusfive
+sequentialsamequestions with earlier peer roles incontext;sortedkeyorder,
+no sampling orgamecommands. Sixcalls,$0.002032128. Allfiveincome inbotharms.
+No demonstratedcoordinationbenefit; do notdeploy extra serialqueries. One
+unreplicatedstate,orderingconfound,andnoexecutioncomparison. Script/artifact388
+preserved. SC2remainsverifieddefeatscreen;no newlivetrial. Next investigate how
+exploration/sampling commitments interact with newly corrected mission context,
+ratherthanrepeat worker-count orsequentialcoordination as successful evidence.

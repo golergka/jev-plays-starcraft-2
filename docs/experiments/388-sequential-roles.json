@@ -1,0 +1,138 @@
+{
+  "source": "runs/20260920T060120.521826Z/events.jsonl",
+  "recorded_time": 1789884091.192309,
+  "method": "First eligible 2-5-worker state. One independent batch then identical individual role questions in sorted-key order with earlier peer choices appended. No sampling, concrete commands, game actions, or claim that order is neutral. One unreplicated comparison; not a win-rate test.",
+  "independent": {
+    "purpose_SCV / unit 4300210177": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.46,
+      "probabilities": {
+        "income": 0.57,
+        "combat": 0.01,
+        "continue": 0.04,
+        "individual": 0.08,
+        "positioning": 0.3
+      }
+    },
+    "purpose_SCV / unit 4299161601": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.58,
+      "probabilities": {
+        "income": 0.67,
+        "individual": 0.06,
+        "continue": 0.04,
+        "combat": 0.01,
+        "positioning": 0.22
+      }
+    },
+    "purpose_SCV / unit 4323803137": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.44,
+      "probabilities": {
+        "income": 0.55,
+        "combat": 0.02,
+        "continue": 0.04,
+        "individual": 0.07,
+        "positioning": 0.32
+      }
+    },
+    "purpose_SCV / unit 4299423745": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.4,
+      "probabilities": {
+        "income": 0.53,
+        "combat": 0.01,
+        "continue": 0.04,
+        "individual": 0.07,
+        "positioning": 0.35
+      }
+    },
+    "purpose_SCV / unit 4320657409": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.45,
+      "probabilities": {
+        "income": 0.56,
+        "individual": 0.08,
+        "continue": 0.04,
+        "combat": 0.04,
+        "positioning": 0.28
+      }
+    }
+  },
+  "sequential": {
+    "purpose_SCV / unit 4299161601": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.47,
+      "probabilities": {
+        "income": 0.57,
+        "positioning": 0.32,
+        "combat": 0.02,
+        "continue": 0.04,
+        "individual": 0.05
+      }
+    },
+    "purpose_SCV / unit 4299423745": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.42,
+      "probabilities": {
+        "positioning": 0.31,
+        "income": 0.53,
+        "individual": 0.1,
+        "continue": 0.04,
+        "combat": 0.02
+      }
+    },
+    "purpose_SCV / unit 4300210177": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.47,
+      "probabilities": {
+        "individual": 0.07,
+        "income": 0.58,
+        "positioning": 0.28,
+        "combat": 0.02,
+        "continue": 0.05
+      }
+    },
+    "purpose_SCV / unit 4320657409": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.65,
+      "probabilities": {
+        "combat": 0.02,
+        "income": 0.72,
+        "positioning": 0.14,
+        "continue": 0.04,
+        "individual": 0.08
+      }
+    },
+    "purpose_SCV / unit 4323803137": {
+      "choice": "income",
+      "type": "choice",
+      "confidence": 0.52,
+      "probabilities": {
+        "income": 0.62,
+        "individual": 0.05,
+        "continue": 0.04,
+        "positioning": 0.25,
+        "combat": 0.04
+      }
+    }
+  },
+  "order": [
+    "purpose_SCV / unit 4299161601",
+    "purpose_SCV / unit 4299423745",
+    "purpose_SCV / unit 4300210177",
+    "purpose_SCV / unit 4320657409",
+    "purpose_SCV / unit 4323803137"
+  ],
+  "calls": 6,
+  "cost_usd": 0.0020321280000000002
+}
