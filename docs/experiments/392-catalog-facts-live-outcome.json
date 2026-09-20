@@ -1,0 +1,17 @@
+{
+  "run": "runs/20260920T063518.920993Z",
+  "ui_verification": {
+    "time": 1789887521.4766452,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "29:42",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 230
+  },
+  "calls": 344,
+  "cost_usd": 0.2558914679999999,
+  "scope": "Catalog facts for offered production types; contribution top-choice mode retained. No policy changes or root unit orders during run. Longer survival does not establish objective progress or causal improvement."
+}

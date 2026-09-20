@@ -5736,3 +5736,19 @@ purchase orassumedunlock. Unaffordablepotentialprojectfactsremaininformationonly
 existinglegalcommandchecksunchanged. Regressionchecks absent-owned offeredtype
 included andunobservedunofferedcatalogtypeexcluded.201tests pass. No paidprobe or
 newtrial thisturn; gameplaybenefitunproven, but offeredreplacementfacts nowavailable.
+
+### Lab392 — catalog facts delivered, native defeat at 29:42
+
+Run20260920T063518.920993Z/session44116 exited0. Native visual check confirms
+defeat29:42, all structures destroyed, 0/4 relics, 0minerals/230gas.
+344 successful Jev requests cost $0.255891468. Offered production catalog facts
+reached paid requests; contribution top-choice mode remained enabled. No live
+policy changes or root unit orders.
+
+Visual monitoring showed repair-heavy survival, intermittent rebuilding of the
+Barracks, no durable army, and a large unspent mineral bank before the final
+collapse. Longer survival is not primary-objective progress or isolated evidence
+of the adapter's benefit. Six Smash and Grab defeats; only the first three
+missions verified won. Local result/checkpoint and public report reconciled.
+Keep native screenshots in the evaluation loop, including independent terminal
+verification; accepted commands and a living economy do not establish success.
