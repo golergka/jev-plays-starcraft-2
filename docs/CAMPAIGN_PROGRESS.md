@@ -4702,3 +4702,14 @@ for every carrier,not a Bunker directive; legal menus and Jev choice unchanged.
 This reduces cross-referencing without choosing whether/when to unload. No claim
 of behavioral improvement until measured. Next bounded live run returns to default
 Choice investment (scored mode remains opt-in) with this clearer action context.
+
+### Lab322 — reproducible boarding audit; trial321 remains live
+
+Added report_boarding.py to correlate accepted joint requests with later recorded
+cargo for the exact carrier/passenger pair. Reproduces manual318audit:3of6have
+later cargo confirmation. Absence is explicitly unconfirmed,not failure/death;
+observed presence does not prove which request caused it. No game calls or policy
+changes. Artifact322 preserves the evidence. Trial321 remains active; initial
+native0:49view showed army near CommandCenter and2/27worker counter. At loop1255,
+38requests cost$0.017722488,no recorded request/engine errors; no new unload text
+had been delivered yet. Do not treat unexercised wording as an improvement.

@@ -1,0 +1,79 @@
+{
+  "scope": "Accepted joint requests correlated with later logged unit cargo. Observation confirms presence, not causation. Missing observations do not prove failure or death.",
+  "jobs": [
+    {
+      "loop": 2071,
+      "command": {
+        "unit_tag": 4295491585,
+        "ability_id": 407,
+        "target_tag": 4310695937
+      },
+      "status": "not_confirmed_in_recorded_cargo"
+    },
+    {
+      "loop": 2619,
+      "command": {
+        "unit_tag": 4297850881,
+        "ability_id": 407,
+        "target_tag": 4344774657
+      },
+      "status": "observed_in_selected_carrier",
+      "passenger": {
+        "tag": 4344774657,
+        "type": "Marine",
+        "health": 45.0
+      },
+      "seconds_until_observed": 25.012
+    },
+    {
+      "loop": 3216,
+      "command": {
+        "unit_tag": 4357357570,
+        "ability_id": 407,
+        "target_tag": 4372561921
+      },
+      "status": "observed_in_selected_carrier",
+      "passenger": {
+        "tag": 4372561921,
+        "type": "SCV",
+        "health": 45.0
+      },
+      "seconds_until_observed": 31.364
+    },
+    {
+      "loop": 3915,
+      "command": {
+        "unit_tag": 4357357570,
+        "ability_id": 407,
+        "target_tag": 4342153217
+      },
+      "status": "observed_in_selected_carrier",
+      "passenger": {
+        "tag": 4342153217,
+        "type": "Marine",
+        "health": 45.0
+      },
+      "seconds_until_observed": 25.142
+    },
+    {
+      "loop": 5538,
+      "command": {
+        "unit_tag": 4338221063,
+        "ability_id": 407,
+        "target_tag": 4356308993
+      },
+      "status": "not_confirmed_in_recorded_cargo"
+    },
+    {
+      "loop": 6874,
+      "command": {
+        "unit_tag": 4395106305,
+        "ability_id": 407,
+        "target_tag": 4379901953
+      },
+      "status": "not_confirmed_in_recorded_cargo"
+    }
+  ],
+  "accepted": 6,
+  "observed_in_selected_carrier": 3
+}
