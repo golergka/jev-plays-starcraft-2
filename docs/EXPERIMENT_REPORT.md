@@ -7,7 +7,48 @@ native victory screen reports 20:12, after 42 independently UI-verified defeats.
 The winning run cost $0.192928932 for 261 successful Jev requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab375
+## Current evidence through lab386; trial387 running
+
+Smash and Grab has three independently verified defeats:
+
+| Trial | Native mission time | Relics | Successful requests | Request cost |
+| --- | --- | --- | --- | --- |
+| 376/378 | 7:50 | 2/4 | 114 | $0.068998482 |
+| 381 | 13:16 | 0/4 | 177 | $0.116499978 |
+| 383 | 19:22 | 0/4 | 242 | $0.155562708 |
+
+The longer attempts sustained workers, construction and repairs without restoring
+an effective army or completing the primary objective. Survival time is not a
+success metric for this mission. Trial383 also had an initial upstream 503;
+its first completed decision was at loop1307, limiting causal comparison.
+
+The adapter missed the campaign ability name MedicHeal. That was corrected, and
+trial381 delivered a healing choice to Jev, which proposed it once. Historical
+logs could not identify whether that specific proposal survived validation.
+New logs record actual submitted commands and individual engine results;
+trial383 submitted no MedicHeal commands. Native autocast remains unmeasured.
+API acceptance does not prove completion, and aggregate healing can include repairs.
+
+Capability descriptions now distinguish attack-order availability from catalog
+weapons. Generic support choices expose observed target distance and explicitly
+available cast range. These are interface corrections, not demonstrated gameplay
+improvements. Autocast toggling exists in the protocol, but raw unit observations
+do not expose its current state; no blind toggle was introduced.
+
+Two small paired probes were negative: primary/bonus wording in tactical menus
+did not establish better pursuit ($0.004431168), and recent own-player score
+deltas did not establish better investment ($0.002888340). Neither was deployed.
+The strategic menu previously described its offensive option solely as destroying
+the enemy base. Adding a general primary-objective pursuit option changed all
+three sampled strategic choices ($0.002523990). Trial387 is testing that option,
+alongside the support geometry and grouping-description changes. Its outcome and
+any improvement remain unverified; it cannot isolate a single causal factor.
+
+The rolling $0.10/five-minute cap remains unchanged. Listed costs are successful
+requests for those runs/probes, not total account spending or conservative pending
+reservations. The first three missions remain the only verified victories.
+
+## Zero Hour evidence through lab375 (historical)
 
 The winning trial supplied observed decision cadence to strategic requests, kept
 full combat menus, and loaded three prior same-map attempts. Jev chose 672-loop
