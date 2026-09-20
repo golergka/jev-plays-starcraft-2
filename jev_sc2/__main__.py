@@ -50,6 +50,25 @@ def action_feedback(actions, results, loop, requested, age, max_age):
             'note':'Accepted means engine accepted the request, not completed the action.'}
 
 
+async def restart_attached_game(client, expected_map, log):
+    """Explicit same-map retry; keep the socket for subsequent player control."""
+    info = await client.request('game_info',sc.RequestGameInfo())
+    check_map_identity(info,expected_map)
+    before = await client.observe()
+    started_at = time.time()
+    reply = await client.request('restart_game',sc.RequestRestartGame())
+    if reply.need_hard_reset:
+        raise RuntimeError('SC2 restart requires a hard reset; no automatic relaunch')
+    after = await client.observe()
+    if client.status != sc.in_game:
+        raise RuntimeError('SC2 restart did not enter an active game')
+    if before.observation.game_loop and after.observation.game_loop >= before.observation.game_loop:
+        raise RuntimeError('SC2 restart did not reset the observed game clock')
+    log('restarted_game',map=info.local_map_path,before_loop=before.observation.game_loop,
+        after_loop=after.observation.game_loop)
+    return started_at
+
+
 def observe_action_failures(observation, memory, log):
     """Retain delayed engine failures, independently of request acknowledgments."""
     loop = observation.observation.game_loop
@@ -73,6 +92,9 @@ def observe_action_failures(observation, memory, log):
 
 
 async def run(args):
+    if getattr(args,'restart',False) and (
+        not args.attach or args.map or not getattr(args,'expected_map',None)):
+        raise ValueError('--restart requires --attach and --expected-map, without --map')
     load_dotenv(ROOT / '.env')
     sc2root = os.getenv('SC2PATH', '/Applications/StarCraft II')
     if args.doctor:
@@ -148,6 +170,9 @@ async def run(args):
             objective=args.objective,seconds=args.seconds,max_calls=args.max_calls,
             max_age_loops=args.max_age_loops)
         attached_info = None
+        restart_started_at = None
+        if getattr(args,'restart',False):
+            restart_started_at = await restart_attached_game(client,args.expected_map,log)
         outcome_monitor = OutcomeMonitor.for_map(args.map, time.time())
         if args.map:
             log('loading_map',map=Path(args.map).name,opponent=args.opponent)
@@ -178,7 +203,7 @@ async def run(args):
             # selects a local, hash-checked build; an existing ACTIVE marker may
             # arm the monitor, but an already-terminal bank alone never can.
             local_name = info.local_map_path.replace('\\','/').split('/')[-1]
-            outcome_monitor = OutcomeMonitor.for_map(ROOT/'maps'/local_name, 0)
+            outcome_monitor = OutcomeMonitor.for_map(ROOT/'maps'/local_name, restart_started_at or 0)
         data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True,upgrade_id=True))
         started = time.monotonic()
         failures = 0
@@ -379,6 +404,8 @@ def main():
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')
     parser.add_argument('--race',choices=('terran','zerg','protoss','random'),default='terran')
     parser.add_argument('--attach',action='store_true',help='Reuse an API-enabled SC2 process')
+    parser.add_argument('--restart',action='store_true',help='Explicitly restart the attached mission and immediately control it; requires --expected-map and no --map')
+    parser.add_argument('--expected-map',help='Require the attached API map filename to match before continuing or restarting')
     parser.add_argument('--opponent',action='store_true',help='Add VeryEasy Zerg AI for a melee map')
     parser.add_argument('--port',type=int,default=5001)
     parser.add_argument('--window-size',type=int,nargs=2,default=(1280,800),metavar=('WIDTH','HEIGHT'))

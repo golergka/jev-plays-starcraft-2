@@ -1350,3 +1350,43 @@ def test_feedback_does_not_attribute_failure_to_last_candidate_target():
     # Retained pre-reload failures must not retain an invented location either.
     memory['retained_action_failures'][10]['failures'][0]['action']='Build Bunker at [99,99]'
     assert player.describe_action_feedback(view,memory)[0]['failures'][0]['action']=='Purchase Bunker'
+
+
+def test_restart_keeps_client_and_checks_identity_clock_and_hard_reset():
+    from jev_sc2.__main__ import restart_attached_game
+    class Client:
+        status=sc.in_game
+        def __init__(self,name='mission.SC2Map',hard=False,after=0):
+            self.name=name;self.hard=hard;self.after=after;self.requests=[];self.observations=0
+        async def request(self,name,body):
+            self.requests.append(name)
+            if name=='game_info':return sc.ResponseGameInfo(local_map_path=self.name)
+            assert name=='restart_game'
+            return sc.ResponseRestartGame(need_hard_reset=self.hard)
+        async def observe(self):
+            self.observations+=1
+            result=sc.ResponseObservation()
+            result.observation.game_loop=100 if self.observations==1 else self.after
+            return result
+    c=Client();events=[]
+    assert asyncio.run(restart_attached_game(c,'mission.SC2Map',lambda e,**f:events.append((e,f))))>0
+    assert c.requests==['game_info','restart_game'] and c.observations==2
+    assert events[0][1]['after_loop']==0
+    c=Client(name='wrong.SC2Map')
+    with pytest.raises(RuntimeError,match='mismatch'):
+        asyncio.run(restart_attached_game(c,'mission.SC2Map',lambda *a,**k:None))
+    assert c.requests==['game_info'] and c.observations==0
+    c=Client(hard=True)
+    with pytest.raises(RuntimeError,match='hard reset'):
+        asyncio.run(restart_attached_game(c,'mission.SC2Map',lambda *a,**k:None))
+    assert c.observations==1
+    with pytest.raises(RuntimeError,match='clock'):
+        asyncio.run(restart_attached_game(Client(after=101),'mission.SC2Map',lambda *a,**k:None))
+
+
+@pytest.mark.parametrize('attach,map_path,expected',[(False,None,'m.SC2Map'),(True,'m.SC2Map','m.SC2Map'),(True,None,None)])
+def test_restart_rejects_ambiguous_setup_before_connecting(attach,map_path,expected):
+    from types import SimpleNamespace
+    from jev_sc2.__main__ import run
+    with pytest.raises(ValueError,match='requires --attach'):
+        asyncio.run(run(SimpleNamespace(restart=True,attach=attach,map=map_path,expected_map=expected)))

@@ -4377,3 +4377,16 @@ run20260920T010853.106092Z ticks795/1339 accepted27/29commands. Gap before contr
 means this is an infrastructure continuation, not a clean full-opening policy
 comparison. Same hash-checked map name restores ending monitor on attach.
 Next improve atomic restart-and-control to remove manual connection gap.
+
+### Lab297 — integrate same-connection restart and control
+
+New explicit --attach --restart --expected-map path verifies identity before
+restart, rejects ambiguous launch/map options before connection, requires in_game
+and a reset clock, and stops on need_hard_reset. Same socket proceeds directly to
+normal Jev loop; outcome monitor uses restart timestamp rather than accepting an
+old terminal marker. No tactical action or automatic retry loop added.
+
+142existing/new tests pass before three additional invalid-argument cases; focused
+restart suite4passed afterward. Live request was verified296; integrated CLI
+still awaits live validation. Current296session78110 remains active, unchanged,
+native5:01 at last inspection. Do not restart it merely to exercise this feature.

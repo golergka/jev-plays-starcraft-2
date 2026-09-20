@@ -174,3 +174,20 @@ uv run python -m jev_sc2 --attach --follow-camera --seconds 1800 \
 The trial probe left a795-loop gap before controller attachment. Treat this as
 restart infrastructure evidence, not a clean policy-from-opening comparison.
 Atomic restart-and-control integration is still needed to eliminate that gap.
+
+Lab297 adds an integrated controller path to avoid the separate-probe gap:
+
+```sh
+uv run python -m jev_sc2 --attach --restart \
+  --expected-map traynor03-outcomes-lab170.SC2Map --follow-camera \
+  --seconds 1800 --max-calls 4000 --max-age-loops 128 \
+  --objective 'Hold out for evacuation.'
+```
+
+Use only after the previous controller has stopped and its mission outcome has
+been recorded. `--restart` requires `--attach` and `--expected-map`, and rejects
+`--map`; the map identity is checked before resetting. A required hard reset or
+failure to rewind the clock stops loudly rather than silently relaunching. The
+same socket continues into Jev control, and ending monitoring requires a marker
+fresh since this restart. Local tests pass; the integrated path awaits a live
+trial. The separate restart request itself was live-verified in lab296.
