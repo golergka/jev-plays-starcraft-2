@@ -1,0 +1,19 @@
+{
+  "run": "runs/20260920T072253.076004Z",
+  "ui_verification": {
+    "time": 1789890340.333465,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "26:27",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 22,
+    "confound": "Controller stopped on rolling-budget rejection before mission ending; final interval uncontrolled."
+  },
+  "calls": 272,
+  "cost_usd": 0.19769731800000007,
+  "controller_error": "SpendThrottled",
+  "scope": "Observed assignment delivery verified; incomplete control coverage from budget stop. Not a clean comparison of policy outcome."
+}

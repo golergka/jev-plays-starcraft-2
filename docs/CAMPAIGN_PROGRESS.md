@@ -5920,3 +5920,12 @@ Test12concurrentrequests with$0.03cap/.005reservation and.001actualcost complete
 atpeak2,$0.012actual, zero inflight; previous unlimitedreservationburstwouldfail.
 Existing loud admission tests retained. No paid validation yet; savings or better
 campaignplay unproven. No automaticresume of400 in this change.
+
+### Lab400 outcome reconciliation — defeat after controller interruption
+
+NativeUI now confirms defeat26:27,allstructuresdestroyed,0/4relics,0minerals/22gas.
+Controller had already exited2onSpendThrottled; final game interval uncontrolled.
+Preserve controller_error and original incomplete controller_stop_status in local
+result. Eight native Smash defeats, this one explicitly budget-interrupted; not
+a clean policy comparison. Public artifact/report/checkpoint updated. Next trial
+uses tested owned cancellation and concurrency2; cap/ledger unchanged.
