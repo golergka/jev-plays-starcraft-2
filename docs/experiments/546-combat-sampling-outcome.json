@@ -1,0 +1,33 @@
+{
+  "trial": 545,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T150710.925591Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789906879",
+      "loop": 18908
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 328,
+    "cost": 0.16818786600000007,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T150710.925591Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "19:41",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at19:07"
+    }
+  },
+  "sampled_orders": 7,
+  "different_from_top": 4,
+  "errors": [],
+  "conclusion": "Sampling changed concrete orders but did not solve the mission. The long later repair cycle sustained structures without restoring objective progress; no causal survival benefit established."
+}
