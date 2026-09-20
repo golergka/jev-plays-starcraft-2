@@ -1,0 +1,31 @@
+{
+  "lab": 580,
+  "trial": 577,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T171019.512370Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789914405",
+      "loop": 22028
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 305,
+    "cost": 0.19374608399999993,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T171019.512370Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "22:56",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at 21:56"
+    }
+  },
+  "interpretation": "Ordinary labels without seeded permutation also failed. Longer survival than opaque-label trial574 did not yield relic progress or victory; trajectories differ, so no isolated causal effect established. Sequencer preserved completed prefix and stopped for independent verification."
+}
