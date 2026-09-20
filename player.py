@@ -1064,7 +1064,8 @@ async def decide(view, jev, memory):
                            'Count alone is not local fighting strength: max_separation and nearest-selection-member distances describe dispersion. '
                            'Use selection_facts for unit counts, recent changes, damage and economic capabilities. '
                            'Consider the strategic priority chosen by Jev alongside immediate threats. '
-                           'Snapshot locations are stale, not live visible targets.',
+                           'Snapshot locations are stale, not live visible targets. '
+                           'Ordinary Move changes location only: moving near a resource does not harvest it, moving near a building does not repair or enter it, and ordinary Move does not attack along the route.',
             'criteria':criteria,
         }
     # Separate semantic contribution from concrete command selection. Both are
