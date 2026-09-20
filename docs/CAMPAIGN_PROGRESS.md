@@ -4948,8 +4948,7 @@ High-resource337audit:Marine/SCVbatch options remained offered while minerals ro
 several top predictions stillwait,otherssingle structure. Six-call first/middle/last
 >=1000mineral states with batch options:append computed three-unit mineral/gas/
 supply totals and output to existingbatch prose,all other state/options unchanged,
-alternatingorder. Cost$0.003132906. Topswait/wait,MissileTurret/Bunker,Reactor/
-Reactor(the last keyproject1 retained; identify exact type from source before
-using that type claim). No topbatch choice in eitherarm. Script/artifact340.
+alternatingorder. Cost$0.003132906. Topswait/wait,MissileTurret/Bunker,and unchanged project1
+(Purchase one Bunker). No topbatch choice in eitherarm. Script/artifact340.
 No live deployment or new trial; explicit batch arithmetic alone is insufficient
 in these samples. Do not infer global incapability from three recorded states.
