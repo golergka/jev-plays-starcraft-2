@@ -4713,3 +4713,18 @@ changes. Artifact322 preserves the evidence. Trial321 remains active; initial
 native0:49view showed army near CommandCenter and2/27worker counter. At loop1255,
 38requests cost$0.017722488,no recorded request/engine errors; no new unload text
 had been delivered yet. Do not treat unexercised wording as an improvement.
+
+### Lab323 — direct combat Move clarification does not change replay tops
+
+Live321throughloop4047:all six recorded Marine group choices ordinary Move to
+original CommandCenter; attack-move alternatives present. Native4:37view shows
+army near that center while the other center burns under attack. Strategic
+protect intent alone does not establish protection of threatened structures.
+Earlier102Move explanation resides in role selection; direct combat bypasses it.
+
+Six-call offline first3 recorded Marine-question contexts:append that same literal
+Move explanation to direct instructions,exact other state/criteria preserved,
+alternating order. Both arms choose join_original_center,stop,join_original_center.
+Cost$0.00318654. Probe may include tournament-stage menus; these are recorded
+question responses,not final live group decisions. No demonstrated top-choice
+benefit; no live policy change. Artifact/script323 recorded. Trial321continues.
