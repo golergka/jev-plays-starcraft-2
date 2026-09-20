@@ -1,0 +1,152 @@
+{
+  "source": "runs/20260920T025806.548721Z/events.jsonl",
+  "question": "investment",
+  "pairs": [
+    {
+      "sample": 0,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "project_0": 0.01,
+          "save_for_2": 0.0,
+          "project_9": 0.05,
+          "project_2": 0.1,
+          "batch_5": 0.02,
+          "save_for_1": 0.0,
+          "project_8": 0.25,
+          "batch_8": 0.1,
+          "project_1": 0.01,
+          "project_4": 0.01,
+          "project_5": 0.07,
+          "project_7": 0.01,
+          "save_for_0": 0.01,
+          "project_3": 0.03,
+          "project_6": 0.01,
+          "save": 0.32
+        }
+      },
+      "clarified": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "batch_8": 0.12,
+          "save_for_0": 0.01,
+          "save_for_1": 0.0,
+          "project_1": 0.02,
+          "project_9": 0.06,
+          "project_5": 0.06,
+          "project_2": 0.08,
+          "save_for_2": 0.0,
+          "project_6": 0.01,
+          "save": 0.31,
+          "project_8": 0.23,
+          "project_0": 0.01,
+          "project_3": 0.04,
+          "project_4": 0.01,
+          "project_7": 0.01,
+          "batch_5": 0.03
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "clarified": {
+        "choice": "project_2",
+        "type": "choice",
+        "confidence": 0.2,
+        "probabilities": {
+          "project_8": 0.05,
+          "project_2": 0.26,
+          "save": 0.25,
+          "save_for_2": 0.0,
+          "project_7": 0.01,
+          "project_4": 0.0,
+          "batch_5": 0.04,
+          "project_3": 0.01,
+          "project_0": 0.01,
+          "save_for_0": 0.01,
+          "batch_8": 0.04,
+          "project_1": 0.01,
+          "project_9": 0.03,
+          "save_for_1": 0.0,
+          "project_5": 0.06,
+          "project_6": 0.22
+        }
+      },
+      "original": {
+        "choice": "project_6",
+        "type": "choice",
+        "confidence": 0.21,
+        "probabilities": {
+          "project_1": 0.02,
+          "project_0": 0.01,
+          "project_6": 0.27,
+          "save_for_0": 0.01,
+          "project_4": 0.0,
+          "batch_8": 0.04,
+          "project_5": 0.07,
+          "save_for_2": 0.0,
+          "project_9": 0.03,
+          "project_3": 0.01,
+          "project_7": 0.01,
+          "save_for_1": 0.0,
+          "project_8": 0.05,
+          "save": 0.24,
+          "project_2": 0.21,
+          "batch_5": 0.03
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "original": {
+        "choice": "project_1",
+        "type": "choice",
+        "confidence": 0.29,
+        "probabilities": {
+          "batch_7": 0.04,
+          "project_5": 0.14,
+          "project_0": 0.01,
+          "project_7": 0.06,
+          "save_for_0": 0.0,
+          "project_6": 0.01,
+          "project_4": 0.07,
+          "project_8": 0.03,
+          "save": 0.21,
+          "save_for_1": 0.0,
+          "project_1": 0.35000000000000003,
+          "project_3": 0.0,
+          "batch_4": 0.04,
+          "project_2": 0.04
+        }
+      },
+      "clarified": {
+        "choice": "project_1",
+        "type": "choice",
+        "confidence": 0.26,
+        "probabilities": {
+          "project_8": 0.03,
+          "project_6": 0.01,
+          "project_7": 0.08,
+          "save": 0.19,
+          "project_3": 0.0,
+          "batch_4": 0.04,
+          "project_1": 0.32,
+          "save_for_1": 0.0,
+          "project_4": 0.07,
+          "batch_7": 0.04,
+          "save_for_0": 0.0,
+          "project_2": 0.04,
+          "project_0": 0.01,
+          "project_5": 0.17
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0031329060000000004,
+  "method": "First/middle/last >=1000mineral batch states. Append computed total cost/supply and three-unit output to existing batches; other options and state unchanged. Alternate pair order; no game commands."
+}

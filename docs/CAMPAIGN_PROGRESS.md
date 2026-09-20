@@ -4941,3 +4941,15 @@ Barracks under heavy attack with2008minerals. No causal claim from a single tria
 Checkpoint defeat37;only first two campaign missions verified won. No unchanged
 retry. Next investigation should explain resource allocation and action usefulness,
 not add more objective wording without evidence.
+
+### Lab340 — computed batch totals do not unlock production commitment
+
+High-resource337audit:Marine/SCVbatch options remained offered while minerals rose;
+several top predictions stillwait,otherssingle structure. Six-call first/middle/last
+>=1000mineral states with batch options:append computed three-unit mineral/gas/
+supply totals and output to existingbatch prose,all other state/options unchanged,
+alternatingorder. Cost$0.003132906. Topswait/wait,MissileTurret/Bunker,Reactor/
+Reactor(the last keyproject1 retained; identify exact type from source before
+using that type claim). No topbatch choice in eitherarm. Script/artifact340.
+No live deployment or new trial; explicit batch arithmetic alone is insufficient
+in these samples. Do not infer global incapability from three recorded states.
