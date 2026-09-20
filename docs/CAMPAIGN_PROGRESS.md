@@ -4184,3 +4184,18 @@ not prevent defeat. First two missions still the only verified victories.
 
 Next launch uses lab283 delayed-error feedback; no new tactical policy. Persistent
 rolling budget remains unchanged; previous unknown-billing reservation retained.
+
+### Lab285 — commitment duration no longer matches paid decision cadence
+
+Read-only audit of completed284run:33inter-tick gaps,min186,median487,max1008loops;
+30 exceeded224. Only one routine_execution event. Most sampled contribution
+commitments therefore expired before the next paid decision, undermining the
+original retention experiment. This does not prove a longer role is tactically
+better; it could also prolong a bad allocation. Lab091's failed planning-horizon
+wording probe did not test a longer executed commitment. Next policy experiment
+should distinguish those mechanisms instead of repeating that wording probe.
+
+Updated public experiment report with current25UI-verified ZeroHour defeats,
+latest cost/cadence, budget regime and limitations. No extra paid probe or live
+policy change. Current run20260920T001950.717184Z/session56451 continues lab283
+feedback trial; early two ticks valid, no delayed rejection yet to verify delivery.

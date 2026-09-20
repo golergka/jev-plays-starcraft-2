@@ -2,11 +2,40 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** Zero Hour has four
-UI-confirmed defeats; the current policy is being evaluated from a fresh start. The most
+**Liberation Day and The Outlaws are verified won.** As of lab284, the checkpoint
+contains 25 independently UI-verified Zero Hour defeats. The current trial tests
+delayed engine-error feedback. The most
 persistent difficulty is converting local choices into coordinated, sustained
 objective progress. Earlier sections below retain the unsuccessful trials; the
 latest results appear at the end.
+
+## Current evidence through lab284
+
+The latest completed Zero Hour attempt survived15:46 and cost$0.128141286 for
+206 successful calls. It lost all structures with04:23 remaining. Jev selected
+672-loop strategic review intervals:16 strategic reviews across34 tactical ticks,
+costing$0.007608174. This validates less frequent strategic review, not a causal
+survival improvement. Recent comparable attempts varied from10:03 to14:53.
+
+The spending governor remains$0.10 per rolling five minutes, with pacing targeting
+60% of that allowance and loud termination if admission exceeds the cap. This
+keeps spending bounded but creates a slower control regime than model latency
+alone suggests. In the latest completed run, median decision spacing was487
+game loops;30 of33 gaps exceeded the224-loop contribution commitment. Most
+retained worker roles therefore expired before the next decision. Extending actual
+commitment duration is a distinct, still-untested hypothesis from the earlier
+failed prompt-only evaluation-horizon probe.
+
+Native screenshots showed a dwindling army, intermittent mining and spending on
+additional structures without maintaining a surviving force. Successful commands
+are not proof of useful allocation. Background execution of Jev-selected training
+batches has been verified, but it has not solved the mission.
+
+Lab283 corrects a separate feedback omission: asynchronous engine execution
+failures now reach Jev alongside immediate acknowledgments. The new live trial
+has that harness change; its benefit is unproven. No policy change forces worker
+allocation, purchases, bunker loading or routes. The sections below preserve
+earlier experimental observations and must not be read as current trial counts.
 
 ## What ran
 
