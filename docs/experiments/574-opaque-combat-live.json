@@ -1,0 +1,32 @@
+{
+  "lab": 574,
+  "run": "runs/20260920T165439.598500Z",
+  "start_commit": "7a4712a",
+  "status": "running",
+  "change": "JEV_OPAQUE_COMBAT_KEYS=1, seeded permutation unset; other trial569 flags retained.",
+  "comparison_limit": "Both alias representation and removal of seed534 permutation differ from last live trial; cannot isolate their causal effects.",
+  "visual": {
+    "time": "0:59",
+    "supply": "7/27",
+    "relics": "1/4",
+    "observation": "Marine beside Barracks with Tech Lab."
+  },
+  "decoded_orders": [
+    {
+      "selection": "MobileCombat",
+      "choice": "group_last_known_move_8756723713",
+      "options": 78
+    },
+    {
+      "selection": "MobileCombat",
+      "choice": "group_map_move_middle_east",
+      "options": 108
+    },
+    {
+      "selection": "MobileCombat",
+      "choice": "support_ability_2750_4324327425_only_4383309825",
+      "options": 150
+    }
+  ],
+  "interpretation": "Live decoding verified; no mission outcome yet."
+}
