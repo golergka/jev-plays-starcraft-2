@@ -1,0 +1,210 @@
+{
+  "source": "runs/20260920T110319.423869Z/events.jsonl",
+  "eligible_states": 6,
+  "pairs": [
+    {
+      "loop": 3540,
+      "plans": {
+        "chain_0": {
+          "producer": "Barracks",
+          "target": "Marauder",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Marauder from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [{\"damage_per_cycle\": 10.0, \"damage_per_time_unit_before_armor_and_bonuses\": 6.67, \"range\": 6.0, \"targets\": \"Ground\"}], \"gas_cost\": 25, \"mineral_cost\": 100, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 2.0}"
+        },
+        "chain_1": {
+          "producer": "Barracks",
+          "target": "Marine",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Marine from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [{\"damage_per_cycle\": 6.0, \"damage_per_time_unit_before_armor_and_bonuses\": 6.97, \"range\": 5.0, \"targets\": \"Any\"}], \"gas_cost\": 0, \"mineral_cost\": 50, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 1.0}"
+        },
+        "chain_2": {
+          "producer": "Barracks",
+          "target": "Medic",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Medic from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [], \"gas_cost\": 50, \"mineral_cost\": 75, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 2.0}"
+        }
+      },
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.24,
+            "probabilities": {
+              "save_for_0": 0.02,
+              "project_3": 0.33,
+              "project_4": 0.15,
+              "save": 0.17,
+              "project_0": 0.19,
+              "batch_3": 0.07,
+              "project_2": 0.05,
+              "project_1": 0.02
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        },
+        "chains": {
+          "answer": {
+            "choice": "save",
+            "type": "choice",
+            "confidence": 0.1,
+            "probabilities": {
+              "project_2": 0.04,
+              "project_1": 0.01,
+              "chain_0": 0.1,
+              "save": 0.18,
+              "project_3": 0.17,
+              "chain_1": 0.16,
+              "project_0": 0.15,
+              "chain_2": 0.02,
+              "project_4": 0.13,
+              "save_for_0": 0.01,
+              "batch_3": 0.03
+            }
+          },
+          "description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+        }
+      },
+      "chain_probability_mass": 0.28
+    },
+    {
+      "loop": 4290,
+      "plans": {
+        "chain_0": {
+          "producer": "Barracks",
+          "target": "Marauder",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Marauder from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [{\"damage_per_cycle\": 10.0, \"damage_per_time_unit_before_armor_and_bonuses\": 6.67, \"range\": 6.0, \"targets\": \"Ground\"}], \"gas_cost\": 25, \"mineral_cost\": 100, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 2.0}"
+        },
+        "chain_1": {
+          "producer": "Barracks",
+          "target": "Marine",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Marine from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [{\"damage_per_cycle\": 6.0, \"damage_per_time_unit_before_armor_and_bonuses\": 6.97, \"range\": 5.0, \"targets\": \"Any\"}], \"gas_cost\": 0, \"mineral_cost\": 50, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 1.0}"
+        },
+        "chain_2": {
+          "producer": "Barracks",
+          "target": "Medic",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Medic from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [], \"gas_cost\": 50, \"mineral_cost\": 75, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 2.0}"
+        }
+      },
+      "answers": {
+        "chains": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.23,
+            "probabilities": {
+              "batch_3": 0.08,
+              "chain_2": 0.01,
+              "project_2": 0.04,
+              "chain_0": 0.07,
+              "chain_1": 0.17,
+              "project_4": 0.02,
+              "project_3": 0.3,
+              "save_for_0": 0.01,
+              "save": 0.16,
+              "project_1": 0.01,
+              "project_0": 0.13
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Move Move': 3, 'Harvest Return SCV': 2, 'Harvest Gather SCV': 2}."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "project_2": 0.07,
+              "project_3": 0.43,
+              "save_for_0": 0.02,
+              "save": 0.16,
+              "project_0": 0.14,
+              "project_4": 0.02,
+              "project_1": 0.02,
+              "batch_3": 0.14
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Move Move': 3, 'Harvest Return SCV': 2, 'Harvest Gather SCV': 2}."
+        }
+      },
+      "chain_probability_mass": 0.25
+    },
+    {
+      "loop": 4882,
+      "plans": {
+        "chain_0": {
+          "producer": "Barracks",
+          "target": "Marauder",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Marauder from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [{\"damage_per_cycle\": 10.0, \"damage_per_time_unit_before_armor_and_bonuses\": 6.67, \"range\": 6.0, \"targets\": \"Ground\"}], \"gas_cost\": 25, \"mineral_cost\": 100, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 2.0}"
+        },
+        "chain_1": {
+          "producer": "Barracks",
+          "target": "Marine",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Marine from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [{\"damage_per_cycle\": 6.0, \"damage_per_time_unit_before_armor_and_bonuses\": 6.97, \"range\": 5.0, \"targets\": \"Any\"}], \"gas_cost\": 0, \"mineral_cost\": 50, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 1.0}"
+        },
+        "chain_2": {
+          "producer": "Barracks",
+          "target": "Medic",
+          "first_purchase_key": "project_0",
+          "description": "Conditional two-step plan: purchase one Barracks, then request training of one Medic from it when complete, affordable and executable. Reserve subsequent new purchases for this target for at most 2016 game loops; existing queues and repairs continue. Release the plan if the producer is lost, the strategy changes, or the deadline expires. The training control was observed previously; current prerequisites or attached addons may be missing, so this plan may expire without producing the unit. No extra prerequisites will be built automatically. First step: Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}. Second-step previously observed unit catalog: {\"catalog_weapons\": [], \"gas_cost\": 50, \"mineral_cost\": 75, \"note\": \"Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units).\", \"supply_provided\": 0.0, \"supply_required\": 2.0}"
+        }
+      },
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.44,
+            "probabilities": {
+              "project_4": 0.01,
+              "project_2": 0.02,
+              "project_3": 0.52,
+              "batch_3": 0.12,
+              "save_for_0": 0.01,
+              "save": 0.17,
+              "project_1": 0.01,
+              "project_0": 0.14
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        },
+        "chains": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.24,
+            "probabilities": {
+              "batch_3": 0.06,
+              "project_3": 0.32,
+              "chain_1": 0.18,
+              "project_1": 0.01,
+              "project_2": 0.01,
+              "save": 0.16,
+              "project_4": 0.01,
+              "save_for_0": 0.01,
+              "chain_0": 0.09,
+              "project_0": 0.14,
+              "chain_2": 0.01
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        }
+      },
+      "chain_probability_mass": 0.27999999999999997
+    }
+  ],
+  "method": "First/middle/last affordable absent-Barracks states. Preserve every original option and add conditional producer-then-one-unit plans for all absent producers with an immediate purchase and previously observed Train controls/catalog. Historical facts accumulated only through each sample. Same state, alternate baseline/chain order, six calls maximum. No plan execution; selection and feasibility are separate questions.",
+  "calls": 6,
+  "cost_usd": 0.0031736460000000005,
+  "limitations": [
+    "Three recorded recovery states from one losing run; no causal gameplay evidence.",
+    "Reported winners are model top choices; live investment policy samples Jev probabilities.",
+    "Adding plans changes menu cardinality and probability distribution. Chain probability mass is not a calibrated benefit or a reason to force a producer purchase.",
+    "Historical training controls do not establish current prerequisites. No plan was executed."
+  ]
+}

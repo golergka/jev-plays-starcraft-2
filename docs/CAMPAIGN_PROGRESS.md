@@ -6766,3 +6766,24 @@ also favors workers in these samples. No evidence to deploy another paid stage
 or restart unchanged. Small exploratory sample, not proof that worker purchases
 are always wrong. No live orders or policy changes. Visual observation remains
 part of live monitoring; API telemetry alone cannot establish mission success.
+
+
+### Lab464 — conditional producer-to-unit plans do not win the menu
+
+Reviewed463 and existing single-purchase/batch implementation. Unlike227's
+rank-then-buy gate, this probe adds conditional two-step choices: buy an absent
+producer, then train one previously observed unit. Generated all such plans from
+observed Train controls/catalog, preserved every original option, and stated
+unknown prerequisites, a2016-loop deadline, producer-loss/strategy cancellation,
+and ongoing repair spending. No automatic prerequisite construction promised.
+Six calls $0.003173646, same affordable recovery states3540/4290/4882 from460.
+Three Barracks-to-unit plans per state (Marine/Marauder/Medic). Baseline top
+choices SCV/SCV/SCV; expanded menus Save/SCV/SCV. No chain selected. Rounded
+chain probability mass .28/.25/.28 is not calibrated utility: menu size changes
+and equivalent first steps complicate comparison. Live investments sample rather
+than always execute top choice, so these results are not a simulated live run.
+Do not deploy a persistent executor based on this evidence or claim workers are
+universally wrong. No game commands, no unchanged live retry. Next investigation
+should distinguish decision competence from menu/representation effects with
+controlled examples before another campaign expenditure; avoid repeating prior
+buy-vs-wait, independent-goal, or added-facts probes as new ideas.
