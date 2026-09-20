@@ -394,13 +394,13 @@ async def choose_investment(view, state, jev, memory=None):
     if not projects and not potential:
         return []
     names = sorted(projects)
-    criteria = {'save':'Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.'}
+    criteria = {'save':'Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals.'}
     for i,name in enumerate(names):
         example = projects[name][0][1]
         criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)
         if memory is not None and example['description'].startswith('Train '):
             criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 2016 game loops, '
-                'using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. '
+                'using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive purchase reservation ends when the batch finishes, expires, or your strategic priority changes. Repairs can still spend minerals while the batch is active. '
                 'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
                 +investment_description(name,example.get('project'),state))
             if memory.get('production_executor_enabled'):
@@ -411,7 +411,7 @@ async def choose_investment(view, state, jev, memory=None):
         resources = view.get('resources',{})
         shortfall = {k:max(0,project[k]-resources.get(r,0)) for k,r in
                      [('minerals','minerals'),('vespene','vespene'),('supply','supply_remaining')]}
-        criteria[f'save_for_{i}'] = (f'Commit to saving for {name} for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. '
+        criteria[f'save_for_{i}'] = (f'Commit to saving for {name} for up to 224 game loops, purchasing it if it becomes executable before that review. No other new purchase is allowed during this commitment. This does not reserve minerals against repair spending; ongoing repairs may delay affordability. '
             f'The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. '
             f'Resource shortfall: {shortfall}. '+investment_description(name,project,state))
     carried = False

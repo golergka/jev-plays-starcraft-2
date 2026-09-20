@@ -6381,3 +6381,13 @@ scope: other selections cannot start additional purchases in this review, but
 worker repairs can still consume shared minerals. No repair cap, allocation
 rule, action filtering or executor change. Full213tests pass. No paidcalls or
 new mission. Factual correction alone has unproven performance impact.
+
+### Lab434 — align Save and batch descriptions with repair spending
+
+Follow-through on433 found Save promised resources remain available and save-for
+called money a reserved budget, although executor only excludes new purchases,
+not repair spending. Clarify Save leaves existing repairs spending; save-for
+can have affordability delayed by repairs; batches reserve purchase priority,
+not protection against repair costs. No executor or tactical rule changes.
+Full213tests pass. Zero paidcalls. These contract corrections make descriptions
+consistent; no claim of improved strategic behavior until tested live.
