@@ -4777,3 +4777,16 @@ Move wording,full-menu access,and a separate kind decision are insufficient in
 these recorded states. They do not prove Jev cannot ever choose useful defense,
 or that all context/formulations are equivalent. No more unchanged trials on
 this hypothesis. Script/artifact326 preserve negative results.
+
+### Lab327 — reconcile public report and audit objective context
+
+Recomputed36UI-verifiedZeroHourdefeat result files,total$6.998920320,latest321
+11:37/$0.098647710. Updated main report through326,including negative prompt/menu
+probes,scored-policy defeat,confirmed boarding,and live delayed-error exposure.
+Corrects stale headline/current-evidence claims; counts remain subsets,not account
+balance or whole-experiment cost. No paid calls or live retry.
+
+Audit:decision objective is only Hold out for evacuation; on-screen countdown
+is not structured model context. Do not fabricate countdown by22.4loopconversion
+or expose hidden campaign scripts. A future timer adapter must read player-visible
+mission state and generalize across missions before claiming objective awareness.

@@ -2,50 +2,64 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** Through lab302, local result
-files contain 31 independently UI-verified Zero Hour defeats. The latest finished
-attempt lasted12:27 and cost$0.104693946 for178 calls. No later mission is verified
-won, and all three campaigns remain far from complete.
+**Liberation Day and The Outlaws are verified won.** Through lab326, local result
+files contain 36 independently UI-verified Zero Hour defeats. The latest finished
+attempt lasted 11:37 and cost $0.098647710 for 194 successful requests. No later
+mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab302
+## Current evidence through lab326
 
 The persistent difficulty is converting local choices into coordinated, sustained
-objective progress. Longer672-loop contribution commitments were exercised live;
-one early sample retained7of10 roles across516loops. They have not demonstrated
-better mission outcomes. Native screenshots repeatedly show army losses and weak
-worker allocation despite legal mining and production controls being available.
+objective progress. Native screenshots show the army gathering near one Command
+Center while other structures are attacked. In the latest trial, all Marines were
+absent from sampled observations by loop 8520. Legal actions and an abstract
+“protect” decision do not establish effective defense.
+
+Independent descriptive Score ratings changed investment preferences relative to
+Choice, but their live trial lost at 8:56. Jev selected Bunkers 14 times; five new
+Bunkers were observed complete, with only zero to two occupied cargo slots across
+sampled investment states. These are not calibrated utilities or win probabilities.
+Adding all competing investment descriptions made the rating probe prefer waiting
+in three states. Neither result demonstrates improved play.
+
+Three requested boarding jobs were confirmed by exact passenger/carrier tags in
+later observations. Three others remained unconfirmed; missing evidence does not
+prove failure or death. Unload choices now name their observed passengers. The
+latest trial exercised that wording twice and still lost. There is no evidence
+that the wording improves outcomes.
+
+Full combat menus, explicit ordinary-Move semantics, and choosing order kind
+before destination did not resolve the repeated safe-anchor preference in small
+recorded-state probes. These negative results do not prove that all formulations
+fail or that Jev cannot play the mission. They do argue against repeating those
+same hypotheses without new evidence.
 
 A Jev-selected three-Marine training batch produced three newly observed completed
-Marine tags in trial298. This is stronger evidence than accepted commands alone,
-but the attempt still lost. No policy forces a build order, worker allocation,
-bunker loading or movement route.
+Marine tags in trial298. Low-level utilities can execute Jev commitments between
+paid decisions; no policy forces a build order, worker allocation, bunker loading,
+or movement route. Exact loop deadlines avoid unverified seconds conversions.
+The current decision objective is the text “Hold out for evacuation.” The visible
+evacuation countdown is not currently supplied as structured decision context;
+no hidden wave schedule is supplied either.
 
-The spending governor remains$0.10 per rolling five minutes, with pacing targeting
-60% of that allowance and loud termination if admission exceeds the cap. Control
-spacing is consequently longer than model latency alone. Strategic review cadence
-is Jev-selected, and authorized training jobs can execute between paid decisions.
-The31 verified-defeat result files total$6.52697892 in recorded request costs;
-this is a subset of experiment spending, not an account balance or lifetime total.
+The spending governor remains $0.10 per rolling five minutes, with pacing targeting
+60% of that allowance and loud termination if admission exceeds the cap. Latest
+trial peak run-only five-minute spend was $0.061657638. The 36 verified-defeat
+result files total $6.998920320 in recorded request costs. This excludes other
+runs, wins, probes and unresolved billing; it is not an account balance or lifetime
+total. Model latency alone does not describe the budget-constrained control rate.
 
-Expanding all worker concrete menus in lab290 made requests larger and slower;
-the change was rolled back live. Small offline comparisons also failed to justify
-new policy: all27 independent purchase-versus-wait comparisons favored waiting,
-and adding an explicit video-game domain description left three investment top
-choices unchanged. These are narrow probes, not general claims about Jev.
+Unseen delayed execution errors remain in a bounded 32-entry queue until first
+included in context. Trial318's invalid-placement error at loop8087 appeared in a
+subsequent investment request, exercising the feedback path live. Context inclusion
+does not prove that Jev responded effectively.
 
-Delayed execution errors can expose rejected actions after an accepted request.
-Lab301 found that the672-loop feedback window could expire before the next paid
-review. Unseen errors now remain in a bounded32-entry queue until included in
-context; expiry begins then. Tests pass, but the currently running retry has not
-yet verified this case live. Inclusion in context is not proof of provider success
-or effective response to the error.
-
-The integrated same-socket mission restart is live-verified: reset toloop0,
-control fromloop7, native window retained, and eventual ending marker agreeing
-with the native defeat screen. This removes a manual restart gap, not a strategic
-limitation. Exact loop deadlines now replace unverified seconds approximations
-in player prompts. Earlier sections below preserve historical observations;
-their counts and current-policy descriptions may describe older revisions.
+The integrated same-socket restart is live-verified: reset to loop0, native window
+retained, and eventual ending markers checked against the actual defeat screen.
+Only the first two missions are verified wins. Full campaign progression,
+between-mission choices, and all-three-campaign completion remain unverified.
+Earlier sections below preserve historical observations and may describe older
+revisions. The lab journal records the successive changes and negative results.
 
 ## What ran
 
