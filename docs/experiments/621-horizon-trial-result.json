@@ -1,0 +1,32 @@
+{
+  "lab": 621,
+  "trial": 618,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T184011.662360Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-dialogue-lab586.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome759ebc44b7f14ad6ab4f4592d12c09af.SC2Bank",
+      "engine_time": "1789919344",
+      "loop": 11836
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 156,
+    "cost": 0.10717198799999995,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T184011.662360Z/game.SC2Replay",
+    "ui_verification": {
+      "result": "defeat",
+      "outcome": "DEFEAT",
+      "native_time": "12:19",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at10:58"
+    }
+  },
+  "interpretation": "General purchase horizon trial rebuilt Barracks to observed completion, but did not recover or win. Elevation619 reloaded late, so this is not a clean single-change outcome comparison. No causal benefit established; baseline purchase choices also varied in paired probes."
+}
