@@ -5036,3 +5036,21 @@ minerals muchlower, but a single pair with different sampled investment choices
 cannot establish causal improvement. Ratingprimitive alone does not resolve poor
 coordination. Keep opt-in; do not promote todefault or rerununchanged. Checkpoint
 andrunresult independentlyverified; artifact346 records compact cost/choice data.
+
+### Lab347 — elementary combat controls pass; consequence inference remains open
+
+After344's failure, test three synthetic one-turn situations with certain explicitly
+stated outcomes:attack prevents structuredestruction,move escapes lethalhazard,
+hold stayssafe. These are deliberately not claimed as SC2mechanics or gameplay
+orders. Each case has allthreeoptions and uses bothChoice andindependentScore;
+armorderalternates. Jev selects/rates the expected option in all3cases. Sixcalls
+$0.000152796. Script/artifact347 retain inputs,fullresponses,andpredeclaredexpected
+choices. No livecontroller or gamecommands.
+
+This weak control rules out a blanket inability to preferAttack with these labels
+andratingcriteria. It does not isolate contextlength as the cause oflivefailure:
+synthetic cases supply certainconsequences,where liveplay requires inferring them.
+Do not promote outcome hints into gameplay as root-authored tactics. A nextprobe
+should vary consequence representation using mechanically derived observedfacts,
+without inventing forecasts or prescribing which action shouldwin. No unchanged
+live retrial. Allthreecampaigns remain incomplete.

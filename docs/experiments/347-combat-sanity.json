@@ -1,0 +1,266 @@
+{
+  "scope": "Synthetic explicit one-turn outcomes. Passing is necessary elementary comprehension evidence, not evidence of SC2 competence or rollout prediction.",
+  "cases": [
+    {
+      "name": "immediate_threat",
+      "state": {
+        "objective": "Keep the owned structure alive through the next turn.",
+        "rules": "Synthetic one-turn control, not StarCraft mechanics. The listed outcomes are certain. Only the chosen action occurs.",
+        "structure_health": 5,
+        "enemy_damage_next_turn": 10,
+        "options": {
+          "attack": "Eliminates the enemy before it can fire; the structure remains alive.",
+          "move": "Moves the defender away; the enemy destroys the structure.",
+          "hold": "Takes no action; the enemy destroys the structure."
+        }
+      },
+      "expected": "attack",
+      "choice": {
+        "choice": "attack",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "hold": 0.0,
+          "move": 0.0,
+          "attack": 1.0
+        }
+      },
+      "scores": {
+        "attack": {
+          "score": 3.99,
+          "type": "score",
+          "confidence": 0.99,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 1.0
+          }
+        },
+        "move": {
+          "score": 0.01,
+          "type": "score",
+          "confidence": 0.99,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.99,
+            "1": 0.01,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+          }
+        },
+        "hold": {
+          "score": 0.01,
+          "type": "score",
+          "confidence": 0.99,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.99,
+            "1": 0.01,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+          }
+        }
+      },
+      "highest_rated": [
+        "attack"
+      ]
+    },
+    {
+      "name": "hazard_escape",
+      "state": {
+        "objective": "Keep the owned unit alive through the next turn.",
+        "rules": "Synthetic one-turn control, not StarCraft mechanics. The listed outcomes are certain. Only the chosen action occurs.",
+        "unit_health": 5,
+        "hazard_damage_next_turn": 10,
+        "options": {
+          "attack": "Fires at an invulnerable target without moving; the hazard kills the owned unit.",
+          "move": "Leaves the hazard before it triggers; the owned unit survives.",
+          "hold": "Stays in the hazard; the owned unit dies."
+        }
+      },
+      "expected": "move",
+      "scores": {
+        "attack": {
+          "score": 0.0,
+          "type": "score",
+          "confidence": 1.0,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+          }
+        },
+        "move": {
+          "score": 4.0,
+          "type": "score",
+          "confidence": 1.0,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 1.0
+          }
+        },
+        "hold": {
+          "score": 0.0,
+          "type": "score",
+          "confidence": 1.0,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+          }
+        }
+      },
+      "highest_rated": [
+        "move"
+      ],
+      "choice": {
+        "choice": "move",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "move": 1.0,
+          "hold": 0.0,
+          "attack": 0.0
+        }
+      }
+    },
+    {
+      "name": "safe_wait",
+      "state": {
+        "objective": "Keep the owned unit alive through the next turn.",
+        "rules": "Synthetic one-turn control, not StarCraft mechanics. The listed outcomes are certain. Only the chosen action occurs.",
+        "options": {
+          "attack": "Attacks an invulnerable target that retaliates and kills the owned unit.",
+          "move": "Moves into a lethal hazard; the owned unit dies.",
+          "hold": "Remains in the safe location; the owned unit survives."
+        }
+      },
+      "expected": "hold",
+      "choice": {
+        "choice": "hold",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "move": 0.0,
+          "hold": 1.0,
+          "attack": 0.0
+        }
+      },
+      "scores": {
+        "attack": {
+          "score": 0.0,
+          "type": "score",
+          "confidence": 1.0,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+          }
+        },
+        "move": {
+          "score": 0.0,
+          "type": "score",
+          "confidence": 1.0,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 1.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 0.0
+          }
+        },
+        "hold": {
+          "score": 3.99,
+          "type": "score",
+          "confidence": 0.99,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.01,
+            "4": 0.99
+          }
+        }
+      },
+      "highest_rated": [
+        "hold"
+      ]
+    }
+  ],
+  "calls": 6,
+  "cost": 0.00015279600000000002
+}
