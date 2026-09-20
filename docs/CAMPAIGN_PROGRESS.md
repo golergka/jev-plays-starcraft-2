@@ -6579,3 +6579,16 @@ Next bounded probe: Jev chooses an order family before target, preserving all
 legal options; compare against full concrete menu. Consult325/326 (friendly
 anchor/kind hierarchy failed) and369/370 (tournaments costly) before implementing;
 new probe must distinguish semantic order family from those previous designs.
+
+### Lab449 — destination-family hierarchy changes one dispersed-force order
+
+Consulted326: ability-kind factorization retained safe-anchor fixation. New
+probe groups friendly destinations across Move/attack-move into regroup, with
+support separate; all concrete options retained. First/middle/last440 MobileCombat
+menus with separation>10, ninecalls $0.007244580. Full direct answers all
+middle-east attack-move. Staged answers same / regroup then attack-move to
+Marine4301520907 / same. Jev chooses family AND exact anchor, no root destination.
+This is a changed choice, not demonstrated better tactics or survival; anchor
+could itself be unsafe. No live deployment yet. Next validate classification
+against all offered controls and use optional live trial if mechanically sound,
+rather than repeat more context-only probes. Extra serial call has pacing cost.
