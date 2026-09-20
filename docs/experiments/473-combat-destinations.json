@@ -1,0 +1,1983 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "limits": "Recorded selected orders, not evidence of engine acceptance, actual route, arrival or death. Selection may combine support/transport with armed units. No hidden map information.",
+  "top_choices": {
+    "group_last_known_move_8756723713": 1,
+    "group_map_move_middle_east": 11,
+    "group_map_attack_move_middle_east": 11,
+    "group_attack_move_join_4344250376": 1,
+    "group_move_4374134785": 13,
+    "group_attack_move_north": 1,
+    "group_attack_move_east": 1,
+    "group_last_known_attack_move_8760786975": 1,
+    "group_attack_move_west": 1,
+    "group_last_known_move_8760786975": 1
+  },
+  "selected_choices": {
+    "group_last_known_move_8756723713": 1,
+    "group_map_move_middle_east": 11,
+    "group_map_attack_move_middle_east": 11,
+    "group_attack_move_join_4344250376": 1,
+    "group_move_4374134785": 13,
+    "group_attack_move_north": 1,
+    "group_attack_move_east": 1,
+    "group_last_known_attack_move_8760786975": 1,
+    "group_attack_move_west": 1,
+    "group_last_known_move_8760786975": 1
+  },
+  "reviews": [
+    {
+      "loop": 46,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          }
+        ],
+        "count": 4,
+        "center": [
+          64.5,
+          14.4
+        ],
+        "nearest_visible_enemy_distance": null,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 3.1,
+        "largest_distance_to_nearest_selection_member": 2.1,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_last_known_move_8756723713",
+      "top_description": "move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_last_known_move_8756723713",
+      "selected_description": "move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 452,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          }
+        ],
+        "count": 4,
+        "center": [
+          59.8,
+          36.0
+        ],
+        "nearest_visible_enemy_distance": null,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 2.2,
+        "largest_distance_to_nearest_selection_member": 0.8,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.6; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.6; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 621,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          }
+        ],
+        "count": 4,
+        "center": [
+          47.2,
+          36.1
+        ],
+        "nearest_visible_enemy_distance": 4.2,
+        "visible_enemies_within_12_of_any_member": {
+          "SpineCrawler": 1,
+          "CreepTumorBurrowed": 2,
+          "SporeCrawler": 1,
+          "Overlord": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 170.0,
+        "max_separation": 1.7,
+        "largest_distance_to_nearest_selection_member": 0.7,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 44,
+        "current_order_counts": {
+          "Move Move": 4
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 106.2 to 107.2; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 106.2 to 107.2; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 1135,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4344250376,
+            "type": "SpecialOpsDropship"
+          }
+        ],
+        "count": 2,
+        "center": [
+          62.3,
+          13.8
+        ],
+        "nearest_visible_enemy_distance": 15.3,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 8,
+        "cargo_slots_available": 4,
+        "passengers_by_type": {
+          "Marauder": 4
+        },
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 10.5,
+        "largest_distance_to_nearest_selection_member": 10.5,
+        "count_change_since_previous_decision": -2,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Transport MedivacUnloadAll": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 92.1 to 102.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 92.1 to 102.5; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 1485,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4348968964,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4324327433,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4330094598,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4344250376,
+            "type": "SpecialOpsDropship"
+          },
+          {
+            "tag": 4324851716,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4347396106,
+            "type": "Marine"
+          }
+        ],
+        "count": 6,
+        "center": [
+          65.0,
+          15.8
+        ],
+        "nearest_visible_enemy_distance": 3.6,
+        "visible_enemies_within_12_of_any_member": {
+          "Stalker": 3
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 12,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 582.0,
+        "max_separation": 40.6,
+        "largest_distance_to_nearest_selection_member": 38.2,
+        "count_change_since_previous_decision": 4,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 87,
+        "current_order_counts": {
+          "Attack Attack": 4,
+          "Move Move": 5
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_attack_move_join_4344250376",
+      "top_description": "Regroup this selection at SpecialOpsDropship unit 4344250376 position [94.0134048461914, 0.46163082122802734]: that unit holds position; the other 5 units attack-move, engaging enemies encountered to its observed position.",
+      "selected_choice": "group_attack_move_join_4344250376",
+      "selected_description": "Regroup this selection at SpecialOpsDropship unit 4344250376 position [94.0134048461914, 0.46163082122802734]: that unit holds position; the other 5 units attack-move, engaging enemies encountered to its observed position."
+    },
+    {
+      "loop": 2065,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4348968964,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4324851716,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4330094598,
+            "type": "Marauder"
+          }
+        ],
+        "count": 3,
+        "center": [
+          76.5,
+          27.4
+        ],
+        "nearest_visible_enemy_distance": 8.1,
+        "visible_enemies_within_12_of_any_member": {
+          "Pylon": 1,
+          "PhotonCannon": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 181.0,
+        "max_separation": 2.5,
+        "largest_distance_to_nearest_selection_member": 1.5,
+        "count_change_since_previous_decision": -3,
+        "damaged_count": 2,
+        "incomplete_count": 0,
+        "lowest_health_percent": 7,
+        "current_order_counts": {
+          "Attack Attack": 3
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 79.4 to 79.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 79.4 to 79.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 2989,
+      "selection": "Marauder",
+      "facts": {
+        "members": [
+          {
+            "tag": 4355522566,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.4
+        ],
+        "nearest_visible_enemy_distance": 41.6,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 102.6; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 102.6; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3315,
+      "selection": "Marauder",
+      "facts": {
+        "members": [
+          {
+            "tag": 4355522566,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          46.4,
+          38.3
+        ],
+        "nearest_visible_enemy_distance": 4.0,
+        "visible_enemies_within_12_of_any_member": {
+          "CreepTumorBurrowed": 2,
+          "Overlord": 1,
+          "SporeCrawler": 1,
+          "SpineCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 71.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 71,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 107.3 to 107.3; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 107.3 to 107.3; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3684,
+      "selection": "Marine",
+      "facts": {
+        "members": [
+          {
+            "tag": 4370726921,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 41.5,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3971,
+      "selection": "Marine",
+      "facts": {
+        "members": [
+          {
+            "tag": 4370726921,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          50.6,
+          31.2
+        ],
+        "nearest_visible_enemy_distance": 1.0,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 4
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 30.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 67,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_attack_move_north",
+      "top_description": "Attack-move six map units north, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+      "selected_choice": "group_attack_move_north",
+      "selected_description": "Attack-move six map units north, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3971,
+      "selection": "Marauder",
+      "facts": {
+        "members": [
+          {
+            "tag": 4329046033,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.4
+        ],
+        "nearest_visible_enemy_distance": 19.6,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 4324,
+      "selection": "Marine",
+      "facts": {
+        "members": [
+          {
+            "tag": 4343988270,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 27.1,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 5024,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4325376004,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 44.9,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 102.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 102.5; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 5352,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4362862615,
+            "type": "Marine"
+          },
+          {
+            "tag": 4325376004,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          52.1,
+          24.4
+        ],
+        "nearest_visible_enemy_distance": 4.1,
+        "visible_enemies_within_12_of_any_member": {
+          "SpineCrawler": 1,
+          "CreepTumorBurrowed": 2,
+          "SporeCrawler": 1,
+          "Overlord": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 65.0,
+        "max_separation": 27.8,
+        "largest_distance_to_nearest_selection_member": 27.8,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 44,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 5842,
+      "selection": "Marine",
+      "facts": {
+        "members": [
+          {
+            "tag": 4330356764,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 46.0,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 102.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 102.5; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 6149,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4363911205,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4330356764,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          52.8,
+          23.4
+        ],
+        "nearest_visible_enemy_distance": 6.1,
+        "visible_enemies_within_12_of_any_member": {
+          "SporeCrawler": 1,
+          "CreepTumorBurrowed": 2,
+          "Overlord": 1,
+          "SpineCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 145.0,
+        "max_separation": 25.6,
+        "largest_distance_to_nearest_selection_member": 25.6,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 106.0; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 106.0; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 6474,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4363911205,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4324851755,
+            "type": "Medic"
+          }
+        ],
+        "count": 2,
+        "center": [
+          52.9,
+          23.4
+        ],
+        "nearest_visible_enemy_distance": 6.2,
+        "visible_enemies_within_12_of_any_member": {
+          "CreepTumorBurrowed": 2,
+          "Overlord": 1,
+          "SporeCrawler": 1,
+          "SpineCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 131.0,
+        "max_separation": 25.3,
+        "largest_distance_to_nearest_selection_member": 25.3,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 71,
+        "current_order_counts": {
+          "Attack Attack": 2
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 105.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 105.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 6985,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4371251216,
+            "type": "Medic"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 36.5,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 60.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 7654,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4343988275,
+            "type": "Marauder"
+          }
+        ],
+        "count": 2,
+        "center": [
+          61.0,
+          11.0
+        ],
+        "nearest_visible_enemy_distance": 44.2,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 145.0,
+        "max_separation": 7.0,
+        "largest_distance_to_nearest_selection_member": 7.0,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 2,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_attack_move_east",
+      "top_description": "Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+      "selected_choice": "group_attack_move_east",
+      "selected_description": "Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 7816,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4343988275,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4301520925,
+            "type": "Marine"
+          }
+        ],
+        "count": 3,
+        "center": [
+          61.4,
+          11.7
+        ],
+        "nearest_visible_enemy_distance": 42.7,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 190.0,
+        "max_separation": 7.9,
+        "largest_distance_to_nearest_selection_member": 6.5,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 3,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.7 to 103.3; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.7 to 103.3; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 8400,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4355260444,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 43.4,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -2,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 8645,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4360503350,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4355260444,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          55.1,
+          21.9
+        ],
+        "nearest_visible_enemy_distance": 22.9,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 145.0,
+        "max_separation": 21.4,
+        "largest_distance_to_nearest_selection_member": 21.4,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 21.2; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 21.2; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 8900,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4360503350,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          55.8,
+          31.0
+        ],
+        "nearest_visible_enemy_distance": 24.6,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 21.7 to 21.7; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 21.7 to 21.7; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 9408,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4329570329,
+            "type": "Marine"
+          },
+          {
+            "tag": 4328259607,
+            "type": "Marine"
+          }
+        ],
+        "count": 3,
+        "center": [
+          59.4,
+          9.3
+        ],
+        "nearest_visible_enemy_distance": 44.0,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 135.0,
+        "max_separation": 8.6,
+        "largest_distance_to_nearest_selection_member": 8.2,
+        "count_change_since_previous_decision": 2,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 3,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 102.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 102.5; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 9740,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4328259607,
+            "type": "Marine"
+          },
+          {
+            "tag": 4329570329,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          46.6,
+          37.2
+        ],
+        "nearest_visible_enemy_distance": 4.0,
+        "visible_enemies_within_12_of_any_member": {
+          "SpineCrawler": 1,
+          "Overlord": 1,
+          "CreepTumorBurrowed": 2,
+          "SporeCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 65.0,
+        "max_separation": 0.8,
+        "largest_distance_to_nearest_selection_member": 0.8,
+        "count_change_since_previous_decision": -1,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 44,
+        "current_order_counts": {
+          "Move Move": 2
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 107.2 to 107.3; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 107.2 to 107.3; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 10181,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4367319073,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.4
+        ],
+        "nearest_visible_enemy_distance": 44.2,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 10512,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4314103843,
+            "type": "Marine"
+          },
+          {
+            "tag": 4367319073,
+            "type": "Marauder"
+          }
+        ],
+        "count": 3,
+        "center": [
+          54.5,
+          17.2
+        ],
+        "nearest_visible_enemy_distance": 2.9,
+        "visible_enemies_within_12_of_any_member": {
+          "CreepTumorBurrowed": 2,
+          "SporeCrawler": 1,
+          "SpineCrawler": 1,
+          "Overlord": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 161.0,
+        "max_separation": 35.6,
+        "largest_distance_to_nearest_selection_member": 26.7,
+        "count_change_since_previous_decision": 2,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 71,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 2,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_last_known_attack_move_8760786975",
+      "top_description": "attack move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 39.7 to 63.6; actual engine route and travel distance unknown",
+      "selected_choice": "group_last_known_attack_move_8760786975",
+      "selected_description": "attack move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 39.7 to 63.6; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 10976,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4343988289,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 44.0,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -2,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 13.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 11275,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4343988289,
+            "type": "Marine"
+          },
+          {
+            "tag": 4312268863,
+            "type": "Medic"
+          }
+        ],
+        "count": 2,
+        "center": [
+          54.6,
+          22.7
+        ],
+        "nearest_visible_enemy_distance": 0.7,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 3,
+          "Hydralisk": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 78.0,
+        "max_separation": 23.2,
+        "largest_distance_to_nearest_selection_member": 23.2,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 40,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 101.8 to 103.4; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 101.8 to 103.4; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 12262,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4367319085,
+            "type": "Marauder"
+          }
+        ],
+        "count": 2,
+        "center": [
+          60.0,
+          8.0
+        ],
+        "nearest_visible_enemy_distance": 44.2,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 145.0,
+        "max_separation": 8.5,
+        "largest_distance_to_nearest_selection_member": 8.5,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 2,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 102.6; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 102.6; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 12585,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4367319085,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4366008374,
+            "type": "Marauder"
+          }
+        ],
+        "count": 2,
+        "center": [
+          52.1,
+          24.4
+        ],
+        "nearest_visible_enemy_distance": 4.1,
+        "visible_enemies_within_12_of_any_member": {
+          "Overlord": 1,
+          "CreepTumorBurrowed": 2,
+          "SpineCrawler": 1,
+          "SporeCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 171.0,
+        "max_separation": 28.0,
+        "largest_distance_to_nearest_selection_member": 28.0,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 71,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 107.3; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 107.3; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 13394,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          62.5,
+          4.6
+        ],
+        "nearest_visible_enemy_distance": 48.9,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 100.7; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 100.7; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 13857,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4393271302,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.4
+        ],
+        "nearest_visible_enemy_distance": 44.2,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 14175,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4393271302,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4325376009,
+            "type": "Marauder"
+          }
+        ],
+        "count": 3,
+        "center": [
+          55.1,
+          17.1
+        ],
+        "nearest_visible_enemy_distance": 3.5,
+        "visible_enemies_within_12_of_any_member": {
+          "SpineCrawler": 1,
+          "CreepTumorBurrowed": 2,
+          "Overlord": 1,
+          "SporeCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 216.0,
+        "max_separation": 35.2,
+        "largest_distance_to_nearest_selection_member": 26.8,
+        "count_change_since_previous_decision": 2,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 71,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 2,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 108.8; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 100.7 to 108.8; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 14409,
+      "selection": "Marauder",
+      "facts": {
+        "members": [
+          {
+            "tag": 4325376009,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.8,
+          30.3
+        ],
+        "nearest_visible_enemy_distance": 18.2,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Attack Attack": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 97.2 to 97.2; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 97.2 to 97.2; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 14880,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4330094651,
+            "type": "Firebat"
+          }
+        ],
+        "count": 1,
+        "center": [
+          57.5,
+          11.5
+        ],
+        "nearest_visible_enemy_distance": 44.1,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.9 to 13.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 15130,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4330094651,
+            "type": "Firebat"
+          },
+          {
+            "tag": 4342939678,
+            "type": "Marauder"
+          }
+        ],
+        "count": 2,
+        "center": [
+          56.7,
+          21.2
+        ],
+        "nearest_visible_enemy_distance": 1.9,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 3,
+          "Mutalisk": 1,
+          "Hydralisk": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 192.0,
+        "max_separation": 19.7,
+        "largest_distance_to_nearest_selection_member": 19.7,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 92,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_attack_move_west",
+      "top_description": "Attack-move six map units west, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+      "selected_choice": "group_attack_move_west",
+      "selected_description": "Attack-move six map units west, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 15426,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4342939678,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          51.5,
+          11.4
+        ],
+        "nearest_visible_enemy_distance": 10.2,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 2,
+          "Mutalisk": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 100.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 7.9 to 7.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 7.9 to 7.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 15640,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4365746208,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4379115523,
+            "type": "Marine"
+          },
+          {
+            "tag": 4342939678,
+            "type": "Marauder"
+          }
+        ],
+        "count": 3,
+        "center": [
+          60.0,
+          16.2
+        ],
+        "nearest_visible_enemy_distance": 6.2,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 2,
+          "Hydralisk": 1,
+          "Mutalisk": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 126.0,
+        "max_separation": 21.6,
+        "largest_distance_to_nearest_selection_member": 17.8,
+        "count_change_since_previous_decision": 2,
+        "damaged_count": 2,
+        "incomplete_count": 0,
+        "lowest_health_percent": 7,
+        "current_order_counts": {
+          "Attack Attack": 2,
+          "Move Move": 3
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.0 to 102.2; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.0 to 102.2; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 16154,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4344250423,
+            "type": "Marauder"
+          }
+        ],
+        "count": 1,
+        "center": [
+          58.6,
+          2.9
+        ],
+        "nearest_visible_enemy_distance": 2.7,
+        "visible_enemies_within_12_of_any_member": {
+          "Mutalisk": 1,
+          "Hydralisk": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.5,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -2,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 46,
+        "current_order_counts": {
+          "Attack Attack": 1,
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east",
+      "top_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 104.9 to 104.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_move_middle_east",
+      "selected_description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 104.9 to 104.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 16831,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4301783121,
+            "type": "Medic"
+          }
+        ],
+        "count": 1,
+        "center": [
+          58.6,
+          11.7
+        ],
+        "nearest_visible_enemy_distance": 2.4,
+        "visible_enemies_within_12_of_any_member": {
+          "Mutalisk": 1,
+          "Hydralisk": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 58.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 97,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4374134785",
+      "top_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 14.9 to 14.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4374134785",
+      "selected_description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 14.9 to 14.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 20035,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4323803139,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          81.5,
+          8.6
+        ],
+        "nearest_visible_enemy_distance": 3.3,
+        "visible_enemies_within_12_of_any_member": {
+          "Mutalisk": 2,
+          "Hydralisk": 2
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 3.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 7,
+        "current_order_counts": {
+          "Attack Attack": 1,
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_last_known_move_8760786975",
+      "top_description": "move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 20.5 to 20.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_last_known_move_8760786975",
+      "selected_description": "move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 20.5 to 20.5; actual engine route and travel distance unknown"
+    }
+  ]
+}

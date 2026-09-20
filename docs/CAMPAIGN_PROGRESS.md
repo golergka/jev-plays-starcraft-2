@@ -6907,3 +6907,19 @@ destinations or strategic commitment; small exploratory sample cannot establish
 that shared context never matters. Production diagnosis alone has not resolved
 small-force movement. Consult449/450 and445 before another regroup or strategy
 wording change; do not repeat this context-sharing result as untested.
+
+
+### Lab473 — concrete destinations confirm repeated distant advances
+
+Read-only audit of468 links42 concrete nonworker spatial menus to group_choice.
+All42 selected choices equal model top choice, unlike investment sampling.
+22select middle-east map sector (11Move,11attack-move);13Move toward the same
+visible ProtossRelic;32of42 selections contain at most2units. One regroup order
+at a friendly dropship holds the anchor and attack-moves5followers. Thus do not
+say all movement lacked regrouping or that every Move meant retreat. At9740,
+twoMarines65combinedhealth, nearbySpineCrawler, select middle-east107mapunits
+away. At20035 a3healthMarine nearMutalisks/Hydralisks selects a last-knownrelic.
+No hidden-route inference, engineacceptance or death attribution. This points
+toward distant-destination commitment despite local threats, not random order
+sampling.473costs no model calls, changes no policy. Next evaluate local versus
+long-distance commitment explicitly; avoid restating472 sharedcontext as novel.
