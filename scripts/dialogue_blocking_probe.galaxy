@@ -1,0 +1,27 @@
+// Append after visible_dialogue_bridge.galaxy in a synthetic diagnostic map.
+bool ProbeBlocking(bool testConds, bool runActions) {
+    int started;
+    int result;
+    int i;
+    if (!runActions) { return true; }
+    Wait(3.0, c_timeGame);
+    started = CurrentSynchronousGameTimeGet();
+    result = TransmissionSendForPlayer(PlayerGroupSingle(1), TransmissionSource(), 0, "", "", SoundLink("", 0), StringToText("PROBE"), StringToText("NATIVE BLOCKING"), 4.0, c_transmissionDurationSet, true, c_maxPlayers);
+    BankValueSetFromInt(JevDialogueBank, "Assertion", "native_elapsed", CurrentSynchronousGameTimeGet()-started);
+    started = CurrentSynchronousGameTimeGet();
+    result = JevTransmissionSendForPlayer(PlayerGroupSingle(1), TransmissionSource(), 0, "", "", SoundLink("", 0), StringToText("PROBE"), StringToText("WRAPPED BLOCKING"), 4.0, c_transmissionDurationSet, true, c_maxPlayers);
+    BankValueSetFromInt(JevDialogueBank, "Assertion", "wrapped_elapsed", CurrentSynchronousGameTimeGet()-started);
+    BankValueSetFromFlag(JevDialogueBank, "Assertion", "wrapped_complete", TransmissionIsComplete(result));
+    BankValueSetFromInt(JevDialogueBank, "Assertion", "after_blocking_sequence", JevDialogueSequence);
+    for (i=0; i<20; i+=1) {
+        JevTransmissionSendForPlayer(PlayerGroupSingle(1), TransmissionSource(), 0, "", "", SoundLink("", 0), StringToText("PROBE"), StringToText("RING " + IntToString(i)), 2.0, c_transmissionDurationSet, false, c_maxPlayers);
+    }
+    BankValueSetFromFlag(JevDialogueBank, "Assertion", "finished", true);
+    BankSave(JevDialogueBank);
+    return true;
+}
+void InitMap() {
+    libNtve_InitLib();
+    JevDialogueInit(1);
+    TriggerAddEventMapInit(TriggerCreate("ProbeBlocking"));
+}

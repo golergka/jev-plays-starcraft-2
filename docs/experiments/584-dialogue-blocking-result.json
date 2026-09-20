@@ -1,0 +1,116 @@
+{
+  "lab": 584,
+  "model_calls": 0,
+  "diagnostic_only": true,
+  "bank": {
+    "Message10": {
+      "time": "1789914920",
+      "sequence": "11",
+      "text": "RING 9",
+      "captured_after_wait": "0"
+    },
+    "Message14": {
+      "time": "1789914920",
+      "sequence": "15",
+      "text": "RING 13",
+      "captured_after_wait": "0"
+    },
+    "Assertion": {
+      "finished": "1",
+      "after_blocking_sequence": "1",
+      "native_elapsed": "4",
+      "wrapped_complete": "1",
+      "wrapped_elapsed": "4"
+    },
+    "Message11": {
+      "time": "1789914920",
+      "sequence": "12",
+      "text": "RING 10",
+      "captured_after_wait": "0"
+    },
+    "Message9": {
+      "time": "1789914920",
+      "sequence": "10",
+      "text": "RING 8",
+      "captured_after_wait": "0"
+    },
+    "Message2": {
+      "time": "1789914920",
+      "sequence": "19",
+      "text": "RING 17",
+      "captured_after_wait": "0"
+    },
+    "Message13": {
+      "time": "1789914920",
+      "sequence": "14",
+      "text": "RING 12",
+      "captured_after_wait": "0"
+    },
+    "Context": {
+      "launch_stamp": "1789914907",
+      "sequence": "21"
+    },
+    "Message12": {
+      "time": "1789914920",
+      "sequence": "13",
+      "text": "RING 11",
+      "captured_after_wait": "0"
+    },
+    "Message6": {
+      "time": "1789914920",
+      "sequence": "7",
+      "text": "RING 5",
+      "captured_after_wait": "0"
+    },
+    "Message15": {
+      "time": "1789914920",
+      "sequence": "16",
+      "text": "RING 14",
+      "captured_after_wait": "0"
+    },
+    "Message4": {
+      "time": "1789914920",
+      "sequence": "21",
+      "text": "RING 19",
+      "captured_after_wait": "0"
+    },
+    "Message1": {
+      "time": "1789914920",
+      "sequence": "18",
+      "text": "RING 16",
+      "captured_after_wait": "0"
+    },
+    "Message8": {
+      "time": "1789914920",
+      "sequence": "9",
+      "text": "RING 7",
+      "captured_after_wait": "0"
+    },
+    "Message3": {
+      "time": "1789914920",
+      "sequence": "20",
+      "text": "RING 18",
+      "captured_after_wait": "0"
+    },
+    "Message5": {
+      "time": "1789914920",
+      "sequence": "6",
+      "text": "RING 4",
+      "captured_after_wait": "0"
+    },
+    "Message0": {
+      "time": "1789914920",
+      "sequence": "17",
+      "text": "RING 15",
+      "captured_after_wait": "0"
+    },
+    "Message7": {
+      "time": "1789914920",
+      "sequence": "8",
+      "text": "RING 6",
+      "captured_after_wait": "0"
+    }
+  },
+  "native_visual": "At 0:17, RING10 through RING19 visible in subtitle history.",
+  "interpretation": "Native and wrapped blocking elapsed values recorded; completion true after return. Sixteen ring slots retain sequences6 through21 after twenty-one captured messages. No campaign bridge enabled."
+}
