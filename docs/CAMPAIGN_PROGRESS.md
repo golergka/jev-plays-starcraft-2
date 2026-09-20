@@ -6089,6 +6089,10 @@ not path lengths: engine routing may detour around terrain. Correct description
 to straight-line distances and explicitly state actual route/travel distance
 unknown. No route planner, terrain leak, changed destinations, option removal or
 root tactical decision. Existing destination terrain visibility gates unchanged.
-205tests passed; no paidprobe or newgame. This is an accuracy correction, not
+Initial suite:204passed, one existing description assertion expected old wording.
+Update that assertion to verify straight-line distances and route uncertainty.
+No paidprobe or newgame. This is an accuracy correction, not
 evidence Jev now avoids dangerous routes. Lab411's northward movement toward an
 eastern destination cannot itself establish bad engine routing.
+Follow-up validation: all205tests pass with corrected wording assertions; the
+existing regression also verifies both unit commands retain their destination.

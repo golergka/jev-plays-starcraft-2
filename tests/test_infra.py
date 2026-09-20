@@ -1200,7 +1200,8 @@ def test_shared_attack_move_description_compacts_distances_without_changing_orde
             description=questions['Unit']['criteria']['group_attack_move_join_99']
             assert description.count('Attack-move to friendly Tower')==1
             assert 'engaging enemies encountered' in description
-            assert 'travel distances across selection: 6.0 to 10.0' in description
+            assert 'straight-line distances across selection: 6.0 to 10.0' in description
+            assert 'actual engine route and travel distance unknown' in description
             return {'Unit':{'choice':'group_attack_move_join_99'}}
     commands=asyncio.run(player.decide({'loop':1,'self':units},Model(),{}))
     assert commands==[u['candidates'][0]['command'] for u in units]
