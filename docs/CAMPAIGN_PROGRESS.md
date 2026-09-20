@@ -4761,3 +4761,19 @@ preference by itself. No evidence of better combat or survival; do not add a
 hand-selected offensive finalist. Script/artifact325 recorded,no live change.
 Full-menu cost versus whole tournament remains unmeasured in paired conditions;
 combined probe spend is not evidence of per-policy savings.
+
+### Lab326 — order-kind factorization preserves safe-anchor preference
+
+Nine-call first/middle/last exact reconstructed Marine menus from321:full Choice
+versus Jev order-kind Choice then exact within-kind Choice. Kinds describe attack,
+attack-move,ordinary move,hold,stop,continue,individual; every original option
+retained in a group. Same observed state,alternate arm order,no game commands.
+Cost$0.00551145. Full topsjoin_original_center,continue,join_original_center;
+staged kindmove in all3 and finaljoin_original_center in all3.
+
+This explicit combat-order factorization does not solve anchor fixation. No live
+integration or added production call. Together323/325/326narrow the explanation:
+Move wording,full-menu access,and a separate kind decision are insufficient in
+these recorded states. They do not prove Jev cannot ever choose useful defense,
+or that all context/formulations are equivalent. No more unchanged trials on
+this hypothesis. Script/artifact326 preserve negative results.
