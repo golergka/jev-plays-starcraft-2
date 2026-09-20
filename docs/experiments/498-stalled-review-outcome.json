@@ -1,0 +1,77 @@
+{
+  "run": "runs/20260920T123947.286522Z",
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T123947.286522Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789898229",
+      "loop": 23292
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 346,
+    "cost": 0.19879893600000012,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T123947.286522Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "24:15",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4"
+    }
+  },
+  "errors": [
+    {
+      "time": 1789908256.76043,
+      "event": "engine_action_error",
+      "loop": 5839,
+      "failures": [
+        {
+          "ability_id": 322,
+          "unit_tags": [
+            4320657409
+          ],
+          "result": "CouldntReachTarget"
+        }
+      ]
+    },
+    {
+      "time": 1789908391.058443,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789908431.052577,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789908773.578512,
+      "event": "engine_action_error",
+      "loop": 17406,
+      "failures": [
+        {
+          "ability_id": 322,
+          "unit_tags": [
+            4360765500
+          ],
+          "result": "CouldntReachTarget"
+        }
+      ]
+    }
+  ],
+  "stalled_reviews": [],
+  "notes": [
+    "Optional stalled review never triggered, so efficacy not evaluated by this attempt.",
+    "Workers sustained repair defense for many minutes after military production disappeared.",
+    "Direct purchase choice remained disabled."
+  ]
+}
