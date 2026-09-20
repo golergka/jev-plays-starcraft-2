@@ -4979,3 +4979,18 @@ keys and full distributions; no unit preference injected. No live deployment.
 Together340/342show that arithmetic clarity and renewal reminder alone are not
 supported fixes for sustained investment in these samples. Need a distinct
 control/decision experiment rather than more variants of this wording.
+
+### Lab343 — scored combat kinds change orders with narrow margins
+
+Nine-call first/middle/last reconstructed337Marine menus:full directChoice versus
+independent descriptiveScore per available order kind,then exact within-kindChoice.
+All original options remain represented,no scripted target or tactical preference.
+Cost$0.00583884. Fullchoicesjoin_original_center,hold,continue;scoredkindshold,hold,
+move;finalordershold,hold,join_4395106305. Firsttwohold-over-move margins0.04each;
+thirdmove2.43vshold2.26. Attack-move1.19/1.34/1.14;availableattacklast0.76.
+
+Behavior changes,not evidence of improved defense. Scores are descriptive ratings,
+not calibrated utility;small margins deserve caution. Fixed-order tie rule is
+explicit in this offlineprobe;no tie drove these results. No live deployment yet.
+Script/artifact343preserve all distributions for a possible bounded alternative-
+primitive trial;do not claim primitive change resolves underlying coordination.

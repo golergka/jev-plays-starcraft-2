@@ -1,0 +1,840 @@
+{
+  "source": "runs/20260920T025806.548721Z/events.jsonl",
+  "method": "First/middle/last exact reconstructed Marine menus; full direct Choice versus independent order-kind Scores followed by exact within-kind Choice. All options retained. Alternate arm order, nine-call ceiling. No game commands.",
+  "pairs": [
+    {
+      "time": 1789873094.488426,
+      "options": 102,
+      "groups": {
+        "individual": 1,
+        "continue": 1,
+        "attack_move": 49,
+        "move": 49,
+        "hold": 1,
+        "stop": 1
+      },
+      "full": {
+        "choice": "group_join_4299948033",
+        "type": "choice",
+        "confidence": 0.17,
+        "probabilities": {
+          "group_map_move_middle_west": 0.0,
+          "group_attack_move_join_4341366785": 0.01,
+          "group_join_4341104641": 0.0,
+          "group_join_4342153217": 0.0,
+          "group_attack_move_join_4300996609": 0.0,
+          "group_attack_move_join_4320919553": 0.01,
+          "group_join_4299948033": 0.19,
+          "continue": 0.06999999999999999,
+          "group_attack_move_join_4303355905": 0.0,
+          "group_join_4320919553": 0.01,
+          "group_hold_position": 0.17,
+          "group_attack_move_join_4344774657": 0.0,
+          "group_attack_move_join_4372561921": 0.0,
+          "group_attack_move_join_4302569473": 0.0,
+          "group_join_4300734465": 0.0,
+          "group_attack_move_west": 0.0,
+          "group_map_attack_move_south_west": 0.0,
+          "group_attack_move_join_4301520897": 0.0,
+          "group_join_4296278017": 0.0,
+          "group_attack_move_join_4357619713": 0.0,
+          "group_join_4296540161": 0.0,
+          "group_south": 0.02,
+          "group_join_4295753729": 0.0,
+          "group_attack_move_join_4358144001": 0.060000000000000005,
+          "group_stop": 0.04,
+          "group_map_move_south_east": 0.02,
+          "group_join_4350017537": 0.0,
+          "group_map_attack_move_north_center": 0.0,
+          "group_join_4353687553": 0.01,
+          "group_attack_move_join_4300734465": 0.0,
+          "group_map_attack_move_middle_west": 0.0,
+          "group_map_attack_move_middle_center": 0.0,
+          "group_join_4346085377": 0.0,
+          "group_join_4379639809": 0.0,
+          "group_join_4341891073": 0.01,
+          "group_attack_move_join_4372824065": 0.0,
+          "group_attack_move_join_4350017537": 0.0,
+          "group_join_4372824065": 0.0,
+          "group_attack_move_join_4382261249": 0.0,
+          "group_attack_move_join_4341891073": 0.0,
+          "group_attack_move_join_4379639809": 0.0,
+          "group_join_4302569473": 0.0,
+          "group_join_4303355905": 0.0,
+          "group_join_4379901953": 0.0,
+          "group_join_4357357569": 0.01,
+          "group_map_move_south_center": 0.0,
+          "group_join_4295491585": 0.03,
+          "group_attack_move_join_4298113025": 0.0,
+          "group_west": 0.0,
+          "group_attack_move_join_4299948033": 0.06999999999999999,
+          "group_attack_move_join_4295753729": 0.0,
+          "group_map_move_south_west": 0.0,
+          "group_map_move_north_center": 0.0,
+          "group_join_4297850881": 0.03,
+          "group_attack_move_join_4296278017": 0.0,
+          "group_join_4356308993": 0.0,
+          "group_join_4310171649": 0.0,
+          "group_attack_move_join_4356308993": 0.0,
+          "group_attack_move_join_4302307329": 0.0,
+          "group_map_move_north_west": 0.01,
+          "group_join_4341366785": 0.04,
+          "group_map_attack_move_north_west": 0.0,
+          "group_attack_move_join_4373348353": 0.0,
+          "group_attack_move_south": 0.01,
+          "group_join_4344774657": 0.01,
+          "group_join_4373348353": 0.0,
+          "group_join_4382261249": 0.01,
+          "group_attack_move_join_4310171649": 0.0,
+          "individual": 0.02,
+          "group_join_4302831617": 0.0,
+          "group_join_4357619713": 0.0,
+          "group_attack_move_join_4295491585": 0.01,
+          "group_attack_move_join_4341104641": 0.0,
+          "group_map_attack_move_middle_east": 0.0,
+          "group_attack_move_join_4353687553": 0.0,
+          "group_attack_move_join_4302831617": 0.0,
+          "group_east": 0.0,
+          "group_join_4297064449": 0.0,
+          "group_join_4301520897": 0.03,
+          "group_north": 0.0,
+          "group_attack_move_join_4346085377": 0.0,
+          "group_map_attack_move_south_center": 0.0,
+          "group_join_4372561921": 0.0,
+          "group_attack_move_join_4310695937": 0.0,
+          "group_attack_move_join_4296540161": 0.0,
+          "group_attack_move_join_4297850881": 0.01,
+          "group_attack_move_north": 0.0,
+          "group_attack_move_east": 0.0,
+          "group_attack_move_join_4357357569": 0.01,
+          "group_join_4302307329": 0.0,
+          "group_attack_move_join_4297064449": 0.0,
+          "group_join_4310695937": 0.0,
+          "group_map_move_middle_east": 0.0,
+          "group_map_move_middle_center": 0.0,
+          "group_attack_move_join_4379901953": 0.0,
+          "group_join_4298113025": 0.0,
+          "group_map_attack_move_north_east": 0.0,
+          "group_attack_move_join_4342153217": 0.0,
+          "group_join_4300996609": 0.0,
+          "group_join_4358144001": 0.08,
+          "group_map_move_north_east": 0.0,
+          "group_map_attack_move_south_east": 0.0
+        }
+      },
+      "scores": {
+        "attack_move": {
+          "score": 1.19,
+          "type": "score",
+          "confidence": 0.58,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.16,
+            "1": 0.57,
+            "2": 0.2,
+            "3": 0.06,
+            "4": 0.01
+          }
+        },
+        "move": {
+          "score": 2.29,
+          "type": "score",
+          "confidence": 0.3,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.2,
+            "2": 0.31,
+            "3": 0.41000000000000003,
+            "4": 0.06
+          }
+        },
+        "hold": {
+          "score": 2.33,
+          "type": "score",
+          "confidence": 0.32,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.21,
+            "2": 0.19,
+            "3": 0.49,
+            "4": 0.07
+          }
+        },
+        "stop": {
+          "score": 1.34,
+          "type": "score",
+          "confidence": 0.6,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.65,
+            "2": 0.18,
+            "3": 0.08,
+            "4": 0.02
+          }
+        },
+        "continue": {
+          "score": 1.25,
+          "type": "score",
+          "confidence": 0.64,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.68,
+            "2": 0.14,
+            "3": 0.08,
+            "4": 0.01
+          }
+        },
+        "individual": {
+          "score": 1.76,
+          "type": "score",
+          "confidence": 0.28,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.41,
+            "2": 0.29,
+            "3": 0.22,
+            "4": 0.03
+          }
+        }
+      },
+      "kind": {
+        "choice": "hold",
+        "tie_rule": "First highest in fixed description order; exploratory probe only, not deployed."
+      },
+      "staged": {
+        "choice": "group_hold_position",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "group_hold_position": 1.0
+        }
+      }
+    },
+    {
+      "time": 1789873374.258566,
+      "options": 108,
+      "groups": {
+        "individual": 1,
+        "continue": 1,
+        "attack_move": 51,
+        "move": 53,
+        "hold": 1,
+        "stop": 1
+      },
+      "scores": {
+        "attack_move": {
+          "score": 1.34,
+          "type": "score",
+          "confidence": 0.43,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.17,
+            "1": 0.47,
+            "2": 0.23,
+            "3": 0.11,
+            "4": 0.02
+          }
+        },
+        "move": {
+          "score": 2.47,
+          "type": "score",
+          "confidence": 0.37,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.17,
+            "2": 0.23,
+            "3": 0.46,
+            "4": 0.12
+          }
+        },
+        "hold": {
+          "score": 2.51,
+          "type": "score",
+          "confidence": 0.38,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.14,
+            "2": 0.18,
+            "3": 0.5,
+            "4": 0.13
+          }
+        },
+        "stop": {
+          "score": 1.41,
+          "type": "score",
+          "confidence": 0.55,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.6,
+            "2": 0.2,
+            "3": 0.1,
+            "4": 0.03
+          }
+        },
+        "continue": {
+          "score": 1.26,
+          "type": "score",
+          "confidence": 0.62,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.1,
+            "1": 0.65,
+            "2": 0.16,
+            "3": 0.08,
+            "4": 0.01
+          }
+        },
+        "individual": {
+          "score": 2.1,
+          "type": "score",
+          "confidence": 0.14,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.28,
+            "2": 0.26,
+            "3": 0.35,
+            "4": 0.06
+          }
+        }
+      },
+      "kind": {
+        "choice": "hold",
+        "tie_rule": "First highest in fixed description order; exploratory probe only, not deployed."
+      },
+      "staged": {
+        "choice": "group_hold_position",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "group_hold_position": 1.0
+        }
+      },
+      "full": {
+        "choice": "group_hold_position",
+        "type": "choice",
+        "confidence": 0.19,
+        "probabilities": {
+          "group_attack_move_join_4296540161": 0.0,
+          "group_attack_move_join_4314890242": 0.0,
+          "group_attack_move_join_4373348353": 0.0,
+          "group_join_4344774657": 0.0,
+          "group_join_4398514178": 0.0,
+          "group_attack_move_north": 0.0,
+          "group_attack_move_join_4346085377": 0.0,
+          "group_map_attack_move_middle_west": 0.0,
+          "group_attack_move_join_4338483208": 0.0,
+          "group_map_move_middle_west": 0.0,
+          "group_attack_move_join_4356308993": 0.0,
+          "group_join_4314365954": 0.0,
+          "group_stop": 0.05,
+          "group_attack_move_join_4396679188": 0.0,
+          "group_attack_move_join_4342153217": 0.0,
+          "group_map_move_north_east": 0.02,
+          "group_attack_move_east": 0.01,
+          "continue": 0.060000000000000005,
+          "group_join_4338483208": 0.0,
+          "group_attack_move_join_4397465603": 0.0,
+          "group_move_4296015873": 0.0,
+          "group_attack_move_join_4395106305": 0.01,
+          "group_join_4346085377": 0.02,
+          "group_join_4300734465": 0.0,
+          "group_join_4296540161": 0.0,
+          "group_south": 0.0,
+          "group_attack_move_join_4299948033": 0.13,
+          "group_join_4362600450": 0.02,
+          "group_attack_move_join_4397989890": 0.0,
+          "group_join_4373348353": 0.0,
+          "group_join_4356308993": 0.0,
+          "group_attack_move_join_4353687553": 0.0,
+          "group_join_4342153217": 0.04,
+          "group_join_4397989890": 0.0,
+          "group_join_4320919554": 0.0,
+          "group_attack_move_join_4297064449": 0.0,
+          "group_join_4341891073": 0.0,
+          "group_east": 0.060000000000000005,
+          "group_attack_move_join_4298113025": 0.0,
+          "group_map_attack_move_south_east": 0.03,
+          "group_attack_move_join_4344774657": 0.0,
+          "group_join_4314890242": 0.0,
+          "group_attack_move_south": 0.01,
+          "group_attack_move_join_4399038469": 0.0,
+          "group_join_4379639809": 0.0,
+          "group_attack_move_join_4295753729": 0.0,
+          "group_join_4303355905": 0.0,
+          "group_west": 0.0,
+          "group_map_attack_move_south_center": 0.0,
+          "group_join_4396941361": 0.0,
+          "group_join_4302569473": 0.0,
+          "group_join_4397465603": 0.02,
+          "group_join_4296278017": 0.0,
+          "group_join_4298113025": 0.0,
+          "group_attack_move_join_4341104641": 0.0,
+          "group_attack_move_join_4379901953": 0.0,
+          "group_map_move_middle_center": 0.0,
+          "group_attack_move_west": 0.0,
+          "group_attack_move_join_4399300609": 0.0,
+          "group_map_attack_move_north_east": 0.0,
+          "group_map_move_north_center": 0.0,
+          "group_map_move_south_east": 0.05,
+          "group_move_4295229441": 0.0,
+          "group_attack_move_join_4396941361": 0.0,
+          "group_join_4399300609": 0.0,
+          "group_join_4395892745": 0.0,
+          "group_map_move_south_west": 0.0,
+          "group_join_4295753729": 0.0,
+          "group_join_4299948033": 0.19,
+          "group_attack_move_join_4314365954": 0.0,
+          "group_map_attack_move_north_west": 0.0,
+          "group_attack_move_join_4303355905": 0.0,
+          "group_north": 0.0,
+          "group_join_4399038469": 0.0,
+          "group_join_4341366785": 0.0,
+          "group_map_attack_move_south_west": 0.0,
+          "group_attack_move_join_4302307329": 0.0,
+          "group_attack_move_join_4300734465": 0.0,
+          "group_join_4372824065": 0.0,
+          "group_attack_move_join_4395892745": 0.0,
+          "group_attack_move_join_4379639809": 0.0,
+          "group_attack_move_join_4341891073": 0.0,
+          "group_attack_move_join_4372561921": 0.0,
+          "group_map_move_middle_east": 0.0,
+          "group_attack_move_join_4320919554": 0.0,
+          "group_attack_move_join_4362600450": 0.0,
+          "group_map_attack_move_north_center": 0.0,
+          "group_attack_move_join_4302569473": 0.0,
+          "group_attack_move_join_4398514178": 0.0,
+          "group_join_4395106305": 0.04,
+          "group_join_4379901953": 0.0,
+          "group_join_4297064449": 0.0,
+          "individual": 0.02,
+          "group_attack_move_join_4296278017": 0.0,
+          "group_map_attack_move_middle_east": 0.0,
+          "group_join_4341104641": 0.0,
+          "group_attack_move_join_4372824065": 0.0,
+          "group_join_4353687553": 0.0,
+          "group_attack_move_join_4341366785": 0.0,
+          "group_map_move_south_center": 0.0,
+          "group_join_4396679188": 0.0,
+          "group_join_4300996609": 0.0,
+          "group_map_move_north_west": 0.0,
+          "group_join_4372561921": 0.0,
+          "group_join_4302307329": 0.01,
+          "group_attack_move_join_4300996609": 0.0,
+          "group_hold_position": 0.21000000000000002,
+          "group_map_attack_move_middle_center": 0.0
+        }
+      }
+    },
+    {
+      "time": 1789873565.668193,
+      "options": 108,
+      "groups": {
+        "move": 54,
+        "attack_move": 47,
+        "stop": 1,
+        "individual": 1,
+        "continue": 1,
+        "attack": 3,
+        "hold": 1
+      },
+      "full": {
+        "choice": "continue",
+        "type": "choice",
+        "confidence": 0.21,
+        "probabilities": {
+          "group_join_4342153218": 0.01,
+          "group_map_move_south_west": 0.0,
+          "group_attack_move_join_4396941361": 0.0,
+          "continue": 0.23,
+          "group_attack_move_south": 0.0,
+          "group_attack_move_join_4397465603": 0.0,
+          "group_map_attack_move_north_east": 0.0,
+          "group_join_4397465603": 0.0,
+          "group_join_4379639809": 0.0,
+          "group_attack_4339007489": 0.0,
+          "group_attack_move_join_4314890242": 0.0,
+          "group_map_move_north_east": 0.01,
+          "group_join_4372561921": 0.0,
+          "group_join_4338483208": 0.01,
+          "group_join_4372824065": 0.0,
+          "group_join_4314365954": 0.0,
+          "group_attack_move_join_4295753729": 0.0,
+          "group_move_4297588737": 0.0,
+          "group_attack_move_join_4323540994": 0.0,
+          "group_move_4296802305": 0.01,
+          "group_attack_move_join_4300996609": 0.0,
+          "group_join_4302307329": 0.0,
+          "group_map_attack_move_middle_east": 0.0,
+          "group_attack_move_join_4399038469": 0.0,
+          "group_attack_move_join_4303355905": 0.0,
+          "group_attack_move_join_4379901953": 0.0,
+          "group_join_4299948033": 0.11,
+          "group_attack_move_join_4379639809": 0.0,
+          "group_attack_move_join_4310171651": 0.0,
+          "group_map_attack_move_south_center": 0.0,
+          "group_join_4314890242": 0.0,
+          "group_join_4346085377": 0.0,
+          "group_north": 0.03,
+          "group_map_move_north_west": 0.0,
+          "group_join_4398514178": 0.0,
+          "group_map_move_north_center": 0.0,
+          "group_map_attack_move_north_center": 0.0,
+          "group_join_4399038469": 0.0,
+          "group_join_4373348353": 0.0,
+          "group_join_4300996609": 0.0,
+          "group_join_4310171651": 0.0,
+          "group_attack_move_join_4338483208": 0.01,
+          "group_attack_move_join_4356308993": 0.01,
+          "group_join_4298113025": 0.0,
+          "individual": 0.02,
+          "group_hold_position": 0.09999999999999999,
+          "group_attack_move_join_4396679188": 0.0,
+          "group_attack_move_join_4395106305": 0.04,
+          "group_attack_move_join_4342153218": 0.01,
+          "group_map_attack_move_middle_center": 0.0,
+          "group_stop": 0.03,
+          "group_attack_move_west": 0.01,
+          "group_attack_move_join_4307550215": 0.0,
+          "group_join_4297064449": 0.0,
+          "group_east": 0.0,
+          "group_attack_move_join_4302307329": 0.0,
+          "group_join_4307550215": 0.0,
+          "group_attack_move_east": 0.0,
+          "group_attack_4339269633": 0.0,
+          "group_attack_move_join_4373348353": 0.0,
+          "group_join_4395892745": 0.0,
+          "group_join_4296540161": 0.0,
+          "group_join_4323278850": 0.0,
+          "group_map_move_south_east": 0.04,
+          "group_move_4294967297": 0.0,
+          "group_move_4298899457": 0.0,
+          "group_attack_move_join_4346085377": 0.0,
+          "group_attack_move_join_4323278850": 0.0,
+          "group_attack_move_join_4299948033": 0.04,
+          "group_map_move_south_center": 0.01,
+          "group_map_move_middle_east": 0.01,
+          "group_attack_move_join_4296278017": 0.0,
+          "group_map_move_middle_center": 0.0,
+          "group_attack_move_join_4398514178": 0.0,
+          "group_attack_move_join_4296540161": 0.0,
+          "group_join_4396679188": 0.01,
+          "group_join_4379901953": 0.0,
+          "group_map_attack_move_south_east": 0.01,
+          "group_map_attack_move_middle_west": 0.0,
+          "group_attack_4338745345": 0.0,
+          "group_join_4395106305": 0.13,
+          "group_join_4397727747": 0.0,
+          "group_move_4299685889": 0.0,
+          "group_join_4320919554": 0.0,
+          "group_attack_move_join_4320919554": 0.0,
+          "group_map_attack_move_north_west": 0.0,
+          "group_join_4295753729": 0.0,
+          "group_join_4323540994": 0.0,
+          "group_attack_move_join_4372824065": 0.0,
+          "group_join_4396941361": 0.0,
+          "group_attack_move_join_4372561921": 0.0,
+          "group_attack_move_join_4297064449": 0.0,
+          "group_map_attack_move_south_west": 0.0,
+          "group_attack_move_north": 0.0,
+          "group_west": 0.02,
+          "group_attack_move_join_4314365954": 0.0,
+          "group_south": 0.02,
+          "group_attack_move_join_4399300609": 0.0,
+          "group_attack_move_join_4397727747": 0.0,
+          "group_attack_move_join_4298113025": 0.01,
+          "group_join_4399300609": 0.01,
+          "group_join_4303355905": 0.01,
+          "group_join_4296278017": 0.0,
+          "group_map_move_middle_west": 0.0,
+          "group_move_4295229441": 0.0,
+          "group_join_4356308993": 0.04,
+          "group_attack_move_join_4395892745": 0.0,
+          "group_move_4296015873": 0.0
+        }
+      },
+      "scores": {
+        "attack": {
+          "score": 0.76,
+          "type": "score",
+          "confidence": 0.53,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.4,
+            "1": 0.47,
+            "2": 0.1,
+            "3": 0.03,
+            "4": 0.0
+          }
+        },
+        "attack_move": {
+          "score": 1.14,
+          "type": "score",
+          "confidence": 0.51,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.22,
+            "1": 0.51,
+            "2": 0.19,
+            "3": 0.07,
+            "4": 0.01
+          }
+        },
+        "move": {
+          "score": 2.43,
+          "type": "score",
+          "confidence": 0.27,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.19,
+            "2": 0.23,
+            "3": 0.39,
+            "4": 0.15
+          }
+        },
+        "hold": {
+          "score": 2.26,
+          "type": "score",
+          "confidence": 0.18,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.25,
+            "2": 0.17,
+            "3": 0.39,
+            "4": 0.12
+          }
+        },
+        "stop": {
+          "score": 1.24,
+          "type": "score",
+          "confidence": 0.55,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.15,
+            "1": 0.59,
+            "2": 0.15,
+            "3": 0.08,
+            "4": 0.03
+          }
+        },
+        "continue": {
+          "score": 1.6,
+          "type": "score",
+          "confidence": 0.34,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.48,
+            "2": 0.21,
+            "3": 0.17,
+            "4": 0.05
+          }
+        },
+        "individual": {
+          "score": 2.01,
+          "type": "score",
+          "confidence": 0.07,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.32,
+            "2": 0.27,
+            "3": 0.3,
+            "4": 0.06
+          }
+        }
+      },
+      "kind": {
+        "choice": "move",
+        "tie_rule": "First highest in fixed description order; exploratory probe only, not deployed."
+      },
+      "staged": {
+        "choice": "group_join_4395106305",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "group_join_4297064449": 0.0,
+          "group_join_4299948033": 0.23,
+          "group_join_4296278017": 0.0,
+          "group_join_4395106305": 0.3,
+          "group_join_4396941361": 0.0,
+          "group_east": 0.0,
+          "group_map_move_north_center": 0.0,
+          "group_move_4294967297": 0.0,
+          "group_join_4338483208": 0.08,
+          "group_join_4307550215": 0.0,
+          "group_south": 0.01,
+          "group_join_4295753729": 0.0,
+          "group_join_4396679188": 0.0,
+          "group_join_4398514178": 0.0,
+          "group_join_4379639809": 0.0,
+          "group_join_4323540994": 0.0,
+          "group_map_move_middle_west": 0.0,
+          "group_move_4296802305": 0.01,
+          "group_join_4303355905": 0.01,
+          "group_join_4320919554": 0.0,
+          "group_join_4372561921": 0.0,
+          "group_join_4379901953": 0.0,
+          "group_map_move_south_east": 0.08,
+          "group_join_4302307329": 0.01,
+          "group_join_4300996609": 0.0,
+          "group_move_4299685889": 0.0,
+          "group_map_move_north_east": 0.01,
+          "group_join_4298113025": 0.0,
+          "group_join_4373348353": 0.0,
+          "group_map_move_middle_east": 0.0,
+          "group_map_move_north_west": 0.0,
+          "group_join_4310171651": 0.0,
+          "group_join_4342153218": 0.01,
+          "group_join_4346085377": 0.02,
+          "group_move_4298899457": 0.0,
+          "group_west": 0.02,
+          "group_north": 0.01,
+          "group_move_4295229441": 0.0,
+          "group_map_move_south_center": 0.01,
+          "group_join_4399300609": 0.04,
+          "group_join_4314365954": 0.02,
+          "group_join_4314890242": 0.0,
+          "group_join_4399038469": 0.0,
+          "group_map_move_middle_center": 0.0,
+          "group_map_move_south_west": 0.0,
+          "group_move_4296015873": 0.0,
+          "group_move_4297588737": 0.0,
+          "group_join_4395892745": 0.0,
+          "group_join_4372824065": 0.0,
+          "group_join_4296540161": 0.0,
+          "group_join_4356308993": 0.08,
+          "group_join_4323278850": 0.01,
+          "group_join_4397727747": 0.03,
+          "group_join_4397465603": 0.0
+        }
+      }
+    }
+  ],
+  "calls": 9,
+  "cost": 0.00583884
+}
