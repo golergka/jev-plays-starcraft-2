@@ -114,7 +114,7 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
         if verb.startswith('effect'):
             verb = verb[6:]
         kind = ('repair' if verb.startswith('repair') else
-                'heal' if verb.startswith('heal') else
+                'heal' if verb.startswith(('heal', 'medicheal')) else
                 'unload' if verb.startswith('unloadall') else
                 'load' if verb.startswith('load') else
                 'construction_interaction' if builder and verb.startswith('smart') else None)

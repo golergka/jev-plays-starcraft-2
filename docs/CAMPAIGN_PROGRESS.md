@@ -5508,3 +5508,19 @@ responsevariability. This doesnotshowreliableprimarytargetdistinction orimproved
 survival. No liveintegration orunchangedmissionretry. Script/artifact379preserved.
 Nexthypothesis must address another evidenced general mechanism ratherthan repeat
 thiswording orinterpret anychoicechangeasimprovement. SC2remainsdefeatscreen.
+
+### Lab380 — fix an actual campaign Medic control-name gap
+
+376coverageevents consistentlyreport legalability2750 EffectMedicHeal unrepresented.
+AdapterremovesEffectthenrecognizesHealprefix,but MedicHeal doesnotmatch; thus it
+cannotofferactivehealing evenwheneligibleinjuredunitsarepresent. This is anaction
+interfacebug,not a provenexplanationofallsquadlosses. Engineautocastbehaviorwasnot
+measured; do notclaimMedicsneverhealed.
+
+RecognizeMedicHealalongsideHeal in existinggeneralhealingadapter. Retaincurrent
+engine-offeredabilityrequirement,visibleownedtargetinput,biologicalcatalogattribute,
+missinghealthandself-exclusionchecks. Jevstillchoosesability/target; noautohealrule,
+forcegroupingchange,missionroute,orbuildorder. Regressionusesactual2750name and
+injured/fullhealth/hidden/mechanical/selftargets. Nextboundedtrialwillmeasure
+whetherhealingoptionsreachJev andwhetheritselectsthem; victorybenefitunproven.
+Validation:198tests passed. No paidofflineprobe required for this deterministicbug.

@@ -567,6 +567,23 @@ def test_support_controls_use_owned_visible_compatible_targets_and_available_abi
     assert commands==[{'unit_tag':1,'ability_id':4}]
 
 
+def test_campaign_medic_heal_name_exposes_only_damaged_visible_biological_targets():
+    from s2clientprotocol import data_pb2 as data
+    from jev_sc2.view import support_candidates
+    catalog={2750:data.AbilityData(ability_id=2750,friendly_name='Effect MedicHeal',target=3)}
+    types={1:data.UnitTypeData(unit_id=1,attributes=[data.Biological]),
+           2:data.UnitTypeData(unit_id=2,attributes=[data.Mechanical])}
+    medic=raw.Unit(tag=1,unit_type=1,alliance=raw.Self,display_type=raw.Visible,health=30,health_max=60)
+    targets=[raw.Unit(tag=tag,unit_type=kind,alliance=raw.Self,display_type=visibility,
+                      health=health,health_max=100,build_progress=1)
+             for tag,kind,visibility,health in [(2,1,raw.Visible,40),(3,1,raw.Visible,100),
+                                               (4,1,raw.Hidden,40),(5,2,raw.Visible,40)]]
+    choices=support_candidates(medic,{2750},catalog,types,[medic]+targets,{1:'Marine'})
+    assert [c['command'] for c in choices]==[{'unit_tag':1,'ability_id':2750,'target_tag':2}]
+    assert 'restore missing health (40/100)' in choices[0]['description']
+    assert support_candidates(medic,set(),catalog,types,[medic]+targets,{})==[]
+
+
 def test_support_capability_is_visible_before_jev_selects_contribution():
     import player
     class Model:
