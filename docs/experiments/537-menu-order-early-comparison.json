@@ -1,0 +1,65 @@
+{
+  "original": {
+    "run": "20260920T142033.211362Z",
+    "early_choices": [
+      {
+        "loop": 48,
+        "choice": "group_last_known_move_8756723713"
+      },
+      {
+        "loop": 511,
+        "choice": "group_map_attack_move_middle_east"
+      },
+      {
+        "loop": 752,
+        "choice": "group_map_attack_move_middle_east"
+      },
+      {
+        "loop": 1600,
+        "choice": "group_map_attack_move_middle_east"
+      },
+      {
+        "loop": 1927,
+        "choice": "group_map_attack_move_middle_east"
+      },
+      {
+        "loop": 2651,
+        "choice": "group_map_attack_move_middle_east"
+      }
+    ]
+  },
+  "seed534": {
+    "run": "20260920T143343.541199Z",
+    "early_choices": [
+      {
+        "loop": 51,
+        "choice": "group_last_known_move_8756723713"
+      },
+      {
+        "loop": 516,
+        "choice": "group_map_attack_move_middle_east"
+      },
+      {
+        "loop": 753,
+        "choice": "group_map_attack_move_middle_east"
+      },
+      {
+        "loop": 1534,
+        "choice": "group_move_4374134785"
+      },
+      {
+        "loop": 1842,
+        "choice": "group_move_4374134785"
+      },
+      {
+        "loop": 2578,
+        "choice": "group_move_4374134785"
+      },
+      {
+        "loop": 2904,
+        "choice": "continue"
+      }
+    ]
+  },
+  "caveat": "Sequential live runs have different timing and observations. Not an identical-state causal comparison. Seeded choices differ after initial two middle-east attack-moves, but native3:16 supply7/27 and1/4relics show no established survival benefit. Trial536 ongoing."
+}
