@@ -1,0 +1,16 @@
+{
+  "lab": 554,
+  "run": "runs/20260920T154915.350832Z",
+  "start_commit": "7e31bc4",
+  "status": "running",
+  "change": "Unchanged point-order destination distance history; other trial548 settings retained.",
+  "visual_check": {
+    "time": "1:33",
+    "supply": "16/27",
+    "relics": "0/4",
+    "observation": "Combat force near Protoss structures; no terminal result."
+  },
+  "logged_model_calls_at_audit": 31,
+  "nonempty_progress_samples": [],
+  "limitation": "Early instrumentation check, not an outcome or causal improvement claim."
+}
