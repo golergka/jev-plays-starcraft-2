@@ -1,0 +1,16 @@
+{
+  "lab": 559,
+  "run": "runs/20260920T155715.144395Z",
+  "start_commit": "65b33c0",
+  "status": "running",
+  "change": "Disable sample-combat-orders; retain current point-order suffix history and seed534 menus. Other trial554 CLI flags unchanged.",
+  "visual": {
+    "time": "0:45",
+    "supply": "12/27",
+    "observation": "Marines firing on creep; nearby relic remains on ground."
+  },
+  "calls_logged": 19,
+  "combat_order_sample_events": 0,
+  "nonempty_progress_samples": [],
+  "limitation": "Opening observation only; no outcome or comparative improvement established."
+}
