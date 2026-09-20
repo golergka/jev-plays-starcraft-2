@@ -146,3 +146,31 @@ adapter files and their sidecars are still required; they are not distributed
 in this repository. Instrumented endings still require the documented independent
 verification before victory credit. Changing these map paths does not grant
 campaign completion or solve cross-mission unlock persistence.
+
+## Same-process retry verified on Zero Hour (lab296)
+
+After the controller exited and its native defeat screen was independently
+verified, `RequestRestartGame` successfully restarted the adapted Zero Hour map
+without quitting SC2 or moving its window. The API returned `in_game`,
+`need_hard_reset=false`; observation loops reset11308→0 with36owned units, and
+its outcome bank wrote a fresh active marker. This is verified for that installed
+map/build, not all campaigns. Blizzard documents this request as single-player
+reinitialization with the same player setup:
+[protocol definition](https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/sc2api.proto).
+
+Use the existing SC2 client after the prior controller has stopped; do not open a
+second connection during play. Verify the current map with `game_info`, issue
+`client.request('restart_game', sc.RequestRestartGame())`, and inspect the returned
+`need_hard_reset` field. If true or the request fails, do not assume a retry began.
+Verify a reset observation clock, opening units and fresh outcome marker, close
+the probe connection, then attach the controller **without `--map`**. Passing a map
+would create another game rather than continue this restarted one.
+
+```sh
+uv run python -m jev_sc2 --attach --follow-camera --seconds 1800 \
+  --max-calls 4000 --max-age-loops 128 --objective 'Hold out for evacuation.'
+```
+
+The trial probe left a795-loop gap before controller attachment. Treat this as
+restart infrastructure evidence, not a clean policy-from-opening comparison.
+Atomic restart-and-control integration is still needed to eliminate that gap.

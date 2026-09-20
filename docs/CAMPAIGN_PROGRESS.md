@@ -4356,3 +4356,24 @@ reason to deploy this extra context or repeat the same framing hypothesis.
 Next run restores a clean baseline after the mixed290/291experiment, with293's
 truthful failure labels. Do not attribute17:23 survival to naive direct menus
 whose measured cost forced rollback. Budget ledger and all decision rules persist.
+
+### Lab296 —11:46 defeat; same-process API restart succeeds
+
+Run20260920T005843.199902Z/session59477 ended with native DEFEAT11:46,
+evacuation08:23,335minerals.162successful calls/$0.100178778. Saved independent
+UI verification and checkpoint. Delayed NotSupported340 reached Jev explicitly
+unknown, with no invented site. No campaign advancement.
+
+Official single-player RequestRestartGame tested only after controller terminal:
+loop11308→0,36owned units,in_game,need_hard_reset=false,fresh active outcome marker.
+Native window remained open and visibly restarted. Allowlist now admits this
+ordinary lifecycle request; debug/observer controls remain disallowed. Local mock
+verified serialization/response handling before live probe. Evidence in ignored
+runs/restart-probe-296.json; documented exact supported scope/procedure.
+
+First attach command mistakenly supplied non-CLI --expected-map and exited2
+before connecting; corrected --attach without --map. Current session78110,
+run20260920T010853.106092Z ticks795/1339 accepted27/29commands. Gap before control
+means this is an infrastructure continuation, not a clean full-opening policy
+comparison. Same hash-checked map name restores ending monitor on attach.
+Next improve atomic restart-and-control to remove manual connection gap.

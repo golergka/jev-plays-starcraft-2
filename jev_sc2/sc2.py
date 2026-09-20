@@ -57,7 +57,7 @@ class SC2:
                 await asyncio.sleep(0.5)
 
     async def request(self, name, body):
-        allowed = {'ping', 'create_game', 'join_game', 'game_info', 'data', 'observation',
+        allowed = {'ping', 'create_game', 'join_game', 'restart_game', 'game_info', 'data', 'observation',
                    'query', 'action', 'save_replay', 'available_maps', 'leave_game', 'quit',
                    'quick_save', 'quick_load'}
         if name not in allowed:
