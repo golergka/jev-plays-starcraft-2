@@ -1,4 +1,4 @@
-"""Offline paired test of a global strategy hint on contribution decisions."""
+"""Offline paired test of a global strategy hint on a selected question."""
 import asyncio
 import copy
 import json
@@ -13,18 +13,20 @@ async def main():
     load_dotenv(Path(__file__).resolve().parents[1]/'.env')
     source=Path(sys.argv[1]); output=Path(sys.argv[2]); key=sys.argv[3]
     rows=[json.loads(line) for line in source.read_text().splitlines()]
-    samples=[r for r in rows if r['event']=='jev' and key in r['questions'] and r['state'].get('strategy_chosen_by_jev')][:3]
+    minimum_loop=int(sys.argv[4]) if len(sys.argv)>4 else 0
+    samples=[r for r in rows if r['event']=='jev' and key in r['questions'] and r['state'].get('strategy_chosen_by_jev') and r['state'].get('game_loop',0)>=minimum_loop][:3]
+    if len(samples)!=3: raise ValueError('Need three eligible recorded requests')
     jev=Jev(lambda *args,**kwargs:None,'strategy-hint-probe',max_calls=6)
     pairs=[]
     for i,row in enumerate(samples):
         variants=[('with_hint',row['state']),('without_hint',{k:v for k,v in row['state'].items() if k!='strategy_chosen_by_jev'})]
         if i%2: variants.reverse()
-        result={'sample':i,'recorded_strategy':row['state']['strategy_chosen_by_jev']}
+        result={'sample':i,'loop':row['state'].get('game_loop'),'recorded_strategy':row['state']['strategy_chosen_by_jev']}
         for name,state in variants:
             result[name]=(await jev.ask(state,{key:row['questions'][key]}))[key]
         pairs.append(result)
     payload={'source':str(source),'question':key,'pairs':pairs,'calls':jev.calls,'cost':jev.cost,
-             'method':'Remove only strategy_chosen_by_jev from three recorded states. Same contribution question, alternating pair order. No game commands.'}
+             'method':'Remove only strategy_chosen_by_jev from three recorded states. Same selected question, alternating pair order. No game commands.'}
     output.write_text(json.dumps(payload,indent=2)+'\n');print(json.dumps(payload,indent=2))
 
 
