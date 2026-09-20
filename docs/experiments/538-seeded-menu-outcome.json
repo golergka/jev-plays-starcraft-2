@@ -1,0 +1,47 @@
+{
+  "trial": 536,
+  "seed": "534",
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T143343.541199Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789904882",
+      "loop": 19132
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 287,
+    "cost": 0.1707732599999999,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T143343.541199Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "19:55",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at17:53"
+    }
+  },
+  "errors": [
+    {
+      "time": 1789915606.04948,
+      "event": "engine_action_error",
+      "loop": 17304,
+      "failures": [
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4337434687
+          ],
+          "result": "NotEnoughFood"
+        }
+      ]
+    }
+  ],
+  "conclusion": "Seeded menus changed live orders but did not complete the mission or prevent force attrition. Longer survival than trial531 is not established causal benefit: states/timing diverged. Do not search permutation seeds for a desired tactical answer."
+}
