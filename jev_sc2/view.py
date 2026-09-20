@@ -249,6 +249,7 @@ async def make_view(client, observation, data, info, objective):
             product = next((u for u in data.units if label in (f'Train {u.name}',f'Build {u.name}')),None)
         return product
     potential = {}
+    potential_type_ids = set()
     for offered in possible.abilities:
         for ability in offered.abilities:
             upgrade = upgrades.get(ability.ability_id)
@@ -260,6 +261,7 @@ async def make_view(client, observation, data, info, objective):
             if product is not None and (label.startswith('Train ') or
                     (label.startswith('Build ') and (catalog[ability.ability_id].target in (1,2,5) or
                         (catalog[ability.ability_id].target in (3,4) and product.has_vespene)))):
+                potential_type_ids.add(product.unit_id)
                 potential[product.name] = {'type':product.name,'minerals':product.mineral_cost,
                     'vespene':product.vespene_cost,'supply':product.food_required,
                     'supply_provided':product.food_provided,'allows_vespene_harvesting':product.has_vespene,
@@ -290,7 +292,8 @@ async def make_view(client, observation, data, info, objective):
                         'source':'https://news.blizzard.com/en-us/article/5838581/game-guide-terran-offensive-bunkering',
                         'scope':'General unit mechanic; no assumed campaign upgrades or recommended action.',
                     }} if names.get(kind)=='Bunker' else {}),
-                } for kind in {u.unit_type for u in own+visible+snapshots} if kind in unit_catalog},
+                } for kind in ({u.unit_type for u in own+visible+snapshots} | potential_type_ids)
+                  if kind in unit_catalog},
             'last_known_entities': [
                 {'type':names.get(u.unit_type,str(u.unit_type)),
                  'alliance':raw.Alliance.Name(u.alliance),'position':[u.pos.x,u.pos.y],

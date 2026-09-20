@@ -438,10 +438,13 @@ def test_unaffordable_project_is_information_not_an_executable_command():
     data=sc.ResponseData()
     data.abilities.add(ability_id=321,friendly_name='Build Barracks',target=2)
     data.units.add(unit_id=21,name='Barracks',ability_id=321,mineral_cost=150)
+    data.units.add(unit_id=999,name='UnobservedEnemyType',mineral_cost=100)
     view=asyncio.run(make_view(Client(),obs,data,sc.ResponseGameInfo(),'test'))
     assert flags==[False,True]
     assert view['potential_projects'][0]['type']=='Barracks'
     assert view['potential_projects'][0]['minerals']==150
+    assert view['unit_type_facts']['Barracks']['mineral_cost']==150
+    assert 'UnobservedEnemyType' not in view['unit_type_facts']
     assert view['self'][0]['candidates']==[]
 
 

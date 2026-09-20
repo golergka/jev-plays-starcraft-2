@@ -5718,3 +5718,21 @@ negative full-outcomeevidence for roleargmax alone;do notpresentas a winningfix.
 Opt-in flag remains available,defaultsampledunchanged. No livepolicyedits orroot
 orders. LocalUI/result/checkpoint,artifact390andreportupdated;fiveSmashdefeats,
 onlyfirstthreecampaignmissionsverifiedwon. No unchangedretry started.
+
+### Lab391 — preserve catalog facts for currently offered production types
+
+390purchaseaudit:bothEngineeringBaychoiceswere sampled below topchoice (saveat2730,
+SCVat4655). This doesnotprove topinvestmentwouldwin:many topchoicesweresave, and
+priorrank/binary/Score experimentsalreadynegative. No samplingchange made.
+
+Found deterministiccontextgap instead:five390investmentrequests offerMarinewhile
+unit_type_facts hasnoMarineentry. Catalogfacts were projected only forcurrently
+observed owned/visible/snapshottypes. Losingthelastunit thusremovedweaponfacts
+from replacement decisions,despite thecatalog andownproduceroptionbeingavailable.
+
+Include types resolved from ownunit production abilities in the potentialproject
+query, alongside observedtypes. No enemyentityexposure,fullcatalogdump,forced
+purchase orassumedunlock. Unaffordablepotentialprojectfactsremaininformationonly;
+existinglegalcommandchecksunchanged. Regressionchecks absent-owned offeredtype
+included andunobservedunofferedcatalogtypeexcluded.201tests pass. No paidprobe or
+newtrial thisturn; gameplaybenefitunproven, but offeredreplacementfacts nowavailable.
