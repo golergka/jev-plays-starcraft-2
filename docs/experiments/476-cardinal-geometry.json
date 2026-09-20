@@ -1,0 +1,346 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "eligible": 11,
+  "pairs": [
+    {
+      "loop": 5352,
+      "geometry": {
+        "group_attack_move_north": [
+          {
+            "tag": 4362862615,
+            "before": 29.9,
+            "endpoint": 24.9
+          },
+          {
+            "tag": 4325376004,
+            "before": 4.1,
+            "endpoint": 4.2
+          }
+        ],
+        "group_attack_move_south": [
+          {
+            "tag": 4362862615,
+            "before": 29.9,
+            "endpoint": 35.2
+          },
+          {
+            "tag": 4325376004,
+            "before": 4.1,
+            "endpoint": 7.6
+          }
+        ],
+        "group_attack_move_east": [
+          {
+            "tag": 4362862615,
+            "before": 29.9,
+            "endpoint": 33.3
+          },
+          {
+            "tag": 4325376004,
+            "before": 4.1,
+            "endpoint": 10.1
+          }
+        ],
+        "group_attack_move_west": [
+          {
+            "tag": 4362862615,
+            "before": 29.9,
+            "endpoint": 27.4
+          },
+          {
+            "tag": 4325376004,
+            "before": 4.1,
+            "endpoint": 1.7
+          }
+        ]
+      },
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "group_map_attack_move_middle_east",
+            "type": "choice",
+            "confidence": 0.5,
+            "probabilities": {
+              "group_map_attack_move_middle_west": 0.01,
+              "group_map_attack_move_middle_center": 0.04,
+              "group_map_attack_move_north_center": 0.0,
+              "group_last_known_attack_move_8760786975": 0.03,
+              "group_map_attack_move_north_west": 0.0,
+              "group_map_attack_move_middle_east": 0.52,
+              "group_last_known_attack_move_8696954901": 0.0,
+              "group_map_attack_move_south_east": 0.01,
+              "group_last_known_attack_move_8688697346": 0.0,
+              "group_attack_move_north": 0.08,
+              "group_attack_move_west": 0.07,
+              "group_attack_move_east": 0.2,
+              "group_map_attack_move_south_west": 0.01,
+              "group_map_attack_move_north_east": 0.01,
+              "group_map_attack_move_south_center": 0.01,
+              "group_last_known_attack_move_8728543245": 0.0,
+              "group_attack_move_south": 0.01
+            }
+          },
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        },
+        "local": {
+          "answer": {
+            "choice": "group_map_attack_move_middle_east",
+            "type": "choice",
+            "confidence": 0.41,
+            "probabilities": {
+              "group_map_attack_move_south_center": 0.0,
+              "group_attack_move_west": 0.1,
+              "group_map_attack_move_north_west": 0.0,
+              "group_attack_move_north": 0.08,
+              "group_map_attack_move_south_west": 0.0,
+              "group_last_known_attack_move_8760786975": 0.04,
+              "group_last_known_attack_move_8728543245": 0.0,
+              "group_map_attack_move_middle_center": 0.03,
+              "group_last_known_attack_move_8688697346": 0.0,
+              "group_map_attack_move_south_east": 0.01,
+              "group_attack_move_east": 0.25,
+              "group_attack_move_south": 0.03,
+              "group_map_attack_move_north_east": 0.01,
+              "group_map_attack_move_middle_west": 0.0,
+              "group_map_attack_move_middle_east": 0.45,
+              "group_last_known_attack_move_8696954901": 0.0,
+              "group_map_attack_move_north_center": 0.0
+            }
+          },
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        }
+      }
+    },
+    {
+      "loop": 12585,
+      "geometry": {
+        "group_north": [
+          {
+            "tag": 4367319085,
+            "before": 4.1,
+            "endpoint": 4.3
+          },
+          {
+            "tag": 4366008374,
+            "before": 30.1,
+            "endpoint": 25.0
+          }
+        ],
+        "group_south": [
+          {
+            "tag": 4367319085,
+            "before": 4.1,
+            "endpoint": 7.5
+          },
+          {
+            "tag": 4366008374,
+            "before": 30.1,
+            "endpoint": 35.4
+          }
+        ],
+        "group_east": [
+          {
+            "tag": 4367319085,
+            "before": 4.1,
+            "endpoint": 10.1
+          },
+          {
+            "tag": 4366008374,
+            "before": 30.1,
+            "endpoint": 33.5
+          }
+        ],
+        "group_west": [
+          {
+            "tag": 4367319085,
+            "before": 4.1,
+            "endpoint": 1.7
+          },
+          {
+            "tag": 4366008374,
+            "before": 30.1,
+            "endpoint": 27.6
+          }
+        ]
+      },
+      "answers": {
+        "local": {
+          "answer": {
+            "choice": "group_map_move_middle_east",
+            "type": "choice",
+            "confidence": 0.5,
+            "probabilities": {
+              "group_east": 0.14,
+              "group_map_move_south_center": 0.01,
+              "group_last_known_move_8760786975": 0.06,
+              "group_south": 0.01,
+              "group_map_move_middle_center": 0.02,
+              "group_map_move_north_center": 0.0,
+              "group_map_move_south_east": 0.01,
+              "group_last_known_move_8763670641": 0.0,
+              "group_last_known_move_8733327456": 0.0,
+              "group_last_known_move_8729526356": 0.0,
+              "group_last_known_move_8613789846": 0.0,
+              "group_map_move_north_east": 0.01,
+              "group_west": 0.05,
+              "group_north": 0.12,
+              "group_map_move_middle_east": 0.53,
+              "group_last_known_move_8737587367": 0.01,
+              "group_last_known_move_8729133138": 0.0,
+              "group_last_known_move_8688304186": 0.0,
+              "group_map_move_middle_west": 0.01,
+              "group_map_move_north_west": 0.0,
+              "group_map_move_south_west": 0.02
+            }
+          },
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 107.3; actual engine route and travel distance unknown"
+        },
+        "baseline": {
+          "answer": {
+            "choice": "group_map_move_middle_east",
+            "type": "choice",
+            "confidence": 0.72,
+            "probabilities": {
+              "group_last_known_move_8763670641": 0.0,
+              "group_map_move_south_center": 0.0,
+              "group_west": 0.08,
+              "group_last_known_move_8733327456": 0.0,
+              "group_last_known_move_8613789846": 0.0,
+              "group_north": 0.04,
+              "group_map_move_north_center": 0.0,
+              "group_map_move_north_west": 0.0,
+              "group_map_move_south_east": 0.01,
+              "group_map_move_middle_west": 0.01,
+              "group_south": 0.01,
+              "group_map_move_middle_east": 0.74,
+              "group_last_known_move_8688304186": 0.0,
+              "group_last_known_move_8760786975": 0.04,
+              "group_map_move_south_west": 0.01,
+              "group_map_move_middle_center": 0.01,
+              "group_map_move_north_east": 0.01,
+              "group_last_known_move_8729526356": 0.0,
+              "group_last_known_move_8729133138": 0.0,
+              "group_east": 0.04,
+              "group_last_known_move_8737587367": 0.0
+            }
+          },
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 107.3; actual engine route and travel distance unknown"
+        }
+      }
+    },
+    {
+      "loop": 20035,
+      "geometry": {
+        "group_north": [
+          {
+            "tag": 4323803139,
+            "before": 3.3,
+            "endpoint": 5.3
+          }
+        ],
+        "group_south": [
+          {
+            "tag": 4323803139,
+            "before": 3.3,
+            "endpoint": 7.5
+          }
+        ],
+        "group_east": [
+          {
+            "tag": 4323803139,
+            "before": 3.3,
+            "endpoint": 9.2
+          }
+        ],
+        "group_west": [
+          {
+            "tag": 4323803139,
+            "before": 3.3,
+            "endpoint": 2.3
+          }
+        ]
+      },
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "group_last_known_move_8760786975",
+            "type": "choice",
+            "confidence": 0.49,
+            "probabilities": {
+              "group_move_4297850881": 0.02,
+              "group_last_known_move_8729526356": 0.0,
+              "group_south": 0.01,
+              "group_last_known_move_8729133138": 0.0,
+              "group_last_known_move_8613789846": 0.0,
+              "group_last_known_move_8763670641": 0.0,
+              "group_map_move_north_center": 0.0,
+              "group_last_known_move_8733327456": 0.0,
+              "group_map_move_middle_west": 0.0,
+              "group_map_move_middle_center": 0.01,
+              "group_move_4373610497": 0.01,
+              "group_map_move_south_center": 0.06999999999999999,
+              "group_last_known_move_8757903510": 0.0,
+              "group_move_4298637313": 0.0,
+              "group_last_known_move_8737587367": 0.0,
+              "group_west": 0.09,
+              "group_map_move_south_east": 0.01,
+              "group_north": 0.02,
+              "group_east": 0.01,
+              "group_move_4298899457": 0.0,
+              "group_last_known_move_8762097873": 0.0,
+              "group_map_move_north_east": 0.01,
+              "group_last_known_move_8688304186": 0.0,
+              "group_map_move_south_west": 0.0,
+              "group_move_4298113025": 0.02,
+              "group_map_move_middle_east": 0.2,
+              "group_map_move_north_west": 0.0,
+              "group_last_known_move_8760786975": 0.52
+            }
+          },
+          "description": "move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 20.5 to 20.5; actual engine route and travel distance unknown"
+        },
+        "local": {
+          "answer": {
+            "choice": "group_last_known_move_8760786975",
+            "type": "choice",
+            "confidence": 0.4,
+            "probabilities": {
+              "group_last_known_move_8613789846": 0.0,
+              "group_south": 0.02,
+              "group_east": 0.05,
+              "group_move_4373610497": 0.02,
+              "group_last_known_move_8762097873": 0.0,
+              "group_last_known_move_8737587367": 0.0,
+              "group_last_known_move_8733327456": 0.01,
+              "group_north": 0.06,
+              "group_map_move_north_center": 0.0,
+              "group_last_known_move_8760786975": 0.43,
+              "group_map_move_south_east": 0.01,
+              "group_west": 0.09,
+              "group_map_move_south_west": 0.0,
+              "group_last_known_move_8729526356": 0.0,
+              "group_map_move_middle_center": 0.01,
+              "group_last_known_move_8763670641": 0.0,
+              "group_last_known_move_8757903510": 0.0,
+              "group_move_4297850881": 0.02,
+              "group_map_move_south_center": 0.03,
+              "group_last_known_move_8729133138": 0.0,
+              "group_move_4298637313": 0.0,
+              "group_move_4298113025": 0.02,
+              "group_map_move_middle_east": 0.2,
+              "group_move_4298899457": 0.01,
+              "group_map_move_north_east": 0.01,
+              "group_last_known_move_8688304186": 0.0,
+              "group_map_move_north_west": 0.0,
+              "group_map_move_middle_west": 0.01
+            }
+          },
+          "description": "move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 20.5 to 20.5; actual engine route and travel distance unknown"
+        }
+      }
+    }
+  ],
+  "method": "First/middle/last concrete MobileCombat menus with at most two members, nearby visible enemies and map destinations. Same full state and every option; append per-member nearest-visible-enemy before/endpoint distances for cardinal options only. Alternate arms; no game commands, forced retreat or action filtering.",
+  "calls": 6,
+  "cost_usd": 0.004736928
+}

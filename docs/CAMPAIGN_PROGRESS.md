@@ -6951,3 +6951,18 @@ representation difference, not demonstrated causal failure. Next probe should
 compute equivalent current-visible-enemy geometry from actual cohort command
 points and observations, respecting mixed-unit targets and not treating static
 endpoint distance as path safety. No paidcalls, liveorders or policy change.
+
+### Lab476 — cardinal enemy-distance context leaves destinations unchanged
+
+Six offline calls $0.004736928 on same474/475states5352/12585/20035. Added
+per-member nearest-current-visible-enemy before/endpoint distance to each offered
+six-unit cardinal option. Points reconstructed as own roundedposition plus known
+cardinaloffset, matching view.py generation (offered options already inbounds).
+Explicit stationaryenemy/roundedcoordinate/possiblydifferentnearestenemy caveat;
+not weapon assessment, route safety or proof enemy can attack. All original
+options/state retained, alternate arms. Baseline and enriched choices identical:
+middle-eastattackmove/middle-eastMove/last-knownrelicMove. Notdeployed. This
+factual representation gap is not demonstrated cause of poor movement. Do not
+repeat it as an untested fix. No gamecommands or new liveattempt. Future work
+needs a different decision decomposition or richer route affordances, grounded
+in available API observations rather than another generic threat reminder.
