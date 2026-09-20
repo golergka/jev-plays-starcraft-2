@@ -1,0 +1,10 @@
+{
+  "source": "runs/20260920T042029.397484Z/events.jsonl",
+  "partial_through_time": 1789878513.601451,
+  "calls": 163,
+  "cost_usd": 0.09563967,
+  "marine_only_requests": 45,
+  "marine_only_cost_usd": 0.030827454,
+  "last_tick_loop": 10418,
+  "scope": "Partial live run. Whole-request costs; Marine-only requests include tournament leaves and finalists. No causal quality claim or full-menu savings claim. Benchmark prepared, not paid/run."
+}

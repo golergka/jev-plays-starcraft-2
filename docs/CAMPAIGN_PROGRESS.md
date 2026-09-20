@@ -5298,3 +5298,27 @@ same-map priorattemptloaded. Native0:27showsactivegameandMarinesgatherednearabun
 Artifact365recordspartialdelivery/cost. No outcomeclaim; startup timing andhistory
 alsochangedrelative358,so anyfuturequalitydifferencecannotisolateidentitycontext.
 Existingbudget,fog,legal-actionchecks,andJevauthorityunchanged. No root tactics.
+
+### Lab366 — measure combat-menu overhead before buying more decisions
+
+Trial365 remains live and unchanged. Native views at 6:37 and 7:09 showed enemies
+attacking production and the CommandCenter while the Marine group remained near
+a distant bunker. At 9:02 Marines were fighting at the bridge. The loop6961
+request contains visible enemies near the damaged CommandCenter; its accepted
+Marine orders are Move to the bunker. This is not simply missing enemy visibility.
+It does not establish why Jev selected those orders or a correct alternative.
+
+Partial artifact366: 163 successful calls cost $0.095639670; 45 Marine-only
+requests cost $0.030827454 (about32%). Earlier prefix was about40%; share changes
+as the run progresses. Recent cycles planned about29seconds between decisions.
+Lab325 showed full menus can succeed but did not compare their cost against the
+complete tournament. Prepared probe_order_menu_cost.py to compare the same full
+menu through one request versus the actual three-request production tournament,
+first/middle/last samples, alternating arm order, 12-call maximum, shared governor.
+Default invocation only validates inputs; --run is required for paid measurement.
+
+Dry run finds15 reconstructable menus. A local fake-model check verifies disjoint
+leaf coverage, complete original-option union, legal final answers and exactly
+three requests for all15. No paid probe, live policy change, savings assertion or
+mission outcome claim. Next: finish current trial, then measure paired cost before
+considering removal of redundant tournament calls.
