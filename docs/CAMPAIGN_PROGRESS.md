@@ -4219,3 +4219,15 @@ This tests executed duration, distinct from failed lab091 horizon wording probe.
 140tests pass, including retention over487loops, expiry, strategy-change/rewind
 invalidation and unchanged earlier short deadlines. Current trial was held stable
 until its terminal result; next fresh attempt uses the longer duration.
+
+### Lab287 — longer role retention exercised live
+
+Active286run20260920T002737.144962Z/session63289: atloop521,ten purpose choices
+but only three new contribution reviews. Seven roles retained fromloop5:
+two SCV positioning,one SCV income,two SCV continue,MissileTurret continue,
+Bunker other. Fresh concrete choices still issued; positioning SCVs selected
+friendly-unit joins, income worker continued. This proves retention across516loops,
+not improved allocation: bad roles can persist too. Native0:57 showed the force
+around a highlighted empty bunker; do not infer all bunker cargo from that label.
+At six completed ticks46successful calls cost$0.026615946; no delayed errors yet.
+No further policy change; await outcome before judging this duration experiment.
