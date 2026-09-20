@@ -1,0 +1,32 @@
+{
+  "lab": 608,
+  "trial": 604,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T181722.374419Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-dialogue-lab586.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome759ebc44b7f14ad6ab4f4592d12c09af.SC2Bank",
+      "engine_time": "1789917816",
+      "loop": 8236
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 104,
+    "cost": 0.07074765599999998,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T181722.374419Z/game.SC2Replay",
+    "ui_verification": {
+      "result": "defeat",
+      "outcome": "DEFEAT",
+      "native_time": "8:34",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at6:32"
+    }
+  },
+  "interpretation": "Preserved engagements observed live, but early army loss and eventual structure loss persist. Menu factoring606 reloaded late; no compact distance-bearing request observed before terminal outcome. Opening fallback605 increased requests. No mission benefit established."
+}
