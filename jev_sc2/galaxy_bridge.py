@@ -12,6 +12,10 @@ OBJECTIVE_CALLS = frozenset({
     'ObjectiveSetState', 'ObjectiveGetName', 'ObjectiveSetName',
     'ObjectiveDestroy', 'ObjectiveDestroyAll',
 })
+VISIBLE_TIMER_CALLS = frozenset({
+    'TimerWindowCreate', 'TimerWindowDestroy', 'TimerWindowSetTimer',
+    'TimerWindowSetTitle', 'TimerWindowSetStyle',
+})
 TOKEN = re.compile(
     r'(?P<string>"(?:\\.|[^"\\])*")|(?P<comment>//[^\r\n]*|/\*[\s\S]*?\*/)|'
     r'(?P<identifier>[A-Za-z_][A-Za-z_0-9]*)|(?P<space>\s+)|(?P<other>.)'

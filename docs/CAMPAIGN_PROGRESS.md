@@ -4800,3 +4800,16 @@ serialization. Documented a visibility-filtered wrapper path and acceptance chec
 in VISIBLE_MISSION_CONTEXT.md. No hidden timer extraction, invented loop conversion,
 paid calls, or live game mutation. Adapter implementation/runtime equivalence remain
 unverified; custom dialog timers are explicitly outside initial proposed coverage.
+
+### Lab329 — experimental visible-timer wrapper implementation
+
+Added visible_timer_bridge.galaxy,not installed in campaign maps. Native forwarding
+wrappers track create/destroy/timer replacement/title/style in a linked registry
+without assuming contiguous IDs. Export queries native per-player visibility and
+serializes only visible titles and elapsed/remaining values; old exported sections
+are removed. No hidden timer values exported. Added explicit rewrite allowlist;
+checked native declarations/comments/string preservation and wrapper coverage.
+154Python tests pass. Galaxy compilation/runtime not tested yet; no claims of
+working timer context. Unique bank substitution,launch freshness,format/rounding
+validation,and fixture integration remain required before feeding this to Jev.
+No paid calls or game mutation. Existing player remains unchanged.

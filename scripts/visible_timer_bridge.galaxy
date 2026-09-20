@@ -1,0 +1,105 @@
+// Experimental, not installed in campaign maps. Native behavior is forwarded.
+// Initialize before mission timer windows are created; call Export periodically.
+// TIMER_BANK_NAME must be replaced by the fixture/builder with a unique name.
+bank JevVisibleTimerBank;
+int JevTimerHead = 0;
+int JevTimerExportCount = 0;
+int JevTimerPlayer = 1;
+
+string JevTimerKey (int window) {
+    return "JevVisibleTimer." + IntToString(window);
+}
+
+int JevTimerWindowCreate (timer value, text title, bool show, bool elapsed) {
+    int window = TimerWindowCreate(value, title, show, elapsed);
+    string key = JevTimerKey(window);
+    if (window == c_timerWindowNone) { return window; }
+    DataTableSetInt(true, key + ".next", JevTimerHead);
+    DataTableSetTimer(true, key + ".timer", value);
+    DataTableSetText(true, key + ".title", title);
+    DataTableSetBool(true, key + ".elapsed", elapsed);
+    JevTimerHead = window;
+    return window;
+}
+
+void JevTimerWindowDestroy (int window) {
+    int current = JevTimerHead;
+    int previous = 0;
+    string key = JevTimerKey(window);
+    while (current != 0 && current != window) {
+        previous = current;
+        current = DataTableGetInt(true, JevTimerKey(current) + ".next");
+    }
+    if (current == window && window != 0) {
+        if (previous == 0) { JevTimerHead = DataTableGetInt(true, key + ".next"); }
+        else { DataTableSetInt(true, JevTimerKey(previous) + ".next", DataTableGetInt(true, key + ".next")); }
+        DataTableValueRemove(true, key + ".next");
+        DataTableValueRemove(true, key + ".timer");
+        DataTableValueRemove(true, key + ".title");
+        DataTableValueRemove(true, key + ".elapsed");
+    }
+    TimerWindowDestroy(window);
+}
+
+void JevTimerWindowSetTimer (int window, timer value) {
+    TimerWindowSetTimer(window, value);
+    if (DataTableValueExists(true, JevTimerKey(window) + ".next")) {
+        DataTableSetTimer(true, JevTimerKey(window) + ".timer", value);
+    }
+}
+
+void JevTimerWindowSetTitle (int window, text title) {
+    TimerWindowSetTitle(window, title);
+    if (DataTableValueExists(true, JevTimerKey(window) + ".next")) {
+        DataTableSetText(true, JevTimerKey(window) + ".title", title);
+    }
+}
+
+void JevTimerWindowSetStyle (int window, int style, bool elapsed) {
+    TimerWindowSetStyle(window, style, elapsed);
+    if (DataTableValueExists(true, JevTimerKey(window) + ".next")) {
+        DataTableSetBool(true, JevTimerKey(window) + ".elapsed", elapsed);
+    }
+}
+
+void JevVisibleTimerExport () {
+    int index = 0;
+    int current = JevTimerHead;
+    string key;
+    string section;
+    timer value;
+    bool elapsed;
+    if (JevVisibleTimerBank == null) { return; }
+    while (index < JevTimerExportCount) {
+        BankSectionRemove(JevVisibleTimerBank, "Timer" + IntToString(index));
+        index += 1;
+    }
+    index = 0;
+    while (current != 0) {
+        key = JevTimerKey(current);
+        // Never serialize hidden window titles or timer values.
+        if (TimerWindowVisible(current, JevTimerPlayer)) {
+            value = DataTableGetTimer(true, key + ".timer");
+            elapsed = DataTableGetBool(true, key + ".elapsed");
+            section = "Timer" + IntToString(index);
+            BankValueSetFromInt(JevVisibleTimerBank, section, "window", current);
+            BankValueSetFromText(JevVisibleTimerBank, section, "title", DataTableGetText(true, key + ".title"));
+            BankValueSetFromFlag(JevVisibleTimerBank, section, "elapsed", elapsed);
+            if (elapsed) { BankValueSetFromFixed(JevVisibleTimerBank, section, "value", TimerGetElapsed(value)); }
+            else { BankValueSetFromFixed(JevVisibleTimerBank, section, "value", TimerGetRemaining(value)); }
+            index += 1;
+        }
+        current = DataTableGetInt(true, key + ".next");
+    }
+    JevTimerExportCount = index;
+    BankValueSetFromInt(JevVisibleTimerBank, "Context", "count", index);
+    BankValueSetFromInt(JevVisibleTimerBank, "Context", "engine_time", CurrentSynchronousGameTimeGet());
+    BankSave(JevVisibleTimerBank);
+}
+
+void JevVisibleTimerInit (int player) {
+    JevTimerPlayer = player;
+    JevVisibleTimerBank = BankLoad("TIMER_BANK_NAME", player);
+    JevTimerExportCount = BankValueGetAsInt(JevVisibleTimerBank, "Context", "count");
+    JevVisibleTimerExport();
+}
