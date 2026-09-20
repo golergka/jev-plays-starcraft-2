@@ -1,5 +1,6 @@
 """uv run python -m jev_sc2 --map /absolute/path/to/mission.SC2Map"""
 from .bookmark import BookmarkRecovery
+from .order_preservation import preserve_current_orders
 from .episodes import previous_attempts
 from .review_events import ReviewEvents, early_review_allowed, next_review_deadline
 import argparse
@@ -434,12 +435,20 @@ async def run(args):
                 break
             age = fresh.observation.game_loop-view['loop']
             actions = validate_commands(commands,view,fresh) if age <= args.max_age_loops else []
+            maintained = []
+            if getattr(args, 'preserve_current_orders', False):
+                actions, maintained = preserve_current_orders(actions, fresh)
+                if maintained:
+                    log('orders_maintained', loop=view['loop'], orders=maintained,
+                        reason='Exact sole current Move/Attack order retained in fresh observation')
             results = []
             if actions:
                 response = await client.request('action',sc.RequestAction(actions=actions))
                 results = list(response.result)
             acknowledge_initial(memory,actions,results,view['loop'],log)
             feedback = action_feedback(actions,results,view['loop'],len(commands),age,args.max_age_loops)
+            if maintained:
+                feedback['maintained_current_orders'] = maintained
             history = memory.setdefault('action_feedback',[])
             history.append(feedback)
             memory['action_feedback'] = history[-8:]
@@ -448,6 +457,7 @@ async def run(args):
                        for u in view['self']],
                 score=fresh.observation.score.score,decision_age_loops=age,
                 commands=commands,submitted=len(actions),action_results=results,
+                maintained_current_orders=maintained,
                 submitted_actions=submitted_action_records(actions,results),
                 action_errors=[str(e) for e in fresh.action_errors],
                 latency_ms=round((time.monotonic()-decision_start)*1000))
@@ -484,6 +494,7 @@ async def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--purchase-dependencies',action='store_true',help='Ask Jev to assess purchase dependencies before each investment review')
+    parser.add_argument('--preserve-current-orders',action='store_true',help='Retain exactly matching sole active Move/Attack orders with explicit logging')
     parser.add_argument('--investment-top-choice',action='store_true',help='Use Jev returned purchase choice without probability sampling')
     parser.add_argument('--stalled-commitment-review',action='store_true',help='Let Jev reconsider stalled exclusive production reservations with explicit resource facts')
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')
