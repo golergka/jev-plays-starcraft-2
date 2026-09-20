@@ -1,0 +1,43 @@
+{
+  "lab": 604,
+  "run": "runs/20260920T181722.374419Z",
+  "start_commit": "d2c19a2",
+  "status": "running",
+  "configuration": "Same as599; updated startup order_preservation helper from602. Diagnosis off; spending cap unchanged.",
+  "native_visual": {
+    "time": "0:45",
+    "supply": "12/27",
+    "observation": "Army fighting on creep; Command Center selected health1500/1500."
+  },
+  "preservation_records": [
+    {
+      "loop": 733,
+      "maintained": [
+        {
+          "unit_tag": 4324065281,
+          "ability_id": 23,
+          "observed_loop": 781,
+          "preserved_engagement": true,
+          "coordinate_tolerance": 0.0001,
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "unit_tag": 4362862593,
+          "ability_id": 23,
+          "observed_loop": 781,
+          "preserved_engagement": true,
+          "coordinate_tolerance": 0.0001,
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "submitted": 3
+    }
+  ],
+  "interpretation": "Live logs confirm repeated attack-move commands preserve existing engagements. This verifies execution only; no survival or outcome benefit established."
+}
