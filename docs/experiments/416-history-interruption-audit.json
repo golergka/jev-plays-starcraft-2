@@ -1,0 +1,326 @@
+{
+  "method": "Offline actual history projection, latest five verified same-map attempts. Production limit remains three. No paid calls.",
+  "history": {
+    "attempts": [
+      {
+        "result": "defeat",
+        "observed_loop_span": [
+          46,
+          13592
+        ],
+        "controller_interrupted": false,
+        "controller_stop_status": null,
+        "peak_observed_owned_counts": {
+          "SCV": 16,
+          "SupplyDepot": 4,
+          "Marine": 3,
+          "Barracks": 1,
+          "Refinery": 2,
+          "Medic": 1,
+          "CommandCenter": 1,
+          "BarracksTechLab": 1,
+          "SupplyDepotLowered": 3,
+          "SpecialOpsDropship": 1,
+          "Marauder": 4,
+          "EngineeringBay": 1
+        },
+        "strategy_choice_counts": {
+          "pursue_objective": 20,
+          "protect": 5
+        },
+        "contribution_choice_counts": {
+          "income": 99,
+          "other": 85,
+          "continue": 43,
+          "positioning": 35
+        },
+        "purchase_proposal_counts": {
+          "SupplyDepot": 3,
+          "Marauder": 2,
+          "SCV": 10,
+          "Marine": 2,
+          "Refinery": 2,
+          "Barracks": 1,
+          "EngineeringBay": 1,
+          "Research TerranInfantryArmorsLevel1": 1,
+          "BarracksTechLab": 2
+        },
+        "investment_choice_counts": {
+          "purchase": 24,
+          "save": 8,
+          "save_for_project": 2
+        },
+        "background_training_attempt_counts": {
+          "SCV": 4
+        },
+        "background_training_accepted_counts": {
+          "SCV": 4
+        },
+        "peak_observed_minerals": 913,
+        "last_observed_resources": {
+          "minerals": 0,
+          "vespene": 208,
+          "estimated_minerals_per_minute": 0.0,
+          "food_used": 8,
+          "food_cap": 0
+        },
+        "decision_errors": 0
+      },
+      {
+        "result": "defeat",
+        "observed_loop_span": [
+          47,
+          14228
+        ],
+        "controller_interrupted": false,
+        "controller_stop_status": null,
+        "peak_observed_owned_counts": {
+          "SCV": 12,
+          "Refinery": 1,
+          "Medic": 1,
+          "CommandCenter": 1,
+          "Barracks": 2,
+          "SupplyDepot": 3,
+          "Marine": 3,
+          "BarracksTechLab": 1,
+          "SupplyDepotLowered": 2,
+          "SpecialOpsDropship": 1,
+          "Marauder": 4,
+          "Bunker": 1
+        },
+        "strategy_choice_counts": {
+          "pursue_objective": 29,
+          "protect": 8
+        },
+        "contribution_choice_counts": {
+          "income": 110,
+          "other": 102,
+          "continue": 54,
+          "positioning": 25
+        },
+        "purchase_proposal_counts": {
+          "Marine": 5,
+          "SCV": 3,
+          "Medic": 1,
+          "SupplyDepot": 4,
+          "Barracks": 2,
+          "Refinery": 1,
+          "Bunker": 1
+        },
+        "investment_choice_counts": {
+          "purchase": 17,
+          "save": 16
+        },
+        "background_training_attempt_counts": {
+          "SCV": 4,
+          "Marine": 2
+        },
+        "background_training_accepted_counts": {
+          "SCV": 4,
+          "Marine": 2
+        },
+        "peak_observed_minerals": 900,
+        "last_observed_resources": {
+          "minerals": 0,
+          "vespene": 0,
+          "estimated_minerals_per_minute": 80.0,
+          "food_used": 10,
+          "food_cap": 8
+        },
+        "decision_errors": 0
+      },
+      {
+        "result": "defeat",
+        "observed_loop_span": [
+          47,
+          11615
+        ],
+        "controller_interrupted": false,
+        "controller_stop_status": null,
+        "peak_observed_owned_counts": {
+          "SCV": 6,
+          "BarracksTechLab": 1,
+          "Marine": 4,
+          "Medic": 1,
+          "Refinery": 2,
+          "SupplyDepot": 2,
+          "CommandCenter": 1,
+          "Barracks": 1,
+          "SupplyDepotLowered": 2,
+          "SpecialOpsDropship": 1,
+          "Marauder": 4
+        },
+        "strategy_choice_counts": {
+          "pursue_objective": 32,
+          "protect": 12
+        },
+        "contribution_choice_counts": {
+          "positioning": 16,
+          "income": 68,
+          "other": 42,
+          "continue": 45
+        },
+        "purchase_proposal_counts": {
+          "Marine": 9,
+          "Medic": 1,
+          "Refinery": 1,
+          "SCV": 5
+        },
+        "investment_choice_counts": {
+          "purchase": 16,
+          "save_for_project": 12,
+          "save": 12
+        },
+        "background_training_attempt_counts": {
+          "SCV": 1
+        },
+        "background_training_accepted_counts": {
+          "SCV": 1
+        },
+        "peak_observed_minerals": 150,
+        "last_observed_resources": {
+          "minerals": 0,
+          "vespene": 52,
+          "estimated_minerals_per_minute": 0.0,
+          "food_used": 6,
+          "food_cap": 0
+        },
+        "decision_errors": 0
+      },
+      {
+        "result": "defeat",
+        "observed_loop_span": [
+          46,
+          21240
+        ],
+        "controller_interrupted": true,
+        "controller_stop_status": "incomplete",
+        "peak_observed_owned_counts": {
+          "Medic": 1,
+          "SCV": 19,
+          "BarracksTechLab": 1,
+          "SupplyDepot": 2,
+          "Barracks": 3,
+          "Marine": 3,
+          "CommandCenter": 3,
+          "Refinery": 1,
+          "SupplyDepotLowered": 2,
+          "SpecialOpsDropship": 1,
+          "Marauder": 4,
+          "Bunker": 3,
+          "EngineeringBay": 1
+        },
+        "strategy_choice_counts": {
+          "pursue_objective": 31,
+          "protect": 1
+        },
+        "contribution_choice_counts": {
+          "income": 102,
+          "other": 70,
+          "continue": 135,
+          "positioning": 7,
+          "individual": 7
+        },
+        "purchase_proposal_counts": {
+          "SCV": 12,
+          "Bunker": 5,
+          "Barracks": 2,
+          "Marine": 12,
+          "BarracksTechLab": 1,
+          "CommandCenter": 2,
+          "BarracksReactor": 1,
+          "Firebat": 1,
+          "EngineeringBay": 1
+        },
+        "investment_choice_counts": {
+          "purchase": 37,
+          "save": 6,
+          "save_for_project": 3
+        },
+        "background_training_attempt_counts": {
+          "Marine": 6,
+          "SCV": 8
+        },
+        "background_training_accepted_counts": {
+          "Marine": 6,
+          "SCV": 8
+        },
+        "peak_observed_minerals": 1580,
+        "last_observed_resources": {
+          "minerals": 5,
+          "vespene": 22,
+          "estimated_minerals_per_minute": 260.0,
+          "food_used": 23,
+          "food_cap": 38
+        },
+        "decision_errors": 1
+      },
+      {
+        "result": "defeat",
+        "observed_loop_span": [
+          47,
+          16106
+        ],
+        "controller_interrupted": false,
+        "controller_stop_status": null,
+        "peak_observed_owned_counts": {
+          "Marine": 3,
+          "SCV": 19,
+          "SupplyDepot": 3,
+          "Barracks": 1,
+          "Medic": 1,
+          "BarracksTechLab": 1,
+          "Refinery": 2,
+          "CommandCenter": 2,
+          "SupplyDepotLowered": 3,
+          "Marauder": 4,
+          "SpecialOpsDropship": 1,
+          "Bunker": 1
+        },
+        "strategy_choice_counts": {
+          "pursue_objective": 35,
+          "protect": 10
+        },
+        "contribution_choice_counts": {
+          "income": 160,
+          "other": 62,
+          "continue": 157,
+          "combat": 1,
+          "positioning": 21
+        },
+        "purchase_proposal_counts": {
+          "SCV": 13,
+          "Marine": 5,
+          "CommandCenter": 2,
+          "SupplyDepot": 1,
+          "Refinery": 3,
+          "Barracks": 1,
+          "Bunker": 1
+        },
+        "investment_choice_counts": {
+          "save": 12,
+          "purchase": 26,
+          "save_for_project": 10
+        },
+        "background_training_attempt_counts": {
+          "Marine": 6,
+          "SCV": 3
+        },
+        "background_training_accepted_counts": {
+          "Marine": 6,
+          "SCV": 2
+        },
+        "peak_observed_minerals": 1045,
+        "last_observed_resources": {
+          "minerals": 0,
+          "vespene": 826,
+          "estimated_minerals_per_minute": 0.0,
+          "food_used": 1,
+          "food_cap": 0
+        },
+        "decision_errors": 0
+      }
+    ],
+    "interpretation": "Previous attempts with independently verified outcomes on the same map filename, newest first. controller_interrupted marks a known controller stop before the verified outcome; its ending may include uncontrolled play and is not a clean policy comparison. False means no recorded interruption, not proof of continuous control. Observed counts are not kills or production totals; cargo and morphing change presence. Purchase proposals and background attempts/engine acceptances are not confirmed completions. Background counts exclude the initial purchase request. Policies and timing may differ. These are measured associations, not causal lessons or recommended actions."
+  }
+}

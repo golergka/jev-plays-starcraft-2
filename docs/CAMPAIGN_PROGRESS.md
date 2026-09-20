@@ -6125,3 +6125,19 @@ publicartifact/report reconciled. Eleven nativeSmashdefeats; firstthree missions
 stillonlyverifiedwins. Do not launch unchangedretry. Future work should address
 combat preservation/production coordination beyond wording tweaks; previous
 negative prompts and factorization probes remain relevant constraints.
+
+### Lab416 — preserve known controller interruption in episode memory
+
+Audit confirms previous_attempts already reaches strategy/investment (not concrete
+combat). Latestthree production summaries now414,407,403. Reader previously
+flattened400's budget-interrupted defeat into a normal verified episode despite
+result retainingcontroller_error/stop_status. Add controller_interrupted and
+controller_stop_status to summaries; explain uncontrolled endings are not clean
+policy comparisons and absenceofrecordedinterruptionisnotproofcontinuouscontrol.
+No causal advice, tactical recommendations or expandedproductionhistorylimit.
+
+Eight episode tests pass, including synthetic interrupted defeat preserved beside
+ordinary defeat. Offline actual latestfive projection identifies only400 as
+interrupted among414,407,403,400,396. Artifact retains projection. No paidcalls,
+newgame or gameplayeffectclaimed. Previous241historyprobe wasnegative on top
+investment choices; do not assume this correction teaches successful strategy.

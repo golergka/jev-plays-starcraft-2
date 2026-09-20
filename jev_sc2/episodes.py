@@ -79,6 +79,9 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                 continue
             summaries.append({
                 'result': status, 'observed_loop_span': [first, last],
+                'controller_interrupted': bool(result.get('controller_error') or
+                                               result.get('controller_stop_status') == 'incomplete'),
+                'controller_stop_status': result.get('controller_stop_status'),
                 'peak_observed_owned_counts': dict(peaks),
                 'strategy_choice_counts': dict(strategies),
                 'contribution_choice_counts': dict(roles),
@@ -96,7 +99,10 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
         except (OSError, ValueError, KeyError, TypeError, IndexError):
             continue
     return {'attempts': summaries,
-            'interpretation': 'Previous independently verified complete attempts on the same map filename, newest first. '
+            'interpretation': 'Previous attempts with independently verified outcomes on the same map filename, newest first. '
+            'controller_interrupted marks a known controller stop before the verified outcome; '
+            'its ending may include uncontrolled play and is not a clean policy comparison. '
+            'False means no recorded interruption, not proof of continuous control. '
             'Observed counts are not kills or production totals; cargo and morphing change presence. '
             'Purchase proposals and background attempts/engine acceptances are not confirmed completions. Background counts exclude the initial purchase request. Policies and timing may differ. '
             'These are measured associations, not causal lessons or recommended actions.'}

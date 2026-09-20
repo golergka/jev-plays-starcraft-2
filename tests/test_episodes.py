@@ -101,3 +101,19 @@ def test_reject_mixed_gameplay_before_restart(tmp_path):
     with (directory/'events.jsonl').open('a') as stream:
         stream.write(json.dumps({'event':'restarted_game','map':'mission.SC2Map','before_loop':12000,'after_loop':0})+'\n')
     assert not previous_attempts(tmp_path,'mission.SC2Map')['attempts']
+
+
+def test_verified_defeat_preserves_controller_interruption(tmp_path):
+    directory=write_attempt(tmp_path,'01')
+    path=directory/'result.json'
+    result=json.loads(path.read_text())
+    result.update(controller_error='SpendThrottled', controller_stop_status='incomplete')
+    path.write_text(json.dumps(result))
+    write_attempt(tmp_path,'02')
+    history=previous_attempts(tmp_path,'mission.SC2Map')
+    clean,interrupted=history['attempts']
+    assert clean['controller_interrupted'] is False
+    assert interrupted['result']=='defeat'
+    assert interrupted['controller_interrupted'] is True
+    assert interrupted['controller_stop_status']=='incomplete'
+    assert 'uncontrolled play' in history['interpretation']
