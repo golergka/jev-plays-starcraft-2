@@ -1,0 +1,132 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "eligible_states": 26,
+  "pairs": [
+    {
+      "loop": 1135,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 1135,
+        "review_at_loop": 1807,
+        "meaning": "Your previously selected bottleneck diagnosis for the same observed mission. Consider it alongside the current observations when selecting orders. It does not require an action or eliminate any offered order."
+      },
+      "answers": {
+        "baseline": {
+          "choice": "move",
+          "type": "choice",
+          "confidence": 0.47,
+          "probabilities": {
+            "attack": 0.0,
+            "stop": 0.02,
+            "attack_move": 0.26,
+            "continue": 0.14,
+            "regroup": 0.03,
+            "individual": 0.02,
+            "move": 0.53,
+            "hold": 0.0
+          }
+        },
+        "shared": {
+          "choice": "move",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "stop": 0.02,
+            "hold": 0.0,
+            "regroup": 0.05,
+            "individual": 0.02,
+            "move": 0.44,
+            "attack": 0.01,
+            "continue": 0.12,
+            "attack_move": 0.34
+          }
+        }
+      }
+    },
+    {
+      "loop": 9740,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 9408,
+        "review_at_loop": 10080,
+        "meaning": "Your previously selected bottleneck diagnosis for the same observed mission. Consider it alongside the current observations when selecting orders. It does not require an action or eliminate any offered order."
+      },
+      "answers": {
+        "shared": {
+          "choice": "attack_move",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "hold": 0.01,
+            "attack_move": 0.46,
+            "individual": 0.01,
+            "continue": 0.11,
+            "move": 0.26,
+            "attack": 0.04,
+            "regroup": 0.07,
+            "stop": 0.04
+          }
+        },
+        "baseline": {
+          "choice": "attack_move",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "stop": 0.03,
+            "attack": 0.02,
+            "continue": 0.12,
+            "move": 0.31,
+            "individual": 0.0,
+            "hold": 0.01,
+            "regroup": 0.04,
+            "attack_move": 0.47000000000000003
+          }
+        }
+      }
+    },
+    {
+      "loop": 20035,
+      "diagnosis": {
+        "answer": "Inability to keep threatened owned units or structures alive limits progress.",
+        "chosen_at_loop": 20035,
+        "review_at_loop": 20707,
+        "meaning": "Your previously selected bottleneck diagnosis for the same observed mission. Consider it alongside the current observations when selecting orders. It does not require an action or eliminate any offered order."
+      },
+      "answers": {
+        "baseline": {
+          "choice": "move",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "hold": 0.01,
+            "stop": 0.08,
+            "regroup": 0.07,
+            "individual": 0.01,
+            "attack": 0.05,
+            "move": 0.49,
+            "attack_move": 0.26,
+            "continue": 0.03
+          }
+        },
+        "shared": {
+          "choice": "move",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "individual": 0.01,
+            "hold": 0.02,
+            "attack_move": 0.21,
+            "continue": 0.02,
+            "stop": 0.14,
+            "attack": 0.04,
+            "move": 0.46,
+            "regroup": 0.1
+          }
+        }
+      }
+    }
+  ],
+  "method": "First/middle/last MobileCombat order-family reviews with an already logged unexpired ground-combat/survival diagnosis and matching strategy. Same full questions/options/state except sharing that Jev diagnosis. No future observations or root-chosen diagnosis. Alternating arms; six-call ceiling; offline only.",
+  "calls": 6,
+  "cost_usd": 0.0038691660000000003
+}

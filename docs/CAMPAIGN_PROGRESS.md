@@ -6894,3 +6894,16 @@ No midrun policychanges/rootorders; longer survival versus460 is not causal
 proof. Diagnosis was only investmentcontext, not a shared tactical goal: inspect
 that separation and small-force commitment next, consulting earlier regroup/
 strategy probes rather than repeating successful purchase-context tests.
+
+### Lab472 — sharing investment diagnosis leaves order families unchanged
+
+Six offline calls $0.003869166 on468 first/middle/last of26 eligible MobileCombat
+family reviews:1135/9740/20035. Only already logged, unexpired diagnoses with
+matching strategy qualify; no future or root-selected diagnosis. Treatment adds
+Jev's existing groundcombat/groundcombat/survival diagnosis to identical full
+state/question/options. Baseline and treatment Move/attack-move/Move. No policy
+change or live retry justified. This tests family selection only, not concrete
+destinations or strategic commitment; small exploratory sample cannot establish
+that shared context never matters. Production diagnosis alone has not resolved
+small-force movement. Consult449/450 and445 before another regroup or strategy
+wording change; do not repeat this context-sharing result as untested.
