@@ -1,0 +1,25 @@
+{
+  "map": "traynor03-context-lab357.SC2Map",
+  "context": {
+    "source": "player-visible native timer windows and objectives",
+    "timers": [
+      {
+        "window": 1,
+        "title": "Evacuation In: ",
+        "mode": "remaining",
+        "raw_timer_value": 1180.375
+      }
+    ],
+    "objectives": [
+      {
+        "id": 1,
+        "name": "Hold Out For Evacuation",
+        "description": "The zerg have returned! Defend the base long enough for transport to arrive and evacuate your forces from Mar Sara.",
+        "state": "active",
+        "primary": true
+      }
+    ],
+    "note": "Native timer values; displayed formatting and rounding not yet validated."
+  },
+  "verification": "Native screen shows Hold Out For Evacuation with active checkbox and visible countdown. Poll is later than screenshot, so timer values are not expected to match exactly. No campaign credit or model calls."
+}

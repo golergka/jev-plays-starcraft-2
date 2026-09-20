@@ -5197,3 +5197,16 @@ Builtignoredtraynor03-context-lab357.SC2Map fromoriginal:121scriptsaudited;chang
 CampaignLib/MapScript/bridgeonly. Buildercompleted; combinedcampaignexport isnotyet
 nativevalidatedorusedbyplayer. CurrentSC2still356diagnosticfixture. Nextload357for
 read-onlynativecomparisonbeforepaidtrial; do notclaimcampaignprogressfromfixtures.
+
+### Lab358 — native campaign objective export verified
+
+Loaded357mapthroughreadonlydiagnosticAPI. Initialfreshbankwasemptyduringmission
+initialization; laterpollcontainedactiveprimaryHoldOutForEvacuation,itsnative
+description,andcountdown. NativeUIindependentlyshowedmatchingobjectiveandtimer;
+laterpoll1180.375secondsnotclaimedexactmatchtoearlierscreenshot. Artifact358stores
+actualreaderoutput. NoJevcalls/campaigncreditduringcheck. Combinedbridgecompiles
+andreaderacceptsfreshcampaigncontext. Bonusobjectivehasnotyetappeared/beenverified.
+
+Nextfreshrestarton357mapwilltestdeliverytoJev. Samefilenamehistoryfiltermeansold335
+attemptsareexcluded; this is therefore not a clean one-variablecomparisonwith350.
+Do notsilentlymerge mapidentities or attribute futureoutcome solelytoobjectivefeed.
