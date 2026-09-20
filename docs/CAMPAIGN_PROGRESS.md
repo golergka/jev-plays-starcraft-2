@@ -6458,3 +6458,13 @@ Invalid goal raises loudly before caching. No automatic spending or unit rule.
 215tests pass including cache reuse, expiry, strategy/rewind invalidation,
 empty capability clearing and malformed answer rejection. No paidcalls this
 turn. Live costs and gameplay benefit still require a bounded trial.
+
+### Lab440 — production-intent live experiment starts
+
+Run20260920T100335.561953Z/session91963 revisiond6ba2f5. SameSmash restart
+24460→0 validated; nativeopening0:20verified. Add --production-intentions to
+previous damage-review/top-contribution settings, unchanged$.10/300s cap.
+At49 Jev choosesExpand Marine/Medic/SCV, cached through2065. Subsequent two
+investment requests contain advisory goals. This verifies plumbing, not useful
+allocation or campaign progress. No forced purchase, root tactical orders or
+extra monitoring inference. Trial live; follow samehandle.14priorSmashdefeats.
