@@ -4869,3 +4869,15 @@ than using stale data. Artifact333records failure. Initial probe API response-fi
 mistake was corrected before restart; it was a test harness issue,not bridge failure.
 No Jev calls,campaign credit,or player integration. Next change needs an identity
 mechanism independent of bank persistence across APIrestart,then another native test.
+
+### Lab334 — initialization timestamp survives native restart validation
+
+Replaced persisted generation counter with CurrentSynchronousGameTimeGet captured
+at bridge initialization. Reader requires post-launch fresh file and launch stamp
+different from explicitly supplied previous stamp; after acceptance, a changed
+stamp raises. Same-second collisions remain unavailable,never guessed fresh.
+Native fixture334restart rewound281to0;stamp1789861916changedto1789861933.
+Previous file rejected;new visible60second context accepted. Artifact334 records
+runtime evidence.159Python tests pass including active-attempt stamp changes.
+This validates one native restart path,not arbitrary restores or clock anomalies.
+No Jev calls;screen formatting/rounding and campaign wiring still outstanding.

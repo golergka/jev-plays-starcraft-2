@@ -1,0 +1,19 @@
+{
+  "before_loop": 281,
+  "after_loop": 0,
+  "old_launch_stamp": 1789861916,
+  "new_launch_stamp": 1789861933,
+  "previous_bank_rejected_before_restart": true,
+  "context": {
+    "source": "player-visible native timer windows",
+    "timers": [
+      {
+        "window": 1,
+        "title": "VISIBLE FIXTURE 60",
+        "mode": "remaining",
+        "raw_timer_value": 60.0
+      }
+    ],
+    "note": "Native timer values; displayed formatting and rounding not yet validated."
+  }
+}
