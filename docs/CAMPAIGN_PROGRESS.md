@@ -4108,3 +4108,18 @@ fixed strategy, or budget increase. Longer review may delay useful strategic cha
 Full existing137tests pass; new regression also passes, proving a Jev long horizon
 suppresses a review at500 while orders still execute, reviews at2017, and resets
 on rewind. Live cost/behavior benefit untested. Previous trial is terminal.
+
+### Lab280 — review-interval trial interrupted by connectivity outage
+
+Run20260919T234646.244880Z/session79479 exited normally after five consecutive
+decision failures:ConnectTimeout and DNS ConnectError. Only one completed tick5,
+10successful calls/$0.005633754. Failed-request reservations remain untouched.
+Jev selected672loop strategy review, but ongoing tactical execution was not
+validated: outage prevents interpreting this run as a policy experiment.
+
+On next inspection native UI already DEFEAT11:22,08:47remaining,171minerals,
+after controller had stopped. Saved post_controller_ui_outcome separately; result
+stays incomplete so previous_attempts excludes it. Attempted F10 was too late.
+DNS now resolves OpenRouter/GitHub and unauthenticated OpenRouter models endpoint
+returnsHTTP200. No paid probe or reset of spending ledger. Next trial can restart
+same mission after headroom check; full campaign remains incomplete.
