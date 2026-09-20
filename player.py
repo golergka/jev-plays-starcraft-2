@@ -123,6 +123,18 @@ def recent_outcomes(view, memory, window=672):
         oldest_loop,oldest_progress = samples[-1]
         unfinished.append({'tag':tag,'type':unit['type'],'progress':round(progress,3),
             'observed_loops':loop-oldest_loop,'progress_change':round(progress-oldest_progress,3)})
+    current_presence = []
+    for tag, unit in sorted(current['units'].items()):
+        since = loop
+        observations = 0
+        for entry in reversed(history):
+            if tag not in entry['units']:
+                break
+            since = entry['loop']
+            observations += 1
+        current_presence.append({'tag':tag, 'type':unit['type'],
+            'continuously_observed_since_loop':since,
+            'observed_span_loops':loop-since, 'observation_count':observations})
     old_counters = history[0].get('resource_counters', {})
     counter_changes = {k:v-old_counters[k] for k,v in current['resource_counters'].items()
                        if k in old_counters and v >= old_counters[k]}
@@ -138,6 +150,8 @@ def recent_outcomes(view, memory, window=672):
             'construction_interpretation':'Only observed progress transitions count as completion. Newly appearing completed units are not attributed to construction. No progress over a short interval does not establish abandonment.',
             'unchanged_point_order_progress':point_order_progress,
             'point_order_interpretation':'Same sole point order across the latest consecutive comparable observations, not proof of uninterrupted execution. Positive distance reduction means closer to its destination. Straight-line distance is not route distance; necessary detours or combat can increase it. Missing entries mean insufficient comparable observations, not zero progress.',
+            'current_unit_observation_spans':current_presence,
+            'presence_interpretation':'Continuity in retained observations only, not unit age, birth time or survival prediction. An absent observation breaks the span; loading or visibility changes can cause absence. A replacement can have the same type and leave group size unchanged.',
             'movement_by_type':movement,
             'movement_interpretation':'Map units over the observed window, only units present at every sample. Sampled travel is a lower bound; net displacement can be zero after useful round trips. Neither measure alone indicates success or failure.',
             'own_units_appeared_by_type':dict(appeared),
