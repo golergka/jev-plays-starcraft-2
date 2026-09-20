@@ -6,6 +6,7 @@ Commit this file to activate it at the next decision boundary.
 """
 import json
 import asyncio
+from jev_sc2.concurrency import gather_owned
 from openrouter.errors import PaymentRequiredResponseError, BadRequestResponseError
 import math
 import random
@@ -179,7 +180,7 @@ async def ask_order_menus(state, questions, jev, *, full_first=True):
         middle = len(items)//2
         parts = [{**question, 'criteria': dict(items[:middle])},
                  {**question, 'criteria': dict(items[middle:])}]
-        answers = await asyncio.gather(*(ask_order_menus(state, {key:part}, jev, full_first=False) for part in parts))
+        answers = await gather_owned(*(ask_order_menus(state, {key:part}, jev, full_first=False) for part in parts))
         winners = []
         for part, answer in zip(parts, answers):
             choice = answer.get(key, {}).get('choice')
@@ -204,7 +205,7 @@ async def ask_order_menus(state, questions, jev, *, full_first=True):
 
     calls = ([jev.ask(state, small)] if small else [])
     calls.extend(large_menu(key, question) for key, question in large.items())
-    answers = await asyncio.gather(*calls)
+    answers = await gather_owned(*calls)
     return {key:value for answer in answers for key,value in answer.items()}
 
 
@@ -1066,7 +1067,7 @@ async def decide(view, jev, memory):
                 commands.extend(plans[kind][choice])
         commands.extend(await assign_support(view,state,jev,support_requests))
         return commands
-    investment, commands = await asyncio.gather(choose_investment(view,state,jev,memory), choose_orders())
+    investment, commands = await gather_owned(choose_investment(view,state,jev,memory), choose_orders())
     # A selected purchase assigns its producer; preserve other Jev-selected orders.
     producer_tags = {c['unit_tag'] for c in investment}
     retained = memory.get('construction_retained',{})

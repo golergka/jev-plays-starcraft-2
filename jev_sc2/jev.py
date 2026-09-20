@@ -2,6 +2,7 @@
 import os
 import json
 import asyncio
+from jev_sc2.concurrency import gather_owned
 import time
 from pathlib import Path
 from .spend import RollingSpend
@@ -48,7 +49,7 @@ class Jev:
             middle = len(items)//2
             self.log('jev_request_split', questions=len(items),
                      request_chars=len(json.dumps([state, questions])))
-            halves = await asyncio.gather(
+            halves = await gather_owned(
                 self.ask(state, dict(items[:middle])),
                 self.ask(state, dict(items[middle:])))
             return {key:value for half in halves for key,value in half.items()}
@@ -87,7 +88,7 @@ class Jev:
                 items = list(questions.items())
                 middle = len(items)//2
                 self.log('jev_request_split', questions=len(items), reason='server_token_limit')
-                halves = await asyncio.gather(self.ask(state, dict(items[:middle])),
+                halves = await gather_owned(self.ask(state, dict(items[:middle])),
                                               self.ask(state, dict(items[middle:])))
                 return {key:value for half in halves for key,value in half.items()}
             finally:

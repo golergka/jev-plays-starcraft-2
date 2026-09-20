@@ -5877,3 +5877,27 @@ memory yieldsunknown, repair clears assignment, and investment projection retain
 facts.202tests pass; final evidence-wording refinement targeted test passes.
 No paid calls or live game yet. Information delivery correction, not measured
 resource balancing or savings. Prior398durationprobe remains negative.
+
+### Lab400 — incomplete after loud rolling-budget stop
+
+Run20260920T072253.076004Z/session43421 exited2 with SpendThrottled, not a
+verified mission ending.272successfulcalls cost$0.197697318; earlierReadTimeout
+reservation remains conservatively accounted. Limit message$0.0960/$0.1000,
+retry estimate1.4s. Do not automatically restart or resume without rate correction.
+Native25:21stillactive,0/4relics,basecollapsing; no defeat credit at this checkpoint.
+Harvest assignments reached paidrequests including explicitlyunknown targets.
+Long survival/building expansion did not establish objective progress.
+
+### Lab401 — join concurrent requests before closing telemetry
+
+Budget stop also exposed ValueError logging to closed events file. asyncio.gather
+propagates one failure while sibling requests can continue. Add gather_owned:
+on failure or cancellation, cancel unfinished siblings and await their cleanup,
+then rethrow original exception. Apply to player concurrent decisions, tactical
+menu splits and SDK recursive splits. Existing individual return_exceptions=True
+collector already awaits allchildren, retained unchanged. Reservations for cancelled
+requests remain conservative; no budget increase, silent retry or new game orders.
+Nested regression verifies request cleanup precedes owner log closure and leaves
+no pending tasks; success preserves result order. Full suite204tests passes after
+correcting initial mechanical replacement of the return_exceptions collector.
+Next address burst admission/pacing before any paid resume. Trial400 incomplete.
