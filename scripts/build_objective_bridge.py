@@ -157,6 +157,8 @@ def build(args):
         records, changed = {}, {}
         # SC2 normalizes punctuation out of bank filenames; use only alphanumerics.
         outcome_bank = 'JevOutcome' + uuid.uuid4().hex if args.record_outcomes else None
+        if getattr(args, 'visible_objectives', False) and not getattr(args, 'visible_timers', False):
+            raise ValueError('--visible-objectives requires --visible-timers for freshness metadata')
         timer_bank = 'JevVisibleTimer' + uuid.uuid4().hex if getattr(args, 'visible_timers', False) else None
         victory_hooks = []
         def visit(name):
@@ -199,8 +201,13 @@ def build(args):
             bridge += b'\n' + Path(__file__).with_name('mission_outcome_bridge.galaxy').read_text().replace(
                 'BANK_NAME', outcome_bank).encode()
         if timer_bank:
-            bridge += b'\n' + Path(__file__).with_name('visible_timer_bridge.galaxy').read_text().replace(
-                'TIMER_BANK_NAME', timer_bank).encode()
+            timer_source = Path(__file__).with_name('visible_timer_bridge.galaxy').read_text().replace('TIMER_BANK_NAME', timer_bank)
+            if getattr(args, 'visible_objectives', False):
+                marker = '    BankSave(JevVisibleTimerBank);'
+                if timer_source.count(marker) != 1:
+                    raise ValueError('Expected exactly one visible-context save point')
+                timer_source = timer_source.replace(marker, '    JevVisibleObjectiveExport(JevVisibleTimerBank, JevTimerPlayer);\n' + marker)
+            bridge += b'\n' + timer_source.encode()
         changed['triggerlibs\\jevobjectivebridge.galaxy'] = b'include "TriggerLibs/natives"\n' + bridge
         shutil.copy2(args.source, args.destination)
         archive = P()
@@ -221,6 +228,7 @@ def build(args):
                   'output_sha256':hashlib.sha256(args.destination.read_bytes()).hexdigest(),
                   'modules':modules, 'scripts':records, 'changed':list(changed),
                   'outcome_bank':outcome_bank, 'visible_timer_bank':timer_bank,
+                  'visible_objectives':getattr(args, 'visible_objectives', False),
                   'bridge_sha256':hashlib.sha256(bridge).hexdigest()}
         report_path.write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps({'map':str(args.destination),'audited_scripts':len(records),
@@ -240,4 +248,5 @@ if __name__ == '__main__':
                         help='Experimental Wings of Liberty hooks: record real victory sequence/player defeat to a unique local bank')
     parser.add_argument('--visible-timers', action='store_true',
                         help='Experimental player-visible timer export; no player integration implied')
+    parser.add_argument('--visible-objectives', action='store_true', help='Export player-visible objective text and state with timer freshness metadata')
     build(parser.parse_args())

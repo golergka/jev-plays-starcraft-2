@@ -5181,3 +5181,19 @@ engineallocationreuseofdestroyedID notforced,so donotclaimthatcaseverified.
 NoJevcalls,campaigncredit,ornewcampaignrun. Artifact356retainsnativeexportfields.
 Readerfreshness/builderintegrationstillneededbeforeplayeruse. Currentmapisignored
 visible-objective-fixture-lab356.SC2Map; diagnosticprocessended normally.
+
+### Lab357 — connect objective export to fresh mission context
+
+Builder --visible-objectives requires --visible-timers and insertsvisibleobjective
+export immediatelybefore the samebank save;manifestdeclaresrequirement. Existing
+per-launchstamp/sequence/mtimechecks coverboth. Readerreturnsobjectiveid/name/
+description/state/primary; rejectsbadcounts,sectionmismatch,duplicateIDs,hiddenor
+unknownstates,andmissingexportwhenmanifestrequiresit. Timer-onlymapscompatible.
+Existingmission_contextprojectionalreadycarriesnestedfields intoJevofinterest;
+no root-authoredobjective or tactics. Tests191passed,includingfreshnessandmalformed
+objectivecases. No paidcalls.
+
+Builtignoredtraynor03-context-lab357.SC2Map fromoriginal:121scriptsaudited;changes
+CampaignLib/MapScript/bridgeonly. Buildercompleted; combinedcampaignexport isnotyet
+nativevalidatedorusedbyplayer. CurrentSC2still356diagnosticfixture. Nextload357for
+read-onlynativecomparisonbeforepaidtrial; do notclaimcampaignprogressfromfixtures.

@@ -60,3 +60,36 @@ def test_timer_context_survives_economic_projection():
     import player
     context={'timers':[{'title':'Observed timer','mode':'remaining','raw_timer_value':123}]}
     assert player.investment_state({'mission_context':context})['mission_context']==context
+
+
+def add_objectives(path, *, state=1, count=1):
+    text=path.read_text().replace('</Bank>',f'''<Section name="Objectives"><Key name="count"><Value int="{count}"/></Key></Section>
+    <Section name="Objective0"><Key name="id"><Value int="1"/></Key>
+    <Key name="name"><Value text="Visible task"/></Key>
+    <Key name="description"><Value text="Visible detail"/></Key>
+    <Key name="state"><Value int="{state}"/></Key>
+    <Key name="primary"><Value flag="1"/></Key></Section></Bank>''')
+    path.write_text(text);os.utime(path,(100,100))
+
+
+def test_objectives_share_freshness_gate(tmp_path):
+    p=tmp_path/'context';bank(p);add_objectives(p,state=3)
+    reader=VisibleTimerReader(p,previous_launch_stamp=1,started_at=90,require_objectives=True)
+    assert reader.poll(106) is None
+    result=reader.poll(102)
+    assert result['objectives']==[{'id':1,'name':'Visible task','description':'Visible detail','state':'failed','primary':True}]
+    bank(p,launch_stamp=1);add_objectives(p)
+    assert VisibleTimerReader(p,previous_launch_stamp=1,started_at=90,require_objectives=True).poll(102) is None
+
+
+@pytest.mark.parametrize('state,count',[(0,1),(4,1),(1,0),(1,-1)])
+def test_objective_count_and_state_fail_loudly(tmp_path,state,count):
+    p=tmp_path/'context';bank(p);add_objectives(p,state=state,count=count)
+    with pytest.raises(ValueError):
+        VisibleTimerReader(p,previous_launch_stamp=1,started_at=90,require_objectives=True).poll(102)
+
+
+def test_objective_enabled_build_cannot_silently_omit_export(tmp_path):
+    p=tmp_path/'context';bank(p)
+    with pytest.raises(ValueError,match='Incomplete visible objective'):
+        VisibleTimerReader(p,previous_launch_stamp=1,started_at=90,require_objectives=True).poll(102)

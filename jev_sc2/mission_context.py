@@ -1,13 +1,14 @@
-"""Strict reader for experimental visible-timer banks; not wired to the player yet."""
+"""Fresh, player-visible timer and optional objective context for the controller."""
 import math
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
 class VisibleTimerReader:
-    def __init__(self, path, *, previous_launch_stamp, started_at, max_age=5):
+    def __init__(self, path, *, previous_launch_stamp, started_at, max_age=5, require_objectives=False):
         if max_age <= 0:
             raise ValueError('Require a positive freshness interval')
+        self.require_objectives = require_objectives
         self.path = Path(path)
         self.previous_launch_stamp = previous_launch_stamp
         self.launch_stamp = None
@@ -64,9 +65,34 @@ class VisibleTimerReader:
                                'raw_timer_value': value})
         except (KeyError, TypeError) as exc:
             raise ValueError('Incomplete visible timer bank') from exc
+        objectives = None
+        if self.require_objectives or 'Objectives' in sections:
+            try:
+                count = integer(sections['Objectives'], 'count')
+                if not 0 <= count <= 1024:
+                    raise ValueError('Invalid objective count')
+                names = {k for k in sections if k.startswith('Objective') and k != 'Objectives'}
+                if names != {f'Objective{i}' for i in range(count)}:
+                    raise ValueError('Objective count and sections disagree')
+                objectives = []
+                seen = set()
+                for i in range(count):
+                    item = sections[f'Objective{i}']
+                    identity = integer(item, 'id')
+                    state = integer(item, 'state')
+                    primary = item['primary']['flag']
+                    if identity in seen or state not in (1, 2, 3) or primary not in ('0', '1'):
+                        raise ValueError('Invalid visible objective identity, state or primary flag')
+                    seen.add(identity)
+                    objectives.append({'id': identity, 'name': item['name']['text'],
+                        'description': item['description']['text'],
+                        'state': {1:'active',2:'completed',3:'failed'}[state], 'primary': primary == '1'})
+            except (KeyError, TypeError) as exc:
+                raise ValueError('Incomplete visible objective bank') from exc
         self.launch_stamp = stamp
         self.sequence = sequence
-        return {'source': 'player-visible native timer windows', 'timers': timers,
+        return {'source': 'player-visible native timer windows and objectives' if objectives is not None else 'player-visible native timer windows', 'timers': timers,
+                **({'objectives': objectives} if objectives is not None else {}),
                 'note': 'Native timer values; displayed formatting and rounding not yet validated.'}
 
 
@@ -97,4 +123,5 @@ def timer_reader_for_map(map_path, *, new_launch, bank_directory=None):
             raise ValueError('Existing timer bank has no launch stamp')
         previous = int(marker.attrib['int'])
     return VisibleTimerReader(bank,previous_launch_stamp=previous,
-                              started_at=time.time() if new_launch else 0)
+                              started_at=time.time() if new_launch else 0,
+                              require_objectives=metadata.get('visible_objectives',False))
