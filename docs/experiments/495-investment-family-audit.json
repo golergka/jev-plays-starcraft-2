@@ -1,0 +1,346 @@
+{
+  "source": "494-investment-selection-audit.json",
+  "limits": "Only differing intentions from lab494 snapshot. Same product does not imply same timing or cost. Does not measure execution or outcome.",
+  "runs": [
+    {
+      "run": "20260920T112554.439774Z",
+      "total_reviews": 49,
+      "disagreement_counts": {
+        "different_product_or_no_purchase": 27,
+        "same_product_different_contract": 2
+      },
+      "transitions": [
+        {
+          "top": "Marauder",
+          "sampled": "Marine",
+          "count": 5
+        },
+        {
+          "top": "Marine",
+          "sampled": "No purchase",
+          "count": 4
+        },
+        {
+          "top": "Marine",
+          "sampled": "Bunker",
+          "count": 2
+        },
+        {
+          "top": "Marine",
+          "sampled": "Refinery",
+          "count": 2
+        },
+        {
+          "top": "Marine",
+          "sampled": "Marauder",
+          "count": 2
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Marine",
+          "count": 2
+        },
+        {
+          "top": "SCV",
+          "sampled": "Bunker",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "SCV",
+          "count": 1
+        },
+        {
+          "top": "Medic",
+          "sampled": "No purchase",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "Medic",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "No purchase",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "Firebat",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "Marauder",
+          "count": 1
+        },
+        {
+          "top": "Medic",
+          "sampled": "Medic",
+          "count": 1
+        },
+        {
+          "top": "SCV",
+          "sampled": "Barracks",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Refinery",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "EngineeringBay",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "SCV",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "run": "20260920T115235.955544Z",
+      "total_reviews": 51,
+      "disagreement_counts": {
+        "different_product_or_no_purchase": 31,
+        "same_product_different_contract": 3
+      },
+      "transitions": [
+        {
+          "top": "Marine",
+          "sampled": "No purchase",
+          "count": 5
+        },
+        {
+          "top": "Marine",
+          "sampled": "Marine",
+          "count": 3
+        },
+        {
+          "top": "Marine",
+          "sampled": "BarracksTechLab",
+          "count": 3
+        },
+        {
+          "top": "Marine",
+          "sampled": "Bunker",
+          "count": 3
+        },
+        {
+          "top": "Marine",
+          "sampled": "SCV",
+          "count": 2
+        },
+        {
+          "top": "Bunker",
+          "sampled": "No purchase",
+          "count": 2
+        },
+        {
+          "top": "Bunker",
+          "sampled": "SCV",
+          "count": 2
+        },
+        {
+          "top": "Bunker",
+          "sampled": "Marine",
+          "count": 2
+        },
+        {
+          "top": "Marine",
+          "sampled": "Firebat",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "Marine",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "Marauder",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "Medic",
+          "count": 1
+        },
+        {
+          "top": "Bunker",
+          "sampled": "Barracks",
+          "count": 1
+        },
+        {
+          "top": "Barracks",
+          "sampled": "SCV",
+          "count": 1
+        },
+        {
+          "top": "Bunker",
+          "sampled": "SupplyDepot",
+          "count": 1
+        },
+        {
+          "top": "Bunker",
+          "sampled": "Refinery",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Marine",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "SupplyDepot",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "Refinery",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Bunker",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "run": "20260920T122548.284381Z",
+      "total_reviews": 31,
+      "disagreement_counts": {
+        "different_product_or_no_purchase": 19,
+        "same_product_different_contract": 3
+      },
+      "transitions": [
+        {
+          "top": "Marine",
+          "sampled": "Barracks",
+          "count": 4
+        },
+        {
+          "top": "Marine",
+          "sampled": "Marine",
+          "count": 2
+        },
+        {
+          "top": "Marine",
+          "sampled": "No purchase",
+          "count": 2
+        },
+        {
+          "top": "Bunker",
+          "sampled": "SCV",
+          "count": 2
+        },
+        {
+          "top": "Marine",
+          "sampled": "Bunker",
+          "count": 1
+        },
+        {
+          "top": "Marauder",
+          "sampled": "Marauder",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "CommandCenter",
+          "count": 1
+        },
+        {
+          "top": "Barracks",
+          "sampled": "No purchase",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Barracks",
+          "count": 1
+        },
+        {
+          "top": "Bunker",
+          "sampled": "Marine",
+          "count": 1
+        },
+        {
+          "top": "Bunker",
+          "sampled": "Barracks",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Marine",
+          "count": 1
+        },
+        {
+          "top": "Bunker",
+          "sampled": "No purchase",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "SCV",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "SupplyDepot",
+          "count": 1
+        },
+        {
+          "top": "No purchase",
+          "sampled": "Bunker",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "run": "20260920T123947.286522Z",
+      "total_reviews": 10,
+      "disagreement_counts": {
+        "same_product_different_contract": 1,
+        "different_product_or_no_purchase": 5
+      },
+      "transitions": [
+        {
+          "top": "Marine",
+          "sampled": "Marine",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "No purchase",
+          "count": 1
+        },
+        {
+          "top": "Medic",
+          "sampled": "SCV",
+          "count": 1
+        },
+        {
+          "top": "Marine",
+          "sampled": "SCV",
+          "count": 1
+        },
+        {
+          "top": "Barracks",
+          "sampled": "SCV",
+          "count": 1
+        },
+        {
+          "top": "SCV",
+          "sampled": "No purchase",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

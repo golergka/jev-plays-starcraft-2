@@ -488,7 +488,11 @@ async def choose_investment(view, state, jev, memory=None):
             probabilities = prediction.get('probabilities',{})
             weights = {k:float(v) for k,v in probabilities.items()
                        if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
-            if memory is not None and weights:
+            if (memory or {}).get('investment_top_choice_enabled'):
+                if choice not in criteria:
+                    raise ValueError('Invalid top investment choice: '+str(choice))
+                jev.log('investment_top_choice',loop=view['loop'],choice=choice)
+            elif memory is not None and weights:
                 rng = memory.setdefault('investment_rng',random.Random(20260918))
                 sampling_probabilities = investment_sampling_probabilities(weights)
                 sampled = rng.choices(list(sampling_probabilities),
@@ -517,7 +521,7 @@ async def choose_investment(view, state, jev, memory=None):
                 memory.pop('production_batch',None)
         return [command]
     jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names,
-            source='carried_jev_commitment' if carried else ('jev_scores' if (memory or {}).get('investment_scoring_enabled') else 'jev_distribution'))
+            source='carried_jev_commitment' if carried else ('jev_scores' if (memory or {}).get('investment_scoring_enabled') else 'jev_returned_choice' if (memory or {}).get('investment_top_choice_enabled') else 'jev_distribution'))
     if memory is not None:
         target = (future_names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('save_for_') else
                   names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('project_') else None)

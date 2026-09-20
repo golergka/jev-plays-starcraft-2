@@ -172,6 +172,7 @@ async def run(args):
               "bottleneck_diagnosis_enabled": getattr(args,"bottleneck_diagnosis",False),
               "destination_categories_enabled": getattr(args,"destination_categories",False),
               "stalled_commitment_review_enabled": getattr(args,"stalled_commitment_review",False),
+              "investment_top_choice_enabled": getattr(args,"investment_top_choice",False),
               "order_families_enabled": getattr(args,"order_families",False)}
     camera_memory = {}
     review_events = ReviewEvents()
@@ -481,6 +482,7 @@ async def run(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--investment-top-choice',action='store_true',help='Use Jev returned purchase choice without probability sampling')
     parser.add_argument('--stalled-commitment-review',action='store_true',help='Let Jev reconsider stalled exclusive production reservations with explicit resource facts')
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')
     parser.add_argument('--race',choices=('terran','zerg','protoss','random'),default='terran')
