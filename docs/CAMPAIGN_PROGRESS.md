@@ -4281,3 +4281,21 @@ but expands menus and can increase tournament calls/cost; no savings promised.
 141tests pass, including fictional harvester seeing movement, attack and harvesting
 in the same question and executing only Jev's selected command. No live probe yet;
 next fresh ZeroHour run tests this structural interface change.
+
+### Lab291 — direct economic menus exceed useful attention cost; live rollback
+
+Active290run20260920T003943.756931Z/session10118. First two cycles at6/1543loops
+cost$0.013708758/$0.015497790, forcing68.54/77.49second target intervals under the
+unchanged60%-of-$0.10/5min pacing rule. First cycle23calls,six menu tournaments;
+all five SCVs chose friendly movement towardCommandCenter, not gathering.
+One half-menu alone contained58choices/13454characters. Removing the abstract
+role gate expanded repeated large concrete comparisons enough to materially
+reduce control frequency. No budget bypass, model error or engine failure caused
+this. Two cycles establish this interface's current cost, not its ultimate winrate.
+
+Restore exact pre290 player and test source through a commit/hot reload. Preserve
+running mission/socket/memory and budget ledger; do not restart or rewrite history.
+Current run is now a mixed-policy cost experiment, not a clean outcome comparison.
+Longer672loop role retention remains. A future alternative needs compact mechanical
+choices or a targeted menu representation before another full direct-menu trial;
+do not repeat this naive flattening as if untested.
