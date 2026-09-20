@@ -6923,3 +6923,17 @@ No hidden-route inference, engineacceptance or death attribution. This points
 toward distant-destination commitment despite local threats, not random order
 sampling.473costs no model calls, changes no policy. Next evaluate local versus
 long-distance commitment explicitly; avoid restating472 sharedcontext as novel.
+
+### Lab474 — local-consequence wording changes one destination, not proven safety
+
+Six offline calls $0.004692996. First/middle/last468 concrete MobileCombat menus
+with <=2members, nearby visible enemies and map destinations:5352/12585/20035.
+Same full state/options; appended instruction compares current health, nearby
+threats and orders against reaching distant destinations, without mandatory
+advance/retreat.5352middle-east attack-move becomes north attack-move;12585
+middle-eastMove unchanged;20035last-knownrelicMove unchanged (3healthMarine).
+One destination shift does not establish safer route, preserved force, or better
+mission outcome. Notdeployed, no livecalls/orders. Together472/473, this cautions
+against more generic local-threat wording as the solution. Future work should
+inspect whether offered destinations support useful local maneuvers and their
+spatial representation before another live trial; retain every legalalternative.
