@@ -4513,3 +4513,12 @@ observations,unit mechanics,selected-job facts,world entities and exact choices
 remain. Strategic/investment/contribution contexts retain aggregates. Applies to
 all concrete orders, broader than combat probe; watch economy as well as fighting.
 No tactical choices added. Next mission trial will measure cost and behavior.
+
+### Lab309 — reduced concrete context trial loses9:38
+
+Native defeat9:38,10:31remaining,zero minerals,all structures destroyed.
+141calls,$0.081842544; median planned review interval22.61s.
+No engine errors. Lower payload did not establish lower end-to-end pacing or
+strategic improvement. Prior full-summary trial8:56; different evolving states
+preclude causal comparison. Thirty-three verified Zero Hour defeats; no campaign
+advancement. Controller terminal, game on defeat screen.
