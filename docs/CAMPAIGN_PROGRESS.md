@@ -4547,3 +4547,18 @@ in native9:53 screenshot, but army disappeared while resources accumulated.
 Duration choice reproduced672loop baseline rather than adaptive retention; longer
 survival than308is not causal evidence. Thirty-four verified Zero Hour defeats;
 no campaign advancement. Controller terminal, SC2 on defeat screen.
+
+### Lab312 — capability repetition does not explain investment failure
+
+Trial310 late audit:Marine remained offered throughloop13334; chosen purchases
+from8280 onward wereSCV,SCV,save,SCV,SupplyDepot,save,SCV,SCV,SCV before Marine
+became unavailable. Thus missing control alone does not explain replenishment.
+
+Six-call paired probe first/middle/last >=500mineral recorded investments with
+Marine offered. Remove only repeated capability prose from all purchase choices;
+retain complete shared capability dictionary and other facts. Alternate pair order.
+Cost$0.003093510. All three topsremain save; probabilities.33→.34,.49→.53,.32→.33.
+Question chars10957→9677,11135→9786,10230→8871. No evidence supporting capability
+list verbosity as the cause; do not deploy. Narrow negative result, not general
+proof of inability. Script/artifact312 preserve method. Game remains terminal;
+no unchanged retry started merely to exercise infrastructure.

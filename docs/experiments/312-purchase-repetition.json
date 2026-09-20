@@ -1,0 +1,173 @@
+{
+  "source": "runs/20260920T014947.229712Z/events.jsonl",
+  "method": "First/middle/last eligible >=500 mineral requests with Marine offered. Remove only repeated Adds another unit able to prose from all purchase criteria; full observed_capabilities_by_type remains unchanged in shared state. Alternate pair order. No game commands; three samples cannot establish tactical quality.",
+  "pairs": [
+    {
+      "recorded_time": 1789869298.248802,
+      "original_chars": 10957,
+      "reduced_chars": 9677,
+      "original": {
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "project_6": 0.03,
+            "batch_6": 0.03,
+            "project_0": 0.01,
+            "project_4": 0.08,
+            "project_8": 0.02,
+            "batch_11": 0.14,
+            "project_5": 0.01,
+            "save": 0.33,
+            "project_12": 0.03,
+            "project_3": 0.09,
+            "project_7": 0.01,
+            "project_11": 0.19,
+            "project_9": 0.0,
+            "project_1": 0.01,
+            "project_2": 0.02,
+            "project_10": 0.0
+          }
+        },
+        "chosen_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      },
+      "deduplicated": {
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "project_7": 0.01,
+            "batch_6": 0.04,
+            "project_1": 0.01,
+            "project_11": 0.15,
+            "project_8": 0.03,
+            "project_12": 0.04,
+            "project_5": 0.01,
+            "project_9": 0.0,
+            "save": 0.34,
+            "project_6": 0.03,
+            "project_2": 0.02,
+            "batch_11": 0.15,
+            "project_10": 0.01,
+            "project_3": 0.04,
+            "project_4": 0.11,
+            "project_0": 0.01
+          }
+        },
+        "chosen_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      }
+    },
+    {
+      "recorded_time": 1789869451.261058,
+      "original_chars": 11135,
+      "reduced_chars": 9786,
+      "deduplicated": {
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.49,
+          "probabilities": {
+            "project_11": 0.04,
+            "project_4": 0.06999999999999999,
+            "project_2": 0.01,
+            "project_7": 0.01,
+            "project_12": 0.06,
+            "project_6": 0.05,
+            "project_10": 0.0,
+            "save": 0.53,
+            "batch_11": 0.04,
+            "project_3": 0.09,
+            "batch_6": 0.05,
+            "project_1": 0.01,
+            "project_9": 0.0,
+            "project_8": 0.03,
+            "project_5": 0.0,
+            "project_0": 0.01
+          }
+        },
+        "chosen_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      },
+      "original": {
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.45,
+          "probabilities": {
+            "project_1": 0.01,
+            "project_12": 0.05,
+            "batch_11": 0.06,
+            "batch_6": 0.04,
+            "save": 0.49,
+            "project_5": 0.0,
+            "project_8": 0.02,
+            "project_7": 0.01,
+            "project_4": 0.07,
+            "project_0": 0.01,
+            "project_10": 0.0,
+            "project_11": 0.06,
+            "project_3": 0.12,
+            "project_6": 0.04,
+            "project_2": 0.02,
+            "project_9": 0.0
+          }
+        },
+        "chosen_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      }
+    },
+    {
+      "recorded_time": 1789869621.511032,
+      "original_chars": 10230,
+      "reduced_chars": 8871,
+      "original": {
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.26,
+          "probabilities": {
+            "project_4": 0.06,
+            "project_1": 0.02,
+            "batch_8": 0.11,
+            "project_5": 0.01,
+            "project_6": 0.05,
+            "save": 0.32,
+            "project_0": 0.01,
+            "project_3": 0.21,
+            "batch_6": 0.03,
+            "project_8": 0.14,
+            "project_2": 0.01,
+            "project_9": 0.02,
+            "project_7": 0.01
+          }
+        },
+        "chosen_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      },
+      "deduplicated": {
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "project_6": 0.09,
+            "project_4": 0.08,
+            "project_7": 0.01,
+            "project_9": 0.02,
+            "project_1": 0.02,
+            "batch_6": 0.03,
+            "project_5": 0.01,
+            "project_3": 0.19,
+            "project_8": 0.1,
+            "project_0": 0.01,
+            "batch_8": 0.09,
+            "project_2": 0.02,
+            "save": 0.33
+          }
+        },
+        "chosen_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.00309351
+}
