@@ -17,7 +17,7 @@ import uuid
 import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from jev_sc2.galaxy_bridge import TOKEN, rewrite_objective_calls, append_after_unique_call, prepend_to_init_map
+from jev_sc2.galaxy_bridge import TOKEN, VISIBLE_TIMER_CALLS, rewrite_objective_calls, append_after_unique_call, prepend_to_init_map
 
 P, U, B = c.c_void_p, c.c_uint32, c.c_char_p
 
@@ -157,13 +157,16 @@ def build(args):
         records, changed = {}, {}
         # SC2 normalizes punctuation out of bank filenames; use only alphanumerics.
         outcome_bank = 'JevOutcome' + uuid.uuid4().hex if args.record_outcomes else None
+        timer_bank = 'JevVisibleTimer' + uuid.uuid4().hex if getattr(args, 'visible_timers', False) else None
         victory_hooks = []
         def visit(name):
             if name in records:
                 return
             data, origin = resolve(name)
             source = data.decode('utf-8-sig')
-            rewritten, counts = rewrite_objective_calls(source, extra_calls=('GameOver',) if outcome_bank else ())
+            extra_calls = set(VISIBLE_TIMER_CALLS) if timer_bank else set()
+            if outcome_bank: extra_calls.add('GameOver')
+            rewritten, counts = rewrite_objective_calls(source, extra_calls=extra_calls)
             hooks = []
             if outcome_bank and origin.lower() == 'campaigns\\libertystory.sc2campaign\\base.sc2data\\triggerlibs\\campaignlib.galaxy':
                 # Installed source audit: this unique call is in the genuine
@@ -175,6 +178,9 @@ def build(args):
             if outcome_bank and name == 'mapscript.galaxy':
                 rewritten = prepend_to_init_map(rewritten, 'JevOutcomeInit();')
                 hooks.append('initialize outcome bank')
+            if timer_bank and name == 'mapscript.galaxy':
+                rewritten = prepend_to_init_map(rewritten, 'JevVisibleTimerInit(1);')
+                hooks.append('initialize visible timer export')
             records[name] = {'origin':origin, 'sha256':hashlib.sha256(data).hexdigest(),
                              'replacements':counts, 'outcome_hooks':hooks}
             for dependency in includes(source):
@@ -192,6 +198,9 @@ def build(args):
         if outcome_bank:
             bridge += b'\n' + Path(__file__).with_name('mission_outcome_bridge.galaxy').read_text().replace(
                 'BANK_NAME', outcome_bank).encode()
+        if timer_bank:
+            bridge += b'\n' + Path(__file__).with_name('visible_timer_bridge.galaxy').read_text().replace(
+                'TIMER_BANK_NAME', timer_bank).encode()
         changed['triggerlibs\\jevobjectivebridge.galaxy'] = b'include "TriggerLibs/natives"\n' + bridge
         shutil.copy2(args.source, args.destination)
         archive = P()
@@ -211,7 +220,7 @@ def build(args):
                   'source':str(args.source), 'source_sha256':hashlib.sha256(args.source.read_bytes()).hexdigest(),
                   'output_sha256':hashlib.sha256(args.destination.read_bytes()).hexdigest(),
                   'modules':modules, 'scripts':records, 'changed':list(changed),
-                  'outcome_bank':outcome_bank,
+                  'outcome_bank':outcome_bank, 'visible_timer_bank':timer_bank,
                   'bridge_sha256':hashlib.sha256(bridge).hexdigest()}
         report_path.write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps({'map':str(args.destination),'audited_scripts':len(records),
@@ -229,4 +238,6 @@ if __name__ == '__main__':
     parser.add_argument('--storage', type=Path, default=Path('/Applications/StarCraft II'))
     parser.add_argument('--record-outcomes', action='store_true',
                         help='Experimental Wings of Liberty hooks: record real victory sequence/player defeat to a unique local bank')
+    parser.add_argument('--visible-timers', action='store_true',
+                        help='Experimental player-visible timer export; no player integration implied')
     build(parser.parse_args())

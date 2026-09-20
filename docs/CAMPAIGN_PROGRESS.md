@@ -4881,3 +4881,14 @@ Previous file rejected;new visible60second context accepted. Artifact334 records
 runtime evidence.159Python tests pass including active-attempt stamp changes.
 This validates one native restart path,not arbitrary restores or clock anomalies.
 No Jev calls;screen formatting/rounding and campaign wiring still outstanding.
+
+### Lab335 — build campaign copy with periodic visible timer export
+
+Builder --visible-timers adds explicit timer-call rewrite allowlist across audited
+include closure,unique timer bank metadata,and initialization before mission code.
+Bridge exports once per game second via native periodic trigger; callers do not
+need paid model calls to refresh context. Generated ignored experimental map
+traynor03-timers-lab335.SC2Map from originaltraynor03.SC2Map;121scripts audited,
+CampaignLib/MapScript/bridge changed. Existing outcome hooks retained.159Python
+tests pass. New map not yet launched;runtime compilation,screen comparison,and
+player wiring remain outstanding. No Jev calls or campaign credit this turn.

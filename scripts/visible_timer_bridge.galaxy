@@ -102,6 +102,11 @@ void JevVisibleTimerExport () {
     BankSave(JevVisibleTimerBank);
 }
 
+bool JevVisibleTimerTick (bool testConds, bool runActions) {
+    if (runActions) { JevVisibleTimerExport(); }
+    return true;
+}
+
 void JevVisibleTimerInit (int player) {
     JevTimerPlayer = player;
     JevVisibleTimerBank = BankLoad("TIMER_BANK_NAME", player);
@@ -109,4 +114,5 @@ void JevVisibleTimerInit (int player) {
     JevTimerSequence = 0;
     JevTimerExportCount = BankValueGetAsInt(JevVisibleTimerBank, "Context", "count");
     JevVisibleTimerExport();
+    TriggerAddEventTimePeriodic(TriggerCreate("JevVisibleTimerTick"), 1.0, c_timeGame);
 }
