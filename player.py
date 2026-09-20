@@ -403,6 +403,8 @@ async def choose_investment(view, state, jev, memory=None):
                 'using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive purchase reservation ends when the batch finishes, expires, or your strategic priority changes. Repairs can still spend minerals while the batch is active. '
                 'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
                 +investment_description(name,example.get('project'),state))
+            if memory.get('stalled_commitment_review_enabled'):
+                criteria[f'batch_{i}'] += ' You may also explicitly release a stalled reservation at a later model review, after at least 224 loops without a request; keeping it delays another such review by 672 loops.'
             if memory.get('production_executor_enabled'):
                 criteria[f'batch_{i}'] += ' The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.'
     future_names = sorted(set(potential)-set(projects))
@@ -417,6 +419,9 @@ async def choose_investment(view, state, jev, memory=None):
     carried = False
     choice = None
     strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
+    if memory is not None and memory.get('stalled_commitment_review_enabled'):
+        from jev_sc2.commitment_review import review_stalled
+        await review_stalled(state, view, jev, memory)
     batch = (memory or {}).get('production_batch')
     if batch:
         if batch.get('executor') and batch['loop'] <= view['loop'] < batch['review_at'] and batch['remaining'] > 0 and batch['strategy'] == strategy:

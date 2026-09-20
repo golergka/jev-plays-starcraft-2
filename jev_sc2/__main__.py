@@ -171,6 +171,7 @@ async def run(args):
               "production_intentions_enabled": getattr(args,"production_intentions",False),
               "bottleneck_diagnosis_enabled": getattr(args,"bottleneck_diagnosis",False),
               "destination_categories_enabled": getattr(args,"destination_categories",False),
+              "stalled_commitment_review_enabled": getattr(args,"stalled_commitment_review",False),
               "order_families_enabled": getattr(args,"order_families",False)}
     camera_memory = {}
     review_events = ReviewEvents()
@@ -480,6 +481,7 @@ async def run(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--stalled-commitment-review',action='store_true',help='Let Jev reconsider stalled exclusive production reservations with explicit resource facts')
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')
     parser.add_argument('--race',choices=('terran','zerg','protoss','random'),default='terran')
     parser.add_argument('--attach',action='store_true',help='Reuse an API-enabled SC2 process')
