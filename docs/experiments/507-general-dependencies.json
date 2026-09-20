@@ -1,0 +1,290 @@
+{
+  "source": "runs/20260920T125822.620646Z/events.jsonl",
+  "method": "Same first/middle/last recorded Bunker-top states. Assess every project option with the same dependency question, then feed Jev answers into unchanged investment question. No filtering or preferred unit. Historical baseline, six-call ceiling, offline only.",
+  "reviews": [
+    {
+      "loop": 5432,
+      "assessments": {
+        "project_0": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "unclear": 0.03,
+            "complementary": 0.75,
+            "self_contained": 0.22
+          }
+        },
+        "project_1": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.94,
+          "probabilities": {
+            "unclear": 0.04,
+            "complementary": 0.96,
+            "self_contained": 0.0
+          }
+        },
+        "project_2": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.47,
+          "probabilities": {
+            "unclear": 0.05,
+            "complementary": 0.64,
+            "self_contained": 0.31
+          }
+        },
+        "project_3": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.81,
+          "probabilities": {
+            "unclear": 0.12,
+            "complementary": 0.88,
+            "self_contained": 0.0
+          }
+        },
+        "project_4": {
+          "choice": "self_contained",
+          "type": "choice",
+          "confidence": 0.69,
+          "probabilities": {
+            "unclear": 0.02,
+            "complementary": 0.19,
+            "self_contained": 0.79
+          }
+        },
+        "project_5": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.67,
+          "probabilities": {
+            "unclear": 0.15,
+            "complementary": 0.78,
+            "self_contained": 0.07
+          }
+        },
+        "project_6": {
+          "choice": "self_contained",
+          "type": "choice",
+          "confidence": 0.63,
+          "probabilities": {
+            "unclear": 0.02,
+            "complementary": 0.23,
+            "self_contained": 0.75
+          }
+        },
+        "project_7": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "unclear": 0.11,
+            "complementary": 0.66,
+            "self_contained": 0.23
+          }
+        }
+      },
+      "answer": {
+        "choice": "project_4",
+        "type": "choice",
+        "confidence": 0.47,
+        "probabilities": {
+          "save": 0.13,
+          "batch_4": 0.01,
+          "project_2": 0.01,
+          "project_1": 0.1,
+          "project_6": 0.18,
+          "save_for_3": 0.01,
+          "save_for_0": 0.0,
+          "project_5": 0.0,
+          "batch_6": 0.0,
+          "save_for_2": 0.01,
+          "project_3": 0.01,
+          "project_7": 0.01,
+          "project_4": 0.51,
+          "save_for_1": 0.0,
+          "project_0": 0.02
+        }
+      },
+      "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 9836,
+      "assessments": {
+        "project_0": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.73,
+          "probabilities": {
+            "unclear": 0.02,
+            "complementary": 0.82,
+            "self_contained": 0.16
+          }
+        },
+        "project_1": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.93,
+          "probabilities": {
+            "unclear": 0.01,
+            "complementary": 0.95,
+            "self_contained": 0.04
+          }
+        },
+        "project_2": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.84,
+          "probabilities": {
+            "unclear": 0.11,
+            "complementary": 0.89,
+            "self_contained": 0.0
+          }
+        },
+        "project_3": {
+          "choice": "self_contained",
+          "type": "choice",
+          "confidence": 0.64,
+          "probabilities": {
+            "unclear": 0.02,
+            "complementary": 0.22,
+            "self_contained": 0.76
+          }
+        },
+        "project_4": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "unclear": 0.19,
+            "complementary": 0.75,
+            "self_contained": 0.06
+          }
+        },
+        "project_5": {
+          "choice": "self_contained",
+          "type": "choice",
+          "confidence": 0.59,
+          "probabilities": {
+            "unclear": 0.02,
+            "complementary": 0.25,
+            "self_contained": 0.73
+          }
+        },
+        "project_6": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "unclear": 0.13,
+            "complementary": 0.68,
+            "self_contained": 0.19
+          }
+        }
+      },
+      "answer": {
+        "choice": "project_3",
+        "type": "choice",
+        "confidence": 0.52,
+        "probabilities": {
+          "save_for_3": 0.0,
+          "save_for_1": 0.01,
+          "save_for_0": 0.0,
+          "project_5": 0.15,
+          "batch_5": 0.01,
+          "project_3": 0.56,
+          "project_4": 0.0,
+          "save_for_2": 0.0,
+          "project_0": 0.0,
+          "project_6": 0.0,
+          "save": 0.09,
+          "batch_3": 0.01,
+          "project_2": 0.0,
+          "project_1": 0.16
+        }
+      },
+      "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 12545,
+      "assessments": {
+        "project_0": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.99,
+          "probabilities": {
+            "self_contained": 0.01,
+            "unclear": 0.0,
+            "complementary": 0.99
+          }
+        },
+        "project_1": {
+          "choice": "self_contained",
+          "type": "choice",
+          "confidence": 0.66,
+          "probabilities": {
+            "self_contained": 0.78,
+            "complementary": 0.2,
+            "unclear": 0.02
+          }
+        },
+        "project_2": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.59,
+          "probabilities": {
+            "self_contained": 0.08,
+            "complementary": 0.72,
+            "unclear": 0.2
+          }
+        },
+        "project_3": {
+          "choice": "self_contained",
+          "type": "choice",
+          "confidence": 0.67,
+          "probabilities": {
+            "self_contained": 0.78,
+            "complementary": 0.2,
+            "unclear": 0.02
+          }
+        },
+        "project_4": {
+          "choice": "complementary",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "self_contained": 0.24,
+            "complementary": 0.62,
+            "unclear": 0.14
+          }
+        }
+      },
+      "answer": {
+        "choice": "project_1",
+        "type": "choice",
+        "confidence": 0.56,
+        "probabilities": {
+          "save_for_0": 0.0,
+          "save_for_5": 0.0,
+          "project_0": 0.14,
+          "save": 0.15000000000000002,
+          "project_3": 0.08,
+          "project_2": 0.01,
+          "project_4": 0.0,
+          "save_for_4": 0.01,
+          "save_for_1": 0.0,
+          "batch_3": 0.0,
+          "save_for_3": 0.0,
+          "project_1": 0.6,
+          "save_for_2": 0.0,
+          "batch_1": 0.01
+        }
+      },
+      "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0038293500000000005
+}
