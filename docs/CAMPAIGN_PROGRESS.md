@@ -4646,3 +4646,22 @@ execution checks. Previous Choice sampling remains default/comparison path.
 calibrated utilities or success probabilities. Explicit trial may raise token
 cost despite batched request; unchanged rolling governor/pacing remains active.
 Next run tests policy and cost, not merely API compatibility.
+
+### Lab319 — scored investment trial loses; native checks expose collapse
+
+Trial318 (`20260920T021344.078797Z`) independently verified in native SC2:
+defeat at8:56,11:13evacuationremaining,112minerals,all structures destroyed.
+133successful requests,$0.076193292; peak run-only300secondcost$0.06112449,
+below unchanged$0.10rollingcap. Median planned decision interval23.07seconds.
+At8:22native view showed burning Barracks under attack,7/19supply,0/27worker
+counter; camera framed the action. This is not successful play despite working
+API calls. Checkpoint records defeat35; only first two missions verified won.
+
+Investment ratings selected Bunker14times,SCV2,wait1. These are selections,not
+14completed buildings. Scoring changes preferences but this single trial provides
+no evidence of improved survival. Avoid declaring causal regression from one run.
+Report now attributes scored investment requests separately instead of mixing
+them into concrete orders:17calls,$0.010039134; concrete64calls,$0.040655832.
+Whole-request attribution sums to total; no invented per-question cost split.
+Keep periodic native observations alongside telemetry and verify every outcome.
+Scored mode remains opt-in; do not automatically spend on unchanged retries.

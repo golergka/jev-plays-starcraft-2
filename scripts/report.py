@@ -19,6 +19,8 @@ for call in calls:
         stage = 'strategy_and_coordination'
     elif keys and all(k.startswith('purpose_') for k in keys):
         stage = 'contribution_roles'
+    elif 'save' in keys and all(q.get('type') == 'score' for q in call['questions'].values()):
+        stage = 'investment_scores'
     elif keys in ({'investment'}, {'producer_site'}, {'navigation'}, {'spending'}):
         stage = next(iter(keys))
     else:
