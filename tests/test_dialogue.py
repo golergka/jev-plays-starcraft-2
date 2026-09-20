@@ -43,3 +43,20 @@ def test_missing_or_in_progress_bank_unavailable(tmp_path):
     assert reader.poll() is None
     p.write_text('<Bank>')
     assert reader.poll() is None
+
+
+def test_factory_checks_map_hash_and_bank_path(tmp_path):
+    import hashlib,json
+    from jev_sc2.dialogue import dialogue_reader_for_map
+    p=tmp_path/'map.SC2Map';p.write_bytes(b'map')
+    metadata={'visible_dialogue_bank':'JevDialogue'+'a'*32,
+              'output_sha256':hashlib.sha256(b'map').hexdigest()}
+    side=p.with_suffix('.bridge.json');side.write_text(json.dumps(metadata))
+    reader=dialogue_reader_for_map(p,new_launch=True,bank_directory=tmp_path)
+    assert reader.path.parent==tmp_path
+    p.write_bytes(b'changed')
+    with pytest.raises(ValueError,match='manifest'):
+        dialogue_reader_for_map(p,new_launch=True,bank_directory=tmp_path)
+    metadata['visible_dialogue_bank']='../elsewhere';side.write_text(json.dumps(metadata))
+    with pytest.raises(ValueError,match='bank name'):
+        dialogue_reader_for_map(p,new_launch=True,bank_directory=tmp_path)

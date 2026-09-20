@@ -21,6 +21,7 @@ from .reload import PlayerLoader
 from .view import make_view, validate_commands
 from .camera import choose_shot
 from .outcome import OutcomeMonitor
+from .dialogue import dialogue_reader_for_map
 from .mission_context import timer_reader_for_map, ObjectiveInitializationGate
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -203,9 +204,11 @@ async def run(args):
         attached_info = None
         restart_started_at = None
         timer_reader = None
+        dialogue_reader = None
         timer_map = args.map or (ROOT/"maps"/Path(args.expected_map).name if getattr(args,"restart",False) else None)
         if timer_map:
             timer_reader = timer_reader_for_map(timer_map,new_launch=True)
+            dialogue_reader = dialogue_reader_for_map(timer_map,new_launch=True)
         if getattr(args,'restart',False):
             restart_started_at = await restart_attached_game(client,args.expected_map,log)
         outcome_monitor = OutcomeMonitor.for_map(args.map, time.time())
@@ -241,6 +244,8 @@ async def run(args):
             outcome_monitor = OutcomeMonitor.for_map(ROOT/'maps'/local_name, restart_started_at or 0)
         if timer_reader is None and not args.map and not getattr(args,'restart',False):
             timer_reader = timer_reader_for_map(ROOT/'maps'/info.local_map_path.replace('\\','/').split('/')[-1],new_launch=False)
+        if dialogue_reader is None and not args.map and not getattr(args,'restart',False):
+            dialogue_reader = dialogue_reader_for_map(ROOT/'maps'/info.local_map_path.replace('\\','/').split('/')[-1],new_launch=False)
         data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True,upgrade_id=True))
         started = time.monotonic()
         failures = 0
@@ -300,6 +305,10 @@ async def run(args):
                 context = timer_reader.poll(time.time())
                 view['mission_context'] = context or {'status':'unavailable','reason':'No fresh visible timer export'}
                 log('mission_context',loop=view['loop'],context=view['mission_context'])
+            if dialogue_reader is not None:
+                dialogue = dialogue_reader.poll()
+                if dialogue is not None:
+                    view.setdefault('mission_context', {})['dialogue_history'] = dialogue
                 if objective_gate is not None and not objective_gate.ready:
                     try:
                         ready = objective_gate.check(context,time.monotonic())
