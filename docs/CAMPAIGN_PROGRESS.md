@@ -5772,3 +5772,23 @@ accepted requests do not establish completion. Thus military production was not
 entirely absent, but did not maintain a force. Investigate retention/tactical
 execution and investment priorities, rather than claiming the batch scheduler
 silently dropped all army production. No policy change or unchanged retry.
+
+### Lab394 — spatial disappearance history does not establish army preservation
+
+392 opening army attacked toward middle-east sector at318, appeared northwest
+of its earlier location at616 with damage, then disappeared by1016. Scripted
+Marauder reinforcements received the same destination1339; one remained at1765.
+This is observed sequencing, not proof of exact death sites or route causes.
+Current recent_outcomes counts disappearance but movement summaries require
+continuous presence, omitting vanished units' locations.
+
+Bounded recorded-state probe appends last-seen positions/health for up to eight
+prior disappearance intervals, explicitly not death/causal attribution. First,
+middle,last eligible tactical requests, identical questions/state in each pair,
+alternating arm order. Sixcalls cost$0.006865740. First baselinecontinue changed
+to Move toward visibleProtossRelic; other two arms both attack-move middle-east.
+No repeat sampling or live execution; no demonstrated preservation or mission
+benefit. Do not deploy additional context as a successful fix. Script/artifact394
+preserved. Initial eligibility cap16000 found too few samples before any paid
+calls; actual probe used40000-character question cap. No game orders; native
+UI still confirmed29:42defeat. Campaign remains incomplete.
