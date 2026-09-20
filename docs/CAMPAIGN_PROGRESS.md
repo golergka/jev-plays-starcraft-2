@@ -4499,3 +4499,17 @@ Trial302 native defeat8:56,11:13remaining,zero minerals,all structures destroyed
 fix remains unexercised live. No campaign advancement. Current controller terminal;
 SC2 remains on defeat screen. Review next general experiment before another
 unchanged paid retry. Thirty-two UI-verified Zero Hour defeats now recorded.
+
+### Lab307 — probe removing type aggregates from concrete requests
+
+Six-call paired probe on first/middle/last eligible combat requests in302,
+unchanged choices/other state, alternating pair order. Cost$0.003678654. State
+chars26110→20593,29350→23613,28911→25178. Same top choices in all3pairs, probabilities
+.32→.33,.34→.37,.61→.65. Evidence307-order-summary.json; single samples do not
+establish policy equivalence or improved outcomes.
+
+Trial change: concrete-order requests omit type_selection_facts only. Raw unit
+observations,unit mechanics,selected-job facts,world entities and exact choices
+remain. Strategic/investment/contribution contexts retain aggregates. Applies to
+all concrete orders, broader than combat probe; watch economy as well as fighting.
+No tactical choices added. Next mission trial will measure cost and behavior.

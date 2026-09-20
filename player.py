@@ -199,8 +199,8 @@ async def ask_order_menus(state, questions, jev):
 async def choose_concrete_orders(state, questions, jev):
     """Jev chooses resource kind before location when both kinds are offered."""
     # Concrete questions name their selections exactly. Other selections retain
-    # their full raw units and type summaries, but need no duplicate job summary.
-    state = {**state, 'selection_facts': {
+    # their raw unit observations and mechanics, but no repeated type aggregate.
+    state = {**{k:v for k,v in state.items() if k != 'type_selection_facts'}, 'selection_facts': {
         name:facts for name,facts in state.get('selection_facts',{}).items()
         if name in questions}}
     first = dict(questions)
