@@ -4665,3 +4665,24 @@ them into concrete orders:17calls,$0.010039134; concrete64calls,$0.040655832.
 Whole-request attribution sums to total; no invented per-question cost split.
 Keep periodic native observations alongside telemetry and verify every outcome.
 Scored mode remains opt-in; do not automatically spend on unchanged retries.
+
+### Lab320 — explicit alternatives reverse ratings toward waiting
+
+Execution audit318:four initial Bunkers;five additional distinct Bunker tags
+observed complete in sampled ticks. This is a lower bound,not an exhaustive
+construction ledger. Investment-state cargo occupancy ranged0–2slots total
+while Bunkers remained present; observed facts already supplied to Jev. Thus
+repeated selection is not explained by a universal construction failure, and
+completed construction does not establish useful deployment. Delayed invalid
+placement at8087appears in subsequent investment action feedback: retention
+path exercised live. One immediate action result209also exists; do not describe
+this run as free of action errors.
+
+Distinct six-call first/middle/last recorded scored-state probe adds exact
+competing action descriptions to shared context,questions unchanged,alternating
+order. Baseline topsBunker1.68/2.05/2.18; alternatives topswait1.95/2.14/1.99.
+Cost$0.003808938. Scores are sensitive to explicit opportunity context; this
+does not demonstrate calibrated cross-action utility or better play. No live
+deployment: replaces repetitive building with waiting in these states,without
+evidence that it solves ineffective investment/use. Script and full results
+recorded. Avoid more unchanged live retries or claiming this prompt is a fix.
