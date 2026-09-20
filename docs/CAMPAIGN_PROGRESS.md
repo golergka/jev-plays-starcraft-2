@@ -4578,3 +4578,15 @@ the state, and individual no-purchase decisions are not equivalent to never buyi
 Thus this is a narrow negative chaining result, not proof of logical contradiction
 or universal incapability. Do not add extra live call without evidence of benefit.
 Script/artifact313 preserve outputs. SC2 remains terminal; no paid gameplay running.
+
+### Lab314 — audit difficulty assumptions before attributing failures
+
+SC2.start uses VeryEasy only for optional Computer opponent; campaign single-player
+launch creates Participant and no difficulty field override. It is incorrect to
+describe these campaign attempts as VeryEasy from that code. Historical native
+restart UI187 recorded Normal. Installed Liberty transition initialization reads
+PlayerDifficulty(1); no difficulty modification found in bridge provenance.
+No fresh runtime campaign difficulty reading obtained here, so historical Normal
+is evidence, not proof of every subsequent initialization. No difficulty change
+or hidden mission-wave information supplied to Jev. Continue policy investigation;
+no evidence found supporting accidental harder setting as the failure explanation.
