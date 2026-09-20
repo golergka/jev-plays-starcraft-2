@@ -4952,3 +4952,18 @@ alternatingorder. Cost$0.003132906. Topswait/wait,MissileTurret/Bunker,and uncha
 (Purchase one Bunker). No topbatch choice in eitherarm. Script/artifact340.
 No live deployment or new trial; explicit batch arithmetic alone is insufficient
 in these samples. Do not infer global incapability from three recorded states.
+
+### Lab341 — purchase commitments execute; separate batch/report counts
+
+Audited337jobs:two Marine batches(loop1279,2375),oneSCVbatch(3705). Three initial
+requests plus six automatic followups;all six followups engineSuccess. All three
+jobs released because request allowance completed,not expiration/unavailability.
+This establishes execution of bounded request commitments,not completed units.
+No selected Marine batch after2375in this run. Thus late idle resources cannot be
+explained solely by an executor that never submits selected batch followups.
+
+Report now includes batch types,automatic request/results,and release reasons.
+Artifact341verified3initial+6automatic with2Marine/1SCVbatch. Previous investment
+Marine2count means two decisions that selected the type,not two unit requests.
+No extra Jev calls or policy changes. Candidate future question is commitment
+scope/renewal,not replaying the already-failed arithmetic wording probe.

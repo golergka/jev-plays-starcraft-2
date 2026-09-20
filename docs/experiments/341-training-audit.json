@@ -1,0 +1,15 @@
+{
+  "training_batch_types": {
+    "Marine": 2,
+    "SCV": 1
+  },
+  "training_batch_requests": 3,
+  "automatic_training_requests": 6,
+  "automatic_training_engine_results": {
+    "Success": 6
+  },
+  "training_job_release_reasons": {
+    "completed request allowance": 3
+  },
+  "training_request_scope": "Batch choices and accepted requests are not completed units. Initial batch requests and automatic follow-up requests are counted separately."
+}

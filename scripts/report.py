@@ -127,6 +127,13 @@ print(json.dumps({
                          for r in rows if r['event']=='investment_choice' and (r.get('choice') or '').startswith('save_for_'))),
     'training_batches_chosen':sum(r['event']=='production_batch_chosen' for r in rows),
     'training_batch_requests':sum(r['event']=='production_batch_request' for r in rows),
+    'training_batch_types':dict(collections.Counter(r['target_project'] for r in rows if r['event']=='production_batch_chosen')),
+    'automatic_training_requests':sum(r['event']=='production_job_request' for r in rows),
+    'automatic_training_engine_results':dict(collections.Counter(
+        error_pb2.ActionResult.Name(result) for r in rows if r['event']=='production_job_execution'
+        for result in r.get('results',[]))),
+    'training_job_release_reasons':dict(collections.Counter(r['reason'] for r in rows if r['event']=='production_job_released')),
+    'training_request_scope':'Batch choices and accepted requests are not completed units. Initial batch requests and automatic follow-up requests are counted separately.',
     'investment_commitment_waits':sum(r['event']=='investment_wait' for r in rows),
     'investment_commitment_requests':dict(collections.Counter(r['target_project'] for r in rows if r['event']=='investment_plan_ready')),
     'producer_site_deferrals':sum(r['response']['answers'].get('producer_site',{}).get('choice')=='defer' for r in calls),
