@@ -1,0 +1,46 @@
+{
+  "trial": 508,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T132159.890804Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789900502",
+      "loop": 17436
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 242,
+    "cost": 0.15169614599999998,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T132159.890804Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "18:09",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 (last unobscured view at 17:12)"
+    }
+  },
+  "purchase_counts": {
+    "Marine": 23,
+    "Marauder": 2,
+    "Barracks": 3,
+    "SCV": 5
+  },
+  "dependency_calls": 33,
+  "dependency_cost_usd": 0.019903086,
+  "errors": [
+    {
+      "time": 1789910555.398746,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "conclusion": "General dependency assessment changed purchases but did not yield victory. Early reinforcements traversed hazardous routes, army depleted, replacement Barracks could not restore sustained combat strength. One uncontrolled run does not establish comparative efficacy."
+}
