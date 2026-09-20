@@ -1,0 +1,224 @@
+{
+  "source": "runs/20260920T133712.486436Z/events.jsonl",
+  "accepted_commands_in_unambiguous_ticks": 84,
+  "exact_reissues": 27,
+  "accepted_by_ability": {
+    "16": 12,
+    "295": 13,
+    "560": 23,
+    "23": 24,
+    "563": 1,
+    "558": 3,
+    "321": 1,
+    "524": 1,
+    "556": 3,
+    "319": 2,
+    "1": 1
+  },
+  "reissued_by_ability": {
+    "560": 17,
+    "23": 7,
+    "295": 3
+  },
+  "ambiguous_ticks_excluded": 7,
+  "scope": "Same serialized command as the previous accepted command for that unit in unambiguous tick logs. Not proof of interrupted work or wasted actions: unit state may change, and background jobs are not included. No semantic remapping or coordinate tolerance applied.",
+  "attack_move_matching_recorded_current_order": [
+    {
+      "loop": 1846,
+      "tag": 4337434626,
+      "position": [
+        56.35,
+        30.97
+      ],
+      "health": 100.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 1846,
+      "tag": 4328521732,
+      "position": [
+        55.39,
+        31.44
+      ],
+      "health": 22.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 1846,
+      "tag": 4346085383,
+      "position": [
+        57.57,
+        30.36
+      ],
+      "health": 100.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 1846,
+      "tag": 4348706825,
+      "position": [
+        59.12,
+        29.69
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 1846,
+      "tag": 4392222725,
+      "position": [
+        58.71,
+        30.24
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 3053,
+      "tag": 4348706827,
+      "position": [
+        45.34,
+        49.96
+      ],
+      "health": 100.0,
+      "weapon_cooldown": 10.446044921875,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 3053,
+      "tag": 4346609678,
+      "position": [
+        46.15,
+        50.75
+      ],
+      "health": 92.0,
+      "weapon_cooldown": 8.4150390625,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 3548,
+      "tag": 4361289737,
+      "position": [
+        43.33,
+        40.38
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 6.56787109375,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 3835,
+      "tag": 4393009181,
+      "position": [
+        51.46,
+        32.99
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 10526,
+      "tag": 4310171670,
+      "position": [
+        42.83,
+        40.51
+      ],
+      "health": 20.0,
+      "weapon_cooldown": 4.8779296875,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 10833,
+      "tag": 4358144021,
+      "position": [
+        60.45,
+        29.15
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 14332,
+      "tag": 4366008344,
+      "position": [
+        45.9,
+        37.08
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 0.0,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 14332,
+      "tag": 4379377713,
+      "position": [
+        45.73,
+        37.75
+      ],
+      "health": 45.0,
+      "weapon_cooldown": 13.859375,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    },
+    {
+      "loop": 14332,
+      "tag": 4343726127,
+      "position": [
+        46.43,
+        38.01
+      ],
+      "health": 9.0,
+      "weapon_cooldown": 4.45458984375,
+      "target": [
+        153.3333282470703,
+        48.0
+      ]
+    }
+  ],
+  "current_order_limits": "Uses preceding model observation, not submission-time raw orders. Matching targets do not establish weapon interruption."
+}
