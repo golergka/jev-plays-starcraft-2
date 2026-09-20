@@ -1,0 +1,14 @@
+{
+  "lab": 618,
+  "run": "runs/20260920T184011.662360Z",
+  "start_commit": "cc99db4",
+  "status": "running",
+  "horizon_requests_verified": 4,
+  "native_visual": {
+    "time": "0:50",
+    "supply": "10/27",
+    "observation": "Marine and Medic visible on creep; selected Command Center health1500/1500."
+  },
+  "configuration": "Same as610 plus general2016-loop purchase consequence prompt. Diagnosis off, compact menus and engaged-order preservation on; unchanged budget.",
+  "interpretation": "Live integration confirmed; no recovery or mission benefit established."
+}
