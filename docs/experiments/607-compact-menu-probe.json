@@ -1,0 +1,12 @@
+{
+  "lab": 607,
+  "source": "trial604 loop1578 reconstructed159-option menu from four logged disjoint tournament leaves",
+  "before_chars": 50567,
+  "after_chars": 46412,
+  "actions_submitted": 0,
+  "status": "rejected",
+  "error": "BadRequestResponseError",
+  "detail": "HTTP 400: {\"detail\":{\"error_type\":\"max_tokens_exceeded\"}}",
+  "calls": 0,
+  "cost": 0.0
+}
