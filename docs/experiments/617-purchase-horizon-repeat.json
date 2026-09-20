@@ -1,0 +1,105 @@
+{
+  "source": "runs/20260920T182614.790996Z/events.jsonl",
+  "loop": 8744,
+  "method": "Three paired repetitions with alternating call order; identical state and menu. No game actions. One selected state, not broad generalization.",
+  "pairs": [
+    {
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.29,
+        "probabilities": {
+          "project_3": 0.19,
+          "save_for_0": 0.01,
+          "project_2": 0.02,
+          "save": 0.39,
+          "project_0": 0.29,
+          "project_1": 0.01,
+          "batch_3": 0.06,
+          "project_4": 0.03
+        }
+      },
+      "horizon": {
+        "choice": "project_0",
+        "type": "choice",
+        "confidence": 0.24,
+        "probabilities": {
+          "project_1": 0.01,
+          "save_for_0": 0.01,
+          "batch_3": 0.08,
+          "project_2": 0.04,
+          "project_3": 0.25,
+          "project_4": 0.02,
+          "project_0": 0.33,
+          "save": 0.26
+        }
+      }
+    },
+    {
+      "horizon": {
+        "choice": "project_0",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "save": 0.29,
+          "project_3": 0.2,
+          "save_for_0": 0.01,
+          "project_0": 0.35,
+          "project_4": 0.03,
+          "batch_3": 0.05,
+          "project_1": 0.02,
+          "project_2": 0.05
+        }
+      },
+      "original": {
+        "choice": "project_0",
+        "type": "choice",
+        "confidence": 0.28,
+        "probabilities": {
+          "project_4": 0.03,
+          "project_3": 0.2,
+          "save": 0.31,
+          "project_2": 0.02,
+          "batch_3": 0.05,
+          "project_0": 0.37,
+          "project_1": 0.01,
+          "save_for_0": 0.01
+        }
+      }
+    },
+    {
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.25,
+        "probabilities": {
+          "batch_3": 0.06,
+          "project_0": 0.3,
+          "project_2": 0.03,
+          "project_1": 0.01,
+          "save": 0.35,
+          "project_3": 0.21,
+          "save_for_0": 0.01,
+          "project_4": 0.03
+        }
+      },
+      "horizon": {
+        "choice": "project_0",
+        "type": "choice",
+        "confidence": 0.24,
+        "probabilities": {
+          "project_1": 0.01,
+          "batch_3": 0.05,
+          "project_4": 0.02,
+          "save": 0.32,
+          "save_for_0": 0.01,
+          "project_3": 0.21,
+          "project_2": 0.05,
+          "project_0": 0.33
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.003508596
+}

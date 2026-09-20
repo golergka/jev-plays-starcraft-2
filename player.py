@@ -600,7 +600,10 @@ async def choose_investment(view, state, jev, memory=None):
                 'type':'choice',
                 'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
                                'This decision selects the next new purchase. Other selections cannot start additional purchases in this review, but worker repairs can still consume shared minerals. '
-                               'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
+                               'Existing queues continue. Compare the marginal benefit of each available project in the current situation.'
+                               ' Evaluate the consequences over the next 2016 game loops, including capabilities that require subsequent production or other actions. '
+                               'Compare that with continuing current operations without this purchase. Choose only the next purchase here; future purchases and actions remain separate decisions. '
+                               'Do not assume resources or outcomes not supported by observations.',
                 'criteria':criteria,
             }})
             prediction = answer.get('investment',{})
