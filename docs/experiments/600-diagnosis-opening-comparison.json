@@ -1,0 +1,36 @@
+[
+  {
+    "source": "runs/20260920T180213.269272Z/events.jsonl",
+    "through_loop": 1800,
+    "loop_located_requests": 31,
+    "cost_usd": 0.02096892,
+    "combat_review_loops": [
+      53,
+      504,
+      780,
+      1435,
+      1705
+    ],
+    "mean_combat_gap_loops": 413,
+    "diagnosis_requests": 3,
+    "unlocated_requests_in_entire_file": 0,
+    "scope": "Only loop-located successful request records; unlocated requests are not assigned to this window. MobileCombat measures that named selection only, not every possible combat group."
+  },
+  {
+    "source": "runs/20260920T181026.929294Z/events.jsonl",
+    "through_loop": 1800,
+    "loop_located_requests": 27,
+    "cost_usd": 0.018270335999999998,
+    "combat_review_loops": [
+      46,
+      447,
+      638,
+      1266,
+      1544
+    ],
+    "mean_combat_gap_loops": 374.5,
+    "diagnosis_requests": 0,
+    "unlocated_requests_in_entire_file": 0,
+    "scope": "Only loop-located successful request records; unlocated requests are not assigned to this window. MobileCombat measures that named selection only, not every possible combat group."
+  }
+]
