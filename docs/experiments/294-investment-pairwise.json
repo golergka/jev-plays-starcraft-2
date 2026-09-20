@@ -1,0 +1,397 @@
+{
+  "source": "runs/20260920T003943.756931Z/events.jsonl",
+  "method": "First/middle/last high-balance top-save states. Original menu versus independent pairwise comparisons of every executable purchase with unchanged save description. Identical observations, alternating variant order. Pairwise choices do not authorize simultaneous purchases; probabilities across pairs are not a joint distribution. No game actions; three samples cannot establish significance.",
+  "pairs": [
+    {
+      "recorded_time": 1789865107.580184,
+      "resources": {
+        "minerals": 513,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 220.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 23,
+        "food_cap": 51,
+        "supply_in_construction": 0,
+        "supply_remaining": 28,
+        "supply_blocked": false
+      },
+      "projects": {
+        "project_0": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks using the engine-defined location, Build TechLab Barracks using the engine-defined location, Smart: interact with unfinished owned construction, Train Marine. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_1": "Purchase one BarracksReactor. Its action capabilities have not yet been observed. Cost/effects: {'type': 'BarracksReactor', 'minerals': 50, 'vespene': 50, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_2": "Purchase one BarracksTechLab. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for SiegeTank (requires attached addon), Reaper (requires attached addon), Marauder (requires attached addon), Banshee (requires attached addon), Raven (requires attached addon), Goliath (requires attached addon), Wraith (requires attached addon), Firebat (requires attached addon), Diamondback (requires attached addon), Predator (requires attached addon), ScienceVessel (requires attached addon), Medic (requires attached addon); other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'BarracksTechLab', 'minerals': 50, 'vespene': 25, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'SiegeTank', 'requires_attached': True}, {'unit': 'Reaper', 'requires_attached': True}, {'unit': 'Marauder', 'requires_attached': True}, {'unit': 'Banshee', 'requires_attached': True}, {'unit': 'Raven', 'requires_attached': True}, {'unit': 'Goliath', 'requires_attached': True}, {'unit': 'Wraith', 'requires_attached': True}, {'unit': 'Firebat', 'requires_attached': True}, {'unit': 'Diamondback', 'requires_attached': True}, {'unit': 'Predator', 'requires_attached': True}, {'unit': 'ScienceVessel', 'requires_attached': True}, {'unit': 'Medic', 'requires_attached': True}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_3": "Purchase one Bunker. Adds another unit able to: Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Existing owned Bunker cargo: 1 slots occupied, 11 available; passengers by type: {'Marine': 1}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}.",
+        "project_4": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_5": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_6": "Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 15; idle: 14; current orders: {'Move Move': 1}.",
+        "batch_6": "Commit to up to three training requests for Marine over 2016 game loops (about90 seconds), using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 15; idle: 14; current orders: {'Move Move': 1}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_7": "Purchase one MissileTurret. Adds another unit able to: Attack visible targets. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_8": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_9": "Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Harvest Return SCV': 3, 'Harvest Gather SCV': 2, 'Move Move': 2}.",
+        "batch_9": "Commit to up to three training requests for SCV over 2016 game loops (about90 seconds), using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Harvest Return SCV': 3, 'Harvest Gather SCV': 2, 'Move Move': 2}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_10": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "batch_9": 0.08,
+            "save_for_0": 0.0,
+            "project_5": 0.0,
+            "project_1": 0.02,
+            "project_9": 0.05,
+            "project_2": 0.01,
+            "save_for_1": 0.01,
+            "project_6": 0.05,
+            "save": 0.48,
+            "project_8": 0.01,
+            "project_0": 0.01,
+            "batch_6": 0.05,
+            "project_3": 0.15000000000000002,
+            "project_4": 0.05,
+            "project_7": 0.01,
+            "project_10": 0.02
+          }
+        }
+      },
+      "pairwise": {
+        "project_0": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.89,
+          "probabilities": {
+            "purchase": 0.06,
+            "wait": 0.94
+          }
+        },
+        "project_1": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.9,
+          "probabilities": {
+            "purchase": 0.05,
+            "wait": 0.95
+          }
+        },
+        "project_2": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.89,
+          "probabilities": {
+            "purchase": 0.05,
+            "wait": 0.95
+          }
+        },
+        "project_3": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "purchase": 0.37,
+            "wait": 0.63
+          }
+        },
+        "project_4": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.79,
+          "probabilities": {
+            "purchase": 0.11,
+            "wait": 0.89
+          }
+        },
+        "project_5": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.97,
+          "probabilities": {
+            "purchase": 0.02,
+            "wait": 0.98
+          }
+        },
+        "project_6": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.7,
+          "probabilities": {
+            "purchase": 0.15,
+            "wait": 0.85
+          }
+        },
+        "batch_6": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.77,
+          "probabilities": {
+            "purchase": 0.12,
+            "wait": 0.88
+          }
+        },
+        "project_7": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.76,
+          "probabilities": {
+            "purchase": 0.12,
+            "wait": 0.88
+          }
+        },
+        "project_8": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.88,
+          "probabilities": {
+            "purchase": 0.06,
+            "wait": 0.94
+          }
+        },
+        "project_9": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.59,
+          "probabilities": {
+            "purchase": 0.2,
+            "wait": 0.8
+          }
+        },
+        "batch_9": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "purchase": 0.19,
+            "wait": 0.81
+          }
+        },
+        "project_10": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.84,
+          "probabilities": {
+            "purchase": 0.08,
+            "wait": 0.92
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789865379.240629,
+      "resources": {
+        "minerals": 1787,
+        "vespene": 25,
+        "estimated_minerals_per_minute": 300.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 21,
+        "food_cap": 51,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 30,
+        "supply_blocked": false
+      },
+      "projects": {
+        "project_0": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks using the engine-defined location, Build TechLab Barracks using the engine-defined location, Smart: interact with unfinished owned construction, Train Marine. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_1": "Purchase one Bunker. Adds another unit able to: Attack visible targets, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Existing owned Bunker cargo: 0 slots occupied, 4 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_2": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_3": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_4": "Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 8; idle: 8; current orders: {}.",
+        "batch_4": "Commit to up to three training requests for Marine over 2016 game loops (about90 seconds), using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 8; idle: 8; current orders: {}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_5": "Purchase one MissileTurret. Adds another unit able to: Attack visible targets. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_6": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_7": "Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 5; current orders: {'Build Bunker': 1, 'Harvest Gather SCV': 6, 'Harvest Return SCV': 1}.",
+        "batch_7": "Commit to up to three training requests for SCV over 2016 game loops (about90 seconds), using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 5; current orders: {'Build Bunker': 1, 'Harvest Gather SCV': 6, 'Harvest Return SCV': 1}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_8": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 5; current orders: {}."
+      },
+      "pairwise": {
+        "project_0": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.77,
+          "probabilities": {
+            "purchase": 0.12,
+            "wait": 0.88
+          }
+        },
+        "project_1": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "purchase": 0.41,
+            "wait": 0.59
+          }
+        },
+        "project_2": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.72,
+          "probabilities": {
+            "purchase": 0.14,
+            "wait": 0.86
+          }
+        },
+        "project_3": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.91,
+          "probabilities": {
+            "purchase": 0.04,
+            "wait": 0.96
+          }
+        },
+        "project_4": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "purchase": 0.25,
+            "wait": 0.75
+          }
+        },
+        "batch_4": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.56,
+          "probabilities": {
+            "purchase": 0.22,
+            "wait": 0.78
+          }
+        },
+        "project_5": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "purchase": 0.37,
+            "wait": 0.63
+          }
+        },
+        "project_6": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.83,
+          "probabilities": {
+            "purchase": 0.09,
+            "wait": 0.91
+          }
+        },
+        "project_7": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.45,
+          "probabilities": {
+            "purchase": 0.27,
+            "wait": 0.73
+          }
+        },
+        "batch_7": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "purchase": 0.24,
+            "wait": 0.76
+          }
+        },
+        "project_8": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.66,
+          "probabilities": {
+            "purchase": 0.17,
+            "wait": 0.83
+          }
+        }
+      },
+      "original": {
+        "investment": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "project_0": 0.01,
+            "save_for_2": 0.0,
+            "batch_4": 0.06,
+            "project_2": 0.05,
+            "batch_7": 0.1,
+            "save_for_1": 0.0,
+            "project_8": 0.02,
+            "project_1": 0.26,
+            "project_4": 0.04,
+            "project_5": 0.11,
+            "project_7": 0.1,
+            "save_for_0": 0.01,
+            "save": 0.22,
+            "project_6": 0.02,
+            "project_3": 0.0
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789865559.914934,
+      "resources": {
+        "minerals": 1206,
+        "vespene": 9,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 8,
+        "supply_in_construction": 0,
+        "supply_remaining": 2,
+        "supply_blocked": false
+      },
+      "projects": {
+        "project_0": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_1": "Purchase one MissileTurret. Adds another unit able to: Attack visible targets. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_2": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "save_for_2": 0.0,
+            "project_0": 0.09,
+            "save_for_1": 0.01,
+            "save_for_0": 0.02,
+            "project_2": 0.14,
+            "project_1": 0.15,
+            "save": 0.59
+          }
+        }
+      },
+      "pairwise": {
+        "project_0": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.85,
+          "probabilities": {
+            "wait": 0.92,
+            "purchase": 0.08
+          }
+        },
+        "project_1": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "wait": 0.79,
+            "purchase": 0.21
+          }
+        },
+        "project_2": {
+          "choice": "wait",
+          "type": "choice",
+          "confidence": 0.7,
+          "probabilities": {
+            "wait": 0.85,
+            "purchase": 0.15
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.002958186
+}

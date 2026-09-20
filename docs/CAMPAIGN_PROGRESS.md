@@ -4326,3 +4326,19 @@ labels or purchase type; otherwise it explicitly says target attribution unavail
 New cache prevents hot reload from carrying old target-specific descriptions, and
 retained failures are relabeled too. No engine result or tactical choice changes.
 141tests pass, including stale-cache and retained-feedback target leakage checks.
+
+### Lab294 — every-project-versus-wait probe still favors waiting
+
+Six-call recorded-state probe on first/middle/last >=500mineral,recorded top-save
+states from290run. Baseline full menu versus independent comparison of every
+executable purchase/batch with the unchanged save description; identical state,
+alternating variant order. Unlike lab227, no conditional project-ranking gate.
+All27binary comparisons chose wait. Baselines chose save/project_1/save; highest
+purchase probability perstate .37/.41/.21. Cost$0.002958186 under persistent
+rolling governor. Artifact294-investment-pairwise.json and reproducible script.
+
+Do not deploy pairwise layer: added comparisons do not show improved allocation,
+and one baseline purchase becoming wait reinforces concern. Three selected states
+and one sample pervariant cannot establish model-wide inability or significance.
+This is a negative interface experiment, not permission to force purchases or
+remove saving. Current game remains terminal; next policy experiment unresolved.
