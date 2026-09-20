@@ -4451,3 +4451,13 @@ Context construction is not a guarantee of a successful provider response.
 146tests pass including a1000loop unseen gap then expiry after surfacing.
 Framework collector change requires next controller process; current live trial
 continues unchanged at collector level and cannot recover already-pruned errors.
+
+### Lab302 — integrated restart ending verified; retry with feedback retention
+
+Trial298 native defeat12:27,07:42remaining,zero minerals; all structures destroyed.
+178calls,$0.104693946. Instrumented endingloop11964 agrees with independent UI.
+Integrated restart therefore demonstrated both fresh openingloop7 and subsequent
+ending detection on same SC2 process. No campaign advancement. Timing text299
+and player feedback301 were live reloaded; old collector still ran throughout.
+Delayed invalid-location error expired unseen, fixed301 for next process.
+Retry same mission with301collector active from opening, unchanged budget.
