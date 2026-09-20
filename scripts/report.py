@@ -21,6 +21,8 @@ for call in calls:
         stage = 'contribution_roles'
     elif 'save' in keys and all(q.get('type') == 'score' for q in call['questions'].values()):
         stage = 'investment_scores'
+    elif keys and all(q.get('type') == 'score' and 'Order kind: ' in q.get('instructions','') for q in call['questions'].values()):
+        stage = 'combat_order_kind_scores'
     elif keys in ({'investment'}, {'producer_site'}, {'navigation'}, {'spending'}):
         stage = next(iter(keys))
     else:
@@ -55,6 +57,9 @@ choices = collections.Counter(a.get('choice','unknown') for r in calls for a in 
 navigation = [r for r in calls if 'navigation' in r['questions']]
 batches = [r for r in rows if r['event']=='decision_batch']
 groups = [r for r in rows if r['event']=='group_choice']
+order_ratings = [r for r in rows if r['event']=='order_kind_scores']
+order_margins = [values[0]-values[1] for r in order_ratings
+                 if len(values := sorted(r['scores'].values(),reverse=True)) > 1]
 resource_samples = [r['state']['resources'] for r in calls if isinstance(r['state'].get('resources'),dict)]
 income_samples = [r['estimated_minerals_per_minute'] for r in resource_samples
                   if r.get('estimated_minerals_per_minute') is not None]
@@ -119,6 +124,9 @@ print(json.dumps({
     'routine_execution_questions_avoided':sum(r['event']=='routine_execution' and r.get('avoided_concrete_question',False) for r in rows),
     'group_decisions':len(groups),
     'group_choices':dict(collections.Counter(r['choice'] for r in groups)),
+    'combat_order_kind_choices':dict(collections.Counter(r['choice'] for r in order_ratings)),
+    'combat_order_score_margin_median':statistics.median(order_margins) if order_margins else None,
+    'combat_order_score_margin_note':'Top minus runner-up descriptive rating; not calibrated utility or confidence.',
     'investment_choices':dict(collections.Counter(
         'save' if r['choice']=='save' else r['projects'][int(r['choice'].split('_')[1])]
         for r in rows if r['event']=='investment_choice' and r.get('choice')

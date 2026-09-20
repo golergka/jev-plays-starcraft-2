@@ -5007,3 +5007,14 @@ existing policy. Seeded random exact ties; missing/nonfinite/out-of-range/boolea
 ratings fail loudly. Log scores and option counts. The existing rolling spending
 cap and pacing apply to every additional call. No tactical preference or target is
 injected. Validation:181 tests passed. Live outcome is not yet known.
+
+### Lab345 — separate scoring overhead while344 remains live
+
+Extend report.py to attribute successful combat-kind rating requests separately
+and report chosen kinds plus median top-minus-runner-up margin. Margins are not
+confidence or calibrated utility. Early344 snapshot:35 successful requests,
+$0.019721520 total;6 rating requests $0.004479510 (about23% of total). Six recorded
+kind choices:Move2,Hold4;median margin0.135. Stage costs sum to total verified.
+Native screen at1:19 shows Marines gathered near the command center,18:51 until
+evacuation. This is a behavior observation,not tactical advice or proof of success.
+Snapshot artifact345 is explicitly partial. No player policy change duringtrial.
