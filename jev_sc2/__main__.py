@@ -169,6 +169,7 @@ async def run(args):
               "investment_scoring_enabled": getattr(args,"investment_scores",False),
               "order_scoring_enabled": getattr(args,"order_scores",False),
               "contribution_top_choice": getattr(args,"contribution_top_choice",False),
+              "sample_combat_orders": getattr(args,"sample_combat_orders",False),
               "production_intentions_enabled": getattr(args,"production_intentions",False),
               "bottleneck_diagnosis_enabled": getattr(args,"bottleneck_diagnosis",False),
               "destination_categories_enabled": getattr(args,"destination_categories",False),
@@ -519,6 +520,7 @@ def main():
     parser.add_argument('--order-scores',action='store_true',help='Experimental Jev-rated combat order kinds followed by exact Jev orders')
     parser.add_argument('--investment-scores',action='store_true',help='Experimental Jev-rated investment selection')
     parser.add_argument('--contribution-top-choice',action='store_true',help='Use Jev returned contribution choices instead of probability sampling')
+    parser.add_argument('--sample-combat-orders',action='store_true',help='Sample Jev concrete mobile-combat probabilities with fixed seed; no extra calls')
     parser.add_argument('--max-age-loops',type=int,default=32)
     parser.add_argument('--objective',default='Keep your units alive and defeat visible enemy units.')
     parser.add_argument('--doctor',action='store_true')

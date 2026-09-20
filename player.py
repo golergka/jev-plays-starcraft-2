@@ -209,6 +209,17 @@ async def ask_order_menus(state, questions, jev, *, full_first=True):
     return {key:value for answer in answers for key,value in answer.items()}
 
 
+def sample_concrete_answer(answer, criteria, rng):
+    weights = answer.get('probabilities', {})
+    if not weights or any(k not in criteria or not isinstance(v, (int, float))
+                          or not math.isfinite(v) or v < 0 for k, v in weights.items()):
+        raise ValueError('Invalid concrete-order probability distribution')
+    keys = sorted(weights)
+    if sum(weights.values()) <= 0:
+        raise ValueError('Empty concrete-order probability mass')
+    return {**answer, 'choice': rng.choices(keys, weights=[weights[k] for k in keys], k=1)[0]}
+
+
 async def choose_concrete_orders(state, questions, jev):
     """Jev chooses resource kind before location when both kinds are offered."""
     # Concrete questions name their selections exactly. Other selections retain
@@ -1097,6 +1108,16 @@ async def decide(view, jev, memory):
                 if scored:
                     concrete_questions.update(await rate_order_kinds(order_state(state),scored,jev,memory))
             answers.update(await choose_concrete_orders(order_state(state),concrete_questions,jev))
+            if memory.get('sample_combat_orders'):
+                rng = memory.setdefault('combat_order_rng', random.Random(20260920))
+                for kind in sorted(set(concrete_questions) & direct_selections):
+                    original = answers[kind]
+                    answers[kind] = sample_concrete_answer(
+                        original, concrete_questions[kind]['criteria'], rng)
+                    jev.log('combat_order_sample', loop=view['loop'], cohort=kind,
+                            top_choice=original.get('choice'),
+                            sampled_choice=answers[kind]['choice'],
+                            probabilities=original.get('probabilities'), seed=20260920)
         commands, support_requests = [], {}
         for kind, selected in cohorts.items():
             choice = answers.get(kind,{}).get('choice')
