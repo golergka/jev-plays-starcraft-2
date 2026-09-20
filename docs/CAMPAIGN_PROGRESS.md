@@ -4421,3 +4421,18 @@ conversion; factual time context should not imply an unverified clock rate.
 145tests pass, including integrated restart coverage. This is a context correction,
 not evidence of strategic improvement. Current trial becomes mixed prompt revisions
 after committed live reload.
+
+### Lab300 — distinguish production completion from acceptance
+
+Trial298 remains active; committed299 live reload observed at1789867318.1503592.
+Marine batch selected atloop1053, first request then, accepted followups1187/1304.
+Observed completed new Marine tags:4295491586 at2440;4382261250 and4399300609
+also present by3068, all build_progress1.0 and absent in opening observation.
+This is stronger production evidence than three accepted requests alone. It does
+not prove successful deployment or survival.
+
+Native screenshot3:58 shows army near Command Center, local fighting, and2/27
+workers. Current five-SCV economy is still weak; role logs3068/3843 show different
+income/positioning/other/continue commitments rather than universal harvesting.
+No mission-specific worker assignment or tactical override made. Do not conflate
+working batch executor with solving economic allocation or campaign competence.
