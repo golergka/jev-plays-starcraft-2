@@ -1,0 +1,22 @@
+{
+  "run": "runs/20260920T051543.019592Z",
+  "ui_verification": {
+    "time": 1789881741.883853,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "7:50",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "2/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "calls": 114,
+  "cost_usd": 0.06899848200000001,
+  "strategies": {
+    "explore": 2,
+    "protect": 18
+  },
+  "errors": [],
+  "scope": "First controlled attempt on this mission. Relic progress independently visible and delivered in model requests; does not establish primary objective progress or robust transfer from Zero Hour."
+}

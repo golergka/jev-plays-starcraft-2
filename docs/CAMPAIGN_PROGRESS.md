@@ -5476,3 +5476,18 @@ oldhash/definitionsandmanualmigrationreason inignoredcheckpoint,addedthirdwin's
 verificationrecord,setcurrentmissionSmashAndGrab andcurrentmanifesthash.
 CompletedmissionIDsunchanged; publicmanifestcompletedprefixunchanged. Thisrepairs
 resume bookkeeping,not campaign tech/research/reward persistence betweenmaps.
+
+### Lab378 — first Smash and Grab attempt ends7:50 defeat
+
+Run20260920T051543.019592Z/session75769 terminalexit0. NativeUI verifies defeat
+7:50,allstructuresdestroyed,0minerals/0gas,2/4Protossrelics.114successfulrequests,
+$0.068998482,zero recorded model/engine errors. Strategychoices2explore/18protect.
+Reliccount2/4 appearedinpaidrequestcontextaswellasnativeUI. Primaryartifactnotwon.
+
+Earlyunitsleftbase;later nativeviewshowedProtossattackers destroyingproductionand
+CommandCenter while workers remained. SuccessfulAPIcontrol andbonuscollectiondid
+notestablisha viable army/economy ormainobjectiveprogress. Currentgeneralpolicy
+unchangedfromZeroHourwin. Localresult/UI/checkpointandartifact378recorddefeat;
+completedmissionsremainLiberationDay,TheOutlaws,ZeroHour. No unchangedretry yet.
+Next inspect earlycombat/contributiondecisions for a general failure mechanism,
+consultingpriornegativeprobes beforeaddingmoreprompts orbuyinganotherfulltrial.
