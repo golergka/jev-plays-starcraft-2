@@ -1,0 +1,56 @@
+{
+  "lab": 610,
+  "run": "runs/20260920T182614.790996Z",
+  "start_commit": "f55921a",
+  "status": "running",
+  "native_visual": {
+    "time": "0:58",
+    "supply": "10/27",
+    "relics": "0/4",
+    "observation": "Medic visible on creep; selected Command Center health1500/1500."
+  },
+  "compact_requests": [
+    {
+      "loop": 52,
+      "questions": [
+        "SupplyDepot",
+        "MobileCombat",
+        "SCV / unit 4299161601",
+        "SCV / unit 4320657409",
+        "SCV / unit 4299423745",
+        "SCV / unit 4323803137",
+        "SCV / unit 4300210177"
+      ],
+      "cost": 0.000672294
+    },
+    {
+      "loop": 423,
+      "questions": [
+        "SupplyDepot",
+        "SCV / unit 4299161601",
+        "MobileCombat",
+        "SCV / unit 4323803137",
+        "SCV / unit 4320657409",
+        "SCV / unit 4300210177",
+        "SCV / unit 4299423745"
+      ],
+      "cost": 0.000777546
+    },
+    {
+      "loop": 691,
+      "questions": [
+        "MobileCombat"
+      ],
+      "cost": 0.001122912
+    },
+    {
+      "loop": 1050,
+      "questions": [
+        "MobileCombat"
+      ],
+      "cost": 0.000992628
+    }
+  ],
+  "fallbacks_so_far": 0,
+  "interpretation": "Live request integration confirmed; no gameplay or full-run cost benefit established."
+}
