@@ -5220,3 +5220,12 @@ atpartialaudit,$0.031815294. Artifact359storesfirstpaidbonuscontextandnativechec
 First8paidrequests hademptyobjectivelistbeforemissioninitialized;later14of22 already
 hadmainobjective (earlier358check). No root-addedrescueorder,route,orstrategy.
 This validatesdynamicfeed,notqualityofresponseorcampaigncompletion. Policyunchanged.
+
+### Lab360 — failed bonus objective status reaches Jev during live trial
+
+358trialstilllive.Native14:07shows[Failed]RescuetheRebels(0/3),mainobjectiveactive,
+06:02until evacuation.18paidrequests containfailedbonusstate;191successfulcalls
+cost$0.120801114atpartialaudit. Artifact360preservesfirstfailedcontextandUIcheck.
+OneearlierReadTimeoutwasfollowedby19successfulcallsatalaterrecoverycheck; no restart.
+This verifiesstateupdates,notmainmissionoutcome or effectiveness. No root tactical
+orders or policychange; controllercontinuestoownsocket.

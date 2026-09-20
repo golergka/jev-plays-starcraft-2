@@ -1,0 +1,39 @@
+{
+  "source": "runs/20260920T040013.597739Z/events.jsonl",
+  "partial": true,
+  "first_paid_failed_context": {
+    "source": "player-visible native timer windows and objectives",
+    "timers": [
+      {
+        "window": 1,
+        "title": "Evacuation In: ",
+        "mode": "remaining",
+        "raw_timer_value": 418.375
+      }
+    ],
+    "objectives": [
+      {
+        "id": 2,
+        "name": "[Failed] Rescue the Rebels (0/3)",
+        "description": "The rapid advance of the zerg has cut off some rebel fighters outside the base. They can't hold out for long on their own. Rescue them!",
+        "state": "failed",
+        "primary": false
+      },
+      {
+        "id": 1,
+        "name": "Hold Out For Evacuation",
+        "description": "The zerg have returned! Defend the base long enough for transport to arrive and evacuate your forces from Mar Sara.",
+        "state": "active",
+        "primary": true
+      }
+    ],
+    "note": "Native timer values; displayed formatting and rounding not yet validated."
+  },
+  "paid_requests_with_failed_objective": 18,
+  "native_screen": {
+    "clock": "14:07",
+    "bonus": "[Failed] Rescue the Rebels (0/3)",
+    "evacuation_remaining": "06:02"
+  },
+  "scope": "Failed bonus objective delivery, not main mission outcome."
+}
