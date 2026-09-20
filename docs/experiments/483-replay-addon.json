@@ -1,0 +1,156 @@
+{
+  "replay": "runs/20260920T115235.955544Z/game.SC2Replay",
+  "mode": "player1 replay; fog enabled; no action requests",
+  "samples": [
+    {
+      "loop": 21188,
+      "producers": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            93.5,
+            18.5
+          ],
+          "addon_tag": 0,
+          "orders": []
+        }
+      ],
+      "queries": [
+        {
+          "tag": 4349493269,
+          "results": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "producer_center",
+              "result": "Error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "loop": 21190,
+      "producers": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            93.5,
+            18.5
+          ],
+          "addon_tag": 0,
+          "orders": []
+        }
+      ],
+      "queries": [
+        {
+          "tag": 4349493269,
+          "results": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "producer_center",
+              "result": "Error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "loop": 21688,
+      "producers": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            93.5,
+            18.5
+          ],
+          "addon_tag": 0,
+          "orders": []
+        }
+      ],
+      "queries": [
+        {
+          "tag": 4349493269,
+          "results": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "producer_center",
+              "result": "Error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "loop": 21690,
+      "producers": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            93.5,
+            18.5
+          ],
+          "addon_tag": 0,
+          "orders": []
+        }
+      ],
+      "queries": [
+        {
+          "tag": 4349493269,
+          "results": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "producer_center",
+              "result": "Error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "loop": 22479,
+      "producers": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            93.5,
+            18.5
+          ],
+          "addon_tag": 0,
+          "orders": []
+        }
+      ],
+      "queries": [
+        {
+          "tag": 4349493269,
+          "results": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "producer_center",
+              "result": "Error"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
