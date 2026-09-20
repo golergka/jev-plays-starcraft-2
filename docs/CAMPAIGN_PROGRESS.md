@@ -6342,3 +6342,14 @@ clock caveat retained), inferred mission deadline, urgency score, tactical order
 or menu change. This is a factual context repair, not proof of better allocation.
 Full213tests pass, including exact-loop preservation and absent-field behavior.
 No paid calls or new mission this turn. All campaigns remain incomplete.
+
+### Lab431 — exact-current-loop context live trial starts
+
+Run20260920T093458.774878Z/session86798 revision41e2f4d. SameSmash restart
+29923→0 validated, native opening0:12 verified. Same damage-only eventreviews,
+contribution top-choice, shared hard$0.10/300s cap and general objective.
+First requests at48, then362 contain game_loop in strategy, investment,
+contribution and concrete order inputs. This verifies context propagation,
+not a performance benefit. No root tactical orders. Trial live; monitor same
+handle and verify native ending before credit. Firstthree missions still won,
+Smash has13 verified defeats before this attempt.
