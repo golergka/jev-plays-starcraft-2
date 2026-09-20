@@ -93,3 +93,15 @@ def test_objective_enabled_build_cannot_silently_omit_export(tmp_path):
     p=tmp_path/'context';bank(p)
     with pytest.raises(ValueError,match='Incomplete visible objective'):
         VisibleTimerReader(p,previous_launch_stamp=1,started_at=90,require_objectives=True).poll(102)
+
+
+def test_objective_startup_wait_is_bounded_and_latched():
+    from jev_sc2.mission_context import ObjectiveInitializationGate
+    gate=ObjectiveInitializationGate(100)
+    assert not gate.check(None,100)
+    assert not gate.check({'objectives':[]},110)
+    assert gate.check({'objectives':[{'state':'active'}]},120)
+    assert gate.check(None,150)  # This gate never hides later runtime deterioration.
+    missing=ObjectiveInitializationGate(100)
+    with pytest.raises(TimeoutError):missing.check({'objectives':[]},130)
+    with pytest.raises(TimeoutError):missing.check({'objectives':[{}]},131)

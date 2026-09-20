@@ -5244,3 +5244,15 @@ thereforeempty),genericobjectivepromptchanged,andstochasticchoicesdiffer. Large
 unspentbankandarmycollapsepersist. No root tactics/livepolicychanges. Checkpointand
 resultupdated; artifact361preservesdelivery/cost/error evidence. Controllerterminal;
 SC2on357mapdefeatscreen. Do not rerununchanged or claimallcampaigncompletion.
+
+### Lab362 — bounded objective initialization before paid decisions
+
+358trace exportedfirstvisibleobjectives4.748secondsafterfirstcontextsample;8paid
+requests precededthatpoint. Objective-enabledmaps nowwaitbeforemodelcalls until
+freshcontextcontainsobjectives,maximum30wallseconds. One awaiting_objectives event
+makeswaitvisible; objectives_readyrecordsrelease. Timeoutlogssevereerror,records
+finishedincompleterun,andraises; no silentperpetualwaiting. Gateislatching:later
+missing/emptycontext doesnotre-enablethisstartupdelay. Timer-onlymapsunchanged.
+This avoidsactingonthegenericobjectivebeforemissioninitialization; itisnot a
+strategyfix.192testspassincludingtimeoutandlatch; no newpaidtrial. CurrentSC2still
+357mapdefeatscreen. No campaignprogressclaim.

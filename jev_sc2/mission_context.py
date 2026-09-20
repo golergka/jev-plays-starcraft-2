@@ -125,3 +125,22 @@ def timer_reader_for_map(map_path, *, new_launch, bank_directory=None):
     return VisibleTimerReader(bank,previous_launch_stamp=previous,
                               started_at=time.time() if new_launch else 0,
                               require_objectives=metadata.get('visible_objectives',False))
+
+
+class ObjectiveInitializationGate:
+    """One bounded startup wait; never delays decisions after readiness."""
+    def __init__(self, started_at, timeout=30):
+        if timeout <= 0:
+            raise ValueError('Require positive objective initialization timeout')
+        self.started_at = started_at
+        self.timeout = timeout
+        self.ready = False
+
+    def check(self, context, now):
+        if self.ready:
+            return True
+        if now-self.started_at >= self.timeout:
+            raise TimeoutError(f'Player-visible objectives did not initialize within {self.timeout:g} seconds')
+        if context and context.get('objectives'):
+            self.ready = True
+        return self.ready

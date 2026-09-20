@@ -19,7 +19,7 @@ from .reload import PlayerLoader
 from .view import make_view, validate_commands
 from .camera import choose_shot
 from .outcome import OutcomeMonitor
-from .mission_context import timer_reader_for_map
+from .mission_context import timer_reader_for_map, ObjectiveInitializationGate
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -232,6 +232,10 @@ async def run(args):
             clock_changed_at = time.monotonic()
             failures = 0
             return True
+        objective_gate = (ObjectiveInitializationGate(time.monotonic())
+                          if timer_reader is not None and timer_reader.require_objectives else None)
+        context_error = None
+        objective_wait_logged = False
         while time.monotonic()-started < args.seconds and jev.calls < args.max_calls:
             try:
                 revision = loader.refresh()
@@ -268,6 +272,21 @@ async def run(args):
                 context = timer_reader.poll(time.time())
                 view['mission_context'] = context or {'status':'unavailable','reason':'No fresh visible timer export'}
                 log('mission_context',loop=view['loop'],context=view['mission_context'])
+                if objective_gate is not None and not objective_gate.ready:
+                    try:
+                        ready = objective_gate.check(context,time.monotonic())
+                    except TimeoutError as exc:
+                        context_error = exc
+                        log('stopped',reason=str(exc),severity='error',error=type(exc).__name__)
+                        break
+                    if not ready:
+                        if not objective_wait_logged:
+                            log('awaiting_objectives',timeout_seconds=objective_gate.timeout,
+                                reason='Objective-enabled map has not published visible objectives; no model calls yet')
+                            objective_wait_logged = True
+                        await asyncio.sleep(0.2)
+                        continue
+                    log('objectives_ready',loop=view['loop'])
             if view['self']:
                 empty_since = None
             else:
@@ -402,6 +421,8 @@ async def run(args):
                 planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
+        if context_error is not None:
+            raise context_error
         if budget_error is not None:
             budget_error.outcome = dict(outcome)
             raise budget_error
