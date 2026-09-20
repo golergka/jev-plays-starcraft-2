@@ -1,0 +1,170 @@
+{
+  "source": "runs/20260920T033800.011509Z/events.jsonl",
+  "method": "Up to six already chosen training batches. Ask size conditional on recorded Jev-selected type; no added type duplicates, no commands, no deployment.",
+  "cases": [
+    {
+      "loop": 1037,
+      "type": "SCV",
+      "question": {
+        "type": "choice",
+        "instructions": "Jev has selected a training commitment for SCV. Choose its size given current resources, force, objective, and priorities. The producer is chosen separately and remains fixed. Requests execute only while affordable and legal, at least112loops apart, and stop when the allowance ends, 2016loops pass, the producer disappears, or strategic priority changes. This commitment has priority over other new purchases while active. Rejected/stale requests consume attempts. You may cancel.",
+        "criteria": {
+          "cancel": "Cancel this training commitment; keep resources for another decision.",
+          "requests_1": "Authorize at most 1 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 50, 'vespene': 0, 'supply': 1.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_3": "Authorize at most 3 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 150, 'vespene': 0, 'supply': 3.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_6": "Authorize at most 6 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 300, 'vespene': 0, 'supply': 6.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_12": "Authorize at most 12 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 600, 'vespene': 0, 'supply': 12.0}. This is a request allowance, not guaranteed completed units."
+        }
+      },
+      "answer": {
+        "choice": "cancel",
+        "type": "choice",
+        "confidence": 0.17,
+        "probabilities": {
+          "requests_3": 0.21,
+          "requests_12": 0.12,
+          "requests_6": 0.17,
+          "cancel": 0.33,
+          "requests_1": 0.17
+        }
+      }
+    },
+    {
+      "loop": 1985,
+      "type": "Marine",
+      "question": {
+        "type": "choice",
+        "instructions": "Jev has selected a training commitment for Marine. Choose its size given current resources, force, objective, and priorities. The producer is chosen separately and remains fixed. Requests execute only while affordable and legal, at least112loops apart, and stop when the allowance ends, 2016loops pass, the producer disappears, or strategic priority changes. This commitment has priority over other new purchases while active. Rejected/stale requests consume attempts. You may cancel.",
+        "criteria": {
+          "cancel": "Cancel this training commitment; keep resources for another decision.",
+          "requests_1": "Authorize at most 1 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 50, 'vespene': 0, 'supply': 1.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_3": "Authorize at most 3 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 150, 'vespene': 0, 'supply': 3.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_6": "Authorize at most 6 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 300, 'vespene': 0, 'supply': 6.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_12": "Authorize at most 12 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 600, 'vespene': 0, 'supply': 12.0}. This is a request allowance, not guaranteed completed units."
+        }
+      },
+      "answer": {
+        "choice": "cancel",
+        "type": "choice",
+        "confidence": 0.43,
+        "probabilities": {
+          "requests_6": 0.11,
+          "requests_3": 0.15,
+          "requests_1": 0.16,
+          "requests_12": 0.04,
+          "cancel": 0.54
+        }
+      }
+    },
+    {
+      "loop": 2509,
+      "type": "SCV",
+      "question": {
+        "type": "choice",
+        "instructions": "Jev has selected a training commitment for SCV. Choose its size given current resources, force, objective, and priorities. The producer is chosen separately and remains fixed. Requests execute only while affordable and legal, at least112loops apart, and stop when the allowance ends, 2016loops pass, the producer disappears, or strategic priority changes. This commitment has priority over other new purchases while active. Rejected/stale requests consume attempts. You may cancel.",
+        "criteria": {
+          "cancel": "Cancel this training commitment; keep resources for another decision.",
+          "requests_1": "Authorize at most 1 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 50, 'vespene': 0, 'supply': 1.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_3": "Authorize at most 3 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 150, 'vespene': 0, 'supply': 3.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_6": "Authorize at most 6 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 300, 'vespene': 0, 'supply': 6.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_12": "Authorize at most 12 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 600, 'vespene': 0, 'supply': 12.0}. This is a request allowance, not guaranteed completed units."
+        }
+      },
+      "answer": {
+        "choice": "cancel",
+        "type": "choice",
+        "confidence": 0.14,
+        "probabilities": {
+          "cancel": 0.31,
+          "requests_1": 0.17,
+          "requests_3": 0.24,
+          "requests_12": 0.05,
+          "requests_6": 0.23
+        }
+      }
+    },
+    {
+      "loop": 9178,
+      "type": "SCV",
+      "question": {
+        "type": "choice",
+        "instructions": "Jev has selected a training commitment for SCV. Choose its size given current resources, force, objective, and priorities. The producer is chosen separately and remains fixed. Requests execute only while affordable and legal, at least112loops apart, and stop when the allowance ends, 2016loops pass, the producer disappears, or strategic priority changes. This commitment has priority over other new purchases while active. Rejected/stale requests consume attempts. You may cancel.",
+        "criteria": {
+          "cancel": "Cancel this training commitment; keep resources for another decision.",
+          "requests_1": "Authorize at most 1 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 50, 'vespene': 0, 'supply': 1.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_3": "Authorize at most 3 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 150, 'vespene': 0, 'supply': 3.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_6": "Authorize at most 6 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 300, 'vespene': 0, 'supply': 6.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_12": "Authorize at most 12 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 600, 'vespene': 0, 'supply': 12.0}. This is a request allowance, not guaranteed completed units."
+        }
+      },
+      "answer": {
+        "choice": "requests_12",
+        "type": "choice",
+        "confidence": 0.08,
+        "probabilities": {
+          "requests_12": 0.26,
+          "cancel": 0.22,
+          "requests_6": 0.19,
+          "requests_3": 0.19,
+          "requests_1": 0.14
+        }
+      }
+    },
+    {
+      "loop": 9622,
+      "type": "SCV",
+      "question": {
+        "type": "choice",
+        "instructions": "Jev has selected a training commitment for SCV. Choose its size given current resources, force, objective, and priorities. The producer is chosen separately and remains fixed. Requests execute only while affordable and legal, at least112loops apart, and stop when the allowance ends, 2016loops pass, the producer disappears, or strategic priority changes. This commitment has priority over other new purchases while active. Rejected/stale requests consume attempts. You may cancel.",
+        "criteria": {
+          "cancel": "Cancel this training commitment; keep resources for another decision.",
+          "requests_1": "Authorize at most 1 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 50, 'vespene': 0, 'supply': 1.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_3": "Authorize at most 3 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 150, 'vespene': 0, 'supply': 3.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_6": "Authorize at most 6 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 300, 'vespene': 0, 'supply': 6.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_12": "Authorize at most 12 training requests for SCV within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 600, 'vespene': 0, 'supply': 12.0}. This is a request allowance, not guaranteed completed units."
+        }
+      },
+      "answer": {
+        "choice": "requests_12",
+        "type": "choice",
+        "confidence": 0.03,
+        "probabilities": {
+          "requests_3": 0.22,
+          "requests_12": 0.22,
+          "cancel": 0.23,
+          "requests_1": 0.14,
+          "requests_6": 0.19
+        }
+      }
+    },
+    {
+      "loop": 10681,
+      "type": "Marine",
+      "question": {
+        "type": "choice",
+        "instructions": "Jev has selected a training commitment for Marine. Choose its size given current resources, force, objective, and priorities. The producer is chosen separately and remains fixed. Requests execute only while affordable and legal, at least112loops apart, and stop when the allowance ends, 2016loops pass, the producer disappears, or strategic priority changes. This commitment has priority over other new purchases while active. Rejected/stale requests consume attempts. You may cancel.",
+        "criteria": {
+          "cancel": "Cancel this training commitment; keep resources for another decision.",
+          "requests_1": "Authorize at most 1 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 50, 'vespene': 0, 'supply': 1.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_3": "Authorize at most 3 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 150, 'vespene': 0, 'supply': 3.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_6": "Authorize at most 6 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 300, 'vespene': 0, 'supply': 6.0}. This is a request allowance, not guaranteed completed units.",
+          "requests_12": "Authorize at most 12 training requests for Marine within 2016 game loops. Maximum aggregate listed costs if all requests execute: {'minerals': 600, 'vespene': 0, 'supply': 12.0}. This is a request allowance, not guaranteed completed units."
+        }
+      },
+      "answer": {
+        "choice": "cancel",
+        "type": "choice",
+        "confidence": 0.15,
+        "probabilities": {
+          "requests_3": 0.16,
+          "requests_1": 0.1,
+          "cancel": 0.31,
+          "requests_12": 0.27,
+          "requests_6": 0.16
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0023551500000000003
+}

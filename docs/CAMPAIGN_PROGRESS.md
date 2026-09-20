@@ -5136,3 +5136,17 @@ scoredorders,but cannotisolatehistorybenefit:stochasticinvestment and changedpri
 context preventcausalclaim. Memoryintegration isfixed; effectivelearning remains
 unproven. Checkpoint/resultverified; compactartifact353preservescost/historyevidence.
 No unchangedretry or rootissuedtactics. Allthreecampaignsremainincomplete.
+
+### Lab354 — conditional batch sizing does not support stronger replacement
+
+Audit350:all6chosenbatchallowances completed;12automaticfollowupsaccepted. Marine
+batches at1985and10681, with sparse interveningMarinepurchases. Executorabsence is
+not the explanation for those longgaps. Offline sizingprobe uses the6recorded
+Jev-selected batchtypes and originalinvestmentcontext; choicescancel/1/3/6/12requests
+with computedaggregatecosts,2016loopdeadline,fixedproducer,sharedspendingpriority,
+andexistingreleaseconditions. Type isnotrootchosen; no duplicatedtypeoptions in
+investmentmenu. Sixcalls,$0.002355150. Choicesinorder:SCVcancel,Marinecancel,SCVcancel,
+SCV12,SCV12,Marinecancel. No gamecommands. This additionaldecisioncan revoke the
+sampledcommitment; itdoesnotdemonstrateimprovedallocation andwouldnotaddressarmy
+replacement in these samples. Do notdeploy or claimlargerbatchesasfix. Artifact354
+retainsquestionsanddistributions. Need distinctevidence beforeanotherlivetrial.
