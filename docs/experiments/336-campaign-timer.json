@@ -1,0 +1,20 @@
+{
+  "map": "traynor03-timers-lab335.SC2Map",
+  "verification": "Native CUA screenshot with menu paused",
+  "screen_remaining": "19:21",
+  "last_export": {
+    "value": {
+      "fixed": "1161.375"
+    },
+    "elapsed": {
+      "flag": "0"
+    },
+    "title": {
+      "text": "Evacuation In: "
+    },
+    "window": {
+      "int": "1"
+    }
+  },
+  "limitation": "Periodic export can precede pause by up to one game second; this confirms approximate alignment, not exact formatting/rounding."
+}

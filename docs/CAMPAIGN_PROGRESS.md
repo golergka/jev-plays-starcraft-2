@@ -4892,3 +4892,14 @@ traynor03-timers-lab335.SC2Map from originaltraynor03.SC2Map;121scripts audited,
 CampaignLib/MapScript/bridge changed. Existing outcome hooks retained.159Python
 tests pass. New map not yet launched;runtime compilation,screen comparison,and
 player wiring remain outstanding. No Jev calls or campaign credit this turn.
+
+### Lab336 — campaign timer title and approximate countdown verified
+
+Launched timer-enabled335map without Jev for interface validation. Native window
+showed ordinary ZeroHour objective/countdown. Visible export initially empty during
+startup,then title Evacuation In:,remaining mode and decreasing timer value.
+Paused via nativeF10:screen19:21,latestbank1161.375seconds. This supports approximate
+alignment with periodic sampling lag,not exact rendered rounding. Artifact336.
+Diagnostic remains paused,no game strategy issued,no campaign credit. Player
+integration can label approximate native remaining seconds; do not promise exact
+screen text or infer hidden timer schedules. No Jev spend.
