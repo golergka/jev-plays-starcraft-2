@@ -19,6 +19,7 @@ from .reload import PlayerLoader
 from .view import make_view, validate_commands
 from .camera import choose_shot
 from .outcome import OutcomeMonitor
+from .mission_context import timer_reader_for_map
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -172,6 +173,10 @@ async def run(args):
             max_age_loops=args.max_age_loops)
         attached_info = None
         restart_started_at = None
+        timer_reader = None
+        timer_map = args.map or (ROOT/"maps"/Path(args.expected_map).name if getattr(args,"restart",False) else None)
+        if timer_map:
+            timer_reader = timer_reader_for_map(timer_map,new_launch=True)
         if getattr(args,'restart',False):
             restart_started_at = await restart_attached_game(client,args.expected_map,log)
         outcome_monitor = OutcomeMonitor.for_map(args.map, time.time())
@@ -205,6 +210,8 @@ async def run(args):
             # arm the monitor, but an already-terminal bank alone never can.
             local_name = info.local_map_path.replace('\\','/').split('/')[-1]
             outcome_monitor = OutcomeMonitor.for_map(ROOT/'maps'/local_name, restart_started_at or 0)
+        if timer_reader is None and not args.map and not getattr(args,'restart',False):
+            timer_reader = timer_reader_for_map(ROOT/'maps'/info.local_map_path.replace('\\','/').split('/')[-1],new_launch=False)
         data = await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True,upgrade_id=True))
         started = time.monotonic()
         failures = 0
@@ -256,6 +263,10 @@ async def run(args):
             clock_changed_at = time.monotonic()
             observe_player = loader.view_module.make_view if loader.view_module else make_view
             view = await observe_player(client,observation,data,info,args.objective)
+            if timer_reader is not None:
+                context = timer_reader.poll(time.time())
+                view['mission_context'] = context or {'status':'unavailable','reason':'No fresh visible timer export'}
+                log('mission_context',loop=view['loop'],context=view['mission_context'])
             if view['self']:
                 empty_since = None
             else:

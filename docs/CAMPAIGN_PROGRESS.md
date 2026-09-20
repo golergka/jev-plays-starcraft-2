@@ -4903,3 +4903,15 @@ alignment with periodic sampling lag,not exact rendered rounding. Artifact336.
 Diagnostic remains paused,no game strategy issued,no campaign credit. Player
 integration can label approximate native remaining seconds; do not promise exact
 screen text or infer hidden timer schedules. No Jev spend.
+
+### Lab337 — connect validated timer reader to decision context
+
+Controller resolves unique visible-timer bank from hash-checked map manifest before
+new launch/restart,captures previous launch stamp,and polls fresh data into view.
+Plain attach may bind current fresh export without claiming a new launch. Missing
+fresh data is explicitly logged unavailable,never substituted with cached values.
+Player projections retain mission_context through economic,strategic,concrete,
+individual,navigation and support contexts.159existing tests plus2new focused
+checks pass;new tests cover map hash mismatch,previous stamp capture,and economic
+projection retention. No claim of tactical benefit. Next fresh trial on335map will
+verify actual paid-request delivery before judging gameplay.

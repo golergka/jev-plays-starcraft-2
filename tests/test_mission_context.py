@@ -40,3 +40,23 @@ def test_launch_change_during_attempt_is_loud(tmp_path):
     reader.poll(102)
     bank(p,launch_stamp=3)
     with pytest.raises(ValueError,match='launch changed'):reader.poll(102)
+
+
+def test_manifest_hash_and_previous_launch(tmp_path):
+    import hashlib,json
+    from jev_sc2.mission_context import timer_reader_for_map
+    map_path=tmp_path/'mission.SC2Map';map_path.write_bytes(b'map')
+    name='JevVisibleTimer'+'a'*32
+    map_path.with_suffix('.bridge.json').write_text(json.dumps({'visible_timer_bank':name,'output_sha256':hashlib.sha256(b'map').hexdigest()}))
+    bank(tmp_path/(name+'.SC2Bank'),launch_stamp=7)
+    reader=timer_reader_for_map(map_path,new_launch=True,bank_directory=tmp_path)
+    assert reader.previous_launch_stamp==7
+    map_path.write_bytes(b'changed')
+    with pytest.raises(ValueError,match='manifest'):
+        timer_reader_for_map(map_path,new_launch=True,bank_directory=tmp_path)
+
+
+def test_timer_context_survives_economic_projection():
+    import player
+    context={'timers':[{'title':'Observed timer','mode':'remaining','raw_timer_value':123}]}
+    assert player.investment_state({'mission_context':context})['mission_context']==context

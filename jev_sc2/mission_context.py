@@ -68,3 +68,33 @@ class VisibleTimerReader:
         self.sequence = sequence
         return {'source': 'player-visible native timer windows', 'timers': timers,
                 'note': 'Native timer values; displayed formatting and rounding not yet validated.'}
+
+
+def timer_reader_for_map(map_path, *, new_launch, bank_directory=None):
+    """Resolve a hash-checked local build before launch or when attaching."""
+    import hashlib
+    import json
+    import re
+    import time
+    path = Path(map_path)
+    manifest = path.with_suffix('.bridge.json')
+    if not manifest.exists():
+        return None
+    metadata = json.loads(manifest.read_text())
+    name = metadata.get('visible_timer_bank')
+    if not name:
+        return None
+    if not re.fullmatch(r'JevVisibleTimer[a-f0-9]{32}', name):
+        raise ValueError('Invalid visible timer bank name')
+    if hashlib.sha256(path.read_bytes()).hexdigest() != metadata['output_sha256']:
+        raise ValueError('Timer map does not match instrumentation manifest')
+    directory = bank_directory or Path.home()/'Library/Application Support/Blizzard/StarCraft II/Banks'
+    bank = Path(directory)/(name+'.SC2Bank')
+    previous = None
+    if new_launch and bank.exists():
+        marker = ET.parse(bank).find("./Section[@name='Context']/Key[@name='launch_stamp']/Value")
+        if marker is None:
+            raise ValueError('Existing timer bank has no launch stamp')
+        previous = int(marker.attrib['int'])
+    return VisibleTimerReader(bank,previous_launch_stamp=previous,
+                              started_at=time.time() if new_launch else 0)
