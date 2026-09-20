@@ -1,0 +1,68 @@
+{
+  "lab": 558,
+  "source": "runs/20260920T154915.350832Z/events.jsonl",
+  "samples": [
+    {
+      "loop": 48,
+      "top_choice": "group_west",
+      "sampled_choice": "group_map_move_middle_west",
+      "sampled_weight": 0.04,
+      "top_weight": 0.26,
+      "offered_count": 78,
+      "nonzero_count": 26,
+      "total_weight": 0.99
+    },
+    {
+      "loop": 331,
+      "top_choice": "support_ability_2750_4324327425_only_4383309825",
+      "sampled_choice": "group_move_4374134785",
+      "sampled_weight": 0.08,
+      "top_weight": 0.21000000000000002,
+      "offered_count": 79,
+      "nonzero_count": 28,
+      "total_weight": 0.99
+    },
+    {
+      "loop": 845,
+      "top_choice": "group_move_4374134785",
+      "sampled_choice": "group_east",
+      "sampled_weight": 0.06999999999999999,
+      "top_weight": 0.42,
+      "offered_count": 146,
+      "nonzero_count": 16,
+      "total_weight": 1.0
+    },
+    {
+      "loop": 1284,
+      "top_choice": "group_map_move_middle_east",
+      "sampled_choice": "group_map_move_south_east",
+      "sampled_weight": 0.03,
+      "top_weight": 0.25,
+      "offered_count": 151,
+      "nonzero_count": 37,
+      "total_weight": 1.0
+    },
+    {
+      "loop": 1535,
+      "top_choice": "continue",
+      "sampled_choice": "group_east",
+      "sampled_weight": 0.03,
+      "top_weight": 0.12,
+      "offered_count": 148,
+      "nonzero_count": 28,
+      "total_weight": 0.99
+    }
+  ],
+  "damage_review_loops": [
+    331,
+    1535,
+    2361,
+    3153,
+    3695,
+    4316,
+    5014,
+    5679
+  ],
+  "finding": "All five sampled combat choices differ from model top choice. Damage-triggered reviews did occur at331 and1535; this is not a case of absent damage feedback. Sampling can aggregate substantial probability across many low-weight alternatives. This run does not establish top-choice counterfactual success.",
+  "next_trial": "Disable optional combat sampling, retain current observation code and seed534 menu order. Prior top-choice trial540 also failed; rollback tests interaction with current history, not an untried cure."
+}
