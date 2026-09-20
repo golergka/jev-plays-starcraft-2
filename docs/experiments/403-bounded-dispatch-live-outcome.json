@@ -1,0 +1,19 @@
+{
+  "run": "runs/20260920T074543.662730Z",
+  "ui_verification": {
+    "time": 1789890925.983453,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "12:13",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 52
+  },
+  "calls": 194,
+  "cost_usd": 0.10297958999999993,
+  "max_queue_ms": 557,
+  "decision_and_budget_errors": [],
+  "scope": "Concurrency2 and owned cancellation; same gameplay policy. No root orders or policy edits. Successful full-run operation is not proof previous larger reservation burst cannot recur."
+}

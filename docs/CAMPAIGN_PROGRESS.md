@@ -5929,3 +5929,16 @@ Preserve controller_error and original incomplete controller_stop_status in loca
 result. Eight native Smash defeats, this one explicitly budget-interrupted; not
 a clean policy comparison. Public artifact/report/checkpoint updated. Next trial
 uses tested owned cancellation and concurrency2; cap/ledger unchanged.
+
+### Lab403 — bounded-dispatch trial defeats at12:13 without controller errors
+
+Run20260920T074543.662730Z/session53532 exited0. NativeUI confirms defeat12:13,
+allstructuresdestroyed,0/4relics,0minerals/52gas.194successfulcalls cost$0.102979590.
+No decision or budget errors; maximum logged dispatch queue557ms. Same gameplay
+policy, no root orders or midtrial edits. Earlyworker/armylosses, then no rebuilt
+production; final workers repaired lastRefinery. Nine native Smash defeats total.
+
+Concurrency2 operates through a complete trial, but small remaining force does
+not reproduce400's larger fan-out. Do notclaim universal budget-burst prevention
+or causal gameplay improvement. Checkpoint/result/publicartifact/report updated;
+only firstthree campaign missions verified won. No unchangedretry started.
