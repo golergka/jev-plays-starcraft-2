@@ -1,0 +1,36 @@
+{
+  "lab": 564,
+  "run": "runs/20260920T161043.240802Z",
+  "start_commit": "7006cb1",
+  "status": "running",
+  "change": "Append factual ordinary Move semantics to direct order instruction; all trial559 CLI settings retained.",
+  "visual": {
+    "time": "0:55",
+    "supply": "10/27",
+    "relics": "1/4",
+    "command_center_health": "1500/1500"
+  },
+  "combat_requests": [
+    {
+      "loop": 48,
+      "choice": "group_last_known_attack_move_8756723713",
+      "clarification_present": true
+    },
+    {
+      "loop": 456,
+      "choice": "group_map_attack_move_middle_east",
+      "clarification_present": true
+    },
+    {
+      "loop": 637,
+      "choice": "group_map_attack_move_middle_east",
+      "clarification_present": true
+    },
+    {
+      "loop": 1231,
+      "choice": "group_move_4374134785",
+      "clarification_present": true
+    }
+  ],
+  "limitation": "Early objective observation, not evidence of mission victory or causal benefit."
+}
