@@ -1,5 +1,7 @@
 """Small summaries of the player's verified, completed attempts; no map scripts."""
+import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -18,8 +20,27 @@ def verified_ui_result(result):
     return bool(values) and all(value == status for value in values)
 
 
-def previous_attempts(runs, map_path, exclude=None, limit=3):
+def source_identity(directory, name):
+    """Match only locally hash-verified adapter outputs with valid provenance."""
+    if directory is None:
+        return None
+    path = Path(directory)/name
+    try:
+        metadata = json.loads(path.with_suffix('.bridge.json').read_text())
+        source = metadata.get('source_sha256', '')
+        if not re.fullmatch(r'[a-f0-9]{64}', source):
+            return None
+        if hashlib.sha256(path.read_bytes()).hexdigest() != metadata.get('output_sha256'):
+            return None
+        return source
+    except (OSError, ValueError, TypeError):
+        return None
+
+
+def previous_attempts(runs, map_path, exclude=None, limit=3, map_directory=None):
     name = map_path.replace('\\', '/').split('/')[-1]
+    identity = source_identity(map_directory, name)
+    identities = {}
     summaries = []
     for result_path in sorted(Path(runs).glob('*/result.json'), reverse=True):
         if exclude and result_path.parent.resolve() == Path(exclude).resolve():
@@ -27,8 +48,12 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
         try:
             result = json.loads(result_path.read_text())
             status = result.get('status')
+            result_name = result.get('local_map_path', '').replace('\\', '/').split('/')[-1]
+            if result_name not in identities:
+                identities[result_name] = source_identity(map_directory, result_name)
+            same_source = identity is not None and identities[result_name] == identity
             if (not verified_ui_result(result)
-                    or result.get('local_map_path', '').replace('\\', '/').split('/')[-1] != name):
+                    or (result_name != name and not same_source)):
                 continue
             first = last = None
             peaks, strategies, purchases, roles = Counter(), Counter(), Counter(), Counter()
@@ -50,7 +75,7 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                         # as a fresh episode, and never after observed gameplay.
                         restart_map = str(row.get('map', '')).replace('\\', '/').split('/')[-1]
                         before, after = row.get('before_loop'), row.get('after_loop')
-                        if (first is None and restart_map == name
+                        if (first is None and restart_map == result_name
                                 and type(before) is int and type(after) is int
                                 and before > after and after == 0):
                             joined = True
@@ -91,7 +116,7 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
             if not joined or first is None or first > 128:
                 continue
             summaries.append({
-                'result': status, 'observed_loop_span': [first, last],
+                'result': status, 'adapter_map': result_name, 'observed_loop_span': [first, last],
                 'controller_interrupted': bool(result.get('controller_error') or
                                                result.get('controller_stop_status') == 'incomplete'),
                 'controller_stop_status': result.get('controller_stop_status'),
@@ -112,7 +137,7 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
         except (OSError, ValueError, KeyError, TypeError, IndexError):
             continue
     return {'attempts': summaries,
-            'interpretation': 'Previous attempts with independently verified outcomes on the same map filename, newest first. '
+            'interpretation': 'Previous attempts with independently verified outcomes on the same map filename or hash-verified adapters of the same source map, newest first. Adapter builds may differ. '
             'controller_interrupted marks a known controller stop before the verified outcome; '
             'its ending may include uncontrolled play and is not a clean policy comparison. '
             'False means no recorded interruption, not proof of continuous control. '

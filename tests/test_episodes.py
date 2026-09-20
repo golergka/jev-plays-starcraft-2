@@ -134,3 +134,21 @@ def test_conflicting_unknown_or_missing_ui_labels_rejected():
         assert not verified_ui_result({'status':'defeat','ui_verification':ui})
     assert verified_ui_result({'status':'victory','ui_verification':{'outcome':'VICTORY'}})
     assert verified_ui_result({'status':'defeat','ui_verification':{'result':'defeat','outcome':'DEFEAT'}})
+
+
+def test_adapter_history_requires_matching_verified_source(tmp_path):
+    import hashlib
+    maps=tmp_path/'maps';maps.mkdir()
+    def adapter(name,source):
+        path=maps/name;path.write_bytes(name.encode())
+        path.with_suffix('.bridge.json').write_text(json.dumps({
+            'source_sha256':source,'output_sha256':hashlib.sha256(path.read_bytes()).hexdigest()}))
+    adapter('current.SC2Map','a'*64);adapter('old.SC2Map','a'*64)
+    adapter('other.SC2Map','b'*64)
+    write_attempt(tmp_path,'01',map_name='old.SC2Map')
+    write_attempt(tmp_path,'02',map_name='other.SC2Map')
+    history=previous_attempts(tmp_path,'current.SC2Map',map_directory=maps)
+    assert [a['adapter_map'] for a in history['attempts']]==['old.SC2Map']
+    (maps/'old.SC2Map').write_bytes(b'tampered')
+    assert not previous_attempts(tmp_path,'current.SC2Map',map_directory=maps)['attempts']
+    assert not previous_attempts(tmp_path,'current.SC2Map')['attempts']

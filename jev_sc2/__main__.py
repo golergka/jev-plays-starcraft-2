@@ -234,7 +234,7 @@ async def run(args):
                 raise RuntimeError('--attach without --map needs an API game already in progress')
         info = attached_info if attached_info is not None else await client.request('game_info',sc.RequestGameInfo())
         outcome.update(map_name=info.map_name,local_map_path=info.local_map_path)
-        memory['previous_attempts'] = previous_attempts(ROOT/'runs', info.local_map_path, directory)
+        memory['previous_attempts'] = previous_attempts(ROOT/'runs', info.local_map_path, directory, map_directory=ROOT/'maps')
         log('episode_history_loaded', attempts=len(memory['previous_attempts']['attempts']))
         if not args.map:
             # A reconnect must keep ending telemetry. The current API map name
