@@ -5491,3 +5491,20 @@ unchangedfromZeroHourwin. Localresult/UI/checkpointandartifact378recorddefeat;
 completedmissionsremainLiberationDay,TheOutlaws,ZeroHour. No unchangedretry yet.
 Next inspect earlycombat/contributiondecisions for a general failure mechanism,
 consultingpriornegativeprobes beforeaddingmoreprompts orbuyinganotherfulltrial.
+
+### Lab379 — primary/bonus clarification does not establish better pursuit
+
+Offline376trace:starting3Marines/Medic attack-move toward last-knownProtossRelic
+atloop50,then middle-eastsector at303/583; no initialcombatunits remainby1000.
+Replacement4Marauders move towardvisibleProtossRelic1466;2remain1929,1at2274,
+noneby2952. These are observedrosterchanges,not exactdeathcausality. No recorded
+executionerrors; bonus2/4doesnotestablishprimaryartifactprogress.
+
+Six-call paired first/middle/last combatmenus withvisibleobjectives,appendonly
+generalprimary/bonus semantics; same state/options,alternatingarmorder. Cost
+$0.004431168. Baseline/explicit choices:west/relicattackmove,relicmove/continue,
+continue/continue. Baselineitselfdiffersfromrecordedfirstchoice,demonstrating
+responsevariability. This doesnotshowreliableprimarytargetdistinction orimproved
+survival. No liveintegration orunchangedmissionretry. Script/artifact379preserved.
+Nexthypothesis must address another evidenced general mechanism ratherthan repeat
+thiswording orinterpret anychoicechangeasimprovement. SC2remainsdefeatscreen.
