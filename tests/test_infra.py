@@ -1390,3 +1390,27 @@ def test_restart_rejects_ambiguous_setup_before_connecting(attach,map_path,expec
     from jev_sc2.__main__ import run
     with pytest.raises(ValueError,match='requires --attach'):
         asyncio.run(run(SimpleNamespace(restart=True,attach=attach,map=map_path,expected_map=expected)))
+
+
+def test_unseen_engine_failure_survives_long_budget_pacing_gap():
+    from jev_sc2.__main__ import observe_action_failures
+    from s2clientprotocol import error_pb2
+    import player
+    memory = {}
+    obs = sc.ResponseObservation()
+    obs.observation.game_loop = 100
+    obs.action_errors.add(unit_tag=7, ability_id=558, result=error_pb2.CantBuildLocationInvalid)
+    observe_action_failures(obs,memory,lambda *a,**k:None)
+    fresh = sc.ResponseObservation()
+    fresh.observation.game_loop = 1100
+    observe_action_failures(fresh,memory,lambda *a,**k:None)
+    view = {'loop':1100,'self':[]}
+    feedback = player.describe_action_feedback(view,memory)
+    assert feedback[0]['loop'] == 100
+    assert feedback[0]['surfaced_loop'] == 1100
+    assert feedback[0]['failures'][0]['result'] == 'CantBuildLocationInvalid'
+    view['loop'] = 1773
+    assert player.describe_action_feedback(view,memory) == []
+    fresh.observation.game_loop = 1773
+    observe_action_failures(fresh,memory,lambda *a,**k:None)
+    assert memory['engine_action_feedback'] == []

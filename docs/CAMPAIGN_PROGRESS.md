@@ -4436,3 +4436,18 @@ workers. Current five-SCV economy is still weak; role logs3068/3843 show differe
 income/positioning/other/continue commitments rather than universal harvesting.
 No mission-specific worker assignment or tactical override made. Do not conflate
 working batch executor with solving economic allocation or campaign competence.
+
+### Lab301 — prevent budget pacing from deleting unseen engine failures
+
+Trial298 delayed CantBuildLocationInvalid558 atloop3920 appeared in zero Jev
+request contexts: next paid review followed after the672loop retention window.
+This is a framework delivery failure, not evidence Jev ignored an error.
+
+Keep up to32 unseen delayed entries through pacing gaps; begin672loop expiry
+when describe_action_feedback first includes them in decision context. Preserve
+original observation loop and separately label surfaced_loop; reset on rewind.
+Dedup compares loop and failures so surfacing metadata cannot create duplicates.
+Context construction is not a guarantee of a successful provider response.
+146tests pass including a1000loop unseen gap then expiry after surfacing.
+Framework collector change requires next controller process; current live trial
+continues unchanged at collector level and cannot recover already-pruned errors.

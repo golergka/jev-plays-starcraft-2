@@ -76,7 +76,7 @@ def observe_action_failures(observation, memory, log):
     if loop < memory.get('engine_feedback_last_loop',loop):
         history.clear()
     memory['engine_feedback_last_loop'] = loop
-    history = [e for e in history if 0 <= loop-e['loop'] <= 672][-32:]
+    history = [e for e in history if e['loop'] <= loop and ('surfaced_loop' not in e or 0 <= loop-e['surfaced_loop'] <= 672)][-32:]
     memory['engine_action_feedback'] = history
     if not observation.action_errors:
         return
@@ -85,10 +85,10 @@ def observe_action_failures(observation, memory, log):
                 for e in observation.action_errors]
     entry = {'loop':loop, 'failures':failures,
              'note':'Delayed execution failures reported by the engine. Observation loop is not the original request loop; resolved ability may differ from Smart. No target or causal request attribution is assumed.'}
-    if not history or history[-1] != entry:
+    if not any(e['loop']==loop and e['failures']==failures for e in history):
         history.append(entry)
         log('engine_action_error',loop=loop,failures=failures)
-    memory['engine_action_feedback'] = [e for e in history if 0 <= loop-e['loop'] <= 672][-32:]
+    memory['engine_action_feedback'] = [e for e in history if e['loop'] <= loop and ('surfaced_loop' not in e or 0 <= loop-e['surfaced_loop'] <= 672)][-32:]
 
 
 async def run(args):

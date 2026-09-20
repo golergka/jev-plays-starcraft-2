@@ -122,9 +122,14 @@ def describe_action_feedback(view, memory):
     history = []
     entries = {}
     delayed = [e for e in memory.get('engine_action_feedback',[])
-               if 0 <= view.get('loop',e['loop'])-e['loop'] <= 672]
+               if e['loop'] <= view.get('loop',e['loop']) and
+               ('surfaced_loop' not in e or 0 <= view.get('loop',e['loop'])-e['surfaced_loop'] <= 672)]
+    for entry in delayed:
+        entry.setdefault('surfaced_loop',view.get('loop',entry['loop']))
     for entry in memory.get('action_feedback',[]) + delayed:
         merged = entries.setdefault(entry['loop'], {**entry, 'failures':[], 'note':''})
+        if 'surfaced_loop' in entry:
+            merged['surfaced_loop'] = entry['surfaced_loop']
         merged['failures'].extend(entry.get('failures',[]))
         merged['note'] += entry.get('note','') + ' '
     for entry in entries.values():
@@ -149,7 +154,7 @@ def describe_action_feedback(view, memory):
     for entry in history:
         if entry['failures']:
             retained[entry['loop']] = entry
-    retained = {k:v for k,v in retained.items() if 0 <= loop-k <= 672}
+    retained = {k:v for k,v in retained.items() if 0 <= loop-v.get('surfaced_loop',k) <= 672}
     retained = dict(sorted(retained.items())[-32:])
     memory['retained_action_failures'] = retained
     combined = {**retained, **{e['loop']:e for e in history}}
