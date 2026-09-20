@@ -1,0 +1,10 @@
+{
+  "run": "runs/20260920T143343.541199Z",
+  "calls": 287,
+  "cost": 0.17077326,
+  "dependency_calls": 44,
+  "dependency_cost": 0.024209136,
+  "dependency_cost_fraction": 0.14176186599705362,
+  "median_paced_interval_seconds": 19.144020000000168,
+  "next_trial": "Remove purchase-dependencies only, retaining seed534 and other trial536 flags. This removes an advisory model stage, not a decision: Jev still selects every purchase and all original purchase options remain. Earlier trial499 lacked this stage and also failed, so no novelty or benefit is presumed. Measure the cost/latency tradeoff in the current setup; do not infer saved cost translates directly into victory."
+}
