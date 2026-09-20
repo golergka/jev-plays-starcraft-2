@@ -1,0 +1,627 @@
+{
+  "source": "runs/20260920T102844.284417Z/events.jsonl",
+  "pairs": [
+    {
+      "loop": 2980,
+      "passengers": {
+        "Marine": 1
+      },
+      "treatment_instructions": "Choose the next order for the 2 Bunker units to advance the mission objective. You may choose a shared order for this selection or individual control. Unless an option explicitly says otherwise, every unit in this selection receives the chosen shared order. Other selections receive their own decisions in parallel. Consider current orders, health, resources and known entities. Count alone is not local fighting strength: max_separation and nearest-selection-member distances describe dispersion. Use selection_facts for unit counts, recent changes, damage and economic capabilities. Consider the strategic priority chosen by Jev alongside immediate threats. Snapshot locations are stale, not live visible targets.",
+      "answers": {
+        "baseline": {
+          "SCV / unit 4299423745": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.73,
+            "probabilities": {
+              "continue": 0.82,
+              "gather_minerals": 0.15,
+              "gather_vespene": 0.03
+            }
+          },
+          "SCV / unit 4300210177": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.72,
+            "probabilities": {
+              "continue": 0.81,
+              "gather_minerals": 0.14,
+              "gather_vespene": 0.05
+            }
+          },
+          "SupplyDepotLowered": {
+            "choice": "support_ability_558_depot_state_all",
+            "type": "choice",
+            "confidence": 0.6,
+            "probabilities": {
+              "continue": 0.25,
+              "support_ability_558_depot_state_only_4313317377": 0.03,
+              "support_ability_558_depot_state_only_4297326593": 0.01,
+              "support_ability_558_depot_state_all": 0.71
+            }
+          },
+          "SCV / unit 4320657409": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.35,
+            "probabilities": {
+              "continue": 0.5599999999999999,
+              "gather_minerals": 0.42,
+              "gather_vespene": 0.02
+            }
+          },
+          "SCV / unit 4299161601": {
+            "choice": "gather_minerals",
+            "type": "choice",
+            "confidence": 0.86,
+            "probabilities": {
+              "continue": 0.06,
+              "gather_minerals": 0.9,
+              "gather_vespene": 0.04
+            }
+          },
+          "Bunker": {
+            "choice": "support_ability_408_unload_only_4370464771",
+            "type": "choice",
+            "confidence": 0.23,
+            "probabilities": {
+              "support_ability_407_4299423745_only_4380426246": 0.1,
+              "support_ability_408_unload_only_4370464771": 0.3,
+              "support_ability_407_4300210177_only_4380426246": 0.15,
+              "support_ability_407_4323803137_only_4380426246": 0.02,
+              "support_ability_407_4323803137_only_4370464771": 0.0,
+              "support_ability_407_4320657409_only_4370464771": 0.0,
+              "support_ability_407_4300210177_only_4370464771": 0.01,
+              "continue": 0.14,
+              "support_ability_407_4299423745_only_4370464771": 0.01,
+              "support_ability_407_4299161601_only_4380426246": 0.23,
+              "support_ability_407_4299161601_only_4370464771": 0.01,
+              "support_ability_407_4320657409_only_4380426246": 0.03
+            }
+          }
+        },
+        "without_role_hint": {
+          "SCV / unit 4299423745": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.72,
+            "probabilities": {
+              "continue": 0.81,
+              "gather_vespene": 0.04,
+              "gather_minerals": 0.15
+            }
+          },
+          "SCV / unit 4300210177": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.66,
+            "probabilities": {
+              "continue": 0.77,
+              "gather_vespene": 0.06,
+              "gather_minerals": 0.17
+            }
+          },
+          "SupplyDepotLowered": {
+            "choice": "support_ability_558_depot_state_all",
+            "type": "choice",
+            "confidence": 0.61,
+            "probabilities": {
+              "continue": 0.24,
+              "support_ability_558_depot_state_only_4313317377": 0.03,
+              "support_ability_558_depot_state_only_4297326593": 0.01,
+              "support_ability_558_depot_state_all": 0.72
+            }
+          },
+          "SCV / unit 4320657409": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.25,
+            "probabilities": {
+              "continue": 0.5,
+              "gather_vespene": 0.02,
+              "gather_minerals": 0.48
+            }
+          },
+          "SCV / unit 4299161601": {
+            "choice": "gather_minerals",
+            "type": "choice",
+            "confidence": 0.87,
+            "probabilities": {
+              "continue": 0.06,
+              "gather_vespene": 0.03,
+              "gather_minerals": 0.91
+            }
+          },
+          "Bunker": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "support_ability_407_4299161601_only_4370464771": 0.01,
+              "support_ability_407_4299423745_only_4380426246": 0.03,
+              "support_ability_407_4320657409_only_4370464771": 0.0,
+              "support_ability_407_4300210177_only_4380426246": 0.11,
+              "support_ability_407_4300210177_only_4370464771": 0.0,
+              "support_ability_407_4299423745_only_4370464771": 0.01,
+              "support_ability_407_4323803137_only_4370464771": 0.0,
+              "support_ability_407_4323803137_only_4380426246": 0.01,
+              "support_ability_407_4299161601_only_4380426246": 0.14,
+              "continue": 0.42,
+              "support_ability_407_4320657409_only_4380426246": 0.02,
+              "support_ability_408_unload_only_4370464771": 0.25
+            }
+          }
+        }
+      }
+    },
+    {
+      "loop": 7887,
+      "passengers": {
+        "SCV": 1
+      },
+      "treatment_instructions": "Choose the next order for the 3 Bunker units to advance the mission objective. You may choose a shared order for this selection or individual control. Unless an option explicitly says otherwise, every unit in this selection receives the chosen shared order. Other selections receive their own decisions in parallel. Consider current orders, health, resources and known entities. Count alone is not local fighting strength: max_separation and nearest-selection-member distances describe dispersion. Use selection_facts for unit counts, recent changes, damage and economic capabilities. Consider the strategic priority chosen by Jev alongside immediate threats. Snapshot locations are stale, not live visible targets.",
+      "answers": {
+        "without_role_hint": {
+          "SupplyDepot": {
+            "choice": "support_ability_556_depot_state_all",
+            "type": "choice",
+            "confidence": 0.55,
+            "probabilities": {
+              "support_ability_556_depot_state_only_4313317377": 0.1,
+              "support_ability_556_depot_state_only_4297326593": 0.04,
+              "continue": 0.19,
+              "support_ability_556_depot_state_all": 0.67
+            }
+          },
+          "SCV / unit 4323803137": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.64,
+            "probabilities": {
+              "gather_vespene": 0.04,
+              "gather_minerals": 0.2,
+              "continue": 0.76
+            }
+          },
+          "Bunker": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.56,
+            "probabilities": {
+              "continue": 0.58,
+              "support_ability_407_4299423745_only_4301258798": 0.02,
+              "support_ability_407_4299161601_only_4380426246": 0.01,
+              "support_ability_408_unload_only_4380426246": 0.16,
+              "support_ability_407_4323803137_only_4301258798": 0.05,
+              "support_ability_407_4323803137_only_4301783057": 0.01,
+              "support_ability_407_4300210177_only_4380426246": 0.02,
+              "support_ability_407_4299161601_only_4301258798": 0.01,
+              "support_ability_407_4323803137_only_4380426246": 0.04,
+              "support_ability_407_4299423745_only_4301783057": 0.0,
+              "support_ability_407_4300210177_only_4301258798": 0.01,
+              "support_ability_407_4300210177_only_4301783057": 0.01,
+              "support_ability_407_4299423745_only_4380426246": 0.07,
+              "support_ability_407_4299161601_only_4301783057": 0.01
+            }
+          },
+          "SCV / unit 4299423745": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.31,
+            "probabilities": {
+              "gather_vespene": 0.01,
+              "gather_minerals": 0.45,
+              "continue": 0.54
+            }
+          },
+          "SupplyDepotLowered": {
+            "choice": "support_ability_558_depot_state_only_4347658265",
+            "type": "choice",
+            "confidence": 0.68,
+            "probabilities": {
+              "support_ability_558_depot_state_only_4347658265": 0.84,
+              "continue": 0.16
+            }
+          },
+          "SCV / unit 4300210177": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.31,
+            "probabilities": {
+              "gather_vespene": 0.02,
+              "gather_minerals": 0.44,
+              "continue": 0.54
+            }
+          }
+        },
+        "baseline": {
+          "SupplyDepot": {
+            "choice": "support_ability_556_depot_state_all",
+            "type": "choice",
+            "confidence": 0.52,
+            "probabilities": {
+              "support_ability_556_depot_state_all": 0.64,
+              "support_ability_556_depot_state_only_4313317377": 0.12,
+              "continue": 0.19,
+              "support_ability_556_depot_state_only_4297326593": 0.05
+            }
+          },
+          "SCV / unit 4323803137": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.67,
+            "probabilities": {
+              "gather_minerals": 0.19,
+              "continue": 0.77,
+              "gather_vespene": 0.04
+            }
+          },
+          "Bunker": {
+            "choice": "support_ability_408_unload_only_4380426246",
+            "type": "choice",
+            "confidence": 0.34,
+            "probabilities": {
+              "support_ability_408_unload_only_4380426246": 0.39,
+              "support_ability_407_4300210177_only_4301258798": 0.02,
+              "support_ability_407_4300210177_only_4380426246": 0.02,
+              "support_ability_407_4323803137_only_4301258798": 0.1,
+              "support_ability_407_4300210177_only_4301783057": 0.01,
+              "support_ability_407_4299161601_only_4380426246": 0.02,
+              "support_ability_407_4323803137_only_4380426246": 0.08,
+              "support_ability_407_4299423745_only_4301258798": 0.05,
+              "support_ability_407_4299423745_only_4301783057": 0.01,
+              "support_ability_407_4299161601_only_4301783057": 0.01,
+              "continue": 0.14,
+              "support_ability_407_4299423745_only_4380426246": 0.12,
+              "support_ability_407_4323803137_only_4301783057": 0.01,
+              "support_ability_407_4299161601_only_4301258798": 0.02
+            }
+          },
+          "SCV / unit 4299423745": {
+            "choice": "gather_minerals",
+            "type": "choice",
+            "confidence": 0.24,
+            "probabilities": {
+              "gather_minerals": 0.5,
+              "continue": 0.49,
+              "gather_vespene": 0.01
+            }
+          },
+          "SupplyDepotLowered": {
+            "choice": "support_ability_558_depot_state_only_4347658265",
+            "type": "choice",
+            "confidence": 0.77,
+            "probabilities": {
+              "support_ability_558_depot_state_only_4347658265": 0.89,
+              "continue": 0.11
+            }
+          },
+          "SCV / unit 4300210177": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.32,
+            "probabilities": {
+              "gather_minerals": 0.43,
+              "continue": 0.54,
+              "gather_vespene": 0.03
+            }
+          }
+        }
+      }
+    },
+    {
+      "loop": 10649,
+      "passengers": {
+        "SCV": 2
+      },
+      "treatment_instructions": "Choose the next order for the 3 Bunker units to advance the mission objective. You may choose a shared order for this selection or individual control. Unless an option explicitly says otherwise, every unit in this selection receives the chosen shared order. Other selections receive their own decisions in parallel. Consider current orders, health, resources and known entities. Count alone is not local fighting strength: max_separation and nearest-selection-member distances describe dispersion. Use selection_facts for unit counts, recent changes, damage and economic capabilities. Consider the strategic priority chosen by Jev alongside immediate threats. Snapshot locations are stale, not live visible targets.",
+      "answers": {
+        "baseline": {
+          "SCV / unit 4359979039": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.63,
+            "probabilities": {
+              "gather_minerals": 0.23,
+              "gather_vespene": 0.02,
+              "continue": 0.75
+            }
+          },
+          "Bunker": {
+            "choice": "support_ability_408_unload_all",
+            "type": "choice",
+            "confidence": 0.41,
+            "probabilities": {
+              "support_ability_407_4320657409_only_4380426246": 0.02,
+              "support_ability_407_4300210177_only_4301258798": 0.0,
+              "support_ability_407_4330356757_only_4301258798": 0.0,
+              "support_ability_407_4337434657_only_4301783057": 0.0,
+              "support_ability_407_4366270476_only_4380426246": 0.01,
+              "support_ability_407_4299161601_only_4301258798": 0.0,
+              "support_ability_407_4359979039_only_4380426246": 0.08,
+              "support_ability_407_4323803137_only_4380426246": 0.01,
+              "support_ability_407_4390912059_only_4301783057": 0.02,
+              "support_ability_407_4359979039_only_4301258798": 0.01,
+              "support_ability_407_4300210177_only_4380426246": 0.01,
+              "support_ability_408_unload_all": 0.44,
+              "support_ability_407_4299161601_only_4301783057": 0.01,
+              "support_ability_407_4390912059_only_4380426246": 0.01,
+              "continue": 0.1,
+              "support_ability_408_unload_only_4301783057": 0.03,
+              "support_ability_407_4337434657_only_4301258798": 0.0,
+              "support_ability_408_unload_only_4380426246": 0.05,
+              "support_ability_407_4337434657_only_4380426246": 0.04,
+              "support_ability_407_4330356757_only_4380426246": 0.02,
+              "support_ability_407_4366270476_only_4301258798": 0.01,
+              "support_ability_407_4323803137_only_4301258798": 0.0,
+              "support_ability_407_4300210177_only_4301783057": 0.0,
+              "support_ability_407_4359979039_only_4301783057": 0.0,
+              "support_ability_407_4330356757_only_4301783057": 0.0,
+              "support_ability_407_4323803137_only_4301783057": 0.0,
+              "support_ability_407_4299161601_only_4380426246": 0.01,
+              "support_ability_407_4366270476_only_4301783057": 0.01,
+              "support_ability_407_4320657409_only_4301783057": 0.04,
+              "support_ability_407_4320657409_only_4301258798": 0.06,
+              "support_ability_407_4390912059_only_4301258798": 0.01
+            }
+          },
+          "SCV / unit 4320657409": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.41,
+            "probabilities": {
+              "group_map_move_middle_west": 0.0,
+              "group_join_4299161601": 0.01,
+              "group_west": 0.01,
+              "group_last_known_move_8611364913": 0.0,
+              "group_join_4366270476": 0.03,
+              "group_hold_position": 0.02,
+              "group_map_move_south_center": 0.01,
+              "group_last_known_move_8756199425": 0.0,
+              "group_move_4299948033": 0.01,
+              "group_last_known_move_8696889365": 0.0,
+              "group_north": 0.02,
+              "group_join_4337434657": 0.0,
+              "group_last_known_move_8755937281": 0.0,
+              "group_map_move_south_west": 0.0,
+              "group_join_4390912059": 0.07,
+              "group_join_4330356757": 0.0,
+              "group_map_move_middle_center": 0.04,
+              "group_join_4301258798": 0.02,
+              "group_last_known_move_8736342039": 0.02,
+              "continue": 0.43,
+              "group_stop": 0.02,
+              "group_join_4300210177": 0.0,
+              "group_last_known_move_8735817799": 0.0,
+              "group_join_4380426246": 0.01,
+              "group_map_move_north_west": 0.0,
+              "group_move_4297850881": 0.0,
+              "group_last_known_move_8729526280": 0.01,
+              "group_south": 0.01,
+              "group_join_4347658265": 0.01,
+              "group_map_move_south_east": 0.02,
+              "group_last_known_move_8764129307": 0.0,
+              "group_last_known_move_8746893391": 0.0,
+              "group_move_4298899457": 0.0,
+              "group_join_4301783057": 0.02,
+              "group_move_4298113025": 0.0,
+              "group_last_known_move_8715501687": 0.0,
+              "group_last_known_move_8762556463": 0.01,
+              "group_join_4323803137": 0.01,
+              "group_east": 0.01,
+              "group_map_move_north_center": 0.0,
+              "group_map_move_north_east": 0.01,
+              "group_join_4299685889": 0.0,
+              "group_move_4298637313": 0.0,
+              "group_map_move_middle_east": 0.14,
+              "group_last_known_move_8756068353": 0.0,
+              "group_join_4359979039": 0.0,
+              "group_join_4297064449": 0.03
+            }
+          },
+          "SupplyDepot": {
+            "choice": "support_ability_556_depot_state_only_4347658265",
+            "type": "choice",
+            "confidence": 0.8,
+            "probabilities": {
+              "continue": 0.1,
+              "support_ability_556_depot_state_only_4347658265": 0.9
+            }
+          },
+          "SCV / unit 4366270476": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.66,
+            "probabilities": {
+              "support_ability_316_4301783057_only_4366270476": 0.17,
+              "continue": 0.83
+            }
+          },
+          "SCV / unit 4323803137": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.69,
+            "probabilities": {
+              "gather_minerals": 0.18,
+              "gather_vespene": 0.02,
+              "continue": 0.8
+            }
+          },
+          "SCV / unit 4300210177": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "gather_minerals": 0.41,
+              "gather_vespene": 0.01,
+              "continue": 0.58
+            }
+          },
+          "SCV / unit 4390912059": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.61,
+            "probabilities": {
+              "continue": 0.81,
+              "support_ability_316_4301783057_only_4390912059": 0.19
+            }
+          }
+        },
+        "without_role_hint": {
+          "SCV / unit 4359979039": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.64,
+            "probabilities": {
+              "gather_vespene": 0.03,
+              "gather_minerals": 0.21,
+              "continue": 0.76
+            }
+          },
+          "Bunker": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "support_ability_408_unload_all": 0.27,
+              "support_ability_407_4323803137_only_4380426246": 0.01,
+              "support_ability_407_4337434657_only_4380426246": 0.01,
+              "support_ability_407_4359979039_only_4380426246": 0.04,
+              "support_ability_408_unload_only_4380426246": 0.03,
+              "support_ability_407_4323803137_only_4301783057": 0.0,
+              "support_ability_407_4323803137_only_4301258798": 0.0,
+              "support_ability_407_4299161601_only_4380426246": 0.01,
+              "support_ability_407_4330356757_only_4301783057": 0.0,
+              "support_ability_407_4366270476_only_4301258798": 0.01,
+              "support_ability_407_4299161601_only_4301783057": 0.01,
+              "support_ability_407_4320657409_only_4380426246": 0.02,
+              "continue": 0.37,
+              "support_ability_407_4300210177_only_4380426246": 0.01,
+              "support_ability_407_4300210177_only_4301783057": 0.0,
+              "support_ability_407_4300210177_only_4301258798": 0.0,
+              "support_ability_407_4366270476_only_4380426246": 0.01,
+              "support_ability_407_4330356757_only_4380426246": 0.02,
+              "support_ability_407_4359979039_only_4301783057": 0.0,
+              "support_ability_407_4299161601_only_4301258798": 0.0,
+              "support_ability_407_4390912059_only_4301783057": 0.02,
+              "support_ability_407_4390912059_only_4301258798": 0.01,
+              "support_ability_407_4330356757_only_4301258798": 0.0,
+              "support_ability_407_4359979039_only_4301258798": 0.01,
+              "support_ability_407_4390912059_only_4380426246": 0.01,
+              "support_ability_407_4320657409_only_4301783057": 0.05,
+              "support_ability_407_4337434657_only_4301783057": 0.0,
+              "support_ability_408_unload_only_4301783057": 0.02,
+              "support_ability_407_4337434657_only_4301258798": 0.0,
+              "support_ability_407_4366270476_only_4301783057": 0.01,
+              "support_ability_407_4320657409_only_4301258798": 0.05
+            }
+          },
+          "SCV / unit 4320657409": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.46,
+            "probabilities": {
+              "group_map_move_middle_center": 0.03,
+              "group_last_known_move_8756199425": 0.0,
+              "group_last_known_move_8611364913": 0.0,
+              "group_map_move_north_east": 0.01,
+              "group_east": 0.0,
+              "group_join_4347658265": 0.01,
+              "group_join_4359979039": 0.0,
+              "group_last_known_move_8746893391": 0.0,
+              "group_map_move_south_west": 0.0,
+              "group_last_known_move_8715501687": 0.0,
+              "group_map_move_middle_east": 0.13,
+              "group_last_known_move_8755937281": 0.0,
+              "group_join_4301258798": 0.01,
+              "group_move_4298899457": 0.0,
+              "group_map_move_south_center": 0.01,
+              "group_join_4299161601": 0.01,
+              "group_join_4366270476": 0.03,
+              "group_join_4380426246": 0.01,
+              "group_move_4299948033": 0.01,
+              "group_map_move_north_center": 0.0,
+              "group_stop": 0.02,
+              "group_north": 0.03,
+              "group_map_move_middle_west": 0.0,
+              "group_join_4300210177": 0.0,
+              "continue": 0.48,
+              "group_last_known_move_8764129307": 0.0,
+              "group_join_4323803137": 0.01,
+              "group_join_4301783057": 0.01,
+              "group_join_4299685889": 0.01,
+              "group_last_known_move_8735817799": 0.0,
+              "group_map_move_north_west": 0.0,
+              "group_join_4297064449": 0.03,
+              "group_last_known_move_8756068353": 0.0,
+              "group_last_known_move_8696889365": 0.0,
+              "group_last_known_move_8762556463": 0.01,
+              "group_join_4330356757": 0.0,
+              "group_join_4337434657": 0.0,
+              "group_hold_position": 0.02,
+              "group_south": 0.0,
+              "group_join_4390912059": 0.05,
+              "group_move_4298113025": 0.01,
+              "group_move_4297850881": 0.0,
+              "group_last_known_move_8736342039": 0.02,
+              "group_map_move_south_east": 0.02,
+              "group_last_known_move_8729526280": 0.01,
+              "group_west": 0.01,
+              "group_move_4298637313": 0.0
+            }
+          },
+          "SupplyDepot": {
+            "choice": "support_ability_556_depot_state_only_4347658265",
+            "type": "choice",
+            "confidence": 0.79,
+            "probabilities": {
+              "support_ability_556_depot_state_only_4347658265": 0.89,
+              "continue": 0.11
+            }
+          },
+          "SCV / unit 4366270476": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.68,
+            "probabilities": {
+              "support_ability_316_4301783057_only_4366270476": 0.16,
+              "continue": 0.84
+            }
+          },
+          "SCV / unit 4323803137": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.67,
+            "probabilities": {
+              "gather_vespene": 0.02,
+              "gather_minerals": 0.2,
+              "continue": 0.78
+            }
+          },
+          "SCV / unit 4300210177": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.42,
+            "probabilities": {
+              "gather_vespene": 0.01,
+              "gather_minerals": 0.37,
+              "continue": 0.62
+            }
+          },
+          "SCV / unit 4390912059": {
+            "choice": "continue",
+            "type": "choice",
+            "confidence": 0.63,
+            "probabilities": {
+              "support_ability_316_4301783057_only_4390912059": 0.18,
+              "continue": 0.82
+            }
+          }
+        }
+      }
+    }
+  ],
+  "method": "First/middle/last occupied Bunker concrete decisions. Same full states and batches; only removes the prior Use another available ability role sentence from the concrete question. All alternatives retained, alternating arms. No gameplay or claim of improved survival.",
+  "calls": 6,
+  "cost_usd": 0.005162849999999999
+}

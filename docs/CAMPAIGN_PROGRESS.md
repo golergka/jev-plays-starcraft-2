@@ -6647,3 +6647,23 @@ orders rather than maintaining cargo; idle/passive garrison activity may be
 poorly represented. Hypothesis, not proven cause. Next recorded-state probe
 should make continuation's persistent cargo state explicit without removing
 unload or forcing boarding. Zero paidcalls or gamecommands this audit.
+
+### Lab454 — explicit cargo continuation wording leaves unloading unchanged
+
+First/middle/last occupied Bunker decisions451 at2980/7887/10649. Samefull
+states/batches; append observedpassengers and no-unload semantics tocontinue,
+including existingorders/gameevents caveat. Sixcalls $0.005169150. Botharms
+unload/unload/unloadall. No deployment; missing continuation explanation alone
+not supported as the cause. No gamecommands.
+
+### Lab455 — remove action-demanding role hint, preserve all controls
+
+Same three occupiedstates, sixcalls $0.005162850. Only remove concretequestion
+sentence 'Jev selected this contribution: Use another available ability.' All
+state and criteria unchanged. Baselines unload/unload/unloadall; withoutsentence
+continue/continue/continue. This supports role-wording-induced action pressure,
+not demonstrated survival benefit. Do not ban unload or force cargo retention.
+Next generalfix should avoid telling the concrete selector to use an ability
+merely because a broad support/other category was chosen; keep every offered
+ability and continuation, and test that principle across selections. Bothprobes
+are recorded-state comparisons with one sample perarm, not live causal proof.
