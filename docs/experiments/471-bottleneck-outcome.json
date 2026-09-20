@@ -1,0 +1,24 @@
+{
+  "trial": 468,
+  "run": "runs/20260920T112554.439774Z",
+  "calls": 293,
+  "cost_usd": 0.1835067360000001,
+  "ui_verification": {
+    "time": 1789904555.2083788,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "21:44",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "1/4",
+    "minerals": 117,
+    "vespene": 195
+  },
+  "decision_errors": 0,
+  "diagnoses": {
+    "income": 1,
+    "ground_combat": 15,
+    "survival": 9
+  },
+  "limits": "No causal claim from longer survival. Accepted training requests and observed appearances do not establish sustained combat effectiveness. No midrun policy changes or root tactical orders."
+}

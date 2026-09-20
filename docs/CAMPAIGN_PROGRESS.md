@@ -6877,3 +6877,20 @@ Acceptance does not establish completion/survival; no framework change justified
 Latest check11275:163calls $0.104991684,zeroerrors, Barracksstillobserved with
 oneMarine/oneMedic/fiveSCVs. Native9:24 earlier showed small advancingforce near
 Zergdefenses. No claimed outcome; keep following this run, not an unchangedretry.
+
+
+### Lab471 — bottleneck trial produces combat units but loses at21:44
+
+Trial468/run20260920T112554.439774Z/session49275 terminalexit0. Native21:44
+allstructuresdestroyed,1/4relics,117minerals195gas.293successfulcalls
+$0.183506736,no decisionerrors. Reconciledresult/checkpoint19thSmashdefeat and
+publicreport; firstthree completedmissions retained. Groundcombat diagnoses
+frequently paired with Marine/Marauder top choices; actual sampled purchases
+also included bunkers/refineries/workers. Training batches executed (470),
+new combat units appeared, but small forces repeatedly vanished from observed
+rosters without sustained advance. Do not equate each disappearance with death.
+Native20:29 confirmed CommandCenter gone; onlydepot remainednear20707.
+No midrun policychanges/rootorders; longer survival versus460 is not causal
+proof. Diagnosis was only investmentcontext, not a shared tactical goal: inspect
+that separation and small-force commitment next, consulting earlier regroup/
+strategy probes rather than repeating successful purchase-context tests.
