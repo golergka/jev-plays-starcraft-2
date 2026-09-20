@@ -1,0 +1,39 @@
+{
+  "source": "runs/20260920T040013.597739Z/events.jsonl",
+  "first_paid_bonus_context": {
+    "source": "player-visible native timer windows and objectives",
+    "timers": [
+      {
+        "window": 1,
+        "title": "Evacuation In: ",
+        "mode": "remaining",
+        "raw_timer_value": 1029.375
+      }
+    ],
+    "objectives": [
+      {
+        "id": 2,
+        "name": "Rescue the Rebels (0/3)",
+        "description": "The rapid advance of the zerg has cut off some rebel fighters outside the base. They can't hold out for long on their own. Rescue them!",
+        "state": "active",
+        "primary": false
+      },
+      {
+        "id": 1,
+        "name": "Hold Out For Evacuation",
+        "description": "The zerg have returned! Defend the base long enough for transport to arrive and evacuate your forces from Mar Sara.",
+        "state": "active",
+        "primary": true
+      }
+    ],
+    "note": "Native timer values; displayed formatting and rounding not yet validated."
+  },
+  "observed_paid_bonus_requests": 11,
+  "partial": true,
+  "native_visual": {
+    "game_clock": "3:10",
+    "bonus": "Rescue the Rebels [0/3]",
+    "evacuation_remaining": "16:59"
+  },
+  "scope": "Dynamic visible objective delivery, not evidence of response quality or campaign success."
+}

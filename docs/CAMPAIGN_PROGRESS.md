@@ -5210,3 +5210,13 @@ andreaderacceptsfreshcampaigncontext. Bonusobjectivehasnotyetappeared/beenverifi
 Nextfreshrestarton357mapwilltestdeliverytoJev. Samefilenamehistoryfiltermeansold335
 attemptsareexcluded; this is therefore not a clean one-variablecomparisonwith350.
 Do notsilentlymerge mapidentities or attribute futureoutcome solelytoobjectivefeed.
+
+### Lab359 — dynamic bonus objective reaches live Jev requests
+
+358run20260920T040013.597739Z/session4142remainslive. Native3:10showsRescuetheRebels
+(0/3)andmainobjective,16:59evacuationremaining. Paidpayloads nowincludeactivebonus
+name/description/primary=false alongsideactiveprimary;11suchrequests among61calls
+atpartialaudit,$0.031815294. Artifact359storesfirstpaidbonuscontextandnativecheck.
+First8paidrequests hademptyobjectivelistbeforemissioninitialized;later14of22 already
+hadmainobjective (earlier358check). No root-addedrescueorder,route,orstrategy.
+This validatesdynamicfeed,notqualityofresponseorcampaigncompletion. Policyunchanged.
