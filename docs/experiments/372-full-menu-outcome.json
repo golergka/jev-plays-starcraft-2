@@ -1,0 +1,79 @@
+{
+  "run": "runs/20260920T043601.934772Z",
+  "ui_verification": {
+    "time": 1789879871.169903,
+    "verification": "native SC2 screenshot via cua",
+    "mission": "Zero Hour",
+    "result": "defeat",
+    "mission_time": "19:06",
+    "evacuation_remaining": "01:03",
+    "reason": "All of your structures have been destroyed.",
+    "minerals": 1226,
+    "vespene": 0
+  },
+  "calls": 249,
+  "cost_usd": 0.16971271800000007,
+  "cycles": 36,
+  "median_paced_seconds": 22.450889999999987,
+  "marine_requests": 31,
+  "marine_cost_usd": 0.030366126,
+  "menu_fallbacks": 0,
+  "model_failures": [],
+  "engine_errors": [
+    {
+      "time": 1789879202.4069629,
+      "event": "engine_action_error",
+      "loop": 5217,
+      "failures": [
+        {
+          "ability_id": 340,
+          "unit_tags": [
+            4379901953
+          ],
+          "result": "NotSupported"
+        }
+      ]
+    },
+    {
+      "time": 1789879297.022485,
+      "event": "engine_action_error",
+      "loop": 7261,
+      "failures": [
+        {
+          "ability_id": 338,
+          "unit_tags": [
+            4372824065
+          ],
+          "result": "NotSupported"
+        }
+      ]
+    },
+    {
+      "time": 1789879821.802646,
+      "event": "engine_action_error",
+      "loop": 17982,
+      "failures": [
+        {
+          "ability_id": 323,
+          "unit_tags": [
+            4406902785
+          ],
+          "result": "CouldntReachTarget"
+        }
+      ]
+    }
+  ],
+  "investment_choices": {
+    "project_4": 7,
+    "project_0": 1,
+    "project_2": 1,
+    "save_for_11": 1,
+    "save": 6,
+    "project_5": 2,
+    "project_3": 4,
+    "project_1": 6,
+    "project_6": 3,
+    "project_7": 4
+  },
+  "scope": "One completed full-menu-first trial, two prior attempts loaded. No causal outcome attribution; costs for full menus versus tournaments were separately paired in lab369."
+}

@@ -5374,3 +5374,25 @@ size fallbacks or model errors in this prefix. This verifies cheaper path delive
 not sustained savings or victory. Artifact371 preserves partial cutoff. Existing
 budget/fog/actionvalidation and Jev tactical authority remain unchanged. Current
 controller confirmed live; do not restart or treat this partial audit as an outcome.
+
+### Lab372 — full-menu trial loses at19:06; local savings are not whole-run savings
+
+Trial371 run20260920T043601.934772Z/session93466 exited0. Native screenshot
+independently verifies defeat19:06,01:03remaining,1226minerals/0gas, all structures
+destroyed.249successfulrequests,$0.169712718,36decisioncycles.31Marine-only
+requests cost$0.030366126; zero size fallbacks and zero model failures. Engine
+feedback:NotSupported for abilities340/338,CouldntReachTarget for323. Four SCV
+batches and two Marine batches selected. Artifact372 and local result/UI records
+preserve evidence. Checkpoint now42verifiedZeroHourdefeats; only firsttwo wins.
+
+Native checks showed Marines defending near the bridge, later base invasion,
+army collapse and workers repairing structures until the final destruction.
+Longer survival than365 is not proof of full-menu quality improvement: history,
+choices and state trajectories differ. No root tactics or live policy changes.
+
+Important cost correction: full run median paced interval22.45seconds versus
+18.32seconds for365; totalcost$0.169713 versus$0.152361. Earlyprefix and paired
+combat-menu savings did NOT establish whole-run speed or dollar savings. Different
+surviving rosters and noncombat calls change workload. Keep measured55% paired
+menu saving scoped to those three menus. Do not rerun unchanged based merely on
+being one minute short; next experiment must address a distinct general issue.
