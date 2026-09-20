@@ -1565,3 +1565,28 @@ def test_contribution_top_choice_does_not_sample_and_retains_commitment():
     assert model.calls == 1
     sampled = asyncio.run(player.choose_contributions({'loop': 1}, {}, questions, model, {}))
     assert sampled['worker']['choice'] == 'positioning'
+
+
+def test_harvesting_context_preserves_resource_identity_during_return_without_guessing():
+    from player import harvesting_assignments, control_groups, investment_state
+    target_memory = {}
+    def unit(order):
+        return {'tag':1,'type':'Worker','orders':[order], 'candidates':[
+            {'id':'gather_10','description':'Gather minerals from visible field',
+             'command':{'unit_tag':1,'ability_id':295,'target_tag':10}}]}
+    units=[unit({'ability':'Harvest Gather SCV','target_tag':10})]
+    control_groups(units,'by_type',{},target_memory)
+    units=[unit({'ability':'Harvest Return SCV','target_tag':99})]
+    control_groups(units,'by_type',{},target_memory)
+    assignments=harvesting_assignments(units,target_memory)
+    assert assignments[0]['resource_target_tag']==10
+    assert assignments[0]['resource_kind']=='minerals'
+    assert 'previously observed' in assignments[0]['evidence']
+    assert investment_state({'harvesting_assignments':assignments})['harvesting_assignments']==assignments
+    unknown=harvesting_assignments(units,{})[0]
+    assert unknown['resource_target_tag'] is None
+    assert unknown['resource_kind']=='unknown'
+    units=[unit({'ability':'Repair','target_tag':99})]
+    control_groups(units,'by_type',{},target_memory)
+    assert target_memory=={}
+    assert harvesting_assignments(units,target_memory)==[]

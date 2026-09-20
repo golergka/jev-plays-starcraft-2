@@ -253,7 +253,7 @@ def is_purchase(candidate):
 def investment_state(state):
     """Keep economic/force facts; raw terrain and repeated unit coordinates distract."""
     compact = {k:state[k] for k in ('objective','mission_context','resources','completed_upgrades','selection_facts',
-               'unit_type_facts','recent_outcomes','recent_action_feedback','observed_capabilities_by_type','previous_investment_intent',
+               'unit_type_facts','harvesting_assignments','recent_outcomes','recent_action_feedback','observed_capabilities_by_type','previous_investment_intent',
                'strategy_chosen_by_jev','production_commitment') if k in state}
     for source,target in [('visible_entities','visible_entities_by_alliance_and_type'),
                           ('last_known_entities','stale_entities_by_alliance_and_type')]:
@@ -613,6 +613,31 @@ def selection_facts(view, cohorts, previous_counts):
     return facts
 
 
+
+def harvesting_assignments(units, observed_targets):
+    """Expose observed gather destinations across the return half of a cycle."""
+    resources = {}
+    for unit in units:
+        for candidate in unit.get('candidates', []):
+            description = candidate['description']
+            for prefix, kind in (('Gather minerals', 'minerals'), ('Gather vespene gas', 'vespene')):
+                if description.startswith(prefix):
+                    resources[candidate['command']['target_tag']] = kind
+    assignments = []
+    for unit in units:
+        orders = unit.get('orders') or []
+        if not orders or not orders[0].get('ability', '').startswith(('Harvest Gather', 'Harvest Return')):
+            continue
+        returning = orders[0]['ability'].startswith('Harvest Return')
+        target = observed_targets.get(unit['tag']) if returning else orders[0].get('target_tag')
+        assignments.append({'worker_tag': unit['tag'], 'resource_target_tag': target,
+                            'resource_kind': resources.get(target, 'unknown'),
+                            'evidence': ('previously observed gather target; currently returning cargo' if target is not None
+                                         else 'currently returning cargo; prior resource target unknown') if returning
+                                        else 'current observed gather target'})
+    return assignments
+
+
 def control_groups(units, mode, learned, harvest_targets=None):
     groups = {}
     harvest_targets = {} if harvest_targets is None else harvest_targets
@@ -801,6 +826,7 @@ async def decide(view, jev, memory):
                       for u in units]
     state['type_selection_facts'] = selection_facts(view,cohorts,{})
     cohorts = control_groups(units,memory.get('coordination','by_type'),learned,memory.setdefault('harvest_targets',{}))
+    state['harvesting_assignments'] = harvesting_assignments(units,memory['harvest_targets'])
     state['selection_facts'] = selection_facts(view,cohorts,memory.get('previous_cohort_counts',{}))
     strategy = memory.get('strategy')
     if (strategy is None or view['loop'] < strategy['loop']

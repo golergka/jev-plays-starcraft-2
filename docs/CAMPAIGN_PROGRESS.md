@@ -5860,3 +5860,20 @@ but are not mechanically filtered in this probe; any deployment must filter
 and validate eligibility. No evidence of actual savings or improved allocation;
 do not silently interpret ordinarycontinue as authorization for long retention.
 Script/artifact398 preserved. No live policy change or unchanged replay started.
+
+### Lab399 — expose observed harvesting assignments across cargo return
+
+Framework already remembers gather targets in control_groups, but economic actors
+always use individual keys, and that target memory was not exposed to Jev. During
+Harvest Return the raw order targets a drop-off structure, hiding the resource
+assignment from that order. Add harvesting_assignments to tactical/strategic and
+investment context. Current gather target or explicitly remembered prior target;
+resource kind resolved only from currently offered gather candidates. Unknown
+staysunknown. Never infer a resource from the return destination or choose a
+worker/resource. Existing memory clears when workers leave harvesting/disappear.
+
+Regression checks return-to-townhall99 preserves observed resource10, absent
+memory yieldsunknown, repair clears assignment, and investment projection retains
+facts.202tests pass; final evidence-wording refinement targeted test passes.
+No paid calls or live game yet. Information delivery correction, not measured
+resource balancing or savings. Prior398durationprobe remains negative.
