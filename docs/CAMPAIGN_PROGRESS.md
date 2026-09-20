@@ -5702,3 +5702,19 @@ to bound scope. Invalid returned role fails loudly; logs distinguish selection_m
 and selected_choice. Default remains sampled for comparison. Regression contrasts
 returned choice with an opposing probability distribution and verifies retention;
 201tests pass. Next freshtrial tests currentmode, not a causal winrate claim.
+
+### Lab390 — contribution top choices preserve early workers, still defeat10:49
+
+Run20260920T061613.544924Z/session55781 terminalexit0. NativeUI confirms defeat
+10:49,allstructuresdestroyed,0/4relics,0minerals/0gas.167successfulcalls cost
+$0.089919186;116contributioncommitmentsloggedtop_choice. Allfiveopeningworkers
+receivedincome;nativeviewconfirmedharvesting. SevenSCVsat2414versustwoat2399in387.
+This earlyretentionobservationdoesnotisolate causalbenefit acrossdifferenttrajectories.
+
+Armycollapsed;JevconstructedtwoEngineeringBayswhilemilitaryproductionwaslost.
+WorkersrepairedCommandCenterunderProtossattackuntilcollapse. No verifiedprimary
+progress. Existinginvestment/navigation samplingunchanged. This joins198/200as
+negative full-outcomeevidence for roleargmax alone;do notpresentas a winningfix.
+Opt-in flag remains available,defaultsampledunchanged. No livepolicyedits orroot
+orders. LocalUI/result/checkpoint,artifact390andreportupdated;fiveSmashdefeats,
+onlyfirstthreecampaignmissionsverifiedwon. No unchangedretry started.

@@ -7,9 +7,9 @@ native victory screen reports 20:12, after 42 independently UI-verified defeats.
 The winning run cost $0.192928932 for 261 successful Jev requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab387
+## Current evidence through lab390
 
-Smash and Grab has four independently verified defeats:
+Smash and Grab has five independently verified defeats:
 
 | Trial | Native mission time | Relics | Successful requests | Request cost |
 | --- | --- | --- | --- | --- |
@@ -17,6 +17,7 @@ Smash and Grab has four independently verified defeats:
 | 381 | 13:16 | 0/4 | 177 | $0.116499978 |
 | 383 | 19:22 | 0/4 | 242 | $0.155562708 |
 | 387 | 11:27 | 0/4 | 171 | $0.090893418 |
+| 390 | 10:49 | 0/4 | 167 | $0.089919186 |
 
 The longer attempts sustained workers, construction and repairs without restoring
 an effective army or completing the primary objective. Survival time is not a
@@ -45,6 +46,12 @@ three sampled strategic choices ($0.002523990). Trial387 selected that priority 
 11:27 without verified objective progress. It also included support geometry and
 grouping-description changes, so it cannot isolate a single causal factor. The
 changed strategic selections did not establish better gameplay.
+
+Trial390 used returned contribution choices instead of sampling their distributions.
+All five opening workers received income roles, and seven remained near loop2400
+versus two in387. It still lost at10:49 with no relic progress or army recovery.
+The opt-in mode is an experimental comparison, not a demonstrated campaign fix;
+investment and navigation sampling were unchanged.
 
 The rolling $0.10/five-minute cap remains unchanged. Listed costs are successful
 requests for those runs/probes, not total account spending or conservative pending

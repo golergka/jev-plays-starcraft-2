@@ -1,0 +1,37 @@
+{
+  "run": "runs/20260920T061613.544924Z",
+  "ui_verification": {
+    "time": 1789885496.3813472,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "10:49",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "calls": 167,
+  "cost_usd": 0.089919186,
+  "ticks": 50,
+  "role_modes": {
+    "top_choice": 116
+  },
+  "errors": [
+    {
+      "time": 1789885254.3806562,
+      "event": "engine_action_error",
+      "loop": 6120,
+      "failures": [
+        {
+          "ability_id": 319,
+          "unit_tags": [
+            4320657409
+          ],
+          "result": "CouldntReachTarget"
+        }
+      ]
+    }
+  ],
+  "scope": "Contribution top-choice mode; investment/navigation sampling unchanged. All five opening workers selected income; seven workers at loop2414 versus two at2399 in387. Army nevertheless disappeared; no demonstrated primary objective progress or win. No root commands or policy edits during run."
+}
