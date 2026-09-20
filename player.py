@@ -601,6 +601,7 @@ def control_groups(units, mode, learned, harvest_targets=None):
 
 async def choose_contributions(view, state, questions, jev, memory):
     """Sample Jev's distribution and retain its declared short commitment."""
+    commitment_loops = 672
     plans = memory.setdefault('contribution_plans',{})
     pending, answers = {}, {}
     strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
@@ -612,7 +613,7 @@ async def choose_contributions(view, state, questions, jev, memory):
             answers[key] = {'choice':plan['choice']}
         else:
             pending[key] = {**question,'instructions':question['instructions']+
-                ' Commit to this contribution for up to 224 game loops (about ten seconds), '
+                f' Commit to this contribution for up to {commitment_loops} game loops (about thirty seconds), '
                 'unless its controls become unavailable or the strategic priority changes. '
                 'Concrete orders are still selected separately during the commitment.'}
     predictions = await jev.ask(control_state(state),pending) if pending else {}
@@ -623,11 +624,11 @@ async def choose_contributions(view, state, questions, jev, memory):
                    if k in question['criteria'] and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
         choice = rng.choices(list(weights),weights=list(weights.values()),k=1)[0] if weights else answer.get('choice')
         if choice in question['criteria']:
-            plans[key] = {'choice':choice,'loop':view['loop'],'review_at':view['loop']+224,'strategy':strategy}
+            plans[key] = {'choice':choice,'loop':view['loop'],'review_at':view['loop']+commitment_loops,'strategy':strategy}
             answers[key] = {'choice':choice}
         jev.log('contribution_commitment',loop=view['loop'],question=key,
                 top_choice=answer.get('choice'),sampled_choice=choice,selection_mode='sampled',
-                probabilities=weights,review_at=view['loop']+224)
+                probabilities=weights,review_at=view['loop']+commitment_loops)
     return answers
 
 

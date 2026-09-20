@@ -4199,3 +4199,23 @@ Updated public experiment report with current25UI-verified ZeroHour defeats,
 latest cost/cadence, budget regime and limitations. No extra paid probe or live
 policy change. Current run20260920T001950.717184Z/session56451 continues lab283
 feedback trial; early two ticks valid, no delayed rejection yet to verify delivery.
+
+### Lab286 — feedback trial loses9:12; test actual longer role retention
+
+Run20260920T001950.717184Z/session56451 terminal and native DEFEAT9:12,
+evacuation10:57,7minerals,all structures destroyed.130successful calls cost
+$0.072760464. One ReadTimeout recovered; no delayed engine errors occurred,
+so this run does not exercise lab283 delivery or establish its gameplay benefit.
+Saved UI verification and updated checkpoint; first two victories unchanged.
+
+Activate prepared contribution duration224→672loops (about30game seconds).
+Previous284median inter-decision gap487loops exceeded old224loop commitments.
+The new duration is stated to Jev when choosing roles; no role receives a Python
+preference. Concrete commands remain fresh Jev choices. Existing commitments are
+not extended retroactively; strategy changes, missing controls, expiry and rewind
+still trigger review. Risk: longer retention can preserve a poor role longer.
+This tests executed duration, distinct from failed lab091 horizon wording probe.
+
+140tests pass, including retention over487loops, expiry, strategy-change/rewind
+invalidation and unchanged earlier short deadlines. Current trial was held stable
+until its terminal result; next fresh attempt uses the longer duration.

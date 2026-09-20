@@ -666,7 +666,7 @@ def test_jev_contribution_commitment_retains_sample_and_rechecks_unavailable_cho
         def log(self,*args,**kwargs): pass
         async def ask(self,state,questions):
             self.calls+=1
-            assert '224 game loops' in questions['purpose_Test']['instructions']
+            assert '672 game loops' in questions['purpose_Test']['instructions']
             return {'purpose_Test':{'choice':'positioning','probabilities':{'income':1,'positioning':0,'unoffered':100}}}
     model=Model();memory={};state={};q={'purpose_Test':{'instructions':'Choose role','criteria':{'income':'Gather','positioning':'Move'}}}
     assert asyncio.run(player.choose_contributions({'loop':1},state,q,model,memory))['purpose_Test']['choice']=='income'
@@ -1304,3 +1304,30 @@ def test_delayed_engine_failures_reach_player_without_invented_request_attributi
     rewind.observation.game_loop = 5
     observe_action_failures(rewind,memory,lambda *a,**k:None)
     assert memory['engine_action_feedback'] == []
+
+
+def test_contribution_commitment_survives_paced_review_but_not_expiry_or_strategy_change():
+    import player
+    class Model:
+        calls = 0
+        def log(self,*a,**k): pass
+        async def ask(self,state,questions):
+            self.calls += 1
+            return {'purpose_Test':{'choice':'income','probabilities':{'income':1}}}
+    model = Model(); memory = {}
+    q = {'purpose_Test':{'instructions':'Choose role','criteria':{'income':'Gather'}}}
+    state = {'strategy_chosen_by_jev':{'choice':'protect'}}
+    for loop in (1,488):
+        asyncio.run(player.choose_contributions({'loop':loop},state,q,model,memory))
+    assert model.calls == 1
+    asyncio.run(player.choose_contributions({'loop':673},state,q,model,memory))
+    assert model.calls == 2
+    state['strategy_chosen_by_jev']['choice'] = 'recover'
+    asyncio.run(player.choose_contributions({'loop':700},state,q,model,memory))
+    assert model.calls == 3
+    asyncio.run(player.choose_contributions({'loop':2},state,q,model,memory))
+    assert model.calls == 4
+    # A hot reload must not retroactively extend an earlier, shorter commitment.
+    memory['contribution_plans']['purpose_Test'].update(loop=2,review_at=226)
+    asyncio.run(player.choose_contributions({'loop':300},state,q,model,memory))
+    assert model.calls == 5
