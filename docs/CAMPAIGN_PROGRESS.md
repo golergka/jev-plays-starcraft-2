@@ -6107,3 +6107,21 @@ Same topcontributionflag, Jevinvestment/navigation distributions, objective,
 budgetcap$.10/300s, SDKconcurrency2. No tactical rootorders or changed route.
 One live trial to evaluate combined corrections; cannot isolate either effect
 from this single trajectory. No success assumed from description correctness.
+
+### Lab415 — contract-correction trial414 defeats at14:25
+
+Session9275 exited0; run20260920T082219.280906Z. NativeUI confirms allstructures
+destroyed,0/4relics,0minerals/208gas.170calls $0.123729648, no decisionerrors.
+Regular nativevisual checks confirmed mining, rebuilding and repairs underattack.
+Both SCVbatches completedrequestallowance; no stalledMedicbatch thisrun. Initial
+force lost early; later Marauders didnotpersist. Fourteen laterfirstseenSCVs,
+fiveMarauders (includespotentialscriptedreinforcements); no laterMarine sightings
+despite two immediateacceptedtrainingrequests. Acceptance≠completion.
+
+Topinvestment save16/34,SCV8,Marine4; sampledpolicypurchased workers, infrastructure,
+and somecombatunits withoutdurablearmy. No causalclaim from twowordingcorrections
+or absenceofMedicstall. No rootorders/midtrialpolicychanges. Result/UI/checkpoint,
+publicartifact/report reconciled. Eleven nativeSmashdefeats; firstthree missions
+stillonlyverifiedwins. Do not launch unchangedretry. Future work should address
+combat preservation/production coordination beyond wording tweaks; previous
+negative prompts and factorization probes remain relevant constraints.

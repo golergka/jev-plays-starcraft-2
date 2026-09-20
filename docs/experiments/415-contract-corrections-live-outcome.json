@@ -1,0 +1,101 @@
+{
+  "run": "runs/20260920T082219.280906Z",
+  "top_investments": {
+    "save": 16,
+    "project:Marine": 4,
+    "save_for:CommandCenter": 1,
+    "project:Medic": 1,
+    "project:Marauder": 1,
+    "project:SCV": 8,
+    "project:Refinery": 1,
+    "project:SupplyDepot": 1,
+    "project:BarracksTechLab": 1
+  },
+  "selected_investments": {
+    "project:SupplyDepot": 3,
+    "save": 8,
+    "save_for:CommandCenter": 1,
+    "project:Marauder": 2,
+    "project:SCV": 8,
+    "project:Marine": 2,
+    "project:Refinery": 2,
+    "batch:SCV": 2,
+    "project:Barracks": 1,
+    "project:EngineeringBay": 1,
+    "project:Research TerranInfantryArmorsLevel1": 1,
+    "project:BarracksTechLab": 2,
+    "save_for:SupplyDepot": 1
+  },
+  "submitted_command_results_by_ability": {
+    "556:Success": 44,
+    "16:Success": 29,
+    "295:Success": 13,
+    "319:Success": 3,
+    "558:Success": 40,
+    "23:Success": 4,
+    "19:Success": 2,
+    "563:Success": 2,
+    "524:Success": 14,
+    "316:NotEnoughVespene": 1,
+    "560:Success": 2,
+    "316:Success": 2,
+    "320:Success": 1,
+    "321:Success": 1,
+    "1:Success": 14,
+    "322:Success": 1,
+    "4:Success": 1,
+    "656:Success": 1,
+    "421:Success": 1,
+    "421:NotEnoughMinerals": 1,
+    "316:NotEnoughMinerals": 5
+  },
+  "initial_observed_units": {
+    "SCV": 5,
+    "SupplyDepot": 2,
+    "Marine": 3,
+    "Barracks": 1,
+    "Refinery": 1,
+    "Medic": 1,
+    "CommandCenter": 1,
+    "BarracksTechLab": 1
+  },
+  "later_first_seen_units": {
+    "SupplyDepot": 3,
+    "SpecialOpsDropship": 1,
+    "Marauder": 5,
+    "SCV": 14,
+    "Refinery": 1,
+    "Barracks": 1,
+    "EngineeringBay": 1
+  },
+  "production_job_releases": [
+    {
+      "loop": 6324,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    },
+    {
+      "loop": 7021,
+      "project": "SCV",
+      "reason": "completed request allowance",
+      "remaining_requests": 0
+    }
+  ],
+  "limits": "Immediate Success is not completion. First sightings are not attributed births; scripts, transformations and observation gaps can confound them. Top-choice alternatives are not a simulated counterfactual trajectory.",
+  "trial": 414,
+  "calls": 170,
+  "cost_usd": 0.12372964800000001,
+  "ui_verification": {
+    "time": 1789893223.017229,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "14:25",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 208
+  },
+  "decision_errors": 0
+}
