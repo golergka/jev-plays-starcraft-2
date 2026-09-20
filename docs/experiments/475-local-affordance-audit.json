@@ -1,0 +1,160 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "samples": [
+    {
+      "loop": 5352,
+      "local_options": {
+        "group_attack_move_east": "Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain | Attack-move six map units east, engaging enemies encountered on the way; destination: blocked static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_attack_move_north": "Attack-move six map units north, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_attack_move_south": "Attack-move six map units south, engaging enemies encountered on the way; destination: walkable static terrain | Attack-move six map units south, engaging enemies encountered on the way; destination: blocked static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_attack_move_west": "Attack-move six map units west, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+      },
+      "facts": {
+        "members": [
+          {
+            "tag": 4362862615,
+            "type": "Marine"
+          },
+          {
+            "tag": 4325376004,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          52.1,
+          24.4
+        ],
+        "nearest_visible_enemy_distance": 4.1,
+        "visible_enemies_within_12_of_any_member": {
+          "SpineCrawler": 1,
+          "CreepTumorBurrowed": 2,
+          "SporeCrawler": 1,
+          "Overlord": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 65.0,
+        "max_separation": 27.8,
+        "largest_distance_to_nearest_selection_member": 27.8,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 44,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east"
+    },
+    {
+      "loop": 12585,
+      "local_options": {
+        "group_east": "Move six map units east; destination: blocked static terrain | Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_north": "Move six map units north; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_south": "Move six map units south; destination: blocked static terrain | Move six map units south; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_west": "Move six map units west; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+      },
+      "facts": {
+        "members": [
+          {
+            "tag": 4367319085,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4366008374,
+            "type": "Marauder"
+          }
+        ],
+        "count": 2,
+        "center": [
+          52.1,
+          24.4
+        ],
+        "nearest_visible_enemy_distance": 4.1,
+        "visible_enemies_within_12_of_any_member": {
+          "Overlord": 1,
+          "CreepTumorBurrowed": 2,
+          "SpineCrawler": 1,
+          "SporeCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 171.0,
+        "max_separation": 28.0,
+        "largest_distance_to_nearest_selection_member": 28.0,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 71,
+        "current_order_counts": {
+          "Move Move": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_move_middle_east"
+    },
+    {
+      "loop": 20035,
+      "local_options": {
+        "group_east": "Move six map units east; destination: blocked static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_north": "Move six map units north; destination: blocked static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_south": "Move six map units south; destination: blocked static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown",
+        "group_west": "Move six map units west; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+      },
+      "facts": {
+        "members": [
+          {
+            "tag": 4323803139,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          81.5,
+          8.6
+        ],
+        "nearest_visible_enemy_distance": 3.3,
+        "visible_enemies_within_12_of_any_member": {
+          "Mutalisk": 2,
+          "Hydralisk": 2
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 3.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 7,
+        "current_order_counts": {
+          "Attack Attack": 1,
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_last_known_move_8760786975"
+    }
+  ],
+  "finding": "Cardinal local controls exist; static blocked/unknown labels are not guarantees of engine route. Cohort descriptions expose straight-line travel distances but do not include the individual policy path nearest-visible-enemy before/after comparison. No missing-control fix or tactical action is inferred."
+}

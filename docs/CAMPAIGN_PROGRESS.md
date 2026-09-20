@@ -6937,3 +6937,17 @@ mission outcome. Notdeployed, no livecalls/orders. Together472/473, this caution
 against more generic local-threat wording as the solution. Future work should
 inspect whether offered destinations support useful local maneuvers and their
 spatial representation before another live trial; retain every legalalternative.
+
+### Lab475 — local cardinal controls exist; cohort geometry differs
+
+Read-only audit474's5352/12585/20035 full concrete menus. Four six-map-unit
+cardinal choices are present in the selected movement family, with staticterrain
+labels and cohort min/max straight-line travel distance. At20035 north/south/east
+blocked,westwalkable; this does not establish route safety or a mandatory retreat.
+No missing-cardinal-control fix justified. Code comparison: individual policy
+path player.py appends nearest-visible-enemy before/after distance for point
+commands, while cohort path only appends travel distances. This is a factual
+representation difference, not demonstrated causal failure. Next probe should
+compute equivalent current-visible-enemy geometry from actual cohort command
+points and observations, respecting mixed-unit targets and not treating static
+endpoint distance as path safety. No paidcalls, liveorders or policy change.
