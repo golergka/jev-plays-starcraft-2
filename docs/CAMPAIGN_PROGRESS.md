@@ -5150,3 +5150,22 @@ SCV12,SCV12,Marinecancel. No gamecommands. This additionaldecisioncan revoke the
 sampledcommitment; itdoesnotdemonstrateimprovedallocation andwouldnotaddressarmy
 replacement in these samples. Do notdeploy or claimlargerbatchesasfix. Artifact354
 retainsquestionsanddistributions. Need distinctevidence beforeanotherlivetrial.
+
+### Lab355 — prototype native player-visible objective feed
+
+Consulted226before repeatingstrategicpriorityablation; itwasnegative,so no newpaid
+probe. Investigatedmissingdynamicobjectivecontext instead:existingtimerfeedhasno
+objective text/status. Nativeheaders exposeObjectiveVisible(player),name,description,
+primary,andstate. Extendexistingobjectiveadapterwithcreationregistry andexplicit
+opt-inexport; unknown/hiddenobjectives excludedbefore readingtext. Export doesnot
+run implicitly; currentcampaignmap/controllerunchanged. Reused IDskeepregistry
+node,notnewlink. No hiddenwave/route/missionstrategy.
+
+Builtignored355fixtureandstartedthroughdiagnosticAPI; noJevcallsorcampaigncredit.
+Nativebank validatescreated,renamed,completed,hidden,shown,destroyed stages;completed
+state2anddisplayprefix retained;hidden/destroyedcount0andoldsectionremoved. Objective
+createdonlyforplayer2 excludedfromplayer1snapshot. Artifact355storesactualstage
+fields. NativeUIinspectedafterfixture; no campaignobjectiveclaimed.185testspass.
+Remainingbeforeintegration:DestroyAll/reusedIDs/failedstate/playervisibilityswitch,
+freshnessreaderandbuilderwiring. CurrentSC2mapisdiagnostic355,notcampaign335;
+nextcampaignrunmustloadcorrectmapratherthanrestartthisfixture.

@@ -1,0 +1,83 @@
+{
+  "fixture": "maps/visible-objective-fixture-lab355.SC2Map",
+  "sections": {
+    "shown": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "2"
+      },
+      "name": {
+        "text": "[Completed] Updated objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "renamed": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "1"
+      },
+      "name": {
+        "text": "Updated objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "Objectives": {
+      "count": {
+        "int": "0"
+      }
+    },
+    "destroyed": {
+      "section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "hidden": {
+      "section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "completed": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "2"
+      },
+      "name": {
+        "text": "[Completed] Updated objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "created": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "1"
+      },
+      "name": {
+        "text": "Visible objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    }
+  },
+  "scope": "Native fixture compiled and exported expected stages. No campaign credit, model calls, or live player integration. DestroyAll, ID reuse, failed state and other-player switching need additional validation."
+}

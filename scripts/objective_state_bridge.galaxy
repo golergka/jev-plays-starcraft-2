@@ -1,4 +1,14 @@
-// Experimental presentation adapter. NOT yet installed in campaign maps.
+// Registry enumerates only IDs created through the adapter. A reused ID keeps
+// its existing registry node; native visibility/validity is checked at export.
+int JevObjectiveHead = 0;
+void JevObjectiveRegister (int objective) {
+    string key = "JevObjectiveRegistry." + IntToString(objective);
+    if (DataTableValueExists(true, key)) { return; }
+    DataTableSetInt(true, key, JevObjectiveHead);
+    JevObjectiveHead = objective;
+}
+
+// Presentation adapter used by experimental campaign map copies.
 // Mission scripts must use both wrappers together; native terminal objective
 // states otherwise end the external API episode before the actual mission ends.
 string JevObjectiveStateKey (int objective) {
@@ -49,6 +59,7 @@ void JevObjectiveSetState (int objective, int state) {
 int JevObjectiveCreate (text name, text description, int state, bool primary) {
     int objective = ObjectiveCreate(name, description, c_objectiveStateActive, primary);
     JevObjectiveForget(objective);
+    JevObjectiveRegister(objective);
     JevObjectiveSetState(objective, state);
     return objective;
 }
@@ -56,6 +67,7 @@ int JevObjectiveCreate (text name, text description, int state, bool primary) {
 int JevObjectiveCreateForPlayers (text name, text description, int state, bool primary, playergroup players) {
     int objective = ObjectiveCreateForPlayers(name, description, c_objectiveStateActive, primary, players);
     JevObjectiveForget(objective);
+    JevObjectiveRegister(objective);
     JevObjectiveSetState(objective, state);
     return objective;
 }
@@ -84,4 +96,30 @@ void JevObjectiveDestroy (int objective) {
 // check native validity; a later Create clears cached state before ID reuse.
 void JevObjectiveDestroyAll (playergroup players) {
     ObjectiveDestroyAll(players);
+}
+
+// Opt-in: caller owns bank freshness and saving. No export occurs implicitly.
+void JevVisibleObjectiveExport (bank destination, int player) {
+    int oldCount = BankValueGetAsInt(destination, "Objectives", "count");
+    int index = 0;
+    int objective = JevObjectiveHead;
+    string section;
+    while (index < oldCount) {
+        BankSectionRemove(destination, "Objective" + IntToString(index));
+        index += 1;
+    }
+    index = 0;
+    while (objective != 0) {
+        if (ObjectiveGetState(objective) != c_objectiveStateUnknown && ObjectiveVisible(objective, player)) {
+            section = "Objective" + IntToString(index);
+            BankValueSetFromInt(destination, section, "id", objective);
+            BankValueSetFromText(destination, section, "name", ObjectiveGetName(objective));
+            BankValueSetFromText(destination, section, "description", ObjectiveGetDescription(objective));
+            BankValueSetFromInt(destination, section, "state", JevObjectiveGetState(objective));
+            BankValueSetFromFlag(destination, section, "primary", ObjectiveGetPrimary(objective));
+            index += 1;
+        }
+        objective = DataTableGetInt(true, "JevObjectiveRegistry." + IntToString(objective));
+    }
+    BankValueSetFromInt(destination, "Objectives", "count", index);
 }
