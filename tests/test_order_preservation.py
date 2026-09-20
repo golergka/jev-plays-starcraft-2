@@ -34,3 +34,13 @@ def test_queue_and_no_target_are_not_silently_preserved():
     assert preserve_current_orders([a],obs)==([a],[])
     c.queue_command=False;u.orders.add(ability_id=16,target_unit_tag=3)
     assert preserve_current_orders([a],obs)==([a],[])
+
+
+def test_observed_engine_rounding_but_not_changed_destination():
+    obs=sc.ResponseObservation();u=obs.observation.raw_data.units.add(tag=1,alliance=raw.Self)
+    o=u.orders.add(ability_id=23);o.target_world_space_pos.x=153.333251953125;o.target_world_space_pos.y=48
+    a=sc.Action();c=a.action_raw.unit_command;c.unit_tags.append(1);c.ability_id=23
+    c.target_world_space_pos.x=153.3333282470703;c.target_world_space_pos.y=48
+    assert preserve_current_orders([a],obs)[0]==[]
+    c.target_world_space_pos.x+=0.001
+    assert preserve_current_orders([a],obs)==([a],[])

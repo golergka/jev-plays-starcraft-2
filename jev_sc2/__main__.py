@@ -440,7 +440,7 @@ async def run(args):
                 actions, maintained = preserve_current_orders(actions, fresh)
                 if maintained:
                     log('orders_maintained', loop=view['loop'], orders=maintained,
-                        reason='Exact sole current Move/Attack order retained in fresh observation')
+                        reason='Sole current Move/Attack order retained in fresh observation (point tolerance 0.0001)')
             results = []
             if actions:
                 response = await client.request('action',sc.RequestAction(actions=actions))
@@ -494,7 +494,7 @@ async def run(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--purchase-dependencies',action='store_true',help='Ask Jev to assess purchase dependencies before each investment review')
-    parser.add_argument('--preserve-current-orders',action='store_true',help='Retain exactly matching sole active Move/Attack orders with explicit logging')
+    parser.add_argument('--preserve-current-orders',action='store_true',help='Retain matching sole active Move/Attack orders with point tolerance 0.0001 and explicit logging')
     parser.add_argument('--investment-top-choice',action='store_true',help='Use Jev returned purchase choice without probability sampling')
     parser.add_argument('--stalled-commitment-review',action='store_true',help='Let Jev reconsider stalled exclusive production reservations with explicit resource facts')
     parser.add_argument('--map',help='Local .SC2Map path; single-player unless --opponent')

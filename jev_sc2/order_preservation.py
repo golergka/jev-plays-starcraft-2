@@ -1,4 +1,5 @@
-"""Preserve exactly matching active Move/Attack orders; never choose a tactic."""
+"""Preserve matching active Move/Attack orders; never choose a tactic."""
+import math
 from s2clientprotocol import raw_pb2 as raw
 
 
@@ -16,11 +17,14 @@ def preserve_current_orders(actions, observation):
                 if cmd.HasField('target_unit_tag') and order.HasField('target_unit_tag'):
                     match = cmd.target_unit_tag == order.target_unit_tag
                 elif cmd.HasField('target_world_space_pos') and order.HasField('target_world_space_pos'):
-                    match = (cmd.target_world_space_pos.x == order.target_world_space_pos.x
-                             and cmd.target_world_space_pos.y == order.target_world_space_pos.y)
+                    # Observed engine rounding differs by ~7.6e-5 map units.
+                    match = all(math.isclose(getattr(cmd.target_world_space_pos, axis),
+                                             getattr(order.target_world_space_pos, axis),
+                                             rel_tol=0, abs_tol=0.0001) for axis in ('x','y'))
         if match:
             record = {'unit_tag': unit.tag, 'ability_id': cmd.ability_id,
-                      'observed_loop': observation.observation.game_loop}
+                      'observed_loop': observation.observation.game_loop,
+                      'coordinate_tolerance': 0.0001}
             if cmd.HasField('target_unit_tag'):
                 record['target_tag'] = cmd.target_unit_tag
             else:
