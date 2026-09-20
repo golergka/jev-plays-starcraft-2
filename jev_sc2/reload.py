@@ -1,5 +1,6 @@
 """Load committed player source atomically, without touching the game connection."""
 import subprocess
+import builtins
 import types
 
 
@@ -20,8 +21,30 @@ class PlayerLoader:
         if revision == self.attempted:
             return None
         self.attempted = revision
+        # Policy helpers use the same committed snapshot as player.py. A private
+        # import table avoids changing modules used by an in-flight old player.
+        helper_names = ('intentions', 'bottleneck', 'order_families',
+                        'destination_categories', 'order_scores', 'commitment_review')
+        helpers = {}
+        helper_sources = {}
+        for name in helper_names:
+            path = f'jev_sc2/{name}.py'
+            if self.git('ls-tree', '--name-only', revision, '--', path):
+                fullname = f'jev_sc2.{name}'
+                helpers[fullname] = types.ModuleType(fullname)
+                helper_sources[fullname] = self.git('show', f'{revision}:{path}')
+        def policy_import(name, globals=None, locals=None, fromlist=(), level=0):
+            if level == 0 and fromlist and name in helpers:
+                return helpers[name]
+            return builtins.__import__(name, globals, locals, fromlist, level)
+        policy_builtins = dict(vars(builtins), __import__=policy_import)
+        for fullname, helper in helpers.items():
+            helper.__package__ = 'jev_sc2'
+            helper.__dict__['__builtins__'] = policy_builtins
+            exec(compile(helper_sources[fullname], f'{fullname}@{revision}', 'exec'), helper.__dict__)
         source = self.git('show', f'{revision}:player.py')
         candidate = types.ModuleType(f'player_{revision}')
+        candidate.__dict__['__builtins__'] = policy_builtins
         exec(compile(source, f'player.py@{revision}', 'exec'), candidate.__dict__)
         if not callable(getattr(candidate, 'decide', None)):
             raise ValueError('player.py must export async decide(view, jev, memory)')
