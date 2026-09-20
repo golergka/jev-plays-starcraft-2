@@ -5974,3 +5974,21 @@ fix or evidence batching alone caused403workerlosses. Three repeats are one stat
 not three independent tests. No deployment or extra serialworkerqueries justified.
 Script/artifact405 committed; no gamecommands. This narrows404's confound without
 claiming a gameplay improvement. Campaign remains incomplete.
+
+### Lab406 — selection-local facts change the opening, not the late collapse
+
+Official Jev jaggedness guidance recommends reducing indirection and naming exact
+state fields (https://docs.typesafe.ai/model-jaggedness/jev-1.13). Test this without
+changing tactical criteria: repeat each selection_facts record verbatim beside
+its role question, retain full shared state and all original questions. Three
+paired recorded403 states: first, middle, last economic-role requests; alternate
+arm order. Six successful calls cost $0.002571408. No game commands or deployment.
+
+Opening baseline three income/two positioning becomes five income. Middle one
+income becomes continue, other five unchanged. Last all six unchanged (five
+positioning, one other). One pair per state cannot distinguish consistent effect
+from response variation; later choices are not automatically better. Added prompt
+tokens also carry a cost. This is a possible representation improvement, not an
+allocation rule or campaign success. Next verify repeatability before deployment.
+Native screen inspected again:403 defeat12:13, all structures destroyed. No live
+controller restarted; campaign remains three verified missions won.
