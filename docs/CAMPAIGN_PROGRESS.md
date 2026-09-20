@@ -5441,3 +5441,22 @@ trajectoryalsochanged. Artifact375/nativeUI/result/checkpoint agree. Reportupdat
 
 Next configuredmissionSmashAndGrab has olderoutcomeadapter; inspectandupgrade its
 player-visible context integration before launching. Do notrestartZeroHour.
+
+### Lab376 — advance to Smash and Grab with visible objective context
+
+Built ttychus01-context-lab376.SC2Map from originalttychus01 using existing
+outcome/timer/objective bridge.121scriptsaudited; onlyCampaignLib,MapScript and
+bridgechanged. Local provenance/assetsremainignored. No strategy/scriptedroute.
+
+Attempt to switch directly from ZeroHour victory UI crashedSC2; player92326
+terminalexit1/connectionclosed, appinventoryconfirmedSC2notrunning. Relaunched
+throughBattle.netPlay, then attached and loadednewmap. Do notcountloadfailureas
+missiondefeat or retrywhilepreviouscontrollerlive.
+
+Currentlivecontroller75769,run20260920T051543.019592Z,revision7394ef7.
+joined_game,history0,objectives_readyloop50. First10successfulrequests observed;
+firstcontains visible Get to the Artifact objective and its native description.
+Native0:11showsactiveSmashAndGrabgame. Timerscurrentlyempty,not missing export.
+No outcomeclaim. Currentgeneralplayer,rollingbudget,andfairnesschecksunchanged.
+OnlyLiberationDay,TheOutlaws,ZeroHourverifiedwon; this is the next standalone
+mission,not verification of full Hyperion/campaign-state continuity.
