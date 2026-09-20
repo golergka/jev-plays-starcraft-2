@@ -1,0 +1,338 @@
+{
+  "source": "runs/20260920T122548.284381Z/events.jsonl",
+  "limits": "Recorded selected orders, not evidence of engine acceptance, actual route, arrival or death. Selection may combine support/transport with armed units. No hidden map information.",
+  "reviews": [
+    {
+      "loop": 2772,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4301520912,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4347133954,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360241188,
+            "type": "Marauder"
+          }
+        ],
+        "count": 4,
+        "center": [
+          68.5,
+          25.3
+        ],
+        "nearest_visible_enemy_distance": 23.5,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 360.0,
+        "max_separation": 23.9,
+        "largest_distance_to_nearest_selection_member": 23.0,
+        "count_change_since_previous_decision": -2,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Scan Move": 1,
+          "Attack Attack": 2
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4300734465",
+      "top_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 9.8 to 17.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4300734465",
+      "selected_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 9.8 to 17.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3064,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4301520912,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360241188,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4347133954,
+            "type": "Marauder"
+          }
+        ],
+        "count": 4,
+        "center": [
+          71.5,
+          19.6
+        ],
+        "nearest_visible_enemy_distance": 33.2,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 360.0,
+        "max_separation": 2.2,
+        "largest_distance_to_nearest_selection_member": 1.2,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4300734465",
+      "top_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.3 to 3.3; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4300734465",
+      "selected_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.3 to 3.3; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3385,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4360503301,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360241188,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4301520912,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4347133954,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          }
+        ],
+        "count": 5,
+        "center": [
+          69.0,
+          18.0
+        ],
+        "nearest_visible_enemy_distance": 32.8,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 460.0,
+        "max_separation": 17.4,
+        "largest_distance_to_nearest_selection_member": 15.6,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 5,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4300734465",
+      "top_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.5 to 17.9; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4300734465",
+      "selected_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.5 to 17.9; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3617,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4360241188,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4347133954,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4360503301,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4301520912,
+            "type": "Marauder"
+          }
+        ],
+        "count": 5,
+        "center": [
+          71.3,
+          19.6
+        ],
+        "nearest_visible_enemy_distance": 33.1,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 460.0,
+        "max_separation": 1.9,
+        "largest_distance_to_nearest_selection_member": 1.0,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 5,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4300734465",
+      "top_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.3 to 3.1; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4300734465",
+      "selected_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.3 to 3.1; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 3923,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4347133954,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360503301,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360241188,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4301520912,
+            "type": "Marauder"
+          }
+        ],
+        "count": 5,
+        "center": [
+          71.5,
+          20.0
+        ],
+        "nearest_visible_enemy_distance": 32.5,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 460.0,
+        "max_separation": 2.3,
+        "largest_distance_to_nearest_selection_member": 1.1,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 5,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_move_4300734465",
+      "top_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.3 to 2.7; actual engine route and travel distance unknown",
+      "selected_choice": "group_move_4300734465",
+      "selected_description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.3 to 2.7; actual engine route and travel distance unknown"
+    },
+    {
+      "loop": 4101,
+      "selection": "MobileCombat",
+      "facts": {
+        "members": [
+          {
+            "tag": 4347133954,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360241188,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4360503301,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4301520912,
+            "type": "Marauder"
+          }
+        ],
+        "count": 5,
+        "center": [
+          71.5,
+          19.3
+        ],
+        "nearest_visible_enemy_distance": 12.5,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 460.0,
+        "max_separation": 2.0,
+        "largest_distance_to_nearest_selection_member": 1.1,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 5,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      },
+      "top_choice": "group_map_attack_move_middle_east",
+      "top_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 85.9 to 87.5; actual engine route and travel distance unknown",
+      "selected_choice": "group_map_attack_move_middle_east",
+      "selected_description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 85.9 to 87.5; actual engine route and travel distance unknown"
+    }
+  ],
+  "interpretation": "A new member joined the cohort and dispersion decreased before repeated nearby geyser moves and a distant sector order. These are observations, not proof of a safe route, good tactics, or a mission outcome."
+}
