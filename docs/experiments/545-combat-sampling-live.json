@@ -1,0 +1,49 @@
+{
+  "trial": 545,
+  "run": "runs/20260920T150710.925591Z",
+  "start_revision": "42e23bf85915dfe6d4f28bb2a66227ac05952f7c",
+  "samples": [
+    {
+      "loop": 47,
+      "cohort": "MobileCombat",
+      "top_choice": "group_last_known_move_8756723713",
+      "sampled_choice": "group_last_known_move_8756723713",
+      "seed": 20260920
+    },
+    {
+      "loop": 451,
+      "cohort": "MobileCombat",
+      "top_choice": "group_move_4374134785",
+      "sampled_choice": "group_map_move_south_east",
+      "seed": 20260920
+    },
+    {
+      "loop": 671,
+      "cohort": "MobileCombat",
+      "top_choice": "continue",
+      "sampled_choice": "continue",
+      "seed": 20260920
+    },
+    {
+      "loop": 1199,
+      "cohort": "MobileCombat",
+      "top_choice": "group_move_4374134785",
+      "sampled_choice": "group_move_4374134785",
+      "seed": 20260920
+    },
+    {
+      "loop": 1420,
+      "cohort": "MobileCombat",
+      "top_choice": "group_map_move_middle_east",
+      "sampled_choice": "group_join_4388290566",
+      "seed": 20260920
+    }
+  ],
+  "visual": {
+    "native_time": "0:32",
+    "relics": "1/4",
+    "supply": "12/27",
+    "observation": "Initial force together by stone arches."
+  },
+  "interpretation": "Mechanism active: two of first five sampled choices differ from top answer. No survival or mission benefit established. All choices sampled from positive Jev mass; no additional model requests."
+}
