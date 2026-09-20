@@ -6995,3 +6995,13 @@ No command filtering based on tactical preference or blockedterrain; static
 endpoint flags cannot certify engine routes. No liveattempt yet. Next bounded
 trial should keep468flags andaddthisflag only, tracking extra cost/pacing and
 whether nearby choices accumulate usefulforces rather than merely stall.
+
+### Lab479 — destination-category live trial starts
+
+Run20260920T115235.955544Z/session51490 revision639fb44. Same468flags plus
+--destination-categories, no other policy changes. Native0:21 gameplay visually
+verified; units nearbase and mainartifactobjectiveactive. Firsttwo category
+choices visible,15successfulcalls $0.006978510,noerrors atinitialcheck. Shared
+$.10/300s cap unchanged. Follow thissession and /tmp/jev-smash-and-grab-lab479.log;
+do not launchduplicatecontroller or restartonobservationtimeout.19prior verified
+Smash defeats,firstthreewinsretained. Outcome and utilityoflocalmovementpending.
