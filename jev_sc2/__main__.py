@@ -165,7 +165,8 @@ async def run(args):
     budget_error = None
     memory = {"production_executor_enabled": True,
               "investment_scoring_enabled": getattr(args,"investment_scores",False),
-              "order_scoring_enabled": getattr(args,"order_scores",False)}
+              "order_scoring_enabled": getattr(args,"order_scores",False),
+              "contribution_top_choice": getattr(args,"contribution_top_choice",False)}
     camera_memory = {}
     jev = Jev(log, stamp, max_calls=args.max_calls)
     proc = None
@@ -469,6 +470,7 @@ def main():
     parser.add_argument('--interval',type=float,default=0.35)
     parser.add_argument('--order-scores',action='store_true',help='Experimental Jev-rated combat order kinds followed by exact Jev orders')
     parser.add_argument('--investment-scores',action='store_true',help='Experimental Jev-rated investment selection')
+    parser.add_argument('--contribution-top-choice',action='store_true',help='Use Jev returned contribution choices instead of probability sampling')
     parser.add_argument('--max-age-loops',type=int,default=32)
     parser.add_argument('--objective',default='Keep your units alive and defeat visible enemy units.')
     parser.add_argument('--doctor',action='store_true')

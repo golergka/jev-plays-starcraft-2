@@ -680,12 +680,17 @@ async def choose_contributions(view, state, questions, jev, memory):
         answer = predictions.get(key,{})
         weights = {k:float(v) for k,v in answer.get('probabilities',{}).items()
                    if k in question['criteria'] and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
-        choice = rng.choices(list(weights),weights=list(weights.values()),k=1)[0] if weights else answer.get('choice')
+        top_mode = memory.get('contribution_top_choice', False)
+        choice = (answer.get('choice') if top_mode else
+                  rng.choices(list(weights),weights=list(weights.values()),k=1)[0] if weights else answer.get('choice'))
+        if top_mode and choice not in question['criteria']:
+            raise ValueError(f'Invalid Jev contribution choice for {key}: {choice!r}')
         if choice in question['criteria']:
             plans[key] = {'choice':choice,'loop':view['loop'],'review_at':view['loop']+commitment_loops,'strategy':strategy}
             answers[key] = {'choice':choice}
         jev.log('contribution_commitment',loop=view['loop'],question=key,
-                top_choice=answer.get('choice'),sampled_choice=choice,selection_mode='sampled',
+                top_choice=answer.get('choice'),sampled_choice=choice,selected_choice=choice,
+                selection_mode='top_choice' if top_mode else 'sampled',
                 probabilities=weights,review_at=view['loop']+commitment_loops)
     return answers
 

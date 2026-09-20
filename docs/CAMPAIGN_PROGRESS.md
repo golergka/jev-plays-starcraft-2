@@ -5686,3 +5686,19 @@ unreplicatedstate,orderingconfound,andnoexecutioncomparison. Script/artifact388
 preserved. SC2remainsverifieddefeatscreen;no newlivetrial. Next investigate how
 exploration/sampling commitments interact with newly corrected mission context,
 ratherthanrepeat worker-count orsequentialcoordination as successful evidence.
+
+### Lab389 — explicit contribution top-choice mode for current-context comparison
+
+Lab388 verifies original387 Jevopeninganswers favoredincome forallfiveworkers,
+while probabilitysampling assigned threepositioning andonecontinue. Prior198/200
+roleargmax trials lost; this is explicitly a repeated comparison under materially
+changed objectivecontext,fullcombatmenus,executionfeedback,andmission—not a new
+untried hypothesis or a claim sampling alone causes defeat.
+
+Add opt-in --contribution-top-choice. All contributionroles follow Jev's returned
+choice, with existing commitment durations and invalidation. No worker-specific
+rule, allocation target or mission tactic. Investment/navigation sampling unchanged
+to bound scope. Invalid returned role fails loudly; logs distinguish selection_mode
+and selected_choice. Default remains sampled for comparison. Regression contrasts
+returned choice with an opposing probability distribution and verifies retention;
+201tests pass. Next freshtrial tests currentmode, not a causal winrate claim.

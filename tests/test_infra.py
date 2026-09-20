@@ -1541,3 +1541,21 @@ def test_scored_investment_rejects_invalid_ratings(bad):
         async def ask(self,state,questions):return {'save':{'score':bad}}
     with pytest.raises(ValueError,match='investment scores'):
         asyncio.run(player.score_investment_options({}, {'save':'Wait'},Model(),{},1))
+
+
+def test_contribution_top_choice_does_not_sample_and_retains_commitment():
+    import player
+    class Model:
+        calls = 0
+        def log(self, *args, **kwargs): pass
+        async def ask(self, state, questions):
+            self.calls += 1
+            return {'worker': {'choice': 'income', 'probabilities': {'positioning': 1.0}}}
+    questions = {'worker': {'instructions': 'Choose a role.', 'criteria': {'income': 'Gather', 'positioning': 'Move'}}}
+    model = Model()
+    memory = {'contribution_top_choice': True}
+    assert asyncio.run(player.choose_contributions({'loop': 1}, {}, questions, model, memory))['worker']['choice'] == 'income'
+    assert asyncio.run(player.choose_contributions({'loop': 2}, {}, questions, model, memory))['worker']['choice'] == 'income'
+    assert model.calls == 1
+    sampled = asyncio.run(player.choose_contributions({'loop': 1}, {}, questions, model, {}))
+    assert sampled['worker']['choice'] == 'positioning'
