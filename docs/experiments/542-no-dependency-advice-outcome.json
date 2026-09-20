@@ -1,0 +1,45 @@
+{
+  "trial": 540,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T145005.830497Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789905723",
+      "loop": 15964
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 219,
+    "cost": 0.131280534,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T145005.830497Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "16:37",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at14:26"
+    }
+  },
+  "errors": [
+    {
+      "time": 1789915881.762217,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789916112.4297442,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "median_paced_interval_seconds": 17.535210000000074,
+  "conclusion": "Removing dependency advice did not solve the mission. Lower total cost also reflects shorter duration, and the early timeout confounds cadence. Do not claim a tactical benefit or a clean savings percentage from two live trajectories."
+}
