@@ -1,0 +1,278 @@
+{
+  "source": "runs/20260920T032015.455998Z/events.jsonl",
+  "method": "First/middle/last investment states with at least300minerals and observed Train capability. Immediate investment versus desired owned-count targets; not equivalent questions or proof of better play. Alternate arm order. No commands.",
+  "pairs": [
+    {
+      "time": 1789874422.125953,
+      "target_questions": {
+        "target_0": {
+          "type": "choice",
+          "instructions": "Choose the desired owned count of Marine for the next 2016 game loops to advance the mission objective. Currently observed count: 16. This is a hypothetical production target, not a prediction or a command. Consider the shared resources, other unit types, losses, and strategic priority. A later allocation decision would select which target to fund and which producer to use. No purchase is implied if resources or legal production are unavailable.",
+          "criteria": {
+            "count_0": "Desired total Marine: 0. Do not produce this type during the horizon; existing units are retained.",
+            "count_16": "Desired total Marine: 16. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_17": "Desired total Marine: 17. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_19": "Desired total Marine: 19. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_22": "Desired total Marine: 22. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_28": "Desired total Marine: 28. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires."
+          }
+        },
+        "target_1": {
+          "type": "choice",
+          "instructions": "Choose the desired owned count of SCV for the next 2016 game loops to advance the mission objective. Currently observed count: 5. This is a hypothetical production target, not a prediction or a command. Consider the shared resources, other unit types, losses, and strategic priority. A later allocation decision would select which target to fund and which producer to use. No purchase is implied if resources or legal production are unavailable.",
+          "criteria": {
+            "count_0": "Desired total SCV: 0. Do not produce this type during the horizon; existing units are retained.",
+            "count_5": "Desired total SCV: 5. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_6": "Desired total SCV: 6. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_8": "Desired total SCV: 8. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_11": "Desired total SCV: 11. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_17": "Desired total SCV: 17. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires."
+          }
+        }
+      },
+      "observed_counts": {
+        "SupplyDepot": 3,
+        "MissileTurret": 4,
+        "SCV": 5,
+        "Marine": 16,
+        "Barracks": 2,
+        "EngineeringBay": 1,
+        "Bunker": 4,
+        "CommandCenter": 1
+      },
+      "investment": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "project_12": 0.03,
+            "save": 0.45999999999999996,
+            "project_7": 0.01,
+            "batch_6": 0.03,
+            "project_1": 0.02,
+            "project_10": 0.01,
+            "project_3": 0.07,
+            "project_11": 0.05,
+            "project_9": 0.01,
+            "batch_11": 0.08,
+            "project_5": 0.01,
+            "project_2": 0.02,
+            "project_4": 0.07,
+            "project_0": 0.01,
+            "project_8": 0.1,
+            "project_6": 0.02
+          }
+        }
+      },
+      "targets": {
+        "target_0": {
+          "choice": "count_16",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "count_19": 0.05,
+            "count_28": 0.05,
+            "count_22": 0.08,
+            "count_16": 0.65,
+            "count_17": 0.03,
+            "count_0": 0.14
+          }
+        },
+        "target_1": {
+          "choice": "count_5",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "count_6": 0.03,
+            "count_11": 0.2,
+            "count_5": 0.34,
+            "count_8": 0.11,
+            "count_17": 0.17,
+            "count_0": 0.15
+          }
+        }
+      }
+    },
+    {
+      "time": 1789874700.901254,
+      "target_questions": {
+        "target_0": {
+          "type": "choice",
+          "instructions": "Choose the desired owned count of Marine for the next 2016 game loops to advance the mission objective. Currently observed count: 13. This is a hypothetical production target, not a prediction or a command. Consider the shared resources, other unit types, losses, and strategic priority. A later allocation decision would select which target to fund and which producer to use. No purchase is implied if resources or legal production are unavailable.",
+          "criteria": {
+            "count_0": "Desired total Marine: 0. Do not produce this type during the horizon; existing units are retained.",
+            "count_13": "Desired total Marine: 13. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_14": "Desired total Marine: 14. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_16": "Desired total Marine: 16. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_19": "Desired total Marine: 19. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_25": "Desired total Marine: 25. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires."
+          }
+        },
+        "target_1": {
+          "type": "choice",
+          "instructions": "Choose the desired owned count of SCV for the next 2016 game loops to advance the mission objective. Currently observed count: 8. This is a hypothetical production target, not a prediction or a command. Consider the shared resources, other unit types, losses, and strategic priority. A later allocation decision would select which target to fund and which producer to use. No purchase is implied if resources or legal production are unavailable.",
+          "criteria": {
+            "count_0": "Desired total SCV: 0. Do not produce this type during the horizon; existing units are retained.",
+            "count_8": "Desired total SCV: 8. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_9": "Desired total SCV: 9. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_11": "Desired total SCV: 11. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_14": "Desired total SCV: 14. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_20": "Desired total SCV: 20. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires."
+          }
+        }
+      },
+      "observed_counts": {
+        "Marine": 13,
+        "SCV": 8,
+        "Bunker": 2,
+        "EngineeringBay": 1,
+        "SupplyDepotLowered": 3,
+        "CommandCenter": 1,
+        "Barracks": 1
+      },
+      "targets": {
+        "target_0": {
+          "choice": "count_13",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "count_13": 0.53,
+            "count_19": 0.16,
+            "count_14": 0.06,
+            "count_16": 0.13,
+            "count_25": 0.04,
+            "count_0": 0.08
+          }
+        },
+        "target_1": {
+          "choice": "count_8",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "count_11": 0.18,
+            "count_0": 0.05,
+            "count_14": 0.24,
+            "count_8": 0.35,
+            "count_20": 0.14,
+            "count_9": 0.04
+          }
+        }
+      },
+      "investment": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "batch_4": 0.07,
+            "project_3": 0.0,
+            "project_2": 0.03,
+            "project_1": 0.16,
+            "save": 0.36,
+            "project_4": 0.13,
+            "batch_7": 0.06,
+            "project_5": 0.06,
+            "save_for_2": 0.0,
+            "project_6": 0.01,
+            "save_for_0": 0.0,
+            "project_8": 0.02,
+            "project_7": 0.08,
+            "save_for_1": 0.01,
+            "project_0": 0.01
+          }
+        }
+      }
+    },
+    {
+      "time": 1789874919.307508,
+      "target_questions": {
+        "target_0": {
+          "type": "choice",
+          "instructions": "Choose the desired owned count of Marine for the next 2016 game loops to advance the mission objective. Currently observed count: 0. This is a hypothetical production target, not a prediction or a command. Consider the shared resources, other unit types, losses, and strategic priority. A later allocation decision would select which target to fund and which producer to use. No purchase is implied if resources or legal production are unavailable.",
+          "criteria": {
+            "count_0": "Desired total Marine: 0. Do not produce this type during the horizon; existing units are retained.",
+            "count_1": "Desired total Marine: 1. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_3": "Desired total Marine: 3. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_6": "Desired total Marine: 6. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_12": "Desired total Marine: 12. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires."
+          }
+        },
+        "target_1": {
+          "type": "choice",
+          "instructions": "Choose the desired owned count of SCV for the next 2016 game loops to advance the mission objective. Currently observed count: 8. This is a hypothetical production target, not a prediction or a command. Consider the shared resources, other unit types, losses, and strategic priority. A later allocation decision would select which target to fund and which producer to use. No purchase is implied if resources or legal production are unavailable.",
+          "criteria": {
+            "count_0": "Desired total SCV: 0. Do not produce this type during the horizon; existing units are retained.",
+            "count_8": "Desired total SCV: 8. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_9": "Desired total SCV: 9. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_11": "Desired total SCV: 11. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_14": "Desired total SCV: 14. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires.",
+            "count_20": "Desired total SCV: 20. Request production only while the observed owned count is below this target; no units are removed if above it. Losses can create new demand until the horizon expires."
+          }
+        }
+      },
+      "observed_counts": {
+        "SCV": 8,
+        "SupplyDepot": 3,
+        "CommandCenter": 1,
+        "Barracks": 1,
+        "MissileTurret": 1,
+        "EngineeringBay": 1,
+        "Bunker": 1
+      },
+      "investment": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.41,
+          "probabilities": {
+            "batch_4": 0.04,
+            "project_1": 0.16,
+            "project_0": 0.01,
+            "project_6": 0.01,
+            "save_for_0": 0.01,
+            "project_5": 0.02,
+            "project_4": 0.13,
+            "save_for_2": 0.01,
+            "project_3": 0.0,
+            "project_7": 0.07,
+            "save_for_1": 0.01,
+            "project_8": 0.02,
+            "save": 0.45,
+            "project_2": 0.02,
+            "batch_7": 0.04
+          }
+        }
+      },
+      "targets": {
+        "target_0": {
+          "choice": "count_0",
+          "type": "choice",
+          "confidence": 0.1,
+          "probabilities": {
+            "count_1": 0.1,
+            "count_3": 0.19,
+            "count_12": 0.2,
+            "count_6": 0.23,
+            "count_0": 0.28
+          }
+        },
+        "target_1": {
+          "choice": "count_8",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "count_11": 0.18,
+            "count_8": 0.4,
+            "count_20": 0.09,
+            "count_14": 0.17,
+            "count_9": 0.07,
+            "count_0": 0.09
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0024749760000000003
+}

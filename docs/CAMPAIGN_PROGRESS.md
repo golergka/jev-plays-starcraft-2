@@ -5068,3 +5068,22 @@ but does not support deployingthisone. Synthetic arithmeticcheck verifies neares
 pair rather than centroid and excludesneutralentities. Initial attempt foundpacked
 visibleentityrepresentation before any modelcall; correcteddecoder thencompleted.
 Script/artifact348preserveaddedfactsandresponses. No livegamecommands orpolicychange.
+
+### Lab349 — desired-count questions anchor to current force
+
+Consultedlab174beforepayingforanotherrosterencodingprobe:its6/6unchangedChoice
+results make that a weak nextstep; no repeatcalls made. Insteadtestdistincttask
+structure: desiredownedcount per observedtrainabletype over2016loops versus
+immediateinvestment. Targets0,current,current+1/+3/+6/+12;type set derives from
+observedTraincapabilities andcatalog,not missionwhitelist. Explicit sharedbudget,
+laterallocation/producerdecision,andnoautomaticpurchase without legalcontrols.
+First/middle/last344investmentstateswith>=300minerals;6calls,$0.002474976.
+
+Immediateinvestmenttops save/save/save. Desiredcounts exactlymatchcurrentcounts:
+Marine16/SCV5,Marine13/SCV8,Marine0/SCV8. Earlier maintenance commitments could
+permit replenishment within theirhorizon, but answers do not support expansion or
+rebuilding after forcealreadyvanished. Distinctquestions are not comparable action
+probabilities. No executor/livepolicydeployment yet; artifact349stores options,
+observedcounts,anddistributions. Any futuremaintenance trial must retain Jev's
+chosen target/horizon and shared spending authority,not turn these into a scripted
+minimumarmy or indefinite renewal. No campaignadvancement.
