@@ -1,0 +1,31 @@
+{
+  "trial": 548,
+  "run": "runs/20260920T152404.859491Z",
+  "observed_deltas": {
+    "48": {
+      "collected_minerals": 0.0,
+      "collected_vespene": 0.0,
+      "spent_minerals": 0.0,
+      "spent_vespene": 0.0
+    },
+    "458": {
+      "collected_minerals": 60.0,
+      "collected_vespene": 0.0,
+      "spent_minerals": 50.0,
+      "spent_vespene": 0.0
+    },
+    "622": {
+      "collected_minerals": 90.0,
+      "collected_vespene": 0.0,
+      "spent_minerals": 100.0,
+      "spent_vespene": 0.0
+    }
+  },
+  "visual": {
+    "native_time": "0:39",
+    "relics": "1/4",
+    "supply": "11/27",
+    "observation": "Initial force under fire on creep."
+  },
+  "interpretation": "Nonzero own API resource counter deltas reached model input. Mechanism verified; no causal attribution or gameplay benefit established."
+}
