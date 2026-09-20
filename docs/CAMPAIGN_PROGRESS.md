@@ -4317,3 +4317,12 @@ Not proof that the feedback improved decisions. One displayed action label inclu
 an earlier candidate's site despite no target attribution being available; remove
 that misleading precision in a future feedback fix rather than invent a target.
 Only two opening missions remain verified won. Controller stopped normally.
+
+### Lab293 — remove invented target precision from failure labels
+
+Lab292 delivered a delayed construction rejection labeled with a candidate site
+that was not linked to the failed request. Feedback now uses generic capability
+labels or purchase type; otherwise it explicitly says target attribution unavailable.
+New cache prevents hot reload from carrying old target-specific descriptions, and
+retained failures are relabeled too. No engine result or tactical choice changes.
+141tests pass, including stale-cache and retained-feedback target leakage checks.

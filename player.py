@@ -108,13 +108,17 @@ def recent_outcomes(view, memory, window=672):
 
 def describe_action_feedback(view, memory):
     """Join numeric engine rejections to observed control names, not advice."""
-    labels = memory.setdefault('observed_ability_labels',{})
+    # A new cache avoids carrying target-specific labels through a hot reload.
+    labels = memory.setdefault('observed_control_labels',{})
     types = {u['tag']:u['type'] for u in view['self']}
     for unit in view['self']:
         for candidate in unit.get('candidates',[]):
             ability = candidate['command'].get('ability_id')
             if ability is not None:
-                labels[ability] = candidate.get('capability_description') or candidate['description'].split(';')[0]
+                project = candidate.get('project',{})
+                labels[ability] = (candidate.get('capability_description') or
+                    (f'Purchase {project["type"]}' if project.get('type') else
+                     f'Observed ability {ability}; target attribution unavailable'))
     history = []
     entries = {}
     delayed = [e for e in memory.get('engine_action_feedback',[])
@@ -149,6 +153,10 @@ def describe_action_feedback(view, memory):
     retained = dict(sorted(retained.items())[-32:])
     memory['retained_action_failures'] = retained
     combined = {**retained, **{e['loop']:e for e in history}}
+    for entry in combined.values():
+        for failure in entry['failures']:
+            ability = failure['ability_id']
+            failure['action'] = labels.get(ability,f'Unknown observed ability {ability}')
     return [combined[k] for k in sorted(combined)]
 
 

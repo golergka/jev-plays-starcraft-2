@@ -1331,3 +1331,22 @@ def test_contribution_commitment_survives_paced_review_but_not_expiry_or_strateg
     memory['contribution_plans']['purpose_Test'].update(loop=2,review_at=226)
     asyncio.run(player.choose_contributions({'loop':300},state,q,model,memory))
     assert model.calls == 5
+
+
+def test_feedback_does_not_attribute_failure_to_last_candidate_target():
+    import player
+    memory={'observed_ability_labels':{324:'Build Bunker at [99,99]'},
+            'engine_action_feedback':[{'loop':10,'failures':[
+                {'ability_id':324,'unit_tags':[1],'result':'BuildTechRequirementsNotMet'}]}]}
+    view={'loop':10,'self':[{'tag':1,'type':'SCV','candidates':[
+        {'command':{'ability_id':324,'point':[2,3]},'description':'Build Bunker at [2,3]',
+         'project':{'type':'Bunker'}}]}]}
+    failure=player.describe_action_feedback(view,memory)[0]['failures'][0]
+    assert failure['action']=='Purchase Bunker'
+    view['self'][0]['candidates']=[]
+    memory['engine_action_feedback']=[]
+    view['loop']=20
+    assert player.describe_action_feedback(view,memory)[0]['failures'][0]['action']=='Purchase Bunker'
+    # Retained pre-reload failures must not retain an invented location either.
+    memory['retained_action_failures'][10]['failures'][0]['action']='Build Bunker at [99,99]'
+    assert player.describe_action_feedback(view,memory)[0]['failures'][0]['action']=='Purchase Bunker'
