@@ -1272,3 +1272,35 @@ def test_jev_strategy_horizon_retains_priority_without_stopping_orders():
         assert asyncio.run(player.decide({'self': [unit], 'loop': loop}, model, memory)) == [command]
         assert model.strategy_calls == expected_reviews
     assert model.order_calls == 4
+
+
+def test_delayed_engine_failures_reach_player_without_invented_request_attribution():
+    from jev_sc2.__main__ import observe_action_failures, action_feedback
+    from s2clientprotocol import error_pb2
+    import player
+    memory = {}
+    logged = []
+    obs = sc.ResponseObservation()
+    obs.observation.game_loop = 100
+    obs.action_errors.add(unit_tag=7, ability_id=338, result=error_pb2.NotSupported)
+    observe_action_failures(obs,memory,lambda event,**fields:logged.append((event,fields)))
+    observe_action_failures(obs,memory,lambda event,**fields:logged.append((event,fields)))
+    assert len(logged) == 1
+    memory['action_feedback'] = [action_feedback([],[],100,0,0,128)]
+    view = {'loop':110,'self':[{'tag':7,'type':'SCV','candidates':[]}]}
+    feedback = player.describe_action_feedback(view,memory)
+    assert len(feedback) == 1
+    failure = feedback[0]['failures'][0]
+    assert failure['result'] == 'NotSupported' and failure['ability_id'] == 338
+    assert failure['unit_types'] == {'SCV':1}
+    assert 'Unknown observed ability' in failure['action']
+    assert 'not the original request loop' in feedback[0]['note']
+    memory['action_feedback'] = []
+    view['loop'] = 800
+    assert player.describe_action_feedback(view,memory) == []
+    view['loop'] = 5
+    assert player.describe_action_feedback(view,memory) == []
+    rewind = sc.ResponseObservation()
+    rewind.observation.game_loop = 5
+    observe_action_failures(rewind,memory,lambda *a,**k:None)
+    assert memory['engine_action_feedback'] == []

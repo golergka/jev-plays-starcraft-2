@@ -4151,3 +4151,21 @@ an engine-resolved contextual action, not evidence that the controller invented
 ability338. Multiple workers were offered interactions with that project; a
 construction contention hypothesis needs verification before changing legality.
 No policy edit or outcome claim. Strategic-cadence trial remains in progress.
+
+### Lab283 — expose delayed execution errors to Jev
+
+Code audit after lab282: observation.action_errors were only logged, while
+recent_action_feedback contained immediate RequestAction results. Thus a later
+NotSupported error could be invisible to the policy despite initial acceptance.
+Add bounded delayed-failure retention at all three running-loop observation
+sites (normal, background job freshness, post-decision freshness), and merge
+these into the player's existing feedback by observation loop. Same-loop immediate
+acknowledgments no longer conceal delayed failures. No assumed target or original
+request linkage; unknown resolved abilities remain explicitly unknown.
+
+Retention expires after672loops, deduplicates identical same-loop observations,
+and clears on rewind including error-free observations.139tests passed before
+final rewind refinement; focused feedback tests pass after it. No new model calls,
+orders, tactical rule, legality filter or budget change. Static harness change
+requires next controller launch; current strategy-cadence trial continues with
+old harness. Player hot reload alone cannot supply previously missing events.

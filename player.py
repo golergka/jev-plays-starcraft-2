@@ -116,7 +116,14 @@ def describe_action_feedback(view, memory):
             if ability is not None:
                 labels[ability] = candidate.get('capability_description') or candidate['description'].split(';')[0]
     history = []
-    for entry in memory.get('action_feedback',[]):
+    entries = {}
+    delayed = [e for e in memory.get('engine_action_feedback',[])
+               if 0 <= view.get('loop',e['loop'])-e['loop'] <= 672]
+    for entry in memory.get('action_feedback',[]) + delayed:
+        merged = entries.setdefault(entry['loop'], {**entry, 'failures':[], 'note':''})
+        merged['failures'].extend(entry.get('failures',[]))
+        merged['note'] += entry.get('note','') + ' '
+    for entry in entries.values():
         grouped = {}
         for failure in entry.get('failures',[]):
             key = (failure['ability_id'],failure['result'])

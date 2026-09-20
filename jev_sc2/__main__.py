@@ -50,6 +50,28 @@ def action_feedback(actions, results, loop, requested, age, max_age):
             'note':'Accepted means engine accepted the request, not completed the action.'}
 
 
+def observe_action_failures(observation, memory, log):
+    """Retain delayed engine failures, independently of request acknowledgments."""
+    loop = observation.observation.game_loop
+    history = memory.setdefault('engine_action_feedback', [])
+    if loop < memory.get('engine_feedback_last_loop',loop):
+        history.clear()
+    memory['engine_feedback_last_loop'] = loop
+    history = [e for e in history if 0 <= loop-e['loop'] <= 672][-32:]
+    memory['engine_action_feedback'] = history
+    if not observation.action_errors:
+        return
+    failures = [{'ability_id':e.ability_id, 'unit_tags':[e.unit_tag],
+                 'result':error_pb2.ActionResult.Name(e.result)}
+                for e in observation.action_errors]
+    entry = {'loop':loop, 'failures':failures,
+             'note':'Delayed execution failures reported by the engine. Observation loop is not the original request loop; resolved ability may differ from Smart. No target or causal request attribution is assumed.'}
+    if not history or history[-1] != entry:
+        history.append(entry)
+        log('engine_action_error',loop=loop,failures=failures)
+    memory['engine_action_feedback'] = [e for e in history if 0 <= loop-e['loop'] <= 672][-32:]
+
+
 async def run(args):
     load_dotenv(ROOT / '.env')
     sc2root = os.getenv('SC2PATH', '/Applications/StarCraft II')
@@ -184,13 +206,12 @@ async def run(args):
             except Exception as exc:
                 log('reload_error',error=str(exc),retained_revision=loader.revision)
             observation = await client.observe()
+            observe_action_failures(observation,memory,log)
             if outcome_monitor:
                 ending = outcome_monitor.poll()
                 if ending:
                     log('campaign_outcome',**ending,loop=observation.observation.game_loop)
                     break
-            if observation.action_errors:
-                log('engine_action_error',errors=[str(e) for e in observation.action_errors])
             if observation.player_result or client.status == sc.ended:
                 if await try_restore(observation):
                     continue
@@ -233,6 +254,7 @@ async def run(args):
             job_commands = next_request(view, memory, log)
             if job_commands:
                 job_fresh = await client.observe()
+                observe_action_failures(job_fresh,memory,log)
                 ending = outcome_monitor.poll() if outcome_monitor else None
                 if ending:
                     log('campaign_outcome',**ending,loop=job_fresh.observation.game_loop)
@@ -297,6 +319,7 @@ async def run(args):
                 await asyncio.sleep(0.5)
                 continue
             fresh = await client.observe()
+            observe_action_failures(fresh,memory,log)
             ending = outcome_monitor.poll() if outcome_monitor else None
             if ending:
                 log('campaign_outcome',**ending,loop=fresh.observation.game_loop)
