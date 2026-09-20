@@ -1,0 +1,325 @@
+{
+  "source": "runs/20260920T132159.890804Z/events.jsonl",
+  "limits": "Sparse unit observations; first appearances do not alone prove production and absence does not prove death. Accepted commands do not prove arrival. Trial still running.",
+  "observations": [
+    {
+      "loop": 7230,
+      "units": [
+        {
+          "tag": 4314365958,
+          "type": "Marauder",
+          "position": [
+            52.741729736328125,
+            33.88828659057617
+          ],
+          "health": 88.0,
+          "health_fraction": 0.88,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4342939671,
+          "type": "Marauder",
+          "position": [
+            51.56092071533203,
+            33.765960693359375
+          ],
+          "health": 84.0,
+          "health_fraction": 0.84,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4313055233,
+          "type": "Barracks",
+          "position": [
+            57.5,
+            13.5
+          ],
+          "health": 992.0,
+          "health_fraction": 0.99,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4314365958
+          ],
+          "result": "Success",
+          "point": [
+            58.741729736328125,
+            33.88828659057617
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4342939671
+          ],
+          "result": "Success",
+          "point": [
+            57.56092071533203,
+            33.765960693359375
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "decision_age_loops": 44
+    },
+    {
+      "loop": 7894,
+      "units": [
+        {
+          "tag": 4355260443,
+          "type": "Marine",
+          "position": [
+            58.221923828125,
+            11.625
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4313055233,
+          "type": "Barracks",
+          "position": [
+            57.5,
+            13.5
+          ],
+          "health": 992.0,
+          "health_fraction": 0.99,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4363124754,
+          "type": "Marine",
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4355260443
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4363124754
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "decision_age_loops": 81
+    },
+    {
+      "loop": 8427,
+      "units": [
+        {
+          "tag": 4355260443,
+          "type": "Marine",
+          "position": [
+            24.621356964111328,
+            23.804452896118164
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4363124754,
+          "type": "Marine",
+          "position": [
+            24.594463348388672,
+            23.080360412597656
+          ],
+          "health": 25.0,
+          "health_fraction": 0.56,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4313055233,
+          "type": "Barracks",
+          "position": [
+            57.5,
+            13.5
+          ],
+          "health": 992.0,
+          "health_fraction": 0.99,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4349231137,
+          "type": "Marine",
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4349231137
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "decision_age_loops": 40
+    },
+    {
+      "loop": 8973,
+      "units": [
+        {
+          "tag": 4358144020,
+          "type": "Marine",
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4313055233,
+          "type": "Barracks",
+          "position": [
+            57.5,
+            13.5
+          ],
+          "health": 992.0,
+          "health_fraction": 0.99,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4358144020
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "decision_age_loops": 63
+    },
+    {
+      "loop": 9488,
+      "units": [
+        {
+          "tag": 4313055233,
+          "type": "Barracks",
+          "position": [
+            57.5,
+            13.5
+          ],
+          "health": 992.0,
+          "health_fraction": 0.99,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4358144020,
+          "type": "Marine",
+          "position": [
+            24.59421157836914,
+            23.231273651123047
+          ],
+          "health": 25.0,
+          "health_fraction": 0.56,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4325113889,
+          "type": "Marine",
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4325113889
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ],
+      "decision_age_loops": 50
+    }
+  ],
+  "native_visual": "At 12:40, Zerg units visibly attack the burning Barracks. Objective incomplete, relics 0/4.",
+  "finding": "Repeated successful Train Marine requests are followed by new Marine tags at Barracks coordinates. Successive Marines receive Move to [43.7333984375,13.037841796875]; later observations at approximately [24.59,23.23] show health 25 and the same outstanding Move target. Reinforcement survival/route remains a problem beyond purchase selection."
+}
