@@ -1,0 +1,48 @@
+{
+  "run": "runs/20260920T060120.521826Z",
+  "ui_verification": {
+    "time": 1789884628.46392,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "11:27",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "calls": 171,
+  "cost_usd": 0.090893418,
+  "ticks": 39,
+  "strategies": {
+    "pursue_objective": 26,
+    "protect": 6
+  },
+  "errors": [
+    {
+      "time": 1789884250.0111182,
+      "event": "jev_request_failed",
+      "error": "ReadTimeout",
+      "question_names": [
+        "purpose_SCV / unit 4366008331",
+        "purpose_SupplyDepot"
+      ],
+      "state_chars": 20818,
+      "question_chars": 1858,
+      "latency_ms": 2037,
+      "billing_status": "unknown; rolling reservation retained"
+    },
+    {
+      "time": 1789884250.0120058,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "submitted_result_counts": {
+    "Success": 113,
+    "NotEnoughVespene": 1,
+    "NotEnoughMinerals": 1
+  },
+  "scope": "New objective-pursuit priority delivered and selected; no demonstrated primary progress. Also included support geometry and grouping-description changes. No root tactical orders or live policy edits. Not an isolated causal test."
+}

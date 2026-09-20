@@ -5648,3 +5648,19 @@ controls; grouping implementation and membership unchanged. This clarification
 was not part of the paired probe. Support geometry385 also awaits live delivery;
 next trial therefore cannot isolate a single causal factor. No root tactical
 orders. Script/artifact386 retained; full suite200tests passed.
+
+### Lab387 — objective-pursuit selections do not become objective progress
+
+Run20260920T060120.521826Z/session15985 terminalexit0. NativeUI defeat11:27,
+allstructuresdestroyed,0/4relics,0minerals/0gas.171successfulrequests cost
+$0.090893418;39ticks. Strategy26pursue_objective/6protect.113immediateSuccess,
+1NotEnoughVespene,1NotEnoughMinerals. See artifact for delayed errors.
+
+Nativechecks showed initialforce loss,workers outsidebase,then limitedeconomy
+rebuilding/repairing production underattack. No primaryobjectiveprogressverified.
+Offline386selectionchanges were real but didnotestablish successful liveplanning.
+Supportgeometry/groupingwording alsochanged, so no isolatedcausalclaim. No root
+orders orlivepolicyedits. Four verified Smashdefeats; firstthreecampaignmissions
+remaincompleted. UI/result/checkpoint/artifact387andreportupdated. No unchanged
+retrystarted; nextwork should investigate execution/planning structure ratherthan
+repeat primary-objective wording as if this negative trial had not happened.

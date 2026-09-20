@@ -7,15 +7,16 @@ native victory screen reports 20:12, after 42 independently UI-verified defeats.
 The winning run cost $0.192928932 for 261 successful Jev requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab386; trial387 running
+## Current evidence through lab387
 
-Smash and Grab has three independently verified defeats:
+Smash and Grab has four independently verified defeats:
 
 | Trial | Native mission time | Relics | Successful requests | Request cost |
 | --- | --- | --- | --- | --- |
 | 376/378 | 7:50 | 2/4 | 114 | $0.068998482 |
 | 381 | 13:16 | 0/4 | 177 | $0.116499978 |
 | 383 | 19:22 | 0/4 | 242 | $0.155562708 |
+| 387 | 11:27 | 0/4 | 171 | $0.090893418 |
 
 The longer attempts sustained workers, construction and repairs without restoring
 an effective army or completing the primary objective. Survival time is not a
@@ -40,9 +41,10 @@ did not establish better pursuit ($0.004431168), and recent own-player score
 deltas did not establish better investment ($0.002888340). Neither was deployed.
 The strategic menu previously described its offensive option solely as destroying
 the enemy base. Adding a general primary-objective pursuit option changed all
-three sampled strategic choices ($0.002523990). Trial387 is testing that option,
-alongside the support geometry and grouping-description changes. Its outcome and
-any improvement remain unverified; it cannot isolate a single causal factor.
+three sampled strategic choices ($0.002523990). Trial387 selected that priority 26 times and protect six times, but lost at
+11:27 without verified objective progress. It also included support geometry and
+grouping-description changes, so it cannot isolate a single causal factor. The
+changed strategic selections did not establish better gameplay.
 
 The rolling $0.10/five-minute cap remains unchanged. Listed costs are successful
 requests for those runs/probes, not total account spending or conservative pending
