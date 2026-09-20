@@ -5287,3 +5287,14 @@ unitquotas,forcedactions,orprobabilitychanges.
 livequalityclaim. This removesa specificreferentialambiguity,not anassertedcauseof
 allpriorfailures. Nextboundedtrial canverifyidentitydeliveryalongwith362startupgate;
 currentcontrollerstoppedandmap357ondefeatscreen.
+
+### Lab365 — startup gate and member identities verified in live requests
+
+Freshrestarton357map,run20260920T042029.397484Z/session87049,revision62000a4.
+Objectiveinitializationwaitloggedonce;readyloop115about5secondsafterwaitingbegan.
+First19successfulrequestshavezeroresponsesbefore readyevent;code gatesdispatch.
+All75selectionsummaryinstancesinthosepayloadsincludememberidentities. Oneverified
+same-map priorattemptloaded. Native0:27showsactivegameandMarinesgatherednearabunker.
+Artifact365recordspartialdelivery/cost. No outcomeclaim; startup timing andhistory
+alsochangedrelative358,so anyfuturequalitydifferencecannotisolateidentitycontext.
+Existingbudget,fog,legal-actionchecks,andJevauthorityunchanged. No root tactics.

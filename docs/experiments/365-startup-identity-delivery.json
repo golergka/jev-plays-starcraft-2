@@ -1,0 +1,14 @@
+{
+  "source": "runs/20260920T042029.397484Z/events.jsonl",
+  "partial": true,
+  "objectives_ready": {
+    "time": 1789878039.8446221,
+    "event": "objectives_ready",
+    "loop": 115
+  },
+  "successful_calls": 19,
+  "calls_before_ready": 0,
+  "selection_summaries_with_members": 75,
+  "cost_usd": 0.009678942,
+  "scope": "Successful request delivery verified; gameplay benefit unknown. Startup timing and prior history also differ from previous trial."
+}
