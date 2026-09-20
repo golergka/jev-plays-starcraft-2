@@ -88,6 +88,13 @@ def distribution(tick):
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
     'request_stages':request_stages,
+    'episode_history_delivery':{
+        'loaded_attempts':next((r['attempts'] for r in rows if r['event']=='episode_history_loaded'),None),
+        'strategy_and_investment_requests':sum('strategy' in r['questions'] or 'investment' in r['questions'] or ('save' in r['questions'] and all(q.get('type')=='score' for q in r['questions'].values())) for r in calls),
+        'requests_with_history':sum(bool(r['state'].get('previous_attempts',{}).get('attempts')) for r in calls),
+        'received_attempt_counts':dict(collections.Counter(str(len(r['state'].get('previous_attempts',{}).get('attempts',[]))) for r in calls if 'previous_attempts' in r['state'])),
+        'note':'Successful request payloads prove transmission, not that Jev used the history or learned from it.',
+    },
     'request_stage_scope':'Whole successful requests, no per-question cost allocation. Character counts are serialized log payload sizes, not tokens. Latency sums may overlap concurrent calls.',
     'spend_governor': {
         'scope':'This run only; excludes other runs/probes and unresolved reservations. Shared admission uses the SQLite ledger.',

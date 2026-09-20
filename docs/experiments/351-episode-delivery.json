@@ -1,0 +1,21 @@
+{
+  "source": "runs/20260920T033800.011509Z/events.jsonl",
+  "partial": true,
+  "calls": 25,
+  "cost_usd": 0.013728666,
+  "episode_history_delivery": {
+    "loaded_attempts": 2,
+    "strategy_and_investment_requests": 5,
+    "requests_with_history": 5,
+    "received_attempt_counts": {
+      "2": 5
+    },
+    "note": "Successful request payloads prove transmission, not that Jev used the history or learned from it."
+  },
+  "visual_check": {
+    "clock": "1:08",
+    "evacuation_remaining": "19:02",
+    "status": "active"
+  },
+  "scope": "Transmission verified, behavioral benefit unknown."
+}

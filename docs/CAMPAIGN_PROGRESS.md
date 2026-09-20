@@ -5101,3 +5101,13 @@ Existingplayer forwards thismemory tostrategy/investment requests. Regressiontes
 cover validrestart plus rejectionboundaries; fullsuite185passed. This repairs a
 missing input,not evidence oflearning or bettergameplay. Nexttrial can test corrected
 history with defaultChoice policy; scoredorders remain opt-in after346negative.
+
+### Lab351 — restored history reaches successful live requests
+
+350run20260920T033800.011509Z islive onsame335map withdefaultChoicepolicy.
+Partialpayload audit:all5completedstrategy/investmentrequests carrytwo verified
+priorattemptsummaries. Added episode_history_delivery toreport.py so loadedmemory
+andactualsuccessfulrequestpayloadcoverage are visible separately. Artifact351
+recordspartialcount/cost,notoutcome. Native1:08screen confirmsactivegame,19:02until
+evacuation,Marines nearstartingdefenses. Transmission is notproofofmodeluse or
+improvedplay. No policychange duringtrial; report/journalonly.
