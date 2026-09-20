@@ -6248,3 +6248,13 @@ missionrule. Repayment,halfintervalbound,hardcapunchanged. Full212tests pass,
 includingarrivalaloneineligiblethenhealthdropeligible. No paidcalls/newgame this
 turn. Script/artifactpreserveaudit. Livebenefitunproven; nexttrialcancheckwhether
 damageoccurs before firstborrow andwhatJevactuallydoeswithfreshstate.
+
+### Lab424 — damage-trigger trial starts; first trigger verified
+
+Run20260920T090555.000913Z/session10774 revision322bd32. SameSmashrestart26556→0
+validated; nativeopening0:17verified. --event-reviews nowdamageonly, samecap and
+Jevpolicy. Nearbyarrivals586/606loggedwithoutborrow; Marine4324327425healthdrop621
+triggersearlyreview621, borrowing0.507seconds. This verifieseligibilitychange,
+notmeaningfulsurvivalbenefit. At1309oneMarine,twoMarauders,oneMedic andsevenSCVs;
+scriptedreinforcementarrivalmakescountsconfounded.27calls $0.017209962,nodecision
+errors atcheck. No tacticalrootorders/policyedits. Trialstilllive; waitsamehandle.
