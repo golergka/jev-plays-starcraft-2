@@ -1,0 +1,111 @@
+{
+  "source": "runs/20260920T182614.790996Z/events.jsonl",
+  "method": "Same recorded state and full purchase menu; append general2016-loop consequence comparison. Historical original, not contemporaneous control. No gameplay actions.",
+  "added_instruction": " Evaluate the consequences over the next 2016 game loops, including capabilities that require subsequent production or other actions. Compare that with continuing current operations without this purchase. Choose only the next purchase here; future purchases and actions remain separate decisions. Do not assume resources or outcomes not supported by observations.",
+  "results": [
+    {
+      "loop": 8548,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.28,
+        "probabilities": {
+          "save_for_0": 0.01,
+          "project_3": 0.23,
+          "project_4": 0.03,
+          "save": 0.37,
+          "project_0": 0.24,
+          "batch_3": 0.04,
+          "project_2": 0.06,
+          "project_1": 0.02
+        }
+      },
+      "horizon": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.25,
+        "probabilities": {
+          "project_1": 0.02,
+          "save": 0.33999999999999997,
+          "project_4": 0.03,
+          "project_0": 0.29,
+          "save_for_0": 0.01,
+          "project_3": 0.22,
+          "project_2": 0.06,
+          "batch_3": 0.03
+        }
+      },
+      "selected_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+    },
+    {
+      "loop": 8744,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "project_4": 0.02,
+          "project_0": 0.28,
+          "project_3": 0.23,
+          "batch_3": 0.06,
+          "project_2": 0.03,
+          "project_1": 0.01,
+          "save_for_0": 0.01,
+          "save": 0.36
+        }
+      },
+      "horizon": {
+        "choice": "project_0",
+        "type": "choice",
+        "confidence": 0.21,
+        "probabilities": {
+          "project_1": 0.01,
+          "batch_3": 0.07,
+          "project_4": 0.03,
+          "save": 0.29,
+          "save_for_0": 0.01,
+          "project_3": 0.23,
+          "project_2": 0.05,
+          "project_0": 0.31
+        }
+      },
+      "selected_description": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks, Build Reactor Barracks using the engine-defined location, Build TechLab Barracks, Build TechLab Barracks using the engine-defined location, Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 9317,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.33,
+        "probabilities": {
+          "batch_3": 0.06,
+          "project_3": 0.19,
+          "project_1": 0.02,
+          "project_2": 0.05,
+          "project_4": 0.03,
+          "save": 0.41,
+          "save_for_0": 0.04,
+          "project_0": 0.2
+        }
+      },
+      "horizon": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.31,
+        "probabilities": {
+          "project_3": 0.2,
+          "batch_3": 0.04,
+          "save_for_0": 0.03,
+          "project_2": 0.06,
+          "project_1": 0.02,
+          "save": 0.39,
+          "project_4": 0.03,
+          "project_0": 0.23
+        }
+      },
+      "selected_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade. Does not change existing orders or stop repairs; ongoing repairs may continue spending minerals."
+    }
+  ],
+  "calls": 3,
+  "cost": 0.001747452
+}
