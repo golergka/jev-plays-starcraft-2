@@ -370,9 +370,10 @@ def test_jev_can_choose_a_mixed_combat_selection_without_unit_name_rules():
                 assert 'coordination' in questions
                 return {'strategy':{'choice':'attack'},'coordination':{'choice':'mobile_combat'}}
             assert state['selection_facts']['MobileCombat']['count']==2
-            table=state['type_selection_facts']
-            types={row[0]:dict(zip(table['columns'][1:],row[1:])) for row in table['rows']}
-            assert types['Alpha']['count']==1
+            table=state['units']
+            observed=[dict(zip(table['columns'],row)) for row in table['rows']]
+            assert sum(u['type']=='Alpha' for u in observed)==1
+            assert 'type_selection_facts' not in state
             if 'purpose_MobileCombat' in questions:
                 return {'purpose_MobileCombat':{'choice':'combat'}}
             return {'MobileCombat':{'choice':'group_attack_move_north'}}
@@ -957,12 +958,14 @@ def test_concrete_orders_keep_only_queried_job_summaries_and_all_world_facts():
     model=Model()
     state={'selection_facts':{'Worker / idle':{'count':1},'Marine / idle':{'count':7}},
            'units':[{'tag':1},{'tag':2}], 'visible_entities':[{'tag':3}],
-           'type_selection_facts':{'Marine':{'count':7}}}
+           'type_selection_facts':{'Marine':{'count':7}}, 'unit_type_facts':{'Marine':{'weapons':['test']}}}
     questions={'Worker / idle':{'criteria':{'continue':'Keep orders'},'type':'choice'}}
     asyncio.run(choose_concrete_orders(state,questions,model))
     assert model.state['selection_facts']=={'Worker / idle':{'count':1}}
-    for key in ('units','visible_entities','type_selection_facts'):
+    for key in ('units','visible_entities','unit_type_facts'):
         assert model.state[key]==state[key]
+    assert 'type_selection_facts' not in model.state
+    assert state['type_selection_facts']=={'Marine':{'count':7}}
     assert len(state['selection_facts'])==2
 
 
