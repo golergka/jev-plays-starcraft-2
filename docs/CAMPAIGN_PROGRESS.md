@@ -6468,3 +6468,18 @@ At49 Jev choosesExpand Marine/Medic/SCV, cached through2065. Subsequent two
 investment requests contain advisory goals. This verifies plumbing, not useful
 allocation or campaign progress. No forced purchase, root tactical orders or
 extra monitoring inference. Trial live; follow samehandle.14priorSmashdefeats.
+
+### Lab441 — production intentions buy replacements but lose13:30
+
+Trial440/run20260920T100335.561953Z/session91963 terminalexit0; native13:30
+defeat allstructuresdestroyed,1/4relics,0minerals0gas.179calls $0.114242016,
+13intentionreviews,15earlyreviews,zeroerrors. Reconciled UI/result/checkpoint
+andpublicreport.15Smashdefeats; firstthree missions remain only verifiedwins.
+At6767 tenMarine training commands accepted; sevennewMarine tags observed
+beyond initialthree, not all attributed births. Smallgroups moved toward relic
+or attack-moved east; replacements did not form a durableforce. SecondBarracks
+completed, later production rebuilt nearminerals, but base collapsed. No root
+orders or midrunpolicychanges. Extra goals reached purchases, not demonstrated
+campaignsuccess; duration is not causal evidence. Do not retry unchanged.
+Next audit should distinguish individual replacement orders, losses and group
+formation instead of assuming purchase rate alone solves combat survival.

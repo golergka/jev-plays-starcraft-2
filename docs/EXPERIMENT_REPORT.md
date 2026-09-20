@@ -9,7 +9,7 @@ mission is verified won; all three campaigns remain incomplete.
 
 ## Current evidence through lab422
 
-Smash and Grab has fourteen independently verified defeats:
+Smash and Grab has fifteen independently verified defeats:
 
 | Trial | Native mission time | Relics | Successful requests | Request cost |
 | --- | --- | --- | --- | --- |
@@ -27,6 +27,7 @@ Smash and Grab has fourteen independently verified defeats:
 | 421/422 | 27:39 | 0/4 | 312 | $0.249544218 |
 | 424/427 | 31:10 | 1/4 | 348 | $0.295994076 |
 | 431/432 | 25:28 | 0/4 | 282 | $0.210630672 |
+| 440/441 | 13:30 | 1/4 | 179 | $0.114242016 |
 
 Trial400 stopped on a rolling-budget rejection before the native defeat. Its final
 interval had no controller; this is not a clean policy comparison.

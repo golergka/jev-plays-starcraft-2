@@ -1,0 +1,21 @@
+{
+  "trial": 440,
+  "run": "runs/20260920T100335.561953Z",
+  "calls": 179,
+  "cost_usd": 0.11424201600000006,
+  "ui_verification": {
+    "time": 1789899238.751348,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "13:30",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "1/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "decision_errors": 0,
+  "intention_reviews": 13,
+  "early_reviews": 15,
+  "limits": "Single live trial; purchase proposals and accepted commands are not completed production. New sightings can include scripted reinforcements. No causal attribution of survival duration."
+}
