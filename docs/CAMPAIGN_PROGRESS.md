@@ -4686,3 +4686,19 @@ does not demonstrate calibrated cross-action utility or better play. No live
 deployment: replaces repetitive building with waiting in these states,without
 evidence that it solves ineffective investment/use. Script and full results
 recorded. Avoid more unchanged live retries or claiming this prompt is a fix.
+
+### Lab321 — boarding works; expose unload consequences locally
+
+Audit318 accepted boarding jobs against next recorded concrete-order unit states:
+loop2619Marine4344774657observed inside4297850881;loop3216SCV4372561921inside
+4357357570;loop3915Marine4342153217inside4357357570. The latter carrier later
+remains visible with zero passengers,Marine visible outside. Other jobs lack
+confirmation when carrier disappears; disappearance alone does not prove cause.
+Do not add scripted boarding or assume all requests failed.
+
+UnloadAll candidate descriptions now include exact observed passenger tags/types
+and occupied slots, stating released units leave the carrier. General semantics
+for every carrier,not a Bunker directive; legal menus and Jev choice unchanged.
+This reduces cross-referencing without choosing whether/when to unload. No claim
+of behavioral improvement until measured. Next bounded live run returns to default
+Choice investment (scored mode remains opt-in) with this clearer action context.

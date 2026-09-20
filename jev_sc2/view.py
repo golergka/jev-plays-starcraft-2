@@ -128,8 +128,12 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
                 command['point'] = [unit.pos.x,unit.pos.y]
             elif meta.target not in (1,5):
                 continue
+            passengers = [{'tag':p.tag,'type':names.get(p.unit_type,str(p.unit_type))}
+                          for p in unit.passengers]
             candidates.append({'id':f'ability_{ability}_unload',
-                'description':f'{label}: request unloading passengers here; engine checks space',
+                'description':f'{label}: request unloading all carried passengers here: {passengers}; '
+                              f'currently using {unit.cargo_space_taken} cargo slots. '
+                              'Released units leave this carrier; engine checks available space.',
                 'capability_description':f'{label}: unload carried passengers',
                 'command':command})
             continue
