@@ -1,0 +1,31 @@
+{
+  "trial": 512,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T133712.486436Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789901406",
+      "loop": 17260
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 244,
+    "cost": 0.15409938600000003,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T133712.486436Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "17:58",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 (last unobscured view at17:16)"
+    }
+  },
+  "errors": [],
+  "conclusion": "Joint concrete menus did not prevent repeated distant attack-moves and reinforcement attrition. Trial lost; no comparative efficacy claimed. Late catalog-duration logging changed diagnostics only, not Jev state."
+}
