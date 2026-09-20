@@ -5825,3 +5825,20 @@ checks showed prolonged repairs under Zerg attack, with minerals nearly exhauste
 and gas accumulating. Delivery correction is verified; better decisions or causal
 benefit are not. Seven Smash defeats; first three campaign missions remain the
 only verified wins. Result/checkpoint/public artifact/report reconciled.
+
+### Lab397 — resource audit finds repeated confirmation, not repeated gas selection
+
+Offline396paid-request audit:256resource-category answers,235continue,
+20gather_minerals,1gather_vespene. Everycontinue had an observed harvest order:
+195gather,40return. No idle worker continue in this subset. These answers occur
+in51requests costing$0.039903612 in total; mixed questions prevent attributing
+that cost solely to harvesting or treating it as achievable savings. Single gas
+assignment can continue accumulating gas; this does not vindicate allocation.
+
+Existing continuing_income shortcut vetoes every visible enemy globally, even
+when role remainsincome and health/job are unchanged. This explains a mechanism
+for repetitive confirmation during base pressure, not proof all235calls could
+safely be omitted. Next investigate explicit Jev-selected continuation horizons
+and observation-driven invalidation, retaining Jev authority over allocation and
+threat responses. Do not substitute a scripted mineral/gas ratio. Artifact397
+preserved; no paid calls, policy edits or new game this turn.

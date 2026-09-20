@@ -1,0 +1,53 @@
+{
+  "source": "runs/20260920T070430.852681Z/events.jsonl",
+  "answers_by_choice_and_observed_orders": [
+    {
+      "choice": "gather_minerals",
+      "orders": {},
+      "count": 14
+    },
+    {
+      "choice": "continue",
+      "orders": {
+        "Harvest Return SCV": 1
+      },
+      "count": 40
+    },
+    {
+      "choice": "continue",
+      "orders": {
+        "Harvest Gather SCV": 1
+      },
+      "count": 195
+    },
+    {
+      "choice": "gather_minerals",
+      "orders": {
+        "Harvest Return SCV": 1
+      },
+      "count": 3
+    },
+    {
+      "choice": "gather_minerals",
+      "orders": {
+        "Build CommandCenter": 1
+      },
+      "count": 2
+    },
+    {
+      "choice": "gather_minerals",
+      "orders": {
+        "Build Bunker": 1
+      },
+      "count": 1
+    },
+    {
+      "choice": "gather_vespene",
+      "orders": {},
+      "count": 1
+    }
+  ],
+  "requests_containing_resource_category_questions": 51,
+  "whole_request_cost_usd": 0.03990361199999999,
+  "limits": "Mixed requests may contain other questions. Whole-request cost is not attributable solely to harvesting questions, nor an estimate of achievable savings. Continue preserves an existing job but does not prove its allocation remains optimal. Gas chosen once can continue yielding gas for a long time."
+}
