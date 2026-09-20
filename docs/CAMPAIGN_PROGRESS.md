@@ -5792,3 +5792,21 @@ benefit. Do not deploy additional context as a successful fix. Script/artifact39
 preserved. Initial eligibility cap16000 found too few samples before any paid
 calls; actual probe used40000-character question cap. No game orders; native
 UI still confirmed29:42defeat. Campaign remains incomplete.
+
+### Lab395 — preserve own-unit shield and weapon timing observations
+
+Reviewed348before repeating a force-summary probe: observed type/distance table
+already tested negative, so no new paid comparison. Found a concrete projection
+omission instead: view.py reads own health, shields, weapon_cooldown and
+weapon_status, but decide() forwarded only health_fraction alongside other unit
+fields. Preserve those four existing observations in the main Jev unit roster.
+No inferred combat forecast, enemy hidden state, target priority or cooldown
+executor. Zero cooldown is not evidence that a weaponless unit can deal damage;
+existing catalog and capability qualifications still apply.
+
+Extended mixed-type control regression checks actual packed tactical request
+contains distinct shield/cooldown values and unchanged Jev-selected commands.
+201tests pass. Benefits in combat unproven; shield visibility particularly matters
+for later campaign scope. No paid calls for this correction. User STREAMING.md
+changes left untouched. Next fresh trial can verify real request delivery and
+outcome; it cannot isolate causality from one match.

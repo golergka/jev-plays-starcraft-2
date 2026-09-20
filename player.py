@@ -797,7 +797,7 @@ async def decide(view, jev, memory):
                 capabilities.add(candidate['capability_description'])
         learned[unit['type']] = sorted(capabilities)
     state['observed_capabilities_by_type'] = learned
-    state['units'] = [{k:u.get(k) for k in ('tag','type','position','health_fraction','orders','build_progress','cargo','energy','harvesters')}
+    state['units'] = [{k:u.get(k) for k in ('tag','type','position','health','health_fraction','shield','weapon_cooldown','weapon_status','orders','build_progress','cargo','energy','harvesters')}
                       for u in units]
     state['type_selection_facts'] = selection_facts(view,cohorts,{})
     cohorts = control_groups(units,memory.get('coordination','by_type'),learned,memory.setdefault('harvest_targets',{}))

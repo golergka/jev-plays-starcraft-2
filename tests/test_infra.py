@@ -360,7 +360,8 @@ def test_jev_can_choose_a_mixed_combat_selection_without_unit_name_rules():
     import player
     units=[]
     for tag,kind in [(1,'Alpha'),(2,'Beta')]:
-        units.append({'tag':tag,'type':kind,'position':[tag,0], 'candidates':[
+        units.append({'tag':tag,'type':kind,'position':[tag,0], 'health':40, 'shield':tag*20,
+                      'weapon_cooldown':tag*3, 'weapon_status':'cooling down', 'candidates':[
             {'id':'north','description':'Move north','command':{'unit_tag':tag,'ability_id':16,'point':[tag,6]}},
             {'id':'attack_move_north','description':'Attack-move north','command':{'unit_tag':tag,'ability_id':23,'point':[tag,6]}}]})
     class Model:
@@ -373,6 +374,8 @@ def test_jev_can_choose_a_mixed_combat_selection_without_unit_name_rules():
             table=state['units']
             observed=[dict(zip(table['columns'],row)) for row in table['rows']]
             assert sum(u['type']=='Alpha' for u in observed)==1
+            assert [(u['health'],u['shield'],u['weapon_cooldown'],u['weapon_status']) for u in observed] == [
+                (40,20,3,'cooling down'),(40,40,6,'cooling down')]
             assert 'type_selection_facts' not in state
             if 'purpose_MobileCombat' in questions:
                 return {'purpose_MobileCombat':{'choice':'combat'}}
