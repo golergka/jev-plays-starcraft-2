@@ -266,6 +266,23 @@ async def make_view(client, observation, data, info, objective):
                     'vespene':product.vespene_cost,'supply':product.food_required,
                     'supply_provided':product.food_provided,'allows_vespene_harvesting':product.has_vespene,
                     'catalog_tech_requirement_for':catalog_dependencies(product,data.units)}
+    # Diagnostic only: do not add uncalibrated duration units to model input.
+    if getattr(client, 'log', None):
+        logged = getattr(client, '_catalog_duration_diagnostics', set())
+        rows = []
+        for kind in sorted({u.unit_type for u in own} | potential_type_ids):
+            product = unit_catalog.get(kind)
+            if product is None or not product.HasField('build_time'):
+                continue
+            key = (kind, product.build_time)
+            if key not in logged:
+                rows.append({'type': product.name, 'unit_type_id': kind,
+                             'catalog_build_time': product.build_time})
+                logged.add(key)
+        client._catalog_duration_diagnostics = logged
+        if rows:
+            client.log('catalog_duration_diagnostic', loop=obs.game_loop, units=rows,
+                       meaning='Raw catalog field; duration units not yet calibrated. Not supplied to Jev.')
     builder_tags = {offered.unit_tag for offered in possible.abilities
                     if any(ability_names.get(a.ability_id,'').startswith('Build ') for a in offered.abilities)}
     placements, placement_candidates = [], []
