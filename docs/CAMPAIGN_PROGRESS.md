@@ -4590,3 +4590,13 @@ No fresh runtime campaign difficulty reading obtained here, so historical Normal
 is evidence, not proof of every subsequent initialization. No difficulty change
 or hidden mission-wave information supplied to Jev. Continue policy investigation;
 no evidence found supporting accidental harder setting as the failure explanation.
+
+### Lab315 — measured review cadence produces modest investment shifts
+
+Six-call paired first/middle/last >=500mineral trial310 requests. Add trailing
+completed-decision loop gaps and median wall intervals22.71/25.57/29.43s, using
+only earlier events; explicitly no future timing guarantee. Questions unchanged,
+alternating pair order. Cost$0.002990778. All topssave; save probabilities
+.29→.28,.29→.26,.51→.47. Small directional shift, no demonstrated behavior benefit.
+Do not treat this as evidence that adding timing solves investment/replenishment.
+Script/artifact315 recorded; no live policy change or repeated unchanged game.

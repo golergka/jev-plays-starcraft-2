@@ -1,0 +1,184 @@
+{
+  "source": "runs/20260920T014947.229712Z/events.jsonl",
+  "method": "First/middle/last >=500mineral investment requests; add only measured trailing decision gaps from earlier tick events. No future samples or timing guarantee. Identical questions, alternating pair order; six calls, no gameplay commands.",
+  "pairs": [
+    {
+      "recorded_time": 1789869298.248802,
+      "cadence": {
+        "recent_review_gaps_game_loops": [
+          508,
+          480,
+          421,
+          506,
+          732
+        ],
+        "median_wall_seconds_between_completed_decisions": 22.71,
+        "interpretation": "Measured past controller cadence under budget pacing. Reviews are not every frame. Waiting preserves current orders until subsequent decisions; future review timing is not guaranteed."
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "project_2": 0.02,
+            "batch_6": 0.03,
+            "project_8": 0.02,
+            "project_0": 0.01,
+            "batch_11": 0.15,
+            "project_3": 0.11,
+            "project_12": 0.03,
+            "project_9": 0.0,
+            "project_4": 0.08,
+            "project_10": 0.01,
+            "project_1": 0.01,
+            "project_5": 0.01,
+            "project_7": 0.01,
+            "project_11": 0.18,
+            "save": 0.29000000000000004,
+            "project_6": 0.04
+          }
+        }
+      },
+      "with_cadence": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "project_3": 0.06,
+            "batch_11": 0.19,
+            "project_0": 0.01,
+            "project_4": 0.07,
+            "batch_6": 0.05,
+            "project_6": 0.03,
+            "save": 0.28,
+            "project_2": 0.02,
+            "project_1": 0.01,
+            "project_10": 0.01,
+            "project_8": 0.03,
+            "project_9": 0.0,
+            "project_7": 0.01,
+            "project_11": 0.19,
+            "project_12": 0.03,
+            "project_5": 0.01
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789869476.510155,
+      "cadence": {
+        "recent_review_gaps_game_loops": [
+          544,
+          519,
+          559,
+          496,
+          576
+        ],
+        "median_wall_seconds_between_completed_decisions": 25.57,
+        "interpretation": "Measured past controller cadence under budget pacing. Reviews are not every frame. Waiting preserves current orders until subsequent decisions; future review timing is not guaranteed."
+      },
+      "with_cadence": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "project_5": 0.0,
+            "project_4": 0.07,
+            "project_11": 0.11,
+            "project_0": 0.01,
+            "project_1": 0.01,
+            "project_3": 0.22,
+            "project_6": 0.06,
+            "batch_6": 0.04,
+            "batch_11": 0.09,
+            "save": 0.26,
+            "project_10": 0.0,
+            "project_2": 0.02,
+            "project_7": 0.05,
+            "project_8": 0.01,
+            "project_12": 0.04,
+            "project_9": 0.01
+          }
+        }
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "project_10": 0.0,
+            "project_9": 0.0,
+            "project_8": 0.01,
+            "project_2": 0.02,
+            "project_4": 0.07,
+            "project_12": 0.04,
+            "project_0": 0.01,
+            "batch_6": 0.03,
+            "project_3": 0.17,
+            "save": 0.29,
+            "project_6": 0.05,
+            "project_11": 0.14,
+            "project_5": 0.0,
+            "project_1": 0.01,
+            "batch_11": 0.1,
+            "project_7": 0.06
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789869667.279131,
+      "cadence": {
+        "recent_review_gaps_game_loops": [
+          778,
+          1022,
+          594,
+          524,
+          550
+        ],
+        "median_wall_seconds_between_completed_decisions": 29.43,
+        "interpretation": "Measured past controller cadence under budget pacing. Reviews are not every frame. Waiting preserves current orders until subsequent decisions; future review timing is not guaranteed."
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "save": 0.51,
+            "project_0": 0.02,
+            "project_5": 0.16,
+            "project_1": 0.07,
+            "project_2": 0.01,
+            "project_3": 0.02,
+            "batch_4": 0.1,
+            "project_4": 0.11
+          }
+        }
+      },
+      "with_cadence": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.4,
+          "probabilities": {
+            "project_2": 0.01,
+            "save": 0.47,
+            "project_4": 0.11,
+            "project_1": 0.06,
+            "project_5": 0.17,
+            "project_0": 0.02,
+            "batch_4": 0.13,
+            "project_3": 0.03
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.002990778
+}
