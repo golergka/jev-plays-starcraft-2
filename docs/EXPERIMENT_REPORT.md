@@ -2,40 +2,50 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** As of lab284, the checkpoint
-contains 25 independently UI-verified Zero Hour defeats. The current trial tests
-delayed engine-error feedback. The most
-persistent difficulty is converting local choices into coordinated, sustained
-objective progress. Earlier sections below retain the unsuccessful trials; the
-latest results appear at the end.
+**Liberation Day and The Outlaws are verified won.** Through lab302, local result
+files contain 31 independently UI-verified Zero Hour defeats. The latest finished
+attempt lasted12:27 and cost$0.104693946 for178 calls. No later mission is verified
+won, and all three campaigns remain far from complete.
 
-## Current evidence through lab284
+## Current evidence through lab302
 
-The latest completed Zero Hour attempt survived15:46 and cost$0.128141286 for
-206 successful calls. It lost all structures with04:23 remaining. Jev selected
-672-loop strategic review intervals:16 strategic reviews across34 tactical ticks,
-costing$0.007608174. This validates less frequent strategic review, not a causal
-survival improvement. Recent comparable attempts varied from10:03 to14:53.
+The persistent difficulty is converting local choices into coordinated, sustained
+objective progress. Longer672-loop contribution commitments were exercised live;
+one early sample retained7of10 roles across516loops. They have not demonstrated
+better mission outcomes. Native screenshots repeatedly show army losses and weak
+worker allocation despite legal mining and production controls being available.
+
+A Jev-selected three-Marine training batch produced three newly observed completed
+Marine tags in trial298. This is stronger evidence than accepted commands alone,
+but the attempt still lost. No policy forces a build order, worker allocation,
+bunker loading or movement route.
 
 The spending governor remains$0.10 per rolling five minutes, with pacing targeting
-60% of that allowance and loud termination if admission exceeds the cap. This
-keeps spending bounded but creates a slower control regime than model latency
-alone suggests. In the latest completed run, median decision spacing was487
-game loops;30 of33 gaps exceeded the224-loop contribution commitment. Most
-retained worker roles therefore expired before the next decision. Extending actual
-commitment duration is a distinct, still-untested hypothesis from the earlier
-failed prompt-only evaluation-horizon probe.
+60% of that allowance and loud termination if admission exceeds the cap. Control
+spacing is consequently longer than model latency alone. Strategic review cadence
+is Jev-selected, and authorized training jobs can execute between paid decisions.
+The31 verified-defeat result files total$6.52697892 in recorded request costs;
+this is a subset of experiment spending, not an account balance or lifetime total.
 
-Native screenshots showed a dwindling army, intermittent mining and spending on
-additional structures without maintaining a surviving force. Successful commands
-are not proof of useful allocation. Background execution of Jev-selected training
-batches has been verified, but it has not solved the mission.
+Expanding all worker concrete menus in lab290 made requests larger and slower;
+the change was rolled back live. Small offline comparisons also failed to justify
+new policy: all27 independent purchase-versus-wait comparisons favored waiting,
+and adding an explicit video-game domain description left three investment top
+choices unchanged. These are narrow probes, not general claims about Jev.
 
-Lab283 corrects a separate feedback omission: asynchronous engine execution
-failures now reach Jev alongside immediate acknowledgments. The new live trial
-has that harness change; its benefit is unproven. No policy change forces worker
-allocation, purchases, bunker loading or routes. The sections below preserve
-earlier experimental observations and must not be read as current trial counts.
+Delayed execution errors can expose rejected actions after an accepted request.
+Lab301 found that the672-loop feedback window could expire before the next paid
+review. Unseen errors now remain in a bounded32-entry queue until included in
+context; expiry begins then. Tests pass, but the currently running retry has not
+yet verified this case live. Inclusion in context is not proof of provider success
+or effective response to the error.
+
+The integrated same-socket mission restart is live-verified: reset toloop0,
+control fromloop7, native window retained, and eventual ending marker agreeing
+with the native defeat screen. This removes a manual restart gap, not a strategic
+limitation. Exact loop deadlines now replace unverified seconds approximations
+in player prompts. Earlier sections below preserve historical observations;
+their counts and current-policy descriptions may describe older revisions.
 
 ## What ran
 
