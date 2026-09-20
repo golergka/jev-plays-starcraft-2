@@ -1,0 +1,58 @@
+include "TriggerLibs/NativeLib"
+// Experimental runtime capture; not enabled in campaign builds.
+// Replace JevDialogueWrapper583b with a unique bank name when building a map.
+bank JevDialogueBank;
+int JevDialoguePlayer = 1;
+int JevDialogueSequence = 0;
+
+void JevDialogueInit(int player) {
+    JevDialoguePlayer = player;
+    JevDialogueBank = BankLoad("JevDialogueWrapper583b", player);
+    BankValueSetFromInt(JevDialogueBank, "Context", "launch_stamp", CurrentSynchronousGameTimeGet());
+    BankValueSetFromInt(JevDialogueBank, "Context", "sequence", 0);
+    BankSave(JevDialogueBank);
+}
+
+int JevTransmissionSendForPlayer(playergroup players, transmissionsource source,
+    int targetPortrait, string actorLink, string targetAnim, soundlink soundValue,
+    text speaker, text subtitle, fixed duration, int durationType,
+    bool waitUntilDone, int owningPlayer) {
+    int result;
+    string section;
+    text resolved;
+    // Keep native arguments, blocking behavior and return value intact.
+    result = TransmissionSendForPlayer(players, source, targetPortrait, actorLink,
+        targetAnim, soundValue, speaker, subtitle, duration, durationType,
+        waitUntilDone, owningPlayer);
+    if (result == c_invalidTransmissionId || !PlayerGroupHasPlayer(players, JevDialoguePlayer)) {
+        return result;
+    }
+    resolved = subtitle;
+    if (resolved == null) { resolved = SoundSubtitleText(soundValue); }
+    if (resolved == null) { return result; }
+    section = "Message" + IntToString(JevDialogueSequence % 16);
+    JevDialogueSequence += 1;
+    BankValueSetFromInt(JevDialogueBank, section, "sequence", JevDialogueSequence);
+    BankValueSetFromInt(JevDialogueBank, section, "time", CurrentSynchronousGameTimeGet());
+    BankValueSetFromText(JevDialogueBank, section, "text", resolved);
+    BankValueSetFromFlag(JevDialogueBank, section, "captured_after_wait", waitUntilDone);
+    BankValueSetFromInt(JevDialogueBank, "Context", "sequence", JevDialogueSequence);
+    BankSave(JevDialogueBank);
+    return result;
+}
+
+bool SendProbe(bool testConds, bool runActions) {
+    int first;
+    if (!runActions) { return true; }
+    Wait(3.0, c_timeGame);
+    first = JevTransmissionSendForPlayer(PlayerGroupSingle(1), TransmissionSource(), 0, "", "", SoundLink("TRaynor01Adjutant00019", 0), null, null, 120.0, c_transmissionDurationSet, false, c_maxPlayers);
+    BankValueSetFromFlag(JevDialogueBank, "Assertion", "return_matches_last", first == TransmissionLastSent());
+    JevTransmissionSendForPlayer(PlayerGroupSingle(2), TransmissionSource(), 0, "", "", SoundLink("", 0), StringToText("PROBE"), StringToText("PRIVATE PLAYER TWO"), 5.0, c_transmissionDurationSet, false, c_maxPlayers);
+    BankSave(JevDialogueBank);
+    return true;
+}
+void InitMap() {
+    libNtve_InitLib();
+    JevDialogueInit(1);
+    TriggerAddEventMapInit(TriggerCreate("SendProbe"));
+}
