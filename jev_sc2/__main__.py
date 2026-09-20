@@ -1,6 +1,7 @@
 """uv run python -m jev_sc2 --map /absolute/path/to/mission.SC2Map"""
 from .bookmark import BookmarkRecovery
 from .episodes import previous_attempts
+from .review_events import ReviewEvents
 import argparse
 import asyncio
 import json
@@ -168,6 +169,7 @@ async def run(args):
               "order_scoring_enabled": getattr(args,"order_scores",False),
               "contribution_top_choice": getattr(args,"contribution_top_choice",False)}
     camera_memory = {}
+    review_events = ReviewEvents()
     jev = Jev(log, stamp, max_calls=args.max_calls)
     proc = None
     if not args.attach:
@@ -348,9 +350,13 @@ async def run(args):
                     cancel_job(memory,log,view['loop'],'request rejected or stale; no automatic retry')
                 await asyncio.sleep(0.2)
                 continue
-            if time.monotonic() < memory.get('spend_resume_at', 0):
+            waiting_for_budget = time.monotonic() < memory.get('spend_resume_at', 0)
+            review_events.observe(view, waiting_for_budget)
+            if waiting_for_budget:
                 await asyncio.sleep(0.2)
                 continue
+            if review_events.pending:
+                log('decision_wait_events', **review_events.take(view['loop']))
             decision_start = time.monotonic()
             decision_cost_before = jev.cost
             decision_charge_before = jev.spend.charged

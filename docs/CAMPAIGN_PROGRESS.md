@@ -6173,3 +6173,20 @@ Adds another negative factualpresentation result, notproofall representations
 fail. No survival/performance measurement or calibrated threat inference. Avoid
 spendinganotherlivetrial on this unchangedpolicy. Furtherprogress likelyrequires
 a different decision/execution abstraction, not more repeated catalog text.
+
+### Lab419 — measure state changes during spending-paced waits
+
+Harness observes while spend_resume_at delays nextdecision, but priorlogs lack
+unit/threat changes inthoseintervals. Addbounded ReviewEvents diagnostic, using
+alreadybuilt player view: healthdrops, ownunitdisappearances (not assumeddeaths),
+newcurrentlyvisibleEnemy tags within12centerunits ofanyownunit. Aggregate latest
+128changeobservations and emit decision_wait_events atnextreview; noadditional
+APIobservations, modelcalls, schedulingbypass, threatpriority or gameplayorders.
+Not a calibrated danger signal. Rewindclearsstaleevents. Threefocusedtests cover
+neutral/distant exclusion, duplicate suppression, damage, disappearance, rewind,
+no-wait exclusion andbound. Full209tests pass. No livevalidation yet.
+
+This is instrumentation for a potential event-aware scheduling experiment, not
+claim fasterdecisionswillfixcombat. Existing budgetremainsfail-fast; do not bypass
+pacing without a tested repayment/rate mechanism. Avoidunchangedfullmission just
+for telemetry; collect alongside next justified policy trial.
