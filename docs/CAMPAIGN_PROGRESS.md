@@ -4390,3 +4390,18 @@ old terminal marker. No tactical action or automatic retry loop added.
 restart suite4passed afterward. Live request was verified296; integrated CLI
 still awaits live validation. Current296session78110 remains active, unchanged,
 native5:01 at last inspection. Do not restart it merely to exercise this feature.
+
+### Lab298 — visually confirm defeat and integrated restart opening
+
+Native screenshot confirms trial296 defeat14:13, evacuation05:56, zero minerals,
+all structures destroyed. 179calls,$0.114871134. Updated ignored result/checkpoint
+only after visual verification. Trial296 began control atloop795 and is not a
+clean opening policy comparison. No campaign advancement.
+
+Integrated --attach --restart --expected-map launched on same SC2 process,
+loop13660→0, first controlled observationloop7. Native screenshot at0:12 shows
+active mission and19:57 evacuation timer; window retained. Run
+20260920T011942.938285Z/session8777 remains active. This validates restart/control
+opening, not ending detection or strategic improvement. Budget before launch
+$0.043193724/rolling5min; unchanged$0.10 cap. Continue periodic native visual
+checks as requested, rather than inferring scene quality from unit counts.
