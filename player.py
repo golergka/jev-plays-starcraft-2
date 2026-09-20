@@ -700,6 +700,12 @@ async def choose_contributions(view, state, questions, jev, memory):
                 f' Commit to this contribution for up to {commitment_loops} game loops, '
                 'unless its controls become unavailable or the strategic priority changes. '
                 'Concrete orders are still selected separately during the commitment.'}
+            name = key.removeprefix('purpose_')
+            facts = state.get('selection_facts', {}).get(name)
+            if facts is not None:
+                pending[key]['instructions'] += (
+                    '\nThe selection_facts record for this exact selection (' + name + ') is: '
+                    + json.dumps(facts, separators=(',', ':')))
     predictions = await jev.ask(control_state(state),pending) if pending else {}
     rng = memory.setdefault('contribution_rng',random.Random(20260919))
     for key,question in pending.items():

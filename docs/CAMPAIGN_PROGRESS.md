@@ -5992,3 +5992,18 @@ tokens also carry a cost. This is a possible representation improvement, not an
 allocation rule or campaign success. Next verify repeatability before deployment.
 Native screen inspected again:403 defeat12:13, all structures destroyed. No live
 controller restarted; campaign remains three verified missions won.
+
+### Lab407 — repeat local-facts probe; deploy representation change for trial
+
+Repeat406's same three paired states: six calls $0.002571408. Opening again
+baseline three income/two positioning versus local five income. Middle responses
+vary across repeats; late local now six positioning versus baseline five and one
+other. This is evidence of opening repeatability, not broad better policy or
+independent-state generalization. No claim that movement in the late state helps.
+
+Deploy verbatim selection facts beside each pending contribution question while
+retaining shared state, full question batch, choices, commitment rules and Jev
+selection. No forced worker allocation, mission rules or tactical root orders.
+This tests reduction of factual indirection in live play. Extra prompt tokens are
+a tradeoff; the shared budget cap remains unchanged. Start one same-mission trial
+next and inspect native gameplay during it, not only its terminal screen.
