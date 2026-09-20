@@ -1,0 +1,63 @@
+{
+  "run": "runs/20260920T054050.900229Z",
+  "ui_verification": {
+    "time": 1789883744.334549,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "19:22",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "calls": 242,
+  "cost_usd": 0.155562708,
+  "ticks": 47,
+  "strategies": {
+    "strengthen": 4,
+    "protect": 25,
+    "recover": 3
+  },
+  "errors": [
+    {
+      "time": 1789882861.974349,
+      "event": "jev_request_failed",
+      "error": "ServiceUnavailableResponseError",
+      "question_names": [
+        "producer_site"
+      ],
+      "state_chars": 2193,
+      "question_chars": 4072,
+      "latency_ms": 312,
+      "billing_status": "unknown; rolling reservation retained"
+    },
+    {
+      "time": 1789882861.974514,
+      "event": "decision_error",
+      "error": "ServiceUnavailableResponseError",
+      "detail": "HTTP 503: upstream connect error or disconnect/reset before headers. retried and the latest reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused"
+    },
+    {
+      "time": 1789883392.3908858,
+      "event": "engine_action_error",
+      "loop": 11799,
+      "failures": [
+        {
+          "ability_id": 338,
+          "unit_tags": [
+            4299423745
+          ],
+          "result": "NotSupported"
+        }
+      ]
+    }
+  ],
+  "submitted_result_counts": {
+    "Success": 200,
+    "YouCantIssueCommandsToThatUnit": 1,
+    "NotEnoughMinerals": 3
+  },
+  "submitted_heals": [],
+  "scope": "Capability-description correction delivered. First completed decision loop1307 after upstream503. Not a clean causal comparison. No objective progress despite longer survival; no root game commands or live policy edits. Offline384 probe shared budget ledger and is excluded from this run cost."
+}

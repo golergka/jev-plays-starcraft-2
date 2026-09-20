@@ -5587,3 +5587,22 @@ Scores describe past measurements, not causal attribution; healed totals can
 include repair and cannot establish Medic execution. Script/artifact384 retained.
 Trial383 remains separate and confounded by its initial upstream503; no outcome
 claimed yet. This probe uses the shared spending ledger, without raising caps.
+
+### Lab383 outcome — capability wording trial loses at19:22
+
+Recorded after parallel offline384. Run20260920T054050.900229Z/session12096
+terminalexit0; nativeUI confirms defeat19:22,allstructuresdestroyed,0/4relics,
+0minerals/0gas.242successfulrequests,$0.155562708,47ticks. Strategychoices:
+strengthen4/protect25/recover3. First completed decision loop1307 after upstream503;
+this outage and differing trajectory prevent a clean causal comparison.
+
+Corrected capability descriptions reached paid requests. Actual-submission logs
+work:200Success,1YouCantIssueCommandsToThatUnit(scriptedSpecialOpsDropship),
+3NotEnoughMinerals immediate results. No submittedMedicHeal. Acceptance does not
+prove completion. Initial shared Move sent to9units,8accepted,one scriptedunit
+rejected; earlyarmycollapsed. Nativechecks throughout show workers sustaining
+repairs,additionalBarracks/CommandCenter/Bunker,then collapse. No objectiveprogress.
+Do not interpret longer survival than381 as improved objectivepursuit or a proven
+benefit of capabilitywording. No unchangedretry started. Three completed missions
+retained; localUI/result/checkpoint and publicartifact383 saved. Next investigate
+a distinct evidenced general failure, consulting negative probes including384.
