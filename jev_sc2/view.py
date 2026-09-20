@@ -362,7 +362,7 @@ async def make_view(client, observation, data, info, objective):
                                       'enables worker gas harvesting when complete; engine validates the target'+details,
                         'command':command(ability,target_tag=target.tag),
                         'resource_cost':cost,'project':project})
-            if label.startswith('Build ') and catalog[ability].target == 2:
+            if label.startswith('Build ') and catalog[ability].target in (2, 5):
                 radius = catalog[ability].footprint_radius or 1.5
                 offset = radius % 1
                 for direction, dx, dy in [

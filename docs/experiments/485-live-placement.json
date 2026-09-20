@@ -1,0 +1,89 @@
+{
+  "mode": "live stepped diagnostic; fog enabled; no action requests; no campaign credit",
+  "samples": [
+    {
+      "loop": 0,
+      "queries": [
+        {
+          "tag": 4299423745,
+          "type": "SCV",
+          "position": [
+            74.502685546875,
+            15.339599609375
+          ],
+          "ability": 319,
+          "available_abilities": [
+            4,
+            16,
+            17,
+            18,
+            23,
+            295,
+            316,
+            318,
+            319,
+            320,
+            321,
+            322,
+            324,
+            328,
+            1
+          ],
+          "placements": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "center",
+              "result": "Success"
+            },
+            {
+              "variant": "east6",
+              "result": "CantBuildLocationInvalid"
+            },
+            {
+              "variant": "west6",
+              "result": "CantBuildLocationInvalid"
+            }
+          ]
+        },
+        {
+          "tag": 4313055233,
+          "type": "Barracks",
+          "position": [
+            57.5,
+            13.5
+          ],
+          "ability": 421,
+          "available_abilities": [
+            195,
+            452,
+            560,
+            564,
+            565,
+            1
+          ],
+          "placements": [
+            {
+              "variant": "omitted",
+              "result": "Error"
+            },
+            {
+              "variant": "center",
+              "result": "CantLandLocationInvalid"
+            },
+            {
+              "variant": "east6",
+              "result": "Success"
+            },
+            {
+              "variant": "west6",
+              "result": "Success"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
