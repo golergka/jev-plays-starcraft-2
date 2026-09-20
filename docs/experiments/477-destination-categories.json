@@ -1,0 +1,197 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "pairs": [
+    {
+      "loop": 5352,
+      "category_sizes": {
+        "local": 4,
+        "remembered": 4,
+        "sector": 9
+      },
+      "answers": {
+        "baseline": {
+          "choice": "group_map_attack_move_middle_east",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "group_last_known_attack_move_8696954901": 0.0,
+            "group_map_attack_move_north_east": 0.01,
+            "group_map_attack_move_north_center": 0.0,
+            "group_attack_move_west": 0.08,
+            "group_last_known_attack_move_8728543245": 0.0,
+            "group_map_attack_move_middle_center": 0.03,
+            "group_attack_move_south": 0.01,
+            "group_map_attack_move_south_center": 0.01,
+            "group_map_attack_move_south_east": 0.01,
+            "group_last_known_attack_move_8688697346": 0.0,
+            "group_attack_move_north": 0.06,
+            "group_map_attack_move_south_west": 0.01,
+            "group_map_attack_move_middle_west": 0.01,
+            "group_attack_move_east": 0.19,
+            "group_map_attack_move_middle_east": 0.55,
+            "group_last_known_attack_move_8760786975": 0.03,
+            "group_map_attack_move_north_west": 0.0
+          },
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        },
+        "staged": {
+          "choice": "group_attack_move_east",
+          "type": "choice",
+          "confidence": 0.66,
+          "probabilities": {
+            "group_attack_move_west": 0.09,
+            "group_attack_move_north": 0.14,
+            "group_attack_move_south": 0.03,
+            "group_attack_move_east": 0.74
+          },
+          "description": "Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain | Attack-move six map units east, engaging enemies encountered on the way; destination: blocked static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        }
+      },
+      "category_answer": {
+        "choice": "local",
+        "type": "choice",
+        "confidence": 0.21,
+        "probabilities": {
+          "local": 0.47,
+          "remembered": 0.18,
+          "sector": 0.35
+        }
+      }
+    },
+    {
+      "loop": 12585,
+      "category_sizes": {
+        "local": 4,
+        "remembered": 8,
+        "sector": 9
+      },
+      "answers": {
+        "staged": {
+          "choice": "group_east",
+          "type": "choice",
+          "confidence": 0.18,
+          "probabilities": {
+            "group_east": 0.39,
+            "group_north": 0.26,
+            "group_south": 0.07,
+            "group_west": 0.28
+          },
+          "description": "Move six map units east; destination: blocked static terrain | Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        "baseline": {
+          "choice": "group_map_move_middle_east",
+          "type": "choice",
+          "confidence": 0.77,
+          "probabilities": {
+            "group_map_move_south_east": 0.01,
+            "group_last_known_move_8763670641": 0.0,
+            "group_last_known_move_8729133138": 0.0,
+            "group_last_known_move_8613789846": 0.0,
+            "group_map_move_middle_west": 0.01,
+            "group_north": 0.03,
+            "group_map_move_middle_east": 0.78,
+            "group_west": 0.05,
+            "group_east": 0.04,
+            "group_map_move_middle_center": 0.02,
+            "group_map_move_south_west": 0.01,
+            "group_last_known_move_8760786975": 0.03,
+            "group_map_move_north_east": 0.01,
+            "group_last_known_move_8688304186": 0.0,
+            "group_south": 0.01,
+            "group_last_known_move_8729526356": 0.0,
+            "group_last_known_move_8737587367": 0.0,
+            "group_map_move_north_west": 0.0,
+            "group_last_known_move_8733327456": 0.0,
+            "group_map_move_south_center": 0.0,
+            "group_map_move_north_center": 0.0
+          },
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.6 to 107.3; actual engine route and travel distance unknown"
+        }
+      },
+      "category_answer": {
+        "choice": "local",
+        "type": "choice",
+        "confidence": 0.21,
+        "probabilities": {
+          "local": 0.47,
+          "remembered": 0.17,
+          "sector": 0.36
+        }
+      }
+    },
+    {
+      "loop": 20035,
+      "category_sizes": {
+        "local": 4,
+        "remembered": 10,
+        "sector": 9,
+        "visible": 5
+      },
+      "answers": {
+        "baseline": {
+          "choice": "group_last_known_move_8760786975",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "group_north": 0.02,
+            "group_last_known_move_8688304186": 0.0,
+            "group_move_4298899457": 0.0,
+            "group_last_known_move_8729133138": 0.0,
+            "group_map_move_middle_west": 0.0,
+            "group_last_known_move_8733327456": 0.0,
+            "group_map_move_middle_east": 0.21000000000000002,
+            "group_map_move_north_east": 0.01,
+            "group_last_known_move_8757903510": 0.0,
+            "group_last_known_move_8763670641": 0.0,
+            "group_map_move_south_west": 0.0,
+            "group_move_4297850881": 0.01,
+            "group_last_known_move_8760786975": 0.54,
+            "group_last_known_move_8613789846": 0.0,
+            "group_last_known_move_8737587367": 0.0,
+            "group_map_move_north_west": 0.0,
+            "group_map_move_north_center": 0.0,
+            "group_last_known_move_8729526356": 0.0,
+            "group_map_move_south_center": 0.05,
+            "group_move_4373610497": 0.02,
+            "group_move_4298113025": 0.02,
+            "group_east": 0.01,
+            "group_last_known_move_8762097873": 0.0,
+            "group_map_move_middle_center": 0.01,
+            "group_west": 0.06999999999999999,
+            "group_move_4298637313": 0.0,
+            "group_map_move_south_east": 0.01,
+            "group_south": 0.01
+          },
+          "description": "move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 20.5 to 20.5; actual engine route and travel distance unknown"
+        },
+        "staged": {
+          "choice": "group_move_4298113025",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "group_move_4373610497": 0.36,
+            "group_move_4298899457": 0.07,
+            "group_move_4298113025": 0.37,
+            "group_move_4297850881": 0.14,
+            "group_move_4298637313": 0.06
+          },
+          "description": "Move to visible MineralField tag 4298113025; straight-line distances across selection: 3.5 to 3.5; actual engine route and travel distance unknown"
+        }
+      },
+      "category_answer": {
+        "choice": "visible",
+        "type": "choice",
+        "confidence": 0.82,
+        "probabilities": {
+          "remembered": 0.04,
+          "sector": 0.06,
+          "local": 0.04,
+          "visible": 0.86
+        }
+      }
+    }
+  ],
+  "method": "Same first/middle/last small-force threatened concrete menus as474. Baseline full menu versus Jev destination category then exact choice. Every original option appears in exactly one category. Same observed state; alternating arms. No commands or forced local movement.",
+  "calls": 9,
+  "cost_usd": 0.006211002
+}

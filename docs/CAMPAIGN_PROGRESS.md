@@ -6966,3 +6966,18 @@ factual representation gap is not demonstrated cause of poor movement. Do not
 repeat it as an untested fix. No gamecommands or new liveattempt. Future work
 needs a different decision decomposition or richer route affordances, grounded
 in available API observations rather than another generic threat reminder.
+
+### Lab477 — destination categories redirect three concrete choices nearby
+
+Nine offline calls $0.006211002 on5352/12585/20035. Same full observation and
+original options partitioned exactly once into local cardinal/visible entity/
+remembered entity/map sector/other. Jev chooses category then exact destination;
+no root-selected category, forced retreat or discarded alternatives. Baseline
+middle-eastattackmove/middle-eastMove/last-knownrelicMove becomes six-unit-east
+attackmove/six-unit-eastMove/visibleMineralField3.5away. Categories local/local/
+visible. Unlike474/476, all3destinations change. Still not safety evidence: both
+mixed-unit east choices include one blocked static endpoint and one walkable;
+engine route unknown. Category stage abstracts destination details; additional
+serialcall increases cost/cadence. Do not claim nearbymeansbetter. This supports
+bounded further evaluation of decision decomposition, with terrain/control
+semantics checked before a live trial, not more generic threat wording.
