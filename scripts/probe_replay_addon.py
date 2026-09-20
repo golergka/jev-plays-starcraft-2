@@ -25,7 +25,7 @@ async def main():
     try:
         await client.request('ping',sc.RequestPing())
         if client.status==sc.in_game:await client.request('leave_game',sc.RequestLeaveGame())
-        await diagnostic_request(client,'start_replay',sc.RequestStartReplay(replay_path=str(replay.resolve()),map_data=map_path.read_bytes(),observed_player_id=1,disable_fog=False,realtime=False,options=sc.InterfaceOptions(raw=True)))
+        await diagnostic_request(client,'start_replay',sc.RequestStartReplay(replay_path=str(replay.resolve()),map_data=map_path.read_bytes(),observed_player_id=1,disable_fog=False,realtime=False,options=sc.InterfaceOptions(raw=True, raw_crop_to_playable_area=True)))
         data=await client.request('data',sc.RequestData(unit_type_id=True,ability_id=True))
         names={u.unit_id:u.name for u in data.units}
         obs=await client.observe()
