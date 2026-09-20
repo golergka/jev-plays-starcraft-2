@@ -4813,3 +4813,20 @@ checked native declarations/comments/string preservation and wrapper coverage.
 working timer context. Unique bank substitution,launch freshness,format/rounding
 validation,and fixture integration remain required before feeding this to Jev.
 No paid calls or game mutation. Existing player remains unchanged.
+
+### Lab330 — native timer fixture compiles; partial runtime evidence
+
+Added reusable build_timer_fixture.py producing an ignored diagnostic map,never
+campaign credit. Fixture creates visible60-second and hidden999-second windows,
+pauses countdown,replaces timer/title/style,toggles visibility,destroys both.
+Launched timer-fixture-lab330.SC2Map without Jev calls. Native screen showed
+VISIBLE FIXTURE60 at0:00:51; later bank snapshot showed REPLACED ELAPSED,
+elapsedflag1,value29.9375,and no hidden title. Subsequent bankcount0had no timer
+sections. Captures were asynchronous and late:count0does not independently
+identify hide versus destruction,despite initial commentary describing hiding.
+
+Confirmed:Galaxy compilation,actual visible UI,bank text serialization,and
+replacement elapsed metadata. Not yet proven:pause equality,exact UI rounding,
+each hide/show transition,or freshness across restarts. Diagnostic stays separate
+from player; no campaign outcome recorded. Next fixture revision should snapshot
+bank after every stage inside the fixture to avoid wall-clock sampling races.
