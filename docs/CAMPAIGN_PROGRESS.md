@@ -4522,3 +4522,18 @@ No engine errors. Lower payload did not establish lower end-to-end pacing or
 strategic improvement. Prior full-summary trial8:56; different evolving states
 preclude causal comparison. Thirty-three verified Zero Hour defeats; no campaign
 advancement. Controller terminal, game on defeat screen.
+
+### Lab310 — Jev chooses contribution review duration
+
+Trial308 worker commitment audit:53renewals,all after fixed672loop expiry;zero
+early renewals. Income changed to positioning4times,continue3,other3; this does
+not prove expiry caused poor choices. Existing longer fixed duration286 did not
+solve mission. New hypothesis is model-selected duration, not another fixed tweak.
+
+Added contribution_review to existing strategic request:112/672/2016loops,chosen
+by Jev. Applies only when new roles are committed; previously chosen deadlines
+unchanged. Strategy changes/unavailable choices still invalidate. Invalid/missing
+choice retains prior duration/default672. No extra round trip or task preference.
+147tests pass, including long commitment retention and subsequent shorter choice.
+Keep reduced concrete context307 for this trial; do not attribute effects solely
+to duration without comparisons.

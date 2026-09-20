@@ -614,7 +614,9 @@ def control_groups(units, mode, learned, harvest_targets=None):
 
 async def choose_contributions(view, state, questions, jev, memory):
     """Sample Jev's distribution and retain its declared short commitment."""
-    commitment_loops = 672
+    commitment_loops = memory.get('contribution_review_loops',672)
+    if commitment_loops not in (112,672,2016):
+        commitment_loops = 672
     plans = memory.setdefault('contribution_plans',{})
     pending, answers = {}, {}
     strategy = (state.get('strategy_chosen_by_jev') or {}).get('choice')
@@ -776,6 +778,14 @@ async def decide(view, jev, memory):
                 'medium':'Retain for 672 game loops.',
                 'long':'Retain for 2016 game loops.',
             },
+        }, 'contribution_review': {
+            'type':'choice',
+            'instructions':'Choose how long newly chosen unit contribution roles remain committed before reconsideration. Concrete orders still use fresh observations and Jev choices. Unavailable controls or a changed strategic priority end a role early. Longer commitments reduce reassignment and review cost but can prolong a poor allocation. This does not choose any unit task. Existing commitment deadlines remain unchanged.',
+            'criteria':{
+                'soon':'Retain newly chosen contribution roles for 112 game loops.',
+                'medium':'Retain newly chosen contribution roles for 672 game loops.',
+                'long':'Retain newly chosen contribution roles for 2016 game loops.',
+            },
         }, 'coordination': {
             'type':'choice',
             'instructions':'Choose how to organize non-worker control selections. Observed harvesting/building units always receive independent contribution and order decisions. This chooses grouping only; further Jev decisions choose every order.',
@@ -785,6 +795,11 @@ async def decide(view, jev, memory):
                 'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
             },
         }})
+        contribution_horizon = {'soon':112,'medium':672,'long':2016}.get(
+            decision.get('contribution_review',{}).get('choice'))
+        if contribution_horizon is not None:
+            memory['contribution_review_loops'] = contribution_horizon
+            jev.log('contribution_review_choice',loop=view['loop'],duration_loops=contribution_horizon)
         selected = decision.get('strategy',{}).get('choice')
         if selected in options:
             horizon = {'soon':112,'medium':672,'long':2016}.get(

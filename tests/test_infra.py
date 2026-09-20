@@ -1417,3 +1417,24 @@ def test_unseen_engine_failure_survives_long_budget_pacing_gap():
     fresh.observation.game_loop = 1773
     observe_action_failures(fresh,memory,lambda *a,**k:None)
     assert memory['engine_action_feedback'] == []
+
+
+def test_jev_selected_role_duration_applies_only_to_new_commitments():
+    import player
+    class Model:
+        calls = 0
+        def log(self,*a,**k): pass
+        async def ask(self,state,questions):
+            self.calls += 1
+            return {'purpose_Test':{'choice':'income','probabilities':{'income':1}}}
+    model=Model(); memory={'contribution_review_loops':2016}
+    q={'purpose_Test':{'instructions':'Choose role','criteria':{'income':'Gather'}}}
+    state={'strategy_chosen_by_jev':{'choice':'protect'}}
+    asyncio.run(player.choose_contributions({'loop':1},state,q,model,memory))
+    assert memory['contribution_plans']['purpose_Test']['review_at']==2017
+    memory['contribution_review_loops']=112
+    asyncio.run(player.choose_contributions({'loop':1000},state,q,model,memory))
+    assert model.calls==1
+    asyncio.run(player.choose_contributions({'loop':2017},state,q,model,memory))
+    assert model.calls==2
+    assert memory['contribution_plans']['purpose_Test']['review_at']==2129
