@@ -4967,3 +4967,15 @@ Artifact341verified3initial+6automatic with2Marine/1SCVbatch. Previous investmen
 Marine2count means two decisions that selected the type,not two unit requests.
 No extra Jev calls or policy changes. Candidate future question is commitment
 scope/renewal,not replaying the already-failed arithmetic wording probe.
+
+### Lab342 — explicit optional renewal does not sustain batch preference
+
+Six-call recorded-state probe:first investment after each of337's three completed
+request allowances. Add factual previous-job summary (requests exhausted,not proof
+of completed units) and label existing matchingbatch as optionalrenewal. Preserve
+all options,alternateorder,no new auto-renewal. Cost$0.002993424. Originaltopswait
+all3;renewal topsproject3,wait,wait. No topbatchrenewal. Script/artifact342retain
+keys and full distributions; no unit preference injected. No live deployment.
+Together340/342show that arithmetic clarity and renewal reminder alone are not
+supported fixes for sustained investment in these samples. Need a distinct
+control/decision experiment rather than more variants of this wording.

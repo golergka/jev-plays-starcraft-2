@@ -1,0 +1,161 @@
+{
+  "source": "runs/20260920T025806.548721Z/events.jsonl",
+  "method": "First investment after each of first three completed request allowances. Treatment adds observed previous job summary and labels existing matching batch as renewal. No new options or automatic renewal; all choices remain. Alternating order.",
+  "pairs": [
+    {
+      "time": 1789873170.465616,
+      "target": "Marine",
+      "renewal_key": "batch_6",
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.29,
+        "probabilities": {
+          "project_1": 0.04,
+          "project_12": 0.02,
+          "project_5": 0.0,
+          "batch_6": 0.07,
+          "save": 0.33,
+          "batch_11": 0.05,
+          "project_8": 0.01,
+          "project_7": 0.02,
+          "project_4": 0.03,
+          "project_0": 0.02,
+          "project_10": 0.01,
+          "project_3": 0.24,
+          "project_11": 0.04,
+          "project_6": 0.1,
+          "project_2": 0.01,
+          "project_9": 0.01
+        }
+      },
+      "renewal": {
+        "choice": "project_3",
+        "type": "choice",
+        "confidence": 0.23,
+        "probabilities": {
+          "project_2": 0.01,
+          "project_0": 0.01,
+          "project_10": 0.01,
+          "batch_6": 0.17,
+          "project_9": 0.01,
+          "batch_11": 0.04,
+          "project_1": 0.03,
+          "project_4": 0.03,
+          "save": 0.25,
+          "project_3": 0.26,
+          "project_12": 0.02,
+          "project_8": 0.01,
+          "project_5": 0.0,
+          "project_6": 0.08,
+          "project_11": 0.05,
+          "project_7": 0.02
+        }
+      }
+    },
+    {
+      "time": 1789873241.2376251,
+      "target": "Marine",
+      "renewal_key": "batch_6",
+      "renewal": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.33,
+        "probabilities": {
+          "project_3": 0.11,
+          "batch_11": 0.05,
+          "project_4": 0.03,
+          "batch_6": 0.13,
+          "project_7": 0.03,
+          "project_1": 0.03,
+          "project_9": 0.01,
+          "project_10": 0.0,
+          "save": 0.39,
+          "project_5": 0.01,
+          "project_12": 0.04,
+          "project_11": 0.07,
+          "project_8": 0.01,
+          "project_2": 0.01,
+          "project_6": 0.07,
+          "project_0": 0.01
+        }
+      },
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.36,
+        "probabilities": {
+          "save": 0.4,
+          "project_2": 0.01,
+          "project_8": 0.01,
+          "project_5": 0.01,
+          "project_11": 0.07,
+          "project_7": 0.03,
+          "project_0": 0.01,
+          "project_9": 0.01,
+          "batch_6": 0.09,
+          "project_6": 0.12,
+          "batch_11": 0.07,
+          "project_3": 0.07,
+          "project_10": 0.0,
+          "project_12": 0.03,
+          "project_1": 0.03,
+          "project_4": 0.04
+        }
+      }
+    },
+    {
+      "time": 1789873280.379956,
+      "target": "SCV",
+      "renewal_key": "batch_8",
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.33,
+        "probabilities": {
+          "save_for_0": 0.07,
+          "project_2": 0.01,
+          "project_4": 0.01,
+          "project_9": 0.05,
+          "project_1": 0.04,
+          "save": 0.37,
+          "project_7": 0.01,
+          "project_5": 0.07,
+          "batch_5": 0.02,
+          "project_8": 0.08,
+          "save_for_2": 0.0,
+          "batch_8": 0.06,
+          "project_0": 0.01,
+          "project_3": 0.13,
+          "project_6": 0.07,
+          "save_for_1": 0.0
+        }
+      },
+      "renewal": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.34,
+        "probabilities": {
+          "save_for_0": 0.05,
+          "project_7": 0.01,
+          "project_9": 0.03,
+          "project_3": 0.16,
+          "project_0": 0.01,
+          "batch_8": 0.08,
+          "project_2": 0.01,
+          "save": 0.38,
+          "save_for_1": 0.0,
+          "project_4": 0.01,
+          "project_6": 0.07,
+          "project_5": 0.07,
+          "project_8": 0.04,
+          "batch_5": 0.03,
+          "save_for_2": 0.0,
+          "project_1": 0.05
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0029934239999999997
+}
