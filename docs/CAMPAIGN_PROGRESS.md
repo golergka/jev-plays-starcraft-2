@@ -4600,3 +4600,22 @@ alternating pair order. Cost$0.002990778. All topssave; save probabilities
 .29→.28,.29→.26,.51→.47. Small directional shift, no demonstrated behavior benefit.
 Do not treat this as evidence that adding timing solves investment/replenishment.
 Script/artifact315 recorded; no live policy change or repeated unchanged game.
+
+### Lab316 — revisit probability semantics before another policy change
+
+Re-read official docs: https://docs.typesafe.ai/primitives/choice and
+https://docs.typesafe.ai/primitives/score and
+https://docs.typesafe.ai/model-jaggedness/jev-1.13 . Choice returns highest-probability
+option plus normalized relative distribution; it does not mandate random action
+sampling or label probabilities as expected rewards. Current sampling is our
+experimental control policy. Prior argmax experiments remain negative evidence,
+so do not silently replace sampling as a documentation fix.
+
+Question IDs are not model-visible; relevant unit/option semantics must be in
+instructions/criteria/state. Current investment instructions and option prose
+provide them. Score uses ordered descriptive levels; numerical calibration weak,
+not an exact utility/win-probability estimator. Separate primitives need not obey
+expected equivalences. Next distinct offline hypothesis: score all investments
+on common descriptive usefulness levels, retaining wait and all offered purchases;
+compare rankings without assuming equivalence to Choice or deploying blindly.
+No paid calls or live policy changes this audit.
