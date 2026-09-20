@@ -6,6 +6,7 @@ from jev_sc2.concurrency import gather_owned
 import time
 from pathlib import Path
 from .spend import RollingSpend
+from .menu_order import permute_concrete_menus
 from openrouter import OpenRouter
 from openrouter.errors import BadRequestResponseError
 
@@ -28,6 +29,10 @@ class Jev:
         self.inflight = 0
         self.max_calls = max_calls
         self.cost = 0.0
+        self.concrete_menu_seed = os.getenv('JEV_CONCRETE_MENU_SEED')
+        if self.concrete_menu_seed is not None:
+            self.log('concrete_menu_permutation', seed=self.concrete_menu_seed,
+                     method='sha256(seed, question identifier, criterion identifier)')
         root = Path(__file__).resolve().parents[1]
         self.spend = RollingSpend(root/'runs/jev-spend.sqlite3',
                                  limit=float(os.getenv('JEV_USD_PER_5_MIN', '0.10')),
@@ -40,6 +45,8 @@ class Jev:
         # Concrete-order question names exactly identify job summaries. Reapply
         # projection after every recursive split, retaining all other world facts.
         facts = state.get('selection_facts', {})
+        questions = permute_concrete_menus(
+            questions, facts, getattr(self, 'concrete_menu_seed', None))
         if questions and set(questions) <= set(facts) and set(facts) != set(questions):
             state = {**state, 'selection_facts':{key:facts[key] for key in questions}}
         # Conservative transport-size heuristic, not a token-count guarantee.
