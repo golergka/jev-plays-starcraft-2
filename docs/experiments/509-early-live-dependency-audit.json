@@ -1,0 +1,188 @@
+{
+  "scope": "First 2000 game loops only; different trajectories and timings, not a controlled causal comparison. Trial 508 ongoing.",
+  "runs": [
+    {
+      "run": "20260920T125822.620646Z",
+      "successful_calls": 51,
+      "cost_usd": 0.02792433,
+      "purchases": [
+        {
+          "loop": 48,
+          "choice": "project_4",
+          "product": "Marine"
+        },
+        {
+          "loop": 482,
+          "choice": "project_4",
+          "product": "Marine"
+        },
+        {
+          "loop": 914,
+          "choice": "project_4",
+          "product": "Marine"
+        },
+        {
+          "loop": 1402,
+          "choice": "project_4",
+          "product": "Marauder"
+        },
+        {
+          "loop": 1677,
+          "choice": "save",
+          "product": "save"
+        }
+      ],
+      "combat_orders": [
+        {
+          "loop": 48,
+          "choice": "move",
+          "description": "Move to a selected location without attacking along the route."
+        },
+        {
+          "loop": 48,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 48,
+          "choice": "group_move_4300734465",
+          "description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 9.3 to 11.7; actual engine route and travel distance unknown"
+        },
+        {
+          "loop": 482,
+          "choice": "move",
+          "description": "Move to a selected location without attacking along the route."
+        },
+        {
+          "loop": 482,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 482,
+          "choice": "group_move_4300734465",
+          "description": "Move to visible VespeneGeyser tag 4300734465; straight-line distances across selection: 1.4 to 2.1; actual engine route and travel distance unknown"
+        },
+        {
+          "loop": 914,
+          "choice": "regroup",
+          "description": "Gather at a chosen friendly unit or structure, using Move or attack-move. Jev chooses the anchor and movement mode next; this does not guarantee a safe route."
+        },
+        {
+          "loop": 914,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 914,
+          "choice": "group_attack_move_join_4383309825",
+          "description": "Regroup this selection at Medic unit 4383309825 position [71.6025390625, 19.198486328125]: that unit holds position; the other 5 units attack-move, engaging enemies encountered to its observed position."
+        },
+        {
+          "loop": 1402,
+          "choice": "regroup",
+          "description": "Gather at a chosen friendly unit or structure, using Move or attack-move. Jev chooses the anchor and movement mode next; this does not guarantee a safe route."
+        },
+        {
+          "loop": 1402,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 1402,
+          "choice": "group_attack_move_join_4363911176",
+          "description": "Regroup this selection at SpecialOpsDropship unit 4363911176 position [85.44566345214844, 5.401130676269531]: that unit holds position; the other 11 units attack-move, engaging enemies encountered to its observed position."
+        },
+        {
+          "loop": 1677,
+          "choice": "attack_move",
+          "description": "Move to a selected location, engaging enemies encountered along the route."
+        },
+        {
+          "loop": 1677,
+          "choice": "sector",
+          "description": "A map-sector destination. Distance and observed terrain vary; this is not necessarily an objective location or safe route."
+        },
+        {
+          "loop": 1677,
+          "choice": "group_map_attack_move_middle_center",
+          "description": "attack move to middle-center map sector at [92.0,48.0]; unknown (not currently visible); straight-line distances across selection: 41.1 to 42.6; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "run": "20260920T132159.890804Z",
+      "successful_calls": 29,
+      "cost_usd": 0.016798866,
+      "purchases": [
+        {
+          "loop": 47,
+          "choice": "project_4",
+          "product": "Marine"
+        },
+        {
+          "loop": 540,
+          "choice": "project_4",
+          "product": "Marine"
+        },
+        {
+          "loop": 1315,
+          "choice": "project_5",
+          "product": "Marine"
+        },
+        {
+          "loop": 1644,
+          "choice": "project_5",
+          "product": "Marine"
+        }
+      ],
+      "combat_orders": [
+        {
+          "loop": 47,
+          "choice": "move",
+          "description": "Move to a selected location without attacking along the route."
+        },
+        {
+          "loop": 47,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 47,
+          "choice": "group_move_4299948033",
+          "description": "Move to visible VespeneGeyser tag 4299948033; straight-line distances across selection: 9.4 to 11.5; actual engine route and travel distance unknown"
+        },
+        {
+          "loop": 1315,
+          "choice": "move",
+          "description": "Move to a selected location without attacking along the route."
+        },
+        {
+          "loop": 1315,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 1315,
+          "choice": "group_move_4297588737",
+          "description": "Move to visible MineralField tag 4297588737; straight-line distances across selection: 4.6 to 19.6; actual engine route and travel distance unknown"
+        },
+        {
+          "loop": 1644,
+          "choice": "move",
+          "description": "Move to a selected location without attacking along the route."
+        },
+        {
+          "loop": 1644,
+          "choice": "visible",
+          "description": "A currently visible entity or its observed location; affiliation, distance and utility vary."
+        },
+        {
+          "loop": 1644,
+          "choice": "group_move_4297850881",
+          "description": "Move to visible MineralField tag 4297850881; straight-line distances across selection: 1.2 to 6.3; actual engine route and travel distance unknown"
+        }
+      ]
+    }
+  ]
+}
