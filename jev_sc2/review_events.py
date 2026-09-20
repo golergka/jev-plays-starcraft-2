@@ -36,7 +36,7 @@ class ReviewEvents:
 def early_review_allowed(now, deadline, interval, repaid_at, events):
     """Borrow at most half one pacing interval, never while prior debt remains."""
     return (now >= repaid_at and 0 < deadline-now <= interval/2 and
-            any(e['damaged_tags'] or e['new_nearby_enemy_tags'] for e in events))
+            any(e['damaged_tags'] for e in events))
 
 
 def next_review_deadline(start, interval, previous_deadline, borrowed):

@@ -6231,3 +6231,20 @@ No rootorders/midtrialpolicychanges. Reconciledresult/UI/checkpoint/publicreport
 TwelveSmashdefeats, only firstthree missions verifiedwon. No unchangedretry.
 Event-aware pacing mechanicallyworks but notdemonstratedsuccessfulcombatpolicy;
 next audit shoulduse the newwait-event evidence, not just totalduration.
+
+### Lab423 — nearby-arrival borrowing can precede damage during repayment
+
+Offlineaudit421:25earlyreviews,209changeobservations medianwait118loops,max539;
+25ordinaryreviews,570changes median342,max1325. Differenttriggers/debt, repeated
+damage andboundedlogs preventcausalcomparison. Firstearly601triggeredarrivalonly;
+Marinehealthdrop647,disappearance659, moreMarine/Medicdamage then disappearance
+beforeordinary1009review. Early601choseMovevisibleRelic. At1292anotherarrivalonly
+borrow followedbydamage1341beforeordinary1918. Evidence supports refiningwhen
+limitedborrowingisused, not expandingbudgetorclaimingearlierreviewguaranteesrescue.
+
+Changeopt-in earlyeligibility to requireobservedhealthdrop; nearbyarrivals remain
+loggedbutdon'tconsumeallowancealone. No forcedresponse, filteredgameaction or
+missionrule. Repayment,halfintervalbound,hardcapunchanged. Full212tests pass,
+includingarrivalaloneineligiblethenhealthdropeligible. No paidcalls/newgame this
+turn. Script/artifactpreserveaudit. Livebenefitunproven; nexttrialcancheckwhether
+damageoccurs before firstborrow andwhatJevactuallydoeswithfreshstate.

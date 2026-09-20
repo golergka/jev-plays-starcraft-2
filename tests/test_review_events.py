@@ -51,3 +51,11 @@ def test_ordinary_schedule_and_non_triggering_events_remain_unchanged():
     assert next_review_deadline(12,8,10,False)==20
     assert not early_review_allowed(8,10,10,0,[])
     assert not early_review_allowed(8,10,10,0,[{'damaged_tags':[], 'new_nearby_enemy_tags':[], 'disappeared_tags':[1]}])
+
+
+def test_nearby_enemy_alone_does_not_spend_early_review_allowance():
+    from jev_sc2.review_events import early_review_allowed
+    arrivals=[{'damaged_tags':[], 'new_nearby_enemy_tags':[4], 'disappeared_tags':[]}]
+    assert not early_review_allowed(8,10,10,0,arrivals)
+    arrivals.append({'damaged_tags':[1], 'new_nearby_enemy_tags':[], 'disappeared_tags':[]})
+    assert early_review_allowed(8,10,10,0,arrivals)

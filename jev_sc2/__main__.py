@@ -361,7 +361,7 @@ async def run(args):
                 log('early_event_review', loop=view['loop'],
                     borrowed_seconds=previous_deadline-review_now,
                     repayment_base=previous_deadline,
-                    reason='Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged')
+                    reason='Observed damage; Jev chooses response; rolling cap unchanged')
             if waiting_for_budget and not borrowed_review:
                 await asyncio.sleep(0.2)
                 continue
@@ -490,7 +490,7 @@ def main():
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)
-    parser.add_argument('--event-reviews',action='store_true',help='Allow one event-triggered early review with pacing repayment; rolling budget unchanged')
+    parser.add_argument('--event-reviews',action='store_true',help='Allow one damage-triggered early review with pacing repayment; rolling budget unchanged')
     parser.add_argument('--order-scores',action='store_true',help='Experimental Jev-rated combat order kinds followed by exact Jev orders')
     parser.add_argument('--investment-scores',action='store_true',help='Experimental Jev-rated investment selection')
     parser.add_argument('--contribution-top-choice',action='store_true',help='Use Jev returned contribution choices instead of probability sampling')
