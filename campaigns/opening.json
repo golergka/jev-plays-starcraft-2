@@ -21,9 +21,9 @@
     },
     {
       "id": "smash-and-grab",
-      "map": "../maps/ttychus01-outcomes-lab178.SC2Map",
+      "map": "../maps/ttychus01-context-lab376.SC2Map",
       "race": "terran",
-      "objective": "Secure the artifact before the zerg reach it."
+      "objective": "Complete the player-visible mission objectives."
     }
   ]
 }

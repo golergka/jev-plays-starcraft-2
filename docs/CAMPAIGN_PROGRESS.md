@@ -5460,3 +5460,19 @@ Native0:11showsactiveSmashAndGrabgame. Timerscurrentlyempty,not missing export.
 No outcomeclaim. Currentgeneralplayer,rollingbudget,andfairnesschecksunchanged.
 OnlyLiberationDay,TheOutlaws,ZeroHourverifiedwon; this is the next standalone
 mission,not verification of full Hyperion/campaign-state continuity.
+
+### Lab377 — reconcile orchestrator checkpoint; native relic progress in next mission
+
+LiveSmashAndGrab376/session75769 continues. Native1:52shows1/4Protossrelics,
+3:44shows2/4; baseunderProtossattack andarmyindicator1. Partialprogress,notwin.
+First6cycles28requests,$0.0167307,explore/protectstrategies,no modelerrors then.
+No tacticaldirection/policychange. Relicdeliveryandlastoutcomestilltobeverified.
+
+Updated onlyunplayedSmashAndGrab manifestentry to376contextmap andgenericobjective.
+Initialhashguardfound checkpoint was stale sincepre-adaptermaps,includingobsolete
+ZeroHourdefeatreason. Didnotbypasssilently: checked completedIDs/races/objectives,
+existingnativeverificationrecordsforfirsttwo plus375victoryforZeroHour. Saved
+oldhash/definitionsandmanualmigrationreason inignoredcheckpoint,addedthirdwin's
+verificationrecord,setcurrentmissionSmashAndGrab andcurrentmanifesthash.
+CompletedmissionIDsunchanged; publicmanifestcompletedprefixunchanged. Thisrepairs
+resume bookkeeping,not campaign tech/research/reward persistence betweenmaps.
