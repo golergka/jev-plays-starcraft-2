@@ -6841,3 +6841,13 @@ sharedgovernor; invalid answers raise.223tests pass, including caching, invalid
 answers, inputimmutability and uncertaintychoice. Extra call stage may increase
 pacing and cached diagnosis may become stale; measure these in a bounded live
 trial with460flags plus this one option. No mission-specific tactical code.
+
+### Lab468 — bottleneck diagnosis live trial starts
+
+Run20260920T112554.439774Z/session49275 revision2e137fd. Same460flags plus
+--bottleneck-diagnosis; shared$.10/300s hardcap unchanged. Native0:32 gameplay
+visuallyverified,1/4relics. First diagnosis at46 is income; nine successful calls
+$0.003628926 at initialcheck. This is opening behavior, not evidence of recovery
+or improvement. Follow same session and /tmp/jev-smash-and-grab-lab468.log;
+do not restart on observation timeout.18prior verified Smash defeats. No root
+orders or mission-specific changes. Outcome pending.
