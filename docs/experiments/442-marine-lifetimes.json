@@ -1,0 +1,430 @@
+{
+  "run": "runs/20260920T100335.561953Z",
+  "unit_type": "Marine",
+  "units": [
+    {
+      "tag": 4324065281,
+      "initial": true,
+      "observations": [
+        {
+          "loop": 49,
+          "position": [
+            63.60986328125,
+            14.5205078125
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 409,
+          "position": [
+            59.776611328125,
+            35.967041015625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 573,
+          "position": [
+            46.698974609375,
+            35.754638671875
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 49,
+          "time": 1789898627.5862541,
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "loop": 409,
+          "time": 1789898642.918253,
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "loop": 573,
+          "time": 1789898650.681066,
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4324327425,
+      "initial": true,
+      "observations": [
+        {
+          "loop": 49,
+          "position": [
+            64.823486328125,
+            16.0576171875
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 409,
+          "position": [
+            59.526611328125,
+            36.635498046875
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 573,
+          "position": [
+            47.308349609375,
+            35.43408203125
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 49,
+          "time": 1789898627.5862541,
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "loop": 409,
+          "time": 1789898642.918253,
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "loop": 573,
+          "time": 1789898650.681066,
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4362862593,
+      "initial": true,
+      "observations": [
+        {
+          "loop": 49,
+          "position": [
+            65.6591796875,
+            14.046142578125
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 409,
+          "position": [
+            59.99609375,
+            35.269287109375
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 573,
+          "position": [
+            47.31689453125,
+            36.2265625
+          ],
+          "health": 32.3642578125
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 49,
+          "time": 1789898627.5862541,
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "loop": 409,
+          "time": 1789898642.918253,
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4330618882,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 573,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 573,
+          "time": 1789898650.681066,
+          "ability_id": 23,
+          "unit_tags": [
+            4330618882
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4301520907,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 1163,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 1482,
+          "position": [
+            46.99137496948242,
+            36.47041320800781
+          ],
+          "health": 20.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 1163,
+          "time": 1789898677.261875,
+          "ability_id": 16,
+          "unit_tags": [
+            4301520907
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 2086
+    },
+    {
+      "tag": 4391960582,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 1482,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 1482,
+          "time": 1789898691.8762822,
+          "ability_id": 23,
+          "unit_tags": [
+            4391960582
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 2086
+    },
+    {
+      "tag": 4317773831,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 3417,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 3832,
+          "position": [
+            34.08205032348633,
+            32.762474060058594
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 3417,
+          "time": 1789898778.674199,
+          "ability_id": 16,
+          "unit_tags": [
+            4317773831
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        }
+      ],
+      "next_tick_without_tag": 4110
+    },
+    {
+      "tag": 4364173322,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 3417,
+          "position": [
+            58.221923828125,
+            11.625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 3832,
+          "position": [
+            34.65818786621094,
+            33.22108840942383
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 3417,
+          "time": 1789898778.674199,
+          "ability_id": 16,
+          "unit_tags": [
+            4364173322
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        }
+      ],
+      "next_tick_without_tag": 4110
+    },
+    {
+      "tag": 4330356742,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 4110,
+          "position": [
+            65.5,
+            8.625
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 4110,
+          "time": 1789898809.53332,
+          "ability_id": 23,
+          "unit_tags": [
+            4330356742
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "next_tick_without_tag": 4839
+    },
+    {
+      "tag": 4317773841,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 5716,
+          "position": [
+            66.925048828125,
+            8.894775390625
+          ],
+          "health": 35.0
+        }
+      ],
+      "submitted_orders": [],
+      "next_tick_without_tag": 6186
+    }
+  ],
+  "limits": "First appearance is not proven production; last appearance and missing next tick are not proven death. Observations are sparse. Accepted orders do not prove execution, completion, or exact path. No gameplay/API calls."
+}

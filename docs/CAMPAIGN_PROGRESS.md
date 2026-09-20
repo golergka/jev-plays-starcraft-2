@@ -6483,3 +6483,15 @@ orders or midrunpolicychanges. Extra goals reached purchases, not demonstrated
 campaignsuccess; duration is not causal evidence. Do not retry unchanged.
 Next audit should distinguish individual replacement orders, losses and group
 formation instead of assuming purchase rate alone solves combat survival.
+
+### Lab442 — trace replacement Marines rather than aggregate counts
+
+Offline440 per-tag audit: seven noninitial Marine tags observed; four appear
+in only one recorded tick, three in two. Six have accepted Move/Attack commands
+in trace; lasttag4317773841 appears5716 with35health and no submitted order.
+This exception needs control-coverage/decision-path investigation before blaming
+all losses on Jev's tactical choices. Sparse observations cannot prove deaths,
+birth causes, route or idle duration. No paidcalls/gamecommands. New reusable
+script takes any unit type and retains positions, health, submitted results and
+first subsequent tick without each tag. Do not infer that accepted training or
+orders establish successful execution. No newmission until nextgeneral change.
