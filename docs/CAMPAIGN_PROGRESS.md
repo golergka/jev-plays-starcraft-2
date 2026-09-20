@@ -4246,3 +4246,20 @@ anywhere, not merely no nearby threat. Any visible enemy clears its eligibility;
 intermittent quiet periods or deadline expiry can also prevent skipping. No change
 to those guards in this trial. Existing income choices and fresh concrete Jev
 continue choices are doing work even when the optimization is not exercised.
+
+### Lab289 — longer roles work mechanically, defeat remains11:55
+
+Run20260920T002737.144962Z/session63289 terminal; native DEFEAT11:55,
+evacuation08:14,0minerals,all structures destroyed.165successful calls cost
+$0.100341066. Saved UI verification and updated checkpoint. No decision errors
+or delayed engine errors; immediate rejections209x4,10x1,9x1 remain observable.
+Thirty tactical ticks,214purpose choices,101new contribution commitments confirm
+retention is exercised. A production batch requested both follow-ups at8784/8906.
+Sustained mining occurred, but Barracks vanished while minerals accumulated and
+army collapsed.11:55 sits within prior outcome variation; no demonstrated survival
+benefit from duration alone. Current controller stopped; no next launch yet.
+
+Next investigate whether the intermediate contribution gate prevents useful
+concrete alternatives despite preserving a role. Consult prior direct-role and
+menu experiments before a new structural test; do not repeat argmax-vs-sampling
+or planning-horizon wording changes as if untested.
