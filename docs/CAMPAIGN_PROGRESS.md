@@ -6141,3 +6141,20 @@ ordinary defeat. Offline actual latestfive projection identifies only400 as
 interrupted among414,407,403,400,396. Artifact retains projection. No paidcalls,
 newgame or gameplayeffectclaimed. Previous241historyprobe wasnegative on top
 investment choices; do not assume this correction teaches successful strategy.
+
+### Lab417 — Jev consequence assessment does not redirect the failing advance
+
+Different from347synthetic knownoutcomes and343abstractkindScore: on firstthree
+407concretecombatstates, getfreshfullbatchchoice, thenaskJev threeatomic predictions
+about its ownchosenorder (loss, objectiveprogress, cohesion over672loops), then
+revisitidenticalfullmenu with answers explicitlymarkeduncertainmodelpredictions.
+No rootselectedalternative, hiddenfacts, prescribedretreat or gamecommands.
+Ninecalls $0.006473964. Baselinewest→attackmovewest first; other two remain
+attackmovemiddleeast. Allloss assessments uncertain; thirdprogresslikely and
+cohesionunlikely despite unchangedattackmove. No measuredforecastcalibration;
+unknownroutes/enemiesmakeuncertaintyreasonable, not necessarilyanerror.
+
+This doesnotdemonstrate risk-sensitivecontrol or better survival. Fixed callorder,
+addedcontext and responsevariationconfound changes. No deploymentoftripleddecision
+calls. Recordnegative result rather than bolt cost onto livebot. Campaign remains
+three verified missions won, elevenSmashdefeats, and no currentlivecontroller.
