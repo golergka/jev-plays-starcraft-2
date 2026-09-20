@@ -1,0 +1,458 @@
+{
+  "source": "runs/20260920T115235.955544Z/events.jsonl",
+  "producer_tag": 4349493269,
+  "submitted_actions": [
+    {
+      "loop": 20538,
+      "ability_id": 560,
+      "unit_tags": [
+        4349493269
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 21189,
+      "ability_id": 421,
+      "unit_tags": [
+        4349493269
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 21689,
+      "ability_id": 421,
+      "unit_tags": [
+        4349493269
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 24403,
+      "ability_id": 560,
+      "unit_tags": [
+        4349493269
+      ],
+      "result": "Success"
+    }
+  ],
+  "observations": [
+    {
+      "loop": 20538,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 1419,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 360.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 11,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 16,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 21189,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 1629,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 12,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 15,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 21689,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 1834,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 360.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 12,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 15,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 22479,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2179,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 440.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 12,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 15,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 23398,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2404,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 380.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 10,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 17,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 23763,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2405,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 300.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 10,
+        "food_cap": 19,
+        "supply_in_construction": 0,
+        "supply_remaining": 9,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 24403,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 848.0,
+          "health_fraction": 0.85,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2311,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 8,
+        "supply_in_construction": 0,
+        "supply_remaining": 2,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 24649,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 737.15234375,
+          "health_fraction": 0.74,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [
+            {
+              "ability": "Train Marine",
+              "progress": 0.47,
+              "target_tag": null,
+              "target_point": null
+            }
+          ],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2245,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 7,
+        "food_cap": 8,
+        "supply_in_construction": 0,
+        "supply_remaining": 1,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 25157,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 342.32421875,
+          "health_fraction": 0.34,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2147,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 8,
+        "supply_in_construction": 0,
+        "supply_remaining": 2,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 25359,
+      "units": [
+        {
+          "tag": 4349493269,
+          "type": "Barracks",
+          "position": [
+            81.5,
+            10.5
+          ],
+          "health": 66.64453125,
+          "health_fraction": 0.07,
+          "shield": 0.0,
+          "weapon_cooldown": 0.0,
+          "weapon_status": "ready",
+          "orders": [],
+          "build_progress": 1.0,
+          "cargo": {
+            "used": 0,
+            "capacity": 0,
+            "passengers": []
+          },
+          "energy": 0.0,
+          "harvesters": {
+            "assigned": 0,
+            "ideal": 0
+          }
+        }
+      ],
+      "resources": {
+        "minerals": 2106,
+        "vespene": 340,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 8,
+        "supply_in_construction": 0,
+        "supply_remaining": 2,
+        "supply_blocked": false
+      }
+    }
+  ],
+  "finding": "Accepted Tech Lab requests at21189/21689. Later recorded observations have no addon or ongoing producer order. No later submitted producer order in this interval establishes interruption. Sparse observations do not identify placement failure or prove an addon never existed between samples. No policy change justified without further engine investigation."
+}

@@ -7022,3 +7022,15 @@ CommandCenter88health; ending independentlyverified. No midrunpolicy changes
 or rootorders. Longer survival than468 is not causal benefit. Next investigate
 why accepted production/addon requests and banked resources fail to become a
 sustainedforce, alongside concrete movement; no unchangedretry justified.
+
+### Lab481 — accepted addon requests show no observed completion or interruption
+
+Read-only trace479 producer4349493269 from20538 onward. Marine560 accepted20538;
+TechLab421 accepted21189/21689, bothwithoutpoint. Later model observations show
+Barracksidle, noTechLab. No later submitted order to this producer establishes
+an interruption. Sparse samples cannot exclude shortlived addon between them
+or identify placement/engine cause. Artifact preserves observedposition/orders/
+resources and all submittedproducercommands. Do not blame model cancellation
+or claim APIacceptance meansconstruction. No newcalls/liveorders/codechange.
+Next inspect addon placement/query semantics against actual engine behavior;
+keep outcome20thdefeat and campaign scope unchanged.
