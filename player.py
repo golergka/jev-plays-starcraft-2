@@ -459,6 +459,8 @@ async def choose_investment(view, state, jev, memory=None):
             return []
     if not carried:
         purchase_state = investment_state(state)
+        if memory is not None:
+            purchase_state['production_commitment'] = memory.get('production_batch')
         if memory and memory.get('previous_attempts'):
             purchase_state['previous_attempts'] = memory['previous_attempts']
         if memory is not None and memory.get('production_intentions_enabled'):

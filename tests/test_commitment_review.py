@@ -32,3 +32,26 @@ def test_invalid_answer_is_loud_and_keeps_reservation():
     s,v,m,mem=fixture('invalid')
     with pytest.raises(ValueError):asyncio.run(review_stalled(s,v,m,mem))
     assert mem['production_batch']['remaining']==1
+
+def test_release_refreshes_next_purchase_context():
+    from player import choose_investment
+    s,v,m,mem=fixture('release')
+    mem['stalled_commitment_review_enabled']=True
+    s['production_commitment']=dict(mem['production_batch'])
+    v['self']=[{'tag':1,'position':[0,0],'candidates':[{
+        'description':'Train Unit','command':{'unit_tag':1,'ability_id':560},
+        'project':{'type':'Unit','minerals':100,'vespene':0},
+        'resource_cost':{'minerals':100,'vespene':0,'supply':0}}]}]
+    class Model:
+        calls=[]
+        def log(self,*a,**k):pass
+        async def ask(self,state,questions):
+            self.calls.append(next(iter(questions)))
+            if 'commitment_review' in questions:
+                return {'commitment_review':{'choice':'release'}}
+            assert state['production_commitment'] is None
+            return {'investment':{'choice':'save'}}
+    model=Model()
+    assert asyncio.run(choose_investment(v,s,model,mem))==[]
+    assert model.calls==['commitment_review','investment']
+    assert s['production_commitment']['remaining']==1
