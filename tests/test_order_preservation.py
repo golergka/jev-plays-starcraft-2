@@ -44,3 +44,29 @@ def test_observed_engine_rounding_but_not_changed_destination():
     assert preserve_current_orders([a],obs)[0]==[]
     c.target_world_space_pos.x+=0.001
     assert preserve_current_orders([a],obs)==([a],[])
+
+
+def test_engagement_then_identical_attack_move_is_preserved():
+    obs=sc.ResponseObservation()
+    unit=obs.observation.raw_data.units.add(tag=1,alliance=raw.Self)
+    first=unit.orders.add(ability_id=23,target_unit_tag=9)
+    pending=unit.orders.add(ability_id=23)
+    pending.target_world_space_pos.x=153.333251953125
+    pending.target_world_space_pos.y=48
+    action=sc.Action();cmd=action.action_raw.unit_command
+    cmd.unit_tags.append(1);cmd.ability_id=23
+    cmd.target_world_space_pos.x=153.3333282470703
+    cmd.target_world_space_pos.y=48
+    send,kept=preserve_current_orders([action],obs)
+    assert send==[] and kept[0]['preserved_engagement']
+    cmd.target_world_space_pos.y=49
+    assert preserve_current_orders([action],obs)==([action],[])
+    cmd.target_world_space_pos.y=48
+    cmd.queue_command=True
+    assert preserve_current_orders([action],obs)==([action],[])
+    cmd.queue_command=False
+    first.ability_id=16
+    assert preserve_current_orders([action],obs)==([action],[])
+    first.ability_id=23
+    unit.orders.add(ability_id=23,target_unit_tag=10)
+    assert preserve_current_orders([action],obs)==([action],[])
