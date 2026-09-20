@@ -1,0 +1,186 @@
+{
+  "source": "runs/20260920T110319.423869Z/events.jsonl",
+  "eligible_states": 6,
+  "pairs": [
+    {
+      "loop": 3540,
+      "priority": {
+        "choice": "ground_combat",
+        "type": "choice",
+        "confidence": 0.52,
+        "probabilities": {
+          "supply": 0.01,
+          "production": 0.05,
+          "interaction": 0.05,
+          "income": 0.0,
+          "none": 0.01,
+          "ground_combat": 0.57,
+          "coordination": 0.1,
+          "information": 0.04,
+          "survival": 0.16,
+          "air_combat": 0.01
+        }
+      },
+      "diagnosis_description": "Insufficient capability to overcome ground enemies limits progress.",
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.27,
+            "probabilities": {
+              "project_1": 0.02,
+              "save_for_0": 0.02,
+              "batch_3": 0.07,
+              "project_2": 0.04,
+              "project_3": 0.35,
+              "project_4": 0.17,
+              "project_0": 0.15,
+              "save": 0.18
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        },
+        "priority": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.37,
+            "probabilities": {
+              "project_2": 0.03,
+              "project_1": 0.03,
+              "project_3": 0.18,
+              "project_4": 0.11,
+              "batch_3": 0.07,
+              "save": 0.12,
+              "project_0": 0.45,
+              "save_for_0": 0.01
+            }
+          },
+          "description": "Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+        }
+      }
+    },
+    {
+      "loop": 4290,
+      "priority": {
+        "choice": "ground_combat",
+        "type": "choice",
+        "confidence": 0.41,
+        "probabilities": {
+          "supply": 0.0,
+          "air_combat": 0.01,
+          "none": 0.02,
+          "coordination": 0.07,
+          "survival": 0.27,
+          "ground_combat": 0.48,
+          "income": 0.01,
+          "interaction": 0.06,
+          "production": 0.03,
+          "information": 0.05
+        }
+      },
+      "diagnosis_description": "Insufficient capability to overcome ground enemies limits progress.",
+      "answers": {
+        "priority": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.24,
+            "probabilities": {
+              "project_2": 0.04,
+              "project_1": 0.03,
+              "project_3": 0.29,
+              "project_4": 0.01,
+              "save_for_0": 0.01,
+              "save": 0.16,
+              "project_0": 0.33,
+              "batch_3": 0.13
+            }
+          },
+          "description": "Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.34,
+            "probabilities": {
+              "batch_3": 0.14,
+              "save_for_0": 0.02,
+              "project_2": 0.06,
+              "project_3": 0.43,
+              "project_0": 0.15,
+              "project_4": 0.02,
+              "project_1": 0.02,
+              "save": 0.16
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Move Move': 3, 'Harvest Return SCV': 2, 'Harvest Gather SCV': 2}."
+        }
+      }
+    },
+    {
+      "loop": 4882,
+      "priority": {
+        "choice": "survival",
+        "type": "choice",
+        "confidence": 0.47,
+        "probabilities": {
+          "none": 0.01,
+          "production": 0.01,
+          "interaction": 0.05,
+          "income": 0.01,
+          "supply": 0.0,
+          "coordination": 0.06,
+          "ground_combat": 0.33,
+          "survival": 0.51,
+          "information": 0.02,
+          "air_combat": 0.0
+        }
+      },
+      "diagnosis_description": "Inability to keep threatened owned units or structures alive limits progress.",
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.39,
+            "probabilities": {
+              "project_1": 0.01,
+              "save": 0.18,
+              "project_4": 0.01,
+              "batch_3": 0.14,
+              "project_3": 0.47,
+              "project_0": 0.15,
+              "save_for_0": 0.02,
+              "project_2": 0.02
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        },
+        "priority": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.42,
+            "probabilities": {
+              "batch_3": 0.15,
+              "project_0": 0.11,
+              "project_1": 0.02,
+              "project_2": 0.01,
+              "save": 0.19,
+              "project_4": 0.01,
+              "project_3": 0.5,
+              "save_for_0": 0.01
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        }
+      }
+    }
+  ],
+  "method": "First/middle/last states with absent Barracks, advisory goals and immediate Barracks purchase offered. Jev chooses one bottleneck diagnosis or none from ten broad alternatives. Full investment menus unchanged; baseline/enriched order alternates. Nine-call ceiling, exploratory offline only, no game commands.",
+  "calls": 9,
+  "cost_usd": 0.0042501480000000005
+}

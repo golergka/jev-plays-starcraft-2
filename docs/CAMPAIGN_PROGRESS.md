@@ -6823,3 +6823,21 @@ selection of a useful intermediate goal remains unresolved;463 independently
 prioritized SCV and464 broad-goal chains did not win. Next investigate whether
 Jev can diagnose the limiting capability before selecting a production goal,
 without root supplying the desired diagnosis or filtering away alternatives.
+
+
+### Lab467 — autonomous bottleneck diagnosis changes two purchases
+
+Nine calls $0.004250148 on460 affordable recovery states3540/4290/4882.
+Jev selects among ten general bottlenecks, including uncertainty/no-single-
+bottleneck; no desired unit or diagnosis supplied. Same full investment menus
+and state, with only Jev's advisory diagnosis added to treatment. Diagnoses:
+groundcombat/groundcombat/survival. Baseline top choices SCV/SCV/SCV; enriched
+Barracks/Barracks/SCV. This is a stronger autonomous lead than466's imposed goal,
+not gameplay evidence; live investments still sample rather than enforce top.
+Add opt-in --bottleneck-diagnosis before fresh investment arbitration, caching
+672loops and invalidating on strategy change/rewind. It does not filter options,
+force purchases, or interrupt existing purchase commitments. Uses ordinarySDK/
+sharedgovernor; invalid answers raise.223tests pass, including caching, invalid
+answers, inputimmutability and uncertaintychoice. Extra call stage may increase
+pacing and cached diagnosis may become stale; measure these in a bounded live
+trial with460flags plus this one option. No mission-specific tactical code.

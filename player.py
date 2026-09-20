@@ -461,6 +461,10 @@ async def choose_investment(view, state, jev, memory=None):
             goals = await production_intentions(purchase_state, jev, memory, view['loop'], strategy)
             if goals:
                 purchase_state['jev_production_intentions'] = goals
+        if memory is not None and memory.get('bottleneck_diagnosis_enabled'):
+            from jev_sc2.bottleneck import diagnose
+            purchase_state['jev_bottleneck_diagnosis'] = await diagnose(
+                purchase_state, jev, memory, view['loop'], strategy)
         if memory is not None and memory.get('investment_scoring_enabled'):
             choice = await score_investment_options(purchase_state,
                 criteria,jev,memory,view['loop'])
