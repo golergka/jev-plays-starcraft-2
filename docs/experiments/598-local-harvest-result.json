@@ -1,0 +1,32 @@
+{
+  "lab": 598,
+  "trial": 596,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T180213.269272Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-dialogue-lab586.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome759ebc44b7f14ad6ab4f4592d12c09af.SC2Bank",
+      "engine_time": "1789916872",
+      "loop": 7468
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 104,
+    "cost": 0.066791466,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T180213.269272Z/game.SC2Replay",
+    "ui_verification": {
+      "result": "defeat",
+      "outcome": "DEFEAT",
+      "native_time": "7:46",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at 7:35"
+    }
+  },
+  "interpretation": "Local harvesting review invalidation did not produce a win. Opening request count and combat cadence were unchanged versus592. Native7:35 showed Zerg attacking the Command Center while workers gathered, with1196 minerals unspent. This single run does not establish causality; request scheduling remains a target for investigation."
+}
