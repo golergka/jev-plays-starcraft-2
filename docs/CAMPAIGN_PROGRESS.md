@@ -5572,3 +5572,18 @@ Validation:actual381 Medic catalog inspected;200 tests pass, including empty,
 unknown and armed catalog cases. Next controlled mission tests delivery and
 actual submitted commands under381 logging. Prior type-distance348 was negative;
 this corrects a semantic overclaim rather than repeating distance enrichment.
+
+### Lab384 — measured outcome deltas do not establish better investment
+
+While trial383 remains live, paired six offline requests from381 test whether
+recent own-player score changes improve investment recommendations. First/middle/
+last eligible investment states, same criteria, append only preceding score
+interval deltas; alternate arm order. No game orders or live policy edits.
+
+Cost $0.00288834. Baseline/enriched: Marine/save atloop300, Bunker/Bunker at4810,
+save/save at11954. This does not establish stronger military replacement or
+better mission progress. Do not deploy based on a single changed recommendation.
+Scores describe past measurements, not causal attribution; healed totals can
+include repair and cannot establish Medic execution. Script/artifact384 retained.
+Trial383 remains separate and confounded by its initial upstream503; no outcome
+claimed yet. This probe uses the shared spending ledger, without raising caps.

@@ -1,0 +1,281 @@
+{
+  "source": "runs/20260920T052657.110535Z/events.jsonl",
+  "method": "First/middle/last eligible requests; same investment question and state, optionally append previous observed score interval. Alternate arm order, six calls maximum, no game commands.",
+  "pairs": [
+    {
+      "time": 1789882039.646654,
+      "outcome": {
+        "from_loop": 51,
+        "to_loop": 300,
+        "own_player_score_changes": {
+          "killed_value_units": 0.0,
+          "killed_value_structures": 0.0,
+          "collected_minerals": 15.0,
+          "collected_vespene": 0.0,
+          "spent_minerals": 75.0,
+          "spent_vespene": 0.0,
+          "total_damage_dealt": {
+            "life": 0.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "total_damage_taken": {
+            "life": 0.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "total_healed": {
+            "life": 0.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "lost_minerals": {
+            "none": 0.0,
+            "army": 0.0,
+            "economy": 0.0,
+            "technology": 0.0,
+            "upgrade": 0.0
+          },
+          "lost_vespene": {
+            "none": 0.0,
+            "army": 0.0,
+            "economy": 0.0,
+            "technology": 0.0,
+            "upgrade": 0.0
+          }
+        },
+        "meaning": "Measured cumulative own-player score differences over the stated interval. These describe past outcomes, not causes, future predictions, target information, or a recommended action. Healing totals may include repairs; do not attribute them to a particular ability."
+      },
+      "original": {
+        "investment": {
+          "choice": "project_0",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "save_for_5": 0.0,
+            "batch_0": 0.02,
+            "project_1": 0.04,
+            "save_for_6": 0.01,
+            "project_0": 0.23,
+            "batch_1": 0.01,
+            "save_for_3": 0.01,
+            "save_for_1": 0.02,
+            "save_for_4": 0.0,
+            "batch_3": 0.14,
+            "save_for_0": 0.0,
+            "project_2": 0.15,
+            "project_3": 0.16,
+            "save": 0.2,
+            "save_for_2": 0.01
+          }
+        }
+      },
+      "with_outcomes": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "project_3": 0.14,
+            "batch_0": 0.02,
+            "save_for_1": 0.02,
+            "save_for_0": 0.0,
+            "project_1": 0.04,
+            "save_for_5": 0.0,
+            "save_for_3": 0.01,
+            "save_for_6": 0.01,
+            "save_for_2": 0.01,
+            "project_2": 0.16,
+            "save": 0.26,
+            "project_0": 0.18,
+            "batch_1": 0.01,
+            "save_for_4": 0.0,
+            "batch_3": 0.14
+          }
+        }
+      }
+    },
+    {
+      "time": 1789882244.442514,
+      "outcome": {
+        "from_loop": 4447,
+        "to_loop": 4810,
+        "own_player_score_changes": {
+          "killed_value_units": 0.0,
+          "killed_value_structures": 0.0,
+          "collected_minerals": 125.0,
+          "collected_vespene": 16.0,
+          "spent_minerals": 50.0,
+          "spent_vespene": 0.0,
+          "total_damage_dealt": {
+            "life": 0.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "total_damage_taken": {
+            "life": 496.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "total_healed": {
+            "life": 216.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "lost_minerals": {
+            "none": 0.0,
+            "army": 0.0,
+            "economy": 0.0,
+            "technology": 0.0,
+            "upgrade": 0.0
+          },
+          "lost_vespene": {
+            "none": 0.0,
+            "army": 0.0,
+            "economy": 0.0,
+            "technology": 0.0,
+            "upgrade": 0.0
+          }
+        },
+        "meaning": "Measured cumulative own-player score differences over the stated interval. These describe past outcomes, not causes, future predictions, target information, or a recommended action. Healing totals may include repairs; do not attribute them to a particular ability."
+      },
+      "with_outcomes": {
+        "investment": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "project_9": 0.16999999999999998,
+            "project_10": 0.03,
+            "save": 0.13999999999999999,
+            "batch_9": 0.08,
+            "batch_5": 0.01,
+            "project_3": 0.01,
+            "project_0": 0.03,
+            "batch_4": 0.01,
+            "save_for_0": 0.02,
+            "project_8": 0.02,
+            "project_7": 0.06,
+            "project_1": 0.27,
+            "project_4": 0.01,
+            "project_5": 0.02,
+            "batch_7": 0.03,
+            "project_2": 0.01,
+            "batch_6": 0.03,
+            "project_6": 0.05
+          }
+        }
+      },
+      "original": {
+        "investment": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "project_3": 0.01,
+            "save_for_0": 0.02,
+            "batch_7": 0.03,
+            "batch_9": 0.09,
+            "batch_4": 0.01,
+            "project_1": 0.19999999999999998,
+            "project_8": 0.02,
+            "project_9": 0.19,
+            "project_10": 0.02,
+            "project_4": 0.01,
+            "project_5": 0.02,
+            "project_2": 0.0,
+            "batch_5": 0.01,
+            "project_0": 0.03,
+            "save": 0.19,
+            "project_6": 0.04,
+            "batch_6": 0.03,
+            "project_7": 0.08
+          }
+        }
+      }
+    },
+    {
+      "time": 1789882569.0431511,
+      "outcome": {
+        "from_loop": 10909,
+        "to_loop": 11954,
+        "own_player_score_changes": {
+          "killed_value_units": 0.0,
+          "killed_value_structures": 0.0,
+          "collected_minerals": 205.0,
+          "collected_vespene": 0.0,
+          "spent_minerals": 0.0,
+          "spent_vespene": 0.0,
+          "total_damage_dealt": {
+            "life": 0.0,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "total_damage_taken": {
+            "life": 3764.40625,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "total_healed": {
+            "life": 1270.107421875,
+            "shields": 0.0,
+            "energy": 0.0
+          },
+          "lost_minerals": {
+            "none": 0.0,
+            "army": 0.0,
+            "economy": 2487.0,
+            "technology": 0.0,
+            "upgrade": 0.0
+          },
+          "lost_vespene": {
+            "none": 0.0,
+            "army": 0.0,
+            "economy": 0.0,
+            "technology": 0.0,
+            "upgrade": 0.0
+          }
+        },
+        "meaning": "Measured cumulative own-player score differences over the stated interval. These describe past outcomes, not causes, future predictions, target information, or a recommended action. Healing totals may include repairs; do not attribute them to a particular ability."
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "save_for_6": 0.01,
+            "save": 0.49,
+            "save_for_4": 0.01,
+            "save_for_0": 0.01,
+            "save_for_2": 0.04,
+            "save_for_7": 0.32,
+            "save_for_1": 0.03,
+            "save_for_3": 0.03,
+            "save_for_5": 0.06
+          }
+        }
+      },
+      "with_outcomes": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "save_for_2": 0.03,
+            "save_for_6": 0.01,
+            "save_for_5": 0.05,
+            "save_for_1": 0.03,
+            "save_for_4": 0.01,
+            "save_for_3": 0.04,
+            "save_for_0": 0.01,
+            "save": 0.49,
+            "save_for_7": 0.33
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.00288834
+}
