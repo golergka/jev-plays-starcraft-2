@@ -400,7 +400,7 @@ async def choose_investment(view, state, jev, memory=None):
         criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)
         if memory is not None and example['description'].startswith('Train '):
             criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 2016 game loops, '
-                'using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. '
+                'using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. '
                 'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
                 +investment_description(name,example.get('project'),state))
             if memory.get('production_executor_enabled'):

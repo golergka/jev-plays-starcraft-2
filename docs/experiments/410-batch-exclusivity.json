@@ -1,0 +1,159 @@
+{
+  "source": "runs/20260920T080421.634510Z/events.jsonl",
+  "method": "First/middle/last eligible recorded requests. Full original state and questions retained; treatment describes actual exclusive purchase reservation. Alternating order, one pair per state. No gameplay commands; descriptive comparison, not causal performance evidence.",
+  "pairs": [
+    {
+      "time": 1789891473.1424158,
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "save_for_0": 0.0,
+            "project_0": 0.04,
+            "batch_5": 0.01,
+            "save": 0.32,
+            "project_6": 0.04,
+            "project_4": 0.19,
+            "project_2": 0.0,
+            "project_7": 0.12,
+            "project_1": 0.06,
+            "project_8": 0.03,
+            "project_5": 0.02,
+            "batch_4": 0.07,
+            "batch_7": 0.04,
+            "save_for_1": 0.01,
+            "project_3": 0.04,
+            "batch_3": 0.01
+          }
+        }
+      },
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "project_8": 0.03,
+            "project_5": 0.01,
+            "project_3": 0.04,
+            "batch_4": 0.04,
+            "save": 0.42,
+            "batch_7": 0.04,
+            "save_for_0": 0.0,
+            "project_1": 0.06,
+            "project_7": 0.12,
+            "save_for_1": 0.02,
+            "project_6": 0.04,
+            "project_2": 0.0,
+            "batch_3": 0.01,
+            "project_0": 0.04,
+            "project_4": 0.13,
+            "batch_5": 0.0
+          }
+        }
+      }
+    },
+    {
+      "time": 1789891761.1272042,
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "project_0": 0.02,
+            "save_for_0": 0.0,
+            "project_4": 0.17,
+            "project_3": 0.01,
+            "batch_4": 0.07,
+            "save_for_1": 0.0,
+            "save_for_2": 0.01,
+            "save": 0.23,
+            "batch_6": 0.07,
+            "project_2": 0.09,
+            "project_1": 0.12,
+            "project_6": 0.14,
+            "project_7": 0.04,
+            "project_5": 0.03
+          }
+        }
+      },
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "save_for_0": 0.0,
+            "project_3": 0.01,
+            "save_for_1": 0.0,
+            "save": 0.2,
+            "save_for_2": 0.0,
+            "batch_6": 0.11,
+            "project_0": 0.02,
+            "project_1": 0.14,
+            "project_7": 0.04,
+            "project_6": 0.14,
+            "project_5": 0.03,
+            "project_2": 0.11,
+            "batch_4": 0.08,
+            "project_4": 0.12
+          }
+        }
+      }
+    },
+    {
+      "time": 1789892039.9818912,
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.26,
+          "probabilities": {
+            "batch_1": 0.1,
+            "save_for_2": 0.0,
+            "batch_3": 0.02,
+            "project_2": 0.02,
+            "save_for_5": 0.0,
+            "save_for_3": 0.0,
+            "project_4": 0.02,
+            "project_1": 0.24,
+            "save_for_0": 0.01,
+            "project_3": 0.06,
+            "project_0": 0.17,
+            "save_for_4": 0.03,
+            "save": 0.32,
+            "save_for_1": 0.01
+          }
+        }
+      },
+      "explicit": {
+        "investment": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "batch_1": 0.1,
+            "save_for_5": 0.0,
+            "project_2": 0.03,
+            "save_for_4": 0.04,
+            "project_1": 0.3,
+            "save_for_1": 0.01,
+            "batch_3": 0.01,
+            "save_for_0": 0.0,
+            "project_4": 0.02,
+            "project_3": 0.08,
+            "project_0": 0.14,
+            "save_for_3": 0.0,
+            "save": 0.27,
+            "save_for_2": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.003419976
+}

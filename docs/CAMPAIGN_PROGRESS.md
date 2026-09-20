@@ -6031,3 +6031,19 @@ No root orders or midtrial policy changes. Tenth native Smashdefeat; no causal
 success claim from longer survival or localfacts alone. Result/UI/checkpoint and
 publicreport reconciled. Next correct explicit purchase-reservation semantics
 identified408 before deciding on another live trial; unchangedretry not started.
+
+### Lab410 — make batch purchase exclusivity explicit
+
+Correct batch criterion from “prioritize” to actual behavior: no other new unit,
+structure or upgrade purchase while active, even while waiting for resources or
+training control; ends on finish, expiry or strategy change. Executor and all
+choices unchanged. General contract correction, no forced production or mission
+instructions. Tested205passed.
+
+Paired first/middle/last eligible407investment requests, full state/questions,
+alternating arm order. Sixcalls $0.003419976. First/middle bothsave; lastbaseline
+save versus explicit singleMarine. Onepair/state, no repeatability or gameplay
+benefit claim; no batch was topchoice in eitherarm. Correction retained for truth
+of the offered contract, not proof of resolving economic policy. No live retry
+started on this narrow evidence. Next investigation remains army survival and
+investment behavior; consult previous negative probes before another change.
