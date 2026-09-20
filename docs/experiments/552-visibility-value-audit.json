@@ -1,0 +1,12 @@
+{
+  "lab": 552,
+  "question": "Does visibility value 3 mean additional visible terrain was omitted?",
+  "sources": [
+    "https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/spatial.proto",
+    "https://github.com/Blizzard/s2client-proto/blob/master/s2clientprotocol/raw.proto"
+  ],
+  "finding": "Spatial visibility documents 0 Hidden, 1 Fogged, 2 Visible, 3 FullHidden. Raw MapState describes a byte visibility layer without repeating the encoding. Unit DisplayType is a separate enum and must not be substituted. No evidence supports exposing value 3.",
+  "existing_behavior": "visible_terrain requires 2; explored_map permits 1 and 2 only. Existing overview fixture explicitly includes and masks value 3.",
+  "decision": "Keep conservative existing visibility gating; no gameplay change and no paid calls.",
+  "limitation": "This documentation audit does not establish route reachability or explain the movement choices."
+}
