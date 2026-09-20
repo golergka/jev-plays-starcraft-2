@@ -4830,3 +4830,15 @@ replacement elapsed metadata. Not yet proven:pause equality,exact UI rounding,
 each hide/show transition,or freshness across restarts. Diagnostic stays separate
 from player; no campaign outcome recorded. Next fixture revision should snapshot
 bank after every stage inside the fixture to avoid wall-clock sampling races.
+
+### Lab331 — timer fixture stage assertions pass in SC2
+
+Fixture now snapshots each exported stage synchronously into diagnostic-only bank
+sections. Native run331:created60,paused50.0625,still_paused50.0625;replacement
+elapsed29.9375;hidden count0/noTimer0;shown elapsed49.9375;destroyed count0/noTimer0.
+Hidden-window title absent from bank. check_timer_fixture.py validates all seven
+stages,including mode/title and section removal; artifact331 preserves results.
+This removes previous asynchronous sampling ambiguity. No Jev requests or campaign
+credit. Exact displayed rounding,per-launch freshness,and campaign include-closure
+integration remain unverified. Diagnostic stage history is fixture-only and must
+not be exposed as production mission context.

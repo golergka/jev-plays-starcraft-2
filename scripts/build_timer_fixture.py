@@ -11,6 +11,17 @@ a=p.parse_args()
 bank='JevTimerFixture'+uuid.uuid4().hex
 bridge=Path(__file__).with_name('visible_timer_bridge.galaxy').read_text().replace('TIMER_BANK_NAME',bank)
 fixture='''
+void FixtureSnapshot (string stage) {
+    JevVisibleTimerExport();
+    BankValueSetFromInt(JevVisibleTimerBank, stage, "count", BankValueGetAsInt(JevVisibleTimerBank, "Context", "count"));
+    BankValueSetFromFlag(JevVisibleTimerBank, stage, "timer_section", BankSectionExists(JevVisibleTimerBank, "Timer0"));
+    if (BankSectionExists(JevVisibleTimerBank, "Timer0")) {
+        BankValueSetFromText(JevVisibleTimerBank, stage, "title", BankValueGetAsText(JevVisibleTimerBank, "Timer0", "title"));
+        BankValueSetFromFixed(JevVisibleTimerBank, stage, "value", BankValueGetAsFixed(JevVisibleTimerBank, "Timer0", "value"));
+        BankValueSetFromFlag(JevVisibleTimerBank, stage, "elapsed", BankValueGetAsFlag(JevVisibleTimerBank, "Timer0", "elapsed"));
+    }
+    BankSave(JevVisibleTimerBank);
+}
 bool TimerFixture (bool testConds, bool runActions) {
     timer countdown;
     timer hidden;
@@ -24,27 +35,27 @@ bool TimerFixture (bool testConds, bool runActions) {
     TimerStart(hidden, 999.0, false, c_timeGame);
     window = JevTimerWindowCreate(countdown, StringToText("VISIBLE FIXTURE 60"), true, false);
     secret = JevTimerWindowCreate(hidden, StringToText("HIDDEN FIXTURE"), false, false);
-    JevVisibleTimerExport();
+    FixtureSnapshot("created");
     Wait(10.0, c_timeGame);
     TimerPause(countdown, true);
-    JevVisibleTimerExport();
+    FixtureSnapshot("paused");
     Wait(10.0, c_timeGame);
-    JevVisibleTimerExport();
+    FixtureSnapshot("still_paused");
     Wait(10.0, c_timeGame);
     JevTimerWindowSetTimer(window, hidden);
     JevTimerWindowSetTitle(window, StringToText("REPLACED ELAPSED"));
     JevTimerWindowSetStyle(window, c_timerWindowStyleHorizontalTitleTime, true);
-    JevVisibleTimerExport();
+    FixtureSnapshot("replaced");
     Wait(10.0, c_timeGame);
     TimerWindowShow(window, PlayerGroupSingle(1), false);
-    JevVisibleTimerExport();
+    FixtureSnapshot("hidden");
     Wait(10.0, c_timeGame);
     TimerWindowShow(window, PlayerGroupSingle(1), true);
-    JevVisibleTimerExport();
+    FixtureSnapshot("shown");
     Wait(10.0, c_timeGame);
     JevTimerWindowDestroy(window);
     JevTimerWindowDestroy(secret);
-    JevVisibleTimerExport();
+    FixtureSnapshot("destroyed");
     return true;
 }
 void InitMap () {

@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "scope": "Native fixture stage exports: visibility, pause, replacement, elapsed mode, destruction. Does not validate display rounding or launch freshness.",
+  "stages": {
+    "created": {
+      "value": {
+        "fixed": "60"
+      },
+      "timer_section": {
+        "flag": "1"
+      },
+      "elapsed": {
+        "flag": "0"
+      },
+      "title": {
+        "text": "VISIBLE FIXTURE 60"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "paused": {
+      "value": {
+        "fixed": "50.0625"
+      },
+      "timer_section": {
+        "flag": "1"
+      },
+      "elapsed": {
+        "flag": "0"
+      },
+      "title": {
+        "text": "VISIBLE FIXTURE 60"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "still_paused": {
+      "value": {
+        "fixed": "50.0625"
+      },
+      "timer_section": {
+        "flag": "1"
+      },
+      "elapsed": {
+        "flag": "0"
+      },
+      "title": {
+        "text": "VISIBLE FIXTURE 60"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "replaced": {
+      "value": {
+        "fixed": "29.9375"
+      },
+      "timer_section": {
+        "flag": "1"
+      },
+      "elapsed": {
+        "flag": "1"
+      },
+      "title": {
+        "text": "REPLACED ELAPSED"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "hidden": {
+      "timer_section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "shown": {
+      "value": {
+        "fixed": "49.9375"
+      },
+      "timer_section": {
+        "flag": "1"
+      },
+      "elapsed": {
+        "flag": "1"
+      },
+      "title": {
+        "text": "REPLACED ELAPSED"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "destroyed": {
+      "timer_section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    }
+  }
+}
