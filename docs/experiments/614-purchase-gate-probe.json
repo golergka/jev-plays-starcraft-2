@@ -1,0 +1,89 @@
+{
+  "source": "runs/20260920T182614.790996Z/events.jsonl",
+  "method": "One gate call per recorded state; original choice reused from live log, not a contemporaneous paired control. No actions executed. Gate does not select a specific project or prove better play.",
+  "results": [
+    {
+      "loop": 8548,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.28,
+        "probabilities": {
+          "save_for_0": 0.01,
+          "project_3": 0.23,
+          "project_4": 0.03,
+          "save": 0.37,
+          "project_0": 0.24,
+          "batch_3": 0.04,
+          "project_2": 0.06,
+          "project_1": 0.02
+        }
+      },
+      "gate": {
+        "choice": "wait",
+        "type": "choice",
+        "confidence": 0.35,
+        "probabilities": {
+          "purchase": 0.33,
+          "wait": 0.67
+        }
+      }
+    },
+    {
+      "loop": 8744,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.27,
+        "probabilities": {
+          "project_4": 0.02,
+          "project_0": 0.28,
+          "project_3": 0.23,
+          "batch_3": 0.06,
+          "project_2": 0.03,
+          "project_1": 0.01,
+          "save_for_0": 0.01,
+          "save": 0.36
+        }
+      },
+      "gate": {
+        "choice": "wait",
+        "type": "choice",
+        "confidence": 0.46,
+        "probabilities": {
+          "purchase": 0.27,
+          "wait": 0.73
+        }
+      }
+    },
+    {
+      "loop": 9317,
+      "original": {
+        "choice": "save",
+        "type": "choice",
+        "confidence": 0.33,
+        "probabilities": {
+          "batch_3": 0.06,
+          "project_3": 0.19,
+          "project_1": 0.02,
+          "project_2": 0.05,
+          "project_4": 0.03,
+          "save": 0.41,
+          "save_for_0": 0.04,
+          "project_0": 0.2
+        }
+      },
+      "gate": {
+        "choice": "wait",
+        "type": "choice",
+        "confidence": 0.57,
+        "probabilities": {
+          "purchase": 0.22,
+          "wait": 0.78
+        }
+      }
+    }
+  ],
+  "calls": 3,
+  "cost": 0.001742286
+}
