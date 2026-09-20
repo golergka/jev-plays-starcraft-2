@@ -7,9 +7,9 @@ native victory screen reports 20:12, after 42 independently UI-verified defeats.
 The winning run cost $0.192928932 for 261 successful Jev requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab580
+## Current evidence through lab588
 
-Smash and Grab has thirty-seven independently verified defeats:
+Smash and Grab has thirty-eight independently verified defeats:
 
 | Trial | Native mission time | Relics | Successful requests | Request cost |
 | --- | --- | --- | --- | --- |
@@ -50,6 +50,7 @@ Smash and Grab has thirty-seven independently verified defeats:
 | 569/570 | 20:54 | 1/4 last seen | 265 | $0.174388410 |
 | 574/575 | 17:19 | 1/4 last seen | 234 | $0.145537140 |
 | 577/580 | 22:56 | 0/4 last seen | 305 | $0.193746084 |
+| 587/588 | 4:34 | 0/4 last seen | 64 | $0.039976482 |
 
 Trial400 stopped on a rolling-budget rejection before the native defeat. Its final
 interval had no controller; this is not a clean policy comparison.
