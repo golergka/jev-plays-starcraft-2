@@ -1,0 +1,300 @@
+{
+  "source": "runs/20260920T133712.486436Z/events.jsonl",
+  "method": "First/middle/last strategic requests; identical full question batch and state, replace only the broad pursue_objective description with a specific existing-force interaction/movement priority. Alternate arm order. Six calls maximum; no game commands.",
+  "criterion": "Use existing forces to perform an identified mission-objective interaction or move toward its known location. This priority does not include producing additional forces, assembling a force, or scouting to discover an unknown objective location; those have separate priorities.",
+  "pairs": [
+    {
+      "time": 1789911443.796161,
+      "baseline": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.92,
+          "probabilities": {
+            "recover": 0.01,
+            "assemble": 0.01,
+            "strengthen": 0.03,
+            "attack": 0.0,
+            "protect": 0.0,
+            "continue_operations": 0.0,
+            "pursue_objective": 0.93,
+            "explore": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "soon": 0.56,
+            "long": 0.2,
+            "medium": 0.24
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "long": 0.1,
+            "soon": 0.41,
+            "medium": 0.49
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.47,
+          "probabilities": {
+            "by_type": 0.27,
+            "by_current_order": 0.09,
+            "mobile_combat": 0.64
+          }
+        }
+      },
+      "specific_priority": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.68,
+          "probabilities": {
+            "recover": 0.04,
+            "explore": 0.06,
+            "assemble": 0.05,
+            "pursue_objective": 0.71,
+            "continue_operations": 0.0,
+            "attack": 0.0,
+            "protect": 0.01,
+            "strengthen": 0.13
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "long": 0.19,
+            "medium": 0.27,
+            "soon": 0.54
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "medium": 0.5,
+            "long": 0.1,
+            "soon": 0.4
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "by_current_order": 0.08,
+            "by_type": 0.25,
+            "mobile_combat": 0.67
+          }
+        }
+      }
+    },
+    {
+      "time": 1789911812.7106292,
+      "specific_priority": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "strengthen": 0.09,
+            "continue_operations": 0.0,
+            "assemble": 0.11,
+            "recover": 0.02,
+            "explore": 0.01,
+            "attack": 0.0,
+            "pursue_objective": 0.39,
+            "protect": 0.38
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "soon": 0.54,
+            "medium": 0.4,
+            "long": 0.06
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "soon": 0.31,
+            "medium": 0.62,
+            "long": 0.07
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "by_type": 0.4,
+            "by_current_order": 0.16,
+            "mobile_combat": 0.44
+          }
+        }
+      },
+      "baseline": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.39,
+          "probabilities": {
+            "protect": 0.39,
+            "continue_operations": 0.0,
+            "attack": 0.0,
+            "strengthen": 0.07,
+            "assemble": 0.06,
+            "pursue_objective": 0.47,
+            "explore": 0.0,
+            "recover": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "soon": 0.58,
+            "long": 0.06,
+            "medium": 0.36
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "soon": 0.36,
+            "long": 0.06,
+            "medium": 0.58
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "by_current_order": 0.19,
+            "mobile_combat": 0.44,
+            "by_type": 0.37
+          }
+        }
+      }
+    },
+    {
+      "time": 1789912191.306242,
+      "baseline": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.45,
+          "probabilities": {
+            "pursue_objective": 0.42,
+            "attack": 0.0,
+            "protect": 0.53,
+            "assemble": 0.0,
+            "strengthen": 0.03,
+            "recover": 0.02,
+            "explore": 0.0,
+            "continue_operations": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "soon": 0.62,
+            "long": 0.05,
+            "medium": 0.33
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "soon": 0.43,
+            "long": 0.08,
+            "medium": 0.49
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.13,
+          "probabilities": {
+            "by_current_order": 0.19,
+            "by_type": 0.4,
+            "mobile_combat": 0.41
+          }
+        }
+      },
+      "specific_priority": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "strengthen": 0.04,
+            "protect": 0.59,
+            "pursue_objective": 0.33,
+            "attack": 0.0,
+            "continue_operations": 0.0,
+            "recover": 0.03,
+            "assemble": 0.01,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "long": 0.05,
+            "medium": 0.37,
+            "soon": 0.58
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "long": 0.07,
+            "medium": 0.52,
+            "soon": 0.41
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.18,
+          "probabilities": {
+            "by_current_order": 0.27,
+            "mobile_combat": 0.45,
+            "by_type": 0.28
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0030540299999999997
+}
