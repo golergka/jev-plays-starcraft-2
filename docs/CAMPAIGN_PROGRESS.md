@@ -6565,3 +6565,17 @@ not directly test1482; do not claim exhaustive absence of benefit. No live game
 commands. Together with412/418 this cautions against repeatedly enlarging local
 facts without changing decision formulation. Next inspect selection scoring and
 actual probabilities before another strategic or factual-context variation.
+
+### Lab448 — inspect concrete-order probability fragmentation
+
+Offline440 MobileCombat distributions: at573 selected attack-move=.25;
+regroup total=.30, largest single regroup=.06. At1163 selectedMove=.17,
+regroup total=.21, largest=.05. At1482 selectedattack-move=.36, regroup
+sum=.28, largest=.04. Thus regroup is not uniformly negligible, but many
+anchor alternatives fragment its returned probability. These rounded numbers
+are not calibrated utilities and summing a large category is not a valid tactic
+selector. No policy aggregation or forced regroup deployed. ZeroAPIcost.
+Next bounded probe: Jev chooses an order family before target, preserving all
+legal options; compare against full concrete menu. Consult325/326 (friendly
+anchor/kind hierarchy failed) and369/370 (tournaments costly) before implementing;
+new probe must distinguish semantic order family from those previous designs.

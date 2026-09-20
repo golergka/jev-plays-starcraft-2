@@ -1,0 +1,414 @@
+{
+  "source": "runs/20260920T100335.561953Z/events.jsonl",
+  "selection": "MobileCombat",
+  "rows": [
+    {
+      "loop": 49,
+      "choice": "group_last_known_attack_move_8756723713",
+      "choice_probability": 0.28,
+      "probability_sum": 1.0,
+      "option_count": 78,
+      "regroup_option_count": 30,
+      "regroup_probability_sum": 0.05,
+      "largest_regroup_probability": 0.01,
+      "top_five": [
+        {
+          "choice": "group_last_known_attack_move_8756723713",
+          "probability": 0.28,
+          "description": "attack move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_last_known_move_8756723713",
+          "probability": 0.25,
+          "description": "move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_east",
+          "probability": 0.06999999999999999,
+          "description": "Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_west",
+          "probability": 0.06999999999999999,
+          "description": "Move six map units west; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_move_west",
+          "probability": 0.04,
+          "description": "Attack-move six map units west, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 409,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.52,
+      "probability_sum": 0.99,
+      "option_count": 75,
+      "regroup_option_count": 30,
+      "regroup_probability_sum": 0.04,
+      "largest_regroup_probability": 0.01,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.52,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.17,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_move_4374134785",
+          "probability": 0.060000000000000005,
+          "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 27.1 to 28.4; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_east",
+          "probability": 0.04,
+          "description": "Move six map units east; destination: blocked static terrain | Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_move_east",
+          "probability": 0.04,
+          "description": "Attack-move six map units east, engaging enemies encountered on the way; destination: blocked static terrain | Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 573,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.25,
+      "probability_sum": 0.99,
+      "option_count": 164,
+      "regroup_option_count": 32,
+      "regroup_probability_sum": 0.3,
+      "largest_regroup_probability": 0.060000000000000005,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.25,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.14,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "support_ability_2750_4362862593_only_4383309825",
+          "probability": 0.09999999999999999,
+          "description": "Only unit 4383309825: Effect MedicHeal on owned Marine tag 4362862593: restore missing health (32.3643/45); current center distance 1.4; catalog cast range 2; distance is not a path or a guarantee of reachability; engine validates target. All other units keep their current orders."
+        },
+        {
+          "choice": "group_attack_move_join_4383309825",
+          "probability": 0.060000000000000005,
+          "description": "Regroup this selection at Medic unit 4383309825 position [46.7919921875, 34.952392578125]: that unit holds position; the other 4 units attack-move, engaging enemies encountered to its observed position."
+        },
+        {
+          "choice": "group_join_4383309825",
+          "probability": 0.04,
+          "description": "Regroup this selection at Medic unit 4383309825 position [46.7919921875, 34.952392578125]: that unit holds position; the other 4 units move to its observed position."
+        }
+      ]
+    },
+    {
+      "loop": 1163,
+      "choice": "group_map_move_middle_east",
+      "choice_probability": 0.17,
+      "probability_sum": 0.99,
+      "option_count": 136,
+      "regroup_option_count": 26,
+      "regroup_probability_sum": 0.21,
+      "largest_regroup_probability": 0.05,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.17,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.1 to 102.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.17,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.1 to 102.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_east",
+          "probability": 0.11,
+          "description": "Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "continue",
+          "probability": 0.06999999999999999,
+          "description": "Keep the current orders of these units unchanged."
+        },
+        {
+          "choice": "group_attack_move_east",
+          "probability": 0.06999999999999999,
+          "description": "Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 1482,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.36,
+      "probability_sum": 1.0,
+      "option_count": 131,
+      "regroup_option_count": 36,
+      "regroup_probability_sum": 0.28,
+      "largest_regroup_probability": 0.04,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.36,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 76.2 to 107.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.15000000000000002,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 76.2 to 107.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_4366008321",
+          "probability": 0.05,
+          "description": "Attack visible Stalker tag 4366008321 at [63.5,22.6]; target is ground; catalog weapons target unspecified classes | Attack visible Stalker tag 4366008321; target is ground; catalog weapons target ground | Attack visible Stalker tag 4366008321; target is ground; catalog weapons target air and ground | Attack visible Stalker tag 4366008321 at [63.5,22.6]; target is ground; catalog weapons target air and ground"
+        },
+        {
+          "choice": "continue",
+          "probability": 0.04,
+          "description": "Keep the current orders of these units unchanged."
+        },
+        {
+          "choice": "group_attack_move_east",
+          "probability": 0.04,
+          "description": "Attack-move six map units east, engaging enemies encountered on the way; destination: blocked static terrain | Attack-move six map units east, engaging enemies encountered on the way; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 2086,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.27,
+      "probability_sum": 0.99,
+      "option_count": 131,
+      "regroup_option_count": 26,
+      "regroup_probability_sum": 0.26999999999999996,
+      "largest_regroup_probability": 0.09,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.27,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_join_4327211017",
+          "probability": 0.09,
+          "description": "Regroup this selection at Medic unit 4327211017 position [57.5, 11.625]: that unit holds position; the other 1 units move to its observed position."
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.08,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_last_known_attack_move_8742567958",
+          "probability": 0.06999999999999999,
+          "description": "attack move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 44.6 to 62.9; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_move_join_4327211017",
+          "probability": 0.06999999999999999,
+          "description": "Regroup this selection at Medic unit 4327211017 position [57.5, 11.625]: that unit holds position; the other 1 units attack-move, engaging enemies encountered to its observed position."
+        }
+      ]
+    },
+    {
+      "loop": 2549,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.3,
+      "probability_sum": 1.0,
+      "option_count": 132,
+      "regroup_option_count": 28,
+      "regroup_probability_sum": 0.07,
+      "largest_regroup_probability": 0.03,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.3,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 107.3 to 107.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.09999999999999999,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 107.3 to 107.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_4384096257",
+          "probability": 0.09,
+          "description": "Attack visible SporeCrawler tag 4384096257; target is ground; catalog weapons target ground | Attack visible SporeCrawler tag 4384096257; target is ground; catalog weapons target unspecified classes"
+        },
+        {
+          "choice": "continue",
+          "probability": 0.09,
+          "description": "Keep the current orders of these units unchanged."
+        },
+        {
+          "choice": "group_last_known_attack_move_8742567958",
+          "probability": 0.05,
+          "description": "attack move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 62.8 to 64.3; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 2782,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.28,
+      "probability_sum": 0.99,
+      "option_count": 129,
+      "regroup_option_count": 28,
+      "regroup_probability_sum": 0.04,
+      "largest_regroup_probability": 0.01,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.28,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 108.6 to 108.6; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "support_ability_2750_4330356740_only_4327211017",
+          "probability": 0.19,
+          "description": "Only unit 4327211017: Effect MedicHeal on owned Marauder tag 4330356740: restore missing health (41.7866/100); current center distance 1.9; catalog cast range 2; distance is not a path or a guarantee of reachability; engine validates target. All other units keep their current orders."
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.08,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 108.6 to 108.6; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_4324327446",
+          "probability": 0.060000000000000005,
+          "description": "Attack visible Hydralisk tag 4324327446; target is ground; catalog weapons target unspecified classes | Attack visible Hydralisk tag 4324327446; target is ground; catalog weapons target ground"
+        },
+        {
+          "choice": "group_last_known_move_8742567958",
+          "probability": 0.04,
+          "description": "move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 69.3 to 70.4; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 3417,
+      "choice": "group_move_4374134785",
+      "choice_probability": 0.28,
+      "probability_sum": 1.0,
+      "option_count": 134,
+      "regroup_option_count": 28,
+      "regroup_probability_sum": 0.06,
+      "largest_regroup_probability": 0.03,
+      "top_five": [
+        {
+          "choice": "group_move_4374134785",
+          "probability": 0.28,
+          "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 14.6; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.16,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 101.8 to 102.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.12,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 101.8 to 102.5; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_last_known_attack_move_8742567958",
+          "probability": 0.05,
+          "description": "attack move to last-known ProtossRelic location [102.0,8.4]; snapshot under fog, current presence unknown; straight-line distances across selection: 43.9 to 44.6; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_east",
+          "probability": 0.05,
+          "description": "Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 3832,
+      "choice": "continue",
+      "choice_probability": 0.54,
+      "probability_sum": 1.0,
+      "option_count": 127,
+      "regroup_option_count": 28,
+      "regroup_probability_sum": 0.0,
+      "largest_regroup_probability": 0.0,
+      "top_five": [
+        {
+          "choice": "continue",
+          "probability": 0.54,
+          "description": "Keep the current orders of these units unchanged."
+        },
+        {
+          "choice": "group_move_4374134785",
+          "probability": 0.26,
+          "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 22.0 to 22.1; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.04,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 119.6 to 120.2; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_east",
+          "probability": 0.03,
+          "description": "Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.03,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 119.6 to 120.2; actual engine route and travel distance unknown"
+        }
+      ]
+    },
+    {
+      "loop": 4110,
+      "choice": "group_map_attack_move_middle_east",
+      "choice_probability": 0.23,
+      "probability_sum": 1.0,
+      "option_count": 141,
+      "regroup_option_count": 24,
+      "regroup_probability_sum": 0.11,
+      "largest_regroup_probability": 0.01,
+      "top_five": [
+        {
+          "choice": "group_map_attack_move_middle_east",
+          "probability": 0.23,
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 96.3 to 96.3; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_map_move_middle_east",
+          "probability": 0.18000000000000002,
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 96.3 to 96.3; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_east",
+          "probability": 0.09,
+          "description": "Move six map units east; destination: walkable static terrain; straight-line distances across selection: 6.0 to 6.0; actual engine route and travel distance unknown"
+        },
+        {
+          "choice": "group_attack_4355522572",
+          "probability": 0.060000000000000005,
+          "description": "Attack visible Zergling tag 4355522572; target is ground; catalog weapons target air and ground"
+        },
+        {
+          "choice": "group_attack_4374396956",
+          "probability": 0.04,
+          "description": "Attack visible Zergling tag 4374396956; target is ground; catalog weapons target air and ground"
+        }
+      ]
+    }
+  ],
+  "limits": "Returned rounded probabilities are not calibrated utilities. Summing options does not establish the best tactic; category size and overlapping semantics matter. No resampling, policy changes or API calls."
+}
