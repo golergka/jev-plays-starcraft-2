@@ -6805,3 +6805,21 @@ No claim of reliable live planning, uncertainty handling, or choosing the right
 intermediate goal. No target is imposed on live Jev and no executor deployed.
 Next useful distinction is goal selection versus goal execution in real-state
 counterfactual diagnostics, while preserving autonomous goals in the player.
+
+
+### Lab466 — imposed unit goal changes all three real-state purchases
+
+Six paired offline calls $0.002991576 on460 loops3540/4290/4882; same full
+observations/options, immediate Barracks purchase available, no owned Barracks.
+Treatment replaces only investment instructions with an explicit diagnostic goal:
+obtain one additional Marine as soon as feasible, superseding recorded mission,
+strategy and advisory goals for this question. Baseline SCV/SCV/SCV; treatment
+Barracks/Barracks/Barracks. This intentionally imposed goal is diagnostic only,
+not an autonomous policy, not a live order, and not evidence rebuilding wins.
+Together with465 this narrows the failure: existing real-state facts/options can
+support the producer purchase when the intermediate goal is specified. More
+producer-fact restatements are not the next justified intervention. Autonomous
+selection of a useful intermediate goal remains unresolved;463 independently
+prioritized SCV and464 broad-goal chains did not win. Next investigate whether
+Jev can diagnose the limiting capability before selecting a production goal,
+without root supplying the desired diagnosis or filtering away alternatives.

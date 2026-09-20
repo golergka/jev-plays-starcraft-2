@@ -1,0 +1,134 @@
+{
+  "source": "runs/20260920T110319.423869Z/events.jsonl",
+  "pairs": [
+    {
+      "loop": 3540,
+      "treatment_instructions": "For this offline diagnostic only, the goal is to obtain one additional owned Marine as soon as feasible. This diagnostic goal supersedes the recorded mission objective, strategic priority and advisory production intentions for this question. Choose the next purchase, bounded batch or saving action toward that goal using the observed resources, owned units and available controls. All game facts remain as recorded; do not assume additional units, income or production controls. This decision selects the next new purchase. Other selections cannot start additional purchases in this review, but worker repairs can still consume shared minerals. Existing queues continue.",
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.22,
+            "probabilities": {
+              "project_4": 0.18,
+              "project_3": 0.33,
+              "save": 0.16,
+              "project_2": 0.04,
+              "batch_3": 0.07,
+              "project_0": 0.18,
+              "project_1": 0.02,
+              "save_for_0": 0.02
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        },
+        "explicit_goal": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.72,
+            "probabilities": {
+              "project_2": 0.0,
+              "batch_3": 0.01,
+              "project_1": 0.0,
+              "save": 0.11,
+              "project_0": 0.77,
+              "save_for_0": 0.01,
+              "project_4": 0.0,
+              "project_3": 0.1
+            }
+          },
+          "description": "Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+        }
+      }
+    },
+    {
+      "loop": 4290,
+      "treatment_instructions": "For this offline diagnostic only, the goal is to obtain one additional owned Marine as soon as feasible. This diagnostic goal supersedes the recorded mission objective, strategic priority and advisory production intentions for this question. Choose the next purchase, bounded batch or saving action toward that goal using the observed resources, owned units and available controls. All game facts remain as recorded; do not assume additional units, income or production controls. This decision selects the next new purchase. Other selections cannot start additional purchases in this review, but worker repairs can still consume shared minerals. Existing queues continue.",
+      "answers": {
+        "explicit_goal": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.82,
+            "probabilities": {
+              "project_1": 0.0,
+              "save": 0.11,
+              "project_0": 0.84,
+              "save_for_0": 0.0,
+              "project_4": 0.0,
+              "project_2": 0.0,
+              "batch_3": 0.01,
+              "project_3": 0.04
+            }
+          },
+          "description": "Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.33,
+            "probabilities": {
+              "project_0": 0.19,
+              "project_3": 0.41,
+              "save_for_0": 0.02,
+              "save": 0.15,
+              "project_4": 0.01,
+              "batch_3": 0.16,
+              "project_1": 0.01,
+              "project_2": 0.05
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Move Move': 3, 'Harvest Return SCV': 2, 'Harvest Gather SCV': 2}."
+        }
+      }
+    },
+    {
+      "loop": 4882,
+      "treatment_instructions": "For this offline diagnostic only, the goal is to obtain one additional owned Marine as soon as feasible. This diagnostic goal supersedes the recorded mission objective, strategic priority and advisory production intentions for this question. Choose the next purchase, bounded batch or saving action toward that goal using the observed resources, owned units and available controls. All game facts remain as recorded; do not assume additional units, income or production controls. This decision selects the next new purchase. Other selections cannot start additional purchases in this review, but worker repairs can still consume shared minerals. Existing queues continue.",
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.43,
+            "probabilities": {
+              "project_4": 0.02,
+              "project_3": 0.49,
+              "project_2": 0.02,
+              "batch_3": 0.13,
+              "save": 0.19,
+              "save_for_0": 0.02,
+              "project_1": 0.01,
+              "project_0": 0.12
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        },
+        "explicit_goal": {
+          "answer": {
+            "choice": "project_0",
+            "type": "choice",
+            "confidence": 0.75,
+            "probabilities": {
+              "project_1": 0.0,
+              "save": 0.15,
+              "project_0": 0.78,
+              "save_for_0": 0.01,
+              "project_4": 0.0,
+              "project_2": 0.0,
+              "batch_3": 0.01,
+              "project_3": 0.05
+            }
+          },
+          "description": "Purchase one Barracks. Adds another unit able to: Train FlameMech, Train Marauder, Train Marine, Train Medic. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+        }
+      }
+    }
+  ],
+  "method": "First/middle/last affordable absent-Barracks states. Same full observations and every purchase option. Treatment replaces investment instructions with an explicit Marine goal, superseding recorded goals for this offline diagnostic only. Alternate arms, six-call ceiling. No commands or policy deployment; this is a deliberately imposed goal to separate goal execution from goal selection.",
+  "calls": 6,
+  "cost_usd": 0.002991576
+}
