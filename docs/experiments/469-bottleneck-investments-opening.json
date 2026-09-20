@@ -1,0 +1,284 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "calls": 51,
+  "cost_usd": 0.029607438000000003,
+  "note": "Snapshot of model investment reviews. Top choice and sampled intention differ; neither establishes command acceptance, completed production or mission outcome. Carried commitments without a new model investment review are not listed.",
+  "reviews": [
+    {
+      "loop": 46,
+      "diagnosis": {
+        "answer": "Insufficient resource income limits progress.",
+        "chosen_at_loop": 46,
+        "review_at_loop": 718,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 150,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 10,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 17,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "SupplyDepot": 2,
+        "SCV": 5,
+        "BarracksTechLab": 1,
+        "Marine": 3,
+        "CommandCenter": 1,
+        "Barracks": 1,
+        "Medic": 1,
+        "Refinery": 1
+      },
+      "top_choice": "project_7",
+      "top_description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Harvest resources, Move to locations or entities. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 5; current orders: {}.",
+      "sampled_choice": "project_1",
+      "sampled_description": "Purchase one Bunker. Its action capabilities have not yet been observed. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 452,
+      "diagnosis": {
+        "answer": "Insufficient resource income limits progress.",
+        "chosen_at_loop": 46,
+        "review_at_loop": 718,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 95,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 180.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 10,
+        "food_cap": 27,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 17,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "Bunker": 1,
+        "SupplyDepot": 2,
+        "SCV": 5,
+        "Marine": 3,
+        "BarracksTechLab": 1,
+        "CommandCenter": 1,
+        "Refinery": 1,
+        "Medic": 1,
+        "Barracks": 1
+      },
+      "top_choice": "project_0",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}.",
+      "sampled_choice": "project_0",
+      "sampled_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}."
+    },
+    {
+      "loop": 621,
+      "diagnosis": {
+        "answer": "Insufficient resource income limits progress.",
+        "chosen_at_loop": 46,
+        "review_at_loop": 718,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 70,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 120.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 11,
+        "food_cap": 27,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 16,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "SCV": 5,
+        "CommandCenter": 1,
+        "SupplyDepot": 2,
+        "Bunker": 1,
+        "Refinery": 1,
+        "Medic": 1,
+        "Marine": 3,
+        "BarracksTechLab": 1,
+        "Barracks": 1
+      },
+      "top_choice": "project_0",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 0; current orders: {'Move Move': 3}.",
+      "sampled_choice": "project_0",
+      "sampled_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 0; current orders: {'Move Move': 3}."
+    },
+    {
+      "loop": 1135,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 1135,
+        "review_at_loop": 1807,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 110,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 15,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "CommandCenter": 1,
+        "BarracksTechLab": 1,
+        "Bunker": 1,
+        "SCV": 5,
+        "Barracks": 1,
+        "Marine": 1,
+        "SpecialOpsDropship": 1,
+        "Refinery": 1,
+        "SupplyDepot": 2
+      },
+      "top_choice": "project_2",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+      "sampled_choice": "project_0",
+      "sampled_description": "Purchase one Bunker. Adds another unit able to: Load Bunker: load owned units into available cargo space. Existing owned Bunker cargo: 0 slots occupied, 4 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}."
+    },
+    {
+      "loop": 1485,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 1135,
+        "review_at_loop": 1807,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 70,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 140.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 15,
+        "food_cap": 27,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "Marauder": 4,
+        "BarracksTechLab": 1,
+        "SCV": 5,
+        "Barracks": 1,
+        "Bunker": 2,
+        "SpecialOpsDropship": 1,
+        "SupplyDepot": 2,
+        "CommandCenter": 1,
+        "Refinery": 1,
+        "Marine": 1
+      },
+      "top_choice": "project_0",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+      "sampled_choice": "save_for_1",
+      "sampled_description": "Commit to saving for Bunker for up to 224 game loops, purchasing it if it becomes executable before that review. No other new purchase is allowed during this commitment. This does not reserve minerals against repair spending; ongoing repairs may delay affordability. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 30, 'vespene': 0, 'supply': 0}. Purchase one Bunker. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Existing owned Bunker cargo: 1 slots occupied, 7 available; passengers by type: {'Marine': 1}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}."
+    },
+    {
+      "loop": 2065,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 2065,
+        "review_at_loop": 2737,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 165,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 12,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 15,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "Refinery": 1,
+        "Bunker": 2,
+        "SupplyDepot": 2,
+        "SCV": 5,
+        "Marauder": 3,
+        "CommandCenter": 1,
+        "BarracksTechLab": 1,
+        "Barracks": 1
+      },
+      "top_choice": "project_5",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+      "sampled_choice": "project_7",
+      "sampled_description": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}."
+    },
+    {
+      "loop": 2382,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 2065,
+        "review_at_loop": 2737,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 140,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 27,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 21,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "SupplyDepot": 2,
+        "Bunker": 2,
+        "Refinery": 2,
+        "CommandCenter": 1,
+        "SCV": 5,
+        "Barracks": 1,
+        "BarracksTechLab": 1
+      },
+      "top_choice": "project_4",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+      "sampled_choice": "project_3",
+      "sampled_description": "Purchase one Marauder. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Ground targets at range 6.0. Cost/effects: {'type': 'Marauder', 'minerals': 100, 'vespene': 25, 'supply': 2.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+    },
+    {
+      "loop": 2989,
+      "diagnosis": {
+        "answer": "Insufficient capability to overcome ground enemies limits progress.",
+        "chosen_at_loop": 2989,
+        "review_at_loop": 3661,
+        "meaning": "Your diagnosis of the current bottleneck. Consider whether a purchase would address it. All purchases and saving remain available; this does not authorize or require any purchase."
+      },
+      "resources": {
+        "minerals": 140,
+        "vespene": 37,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 8,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 19,
+        "supply_blocked": false
+      },
+      "owned_counts": {
+        "SupplyDepot": 2,
+        "SCV": 5,
+        "Bunker": 2,
+        "CommandCenter": 1,
+        "Refinery": 2,
+        "BarracksTechLab": 1,
+        "Barracks": 1,
+        "Marauder": 1
+      },
+      "top_choice": "project_4",
+      "top_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+      "sampled_choice": "project_4",
+      "sampled_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+    }
+  ]
+}

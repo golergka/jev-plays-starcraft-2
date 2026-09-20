@@ -6851,3 +6851,17 @@ $0.003628926 at initialcheck. This is opening behavior, not evidence of recovery
 or improvement. Follow same session and /tmp/jev-smash-and-grab-lab468.log;
 do not restart on observation timeout.18prior verified Smash defeats. No root
 orders or mission-specific changes. Outcome pending.
+
+### Lab469 — audit live diagnoses separately from sampled purchases
+
+Trial468/session49275 still confirmed live; native3:00 shows base,1/4relics,
+120minerals32gas8/27supply. Added read-only audit joining each investment model
+response to its diagnosis, top choice and separately sampled intention. Explicitly
+not command acceptance/completion evidence; carried commitments excluded.
+Opening income diagnosis46 changes to groundcombat1135. Marine top choice at
+452/621/1135/1485/2065/2382; sampled intentions respectively Marine/Marine/
+Bunker/save-for-Bunker/Refinery/Marauder. Thus top-choice offline shifts cannot
+be read as actual live purchase sequences. Snapshot artifact records exact
+current totals and all reviewed choices; outcome pending, no policy change or
+root orders. Preserve this trial; later compare realized production and losses,
+not merely diagnoses or time survived.
