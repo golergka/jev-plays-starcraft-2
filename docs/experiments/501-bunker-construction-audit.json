@@ -1,0 +1,179 @@
+{
+  "source": "runs/20260920T125822.620646Z/events.jsonl",
+  "observations": [
+    {
+      "loop": 8634,
+      "structures": [
+        {
+          "tag": 4379115564,
+          "type": "Bunker",
+          "position": [
+            73.5,
+            7.5
+          ],
+          "health": 400.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4346609697,
+          "type": "Barracks",
+          "position": [
+            66.5,
+            14.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ]
+    },
+    {
+      "loop": 8832,
+      "structures": [
+        {
+          "tag": 4346609697,
+          "type": "Barracks",
+          "position": [
+            66.5,
+            14.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4379115564,
+          "type": "Bunker",
+          "position": [
+            73.5,
+            7.5
+          ],
+          "health": 200.875,
+          "health_fraction": 0.5,
+          "build_progress": 1.0
+        }
+      ]
+    },
+    {
+      "loop": 9564,
+      "structures": [
+        {
+          "tag": 4346609697,
+          "type": "Barracks",
+          "position": [
+            66.5,
+            14.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4327211046,
+          "type": "Bunker",
+          "position": [
+            63.5,
+            8.5
+          ],
+          "health": 308.0,
+          "health_fraction": 0.77,
+          "build_progress": 1.0
+        }
+      ]
+    },
+    {
+      "loop": 9836,
+      "structures": [
+        {
+          "tag": 4358144009,
+          "type": "Bunker",
+          "position": [
+            72.5,
+            16.5
+          ],
+          "health": 162.327392578125,
+          "health_fraction": 0.41,
+          "build_progress": 0.34
+        },
+        {
+          "tag": 4346609697,
+          "type": "Barracks",
+          "position": [
+            66.5,
+            14.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4327211046,
+          "type": "Bunker",
+          "position": [
+            63.5,
+            8.5
+          ],
+          "health": 41.875,
+          "health_fraction": 0.1,
+          "build_progress": 1.0
+        }
+      ]
+    },
+    {
+      "loop": 10571,
+      "structures": [
+        {
+          "tag": 4346609697,
+          "type": "Barracks",
+          "position": [
+            66.5,
+            14.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4358144009,
+          "type": "Bunker",
+          "position": [
+            72.5,
+            16.5
+          ],
+          "health": 34.0,
+          "health_fraction": 0.09,
+          "build_progress": 1.0
+        }
+      ]
+    },
+    {
+      "loop": 10841,
+      "structures": [
+        {
+          "tag": 4362600483,
+          "type": "Bunker",
+          "position": [
+            70.5,
+            8.5
+          ],
+          "health": 167.57568359375,
+          "health_fraction": 0.42,
+          "build_progress": 0.354
+        },
+        {
+          "tag": 4346609697,
+          "type": "Barracks",
+          "position": [
+            66.5,
+            14.5
+          ],
+          "health": 1000.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ]
+    }
+  ],
+  "limits": "Completed construction is directly observed. Different tags and later absences do not by themselves prove destruction, garrison contents, weapon effectiveness, or objective progress. Native11:17 showed enemies around the Command Center and ongoing Bunker construction."
+}
