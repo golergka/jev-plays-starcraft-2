@@ -5,6 +5,8 @@ bank JevVisibleTimerBank;
 int JevTimerHead = 0;
 int JevTimerExportCount = 0;
 int JevTimerPlayer = 1;
+int JevTimerGeneration = 0;
+int JevTimerSequence = 0;
 
 string JevTimerKey (int window) {
     return "JevVisibleTimer." + IntToString(window);
@@ -92,6 +94,9 @@ void JevVisibleTimerExport () {
         current = DataTableGetInt(true, key + ".next");
     }
     JevTimerExportCount = index;
+    JevTimerSequence += 1;
+    BankValueSetFromInt(JevVisibleTimerBank, "Context", "generation", JevTimerGeneration);
+    BankValueSetFromInt(JevVisibleTimerBank, "Context", "sequence", JevTimerSequence);
     BankValueSetFromInt(JevVisibleTimerBank, "Context", "count", index);
     BankValueSetFromInt(JevVisibleTimerBank, "Context", "engine_time", CurrentSynchronousGameTimeGet());
     BankSave(JevVisibleTimerBank);
@@ -100,6 +105,8 @@ void JevVisibleTimerExport () {
 void JevVisibleTimerInit (int player) {
     JevTimerPlayer = player;
     JevVisibleTimerBank = BankLoad("TIMER_BANK_NAME", player);
+    JevTimerGeneration = BankValueGetAsInt(JevVisibleTimerBank, "Context", "generation") + 1;
+    JevTimerSequence = 0;
     JevTimerExportCount = BankValueGetAsInt(JevVisibleTimerBank, "Context", "count");
     JevVisibleTimerExport();
 }

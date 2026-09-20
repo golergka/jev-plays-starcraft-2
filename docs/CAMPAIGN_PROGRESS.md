@@ -4842,3 +4842,17 @@ This removes previous asynchronous sampling ambiguity. No Jev requests or campai
 credit. Exact displayed rounding,per-launch freshness,and campaign include-closure
 integration remain unverified. Diagnostic stage history is fixture-only and must
 not be exposed as production mission context.
+
+### Lab332 — strict timer reader and generation markers
+
+Added isolated VisibleTimerReader,not wired into player. Requires expected positive
+launch generation,post-launch fresh file,nonrewinding positive export sequence,
+consistent numbered timer sections,finite values and valid modes. Missing/partial
+XML returns unavailable; malformed semantic data raises loudly. No cached fallback.
+Bridge now increments persisted generation at init and sequence on each export.
+Reader labels values raw native timer values,not verified display text.
+
+158Python tests pass,including stale/missing files,old launch generation,sequence
+rewind,nonfinite values and count mismatch. New generation code has not yet been
+compiled/exercised natively; expected-generation acquisition and campaign builder
+integration remain outstanding. No paid calls or campaign progress claimed.
