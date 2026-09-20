@@ -32,6 +32,18 @@ def previous_attempts(runs, map_path, exclude=None, limit=3):
                     event = row.get('event')
                     if event == 'joined_game':
                         joined = True
+                    elif event == 'restarted_game':
+                        # Only the controller's verified same-map rewind counts
+                        # as a fresh episode, and never after observed gameplay.
+                        restart_map = str(row.get('map', '')).replace('\\', '/').split('/')[-1]
+                        before, after = row.get('before_loop'), row.get('after_loop')
+                        if (first is None and restart_map == name
+                                and type(before) is int and type(after) is int
+                                and before > after and after == 0):
+                            joined = True
+                        else:
+                            joined = False
+                            break
                     elif event == 'tick':
                         first = row['loop'] if first is None else first
                         last = row['loop']

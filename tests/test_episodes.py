@@ -65,3 +65,39 @@ def test_history_distinguishes_background_attempts_from_accepted_commands(tmp_pa
     assert attempt['purchase_proposal_counts']=={'Unit':1}
     assert attempt['background_training_attempt_counts']=={'Unit':2}
     assert attempt['background_training_accepted_counts']=={'Unit':1}
+
+
+def add_restart(directory, **overrides):
+    path=directory/'events.jsonl'
+    event={'event':'restarted_game','map':'mission.SC2Map','before_loop':12000,'after_loop':0,**overrides}
+    path.write_text(json.dumps(event)+'\n'+path.read_text())
+
+
+def test_verified_restart_is_a_fresh_episode(tmp_path):
+    directory=write_attempt(tmp_path,'01',joined=False)
+    add_restart(directory)
+    assert len(previous_attempts(tmp_path,'mission.SC2Map')['attempts'])==1
+
+
+def test_restart_still_requires_verified_result_and_early_observation(tmp_path):
+    for name,kwargs in [('01',{'verified':False}),('02',{'first':900})]:
+        directory=write_attempt(tmp_path,name,joined=False,**kwargs)
+        add_restart(directory)
+    assert not previous_attempts(tmp_path,'mission.SC2Map')['attempts']
+
+
+def test_reject_wrong_map_nonrewind_and_invalid_restart_loops(tmp_path):
+    for index,overrides in enumerate([
+        {'map':'other.SC2Map'}, {'before_loop':0}, {'after_loop':1},
+        {'before_loop':True}, {'after_loop':False}, {'before_loop':None},
+    ]):
+        directory=write_attempt(tmp_path,str(index),joined=False)
+        add_restart(directory,**overrides)
+    assert not previous_attempts(tmp_path,'mission.SC2Map')['attempts']
+
+
+def test_reject_mixed_gameplay_before_restart(tmp_path):
+    directory=write_attempt(tmp_path,'01')
+    with (directory/'events.jsonl').open('a') as stream:
+        stream.write(json.dumps({'event':'restarted_game','map':'mission.SC2Map','before_loop':12000,'after_loop':0})+'\n')
+    assert not previous_attempts(tmp_path,'mission.SC2Map')['attempts']

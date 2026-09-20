@@ -5087,3 +5087,17 @@ probabilities. No executor/livepolicydeployment yet; artifact349stores options,
 observedcounts,anddistributions. Any futuremaintenance trial must retain Jev's
 chosen target/horizon and shared spending authority,not turn these into a scripted
 minimumarmy or indefinite renewal. No campaignadvancement.
+
+### Lab350 — verified API restart episodes were excluded from Jev memory
+
+Audit344's episode_history_loaded=0 reveals actualintegrationbug:previous_attempts
+required joined_game,while --attach --restart emits restarted_game after verified
+same-map rewind. Recognize restart only before anyobservedtick,matchingmapbasename,
+strictinteger before_loop>after_loop and after_loop=0. Unverifiedresults,lateinitial
+observations,wrongmaps,invalidloops,andmixedpre-restartsegments remainexcluded.
+Actualhistory now returns two independentlyverified same335map attempts:337 and344.
+No merging across differentlyinstrumentedmapfilenames or invented lessons.
+Existingplayer forwards thismemory tostrategy/investment requests. Regressiontests
+cover validrestart plus rejectionboundaries; fullsuite185passed. This repairs a
+missing input,not evidence oflearning or bettergameplay. Nexttrial can test corrected
+history with defaultChoice policy; scoredorders remain opt-in after346negative.
