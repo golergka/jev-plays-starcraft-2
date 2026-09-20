@@ -1,0 +1,68 @@
+{
+  "stages": {
+    "strategy": {
+      "calls": 5,
+      "cost": 0.003043026,
+      "questions": 20
+    },
+    "other_orders": {
+      "calls": 9,
+      "cost": 0.00548142,
+      "questions": 39
+    },
+    "roles": {
+      "calls": 4,
+      "cost": 0.0028812,
+      "questions": 24
+    },
+    "bottleneck": {
+      "calls": 3,
+      "cost": 0.001526364,
+      "questions": 3
+    },
+    "investment": {
+      "calls": 5,
+      "cost": 0.0034532820000000002,
+      "questions": 5
+    },
+    "combat": {
+      "calls": 5,
+      "cost": 0.0050371439999999995,
+      "questions": 5
+    }
+  },
+  "cycles": {
+    "46": {
+      "calls": 8,
+      "cost": 0.004017468000000001
+    },
+    "499": {
+      "calls": 5,
+      "cost": 0.00345555
+    },
+    "764": {
+      "calls": 6,
+      "cost": 0.004523147999999999
+    },
+    "1404": {
+      "calls": 6,
+      "cost": 0.004882206
+    },
+    "1690": {
+      "calls": 6,
+      "cost": 0.0045440640000000004
+    }
+  },
+  "lab": 594,
+  "source": "runs/20260920T174903.256607Z/events.jsonl",
+  "scope": "Requests with game_loop <=1800; missing game_loop separated below, not assumed opening evidence.",
+  "unlocated_requests": [
+    {
+      "questions": [
+        "producer_site"
+      ],
+      "cost": 0.000495432
+    }
+  ],
+  "interpretation": "Five combat requests among31 loop-located opening calls. Combat costs about24 percent of opening request spend; other stages account for the rest. First two combat snapshots differ453 loops. This motivates reducing repeated supporting reviews, not overriding tactical choices or raising the budget. No causal performance claim."
+}
