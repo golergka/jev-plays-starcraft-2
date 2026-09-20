@@ -6096,3 +6096,14 @@ evidence Jev now avoids dangerous routes. Lab411's northward movement toward an
 eastern destination cannot itself establish bad engine routing.
 Follow-up validation: all205tests pass with corrected wording assertions; the
 existing regression also verifies both unit commands retain their destination.
+
+### Lab414 — live trial of corrected commitment and distance descriptions
+
+Start run20260920T082219.280906Z, session9275, playerrevisiond1da2d9. SameSmash
+map restart validated14348→0, native opening verified0:11. Changes since407:
+explicit exclusive batchpurchase semantics410 and truthful straight-line distance
+label413; negative concrete-localfacts412notdeployed. Rolelocalfacts retained.
+Same topcontributionflag, Jevinvestment/navigation distributions, objective,
+budgetcap$.10/300s, SDKconcurrency2. No tactical rootorders or changed route.
+One live trial to evaluate combined corrections; cannot isolate either effect
+from this single trajectory. No success assumed from description correctness.
