@@ -1,0 +1,31 @@
+{
+  "lab": 569,
+  "run": "runs/20260920T163333.808020Z",
+  "start_commit": "442e8af",
+  "status": "running",
+  "change": "Add per-tag retained observation continuity; same CLI flags as trial564.",
+  "visual": {
+    "time": "0:48",
+    "supply": "11/27",
+    "relics": "1/4",
+    "observation": "Combat force firing on creep near a Spine Crawler."
+  },
+  "requests_with_presence_spans": 22,
+  "sample": [
+    {
+      "tag": "4297064449",
+      "type": "CommandCenter",
+      "continuously_observed_since_loop": 497,
+      "observed_span_loops": 696,
+      "observation_count": 3
+    },
+    {
+      "tag": "4297326593",
+      "type": "SupplyDepot",
+      "continuously_observed_since_loop": 497,
+      "observed_span_loops": 696,
+      "observation_count": 3
+    }
+  ],
+  "limitation": "Input delivery and opening only; not evidence of strategic benefit."
+}
