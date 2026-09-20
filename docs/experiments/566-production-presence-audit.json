@@ -1,0 +1,356 @@
+{
+  "lab": 566,
+  "source": "runs/20260920T161043.240802Z/events.jsonl",
+  "investment_choices": {
+    "SCV": 4,
+    "Marine": 35,
+    "Medic": 1,
+    "Barracks": 4,
+    "SupplyDepot": 6,
+    "Bunker": 2
+  },
+  "marine_observed_presence": {
+    "4324065281": {
+      "initial": true,
+      "first_seen_loop": 48,
+      "last_seen_loop": 637,
+      "observations": 3
+    },
+    "4362862593": {
+      "initial": true,
+      "first_seen_loop": 48,
+      "last_seen_loop": 637,
+      "observations": 3
+    },
+    "4324327425": {
+      "initial": true,
+      "first_seen_loop": 48,
+      "last_seen_loop": 637,
+      "observations": 3
+    },
+    "4362338322": {
+      "initial": false,
+      "first_seen_loop": 6774,
+      "last_seen_loop": 6774,
+      "observations": 1
+    },
+    "4362600480": {
+      "initial": false,
+      "first_seen_loop": 7525,
+      "last_seen_loop": 7525,
+      "observations": 1
+    },
+    "4360503357": {
+      "initial": false,
+      "first_seen_loop": 11478,
+      "last_seen_loop": 11478,
+      "observations": 1
+    },
+    "4337434694": {
+      "initial": false,
+      "first_seen_loop": 12235,
+      "last_seen_loop": 12235,
+      "observations": 1
+    },
+    "4365221909": {
+      "initial": false,
+      "first_seen_loop": 13151,
+      "last_seen_loop": 13151,
+      "observations": 1
+    },
+    "4343463969": {
+      "initial": false,
+      "first_seen_loop": 15091,
+      "last_seen_loop": 15091,
+      "observations": 1
+    },
+    "4388552786": {
+      "initial": false,
+      "first_seen_loop": 16283,
+      "last_seen_loop": 16283,
+      "observations": 1
+    },
+    "4355522634": {
+      "initial": false,
+      "first_seen_loop": 16283,
+      "last_seen_loop": 16459,
+      "observations": 2
+    },
+    "4301783141": {
+      "initial": false,
+      "first_seen_loop": 17197,
+      "last_seen_loop": 17460,
+      "observations": 2
+    },
+    "4357095463": {
+      "initial": false,
+      "first_seen_loop": 17197,
+      "last_seen_loop": 17197,
+      "observations": 1
+    },
+    "4309909548": {
+      "initial": false,
+      "first_seen_loop": 18055,
+      "last_seen_loop": 18055,
+      "observations": 1
+    },
+    "4357095468": {
+      "initial": false,
+      "first_seen_loop": 18055,
+      "last_seen_loop": 18055,
+      "observations": 1
+    },
+    "4366008344": {
+      "initial": false,
+      "first_seen_loop": 18353,
+      "last_seen_loop": 18353,
+      "observations": 1
+    },
+    "4359716931": {
+      "initial": false,
+      "first_seen_loop": 19112,
+      "last_seen_loop": 19378,
+      "observations": 2
+    },
+    "4366270543": {
+      "initial": false,
+      "first_seen_loop": 19974,
+      "last_seen_loop": 19974,
+      "observations": 1
+    },
+    "4346609739": {
+      "initial": false,
+      "first_seen_loop": 19974,
+      "last_seen_loop": 19974,
+      "observations": 1
+    }
+  },
+  "marine_count_timeline": [
+    {
+      "loop": 48,
+      "count": 3
+    },
+    {
+      "loop": 456,
+      "count": 3
+    },
+    {
+      "loop": 637,
+      "count": 3
+    },
+    {
+      "loop": 1231,
+      "count": 0
+    },
+    {
+      "loop": 1521,
+      "count": 0
+    },
+    {
+      "loop": 2280,
+      "count": 0
+    },
+    {
+      "loop": 2474,
+      "count": 0
+    },
+    {
+      "loop": 2891,
+      "count": 0
+    },
+    {
+      "loop": 3048,
+      "count": 0
+    },
+    {
+      "loop": 3581,
+      "count": 0
+    },
+    {
+      "loop": 3773,
+      "count": 0
+    },
+    {
+      "loop": 4281,
+      "count": 0
+    },
+    {
+      "loop": 4427,
+      "count": 0
+    },
+    {
+      "loop": 4890,
+      "count": 0
+    },
+    {
+      "loop": 5047,
+      "count": 0
+    },
+    {
+      "loop": 5617,
+      "count": 0
+    },
+    {
+      "loop": 5890,
+      "count": 0
+    },
+    {
+      "loop": 6774,
+      "count": 1
+    },
+    {
+      "loop": 7046,
+      "count": 0
+    },
+    {
+      "loop": 7525,
+      "count": 1
+    },
+    {
+      "loop": 7769,
+      "count": 0
+    },
+    {
+      "loop": 8538,
+      "count": 0
+    },
+    {
+      "loop": 8840,
+      "count": 0
+    },
+    {
+      "loop": 9565,
+      "count": 0
+    },
+    {
+      "loop": 9838,
+      "count": 0
+    },
+    {
+      "loop": 10535,
+      "count": 0
+    },
+    {
+      "loop": 10782,
+      "count": 0
+    },
+    {
+      "loop": 11329,
+      "count": 0
+    },
+    {
+      "loop": 11478,
+      "count": 1
+    },
+    {
+      "loop": 12235,
+      "count": 1
+    },
+    {
+      "loop": 12534,
+      "count": 0
+    },
+    {
+      "loop": 13151,
+      "count": 1
+    },
+    {
+      "loop": 13454,
+      "count": 0
+    },
+    {
+      "loop": 14211,
+      "count": 0
+    },
+    {
+      "loop": 14452,
+      "count": 0
+    },
+    {
+      "loop": 14891,
+      "count": 0
+    },
+    {
+      "loop": 15091,
+      "count": 1
+    },
+    {
+      "loop": 15617,
+      "count": 0
+    },
+    {
+      "loop": 15842,
+      "count": 0
+    },
+    {
+      "loop": 16283,
+      "count": 2
+    },
+    {
+      "loop": 16459,
+      "count": 1
+    },
+    {
+      "loop": 17197,
+      "count": 2
+    },
+    {
+      "loop": 17460,
+      "count": 1
+    },
+    {
+      "loop": 18055,
+      "count": 2
+    },
+    {
+      "loop": 18353,
+      "count": 1
+    },
+    {
+      "loop": 19112,
+      "count": 1
+    },
+    {
+      "loop": 19378,
+      "count": 1
+    },
+    {
+      "loop": 19974,
+      "count": 2
+    },
+    {
+      "loop": 20239,
+      "count": 0
+    },
+    {
+      "loop": 20967,
+      "count": 0
+    },
+    {
+      "loop": 21223,
+      "count": 0
+    },
+    {
+      "loop": 21855,
+      "count": 0
+    },
+    {
+      "loop": 22191,
+      "count": 0
+    },
+    {
+      "loop": 22876,
+      "count": 0
+    },
+    {
+      "loop": 23030,
+      "count": 0
+    },
+    {
+      "loop": 23516,
+      "count": 0
+    }
+  ],
+  "action_error_count": 0,
+  "interpretation": "Unique Marine appearances are observations, not proven training completions; scripted reinforcements and loading can affect presence. First-to-last sighting is a lower-bound observed span, not a death timestamp. Investment choices alone do not prove execution. No paid calls."
+}
