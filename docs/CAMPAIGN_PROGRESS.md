@@ -4925,3 +4925,19 @@ request errors. Native0:56view shows countdown19:14,armynearCommandCenter and
 4/27worker counter. Separate observation times,not exact synchronized comparison.
 Delivery verified,strategic benefit unproven. Trial continues unchanged;no restart
 or additional paid probes. Updated visible-context document's implementation status.
+
+### Lab339 — timer-enabled trial loses12:28 with2254minerals
+
+Trial337run20260920T025806.548721Z terminated; native defeat confirmed12:28,
+07:41remaining,2254minerals,all structures destroyed.179requests,$0.112554708;
+peak run-only rolling300secondcost$0.064750644,zero budget failures,median planned
+interval23.45seconds. All179paidrequests included mission_context;none had
+unavailable status. Timer delivery works,not a demonstrated strategic solution.
+
+Investments:wait4,Bunker5,Marine2,SCV8,Reactor1,MissileTurret1,SupplyDepot2.
+These are choices,not completed-production counts. Intermediate army reached20
+Marines and economy grew,but both failed to sustain defense;screen11:03showed
+Barracks under heavy attack with2008minerals. No causal claim from a single trial.
+Checkpoint defeat37;only first two campaign missions verified won. No unchanged
+retry. Next investigation should explain resource allocation and action usefulness,
+not add more objective wording without evidence.
