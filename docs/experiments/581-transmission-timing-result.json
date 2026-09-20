@@ -1,0 +1,293 @@
+{
+  "lab": 581,
+  "diagnostic_only": true,
+  "model_calls": 0,
+  "map": "transmission-timing-lab579.SC2Map",
+  "native_visual": {
+    "time": "0:12",
+    "shown": [
+      "FIRST: player one, eight seconds",
+      "SECOND: player one, four seconds"
+    ],
+    "not_seen": "OTHER: player two only"
+  },
+  "samples": [
+    {
+      "sample": 0,
+      "time": "1789914496",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    },
+    {
+      "sample": 1,
+      "time": "1789914496",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    },
+    {
+      "sample": 2,
+      "time": "1789914497",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    },
+    {
+      "sample": 3,
+      "time": "1789914497",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    },
+    {
+      "sample": 4,
+      "time": "1789914497",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    },
+    {
+      "sample": 5,
+      "time": "1789914498",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "0",
+      "player1_active": "1"
+    },
+    {
+      "sample": 6,
+      "time": "1789914498",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "0",
+      "player1_active": "1"
+    },
+    {
+      "sample": 7,
+      "time": "1789914498",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "0",
+      "player1_active": "1"
+    },
+    {
+      "sample": 8,
+      "time": "1789914499",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "0",
+      "player1_active": "1"
+    },
+    {
+      "sample": 9,
+      "time": "1789914499",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 10,
+      "time": "1789914499",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 11,
+      "time": "1789914500",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 12,
+      "time": "1789914500",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 13,
+      "time": "1789914500",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 14,
+      "time": "1789914501",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 15,
+      "time": "1789914501",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 16,
+      "time": "1789914502",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 17,
+      "time": "1789914502",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 18,
+      "time": "1789914502",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 19,
+      "time": "1789914503",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 20,
+      "time": "1789914503",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 21,
+      "time": "1789914503",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 22,
+      "time": "1789914504",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 23,
+      "time": "1789914504",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 24,
+      "time": "1789914504",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 25,
+      "time": "1789914505",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 26,
+      "time": "1789914505",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 27,
+      "time": "1789914505",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "0",
+      "second_complete": "1",
+      "player1_active": "1"
+    },
+    {
+      "sample": 28,
+      "time": "1789914506",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    },
+    {
+      "sample": 29,
+      "time": "1789914506",
+      "player2_active": "0",
+      "other_complete": "1",
+      "first_complete": "1",
+      "second_complete": "1",
+      "player1_active": "0"
+    }
+  ],
+  "limitations": [
+    "Synthetic empty sound links and portrait zero only.",
+    "Player two has no participating client; not a complete multiplayer recipient test.",
+    "Active conversation sound absent from saved bank in this fixture.",
+    "No gameplay bridge enabled; timing with real sound-derived transmissions remains unverified.",
+    "Completion flags before send refer to invalid IDs and cannot establish delivery."
+  ]
+}
