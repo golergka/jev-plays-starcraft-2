@@ -1,0 +1,41 @@
+// Synthetic infrastructure probe only. Never a campaign completion.
+include "TriggerLibs/NativeLib"
+bank ProbeBank;
+int ProbeFirst;
+int ProbeSecond;
+int ProbeOther;
+int ProbeSample;
+
+bool ProbePoll(bool testConds, bool runActions) {
+    string section;
+    if (!runActions) { return true; }
+    section = "Sample" + IntToString(ProbeSample);
+    ProbeSample += 1;
+    BankValueSetFromInt(ProbeBank, section, "time", CurrentSynchronousGameTimeGet());
+    BankValueSetFromFlag(ProbeBank, section, "player1_active", TransmissionPlayerHasActiveTransmission(1));
+    BankValueSetFromFlag(ProbeBank, section, "player2_active", TransmissionPlayerHasActiveTransmission(2));
+    BankValueSetFromFlag(ProbeBank, section, "first_complete", TransmissionIsComplete(ProbeFirst));
+    BankValueSetFromFlag(ProbeBank, section, "second_complete", TransmissionIsComplete(ProbeSecond));
+    BankValueSetFromFlag(ProbeBank, section, "other_complete", TransmissionIsComplete(ProbeOther));
+    BankValueSetFromString(ProbeBank, section, "active_conversation_sound", ConversationDataActiveSound());
+    BankSave(ProbeBank);
+    return true;
+}
+
+bool ProbeSend(bool testConds, bool runActions) {
+    if (!runActions) { return true; }
+    Wait(3.0, c_timeGame);
+    ProbeFirst = TransmissionSend(PlayerGroupSingle(1), TransmissionSource(), 0, "", SoundLink("", 0), StringToText("PROBE"), StringToText("FIRST: player one, eight seconds"), 8.0, c_transmissionDurationSet, false);
+    ProbeSecond = TransmissionSend(PlayerGroupSingle(1), TransmissionSource(), 0, "", SoundLink("", 0), StringToText("PROBE"), StringToText("SECOND: player one, four seconds"), 4.0, c_transmissionDurationSet, false);
+    ProbeOther = TransmissionSend(PlayerGroupSingle(2), TransmissionSource(), 0, "", SoundLink("", 0), StringToText("PROBE"), StringToText("OTHER: player two only"), 6.0, c_transmissionDurationSet, false);
+    Wait(2.0, c_timeGame);
+    TransmissionClear(ProbeSecond);
+    return true;
+}
+
+void InitMap() {
+    libNtve_InitLib();
+    ProbeBank = BankLoad("JevSyntheticTransmissionTiming", 1);
+    TriggerAddEventTimePeriodic(TriggerCreate("ProbePoll"), 0.5, c_timeGame);
+    TriggerAddEventMapInit(TriggerCreate("ProbeSend"));
+}
