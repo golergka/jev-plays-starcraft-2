@@ -1,0 +1,31 @@
+{
+  "lab": 575,
+  "trial": 574,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T165439.598500Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789913226",
+      "loop": 16636
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 234,
+    "cost": 0.1455371400000001,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T165439.598500Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "17:19",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at 16:23"
+    }
+  },
+  "interpretation": "Opaque action aliases decoded and executed, but repeated east waypoint orders and rebuilding did not produce mission completion. Seeded permutation was also removed, preventing isolated causal attribution to aliasing."
+}
