@@ -6158,3 +6158,18 @@ This doesnotdemonstrate risk-sensitivecontrol or better survival. Fixed callorde
 addedcontext and responsevariationconfound changes. No deploymentoftripleddecision
 calls. Recordnegative result rather than bolt cost onto livebot. Campaign remains
 three verified missions won, elevenSmashdefeats, and no currentlivecontroller.
+
+### Lab418 — pairing nearest enemies with weapons leaves choices unchanged
+
+Catalog weapons alreadyavailable; testdistinctfrom348type-distanceScoretable:
+perMobileCombatmembernearestvisibleEnemy with center distance, observedhealth and
+both existingcatalogweaponlists besideeachother. Explicitnearest≠greatestthreat,
+range≠attacklegality, emptyweapons≠harmless. No hiddenfacts or tacticalrecommendation.
+First/middle/last of four eligible414concretecombatrequests with enemywithin12;
+fullstate/questions retained,alternatearms. Sixcalls $0.006286644. Allthreepairs
+identical: attackmovemiddleeast,MoveProtossRelic,MoveProtossRelic. No deployment.
+
+Adds another negative factualpresentation result, notproofall representations
+fail. No survival/performance measurement or calibrated threat inference. Avoid
+spendinganotherlivetrial on this unchangedpolicy. Furtherprogress likelyrequires
+a different decision/execution abstraction, not more repeated catalog text.
