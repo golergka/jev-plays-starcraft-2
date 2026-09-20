@@ -4461,3 +4461,17 @@ ending detection on same SC2 process. No campaign advancement. Timing text299
 and player feedback301 were live reloaded; old collector still ran throughout.
 Delayed invalid-location error expired unseen, fixed301 for next process.
 Retry same mission with301collector active from opening, unchanged budget.
+
+### Lab304 — attribute request spending before changing control rate
+
+Report script now groups whole successful requests by recognizable decision stage,
+reporting counts,cost,mean serialized state/question characters and latency. No
+per-question cost allocation invented; character counts are not tokens and parallel
+latencies cannot be summed into wall time. Concrete/other is a residual category.
+
+Trial298 replay:178requests reconcile exactly. Concrete/other84calls,$0.063357168
+of$0.104693946 (~60.5%), mean29091.6statechars/14015.4questionchars. Strategy21calls,
+$0.009513630 (~9.1%). Investment31calls,$0.014500836. Contribution25calls,$0.011154990.
+Producer13calls,$0.005013792;navigation4calls,$0.001153530. Main cost target is
+concrete requests and repeated context, not strategic review alone. No gameplay
+change or paid probe introduced. Active302trial continues.

@@ -10,6 +10,31 @@ from pathlib import Path
 path = Path(sys.argv[1]) if len(sys.argv)>1 else max(Path('runs').glob('*/events.jsonl'),key=lambda p:p.stat().st_mtime)
 rows = [json.loads(line) for line in path.read_text().splitlines()]
 calls = [r for r in rows if r['event']=='jev']
+# Attribute each whole paid request once; shared context makes per-question
+# cost attribution unknowable from the provider's aggregate usage record.
+request_stages = {}
+for call in calls:
+    keys = set(call['questions'])
+    if 'strategy' in keys:
+        stage = 'strategy_and_coordination'
+    elif keys and all(k.startswith('purpose_') for k in keys):
+        stage = 'contribution_roles'
+    elif keys in ({'investment'}, {'producer_site'}, {'navigation'}, {'spending'}):
+        stage = next(iter(keys))
+    else:
+        stage = 'concrete_orders_and_other'
+    item = request_stages.setdefault(stage, {'calls':0,'cost_usd':0,
+        'state_chars':0,'question_chars':0,'latency_ms_sum':0})
+    item['calls'] += 1
+    item['cost_usd'] += call['response']['usage'].get('cost',0) or 0
+    item['state_chars'] += len(json.dumps(call['state']))
+    item['question_chars'] += len(json.dumps(call['questions']))
+    item['latency_ms_sum'] += call['latency_ms']
+for item in request_stages.values():
+    item['cost_usd'] = round(item['cost_usd'],9)
+    for key in ('state_chars','question_chars','latency_ms_sum'):
+        item['mean_'+key.removesuffix('_sum')] = round(item.pop(key)/item['calls'],1)
+
 spend_window = collections.deque()
 window_cost = peak_window_cost = 0.0
 for call in sorted(calls, key=lambda r:r['time']):
@@ -55,6 +80,8 @@ def distribution(tick):
                        for selected in [[u for u in units if u['type']==kind]]}}
 print(json.dumps({
     'run':str(path), 'calls':len(calls),
+    'request_stages':request_stages,
+    'request_stage_scope':'Whole successful requests, no per-question cost allocation. Character counts are serialized log payload sizes, not tokens. Latency sums may overlap concurrent calls.',
     'spend_governor': {
         'scope':'This run only; excludes other runs/probes and unresolved reservations. Shared admission uses the SQLite ledger.',
         'peak_actual_usd_in_any_300_seconds':round(peak_window_cost,9),
