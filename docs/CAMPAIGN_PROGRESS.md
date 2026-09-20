@@ -5120,3 +5120,19 @@ distance/force-targetnegativeprobes,andverifiedrestartmemoryfix. Recompute38nati
 verifiedZeroHourdefeatresultcosts:$7.221843048,explicitlynotaccounttotal. Onlyfirsttwo
 missions verifiedwon; no allcampaignclaim. Native350trialscreen4:35stillactive,
 15:34evacuationremaining. No policychange or additionalmodelprobe.
+
+### Lab353 — restored episode history reaches Jev; trial loses at14:39
+
+350run20260920T033800.011509Z ended normally. NativeUI independentlyconfirms
+ZeroHourdefeat14:39,05:30evacuationremaining,1344minerals.39thverifiedZeroHourloss;
+onlyLiberationDay/Outlawsverifiedwon.207successfulcalls,$0.131432826. Bothprior
+attemptsummaries reachedall40strategy/investmentrequests. FourSCVbatches,twoMarine
+batches;12backgroundtrainingrequests allengineSuccess,notproof ofcompletedunits.
+Two late CantBuildLocationInvalid errors. Screens showed bridgefighting,force
+attrition,thenworkersrepairing surroundedcommandcenterbeforeallstructureslost.
+
+This lasts2:11longerthan337defaultChoicewithoutloadedepisodes,and1:52longerthan344
+scoredorders,but cannotisolatehistorybenefit:stochasticinvestment and changedprior
+context preventcausalclaim. Memoryintegration isfixed; effectivelearning remains
+unproven. Checkpoint/resultverified; compactartifact353preservescost/historyevidence.
+No unchangedretry or rootissuedtactics. Allthreecampaignsremainincomplete.

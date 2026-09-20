@@ -1,0 +1,109 @@
+{
+  "source": "runs/20260920T033800.011509Z/events.jsonl",
+  "ui_verification": {
+    "time": 1789876198.184049,
+    "verification": "native SC2 screenshot via cua",
+    "mission": "Zero Hour",
+    "result": "defeat",
+    "mission_time": "14:39",
+    "evacuation_remaining": "05:30",
+    "reason": "All of your structures have been destroyed.",
+    "minerals": 1344
+  },
+  "summary": {
+    "calls": 207,
+    "cost_usd": 0.131432826,
+    "episode_history_delivery": {
+      "loaded_attempts": 2,
+      "strategy_and_investment_requests": 40,
+      "requests_with_history": 40,
+      "received_attempt_counts": {
+        "2": 40
+      },
+      "note": "Successful request payloads prove transmission, not that Jev used the history or learned from it."
+    },
+    "training_batch_types": {
+      "SCV": 4,
+      "Marine": 2
+    },
+    "automatic_training_requests": 12,
+    "automatic_training_engine_results": {
+      "Success": 12
+    },
+    "errors": [
+      {
+        "time": 1789876078.9071832,
+        "event": "engine_action_error",
+        "loop": 12520,
+        "failures": [
+          {
+            "ability_id": 558,
+            "unit_tags": [
+              4298113025
+            ],
+            "result": "CantBuildLocationInvalid"
+          }
+        ]
+      },
+      {
+        "time": 1789876109.577794,
+        "event": "engine_action_error",
+        "loop": 13147,
+        "failures": [
+          {
+            "ability_id": 558,
+            "unit_tags": [
+              4298113025
+            ],
+            "result": "CantBuildLocationInvalid"
+          }
+        ]
+      }
+    ],
+    "request_stages": {
+      "strategy_and_coordination": {
+        "calls": 14,
+        "cost_usd": 0.007737744,
+        "mean_state_chars": 32926.7,
+        "mean_question_chars": 3029.0,
+        "mean_latency_ms": 561.6
+      },
+      "investment": {
+        "calls": 26,
+        "cost_usd": 0.012741456,
+        "mean_state_chars": 23173.2,
+        "mean_question_chars": 10669.4,
+        "mean_latency_ms": 606.8
+      },
+      "contribution_roles": {
+        "calls": 24,
+        "cost_usd": 0.014059836,
+        "mean_state_chars": 30270.9,
+        "mean_question_chars": 10881.2,
+        "mean_latency_ms": 635.7
+      },
+      "concrete_orders_and_other": {
+        "calls": 122,
+        "cost_usd": 0.08747949,
+        "mean_state_chars": 25292.4,
+        "mean_question_chars": 15492.7,
+        "mean_latency_ms": 593.5
+      },
+      "navigation": {
+        "calls": 10,
+        "cost_usd": 0.003580374,
+        "mean_state_chars": 15185.8,
+        "mean_question_chars": 825.8,
+        "mean_latency_ms": 411.4
+      },
+      "producer_site": {
+        "calls": 11,
+        "cost_usd": 0.005833926,
+        "mean_state_chars": 16083.0,
+        "mean_question_chars": 8038.0,
+        "mean_latency_ms": 519.9
+      }
+    }
+  },
+  "conclusion": "History delivery verified. Single trial lost; longer survival does not isolate a history benefit."
+}
