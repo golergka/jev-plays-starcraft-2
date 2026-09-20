@@ -6724,3 +6724,16 @@ Firstintentionrequest contains historical Marine/Medic/SCV facts.13calls
 $.006165642 atinitialcheck. Retention afterproducerloss and usefulpurchases not
 yet tested. Cap$.10/300s unchanged;17priorSmashdefeats. Followthissession and
 /tmp/jev-smash-and-grab-lab460.log; no duplicatecontroller or tacticaloverride.
+
+### Lab461 — production goals retained, but no successful recovery
+
+Trial460/run20260920T110319.423869Z/session14667 terminalexit0; native9:09
+allstructuresdestroyed,1/4relics,0minerals50gas.139calls $0.078667134,noerrors.
+At3540 currentcatalog lacksMarine/Marauder/Medic but allthree remain in goal
+questions, Jev choosesExpand, and goals reach investmentrequests. This verifies
+459's contextretention, not successful goal execution. TwoBarracks observedearly,
+then lost; subsequent worker/repair allocation failed to rebuild military before
+CommandCenter destroyed8:01. Nativeending independentlyverified; result/checkpoint
+18thSmashdefeat/report reconciled. No rootorders or midrunpolicychanges. No
+causal claim from shorter duration. Next focus goal-to-prerequisite/purchase
+reasoning, not another unchanged retry or further restatement of known goals.

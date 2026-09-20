@@ -1,0 +1,109 @@
+{
+  "trial": 460,
+  "run": "runs/20260920T110319.423869Z",
+  "calls": 139,
+  "cost_usd": 0.078667134,
+  "ui_verification": {
+    "time": 1789902662.95028,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "9:09",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "1/4",
+    "minerals": 0,
+    "vespene": 50
+  },
+  "decision_errors": 0,
+  "retention_evidence": [
+    {
+      "loop": 46,
+      "types_absent_from_current_catalog": [],
+      "questions": [
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 3. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 1. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 5. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 1532,
+      "types_absent_from_current_catalog": [],
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 4. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 1. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 2821,
+      "types_absent_from_current_catalog": [
+        "Medic",
+        "Marauder"
+      ],
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 1. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 3540,
+      "types_absent_from_current_catalog": [
+        "Marine",
+        "Medic",
+        "Marauder"
+      ],
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 4737,
+      "types_absent_from_current_catalog": [
+        "Marine",
+        "Medic",
+        "Marauder"
+      ],
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 5. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 4882,
+      "types_absent_from_current_catalog": [
+        "Marine",
+        "Medic",
+        "Marauder"
+      ],
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 5. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 6953,
+      "types_absent_from_current_catalog": [
+        "Marine",
+        "Medic",
+        "Marauder"
+      ],
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 9. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    }
+  ],
+  "limits": "Single trial; confirms retained goal availability, not beneficial allocation or causal effect on survival. No root tactical commands or midrun policy edits."
+}
