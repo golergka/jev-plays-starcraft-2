@@ -1,0 +1,113 @@
+{
+  "lab": 562,
+  "source": "runs/20260920T155715.144395Z/events.jsonl",
+  "hypothesis": "Single-unit support selection may consume mixed-cohort review while others retain stale orders.",
+  "interface_finding": "Support candidate descriptions explicitly say other units keep current orders. Jev can choose individual decisions or other grouping modes.",
+  "answers": [
+    {
+      "loop": 47,
+      "choice": "group_west",
+      "current_orders": {}
+    },
+    {
+      "loop": 463,
+      "choice": "group_map_attack_move_middle_east",
+      "current_orders": {}
+    },
+    {
+      "loop": 740,
+      "choice": "group_map_attack_move_middle_east",
+      "current_orders": {
+        "Attack Attack": 6,
+        "Effect MedicHeal": 1,
+        "Scan Move": 1
+      }
+    },
+    {
+      "loop": 1245,
+      "choice": "group_map_move_middle_east",
+      "current_orders": {
+        "Transport MedivacUnloadAll": 1
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "individual",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "group_attack_4366008321",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "group_attack_move_east",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "group_map_move_middle_east",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "individual",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "group_map_move_middle_east",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 1557,
+      "choice": "group_map_move_middle_east",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 3
+      }
+    },
+    {
+      "loop": 3863,
+      "choice": "group_attack_4364435457",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 1
+      }
+    },
+    {
+      "loop": 6831,
+      "choice": "group_attack_4348444708",
+      "current_orders": {
+        "Attack Attack": 1,
+        "Move Move": 1
+      }
+    },
+    {
+      "loop": 11848,
+      "choice": "group_map_move_middle_east",
+      "current_orders": {}
+    }
+  ],
+  "finding": "No logged MobileCombat answer selected support in trial559. This mechanism does not explain that trial. Multiple answers at1557 include individual subdecisions and are not separate global review times.",
+  "decision": "No grouping patch and no paid probe on this evidence. Earlier lab447 weapon-subgroup probe was also negative."
+}
