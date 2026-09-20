@@ -6064,3 +6064,19 @@ pathing can routearoundterrain. Next probe should examine whether local factual
 context helps concretecombat selection too, rather than repeat roleallocation or
 hardcode a route. Lab348type-distanceSummary alreadynegative on threeScorestates;
 this would need a distinct fullChoice/localfacts comparison, not assume success.
+
+### Lab412 — local facts do not change opening concrete combat choices
+
+Paired firstthree407requests containingMobileCombat, full original state and
+questionbatch. Treatment repeats each selection's factual record beside its
+concrete question, as406/407did forroles; noactionfiltering/tacticalinstructions.
+Sixcalls $0.005187714. Allthreecombatpairs identical: groupwest, mapAttackMove
+middleeast, mapAttackMove middleeast. Historical live335was ordinaryMove whereas
+bothprobe armsAttackMove, so historicalvariation cannotbecreditedtotreatment.
+Workercontinue choices differ in secondpair; not combatpreservation evidence.
+
+No deployment of extra concretequestiontokens, no newgame. This negative result
+limits extrapolation from rolelocalfacts success. Context alreadycontains nearby
+threats and groupdispersion; simply repeatingthem didnotchange chosenroute here.
+Next examine action abstractions and trajectory feedback, consulting prior
+negative fullmenu, distance-summary and disappearance probes before spending.
