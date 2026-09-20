@@ -4299,3 +4299,21 @@ Current run is now a mixed-policy cost experiment, not a clean outcome compariso
 Longer672loop role retention remains. A future alternative needs compact mechanical
 choices or a targeted menu representation before another full direct-menu trial;
 do not repeat this naive flattening as if untested.
+
+### Lab292 — mixed-policy defeat17:23; delayed errors delivered live
+
+Run20260920T003943.756931Z/session10118 terminal; native DEFEAT17:23,
+evacuation02:46,1155minerals,all structures destroyed.224successful calls cost
+$0.153273162. Saved UI verification/result/checkpoint with mixed-policy note:
+first two cycles direct economic menus, then rollback. Postrollback costs fell to
+$0.006073/$0.004675/$0.004197 (30.4/23.4/21.0seconds).17:23 survival cannot be
+assigned to either interface. Eight miners/1345minerals at11:32 became no army
+and2026minerals at14:10; repeated savings decisions despite available purchases.
+
+No decision/budget errors. Immediate209x2,28x1; delayed errors at14766/16340
+ability558 CantBuildLocationInvalid and14854 ability324 BuildTechRequirementsNotMet.
+Ten later Jev requests contain delayed feedback, verifying lab283 delivery live.
+Not proof that the feedback improved decisions. One displayed action label includes
+an earlier candidate's site despite no target attribution being available; remove
+that misleading precision in a future feedback fix rather than invent a target.
+Only two opening missions remain verified won. Controller stopped normally.
