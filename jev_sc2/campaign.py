@@ -10,6 +10,11 @@ from .__main__ import ROOT, run
 from .spend import SpendThrottled
 
 
+PLAYER_SWITCHES = ('contribution_top_choice', 'event_reviews', 'production_intentions',
+                   'bottleneck_diagnosis', 'stalled_commitment_review',
+                   'investment_top_choice', 'preserve_current_orders')
+
+
 def save_progress(path, progress):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.tmp')
@@ -19,7 +24,12 @@ def save_progress(path, progress):
 
 async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                        seconds_per_attempt=600, max_attempts=3, port=5001,
-                       follow_camera=False, resume_current=False, retry_stalls=False, max_age_loops=32, api_bookmark_recovery=False, mission_runner=run):
+                       follow_camera=False, resume_current=False, retry_stalls=False, max_age_loops=32, api_bookmark_recovery=False, player_options=None, mission_runner=run):
+    player_options = dict(player_options or {})
+    if set(player_options) - set(PLAYER_SWITCHES):
+        raise ValueError('Unknown player options')
+    if any(type(value) is not bool for value in player_options.values()):
+        raise ValueError('Player switches must be booleans')
     manifest_path, state_path = Path(manifest_path), Path(state_path)
     payload = manifest_path.read_bytes()
     manifest = json.loads(payload)
@@ -63,7 +73,7 @@ async def run_sequence(manifest_path, state_path, *, call_budget=1000,
                 opponent=False, race=mission['race'], objective=mission['objective'],
                 port=port, seconds=seconds_per_attempt, max_calls=remaining,
                 follow_camera=follow_camera, max_age_loops=max_age_loops, interval=.35,
-                api_bookmark_recovery=api_bookmark_recovery)
+                api_bookmark_recovery=api_bookmark_recovery, **player_options)
             progress.update(status='running',current_mission=mission['id'])
             progress.pop('reason',None)
             save_progress(state_path, progress)
@@ -126,10 +136,14 @@ def main():
     parser.add_argument('--follow-camera',action='store_true')
     parser.add_argument('--retry-stalls',action='store_true',help='Bounded restart of the current map after clock stalls; records unknown outcome, never advances it')
     parser.add_argument('--resume-current',action='store_true',help='Continue the checkpointed incomplete game after verifying its map')
+    for switch in PLAYER_SWITCHES:
+        parser.add_argument('--'+switch.replace('_','-'), action='store_true',
+                            help='Forward this player switch to every mission attempt')
     args = parser.parse_args()
     result = asyncio.run(run_sequence(args.manifest,args.state,
         call_budget=args.call_budget,seconds_per_attempt=args.seconds_per_attempt,
-        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current,retry_stalls=args.retry_stalls,max_age_loops=args.max_age_loops,api_bookmark_recovery=args.api_bookmark_recovery))
+        max_attempts=args.max_attempts,port=args.port,follow_camera=args.follow_camera,resume_current=args.resume_current,retry_stalls=args.retry_stalls,max_age_loops=args.max_age_loops,api_bookmark_recovery=args.api_bookmark_recovery,
+        player_options={name:getattr(args,name) for name in PLAYER_SWITCHES}))
     print(json.dumps(result,indent=2))
     if result.get('status')=='needs_attention':
         raise SystemExit(2)

@@ -217,3 +217,23 @@ def test_campaign_cli_attention_is_nonzero(monkeypatch,capsys):
     with pytest.raises(SystemExit) as error:campaign.main()
     assert error.value.code==2
     assert 'SpendThrottled' in capsys.readouterr().out
+
+
+def test_player_switches_survive_retry_and_mission_transition(tmp_path):
+    seen=[]
+    results=iter(['defeat','victory','victory'])
+    async def mission(args):
+        seen.append((args.event_reviews,args.preserve_current_orders,args.investment_top_choice))
+        return {'status':next(results),'calls':1}
+    result=asyncio.run(run_sequence(manifest(tmp_path),tmp_path/'progress.json',
+        player_options={'event_reviews':True,'preserve_current_orders':True,
+                        'investment_top_choice':False},mission_runner=mission))
+    assert result['status']=='sequence_complete'
+    assert seen==[(True,True,False)]*3
+
+def test_player_options_cannot_override_mission_or_budget(tmp_path):
+    import pytest
+    for options in ({'map':'other.SC2Map'},{'max_calls':999},{'event_reviews':'false'}):
+        with pytest.raises(ValueError):
+            asyncio.run(run_sequence(manifest(tmp_path),tmp_path/'progress.json',
+                                     player_options=options))
