@@ -1,0 +1,83 @@
+{
+  "source": "runs/20260920T152404.859491Z/events.jsonl",
+  "samples": [
+    {
+      "loop": 10104,
+      "worker_first_orders": {
+        "Harvest Gather SCV": 3,
+        "Effect Repair SCV": 4
+      },
+      "resources": {
+        "minerals": 10,
+        "vespene": 0,
+        "estimated_minerals_per_minute": 160.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 7,
+        "food_cap": 11,
+        "supply_in_construction": 0,
+        "supply_remaining": 4,
+        "supply_blocked": false
+      },
+      "counter_changes": {
+        "collected_minerals": 95.0,
+        "collected_vespene": 0.0,
+        "spent_minerals": 0.0,
+        "spent_vespene": 0.0
+      }
+    },
+    {
+      "loop": 15266,
+      "worker_first_orders": {
+        "Effect Repair SCV": 4,
+        "Harvest Gather SCV": 3
+      },
+      "resources": {
+        "minerals": 5,
+        "vespene": 0,
+        "estimated_minerals_per_minute": 140.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 7,
+        "food_cap": 11,
+        "supply_in_construction": 0,
+        "supply_remaining": 4,
+        "supply_blocked": false
+      },
+      "counter_changes": {
+        "collected_minerals": 100.0,
+        "collected_vespene": 0.0,
+        "spent_minerals": 0.0,
+        "spent_vespene": 0.0
+      }
+    },
+    {
+      "loop": 20872,
+      "worker_first_orders": {
+        "Effect Repair SCV": 2,
+        "Harvest Return SCV": 2
+      },
+      "resources": {
+        "minerals": 117,
+        "vespene": 0,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 4,
+        "food_cap": 0,
+        "supply_in_construction": 0,
+        "supply_remaining": 0,
+        "supply_blocked": true
+      },
+      "counter_changes": {
+        "collected_minerals": 60.0,
+        "collected_vespene": 0.0,
+        "spent_minerals": 50.0,
+        "spent_vespene": 0.0
+      }
+    }
+  ],
+  "prior_evidence": [
+    "lab188: independent workers restored harvesting in its historical run",
+    "lab246: joint worker allocation probe did not justify deployment",
+    "lab388: peer-choice context did not change sampled top roles"
+  ],
+  "conclusion": "Repeated repair/income split is observable, but independent grouping alone is not an established cause. No grouping rollback or additional paid probe made. Resource counter deltas do not isolate repair costs. These late states follow early army loss, so repairing late may be a consequence rather than its cause."
+}
