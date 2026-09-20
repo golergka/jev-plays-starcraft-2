@@ -1,0 +1,263 @@
+{
+  "source": "runs/20260920T125822.620646Z/events.jsonl",
+  "barracks_observations": [
+    {
+      "loop": 48,
+      "tag": 4313055233,
+      "orders": []
+    },
+    {
+      "loop": 482,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.897,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 914,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.87,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 1402,
+      "tag": 4313055233,
+      "orders": []
+    },
+    {
+      "loop": 1677,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marauder",
+          "progress": 0.423,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 2477,
+      "tag": 4313055233,
+      "orders": []
+    },
+    {
+      "loop": 2773,
+      "tag": 4313055233,
+      "orders": []
+    },
+    {
+      "loop": 3496,
+      "tag": 4313055233,
+      "orders": []
+    },
+    {
+      "loop": 3894,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marauder",
+          "progress": 0.715,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 4040,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.025,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 4187,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.392,
+          "target_tag": null,
+          "target_point": null
+        },
+        {
+          "ability": "Train Marine",
+          "progress": 0.0,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 4824,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.988,
+          "target_tag": null,
+          "target_point": null
+        },
+        {
+          "ability": "Train Marine",
+          "progress": 0.0,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 4959,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.327,
+          "target_tag": null,
+          "target_point": null
+        },
+        {
+          "ability": "Train Marine",
+          "progress": 0.0,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 5432,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.512,
+          "target_tag": null,
+          "target_point": null
+        },
+        {
+          "ability": "Train Marine",
+          "progress": 0.0,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 5666,
+      "tag": 4313055233,
+      "orders": [
+        {
+          "ability": "Train Marine",
+          "progress": 0.1,
+          "target_tag": null,
+          "target_point": null
+        }
+      ]
+    },
+    {
+      "loop": 6641,
+      "tag": 4346609697,
+      "orders": []
+    }
+  ],
+  "marine_first_observed": {
+    "4324065281": 48,
+    "4324327425": 48,
+    "4362862593": 48,
+    "4391960578": 914,
+    "4328259588": 1402,
+    "4349231110": 1402,
+    "4328521736": 5666
+  },
+  "marine_requests": [
+    {
+      "loop": 48,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 482,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 914,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 3894,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 4040,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 4187,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 4824,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 4959,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    },
+    {
+      "loop": 5666,
+      "ability_id": 560,
+      "unit_tags": [
+        4313055233
+      ],
+      "result": "Success"
+    }
+  ],
+  "limits": "Sparse observations; first appearance alone does not prove origin and disappearance does not prove death. Queue progress and multiple queued entries contradict a blanket claim that every repeated training command resets production."
+}
