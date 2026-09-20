@@ -11,6 +11,7 @@ import math
 import random
 import re
 from collections import Counter
+from jev_sc2.cadence import measured_cadence
 
 
 def recent_outcomes(view, memory, window=672):
@@ -802,7 +803,9 @@ async def decide(view, jev, memory):
             'recover':'Restore income and replace losses.',
             'continue_operations':'Let current tasks progress before changing commitment.',
         }
+        cadence = measured_cadence(memory.get('action_feedback', []), view['loop'])
         decision = await jev.ask({**control_state(state),'previous_strategy':strategy,
+            **({'measured_decision_cadence':cadence} if cadence else {}),
             **({'previous_attempts':memory['previous_attempts']} if memory.get('previous_attempts') else {})}, {'strategy': {
             'type':'choice',
             'instructions':'Choose the current strategic priority for completing the mission. '

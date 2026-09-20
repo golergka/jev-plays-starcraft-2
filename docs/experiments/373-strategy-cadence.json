@@ -1,0 +1,338 @@
+{
+  "source": "runs/20260920T043601.934772Z/events.jsonl",
+  "method": "First/middle/last eligible strategic requests. Identical complete strategic question batch; add only trailing observed cadence and computed interval ratios. Alternate arm order; six calls maximum, no game commands.",
+  "pairs": [
+    {
+      "time": 1789879043.906494,
+      "cadence": {
+        "recent_completed_decision_gaps_game_loops": [
+          473,
+          629
+        ],
+        "median_gap_game_loops": 551.0,
+        "review_intervals_relative_to_observed_median": {
+          "112": 0.2,
+          "672": 1.22,
+          "2016": 3.66
+        },
+        "meaning": "Past measured controller cadence, not future timing or a recommended interval. Review deadlines are checked at decision boundaries; a deadline shorter than a decision gap can expire before the next opportunity to review. Concrete orders and investments still use fresh observations when decisions run."
+      },
+      "original": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.57,
+          "probabilities": {
+            "strengthen": 0.16,
+            "recover": 0.03,
+            "protect": 0.64,
+            "attack": 0.01,
+            "continue_operations": 0.03,
+            "assemble": 0.13,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.64,
+          "probabilities": {
+            "medium": 0.21,
+            "long": 0.03,
+            "soon": 0.76
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "medium": 0.38,
+            "long": 0.03,
+            "soon": 0.59
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.33,
+          "probabilities": {
+            "mobile_combat": 0.3,
+            "by_current_order": 0.15,
+            "by_type": 0.55
+          }
+        }
+      },
+      "with_cadence": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.6,
+          "probabilities": {
+            "strengthen": 0.15,
+            "recover": 0.03,
+            "assemble": 0.12,
+            "attack": 0.01,
+            "protect": 0.65,
+            "continue_operations": 0.04,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "long": 0.04,
+            "medium": 0.54,
+            "soon": 0.42
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "long": 0.05,
+            "medium": 0.68,
+            "soon": 0.26
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "mobile_combat": 0.35,
+            "by_current_order": 0.18,
+            "by_type": 0.47
+          }
+        }
+      }
+    },
+    {
+      "time": 1789879388.21425,
+      "cadence": {
+        "recent_completed_decision_gaps_game_loops": [
+          504,
+          444,
+          441,
+          584,
+          474
+        ],
+        "median_gap_game_loops": 474,
+        "review_intervals_relative_to_observed_median": {
+          "112": 0.24,
+          "672": 1.42,
+          "2016": 4.25
+        },
+        "meaning": "Past measured controller cadence, not future timing or a recommended interval. Review deadlines are checked at decision boundaries; a deadline shorter than a decision gap can expire before the next opportunity to review. Concrete orders and investments still use fresh observations when decisions run."
+      },
+      "with_cadence": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "protect": 0.61,
+            "attack": 0.03,
+            "continue_operations": 0.05,
+            "explore": 0.01,
+            "assemble": 0.07,
+            "strengthen": 0.19,
+            "recover": 0.04
+          }
+        },
+        "strategy_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "soon": 0.45,
+            "long": 0.03,
+            "medium": 0.52
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.55,
+          "probabilities": {
+            "soon": 0.25,
+            "long": 0.05,
+            "medium": 0.7
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "by_type": 0.48,
+            "by_current_order": 0.18,
+            "mobile_combat": 0.34
+          }
+        }
+      },
+      "original": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.49,
+          "probabilities": {
+            "assemble": 0.07,
+            "attack": 0.05,
+            "continue_operations": 0.04,
+            "protect": 0.57,
+            "strengthen": 0.21,
+            "recover": 0.05,
+            "explore": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.64,
+          "probabilities": {
+            "long": 0.03,
+            "soon": 0.76,
+            "medium": 0.21
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.45,
+          "probabilities": {
+            "long": 0.03,
+            "soon": 0.63,
+            "medium": 0.34
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "by_type": 0.43,
+            "mobile_combat": 0.35,
+            "by_current_order": 0.22
+          }
+        }
+      }
+    },
+    {
+      "time": 1789879818.3015249,
+      "cadence": {
+        "recent_completed_decision_gaps_game_loops": [
+          576,
+          575,
+          624,
+          508,
+          602
+        ],
+        "median_gap_game_loops": 576,
+        "review_intervals_relative_to_observed_median": {
+          "112": 0.19,
+          "672": 1.17,
+          "2016": 3.5
+        },
+        "meaning": "Past measured controller cadence, not future timing or a recommended interval. Review deadlines are checked at decision boundaries; a deadline shorter than a decision gap can expire before the next opportunity to review. Concrete orders and investments still use fresh observations when decisions run."
+      },
+      "original": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.63,
+          "probabilities": {
+            "strengthen": 0.14,
+            "attack": 0.02,
+            "continue_operations": 0.01,
+            "assemble": 0.03,
+            "protect": 0.69,
+            "recover": 0.11,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.74,
+          "probabilities": {
+            "soon": 0.83,
+            "medium": 0.15,
+            "long": 0.02
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "soon": 0.59,
+            "medium": 0.37,
+            "long": 0.04
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "by_type": 0.45999999999999996,
+            "by_current_order": 0.17,
+            "mobile_combat": 0.37
+          }
+        }
+      },
+      "with_cadence": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.57,
+          "probabilities": {
+            "recover": 0.14,
+            "assemble": 0.03,
+            "strengthen": 0.16,
+            "continue_operations": 0.01,
+            "explore": 0.0,
+            "attack": 0.03,
+            "protect": 0.63
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "soon": 0.55,
+            "medium": 0.42,
+            "long": 0.03
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.57,
+          "probabilities": {
+            "soon": 0.25,
+            "medium": 0.71,
+            "long": 0.04
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.15,
+          "probabilities": {
+            "by_type": 0.43,
+            "by_current_order": 0.18,
+            "mobile_combat": 0.39
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0036571079999999996
+}

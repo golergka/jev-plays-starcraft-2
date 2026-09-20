@@ -5396,3 +5396,30 @@ combat-menu savings did NOT establish whole-run speed or dollar savings. Differe
 surviving rosters and noncombat calls change workload. Keep measured55% paired
 menu saving scoped to those three menus. Do not rerun unchanged based merely on
 being one minute short; next experiment must address a distinct general issue.
+
+### Lab373 — measured cadence changes Jev's review choices in recorded states
+
+Trial371 audit:36of36 strategy reviews selected112loops; role review selected
+112in30cases and672in6. Whole-request costs:strategy$0.023903,
+contributions$0.026244,investment$0.020289,concrete/other$0.085434. A local menu
+optimization cannot alone eliminate this workload. Earlier315tested measured
+cadence for investment,not review choices; do not confuse the hypotheses.
+
+Six-call paired strategic-batch probe costs$0.003657108. First/middle/last eligible
+requests with three or more prior completed ticks. Add trailing loop gaps,median,
+and computed112/672/2016-to-median ratios; no future samples or recommendation.
+Both arms preserve all questions and existing state; alternate arm order.
+Baseline chooses soon/soon in all3(strategy/role review). Cadence chooses
+medium/medium in2,soon/medium in1. All keep protect/by_type. This supports a
+bounded live trial,not a claim of learned budgeting or better defense.
+
+### Lab374 — provide measured review timing without imposing deadlines
+
+Strategic request now includes measured cadence derived from the framework's last
+six completed decision feedback entries. Require at least3,strictly increasing
+loops older than current observation; omit on insufficient,duplicate or rewound
+history. Same payload as373verified against all3probe samples. No new inference,
+forced interval,role assignment,tactic,or budget change.197tests pass including
+history bound,arithmetic and invalid-time cases. Initial test collection found the
+new module mistakenly at repository root; moved into package and reran all tests.
+Next live trial measures selected intervals,request cadence,cost and outcome.
