@@ -1061,6 +1061,10 @@ async def decide(view, jev, memory):
                     concrete_questions[kind]={**q,'criteria':criteria,
                                               'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
         if concrete_questions:
+            if memory.get('order_families_enabled'):
+                from jev_sc2.order_families import select_families
+                eligible = {k:q for k,q in concrete_questions.items() if k in direct_selections}
+                concrete_questions.update(await select_families(order_state(state),eligible,jev))
             if memory.get('order_scoring_enabled'):
                 from jev_sc2.order_scores import rate_order_kinds
                 scored = {k:q for k,q in concrete_questions.items() if k in direct_selections}

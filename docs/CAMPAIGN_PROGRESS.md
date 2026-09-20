@@ -6592,3 +6592,18 @@ This is a changed choice, not demonstrated better tactics or survival; anchor
 could itself be unsafe. No live deployment yet. Next validate classification
 against all offered controls and use optional live trial if mechanically sound,
 rather than repeat more context-only probes. Extra serial call has pacing cost.
+
+### Lab450 — optional Jev order-family controller implemented
+
+--order-families enables family Choice for direct mobile order selections before
+existing concrete Choice. Friendly Move/attack-move share regroup; support and
+unknown abilities remain explicit; every original option/description preserved
+within its family. Jev selects family and exact command, no code-chosen tactic.
+Single-family menus avoid extra call; invalid family raisesValueError loudly.
+Same SDK/governor, no extra spending allowance.219tests pass, including exact
+partition conservation, input immutability, invalid response and singleton path.
+Not enabled by default; no paid calls/live mission this turn. Next bounded trial
+should add --order-families to440 settings, inspect visual behavior and measured
+pacing, and reconcile native outcome. Do not combine with order-scoring mode in
+this trial because it would confound the comparison. Unknown options use other
+rather than449 probe's fallbackMove, a conservative classification correction.
