@@ -6368,3 +6368,16 @@ orders or policy changes during trial. Reconciled nativeUI/result/checkpoint
 and public report.14Smashdefeats, only firstthree missions won. No unchanged
 retry justified. Next work should change decision formulation materially,
 using journal to avoid repeating failed Save/worker framing probes.
+
+### Lab433 — correct false exclusive-spending claim in investment prompt
+
+Reviewed lab294 before considering pairwise allocation: all27 buy-vs-wait
+comparisons chosewait. Do not repeat that experiment without new evidence.
+Inspection instead found investment instructions claiming no other selection
+will spend resources this tick. This contradicts allowed ongoing worker repair
+orders, whose concurrent shared-resource consumption is already documented in
+support menus and was visually prominent in424/431 endings. Replace with exact
+scope: other selections cannot start additional purchases in this review, but
+worker repairs can still consume shared minerals. No repair cap, allocation
+rule, action filtering or executor change. Full213tests pass. No paidcalls or
+new mission. Factual correction alone has unproven performance impact.

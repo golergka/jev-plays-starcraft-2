@@ -462,7 +462,7 @@ async def choose_investment(view, state, jev, memory=None):
                 **({'previous_attempts':memory['previous_attempts']} if memory and memory.get('previous_attempts') else {})}, {'investment': {
                 'type':'choice',
                 'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
-                               'This decision controls all new training and construction; no other selection will spend resources this tick. '
+                               'This decision selects the next new purchase. Other selections cannot start additional purchases in this review, but worker repairs can still consume shared minerals. '
                                'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
                 'criteria':criteria,
             }})
