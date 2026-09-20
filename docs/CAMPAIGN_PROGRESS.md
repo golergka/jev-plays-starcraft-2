@@ -6047,3 +6047,20 @@ benefit claim; no batch was topchoice in eitherarm. Correction retained for trut
 of the offered contract, not proof of resolving economic policy. No live retry
 started on this narrow evidence. Next investigation remains army survival and
 investment behavior; consult previous negative probes before another change.
+
+### Lab411 — opening combat timeline, not a frozen-controller failure
+
+Offline407audit, no paidcalls. At47Jevgroupwest,335groupmapMove middleeast,
+646groupmapAttackMove middleeast. OriginalMarine4324327425 no longerobserved646;
+newMarine4330618882joins, preserving groupcount4. Group maxseparation31.2 and
+nearestvisibleenemy3.0; observed nearby includesSpineCrawler. Jevhadthese facts,
+not just a hidden encounter. At1065noMarine/Medic observed. Actualsubmitted
+orders retained in artifact; APIacceptance notcompletion or exactdeathattribution.
+
+Count stability hides replacement if onlyaggregatecountsread, but memberIDs and
+positions were present. No claim adapter omittedthreats or controllerfroze.
+Mapdestination east with initialnorthwestpositionsdoesnotprovewrongpath: engine
+pathing can routearoundterrain. Next probe should examine whether local factual
+context helps concretecombat selection too, rather than repeat roleallocation or
+hardcode a route. Lab348type-distanceSummary alreadynegative on threeScorestates;
+this would need a distinct fullChoice/localfacts comparison, not assume success.

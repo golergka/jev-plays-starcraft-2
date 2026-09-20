@@ -1,0 +1,688 @@
+{
+  "run": "runs/20260920T080421.634510Z",
+  "loop_limit": 1600,
+  "decisions": [
+    {
+      "time": 1789891474.272873,
+      "choice": "group_west",
+      "criterion": "Move six map units west; destination: walkable static terrain; travel distances across selection: 6.0 to 6.0",
+      "selection_facts": {
+        "members": [
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          }
+        ],
+        "count": 4,
+        "center": [
+          64.5,
+          14.4
+        ],
+        "nearest_visible_enemy_distance": null,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 3.1,
+        "largest_distance_to_nearest_selection_member": 2.1,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789891486.7430809,
+      "choice": "group_map_move_middle_east",
+      "criterion": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; travel distances across selection: 99.5 to 102.2",
+      "selection_facts": {
+        "members": [
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          }
+        ],
+        "count": 4,
+        "center": [
+          58.5,
+          14.3
+        ],
+        "nearest_visible_enemy_distance": null,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 4.5,
+        "largest_distance_to_nearest_selection_member": 3.3,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789891500.575358,
+      "choice": "group_map_attack_move_middle_east",
+      "criterion": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; travel distances across selection: 102.5 to 107.6",
+      "selection_facts": {
+        "members": [
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4330618882,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          }
+        ],
+        "count": 4,
+        "center": [
+          49.5,
+          31.8
+        ],
+        "nearest_visible_enemy_distance": 3.0,
+        "visible_enemies_within_12_of_any_member": {
+          "CreepTumorBurrowed": 2,
+          "SpineCrawler": 1,
+          "Overlord": 1,
+          "SporeCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 31.2,
+        "largest_distance_to_nearest_selection_member": 25.4,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Move Move": 3
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789891531.409958,
+      "choice": "group_map_move_middle_east",
+      "criterion": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; travel distances across selection: 80.2 to 102.5",
+      "selection_facts": {
+        "members": [
+          {
+            "tag": 4347396099,
+            "type": "SpecialOpsDropship"
+          },
+          {
+            "tag": 4328259587,
+            "type": "Medic"
+          }
+        ],
+        "count": 2,
+        "center": [
+          71.6,
+          8.3
+        ],
+        "nearest_visible_enemy_distance": 24.9,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 8,
+        "cargo_slots_available": 4,
+        "passengers_by_type": {
+          "Marauder": 4
+        },
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 210.0,
+        "max_separation": 29.0,
+        "largest_distance_to_nearest_selection_member": 29.0,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Transport MedivacUnloadAll": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    }
+  ],
+  "ticks": [
+    {
+      "loop": 47,
+      "time": 1789891474.688115,
+      "combat_units": [
+        {
+          "tag": 4383309825,
+          "type": "Medic",
+          "position": [
+            63.71435546875,
+            13.12158203125
+          ],
+          "health": 60.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4324065281,
+          "type": "Marine",
+          "position": [
+            63.60986328125,
+            14.5205078125
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4324327425,
+          "type": "Marine",
+          "position": [
+            64.823486328125,
+            16.0576171875
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4362862593,
+          "type": "Marine",
+          "position": [
+            65.6591796875,
+            14.046142578125
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4299161601
+          ],
+          "result": "Success",
+          "target_tag": 4297850881
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4383309825
+          ],
+          "result": "Success",
+          "point": [
+            57.71435546875,
+            13.12158203125
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            57.60986328125,
+            14.5205078125
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            58.823486328125,
+            16.0576171875
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            59.6591796875,
+            14.046142578125
+          ]
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4300210177
+          ],
+          "result": "Success",
+          "target_tag": 4298637313
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4297326593
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4320657409
+          ],
+          "result": "Success",
+          "target_tag": 4373610497
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4299423745
+          ],
+          "result": "Success",
+          "target_tag": 4298375169
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4323803137
+          ],
+          "result": "Success",
+          "target_tag": 4298899457
+        },
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ]
+    },
+    {
+      "loop": 335,
+      "time": 1789891487.216453,
+      "combat_units": [
+        {
+          "tag": 4324065281,
+          "type": "Marine",
+          "position": [
+            57.6171875,
+            15.3125
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4383309825,
+          "type": "Medic",
+          "position": [
+            57.774658203125,
+            11.63525390625
+          ],
+          "health": 60.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4324327425,
+          "type": "Marine",
+          "position": [
+            58.823486328125,
+            16.0576171875
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4362862593,
+          "type": "Marine",
+          "position": [
+            59.6591796875,
+            14.3125
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4383309825
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4323803137
+          ],
+          "result": "Success",
+          "target_tag": 4298637313
+        },
+        {
+          "ability_id": 558,
+          "unit_tags": [
+            4297326593
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 558,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4299161601
+          ],
+          "result": "Success",
+          "target_tag": 4298637313
+        },
+        {
+          "ability_id": 524,
+          "unit_tags": [
+            4297064449
+          ],
+          "result": "Success"
+        }
+      ]
+    },
+    {
+      "loop": 646,
+      "time": 1789891501.075135,
+      "combat_units": [
+        {
+          "tag": 4383309825,
+          "type": "Medic",
+          "position": [
+            48.166831970214844,
+            35.26435089111328
+          ],
+          "health": 60.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4330618882,
+          "type": "Marine",
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4362862593,
+          "type": "Marine",
+          "position": [
+            46.135467529296875,
+            39.821083068847656
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        },
+        {
+          "tag": 4324065281,
+          "type": "Marine",
+          "position": [
+            46.008758544921875,
+            40.604042053222656
+          ],
+          "health": 45.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 19,
+          "unit_tags": [
+            4383309825
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4330618882
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4297326593
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 564,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ]
+    },
+    {
+      "loop": 1065,
+      "time": 1789891519.49743,
+      "combat_units": [],
+      "submitted_actions": [
+        {
+          "ability_id": 295,
+          "unit_tags": [
+            4367581187
+          ],
+          "result": "Success",
+          "target_tag": 4298637313
+        },
+        {
+          "ability_id": 558,
+          "unit_tags": [
+            4297326593
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 558,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "Success"
+        }
+      ]
+    },
+    {
+      "loop": 1336,
+      "time": 1789891531.476501,
+      "combat_units": [
+        {
+          "tag": 4328259587,
+          "type": "Medic",
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 60.0,
+          "health_fraction": 1.0,
+          "build_progress": 1.0
+        }
+      ],
+      "submitted_actions": [
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4297326593
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 556,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "Success"
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4347396099
+          ],
+          "result": "YouCantIssueCommandsToThatUnit",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "ability_id": 16,
+          "unit_tags": [
+            4328259587
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": "Opening Terran audit only, not general policy. Missing units are observation disappearances, not attributed deaths. Shared map-point orders do not reveal the engine path. Count stability can conceal member replacement. No causal counterfactual or hidden enemy information."
+}
