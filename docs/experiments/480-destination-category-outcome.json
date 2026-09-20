@@ -1,0 +1,23 @@
+{
+  "trial": 479,
+  "run": "runs/20260920T115235.955544Z",
+  "calls": 349,
+  "cost_usd": 0.2310051660000001,
+  "ui_verification": {
+    "time": 1789906369.815904,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "26:36",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "1/4",
+    "minerals": 2064,
+    "vespene": 340
+  },
+  "decision_errors": 0,
+  "categories": {
+    "visible": 20,
+    "sector": 8
+  },
+  "limits": "Single live trial; no causal inference from longer survival. No midrun policy changes or root tactical orders. Category frequencies do not establish movement effectiveness."
+}

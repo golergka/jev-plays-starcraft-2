@@ -7005,3 +7005,20 @@ choices visible,15successfulcalls $0.006978510,noerrors atinitialcheck. Shared
 $.10/300s cap unchanged. Follow thissession and /tmp/jev-smash-and-grab-lab479.log;
 do not launchduplicatecontroller or restartonobservationtimeout.19prior verified
 Smash defeats,firstthreewinsretained. Outcome and utilityoflocalmovementpending.
+
+
+### Lab480 — destination-category trial loses at26:36
+
+Trial479/run20260920T115235.955544Z/session51490 terminalexit0. Native26:36
+allstructuresdestroyed,1/4relics,2064minerals340gas.349calls $0.231005166,
+zero decisionerrors. Reconciledresult/checkpoint20thSmashdefeat/publicreport;
+firstthreewins retained. Live category totals in artifact; offline nearby shifts
+not sufficient for useful sustained movement. Earlyforcefoughtat2:40 thenroster
+shrank; rebuiltBarrackscomplete7187, laterbriefMarine accumulation and one
+observed garrisonedMarine16119. Do not equate roster disappearance with death.
+TwoTechLab requests21189/21689 accepted, not proofcompletion; inspect later
+producer interruptions and placement before blaming choice alone. Native25:00
+CommandCenter88health; ending independentlyverified. No midrunpolicy changes
+or rootorders. Longer survival than468 is not causal benefit. Next investigate
+why accepted production/addon requests and banked resources fail to become a
+sustainedforce, alongside concrete movement; no unchangedretry justified.
