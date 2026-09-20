@@ -6981,3 +6981,17 @@ engine route unknown. Category stage abstracts destination details; additional
 serialcall increases cost/cadence. Do not claim nearbymeansbetter. This supports
 bounded further evaluation of decision decomposition, with terrain/control
 semantics checked before a live trial, not more generic threat wording.
+
+### Lab478 — optional destination decomposition implemented
+
+Add --destination-categories, defaultfalse, after optionalorderfamilies and before
+concrete choice for direct mobile selections. Matches477categorydescriptions and
+partition; Jev selects bothcategory andexactorder. Eachoriginaloption retained in
+exactlyonecategory; unknown/othercontrols retained; allterrain wording unchanged.
+One batched extraSDKstage only whenmultiplecategories; singletonskipsmodel;
+invalidcategoryraises. Sharedgovernor unchanged.226tests pass including disjoint
+partition/reconstruction, descriptions/inputimmutability, invalidanswer andskip.
+No command filtering based on tactical preference or blockedterrain; static
+endpoint flags cannot certify engine routes. No liveattempt yet. Next bounded
+trial should keep468flags andaddthisflag only, tracking extra cost/pacing and
+whether nearby choices accumulate usefulforces rather than merely stall.

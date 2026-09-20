@@ -170,6 +170,7 @@ async def run(args):
               "contribution_top_choice": getattr(args,"contribution_top_choice",False),
               "production_intentions_enabled": getattr(args,"production_intentions",False),
               "bottleneck_diagnosis_enabled": getattr(args,"bottleneck_diagnosis",False),
+              "destination_categories_enabled": getattr(args,"destination_categories",False),
               "order_families_enabled": getattr(args,"order_families",False)}
     camera_memory = {}
     review_events = ReviewEvents()
@@ -493,6 +494,7 @@ def main():
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)
+    parser.add_argument('--destination-categories',action='store_true',help='Let Jev select a destination category before its exact order')
     parser.add_argument('--order-families',action='store_true',help='Let Jev choose an order family before the concrete mobile-unit order')
     parser.add_argument('--bottleneck-diagnosis',action='store_true',help='Ask Jev for an advisory investment bottleneck diagnosis, cached up to 672 loops')
     parser.add_argument('--production-intentions',action='store_true',help='Ask Jev for advisory production goals, cached up to 2016 loops')

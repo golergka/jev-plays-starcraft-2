@@ -1072,6 +1072,10 @@ async def decide(view, jev, memory):
                 from jev_sc2.order_families import select_families
                 eligible = {k:q for k,q in concrete_questions.items() if k in direct_selections}
                 concrete_questions.update(await select_families(order_state(state),eligible,jev))
+            if memory.get('destination_categories_enabled'):
+                from jev_sc2.destination_categories import select_categories
+                eligible = {k:q for k,q in concrete_questions.items() if k in direct_selections}
+                concrete_questions.update(await select_categories(order_state(state),eligible,jev))
             if memory.get('order_scoring_enabled'):
                 from jev_sc2.order_scores import rate_order_kinds
                 scored = {k:q for k,q in concrete_questions.items() if k in direct_selections}
