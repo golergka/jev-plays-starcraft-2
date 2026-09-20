@@ -801,6 +801,7 @@ async def decide(view, jev, memory):
     if (strategy is None or view['loop'] < strategy['loop']
             or view['loop'] >= strategy.get('review_at',strategy['loop']+112)):
         options = {
+            'pursue_objective':'Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.',
             'attack':'Commit forces to damaging or destroying the enemy base.',
             'strengthen':'Increase military strength through resource collection and production.',
             'protect':'Preserve owned units and structures from current threats.',
@@ -840,7 +841,7 @@ async def decide(view, jev, memory):
             'criteria':{
                 'by_type':'Keep different unit types in separate selections, allowing different shared orders.',
                 'by_current_order':'Separate each unit type by its current first order and unit target, with idle units separate and observed gather/return cycles kept together by their known resource target. Choose distinct orders for those job selections to retain or change existing assignments independently.',
-                'mobile_combat':'Combine units with movement and attack controls, excluding observed workers/builders, into a mixed combat selection. Give that force shared orders or choose individual control. Other units keep type selections.',
+                'mobile_combat':'Combine units with movement and attack-order controls, excluding observed workers/builders, into one mixed selection. This may include weaponless support or transport units; control availability does not establish weapon damage. Give that selection shared orders or choose individual control. Other units keep type selections.',
             },
         }})
         contribution_horizon = {'soon':112,'medium':672,'long':2016}.get(

@@ -5627,3 +5627,24 @@ priority. Medic regression checks3-4-5distance,explicit2range,andabsentmetadata.
 Earlier348aggregatecombatdistanceprobe was negative; this adapter change makes
 support execution facts explicit, not a claim of improved Jev performance.
 Validation:200 tests passed. No paid model requests or new mission attempt.
+
+### Lab386 — offer a strategy that can directly pursue non-base objectives
+
+Strategic menu's attack priority explicitly commits forces to destroying enemy
+base; other options prepare, preserve, explore or continue. It lacks an explicit
+primary-objective pursuit alternative. This is broader than tactical379bonus
+wording (negative) and involves no named mission target, route or build order.
+
+Paired six-request first/middle/last383 strategic batches, same state and complete
+questions, add only pursue_objective criterion; alternate arm order. Cost
+$0.00252399. Baseline strengthen/protect/protect; augmented pursue_objective inall3.
+This proves changed high-level selections in these samples, not competent plans
+or improved gameplay. Choice alternatives change the decision problem itself.
+
+Expose this general option in live policy: further Jev decisions still choose
+movement/interactions/combat/preparation. Also clarify existing mobile_combat
+criterion includes weaponless support/transports when they expose attack-order
+controls; grouping implementation and membership unchanged. This clarification
+was not part of the paired probe. Support geometry385 also awaits live delivery;
+next trial therefore cannot isolate a single causal factor. No root tactical
+orders. Script/artifact386 retained; full suite200tests passed.
