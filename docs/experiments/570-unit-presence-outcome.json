@@ -1,0 +1,31 @@
+{
+  "lab": 570,
+  "trial": 569,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T163333.808020Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789912113",
+      "loop": 20076
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 265,
+    "cost": 0.17438841,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T163333.808020Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "20:54",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at 19:00"
+    }
+  },
+  "interpretation": "Per-tag observation continuity reached live model requests, but mission still lost. Temporary Marine presence and repaired base did not produce sustained objective progress. No causal benefit established."
+}
