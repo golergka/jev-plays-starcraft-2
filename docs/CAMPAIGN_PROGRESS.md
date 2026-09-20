@@ -4123,3 +4123,18 @@ stays incomplete so previous_attempts excludes it. Attempted F10 was too late.
 DNS now resolves OpenRouter/GitHub and unauthenticated OpenRouter models endpoint
 returnsHTTP200. No paid probe or reset of spending ledger. Next trial can restart
 same mission after headroom check; full campaign remains incomplete.
+
+### Lab281 — live strategic cadence verified; visual economy warning
+
+Retry run20260920T000657.022675Z remains active under lab279 policy.
+At audit83successful calls cost$0.049434630; rolling five-minute ledger same.
+Six strategic reviews chose protect and672loop horizon. Tactical ticks608,1520,
+2606,3631,4684 occurred between strategic reviews, confirming retained priority
+is not silently suppressing the whole decision loop. This verifies scheduling,
+not improved play or a matched cost reduction. No policy change in this entry.
+
+Native screenshot at4:54 shows troops clustered near CommandCenter, its worker
+label1/27,43minerals,21/35supply,evacuation15:15. This is a visual warning about
+economic allocation despite successful API commands, not a direct tactical
+instruction to Jev. Continue periodic visual inspections and compare with logs.
+Mission remains active; no victory or final survival result recorded.
