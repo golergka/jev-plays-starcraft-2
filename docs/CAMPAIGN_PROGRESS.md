@@ -4475,3 +4475,19 @@ $0.009513630 (~9.1%). Investment31calls,$0.014500836. Contribution25calls,$0.011
 Producer13calls,$0.005013792;navigation4calls,$0.001153530. Main cost target is
 concrete requests and repeated context, not strategic review alone. No gameplay
 change or paid probe introduced. Active302trial continues.
+
+### Lab305 — measure constant-column factoring without deploying
+
+Offline measurement of34recorded Marine/MobileCombat request states from302:
+1016682serialized state chars would become971495(4.44% reduction) by factoring
+columns identical across all rows into explicit constants, accepting only smaller
+encodings. Original fields preserved mathematically; no model behavior test and
+no paid calls. Total request reduction would be smaller after question text.
+Did not deploy: modest saving would add another representation convention without
+evidence that Jev interprets it reliably. Existing state fields are already
+columnar. Larger cost sources contain visible entities,type mechanics and force
+summaries; removal would be a lossy behavioral experiment, not pure compression.
+
+Current302session36019 live atloop8145:6SCVs,1Barracks,1Bunker,$0.073457748.
+Native8:46 shows base overrun and surviving Barracks under attack. No engine or
+decision errors recorded yet; not a terminal result.
