@@ -12,5 +12,15 @@
   },
   "logged_model_calls_at_audit": 31,
   "nonempty_progress_samples": [],
-  "limitation": "Early instrumentation check, not an outcome or causal improvement claim."
+  "limitation": "Early instrumentation check, not an outcome or causal improvement claim.",
+  "followup": {
+    "visual_time": "2:57",
+    "supply": "5/19",
+    "relics": "0/4",
+    "observation": "Stalkers visible at base; Command Center 1491/1500.",
+    "logged_calls": 70,
+    "requests_containing_new_field": 68,
+    "requests_with_nonempty_new_field": 0,
+    "interpretation": "Field delivery verified, but empty data cannot influence decisions via measured target progress. Full-window same-order requirement may be too restrictive; do not claim improved movement."
+  }
 }
