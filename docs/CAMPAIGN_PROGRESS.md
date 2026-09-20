@@ -4856,3 +4856,16 @@ Reader labels values raw native timer values,not verified display text.
 rewind,nonfinite values and count mismatch. New generation code has not yet been
 compiled/exercised natively; expected-generation acquisition and campaign builder
 integration remain outstanding. No paid calls or campaign progress claimed.
+
+### Lab333 — native restart disproves persisted generation assumption
+
+New generation-enabled fixture compiled and first launch exportedgeneration1;
+Python reader accepted its fresh visible countdown. After same-map APIrestart,
+expectedgeneration2never arrived during six-second polling. Later bankstill showed
+generation1,sequence6and updatedengine_time. Persisted-bank increment is therefore
+not a reliable launch identity under this restart path. Do not claim freshness
+validated from unit tests. Reader rejected mismatched expected generation rather
+than using stale data. Artifact333records failure. Initial probe API response-field
+mistake was corrected before restart; it was a test harness issue,not bridge failure.
+No Jev calls,campaign credit,or player integration. Next change needs an identity
+mechanism independent of bank persistence across APIrestart,then another native test.

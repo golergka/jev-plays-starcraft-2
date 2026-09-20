@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "observed_context_after_restart": {
+    "generation": {
+      "int": "1"
+    },
+    "engine_time": {
+      "int": "1789861854"
+    },
+    "count": {
+      "int": "0"
+    },
+    "sequence": {
+      "int": "6"
+    }
+  },
+  "failure": "Expected next-generation context did not arrive within six-second polling window. Persisted bank generation increment is not reliable across this API restart; do not integrate it as launch freshness proof."
+}
