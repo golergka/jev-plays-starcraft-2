@@ -1,0 +1,756 @@
+{
+  "run": "runs/20260920T100335.561953Z",
+  "rows": [
+    {
+      "loop": 49,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 49,
+      "selection": "MobileCombat",
+      "diameter": 3.1,
+      "diameter_members": [
+        {
+          "tag": 4383309825,
+          "type": "Medic"
+        },
+        {
+          "tag": 4324327425,
+          "type": "Marine"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marine": 0,
+        "Medic": 2.2
+      },
+      "regroup_options": 30
+    },
+    {
+      "loop": 409,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 409,
+      "selection": "MobileCombat",
+      "diameter": 2.2,
+      "diameter_members": [
+        {
+          "tag": 4324327425,
+          "type": "Marine"
+        },
+        {
+          "tag": 4383309825,
+          "type": "Medic"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marine": 0,
+        "Medic": 1.4
+      },
+      "regroup_options": 30
+    },
+    {
+      "loop": 573,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 573,
+      "selection": "MobileCombat",
+      "diameter": 26.6,
+      "diameter_members": [
+        {
+          "tag": 4330618882,
+          "type": "Marine"
+        },
+        {
+          "tag": 4362862593,
+          "type": "Marine"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marine": 0,
+        "Medic": 26.6
+      },
+      "regroup_options": 32
+    },
+    {
+      "loop": 1163,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 1163,
+      "selection": "MobileCombat",
+      "diameter": 8.7,
+      "diameter_members": [
+        {
+          "tag": 4327211011,
+          "type": "SpecialOpsDropship"
+        },
+        {
+          "tag": 4301520907,
+          "type": "Marine"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marine": 0,
+        "SpecialOpsDropship": 0
+      },
+      "regroup_options": 26
+    },
+    {
+      "loop": 1482,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 1482,
+      "selection": "MobileCombat",
+      "diameter": 58.8,
+      "diameter_members": [
+        {
+          "tag": 4327211011,
+          "type": "SpecialOpsDropship"
+        },
+        {
+          "tag": 4301520907,
+          "type": "Marine"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marauder": 58.8,
+        "Marine": 40.2,
+        "SpecialOpsDropship": 27.0
+      },
+      "regroup_options": 36
+    },
+    {
+      "loop": 2086,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 2086,
+      "selection": "MobileCombat",
+      "diameter": 28.4,
+      "diameter_members": [
+        {
+          "tag": 4327211017,
+          "type": "Medic"
+        },
+        {
+          "tag": 4330356740,
+          "type": "Marauder"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marauder": 0,
+        "Medic": 0
+      },
+      "regroup_options": 26
+    },
+    {
+      "loop": 2549,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 2549,
+      "selection": "MobileCombat",
+      "diameter": 2.3,
+      "diameter_members": [
+        {
+          "tag": 4330356740,
+          "type": "Marauder"
+        },
+        {
+          "tag": 4327211017,
+          "type": "Medic"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marauder": 0,
+        "Medic": 0
+      },
+      "regroup_options": 28
+    },
+    {
+      "loop": 2782,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 2782,
+      "selection": "MobileCombat",
+      "diameter": 1.9,
+      "diameter_members": [
+        {
+          "tag": 4327211017,
+          "type": "Medic"
+        },
+        {
+          "tag": 4330356740,
+          "type": "Marauder"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marauder": 0,
+        "Medic": 0
+      },
+      "regroup_options": 28
+    },
+    {
+      "loop": 3417,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 3417,
+      "selection": "MobileCombat",
+      "diameter": 0.7,
+      "diameter_members": [
+        {
+          "tag": 4317773831,
+          "type": "Marine"
+        },
+        {
+          "tag": 4364173322,
+          "type": "Marine"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marine": 0
+      },
+      "regroup_options": 28
+    },
+    {
+      "loop": 3832,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 3832,
+      "selection": "MobileCombat",
+      "diameter": 0.7,
+      "diameter_members": [
+        {
+          "tag": 4317773831,
+          "type": "Marine"
+        },
+        {
+          "tag": 4364173322,
+          "type": "Marine"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "Marine": 0
+      },
+      "regroup_options": 28
+    },
+    {
+      "loop": 4110,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 4839,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 5046,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 5562,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 5716,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 6186,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 6324,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 6767,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 7111,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 7275,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 7629,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 7796,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 8291,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 8489,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 9018,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 9191,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 9834,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 10005,
+      "selection": "SupplyDepotLowered",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepotLowered"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepotLowered"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepotLowered": 0
+      },
+      "regroup_options": 0
+    },
+    {
+      "loop": 10409,
+      "selection": "SupplyDepot",
+      "diameter": 8.5,
+      "diameter_members": [
+        {
+          "tag": 4297326593,
+          "type": "SupplyDepot"
+        },
+        {
+          "tag": 4313317377,
+          "type": "SupplyDepot"
+        }
+      ],
+      "diameter_excluding_each_type": {
+        "SupplyDepot": 0
+      },
+      "regroup_options": 0
+    }
+  ],
+  "limits": "Same-loop observed positions; exclusion is diagnostic, not a proposed control rule. Zero diameter can mean fewer than two remaining members. No path or combat effectiveness inference."
+}

@@ -6536,3 +6536,18 @@ or newmission. Initial sample selection incorrectly expected raw units in the
 compressed control state; failed before API calls, fixed using selection members.
 Next investigate concrete control options and their shared-executor semantics
 rather than assuming high-level wording alone yields force concentration.
+
+### Lab446 — regroup controls exist; mixed diameter needs qualification
+
+Inspect440 loop1482 full selection menu:36 join/regroup alternatives, including
+hold-anchor plus followers for each in-selection member. Missing concrete
+regroup controls is not supported. New offline geometry audit attributes maximum
+distance to exact members.58.8 is SpecialOpsDropship↔Marine; excluding dropship
+leaves27.0 across Marines/Marauders. Lab444/445 statements about full selection
+spread are numerically right but should not imply armed force spans58.8.
+At573 diameter26.6 is Marine↔Marine, so dispersion is not solely support units.
+No policy change, forced regroup, or mission-specific exclusion. Zero APIcost.
+Next experiment should distinguish weapon-bearing and support geometry using
+observed unit facts, while retaining Jev's grouping and order choices; assess
+whether that changes decisions before a live retry. Do not duplicate lab066's
+existing all-member dispersion fields or claim regroup was unavailable.
