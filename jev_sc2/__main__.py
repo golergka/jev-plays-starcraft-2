@@ -167,7 +167,8 @@ async def run(args):
     memory = {"production_executor_enabled": True,
               "investment_scoring_enabled": getattr(args,"investment_scores",False),
               "order_scoring_enabled": getattr(args,"order_scores",False),
-              "contribution_top_choice": getattr(args,"contribution_top_choice",False)}
+              "contribution_top_choice": getattr(args,"contribution_top_choice",False),
+              "production_intentions_enabled": getattr(args,"production_intentions",False)}
     camera_memory = {}
     review_events = ReviewEvents()
     jev = Jev(log, stamp, max_calls=args.max_calls)
@@ -490,6 +491,7 @@ def main():
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)
+    parser.add_argument('--production-intentions',action='store_true',help='Ask Jev for advisory production goals, cached up to 2016 loops')
     parser.add_argument('--event-reviews',action='store_true',help='Allow one damage-triggered early review with pacing repayment; rolling budget unchanged')
     parser.add_argument('--order-scores',action='store_true',help='Experimental Jev-rated combat order kinds followed by exact Jev orders')
     parser.add_argument('--investment-scores',action='store_true',help='Experimental Jev-rated investment selection')

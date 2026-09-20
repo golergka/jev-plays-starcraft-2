@@ -6446,3 +6446,15 @@ All purchase alternatives and saving remain available; no root-chosen build.
 Potential costs: extra call, slower review, genericExpand bias, stale intentions.
 Next implementation should bound refresh and invalidate on strategic change or
 rewind, log chosen goals, and retain hard spending governance. No newgame yet.
+
+### Lab439 — optional cached Jev production intentions implemented
+
+--production-intentions adds advisory expand/replace/stop questions using436
+formulation before fresh investment arbitration. Jev chooses every goal and
+purchase; all menu alternatives remain. Cache up to2016loops, invalidate on
+strategy/type-set change or rewind; original count/time explicitly historical.
+No extra call during carried purchase jobs; shared SDK governor accounts calls.
+Invalid goal raises loudly before caching. No automatic spending or unit rule.
+215tests pass including cache reuse, expiry, strategy/rewind invalidation,
+empty capability clearing and malformed answer rejection. No paidcalls this
+turn. Live costs and gameplay benefit still require a bounded trial.

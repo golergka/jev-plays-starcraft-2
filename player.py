@@ -453,13 +453,19 @@ async def choose_investment(view, state, jev, memory=None):
             jev.log('investment_wait',loop=view['loop'],target_project=target,review_at=plan['review_at'])
             return []
     if not carried:
+        purchase_state = investment_state(state)
+        if memory and memory.get('previous_attempts'):
+            purchase_state['previous_attempts'] = memory['previous_attempts']
+        if memory is not None and memory.get('production_intentions_enabled'):
+            from jev_sc2.intentions import production_intentions
+            goals = await production_intentions(purchase_state, jev, memory, view['loop'], strategy)
+            if goals:
+                purchase_state['jev_production_intentions'] = goals
         if memory is not None and memory.get('investment_scoring_enabled'):
-            choice = await score_investment_options({**investment_state(state),
-                **({'previous_attempts':memory['previous_attempts']} if memory.get('previous_attempts') else {})},
+            choice = await score_investment_options(purchase_state,
                 criteria,jev,memory,view['loop'])
         else:
-            answer = await jev.ask({**investment_state(state),
-                **({'previous_attempts':memory['previous_attempts']} if memory and memory.get('previous_attempts') else {})}, {'investment': {
+            answer = await jev.ask(purchase_state, {'investment': {
                 'type':'choice',
                 'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
                                'This decision selects the next new purchase. Other selections cannot start additional purchases in this review, but worker repairs can still consume shared minerals. '
