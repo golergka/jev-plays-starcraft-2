@@ -4231,3 +4231,18 @@ not improved allocation: bad roles can persist too. Native0:57 showed the force
 around a highlighted empty bunker; do not infer all bunker cargo from that label.
 At six completed ticks46successful calls cost$0.026615946; no delayed errors yet.
 No further policy change; await outcome before judging this duration experiment.
+
+### Lab288 — harvesting is present despite absent routine-skip events
+
+Active286run: native5:32 shows3/27miners. Eight recent concrete observations for
+SCV4372824065 show Harvest Gather/Return orders, with nearest enemy distances
+32.0,18.9,None,16.7,17.8,None,None,14.5. Player-score collected minerals rose
+380→475→550→615 atloops4006/4604/5177/5738. These support sustained harvesting,
+not a causal claim that longer commitments improved income or survival.
+
+Do not treat zero routine_execution events as zero harvesting. That optimization
+requires a previous eligible review, unchanged health/strategy and no visible enemy
+anywhere, not merely no nearby threat. Any visible enemy clears its eligibility;
+intermittent quiet periods or deadline expiry can also prevent skipping. No change
+to those guards in this trial. Existing income choices and fresh concrete Jev
+continue choices are doing work even when the optimization is not exercised.
