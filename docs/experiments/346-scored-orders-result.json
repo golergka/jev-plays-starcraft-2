@@ -1,0 +1,99 @@
+{
+  "source": "runs/20260920T032015.455998Z/events.jsonl",
+  "ui_verification": {
+    "time": 1789875032.6105978,
+    "verification": "native SC2 screenshot via cua",
+    "mission": "Zero Hour",
+    "result": "defeat",
+    "mission_time": "12:47",
+    "evacuation_remaining": "07:22",
+    "reason": "All of your structures have been destroyed.",
+    "minerals": 99
+  },
+  "summary": {
+    "calls": 181,
+    "cost_usd": 0.11036802,
+    "request_stages": {
+      "strategy_and_coordination": {
+        "calls": 30,
+        "cost_usd": 0.013428912,
+        "mean_state_chars": 26455.1,
+        "mean_question_chars": 3029.0,
+        "mean_latency_ms": 603.4
+      },
+      "investment": {
+        "calls": 30,
+        "cost_usd": 0.013960842,
+        "mean_state_chars": 21345.0,
+        "mean_question_chars": 11494.4,
+        "mean_latency_ms": 497.9
+      },
+      "contribution_roles": {
+        "calls": 29,
+        "cost_usd": 0.014156982,
+        "mean_state_chars": 26074.7,
+        "mean_question_chars": 7555.2,
+        "mean_latency_ms": 537.1
+      },
+      "producer_site": {
+        "calls": 12,
+        "cost_usd": 0.005811204,
+        "mean_state_chars": 15309.7,
+        "mean_question_chars": 6747.8,
+        "mean_latency_ms": 473.9
+      },
+      "combat_order_kind_scores": {
+        "calls": 25,
+        "cost_usd": 0.019556208,
+        "mean_state_chars": 38582.7,
+        "mean_question_chars": 9560.4,
+        "mean_latency_ms": 566.7
+      },
+      "concrete_orders_and_other": {
+        "calls": 50,
+        "cost_usd": 0.041870472,
+        "mean_state_chars": 27273.0,
+        "mean_question_chars": 22184.7,
+        "mean_latency_ms": 566.5
+      },
+      "navigation": {
+        "calls": 5,
+        "cost_usd": 0.0015834,
+        "mean_state_chars": 13481.6,
+        "mean_question_chars": 930.2,
+        "mean_latency_ms": 455.2
+      }
+    },
+    "combat_order_kind_choices": {
+      "move": 15,
+      "hold": 9,
+      "individual": 1
+    },
+    "combat_order_score_margin_median": 0.1200000000000001,
+    "training_batches_chosen": 1,
+    "training_batch_types": {
+      "Marine": 1
+    },
+    "automatic_training_requests": 2,
+    "automatic_training_engine_results": {
+      "Success": 2
+    },
+    "errors": [
+      {
+        "time": 1789874934.673283,
+        "event": "engine_action_error",
+        "loop": 11231,
+        "failures": [
+          {
+            "ability_id": 558,
+            "unit_tags": [
+              4298113025
+            ],
+            "result": "CantBuildLocationInvalid"
+          }
+        ]
+      }
+    ]
+  },
+  "conclusion": "One scored-order trial lost. No established improvement; ratings did not select Attack or Attack-move. Cross-run survival differences are not causal evidence."
+}

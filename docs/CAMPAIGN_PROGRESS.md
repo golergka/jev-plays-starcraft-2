@@ -5018,3 +5018,21 @@ kind choices:Move2,Hold4;median margin0.135. Stage costs sum to total verified.
 Native screen at1:19 shows Marines gathered near the command center,18:51 until
 evacuation. This is a behavior observation,not tactical advice or proof of success.
 Snapshot artifact345 is explicitly partial. No player policy change duringtrial.
+
+### Lab346 — scored combat-kind trial loses at12:47
+
+344run20260920T032015.455998Z ended normally; independent native screen confirms
+ZeroHourdefeat12:47,07:22evacuationremaining,99minerals. This is the38th independently
+verified ZeroHour defeat. Only LiberationDay andOutlaws remain verified wins.
+181successfulJevrequests,$0.110368020. Combat-kind scoring25requests,$0.019556208
+(17.7%oftotal). ChoicesMove15,Hold9,individual1;noAttack/Attack-move. Median winning
+rating margin0.12,not calibratedconfidence. OneMarinebatch,2automaticfollowups
+acceptedSuccess;requests are not completedunits. One late CantBuildLocationInvalid
+engineerror. Nativechecks showed armynearcommandcenter,then fights inbase,then
+mineral-linecollapse. No root tactics or policy changes duringtrial.
+
+Compared with337's12:28loss,$0.112554708, survival is19seconds longer and residual
+minerals muchlower, but a single pair with different sampled investment choices
+cannot establish causal improvement. Ratingprimitive alone does not resolve poor
+coordination. Keep opt-in; do not promote todefault or rerununchanged. Checkpoint
+andrunresult independentlyverified; artifact346 records compact cost/choice data.
