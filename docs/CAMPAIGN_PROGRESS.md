@@ -6258,3 +6258,17 @@ triggersearlyreview621, borrowing0.507seconds. This verifieseligibilitychange,
 notmeaningfulsurvivalbenefit. At1309oneMarine,twoMarauders,oneMedic andsevenSCVs;
 scriptedreinforcementarrivalmakescountsconfounded.27calls $0.017209962,nodecision
 errors atcheck. No tacticalrootorders/policyedits. Trialstilllive; waitsamehandle.
+
+### Lab425 — visual inspection exposes repeated air-only defense purchases
+
+Trial424 remains live. Native 9:22 view shows Stalkers inside the base,
+workers around the Command Center, 577 minerals, and 1/4 relics. Offline
+choice audit: turret sampled at loop7560 with weight0.06 (SCV top0.32);
+at7922,8765,9024 turret both selected and top (0.36,0.39,0.34).
+At9752 turret still top0.34, but EngineeringBay sampled instead.
+Air-only weapon facts were already present in the model input. This is not
+solely a sampling accident. It does not prove what the model reasoned or
+that air threats could never appear. No scripted counterorder, new paid
+probe, policy patch, or restart. Artifact preserves descriptions, weights,
+visible enemy flight facts and resources for a later representation probe.
+Current trial cost snapshot $0.096926928; not a final outcome or cost.

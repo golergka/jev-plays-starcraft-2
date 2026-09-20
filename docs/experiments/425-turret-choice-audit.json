@@ -1,0 +1,247 @@
+{
+  "run": "runs/20260920T090555.000913Z",
+  "status": "live snapshot, not final outcome",
+  "rows": [
+    {
+      "loop": 7560,
+      "selected": "project_3",
+      "top": "project_7",
+      "turret_option": "project_3",
+      "probabilities": {
+        "save": 0.23,
+        "project_3": 0.06,
+        "project_8": 0.03,
+        "project_6": 0.01,
+        "project_7": 0.32,
+        "project_1": 0.08,
+        "project_9": 0.04,
+        "project_0": 0.06,
+        "project_5": 0.01,
+        "project_2": 0.01,
+        "project_4": 0.03,
+        "batch_7": 0.12
+      },
+      "turret_description": "Purchase one MissileTurret. Its action capabilities have not yet been observed. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+      "turret_catalog": {
+        "mineral_cost": 100,
+        "gas_cost": 0,
+        "supply_provided": 0.0,
+        "supply_required": 0.0,
+        "catalog_weapons": [
+          {
+            "targets": "Air",
+            "range": 7.0,
+            "damage_per_cycle": 24.0,
+            "damage_per_time_unit_before_armor_and_bonuses": 27.88
+          }
+        ],
+        "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
+      },
+      "visible_enemies": [],
+      "resources": {
+        "minerals": 649,
+        "vespene": 178,
+        "estimated_minerals_per_minute": 340.0,
+        "estimated_vespene_per_minute": 32.0,
+        "food_used": 15,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 12,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 7922,
+      "selected": "project_3",
+      "top": "project_3",
+      "turret_option": "project_3",
+      "probabilities": {
+        "project_3": 0.36,
+        "project_5": 0.01,
+        "batch_7": 0.1,
+        "project_6": 0.01,
+        "project_9": 0.03,
+        "project_2": 0.01,
+        "project_0": 0.05,
+        "project_8": 0.02,
+        "project_7": 0.14,
+        "project_4": 0.05,
+        "project_1": 0.08,
+        "save": 0.14
+      },
+      "turret_description": "Purchase one MissileTurret. Its action capabilities have not yet been observed. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+      "turret_catalog": {
+        "mineral_cost": 100,
+        "gas_cost": 0,
+        "supply_provided": 0.0,
+        "supply_required": 0.0,
+        "catalog_weapons": [
+          {
+            "targets": "Air",
+            "range": 7.0,
+            "damage_per_cycle": 24.0,
+            "damage_per_time_unit_before_armor_and_bonuses": 27.88
+          }
+        ],
+        "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
+      },
+      "visible_enemies": [],
+      "resources": {
+        "minerals": 597,
+        "vespene": 198,
+        "estimated_minerals_per_minute": 240.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 14,
+        "food_cap": 27,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 8765,
+      "selected": "project_3",
+      "top": "project_3",
+      "turret_option": "project_3",
+      "probabilities": {
+        "project_1": 0.05,
+        "save": 0.16,
+        "project_4": 0.03,
+        "project_6": 0.01,
+        "project_3": 0.39,
+        "batch_7": 0.08,
+        "project_9": 0.04,
+        "project_0": 0.06,
+        "project_5": 0.01,
+        "project_7": 0.14,
+        "project_8": 0.03
+      },
+      "turret_description": "Purchase one MissileTurret. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+      "turret_catalog": {
+        "mineral_cost": 100,
+        "gas_cost": 0,
+        "supply_provided": 0.0,
+        "supply_required": 0.0,
+        "catalog_weapons": [
+          {
+            "targets": "Air",
+            "range": 7.0,
+            "damage_per_cycle": 24.0,
+            "damage_per_time_unit_before_armor_and_bonuses": 27.88
+          }
+        ],
+        "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
+      },
+      "visible_enemies": [],
+      "resources": {
+        "minerals": 665,
+        "vespene": 234,
+        "estimated_minerals_per_minute": 200.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 14,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 9024,
+      "selected": "project_3",
+      "top": "project_3",
+      "turret_option": "project_3",
+      "probabilities": {
+        "project_8": 0.02,
+        "batch_7": 0.08,
+        "project_2": 0.01,
+        "project_0": 0.07,
+        "project_1": 0.05,
+        "project_9": 0.04,
+        "project_3": 0.33999999999999997,
+        "project_6": 0.01,
+        "project_4": 0.04,
+        "save": 0.16,
+        "project_5": 0.01,
+        "project_7": 0.16999999999999998
+      },
+      "turret_description": "Purchase one MissileTurret. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+      "turret_catalog": {
+        "mineral_cost": 100,
+        "gas_cost": 0,
+        "supply_provided": 0.0,
+        "supply_required": 0.0,
+        "catalog_weapons": [
+          {
+            "targets": "Air",
+            "range": 7.0,
+            "damage_per_cycle": 24.0,
+            "damage_per_time_unit_before_armor_and_bonuses": 27.88
+          }
+        ],
+        "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
+      },
+      "visible_enemies": [],
+      "resources": {
+        "minerals": 580,
+        "vespene": 246,
+        "estimated_minerals_per_minute": 180.0,
+        "estimated_vespene_per_minute": 48.0,
+        "food_used": 14,
+        "food_cap": 27,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      }
+    },
+    {
+      "loop": 9752,
+      "selected": "project_2",
+      "top": "project_3",
+      "turret_option": "project_3",
+      "probabilities": {
+        "project_1": 0.09,
+        "project_8": 0.02,
+        "project_6": 0.01,
+        "project_5": 0.01,
+        "batch_7": 0.1,
+        "project_4": 0.04,
+        "project_2": 0.01,
+        "save": 0.14,
+        "project_9": 0.03,
+        "project_7": 0.15,
+        "project_3": 0.33999999999999997,
+        "project_0": 0.06
+      },
+      "turret_description": "Purchase one MissileTurret. Adds another unit able to: Attack-target order control; damage depends on weapons or separate abilities. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+      "turret_catalog": {
+        "mineral_cost": 100,
+        "gas_cost": 0,
+        "supply_provided": 0.0,
+        "supply_required": 0.0,
+        "catalog_weapons": [
+          {
+            "targets": "Air",
+            "range": 7.0,
+            "damage_per_cycle": 24.0,
+            "damage_per_time_unit_before_armor_and_bonuses": 27.88
+          }
+        ],
+        "note": "Catalog at game join; empty weapon list does not prove harmless (e.g. garrisoned units)."
+      },
+      "visible_enemies": [],
+      "resources": {
+        "minerals": 595,
+        "vespene": 278,
+        "estimated_minerals_per_minute": 180.0,
+        "estimated_vespene_per_minute": 32.0,
+        "food_used": 14,
+        "food_cap": 27,
+        "supply_in_construction": 0,
+        "supply_remaining": 13,
+        "supply_blocked": false
+      }
+    }
+  ],
+  "interpretation": "The first turret selection was sampled below the top SCV choice. At the next three recorded turret selections, turret was itself the highest-weight option. Air-only facts were present. Visible ground enemies do not prove air enemies could never arrive; this audit does not infer model reasoning or impose a counterstrategy.",
+  "extra_model_calls": 0
+}
