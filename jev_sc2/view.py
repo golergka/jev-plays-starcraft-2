@@ -329,7 +329,9 @@ async def make_view(client, observation, data, info, objective):
             'visible_entities': [
                 {'tag':u.tag,'type':names.get(u.unit_type,str(u.unit_type)),
                  'alliance':raw.Alliance.Name(u.alliance),
-                 'position':[u.pos.x,u.pos.y],'health':u.health,'shield':u.shield,'is_flying':u.is_flying}
+                 'position':[u.pos.x,u.pos.y],
+                 'observed_world_z':u.pos.z if u.pos.HasField('z') else None,
+                 'health':u.health,'shield':u.shield,'is_flying':u.is_flying}
                 for u in visible],
             'explored_map': explored_map(obs.raw_data.map_state.visibility,
                                          info.start_raw.pathing_grid,area),
@@ -517,6 +519,7 @@ async def make_view(client, observation, data, info, objective):
                              'weapon_cooldown':unit.weapon_cooldown,
                              'weapon_status':'ready' if unit.weapon_cooldown == 0 else 'cooling down',
                              'position':[unit.pos.x,unit.pos.y], 'surroundings':surroundings,
+                             'observed_world_z':unit.pos.z if unit.pos.HasField('z') else None,
                              'nearby_terrain':terrain,
                              'orders':[{'ability':ability_names.get(o.ability_id,str(o.ability_id)),
                                         'progress':round(o.progress,3),

@@ -1593,3 +1593,25 @@ def test_harvesting_context_preserves_resource_identity_during_return_without_gu
     control_groups(units,'by_type',{},target_memory)
     assert target_memory=={}
     assert harvesting_assignments(units,target_memory)==[]
+
+
+def test_observed_world_z_is_current_visible_data_only():
+    from s2clientprotocol import query_pb2 as query
+    obs=sc.ResponseObservation()
+    own=obs.observation.raw_data.units.add(tag=1,alliance=raw.Self,display_type=raw.Visible)
+    own.pos.z=3.5
+    enemy=obs.observation.raw_data.units.add(tag=2,alliance=raw.Enemy,display_type=raw.Visible)
+    enemy.pos.z=7.25
+    hidden=obs.observation.raw_data.units.add(tag=3,alliance=raw.Enemy,display_type=raw.Hidden)
+    hidden.pos.z=99
+    info=sc.ResponseGameInfo();info.start_raw.playable_area.p1.x=20;info.start_raw.playable_area.p1.y=20
+    class Client:
+        async def request(self,name,body):
+            result=query.ResponseQuery();result.abilities.add(unit_tag=1)
+            return result
+    view=asyncio.run(make_view(Client(),obs,sc.ResponseData(),info,'test'))
+    assert view['self'][0]['observed_world_z']==3.5
+    assert [(u['tag'],u['observed_world_z']) for u in view['visible_entities']]==[(2,7.25)]
+    own.pos.ClearField('z')
+    view=asyncio.run(make_view(Client(),obs,sc.ResponseData(),info,'test'))
+    assert view['self'][0]['observed_world_z'] is None
