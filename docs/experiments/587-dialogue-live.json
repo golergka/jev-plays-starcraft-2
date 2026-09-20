@@ -1,0 +1,24 @@
+{
+  "lab": 587,
+  "run": "runs/20260920T173952.004080Z",
+  "start_commit": "814a245",
+  "map": "ttychus01-dialogue-lab586.SC2Map",
+  "status": "running",
+  "native_visual": "0:23 mission active, Command Center1500/1500, supply10/27",
+  "first_nonempty_model_context": {
+    "loop": 749,
+    "questions": [
+      "strategy",
+      "strategy_review",
+      "contribution_review",
+      "coordination"
+    ],
+    "message_count": 1
+  },
+  "episode_history": {
+    "time": 1789925999.59904,
+    "event": "episode_history_loaded",
+    "attempts": 0
+  },
+  "interpretation": "Real runtime dialogue reached Jev input. No benefit or outcome established; new map identity also changes same-filename prior-attempt history."
+}
