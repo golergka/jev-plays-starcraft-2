@@ -5942,3 +5942,22 @@ Concurrency2 operates through a complete trial, but small remaining force does
 not reproduce400's larger fan-out. Do notclaim universal budget-burst prevention
 or causal gameplay improvement. Checkpoint/result/publicartifact/report updated;
 only firstthree campaign missions verified won. No unchangedretry started.
+
+### Lab404 — sequential roles do not resolve this failed opening
+
+403audit confirms threeopeningworkers received Jevtop positioning roles at47,
+not sampling deviations. Two were laterorderedMove towardmiddle-east335/616,
+thenabsent1045. Remainingthreeworkers survived initially; no claim of exact
+causal death attribution. Lab388sequentialprobe used a state whose original
+worker topchoiceswere alreadyallincome; repeat here explicitly targets a failed
+returned-choice opening, not a new untested method.
+
+Existing boundedscript: one worker-only questionbatch and five sortedsequential
+questions with previouspeerroles, same403state. Sixcalls$0.002254896. Worker-only
+batchfourincome/onepositioning; sequentialoneincome/fourpositioning. Original
+mixedlivebatchtwoincome/threepositioning. Baseline subset omits nonworkerquestions,
+and calls are unreplicated; cannot assign variation solely to sequentialcontext.
+No evidence of better division of labor or viability; do not deploy added serial
+calls. Artifact404 retains outputs. No gameorders or newlivetrial. Next attention
+should include sensitivity to question-batch composition, not assuming identical
+worker state guarantees stable or coordinated roles.
