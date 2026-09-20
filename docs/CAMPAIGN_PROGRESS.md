@@ -4728,3 +4728,20 @@ alternating order. Both arms choose join_original_center,stop,join_original_cent
 Cost$0.00318654. Probe may include tournament-stage menus; these are recorded
 question responses,not final live group decisions. No demonstrated top-choice
 benefit; no live policy change. Artifact/script323 recorded. Trial321continues.
+
+### Lab324 — unload-description trial ends in verified defeat
+
+Trial321(`20260920T022540.400751Z`) terminal and independently verified native
+SC2defeat at11:37,08:32evacuationremaining,0minerals,all structures destroyed.
+194successfulrequests,$0.098647710; run-only peak300secondcost$0.061657638;
+median planned interval18.03seconds. Unchanged rolling$0.10cap,zero budget failures.
+Checkpoint records defeat36; only LiberationDay/TheOutlaws remain verified wins.
+
+Revised unload wording appeared in two paid requests late in the run,not zero
+across the entire attempt. Earlier live reports correctly described only their
+then-current prefixes. This is exposure evidence,not proof of improved decisions.
+Marine choices repeatedly moved to the original CommandCenter while other
+structures suffered attacks; sampled army absent byloop8520. Native11:08view
+confirmed enemies inside base,zero minerals,worker counter0/27. Do not interpret
+valid API actions, strategic protect wording, or clear descriptions as effective
+coordination. No mission advancement and no unchanged automatic retry.
