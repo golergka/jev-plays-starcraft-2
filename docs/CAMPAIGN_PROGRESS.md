@@ -6206,3 +6206,15 @@ schedule andnontriggeringevents. No throughput orperformanceclaim. Thischanges
 reviewtiming, notdecisioncontent. Nexttrialshouldvalidateactualearly_event_review
 and longerfollowingwaitlogs alongside nativegameplay and totalcost; don'tinfer
 bettercombatfromsynthetictimingtests.
+
+### Lab421 — event-review live trial starts; repayment observed
+
+Run20260920T084212.183374Z/session63741, revision8643a37, sameSmashrestart13852→0
+validated; nativeopening0:18verified. --event-reviews enabled alongsideexisting
+contributiontopchoice, camera, sameobjective and$.10/300scap. No tacticalrootorders.
+Earlyreview601borrowed2.007s; followingmeasuredinterval15.980s andplannedidle16.257s
+afterdecisionwork, consistentwithpayingbackborrowedtime. Secondtrigger1292borrowed
+4.109s. At1292twoMarines andoneMarauder observed, reinforcementdropinprogress;
+no performanceattribution fromthissnapshot.26calls $0.016555644, nodecisionerrors
+atinspection. Trialstilllive; donotrestartorclaimoutcome. Latestthreeepisodehistory
+alsohasinterruptionmetadata416; this isnotcontrolledisolationofonetimingvariable.
