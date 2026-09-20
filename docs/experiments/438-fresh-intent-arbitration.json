@@ -1,0 +1,312 @@
+{
+  "source": "runs/20260920T093458.774878Z/events.jsonl",
+  "intent_source": "docs/experiments/436-force-intents.json",
+  "method": "Reuse the three exact recorded states but elicit fresh intentions before each paired allocation comparison. Fresh baseline versus identical purchase question with Jev goals added to state. All choices retained, including Save. Alternating order, one pair per state. Fresh goals are hypothetical, not observations or forced orders. No gameplay commands.",
+  "pairs": [
+    {
+      "time": 1789897048.527328,
+      "goals": [
+        {
+          "question": "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned Marauder above the current count. Seek additional units of this type when resources and production allow."
+        },
+        {
+          "question": "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned Marine above the current count. Seek additional units of this type when resources and production allow."
+        },
+        {
+          "question": "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned Medic above the current count. Seek additional units of this type when resources and production allow."
+        },
+        {
+          "question": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow."
+        }
+      ],
+      "fresh_intents": {
+        "target_0": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.7,
+          "probabilities": {
+            "expand": 0.8,
+            "replace": 0.06,
+            "stop": 0.14
+          }
+        },
+        "target_1": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.79,
+          "probabilities": {
+            "expand": 0.87,
+            "replace": 0.04,
+            "stop": 0.09
+          }
+        },
+        "target_2": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.55,
+          "probabilities": {
+            "expand": 0.7,
+            "replace": 0.11,
+            "stop": 0.19
+          }
+        },
+        "target_3": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "expand": 0.72,
+            "replace": 0.15,
+            "stop": 0.13
+          }
+        }
+      },
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "batch_4": 0.01,
+            "project_2": 0.08,
+            "project_1": 0.05,
+            "project_0": 0.01,
+            "project_6": 0.07,
+            "batch_6": 0.06,
+            "project_10": 0.01,
+            "project_3": 0.01,
+            "project_4": 0.01,
+            "save_for_0": 0.01,
+            "project_9": 0.15000000000000002,
+            "save": 0.33,
+            "project_5": 0.04,
+            "batch_9": 0.11,
+            "project_8": 0.02,
+            "batch_7": 0.01,
+            "batch_5": 0.01,
+            "project_7": 0.01
+          }
+        }
+      },
+      "baseline_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+      "with_intents": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "save_for_0": 0.01,
+            "project_6": 0.14,
+            "project_8": 0.02,
+            "batch_6": 0.07,
+            "save": 0.21,
+            "batch_4": 0.0,
+            "project_1": 0.03,
+            "project_4": 0.01,
+            "project_10": 0.01,
+            "project_0": 0.02,
+            "batch_7": 0.01,
+            "project_3": 0.01,
+            "project_9": 0.15,
+            "project_5": 0.08,
+            "project_7": 0.01,
+            "batch_5": 0.04,
+            "project_2": 0.08,
+            "batch_9": 0.1
+          }
+        }
+      },
+      "with_intents_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+    },
+    {
+      "time": 1789897564.248217,
+      "goals": [
+        {
+          "question": "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned Marauder above the current count. Seek additional units of this type when resources and production allow."
+        },
+        {
+          "question": "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 1. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned Marine above the current count. Seek additional units of this type when resources and production allow."
+        },
+        {
+          "question": "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned Medic above the current count. Seek additional units of this type when resources and production allow."
+        },
+        {
+          "question": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 11. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow."
+        }
+      ],
+      "fresh_intents": {
+        "target_0": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.68,
+          "probabilities": {
+            "replace": 0.05,
+            "stop": 0.17,
+            "expand": 0.78
+          }
+        },
+        "target_1": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.81,
+          "probabilities": {
+            "replace": 0.1,
+            "stop": 0.03,
+            "expand": 0.87
+          }
+        },
+        "target_2": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.65,
+          "probabilities": {
+            "replace": 0.1,
+            "stop": 0.13,
+            "expand": 0.77
+          }
+        },
+        "target_3": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "replace": 0.22,
+            "stop": 0.14,
+            "expand": 0.64
+          }
+        }
+      },
+      "with_intents": {
+        "investment": {
+          "choice": "project_7",
+          "type": "choice",
+          "confidence": 0.19,
+          "probabilities": {
+            "project_11": 0.01,
+            "project_1": 0.08,
+            "batch_7": 0.04,
+            "save": 0.16,
+            "project_10": 0.19,
+            "project_4": 0.01,
+            "project_6": 0.07,
+            "project_2": 0.01,
+            "batch_5": 0.0,
+            "batch_10": 0.06,
+            "batch_6": 0.01,
+            "project_8": 0.05,
+            "project_7": 0.24,
+            "project_0": 0.01,
+            "project_3": 0.0,
+            "batch_8": 0.01,
+            "project_5": 0.02,
+            "project_9": 0.03
+          }
+        }
+      },
+      "with_intents_description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 0; current orders: {'Move Move': 1}.",
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "project_2": 0.01,
+            "project_4": 0.01,
+            "save": 0.26,
+            "batch_10": 0.07,
+            "batch_6": 0.01,
+            "project_7": 0.18,
+            "project_3": 0.01,
+            "batch_8": 0.02,
+            "project_5": 0.02,
+            "batch_5": 0.0,
+            "project_11": 0.01,
+            "project_8": 0.06,
+            "project_9": 0.02,
+            "project_6": 0.04,
+            "batch_7": 0.04,
+            "project_10": 0.16,
+            "project_1": 0.07,
+            "project_0": 0.01
+          }
+        }
+      },
+      "baseline_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+    },
+    {
+      "time": 1789897919.149514,
+      "goals": [
+        {
+          "question": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 14. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+          "chosen_intent": "Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow."
+        }
+      ],
+      "fresh_intents": {
+        "target_0": {
+          "choice": "expand",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "stop": 0.11,
+            "expand": 0.64,
+            "replace": 0.25
+          }
+        }
+      },
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "project_9": 0.02,
+            "batch_7": 0.11,
+            "project_2": 0.01,
+            "project_7": 0.2,
+            "project_5": 0.01,
+            "project_3": 0.17,
+            "project_1": 0.1,
+            "project_8": 0.04,
+            "save": 0.25,
+            "project_4": 0.03,
+            "project_0": 0.05,
+            "project_6": 0.01
+          }
+        }
+      },
+      "baseline_description": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+      "with_intents": {
+        "investment": {
+          "choice": "project_7",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "batch_7": 0.16,
+            "project_8": 0.02,
+            "save": 0.13,
+            "project_0": 0.04,
+            "project_7": 0.3,
+            "project_6": 0.01,
+            "project_1": 0.08,
+            "project_5": 0.01,
+            "project_4": 0.03,
+            "project_9": 0.02,
+            "project_2": 0.01,
+            "project_3": 0.19
+          }
+        }
+      },
+      "with_intents_description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build Factory, Build MissileTurret, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SensorTower, Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 14; idle: 0; current orders: {'Effect Repair SCV': 12, 'Move Move': 13, 'Harvest Return SCV': 1}."
+    }
+  ],
+  "calls": 9,
+  "cost_usd": 0.0054537000000000006
+}

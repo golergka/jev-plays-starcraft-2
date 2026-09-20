@@ -6433,3 +6433,16 @@ reinforcing need not to treat a single response as deterministic proof.
 Lab437 correction: project_7 maps to Marine in the middle state, SCV in the
 last state. Initial journal/commit mislabeled the middle option. Artifact
 already contained correct full descriptions; use per-state mappings.
+
+### Lab438 — fresh intention generation repeats Marine/SCV allocation shift
+
+Repeat437's three fixed recorded431 states, this time eliciting fresh Jev goals
+before each baseline/enriched comparison. Ninecalls $0.005453700. Fresh goals
+allExpand again. BaselinesSave/Save/Save; goal-backedSave/Marine/SCV, matching437.
+Exact descriptions checked perstate, not inferred from project indices. This
+supports a small opt-in live test of Jev-generated intentions informing purchase
+arbitration, not a claim of improved mission performance or calibrated goals.
+All purchase alternatives and saving remain available; no root-chosen build.
+Potential costs: extra call, slower review, genericExpand bias, stale intentions.
+Next implementation should bound refresh and invalidate on strategic change or
+rewind, log chosen goals, and retain hard spending governance. No newgame yet.
