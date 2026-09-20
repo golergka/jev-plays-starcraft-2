@@ -6218,3 +6218,16 @@ afterdecisionwork, consistentwithpayingbackborrowedtime. Secondtrigger1292borrow
 no performanceattribution fromthissnapshot.26calls $0.016555644, nodecisionerrors
 atinspection. Trialstilllive; donotrestartorclaimoutcome. Latestthreeepisodehistory
 alsohasinterruptionmetadata416; this isnotcontrolledisolationofonetimingvariable.
+
+### Lab422 — event-review trial421 defeats at27:39
+
+Session63741 exited0; run20260920T084212.183374Z. NativeUI confirms allstructures
+destroyed,0/4relics,0minerals/172gas.312calls $0.249544218,25earlyreviews, no decision
+errors. Borrowing and repayment observed live. Combat units persisted longer in
+opening than407/414, then attrition, worker expansion, repairs and multipleCommand
+Centers withoutdurablearmy/objectiveprogress. At12:35native1755mineralsbanked;
+at19:25nearly2000. Longer survival isnot missionprogress or causal timingbenefit.
+No rootorders/midtrialpolicychanges. Reconciledresult/UI/checkpoint/publicreport.
+TwelveSmashdefeats, only firstthree missions verifiedwon. No unchangedretry.
+Event-aware pacing mechanicallyworks but notdemonstratedsuccessfulcombatpolicy;
+next audit shoulduse the newwait-event evidence, not just totalduration.

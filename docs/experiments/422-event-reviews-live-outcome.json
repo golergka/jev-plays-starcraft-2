@@ -1,0 +1,222 @@
+{
+  "trial": 421,
+  "run": "runs/20260920T084212.183374Z",
+  "calls": 312,
+  "cost_usd": 0.24954421800000007,
+  "ui_verification": {
+    "time": 1789895012.764253,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "27:39",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 172
+  },
+  "decision_errors": 0,
+  "early_reviews": [
+    {
+      "time": 1789893767.096064,
+      "event": "early_event_review",
+      "loop": 601,
+      "borrowed_seconds": 2.0071276660019066,
+      "repayment_base": 135390.627524791,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789893797.96156,
+      "event": "early_event_review",
+      "loop": 1292,
+      "borrowed_seconds": 4.108548333024373,
+      "repayment_base": 135423.59712616602,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789893835.286999,
+      "event": "early_event_review",
+      "loop": 2129,
+      "borrowed_seconds": 8.774185832997318,
+      "repayment_base": 135465.588655583,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789893874.097621,
+      "event": "early_event_review",
+      "loop": 2995,
+      "borrowed_seconds": 4.88788654198288,
+      "repayment_base": 135500.51317945798,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789893903.626548,
+      "event": "early_event_review",
+      "loop": 3655,
+      "borrowed_seconds": 8.16679637497873,
+      "repayment_base": 135533.32125837498,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789893936.115197,
+      "event": "early_event_review",
+      "loop": 4372,
+      "borrowed_seconds": 8.633403166022617,
+      "repayment_base": 135566.274221541,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789893972.595865,
+      "event": "early_event_review",
+      "loop": 5195,
+      "borrowed_seconds": 4.574660084006609,
+      "repayment_base": 135598.69851175,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894007.064567,
+      "event": "early_event_review",
+      "loop": 5971,
+      "borrowed_seconds": 6.177281415992184,
+      "repayment_base": 135634.770040666,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894045.0484679,
+      "event": "early_event_review",
+      "loop": 6808,
+      "borrowed_seconds": 5.309543833020143,
+      "repayment_base": 135671.883298541,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894078.594935,
+      "event": "early_event_review",
+      "loop": 7566,
+      "borrowed_seconds": 8.935921415977646,
+      "repayment_base": 135709.059355416,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894107.782468,
+      "event": "early_event_review",
+      "loop": 8222,
+      "borrowed_seconds": 7.2238149589975365,
+      "repayment_base": 135736.5349805,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894134.409164,
+      "event": "early_event_review",
+      "loop": 8815,
+      "borrowed_seconds": 8.349125832988648,
+      "repayment_base": 135764.286818291,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894177.381452,
+      "event": "early_event_review",
+      "loop": 9753,
+      "borrowed_seconds": 13.065227332990617,
+      "repayment_base": 135811.975306583,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894258.8910668,
+      "event": "early_event_review",
+      "loop": 11536,
+      "borrowed_seconds": 8.534055166994222,
+      "repayment_base": 135888.953958333,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894299.836552,
+      "event": "early_event_review",
+      "loop": 12430,
+      "borrowed_seconds": 9.91108216700377,
+      "repayment_base": 135931.276729083,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894341.6296818,
+      "event": "early_event_review",
+      "loop": 13346,
+      "borrowed_seconds": 9.56557933302247,
+      "repayment_base": 135972.72473433302,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894382.291095,
+      "event": "early_event_review",
+      "loop": 14233,
+      "borrowed_seconds": 11.789758790982887,
+      "repayment_base": 136015.61055604098,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894440.71406,
+      "event": "early_event_review",
+      "loop": 15481,
+      "borrowed_seconds": 18.898664749984164,
+      "repayment_base": 136081.14269175,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894493.163296,
+      "event": "early_event_review",
+      "loop": 16609,
+      "borrowed_seconds": 14.943061874975683,
+      "repayment_base": 136129.636456541,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894540.87654,
+      "event": "early_event_review",
+      "loop": 17655,
+      "borrowed_seconds": 12.164439624990337,
+      "repayment_base": 136174.571197833,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894584.2366452,
+      "event": "early_event_review",
+      "loop": 18580,
+      "borrowed_seconds": 17.824493249994703,
+      "repayment_base": 136223.591684416,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894652.65155,
+      "event": "early_event_review",
+      "loop": 20004,
+      "borrowed_seconds": 26.44388883301872,
+      "repayment_base": 136300.626043291,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894741.9967418,
+      "event": "early_event_review",
+      "loop": 21839,
+      "borrowed_seconds": 17.919835083012003,
+      "repayment_base": 136381.446883208,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894827.362113,
+      "event": "early_event_review",
+      "loop": 23581,
+      "borrowed_seconds": 34.216145167010836,
+      "repayment_base": 136483.01672400002,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    },
+    {
+      "time": 1789894915.125749,
+      "event": "early_event_review",
+      "loop": 25372,
+      "borrowed_seconds": 17.85752966700238,
+      "repayment_base": 136554.420211125,
+      "reason": "Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged"
+    }
+  ],
+  "peak_settled_run_cost_per_300s": 0.07020451199999998,
+  "limits": "Settled response costs exclude inflight reservations and other runs. Single trajectory; longer survival does not establish causal benefit or mission progress."
+}
