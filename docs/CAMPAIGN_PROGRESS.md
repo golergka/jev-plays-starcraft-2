@@ -6308,3 +6308,14 @@ then air pressure and objective loss. Longer survival is not mission success
 or causal proof of pacing benefit. No direct root orders or policy edits.
 Next experiment should address autonomous allocation/objective progress;
 repeating this policy unchanged is not justified by this outcome.
+
+### Lab428 — objective-linked allocation wording selects Save in all three probes
+
+Recorded424 first/middle/last investment requests, full original state and
+options, alternating baseline/treatment order. Treatment adds general primary
+objective, missing capability, completion time and opportunity-cost wording;
+no prescribed unit, route or build order. Six calls $0.003432072. Opening
+Save→Save; middle SCV→Save; last save-for-SCV→Save. One pair each, no causal
+performance claim. This does not establish better preparation or objective
+progress, so do not deploy or restart on this evidence. Script and artifact
+preserve distributions and selected descriptions. No gameplay orders.

@@ -1,0 +1,161 @@
+{
+  "source": "runs/20260920T090555.000913Z/events.jsonl",
+  "method": "First/middle/last eligible recorded requests. Full original state and questions retained; treatment adds general primary-objective and opportunity-cost wording; no unit, route or build-order recommendation. Alternating order, one pair per state. No gameplay commands; descriptive comparison, not causal performance evidence.",
+  "pairs": [
+    {
+      "time": 1789895165.958741,
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "project_1": 0.05,
+            "project_4": 0.22,
+            "project_0": 0.04,
+            "batch_4": 0.1,
+            "save_for_1": 0.02,
+            "batch_5": 0.01,
+            "project_7": 0.12,
+            "project_5": 0.02,
+            "save_for_0": 0.0,
+            "batch_3": 0.01,
+            "project_2": 0.0,
+            "project_3": 0.03,
+            "project_8": 0.02,
+            "project_6": 0.02,
+            "save": 0.3,
+            "batch_7": 0.04
+          }
+        }
+      },
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "project_0": 0.02,
+            "project_4": 0.15,
+            "project_6": 0.02,
+            "batch_3": 0.01,
+            "batch_5": 0.01,
+            "project_3": 0.04,
+            "project_7": 0.12,
+            "project_5": 0.02,
+            "batch_4": 0.08,
+            "save_for_1": 0.01,
+            "project_1": 0.06,
+            "batch_7": 0.04,
+            "save_for_0": 0.0,
+            "save": 0.4,
+            "project_8": 0.02,
+            "project_2": 0.0
+          }
+        }
+      },
+      "selected_descriptions": {
+        "baseline": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "explicit": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      }
+    },
+    {
+      "time": 1789895624.73529,
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "project_3": 0.05,
+            "batch_7": 0.07,
+            "project_5": 0.01,
+            "save": 0.37,
+            "project_6": 0.01,
+            "project_0": 0.14,
+            "project_2": 0.03,
+            "project_9": 0.04,
+            "project_4": 0.02,
+            "project_8": 0.04,
+            "project_7": 0.14,
+            "project_1": 0.08
+          }
+        }
+      },
+      "baseline": {
+        "investment": {
+          "choice": "project_7",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "batch_7": 0.11,
+            "project_8": 0.03,
+            "project_7": 0.19999999999999998,
+            "project_0": 0.05,
+            "save": 0.16999999999999998,
+            "project_6": 0.01,
+            "project_5": 0.01,
+            "project_1": 0.17,
+            "project_4": 0.06,
+            "project_9": 0.06,
+            "project_2": 0.08,
+            "project_3": 0.05
+          }
+        }
+      },
+      "selected_descriptions": {
+        "baseline": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SensorTower, Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 2; current orders: {'Move Move': 4, 'Harvest Gather SCV': 5, 'Harvest Return SCV': 1, 'Build EngineeringBay': 1}.",
+        "explicit": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      }
+    },
+    {
+      "time": 1789896608.119745,
+      "baseline": {
+        "investment": {
+          "choice": "save_for_7",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "save_for_0": 0.02,
+            "save_for_8": 0.01,
+            "save_for_9": 0.04,
+            "save_for_4": 0.02,
+            "save_for_2": 0.01,
+            "save": 0.3,
+            "save_for_6": 0.0,
+            "save_for_3": 0.04,
+            "save_for_7": 0.54,
+            "save_for_1": 0.01,
+            "save_for_5": 0.01
+          }
+        }
+      },
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "save_for_8": 0.01,
+            "save_for_3": 0.06,
+            "save_for_1": 0.01,
+            "save_for_9": 0.03,
+            "save_for_4": 0.01,
+            "save_for_0": 0.03,
+            "save_for_2": 0.01,
+            "save_for_6": 0.0,
+            "save_for_7": 0.22,
+            "save": 0.61,
+            "save_for_5": 0.01
+          }
+        }
+      },
+      "selected_descriptions": {
+        "baseline": "Commit to saving for SCV for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 40, 'vespene': 0, 'supply': 0}. Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build Factory, Build MissileTurret, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SensorTower, Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 28; idle: 5; current orders: {'Move Move': 10, 'Harvest Gather SCV': 7, 'Harvest Return SCV': 6, 'Effect Repair SCV': 3}.",
+        "explicit": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders."
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0034320719999999996
+}
