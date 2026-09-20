@@ -23,6 +23,8 @@ def recent_outcomes(view, memory, window=672):
         history.clear()
         memory.pop('cumulative_outcomes', None)
     current = {'loop':loop, 'resources':dict(view.get('resources', {})),
+               'resource_counters':{k:v for k,v in view.get('player_score_telemetry',{}).items()
+                   if k in ('collected_minerals','collected_vespene','spent_minerals','spent_vespene')},
                'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0),
                                      'position':u.get('position'), 'build_progress':u.get('build_progress')}
                         for u in view['self']}}
@@ -90,7 +92,12 @@ def recent_outcomes(view, memory, window=672):
         oldest_loop,oldest_progress = samples[-1]
         unfinished.append({'tag':tag,'type':unit['type'],'progress':round(progress,3),
             'observed_loops':loop-oldest_loop,'progress_change':round(progress-oldest_progress,3)})
+    old_counters = history[0].get('resource_counters', {})
+    counter_changes = {k:v-old_counters[k] for k,v in current['resource_counters'].items()
+                       if k in old_counters and v >= old_counters[k]}
     return {'observed_game_loops':loop-history[0]['loop'],
+            'resource_counter_changes':counter_changes,
+            'resource_counter_interpretation':'Own API collection/spending counter deltas over this observation window; missing or reset counters are omitted. These do not attribute spending to repairs or purchases, and may differ from net balances due to refunds or mission effects.',
             'cumulative_observed_unit_changes': {
                 **cumulative,
                 'interpretation': 'Counts of observed appearances and disappearances since since_loop, not kills or production totals. Loading, unloading, morphing and mission triggers can change presence. Earlier unretained history is unknown.',
