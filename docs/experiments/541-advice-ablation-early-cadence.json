@@ -1,0 +1,31 @@
+{
+  "window": "model/tick origin loops <=2200",
+  "runs": [
+    {
+      "run": "20260920T143343.541199Z",
+      "successful_calls": 43,
+      "successful_cost": 0.025987794,
+      "completed_ticks": 5,
+      "tick_loops": [
+        51,
+        516,
+        753,
+        1534,
+        1842
+      ]
+    },
+    {
+      "run": "20260920T145005.830497Z",
+      "successful_calls": 24,
+      "successful_cost": 0.014581098,
+      "completed_ticks": 4,
+      "tick_loops": [
+        47,
+        448,
+        621,
+        1204
+      ]
+    }
+  ],
+  "caveat": "Current trial had a ReadTimeout and reserved its unknown cost. Successful-call dollars exclude that reservation. Fewer completed ticks means lower successful-call cost alone is not a decision-rate improvement. Native3:39 units on creep under Spine Crawler fire; no objective success."
+}
