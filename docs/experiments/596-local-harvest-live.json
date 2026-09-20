@@ -1,0 +1,15 @@
+{
+  "lab": 596,
+  "run": "runs/20260920T180213.269272Z",
+  "start_commit": "deb42a4",
+  "status": "running",
+  "change": "Local enemy proximity replaces any-visible-enemy harvesting review invalidation; other592 flags unchanged.",
+  "native_visual": {
+    "time": "2:22",
+    "supply": "14/27",
+    "relics": "0/4",
+    "observation": "Marines and Marauders visible fighting on creep."
+  },
+  "avoided_concrete_questions_so_far": 8,
+  "interpretation": "No mission outcome or causal improvement established. Avoided questions are not necessarily avoided HTTP requests because requests batch multiple questions."
+}
