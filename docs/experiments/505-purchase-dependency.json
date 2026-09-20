@@ -1,0 +1,53 @@
+{
+  "source": "runs/20260920T125822.620646Z/events.jsonl",
+  "method": "Same first/middle/last Bunker-top states as503/504. Diagnostic comprehension only: explicit candidate named, no replacement purchase or game orders. Full recorded state preserved.",
+  "answers": [
+    {
+      "loop": 5432,
+      "answer": {
+        "dependency": {
+          "choice": "passengers",
+          "type": "choice",
+          "confidence": 1.0,
+          "probabilities": {
+            "independent": 0.0,
+            "unknown": 0.0,
+            "passengers": 1.0
+          }
+        }
+      }
+    },
+    {
+      "loop": 9836,
+      "answer": {
+        "dependency": {
+          "choice": "passengers",
+          "type": "choice",
+          "confidence": 1.0,
+          "probabilities": {
+            "independent": 0.0,
+            "passengers": 1.0,
+            "unknown": 0.0
+          }
+        }
+      }
+    },
+    {
+      "loop": 12545,
+      "answer": {
+        "dependency": {
+          "choice": "passengers",
+          "type": "choice",
+          "confidence": 1.0,
+          "probabilities": {
+            "independent": 0.0,
+            "passengers": 1.0,
+            "unknown": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "calls": 3,
+  "cost_usd": 0.001414728
+}
