@@ -6685,3 +6685,17 @@ including orderfamilies; only456wording changed. Native opening0:15 verified,
 controller live after restart. Cap$.10/300s unchanged. Follow thissession and
 /tmp/jev-smash-and-grab-lab457.log. Watch cargo retention and commands generally;
 no claim until measured.16priorSmashdefeats,firstthree missions onlyverifiedwins.
+
+### Lab458 — neutral role wording retains one passenger; mission still lost
+
+Trial457/run20260920T104430.451350Z/session38070 terminalexit0. Native21:13
+defeat allstructuresdestroyed,0/4relics,0minerals88gas;278calls $0.188288184,
+zeroerrors. Reconciledresult/checkpoint17thSmashdefeat/publicreport. Earlyarmy
+lost, Barracksdestroyed then rebuilt by13132; Marinesproduced but no durableforce.
+TwoBunkers later: JevloadsSCV15261,observedSCVaboard and choosescontinue15596;
+bunkersabsent16586. Onlyone retentionreview, not proven usefuldefense. Repeated
+repairs heldbase untilairattacksovercameit. Longer survival is not causal proof
+of456benefit. No rootorders/midrunpolicychanges. Keep distinction: wording
+changed sampled unload behavior and one live continuation; campaign stillfails.
+Next address production/force allocation and broad objective dominance, using
+journal to avoid repeating prior context-only or action-kind interventions.

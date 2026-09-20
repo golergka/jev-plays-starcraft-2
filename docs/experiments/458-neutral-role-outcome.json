@@ -1,0 +1,33 @@
+{
+  "trial": 457,
+  "run": "runs/20260920T104430.451350Z",
+  "calls": 278,
+  "cost_usd": 0.18828818399999997,
+  "ui_verification": {
+    "time": 1789902038.704833,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "21:13",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 88
+  },
+  "decision_errors": 0,
+  "cargo_decisions": [
+    {
+      "loop": 15261,
+      "choice": "support_ability_407_4347134027_only_4328521788",
+      "passengers": {}
+    },
+    {
+      "loop": 15596,
+      "choice": "continue",
+      "passengers": {
+        "SCV": 1
+      }
+    }
+  ],
+  "limits": "Single live trial. Retention observed for one SCV over one review only; not evidence of useful garrison defense or causal survival benefit. No root tactical commands or midrun policy changes."
+}
