@@ -4790,3 +4790,13 @@ Audit:decision objective is only Hold out for evacuation; on-screen countdown
 is not structured model context. Do not fabricate countdown by22.4loopconversion
 or expose hidden campaign scripts. A future timer adapter must read player-visible
 mission state and generalize across missions before claiming objective awareness.
+
+### Lab328 — protocol and native timer feasibility audit
+
+Installed protobuf descriptors plus official Blizzard schemas contain no structured
+campaign objective/countdown field. Galaxy native declarations provide visible
+window query, timer remaining/elapsed, title/style mutators, and text-valued bank
+serialization. Documented a visibility-filtered wrapper path and acceptance checks
+in VISIBLE_MISSION_CONTEXT.md. No hidden timer extraction, invented loop conversion,
+paid calls, or live game mutation. Adapter implementation/runtime equivalence remain
+unverified; custom dialog timers are explicitly outside initial proposed coverage.
