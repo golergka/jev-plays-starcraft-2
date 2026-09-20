@@ -1,0 +1,52 @@
+{
+  "lab": 560,
+  "trial": 559,
+  "run": "runs/20260920T155715.144395Z",
+  "status": "running",
+  "unique_nonempty_samples": [
+    {
+      "loop": 5953,
+      "progress": [
+        {
+          "tag": "4320657409",
+          "type": "SCV",
+          "ability": "Build Barracks",
+          "target_point": [
+            64.5,
+            12.5
+          ],
+          "observed_loops": 147,
+          "initial_straight_line_distance": 1.1,
+          "current_straight_line_distance": 1.1,
+          "distance_reduction": 0.0
+        }
+      ]
+    },
+    {
+      "loop": 6431,
+      "progress": [
+        {
+          "tag": "4320657409",
+          "type": "SCV",
+          "ability": "Move Move",
+          "target_point": [
+            66.3125,
+            12.5
+          ],
+          "observed_loops": 100,
+          "initial_straight_line_distance": 5.7,
+          "current_straight_line_distance": 5.5,
+          "distance_reduction": 0.2
+        }
+      ]
+    }
+  ],
+  "visual": {
+    "time": "8:00",
+    "supply": "5/11",
+    "relics": "0/4",
+    "command_center_health": "1500/1500",
+    "observation": "Zerg units around Barracks and Refinery; SCVs still present."
+  },
+  "interpretation": "Suffix history produces factual nonempty measurements in live model input. No combat or mission benefit established. Repeated requests at one loop do not count as independent movement observations."
+}
