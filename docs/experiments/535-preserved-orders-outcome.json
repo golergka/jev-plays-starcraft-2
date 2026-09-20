@@ -1,0 +1,106 @@
+{
+  "trial": 531,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T142033.211362Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789903966",
+      "loop": 16316
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 228,
+    "cost": 0.13709341800000005,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T142033.211362Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "16:59",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at 15:31"
+    }
+  },
+  "maintenance_events": [
+    {
+      "time": 1789914078.3772118,
+      "event": "orders_maintained",
+      "loop": 752,
+      "orders": [
+        {
+          "unit_tag": 4330618882,
+          "ability_id": 23,
+          "observed_loop": 817,
+          "coordinate_tolerance": 0.0001,
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "reason": "Sole current Move/Attack order retained in fresh observation (point tolerance 0.0001)"
+    },
+    {
+      "time": 1789914130.073673,
+      "event": "orders_maintained",
+      "loop": 1927,
+      "orders": [
+        {
+          "unit_tag": 4314365965,
+          "ability_id": 23,
+          "observed_loop": 1973,
+          "coordinate_tolerance": 0.0001,
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "unit_tag": 4301258756,
+          "ability_id": 23,
+          "observed_loop": 1973,
+          "coordinate_tolerance": 0.0001,
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "reason": "Sole current Move/Attack order retained in fresh observation (point tolerance 0.0001)"
+    }
+  ],
+  "errors": [
+    {
+      "time": 1789914185.811033,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789914296.947725,
+      "event": "engine_action_error",
+      "loop": 5704,
+      "failures": [
+        {
+          "ability_id": 558,
+          "unit_tags": [
+            4313317377
+          ],
+          "result": "CantBuildLocationInvalid"
+        }
+      ]
+    },
+    {
+      "time": 1789914524.987531,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "conclusion": "Rounded order matching worked: two events preserved three orders. Native defeat at16:59 with 1/4 relics. Sparse intervention exposure and one run do not establish comparative efficacy; it did not prevent mission failure. Menu permutation remained disabled throughout. Next trial preselects seed534 with other flags unchanged."
+}
