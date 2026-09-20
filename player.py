@@ -26,7 +26,8 @@ def recent_outcomes(view, memory, window=672):
                'resource_counters':{k:v for k,v in view.get('player_score_telemetry',{}).items()
                    if k in ('collected_minerals','collected_vespene','spent_minerals','spent_vespene')},
                'units':{str(u['tag']):{'type':u['type'], 'health':u.get('health',0),
-                                     'position':u.get('position'), 'build_progress':u.get('build_progress')}
+                                     'position':u.get('position'), 'build_progress':u.get('build_progress'),
+                                     'orders':u.get('orders', [])}
                         for u in view['self']}}
     cumulative = memory.setdefault('cumulative_outcomes', {
         'since_loop': history[0]['loop'] if history else loop,
@@ -78,6 +79,27 @@ def recent_outcomes(view, memory, window=672):
     for item in movement.values():
         for key in ('mean_net_displacement','mean_sampled_distance_travelled'):
             item[key] = round(item[key]/item['units_observed_throughout_window'],1)
+    point_order_progress = []
+    for tag in sorted(continuous):
+        samples = [h['units'][tag] for h in history]
+        if len(samples) < 2 or any(u.get('position') is None for u in samples):
+            continue
+        orders = [u.get('orders', []) for u in samples]
+        if any(len(o) != 1 or o[0].get('target_point') is None for o in orders):
+            continue
+        first = orders[0][0]
+        if any(o[0].get('ability') != first.get('ability') or
+               o[0]['target_point'] != first['target_point'] for o in orders[1:]):
+            continue
+        target = first['target_point']
+        before = math.dist(samples[0]['position'], target)
+        after = math.dist(samples[-1]['position'], target)
+        point_order_progress.append({'tag':tag, 'type':samples[-1]['type'],
+            'ability':first.get('ability'), 'target_point':target,
+            'observed_loops':loop-history[0]['loop'],
+            'initial_straight_line_distance':round(before,1),
+            'current_straight_line_distance':round(after,1),
+            'distance_reduction':round(before-after,1)})
     unfinished = []
     for tag,unit in current['units'].items():
         progress = unit.get('build_progress')
@@ -105,6 +127,8 @@ def recent_outcomes(view, memory, window=672):
             'completed_from_observed_incomplete_by_type':dict(completions),
             'currently_incomplete_projects':unfinished,
             'construction_interpretation':'Only observed progress transitions count as completion. Newly appearing completed units are not attributed to construction. No progress over a short interval does not establish abandonment.',
+            'unchanged_point_order_progress':point_order_progress,
+            'point_order_interpretation':'Same sole point order at every retained observation, not proof of uninterrupted execution. Positive distance reduction means closer to its destination. Straight-line distance is not route distance; necessary detours or combat can increase it. Missing entries mean insufficient comparable observations, not zero progress.',
             'movement_by_type':movement,
             'movement_interpretation':'Map units over the observed window, only units present at every sample. Sampled travel is a lower bound; net displacement can be zero after useful round trips. Neither measure alone indicates success or failure.',
             'own_units_appeared_by_type':dict(appeared),
