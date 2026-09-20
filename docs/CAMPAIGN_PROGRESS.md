@@ -6417,15 +6417,19 @@ Expand is merely a generic response bias. No forced purchases or gamecommands.
 Script/artifact preserve question wording and distributions. Not evidence of
 better play, and task formulations are intentionally not equivalent.
 
-### Lab437 — expansion intentions feed purchases, but favor workers
+### Lab437 — expansion intentions feed a Marine and an SCV purchase
 
 Reuse436's three exact states and previously elicited Jev intentions; fresh
 baseline versus unchanged purchase menu with those hypothetical goals attached.
 All alternatives includingSave retained; no forced spending, root priorities
 or gamecommands. Sixcalls $0.003916248. BaselineSave in allthree; enrichedSave,
-SCV,SCV. Thus goals can affect allocation in these samples, but this does not
-address the observed worker-heavy force composition. One pair/state and reused
+Marine,SCV. Thus goals can affect allocation in these samples, including one
+combat purchase, but do not establish improved force composition in play. One pair/state and reused
 intentions, not a live hierarchical policy or causal gameplay evidence.
 Do not deploy merely because more purchases occur. Script/artifact preserve
 selected descriptions and distributions. Baseline middle differs from436,
 reinforcing need not to treat a single response as deterministic proof.
+
+Lab437 correction: project_7 maps to Marine in the middle state, SCV in the
+last state. Initial journal/commit mislabeled the middle option. Artifact
+already contained correct full descriptions; use per-state mappings.
