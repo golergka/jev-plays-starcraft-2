@@ -5111,3 +5111,12 @@ andactualsuccessfulrequestpayloadcoverage are visible separately. Artifact351
 recordspartialcount/cost,notoutcome. Native1:08screen confirmsactivegame,19:02until
 evacuation,Marines nearstartingdefenses. Transmission is notproofofmodeluse or
 improvedplay. No policychange duringtrial; report/journalonly.
+
+### Lab352 — refresh public evidence summary during unchanged350trial
+
+EXPERIMENT_REPORT.md wasstillat326andincorrectlysaidvisiblecountdownunavailable.
+Update through351:timercontextvalidation,scoredcombatfailure,syntheticcontrols,
+distance/force-targetnegativeprobes,andverifiedrestartmemoryfix. Recompute38native-
+verifiedZeroHourdefeatresultcosts:$7.221843048,explicitlynotaccounttotal. Onlyfirsttwo
+missions verifiedwon; no allcampaignclaim. Native350trialscreen4:35stillactive,
+15:34evacuationremaining. No policychange or additionalmodelprobe.

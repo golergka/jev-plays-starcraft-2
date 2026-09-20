@@ -2,17 +2,17 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** Through lab326, local result
-files contain 36 independently UI-verified Zero Hour defeats. The latest finished
-attempt lasted 11:37 and cost $0.098647710 for 194 successful requests. No later
+**Liberation Day and The Outlaws are verified won.** Through lab351, local result
+files contain 38 independently UI-verified Zero Hour defeats. The latest finished
+attempt lasted 12:47 and cost $0.110368020 for 181 successful requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab326
+## Current evidence through lab351
 
 The persistent difficulty is converting local choices into coordinated, sustained
 objective progress. Native screenshots show the army gathering near one Command
-Center while other structures are attacked. In the latest trial, all Marines were
-absent from sampled observations by loop 8520. Legal actions and an abstract
+Center while other structures are attacked. Native checks in trial344 showed fighting near the Command Center, then
+enemies in the mineral line and eventual destruction of every structure. Legal actions and an abstract
 “protect” decision do not establish effective defense.
 
 Independent descriptive Score ratings changed investment preferences relative to
@@ -24,8 +24,8 @@ in three states. Neither result demonstrates improved play.
 
 Three requested boarding jobs were confirmed by exact passenger/carrier tags in
 later observations. Three others remained unconfirmed; missing evidence does not
-prove failure or death. Unload choices now name their observed passengers. The
-latest trial exercised that wording twice and still lost. There is no evidence
+prove failure or death. Unload choices now name their observed passengers. 
+Trial321 exercised that wording twice and still lost. There is no evidence
 that the wording improves outcomes.
 
 Full combat menus, explicit ordinary-Move semantics, and choosing order kind
@@ -39,15 +39,33 @@ Marine tags in trial298. Low-level utilities can execute Jev commitments between
 paid decisions; no policy forces a build order, worker allocation, bunker loading,
 or movement route. Exact loop deadlines avoid unverified seconds conversions.
 The current decision objective is the text “Hold out for evacuation.” The visible
-evacuation countdown is not currently supplied as structured decision context;
-no hidden wave schedule is supplied either.
+evacuation countdown is now supplied through a tested player-visible timer-window
+adapter. All 179 successful requests in trial337 included that context, but the
+trial still lost at 12:28. No hidden wave schedule is supplied.
 
 The spending governor remains $0.10 per rolling five minutes, with pacing targeting
-60% of that allowance and loud termination if admission exceeds the cap. Latest
-trial peak run-only five-minute spend was $0.061657638. The 36 verified-defeat
-result files total $6.998920320 in recorded request costs. This excludes other
+60% of that allowance and loud termination if admission exceeds the cap. The 38 verified-defeat
+result files total $7.221843048 in recorded request costs. This excludes other
 runs, wins, probes and unresolved billing; it is not an account balance or lifetime
 total. Model latency alone does not describe the budget-constrained control rate.
+
+A separate combat-kind Score trial (344) also lost. Its 25 rating requests cost
+$0.019556208, 17.7% of the trial total. They selected Move 15 times, Hold 9 times,
+and individual control once; never Attack or Attack-move. Median winning margin
+was 0.12, not a confidence measure. It remains opt-in, not the default policy.
+
+Three elementary explicit-outcome controls passed with both Choice and Score.
+That rules out a blanket inability to select Attack in those simple cases, but
+says little about inferring consequences in SC2. Adding observed type-distance
+tables did not change the highest-rated kind in three recorded states. Desired
+force-count questions matched existing counts, even zero Marines after the force
+was gone. Neither probe was deployed as gameplay policy.
+
+Lab350 fixed an actual episode-memory bug: verified API restarts emitted a
+different event from fresh map joins and were excluded from history. The current
+trial loads two verified attempts on this exact map. Lab351 verified both summaries
+in all five sampled strategy/investment request payloads. Delivery is established;
+learning or better play is not. That trial is still in progress as of this update.
 
 Unseen delayed execution errors remain in a bounded 32-entry queue until first
 included in context. Trial318's invalid-placement error at loop8087 appeared in a
