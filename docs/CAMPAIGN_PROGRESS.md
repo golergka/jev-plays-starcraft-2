@@ -5054,3 +5054,17 @@ Do not promote outcome hints into gameplay as root-authored tactics. A nextprobe
 should vary consequence representation using mechanically derived observedfacts,
 without inventing forecasts or prescribing which action shouldwin. No unchanged
 live retrial. Allthreecampaigns remain incomplete.
+
+### Lab348 — observed type-distance table does not change sampled ratings
+
+Inspect currentcombatcontext:weaponcatalog,positions,andnearestselectiondistance
+alreadyexist. Test additional compact owned-type/enemy-type nearestcenterdistance
+table,derived only from currentlyobservedunits; no priorities,outcomepredictions,
+orclaim ofactualattackrange. First/middle/last344score requests with anenemywithin12
+ofanyreportedselection (offline samplingonly). Alternateoriginal/enrichedarmorder,
+retainexactquestions,6calls,$0.005058102. TopratingsHold/Move/Move inbotharms. This
+small negative result does not prove allspatialrepresentation changes ineffective,
+but does not support deployingthisone. Synthetic arithmeticcheck verifies nearest
+pair rather than centroid and excludesneutralentities. Initial attempt foundpacked
+visibleentityrepresentation before any modelcall; correcteddecoder thencompleted.
+Script/artifact348preserveaddedfactsandresponses. No livegamecommands orpolicychange.
