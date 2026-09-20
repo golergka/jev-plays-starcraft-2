@@ -921,7 +921,7 @@ async def decide(view, jev, memory):
             distances = [math.dist(u['position'],t[key]['command']['point'])
                          for u,t in zip(selected,tables[kind]) if 'point' in t[key]['command']]
             if distances:
-                description += f'; travel distances across selection: {min(distances):.1f} to {max(distances):.1f}'
+                description += f'; straight-line distances across selection: {min(distances):.1f} to {max(distances):.1f}; actual engine route and travel distance unknown'
             # Shared executor scope is stated once in the question. Options that
             # affect only a subset continue to name that subset explicitly.
             criteria['group_'+key] = description

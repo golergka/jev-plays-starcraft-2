@@ -6080,3 +6080,15 @@ limits extrapolation from rolelocalfacts success. Context alreadycontains nearby
 threats and groupdispersion; simply repeatingthem didnotchange chosenroute here.
 Next examine action abstractions and trajectory feedback, consulting prior
 negative fullmenu, distance-summary and disappearance probes before spending.
+
+### Lab413 — correct movement distance semantics
+
+Audit of movement option generation found math.dist(start,destination) labeled
+“travel distances across selection.” These are Euclidean straight-line distances,
+not path lengths: engine routing may detour around terrain. Correct description
+to straight-line distances and explicitly state actual route/travel distance
+unknown. No route planner, terrain leak, changed destinations, option removal or
+root tactical decision. Existing destination terrain visibility gates unchanged.
+205tests passed; no paidprobe or newgame. This is an accuracy correction, not
+evidence Jev now avoids dangerous routes. Lab411's northward movement toward an
+eastern destination cannot itself establish bad engine routing.
