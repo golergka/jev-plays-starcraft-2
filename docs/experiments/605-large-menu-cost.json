@@ -1,0 +1,89 @@
+{
+  "lab": 605,
+  "comparison": [
+    {
+      "source": "runs/20260920T181026.929294Z/events.jsonl",
+      "through_loop": 1800,
+      "loop_located_requests": 27,
+      "cost_usd": 0.018270335999999998,
+      "combat_review_loops": [
+        46,
+        447,
+        638,
+        1266,
+        1544
+      ],
+      "mean_combat_gap_loops": 374.5,
+      "diagnosis_requests": 0,
+      "unlocated_requests_in_entire_file": 2,
+      "scope": "Only loop-located successful request records; unlocated requests are not assigned to this window. MobileCombat measures that named selection only, not every possible combat group."
+    },
+    {
+      "source": "runs/20260920T181722.374419Z/events.jsonl",
+      "through_loop": 1800,
+      "loop_located_requests": 34,
+      "cost_usd": 0.023657886,
+      "combat_review_loops": [
+        46,
+        451,
+        733,
+        1282,
+        1578
+      ],
+      "mean_combat_gap_loops": 383,
+      "diagnosis_requests": 0,
+      "unlocated_requests_in_entire_file": 0,
+      "scope": "Only loop-located successful request records; unlocated requests are not assigned to this window. MobileCombat measures that named selection only, not every possible combat group."
+    }
+  ],
+  "fallback": [
+    {
+      "time": 1789928324.139699,
+      "event": "order_menu_size_fallback",
+      "question": "MobileCombat",
+      "options": 159
+    },
+    {
+      "time": 1789928324.93537,
+      "event": "order_menu_tournament",
+      "question": "MobileCombat",
+      "options": 79,
+      "finalists": [
+        "individual",
+        "group_attack_4366008321"
+      ],
+      "interpretation": "Final probabilities apply only to Jev-selected finalists, not the original full menu."
+    },
+    {
+      "time": 1789928325.437978,
+      "event": "order_menu_tournament",
+      "question": "MobileCombat",
+      "options": 80,
+      "finalists": [
+        "group_attack_move_east",
+        "group_map_attack_move_middle_east"
+      ],
+      "interpretation": "Final probabilities apply only to Jev-selected finalists, not the original full menu."
+    },
+    {
+      "time": 1789928325.9736772,
+      "event": "order_menu_tournament",
+      "question": "MobileCombat",
+      "options": 159,
+      "finalists": [
+        "group_attack_4366008321",
+        "group_map_attack_move_middle_east"
+      ],
+      "interpretation": "Final probabilities apply only to Jev-selected finalists, not the original full menu."
+    }
+  ],
+  "native_visual": {
+    "time": "2:15",
+    "supply": "13/27",
+    "relics": "0/4",
+    "observation": "Army still fighting on creep; selected Command Center health1500/1500."
+  },
+  "finding": "At loop1578 the159-option MobileCombat menu hit size fallback and required7 successful tournament calls rather than1. Combat requests11versus5 explain6 of7 extra opening requests; strategy requests5versus4 explain the remainder. Order preservation does not issue model calls.",
+  "next_investigation": "Reduce repeated context/menu representation cost before adding further decision layers; retain Jev selection over all candidates and account for fallback requests separately.",
+  "status": "Trial604 still running; no mission outcome established."
+}
