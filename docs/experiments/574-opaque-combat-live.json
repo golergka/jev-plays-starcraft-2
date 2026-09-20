@@ -35,6 +35,51 @@
       "supply": "6/11",
       "relics": "1/4",
       "observation": "Replacement Barracks complete; two Marines visible near mineral line; selected Command Center 1500/1500; 793 minerals and 0 gas. No terminal outcome."
+    },
+    {
+      "time": "12:57",
+      "supply": "5/11",
+      "relics": "1/4",
+      "observation": "Zerg visible inside base; Command Center 1320/1500, Barracks standing, 775 minerals and 0 gas."
     }
-  ]
+  ],
+  "route_observation": {
+    "source": "tick snapshots and submitted_actions",
+    "examples": [
+      {
+        "loop": 10224,
+        "tag": 4370464789,
+        "position": [
+          74.221923828125,
+          5.625
+        ],
+        "health": 45,
+        "submitted_ability": 23,
+        "target": [
+          153.3333282470703,
+          48.0
+        ],
+        "result": "Success"
+      },
+      {
+        "loop": 10609,
+        "tag": 4370464789,
+        "position": [
+          47.68663787841797,
+          35.70954513549805
+        ],
+        "health": 45
+      },
+      {
+        "loop": 10609,
+        "tag": 4347133982,
+        "position": [
+          47.25,
+          36.241943359375
+        ],
+        "health": 20
+      }
+    ],
+    "interpretation": "Eastern point commands can initially produce northwest movement. Submission success is not route viability or objective progress; snapshots do not establish cause of later disappearance."
+  }
 }
