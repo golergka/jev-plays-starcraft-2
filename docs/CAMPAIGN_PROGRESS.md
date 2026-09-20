@@ -6522,3 +6522,17 @@ Hypothesis only: a broad objective option may obscure allocation tradeoffs.
 Next bounded recorded-state comparison should retain all concrete actions and
 ask about immediate commitment versus preparation, without root choosing either.
 New offline audit costs zero and submits no game orders. No unchanged retry.
+
+### Lab445 — narrowing objective priority has limited effect
+
+Six-call paired recorded440 strategy probe, $0.003361764. First/middle/last
+reviews containing Marines: loops49,1482,5716. Same complete states/questions;
+only pursue_objective wording narrowed to committing current force immediately,
+versus first preparing/assembling/recovering/defending. All alternatives remain.
+Baseline pursue_objective in all three; treatment same at49/1482, protect5716.
+Thus clearer wording does not resolve the dispersed-force commitment at1482.
+One pair per state, no causal or performance claim. Not deployed, no game orders
+or newmission. Initial sample selection incorrectly expected raw units in the
+compressed control state; failed before API calls, fixed using selection members.
+Next investigate concrete control options and their shared-executor semantics
+rather than assuming high-level wording alone yields force concentration.
