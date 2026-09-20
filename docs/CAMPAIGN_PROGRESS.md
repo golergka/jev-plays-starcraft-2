@@ -4994,3 +4994,16 @@ not calibrated utility;small margins deserve caution. Fixed-order tie rule is
 explicit in this offlineprobe;no tie drove these results. No live deployment yet.
 Script/artifact343preserve all distributions for a possible bounded alternative-
 primitive trial;do not claim primitive change resolves underlying coordination.
+
+### Lab344 — opt-in scored combat kinds, ready for live comparison
+
+Lab343 changed two of three recorded final orders, but narrow score margins and
+low attack-move ratings do not establish better defense. Add --order-scores as a
+bounded experiment: independently rate each available kind for direct combat
+selections, then let Jev choose the exact order within the highest-rated kind.
+Other abilities remain in an explicit other category rather than being mislabeled
+as movement. Every offered option is represented; workers and investment keep the
+existing policy. Seeded random exact ties; missing/nonfinite/out-of-range/boolean
+ratings fail loudly. Log scores and option counts. The existing rolling spending
+cap and pacing apply to every additional call. No tactical preference or target is
+injected. Validation:181 tests passed. Live outcome is not yet known.
