@@ -4138,3 +4138,16 @@ label1/27,43minerals,21/35supply,evacuation15:15. This is a visual warning about
 economic allocation despite successful API commands, not a direct tactical
 instruction to Jev. Continue periodic visual inspections and compare with logs.
 Mission remains active; no victory or final survival result recorded.
+
+### Lab282 — full validation and Smart-command rejection trace
+
+Full suite now138passed. Current trial still live. Native7:25 screenshot shows
+CommandCenter3/27workers (previous1/27 was not permanent),55minerals,20/46supply.
+At109successful calls measured$0.066523002 total. One asynchronous engine error:
+SCV4372561921 ability338 NotSupported after tick5593 Smart(1) on unfinished
+CommandCenter4395892743. Jev explicitly selected that offered construction
+interaction. No direct338 command was submitted in logged ticks. This suggests
+an engine-resolved contextual action, not evidence that the controller invented
+ability338. Multiple workers were offered interactions with that project; a
+construction contention hypothesis needs verification before changing legality.
+No policy edit or outcome claim. Strategic-cadence trial remains in progress.
