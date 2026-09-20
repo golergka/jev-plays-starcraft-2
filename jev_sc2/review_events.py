@@ -31,3 +31,14 @@ class ReviewEvents:
         events, self.pending = self.pending, []
         return {'review_loop': loop, 'events': events,
                 'meaning': 'Observed changes during pacing since last review, at most latest 128 observations. Disappearance is not proven death. Nearby means within 12 center-distance units of any own unit, not a tactical threat score. No automatic orders or pacing bypass.'}
+
+
+def early_review_allowed(now, deadline, interval, repaid_at, events):
+    """Borrow at most half one pacing interval, never while prior debt remains."""
+    return (now >= repaid_at and 0 < deadline-now <= interval/2 and
+            any(e['damaged_tags'] or e['new_nearby_enemy_tags'] for e in events))
+
+
+def next_review_deadline(start, interval, previous_deadline, borrowed):
+    """An early decision adds its full measured interval after the old deadline."""
+    return (max(start, previous_deadline) if borrowed else start) + interval

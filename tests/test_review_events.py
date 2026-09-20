@@ -31,3 +31,23 @@ def test_no_wait_does_not_add_events_and_history_is_bounded():
     assert not tracker.pending
     for n in range(2,150):tracker.observe(view(n,500-n),True)
     assert len(tracker.pending)==128
+
+
+def test_early_review_borrows_half_interval_and_repays_before_reborrowing():
+    from jev_sc2.review_events import early_review_allowed, next_review_deadline
+    event=[{'damaged_tags':[1],'new_nearby_enemy_tags':[],'disappeared_tags':[]}]
+    assert not early_review_allowed(4,10,10,0,event)
+    assert early_review_allowed(5,10,10,0,event)
+    repayment=next_review_deadline(5,8,10,True)
+    assert repayment==18  # Saved five seconds are added back, not forgotten.
+    assert not early_review_allowed(14,18,8,repayment,event)
+    assert not early_review_allowed(18,18,8,repayment,event)
+    assert next_review_deadline(18,8,18,False)==26
+    assert early_review_allowed(22,26,8,repayment,event)
+
+
+def test_ordinary_schedule_and_non_triggering_events_remain_unchanged():
+    from jev_sc2.review_events import early_review_allowed, next_review_deadline
+    assert next_review_deadline(12,8,10,False)==20
+    assert not early_review_allowed(8,10,10,0,[])
+    assert not early_review_allowed(8,10,10,0,[{'damaged_tags':[], 'new_nearby_enemy_tags':[], 'disappeared_tags':[1]}])

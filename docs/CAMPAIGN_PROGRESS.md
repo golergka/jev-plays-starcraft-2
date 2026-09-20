@@ -6190,3 +6190,19 @@ This is instrumentation for a potential event-aware scheduling experiment, not
 claim fasterdecisionswillfixcombat. Existing budgetremainsfail-fast; do not bypass
 pacing without a tested repayment/rate mechanism. Avoidunchangedfullmission just
 for telemetry; collect alongside next justified policy trial.
+
+### Lab420 — opt-in event reviews borrow pacing time and repay it
+
+Add --event-reviews: observed damage/new nearbyenemy duringpacedwait can advance
+one review byatmosthalfthepriorinterval. Jevreceivesfreshnormalview and choosesall
+orders. No automaticretreat/attack. Disappearancealoneisnottrigger. Nextdeadline
+uses olddeadline+newmeasuredcostinterval, ratherthanearlystart+interval, so borrowed
+timeisrepaid. Noborrowagainuntilrepaymentdeadline. Ordinaryscheduleunchanged;
+errorpathalsoaccountsdebt. Rolling$.10/300s ledgerfail-fastunchanged, noretries.
+Eventsdescribeobservationsnotcalibrateddanger; workerrepairdamagecantrigger too.
+
+211tests pass includinghalfintervalbound, repayment/reborrowexclusion, normal
+schedule andnontriggeringevents. No throughput orperformanceclaim. Thischanges
+reviewtiming, notdecisioncontent. Nexttrialshouldvalidateactualearly_event_review
+and longerfollowingwaitlogs alongside nativegameplay and totalcost; don'tinfer
+bettercombatfromsynthetictimingtests.

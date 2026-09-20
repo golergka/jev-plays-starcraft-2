@@ -1,7 +1,7 @@
 """uv run python -m jev_sc2 --map /absolute/path/to/mission.SC2Map"""
 from .bookmark import BookmarkRecovery
 from .episodes import previous_attempts
-from .review_events import ReviewEvents
+from .review_events import ReviewEvents, early_review_allowed, next_review_deadline
 import argparse
 import asyncio
 import json
@@ -350,9 +350,19 @@ async def run(args):
                     cancel_job(memory,log,view['loop'],'request rejected or stale; no automatic retry')
                 await asyncio.sleep(0.2)
                 continue
-            waiting_for_budget = time.monotonic() < memory.get('spend_resume_at', 0)
+            review_now = time.monotonic()
+            previous_deadline = memory.get('spend_resume_at', 0)
+            waiting_for_budget = review_now < previous_deadline
             review_events.observe(view, waiting_for_budget)
-            if waiting_for_budget:
+            borrowed_review = getattr(args, 'event_reviews', False) and early_review_allowed(
+                review_now, previous_deadline, memory.get('last_pacing_interval', 0),
+                memory.get('event_review_repaid_at', 0), review_events.pending)
+            if borrowed_review:
+                log('early_event_review', loop=view['loop'],
+                    borrowed_seconds=previous_deadline-review_now,
+                    repayment_base=previous_deadline,
+                    reason='Observed damage or new nearby enemy; Jev chooses response; rolling cap unchanged')
+            if waiting_for_budget and not borrowed_review:
                 await asyncio.sleep(0.2)
                 continue
             if review_events.pending:
@@ -391,12 +401,15 @@ async def run(args):
                 paid = max(0, jev.cost-decision_cost_before)
                 charged = max(paid, jev.spend.charged-decision_charge_before)
                 interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.6))
-                memory['spend_resume_at'] = decision_start+interval
+                memory['spend_resume_at'] = next_review_deadline(decision_start, interval, previous_deadline, borrowed_review)
+                memory['last_pacing_interval'] = interval
+                if borrowed_review:
+                    memory['event_review_repaid_at'] = memory['spend_resume_at']
                 log('spend_pacing', decision_usd=paid, accounted_usd=charged,
                     target_interval_seconds=interval, rolling_limit_usd=jev.spend.limit,
                     requested_interval_seconds=args.interval, pacing_budget_fraction=0.6,
                     after_decision_error=True,
-                    planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
+                    planned_idle_seconds=max(0,memory['spend_resume_at']-time.monotonic()))
                 await asyncio.sleep(0.5)
                 continue
             fresh = await client.observe()
@@ -439,11 +452,14 @@ async def run(args):
             # Admission remains fail-fast if a burst still exceeds this headroom.
             charged = max(paid, jev.spend.charged-decision_charge_before)
             interval = max(args.interval, charged*jev.spend.window/(jev.spend.limit*0.6))
-            memory['spend_resume_at'] = decision_start+interval
+            memory['spend_resume_at'] = next_review_deadline(decision_start, interval, previous_deadline, borrowed_review)
+            memory['last_pacing_interval'] = interval
+            if borrowed_review:
+                memory['event_review_repaid_at'] = memory['spend_resume_at']
             log('spend_pacing', decision_usd=paid, accounted_usd=charged, target_interval_seconds=interval,
                 rolling_limit_usd=jev.spend.limit,
                 requested_interval_seconds=args.interval, pacing_budget_fraction=0.6,
-                planned_idle_seconds=max(0,decision_start+interval-time.monotonic()))
+                planned_idle_seconds=max(0,memory['spend_resume_at']-time.monotonic()))
         await save_replay()
         log('finished',calls=jev.calls,cost=jev.cost,run=str(directory))
         if context_error is not None:
@@ -474,6 +490,7 @@ def main():
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)
+    parser.add_argument('--event-reviews',action='store_true',help='Allow one event-triggered early review with pacing repayment; rolling budget unchanged')
     parser.add_argument('--order-scores',action='store_true',help='Experimental Jev-rated combat order kinds followed by exact Jev orders')
     parser.add_argument('--investment-scores',action='store_true',help='Experimental Jev-rated investment selection')
     parser.add_argument('--contribution-top-choice',action='store_true',help='Use Jev returned contribution choices instead of probability sampling')
