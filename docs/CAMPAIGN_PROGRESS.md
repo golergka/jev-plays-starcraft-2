@@ -4169,3 +4169,18 @@ final rewind refinement; focused feedback tests pass after it. No new model call
 orders, tactical rule, legality filter or budget change. Static harness change
 requires next controller launch; current strategy-cadence trial continues with
 old harness. Player hot reload alone cannot supply previously missing events.
+
+### Lab284 — strategic cadence trial ends in verified15:46 defeat
+
+Run20260920T000657.022675Z/session32257 terminal; native DEFEAT15:46,
+evacuation04:23,16minerals,all structures destroyed. Saved UI verification and
+updated result/checkpoint.206successful calls/$0.128141286,one ReadTimeout,
+two immediate TooMuchLife rejections plus delayed NotSupported noted earlier.
+16strategic reviews across34tactical ticks,strategic requests$0.007608174.
+All selected672loop interval. This proves fewer high-level reviews while tactical
+orders continue; survival exceeds recent10:03/14:53 trials but one run cannot
+attribute improvement to cadence. Force dwindled, secondary CommandCenter did
+not prevent defeat. First two missions still the only verified victories.
+
+Next launch uses lab283 delayed-error feedback; no new tactical policy. Persistent
+rolling budget remains unchanged; previous unknown-billing reservation retained.
