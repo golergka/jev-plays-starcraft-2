@@ -237,6 +237,16 @@ async def make_view(client, observation, data, info, objective):
     destination_facts = {u.tag:friendly_destination_facts(u, visible, names) for u in own}
     unit_catalog = {u.unit_id:u for u in data.units}
     ability_names = {a.ability_id: a.friendly_name or a.button_name or a.link_name for a in data.abilities}
+    if getattr(client, 'log', None):
+        logged_orders = getattr(client, '_order_identity_diagnostics', set())
+        identities = {(o.ability_id, ability_names.get(o.ability_id, str(o.ability_id)))
+                      for u in own for o in u.orders}
+        new_identities = identities - logged_orders
+        if new_identities:
+            client.log('order_identity_diagnostic', loop=obs.game_loop,
+                       identities=[{'ability_id': aid, 'name': name}
+                                   for aid, name in sorted(new_identities)])
+        client._order_identity_diagnostics = logged_orders | identities
     remaps = {a.ability_id: a.remaps_to_ability_id for a in data.abilities}
     catalog = {a.ability_id:a for a in data.abilities}
     upgrades = {u.ability_id:u for u in data.upgrades if u.ability_id}
