@@ -1,0 +1,54 @@
+{
+  "run": "runs/20260920T125822.620646Z",
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T125822.620646Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789898961",
+      "loop": 14636
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 224,
+    "cost": 0.13131841800000002,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T125822.620646Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "15:14",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4"
+    }
+  },
+  "errors": [
+    {
+      "time": 1789909500.3175418,
+      "event": "engine_action_error",
+      "loop": 8709,
+      "failures": [
+        {
+          "ability_id": 324,
+          "unit_tags": [
+            4387766302
+          ],
+          "result": "CantBuildLocationInvalid"
+        }
+      ]
+    }
+  ],
+  "direct_choices": 37,
+  "sampled_choices": 0,
+  "stalled_reviews": 0,
+  "notes": [
+    "Replacement Barracks completed, repeated Bunker construction did not sustain an army.",
+    "Training queue observations disprove blanket claim that repeated requests reset production.",
+    "Single live comparison does not isolate all stochastic variation or establish direct choice as universally worse.",
+    "No addon execution outcome established."
+  ]
+}
