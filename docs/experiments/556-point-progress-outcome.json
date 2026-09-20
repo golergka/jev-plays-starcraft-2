@@ -1,0 +1,33 @@
+{
+  "lab": 556,
+  "trial": 554,
+  "run": "runs/20260920T154915.350832Z",
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T154915.350832Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789908824",
+      "loop": 5884
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 100,
+    "cost": 0.05431259400000002,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T154915.350832Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "6:07",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at 5:46"
+    }
+  },
+  "interpretation": "Destination-progress fields delivered but all remained empty. Lab555 suffix change hot-reloaded near mission end. No observed benefit and no controlled comparison of nonempty progress information. Early combat losses preceded terminal destruction.",
+  "model_progress_nonempty_requests": 0
+}
