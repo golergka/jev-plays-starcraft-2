@@ -5229,3 +5229,18 @@ cost$0.120801114atpartialaudit. Artifact360preservesfirstfailedcontextandUIcheck
 OneearlierReadTimeoutwasfollowedby19successfulcallsatalaterrecoverycheck; no restart.
 This verifiesstateupdates,notmainmissionoutcome or effectiveness. No root tactical
 orders or policychange; controllercontinuestoownsocket.
+
+### Lab361 — objective-aware trial loses at15:49
+
+358run20260920T040013.597739Z endednormally. IndependentlyverifiednativeZeroHour
+DEFEAT15:49,04:20evacuationremaining,3654minerals/684gas.40thverifiedZeroHourloss;
+onlyfirsttwomissionsverifiedwon.213successfulJevrequests,$0.134164632. FourSCVand
+threeMarinebatches;14automaticfollowuprequestsacceptedSuccess,notcompletedunits.
+OneReadTimeoutrecovered;lateCouldntReachTargetandCantBuildLocationInvaliderrors.
+Dynamicmain/bonus/failedobjectivecontextdelivery verified inpaidpayloadsandnativeUI.
+
+Longersurvivalthan350doesnotisolateobjectivefeedbenefit:mapidentitychanged(history
+thereforeempty),genericobjectivepromptchanged,andstochasticchoicesdiffer. Large
+unspentbankandarmycollapsepersist. No root tactics/livepolicychanges. Checkpointand
+resultupdated; artifact361preservesdelivery/cost/error evidence. Controllerterminal;
+SC2on357mapdefeatscreen. Do not rerununchanged or claimallcampaigncompletion.

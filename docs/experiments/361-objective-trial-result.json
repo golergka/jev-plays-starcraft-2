@@ -1,0 +1,76 @@
+{
+  "source": "runs/20260920T040013.597739Z/events.jsonl",
+  "ui_verification": {
+    "time": 1789877593.39819,
+    "verification": "native SC2 screenshot via cua",
+    "mission": "Zero Hour",
+    "result": "defeat",
+    "mission_time": "15:49",
+    "evacuation_remaining": "04:20",
+    "reason": "All of your structures have been destroyed.",
+    "minerals": 3654,
+    "vespene": 684
+  },
+  "summary": {
+    "calls": 213,
+    "cost_usd": 0.134164632,
+    "training_batch_types": {
+      "SCV": 4,
+      "Marine": 3
+    },
+    "automatic_training_requests": 14,
+    "automatic_training_engine_results": {
+      "Success": 14
+    },
+    "errors": [
+      {
+        "time": 1789877285.33101,
+        "event": "decision_error",
+        "error": "ReadTimeout",
+        "detail": ""
+      },
+      {
+        "time": 1789877456.791111,
+        "event": "engine_action_error",
+        "loop": 13506,
+        "failures": [
+          {
+            "ability_id": 318,
+            "unit_tags": [
+              4310958082
+            ],
+            "result": "CouldntReachTarget"
+          }
+        ]
+      },
+      {
+        "time": 1789877512.871808,
+        "event": "engine_action_error",
+        "loop": 14652,
+        "failures": [
+          {
+            "ability_id": 558,
+            "unit_tags": [
+              4298113025
+            ],
+            "result": "CantBuildLocationInvalid"
+          }
+        ]
+      }
+    ],
+    "episode_history_delivery": {
+      "loaded_attempts": 0,
+      "strategy_and_investment_requests": 47,
+      "requests_with_history": 0,
+      "received_attempt_counts": {
+        "0": 47
+      },
+      "note": "Successful request payloads prove transmission, not that Jev used the history or learned from it."
+    }
+  },
+  "objective_delivery": {
+    "with_objectives": 205,
+    "with_failed_objective": 40
+  },
+  "conclusion": "Visible objectives delivered, but mission lost. Map identity/history and generic objective prompt changed too; no isolated causal claim."
+}
