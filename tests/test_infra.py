@@ -567,6 +567,17 @@ def test_support_controls_use_owned_visible_compatible_targets_and_available_abi
     assert commands==[{'unit_tag':1,'ability_id':4}]
 
 
+def test_purchase_description_distinguishes_empty_from_unknown_weapon_catalog():
+    from player import investment_description
+    state = {'unit_type_facts': {
+        'Support': {'catalog_weapons': []},
+        'Fighter': {'catalog_weapons': [{'targets': 'Ground', 'range': 5}]},
+    }}
+    assert 'No weapons listed' in investment_description('Support', {}, state)
+    assert 'Has weapons: Ground targets at range 5' in investment_description('Fighter', {}, state)
+    assert 'No weapons listed' not in investment_description('Unknown', {}, state)
+
+
 def test_campaign_medic_heal_name_exposes_only_damaged_visible_biological_targets():
     from s2clientprotocol import data_pb2 as data
     from jev_sc2.view import support_candidates

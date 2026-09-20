@@ -340,9 +340,12 @@ def investment_description(name, project, state):
         effects.append(f'Existing owned {name} cargo: {occupied} slots occupied, {available} available; '
                        f'passengers by type: {facts.get("passengers_by_type", {})}. '
                        'This purchase does not issue loading commands; loading is a separate decision')
-    weapons = (state.get('unit_type_facts') or {}).get(name,{}).get('catalog_weapons',[])
+    type_facts = (state.get('unit_type_facts') or {}).get(name,{})
+    weapons = type_facts.get('catalog_weapons',[])
     if weapons:
         effects.append('Has weapons: '+', '.join(f'{w["targets"]} targets at range {w["range"]}' for w in weapons))
+    elif 'catalog_weapons' in type_facts:
+        effects.append('No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects')
     return (f'Purchase one {name}. '+'. '.join(effects)+'. '
             f'Cost/effects: {project}. Already owned: {facts.get("count",0)}; '
             f'idle: {facts.get("idle_count",0)}; current orders: {facts.get("current_order_counts",{})}.')
@@ -770,6 +773,9 @@ async def decide(view, jev, memory):
     learned = memory.setdefault('observed_capabilities_by_type', {})
     for unit in view['self']:
         capabilities = set(learned.get(unit['type'], []))
+        # Remove older labels from retained hot-reload memory as well.
+        capabilities.discard('Attack-move, engaging encountered enemies')
+        capabilities.discard('Attack visible targets')
         for candidate in unit['candidates']:
             label = candidate['description']
             if label.startswith(('Train ', 'Build ')):
@@ -777,9 +783,9 @@ async def decide(view, jev, memory):
             if candidate['id'].startswith('gather_'):
                 capabilities.add('Harvest resources')
             if label.startswith('Attack-move '):
-                capabilities.add('Attack-move, engaging encountered enemies')
+                capabilities.add('Attack-move order control; damage depends on weapons or separate abilities')
             elif label.startswith('Attack visible '):
-                capabilities.add('Attack visible targets')
+                capabilities.add('Attack-target order control; damage depends on weapons or separate abilities')
             elif label.startswith('Move '):
                 capabilities.add('Move to locations or entities')
             if candidate.get('capability_description'):

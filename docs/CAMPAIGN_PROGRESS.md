@@ -5552,3 +5552,23 @@ for subsequent runs without changing gameplay or adding paid context. Current
 trial completed under the previous process; instrumentation starts next launch.
 Regression covers unit/point targets, missing result and empty submissions.
 Validation:199 tests passed. Artifact381 and local outcome/checkpoint saved.
+
+### Lab382 — distinguish attack controls from weapon capability
+
+Paid381 investment context advertises Medic as able to Attack visible targets
+and Attack-move engaging enemies, despite the same observed unit catalog having
+catalog_weapons=[] explicitly. The generic capability learner inferred a damage
+capability from order availability. This can misdescribe support units and other
+weaponless actors; it is not evidence that this wording caused the defeat.
+
+Replace these learned labels with attack-target/attack-move order controls whose
+damage depends on weapons or separate abilities. Remove old labels from retained
+hot-reload memory. Investment descriptions explicitly distinguish an observed
+empty weapon catalog from unavailable catalog information, retaining the caveat
+that passengers and abilities may have other effects. No Medic special case,
+order suppression, target priority, grouping change or purchase preference.
+
+Validation:actual381 Medic catalog inspected;200 tests pass, including empty,
+unknown and armed catalog cases. Next controlled mission tests delivery and
+actual submitted commands under381 logging. Prior type-distance348 was negative;
+this corrects a semantic overclaim rather than repeating distance enrichment.
