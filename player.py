@@ -1059,7 +1059,10 @@ async def decide(view, jev, memory):
                 if criteria:
                     criteria['continue']='Keep current orders without reissuing them. If they already implement the chosen contribution, this maintains that work.'
                     concrete_questions[kind]={**q,'criteria':criteria,
-                                              'instructions':q['instructions']+' Jev selected this contribution: '+meanings[role]}
+                                              # 'Other' identifies an ability menu, not a need to act.
+                                              'instructions':q['instructions'] + (
+                                                  '' if role == 'other' else
+                                                  ' Jev selected this contribution: '+meanings[role])}
         if concrete_questions:
             if memory.get('order_families_enabled'):
                 from jev_sc2.order_families import select_families

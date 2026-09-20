@@ -6667,3 +6667,13 @@ Next generalfix should avoid telling the concrete selector to use an ability
 merely because a broad support/other category was chosen; keep every offered
 ability and continuation, and test that principle across selections. Bothprobes
 are recorded-state comparisons with one sample perarm, not live causal proof.
+
+### Lab456 — remove action-demanding hint for other-ability menus
+
+Apply455's isolated change generally: concrete questions for Jev's 'other' role
+no longer append 'Use another available ability.' All abilities, continuation,
+role selection and other role descriptions remain. No bunker/unit/mission rule;
+Jev can still load, unload, repair or leave current state unchanged.219tests pass.
+No new test for a wording-only edit; paired454/455 evidence documents behavior.
+Next trial retains451flags includingfamilies to isolate this single change,
+not because451 established family benefit. Same budget; live benefit unproven.
