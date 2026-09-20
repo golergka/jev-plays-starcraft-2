@@ -6607,3 +6607,15 @@ should add --order-families to440 settings, inspect visual behavior and measured
 pacing, and reconcile native outcome. Do not combine with order-scoring mode in
 this trial because it would confound the comparison. Unknown options use other
 rather than449 probe's fallbackMove, a conservative classification correction.
+
+### Lab451 — order-family live trial begins
+
+Run20260920T102844.284417Z/session59815, startingrevisione0c58db. Restarted
+currentSmash via --attach --restart with expected ttychus01-context-lab376.SC2Map.
+Same440flags plus --order-families,1800secondlimit,4000callceiling,128maxage,
+camera/eventreviews/productionintentions/contributiontopchoice. Existing rolling
+$.10/300s governor unchanged. Native opening visually confirmed0:25. Firsttwo
+MobileCombat family answersMove (78→26 and79→25 options);13calls$.006313356
+at initialcheck. No tactical intervention. Follow session59815, stdout
+/tmp/jev-smash-and-grab-lab451.log; do not restart merely on observation timeout.
+Live outcome unproven;15previousSmashdefeats. This entry records start only.
