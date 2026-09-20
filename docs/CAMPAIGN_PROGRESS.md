@@ -6353,3 +6353,18 @@ contribution and concrete order inputs. This verifies context propagation,
 not a performance benefit. No root tactical orders. Trial live; monitor same
 handle and verify native ending before credit. Firstthree missions still won,
 Smash has13 verified defeats before this attempt.
+
+### Lab432 — current-loop trial defeated25:28; allocation failure persists
+
+Trial431/run20260920T093458.774878Z/session86798 ended exit0. Native defeat
+25:28 allstructuresdestroyed,0/4relics,0minerals109gas.282successfulcalls
+$0.210630672; one ReadTimeout with conservative$.005 reservation pacing,
+then successful decisions resumed. No controller stop before ending.
+Exact game_loop verified in model input; not sufficient for effective play.
+Visual checks showed isolated Marines entering hostile areas, intermittent
+replacement Marines/Marauders, twoCommandCenters, >2300minerals banked with
+no sustained army, then worker repairs consuming remaining economy. No root
+orders or policy changes during trial. Reconciled nativeUI/result/checkpoint
+and public report.14Smashdefeats, only firstthree missions won. No unchanged
+retry justified. Next work should change decision formulation materially,
+using journal to avoid repeating failed Save/worker framing probes.

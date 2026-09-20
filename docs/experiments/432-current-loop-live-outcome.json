@@ -1,0 +1,27 @@
+{
+  "trial": 431,
+  "run": "runs/20260920T093458.774878Z",
+  "calls": 282,
+  "cost_usd": 0.21063067200000013,
+  "ui_verification": {
+    "time": 1789898061.876898,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "25:28",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 109
+  },
+  "decision_errors": [
+    {
+      "time": 1789897482.654228,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "early_review_count": 21,
+  "limits": "Single trial, no causal performance claim. One ReadTimeout, later successful decisions and normal terminal exit. Exact current loop was present; it did not establish mission success."
+}
