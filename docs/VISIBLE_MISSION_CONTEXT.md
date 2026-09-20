@@ -1,5 +1,14 @@
 # Player-visible mission context adapter
 
+Current status (lab338): implemented and exercised in the timer-enabled Zero Hour
+trial. The first 15 paid requests contained mission_context; a subsequent live
+export carried the visible evacuation countdown. Native fixture tests validate
+visibility, pause, replacement and destruction. Initialization timestamps were
+validated across API restart after persisted counters failed. Campaign screenshot
+comparison supports approximate countdown alignment, not exact rendered text.
+No improvement in game outcomes has been established. The design notes below
+retain the original acceptance requirements; custom dialog timers remain unsupported.
+
 Audit lab328: the ordinary SC2 observation protocol does not expose structured
 campaign objectives or timer-window contents. `Observation` contains game_loop,
 player_common, alerts, abilities, score, raw_data, feature_layer_data, render_data,
@@ -13,7 +22,7 @@ Do not derive a mission countdown from an assumed loop-to-second conversion or
 read arbitrary campaign timers. A mission can pause, restart, or replace a timer.
 The intended scope is information a player can see, not future scripted events.
 
-## Implementable path, not yet verified
+## Adapter design and remaining limits
 
 Installed Blizzard Galaxy natives provide TimerWindowCreate(timer, text title,
 bool show, bool showElapsed), TimerWindowVisible(window, player), TimerGetRemaining,
@@ -48,5 +57,6 @@ initial adapter and must not be falsely reported as supported.
 4. Freshness rejects prior launches and clock rewinds; missing data stays explicit.
 5. Only validated player-visible context reaches all relevant Jev decision stages.
 
-No timer adapter has been deployed by this audit. This is a concrete next
-implementation path, not evidence of campaign objective awareness or improved play.
+The native timer-window adapter is deployed in the experimental timer-enabled
+build. This does not provide arbitrary mission-objective text or custom dialog
+contents, and does not establish better planning or successful campaign play.

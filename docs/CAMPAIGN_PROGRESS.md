@@ -4915,3 +4915,13 @@ individual,navigation and support contexts.159existing tests plus2new focused
 checks pass;new tests cover map hash mismatch,previous stamp capture,and economic
 projection retention. No claim of tactical benefit. Next fresh trial on335map will
 verify actual paid-request delivery before judging gameplay.
+
+### Lab338 — timer context reaches paid Jev requests
+
+Live337run20260920T025806.548721Z,controller handle9297confirmed active. First15
+paidrequests all include mission_context,cost$0.007334586. Latestobserved context
+atloop682contains Evacuation In:,remaining1166.375native seconds. No recorded
+request errors. Native0:56view shows countdown19:14,armynearCommandCenter and
+4/27worker counter. Separate observation times,not exact synchronized comparison.
+Delivery verified,strategic benefit unproven. Trial continues unchanged;no restart
+or additional paid probes. Updated visible-context document's implementation status.
