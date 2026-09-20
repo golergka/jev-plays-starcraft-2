@@ -1,0 +1,207 @@
+{
+  "source": "runs/20260920T003943.756931Z/events.jsonl",
+  "method": "First/middle/last eligible recorded save decisions with >=500 minerals. Identical questions and state except adding factual game-domain and resource-scope context. No purchase or tactical recommendation. Alternate request order. Six calls maximum. No gameplay commands. Single draws, not statistical evidence.",
+  "pairs": [
+    {
+      "recorded_time": 1789865107.580184,
+      "resources": {
+        "minerals": 513,
+        "vespene": 50,
+        "estimated_minerals_per_minute": 220.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 23,
+        "food_cap": 51,
+        "supply_in_construction": 0,
+        "supply_remaining": 28,
+        "supply_blocked": false
+      },
+      "added_environment": {
+        "name": "StarCraft II",
+        "kind": "real-time strategy video game",
+        "resource_scope": "Minerals, vespene and supply are in-game resources. Offered purchases are game actions, not real-world payments. The objective is the stated mission objective."
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.48,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "project_3": 0.14,
+            "batch_9": 0.1,
+            "project_4": 0.06,
+            "project_1": 0.01,
+            "project_7": 0.01,
+            "batch_6": 0.04,
+            "project_9": 0.06,
+            "save_for_1": 0.01,
+            "project_10": 0.01,
+            "save": 0.48,
+            "project_5": 0.0,
+            "project_8": 0.01,
+            "project_2": 0.01,
+            "project_6": 0.05,
+            "save_for_0": 0.0,
+            "project_0": 0.01
+          }
+        }
+      },
+      "explicit_game_domain": {
+        "choice": "save",
+        "no_purchase_probability": 0.47000000000000003,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "project_5": 0.0,
+            "save": 0.47000000000000003,
+            "save_for_1": 0.0,
+            "project_7": 0.01,
+            "save_for_0": 0.0,
+            "project_10": 0.02,
+            "project_4": 0.06,
+            "batch_6": 0.03,
+            "project_9": 0.05,
+            "project_6": 0.05,
+            "project_3": 0.18,
+            "project_1": 0.01,
+            "project_2": 0.01,
+            "project_0": 0.01,
+            "batch_9": 0.09,
+            "project_8": 0.01
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789865379.240629,
+      "resources": {
+        "minerals": 1787,
+        "vespene": 25,
+        "estimated_minerals_per_minute": 300.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 21,
+        "food_cap": 51,
+        "supply_in_construction": 0.0,
+        "supply_remaining": 30,
+        "supply_blocked": false
+      },
+      "added_environment": {
+        "name": "StarCraft II",
+        "kind": "real-time strategy video game",
+        "resource_scope": "Minerals, vespene and supply are in-game resources. Offered purchases are game actions, not real-world payments. The objective is the stated mission objective."
+      },
+      "explicit_game_domain": {
+        "choice": "project_1",
+        "no_purchase_probability": 0.23,
+        "answer": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "project_8": 0.01,
+            "batch_7": 0.07,
+            "save_for_2": 0.0,
+            "save_for_0": 0.01,
+            "batch_4": 0.04,
+            "project_1": 0.28,
+            "project_2": 0.04,
+            "save_for_1": 0.0,
+            "project_0": 0.01,
+            "project_7": 0.09,
+            "project_3": 0.0,
+            "project_4": 0.03,
+            "save": 0.23,
+            "project_6": 0.01,
+            "project_5": 0.17
+          }
+        }
+      },
+      "original": {
+        "choice": "project_1",
+        "no_purchase_probability": 0.25,
+        "answer": {
+          "choice": "project_1",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "project_7": 0.08,
+            "batch_4": 0.05,
+            "project_3": 0.0,
+            "save": 0.25,
+            "project_0": 0.01,
+            "project_4": 0.03,
+            "project_5": 0.11,
+            "project_2": 0.05,
+            "batch_7": 0.1,
+            "save_for_2": 0.0,
+            "project_8": 0.01,
+            "save_for_1": 0.0,
+            "project_1": 0.29000000000000004,
+            "project_6": 0.01,
+            "save_for_0": 0.01
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789865559.914934,
+      "resources": {
+        "minerals": 1206,
+        "vespene": 9,
+        "estimated_minerals_per_minute": 0.0,
+        "estimated_vespene_per_minute": 0.0,
+        "food_used": 6,
+        "food_cap": 8,
+        "supply_in_construction": 0,
+        "supply_remaining": 2,
+        "supply_blocked": false
+      },
+      "added_environment": {
+        "name": "StarCraft II",
+        "kind": "real-time strategy video game",
+        "resource_scope": "Minerals, vespene and supply are in-game resources. Offered purchases are game actions, not real-world payments. The objective is the stated mission objective."
+      },
+      "original": {
+        "choice": "save",
+        "no_purchase_probability": 0.61,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "save": 0.61,
+            "project_2": 0.15,
+            "project_1": 0.13,
+            "save_for_1": 0.01,
+            "save_for_2": 0.0,
+            "save_for_0": 0.03,
+            "project_0": 0.07
+          }
+        }
+      },
+      "explicit_game_domain": {
+        "choice": "save",
+        "no_purchase_probability": 0.59,
+        "answer": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "save": 0.59,
+            "save_for_1": 0.01,
+            "project_1": 0.15,
+            "project_0": 0.08,
+            "save_for_2": 0.0,
+            "save_for_0": 0.02,
+            "project_2": 0.15
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost": 0.00293832
+}

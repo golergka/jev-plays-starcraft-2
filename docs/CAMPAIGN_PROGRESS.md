@@ -4342,3 +4342,17 @@ and one baseline purchase becoming wait reinforces concern. Three selected state
 and one sample pervariant cannot establish model-wide inability or significance.
 This is a negative interface experiment, not permission to force purchases or
 remove saving. Current game remains terminal; next policy experiment unresolved.
+
+### Lab295 — explicit game-domain context does not explain saving
+
+Six-call paired probe, same three recorded high-balance top-save states as294.
+Added only factual StarCraftII/video-game/resource-scope context; no tactical or
+purchase advice, identical menus, alternating order. Top choices unchanged:
+save/project_1/save. Save probabilities .48→.47,.25→.23,.61→.59.
+Cost$0.002938320. Artifact295-game-domain.json and reproducible script.
+Tiny selected sample does not prove no possible domain effect, but offers no
+reason to deploy this extra context or repeat the same framing hypothesis.
+
+Next run restores a clean baseline after the mixed290/291experiment, with293's
+truthful failure labels. Do not attribute17:23 survival to naive direct menus
+whose measured cost forced rollback. Budget ledger and all decision rules persist.
