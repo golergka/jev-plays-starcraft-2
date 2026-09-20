@@ -14,6 +14,19 @@ def audit(run, unit_type):
             row=units.setdefault(u['tag'],{'tag':u['tag'],'initial':u['tag'] in initial,'observations':[],'submitted_orders':[]})
             row['observations'].append({'loop':tick['loop'],'position':u['position'],'health':u['health']})
     for row in units.values():
+        row['model_decisions'] = []
+        for e in events:
+            if e['event'] != 'jev': continue
+            for key, q in e.get('questions', {}).items():
+                facts = e.get('state', {}).get('selection_facts', {}).get(key, {})
+                if not any(m.get('tag') == row['tag'] for m in facts.get('members', [])): continue
+                answer = e['response'].get('answers', {}).get(key, {})
+                choice = answer.get('choice')
+                row['model_decisions'].append({'time':e['time'], 'selection':key,
+                    'choice':choice, 'description':q.get('criteria', {}).get(choice),
+                    'current_orders':facts.get('current_order_counts', {}),
+                    'health':facts.get('total_health'),
+                    'nearby_visible_enemies':facts.get('visible_enemies_within_12_of_any_member', {})})
         last=row['observations'][-1]['loop']
         later=next((t for t in ticks if t['loop']>last),None)
         row['next_tick_without_tag']=later['loop'] if later else None

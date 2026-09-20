@@ -1,0 +1,692 @@
+{
+  "run": "runs/20260920T100335.561953Z",
+  "unit_type": "Marine",
+  "units": [
+    {
+      "tag": 4324065281,
+      "initial": true,
+      "observations": [
+        {
+          "loop": 49,
+          "position": [
+            63.60986328125,
+            14.5205078125
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 409,
+          "position": [
+            59.776611328125,
+            35.967041015625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 573,
+          "position": [
+            46.698974609375,
+            35.754638671875
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 49,
+          "time": 1789898627.5862541,
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "loop": 409,
+          "time": 1789898642.918253,
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "loop": 573,
+          "time": 1789898650.681066,
+          "ability_id": 23,
+          "unit_tags": [
+            4324065281
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898627.176173,
+          "selection": "MobileCombat",
+          "choice": "group_last_known_attack_move_8756723713",
+          "description": "attack move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898642.883517,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.5; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898650.642273,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Effect MedicHeal": 1,
+            "Scan Move": 1,
+            "Attack Attack": 6
+          },
+          "health": 227.4,
+          "nearby_visible_enemies": {
+            "SporeCrawler": 1,
+            "CreepTumorBurrowed": 2,
+            "Overlord": 1,
+            "SpineCrawler": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4324327425,
+      "initial": true,
+      "observations": [
+        {
+          "loop": 49,
+          "position": [
+            64.823486328125,
+            16.0576171875
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 409,
+          "position": [
+            59.526611328125,
+            36.635498046875
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 573,
+          "position": [
+            47.308349609375,
+            35.43408203125
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 49,
+          "time": 1789898627.5862541,
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "loop": 409,
+          "time": 1789898642.918253,
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        },
+        {
+          "loop": 573,
+          "time": 1789898650.681066,
+          "ability_id": 23,
+          "unit_tags": [
+            4324327425
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898627.176173,
+          "selection": "MobileCombat",
+          "choice": "group_last_known_attack_move_8756723713",
+          "description": "attack move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898642.883517,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.5; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898650.642273,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Effect MedicHeal": 1,
+            "Scan Move": 1,
+            "Attack Attack": 6
+          },
+          "health": 227.4,
+          "nearby_visible_enemies": {
+            "SporeCrawler": 1,
+            "CreepTumorBurrowed": 2,
+            "Overlord": 1,
+            "SpineCrawler": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4362862593,
+      "initial": true,
+      "observations": [
+        {
+          "loop": 49,
+          "position": [
+            65.6591796875,
+            14.046142578125
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 409,
+          "position": [
+            59.99609375,
+            35.269287109375
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 573,
+          "position": [
+            47.31689453125,
+            36.2265625
+          ],
+          "health": 32.3642578125
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 49,
+          "time": 1789898627.5862541,
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            59.99609375,
+            35.269287109375
+          ]
+        },
+        {
+          "loop": 409,
+          "time": 1789898642.918253,
+          "ability_id": 23,
+          "unit_tags": [
+            4362862593
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898627.176173,
+          "selection": "MobileCombat",
+          "choice": "group_last_known_attack_move_8756723713",
+          "description": "attack move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898642.883517,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.5; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898650.642273,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Effect MedicHeal": 1,
+            "Scan Move": 1,
+            "Attack Attack": 6
+          },
+          "health": 227.4,
+          "nearby_visible_enemies": {
+            "SporeCrawler": 1,
+            "CreepTumorBurrowed": 2,
+            "Overlord": 1,
+            "SpineCrawler": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4330618882,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 573,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 573,
+          "time": 1789898650.681066,
+          "ability_id": 23,
+          "unit_tags": [
+            4330618882
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898650.642273,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Effect MedicHeal": 1,
+            "Scan Move": 1,
+            "Attack Attack": 6
+          },
+          "health": 227.4,
+          "nearby_visible_enemies": {
+            "SporeCrawler": 1,
+            "CreepTumorBurrowed": 2,
+            "Overlord": 1,
+            "SpineCrawler": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 1163
+    },
+    {
+      "tag": 4301520907,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 1163,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 1482,
+          "position": [
+            46.99137496948242,
+            36.47041320800781
+          ],
+          "health": 20.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 1163,
+          "time": 1789898677.261875,
+          "ability_id": 16,
+          "unit_tags": [
+            4301520907
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898677.197461,
+          "selection": "MobileCombat",
+          "choice": "group_map_move_middle_east",
+          "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.1 to 102.5; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Transport MedivacUnloadAll": 1
+          },
+          "health": 195.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898691.517673,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 76.2 to 107.0; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Move Move": 6,
+            "Attack Attack": 4
+          },
+          "health": 615.0,
+          "nearby_visible_enemies": {
+            "CreepTumorBurrowed": 2,
+            "SporeCrawler": 1,
+            "Stalker": 3,
+            "SpineCrawler": 1,
+            "Overlord": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 2086
+    },
+    {
+      "tag": 4391960582,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 1482,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 1482,
+          "time": 1789898691.8762822,
+          "ability_id": 23,
+          "unit_tags": [
+            4391960582
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898691.517673,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 76.2 to 107.0; actual engine route and travel distance unknown",
+          "current_orders": {
+            "Move Move": 6,
+            "Attack Attack": 4
+          },
+          "health": 615.0,
+          "nearby_visible_enemies": {
+            "CreepTumorBurrowed": 2,
+            "SporeCrawler": 1,
+            "Stalker": 3,
+            "SpineCrawler": 1,
+            "Overlord": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 2086
+    },
+    {
+      "tag": 4317773831,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 3417,
+          "position": [
+            57.5,
+            11.625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 3832,
+          "position": [
+            34.08205032348633,
+            32.762474060058594
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 3417,
+          "time": 1789898778.674199,
+          "ability_id": 16,
+          "unit_tags": [
+            4317773831
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898778.582252,
+          "selection": "MobileCombat",
+          "choice": "group_move_4374134785",
+          "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 14.6; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 90.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898796.755666,
+          "selection": "MobileCombat",
+          "choice": "continue",
+          "description": "Keep the current orders of these units unchanged.",
+          "current_orders": {
+            "Move Move": 2
+          },
+          "health": 90.0,
+          "nearby_visible_enemies": {
+            "Overlord": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 4110
+    },
+    {
+      "tag": 4364173322,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 3417,
+          "position": [
+            58.221923828125,
+            11.625
+          ],
+          "health": 45.0
+        },
+        {
+          "loop": 3832,
+          "position": [
+            34.65818786621094,
+            33.22108840942383
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 3417,
+          "time": 1789898778.674199,
+          "ability_id": 16,
+          "unit_tags": [
+            4364173322
+          ],
+          "result": "Success",
+          "point": [
+            43.7333984375,
+            13.037841796875
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898778.582252,
+          "selection": "MobileCombat",
+          "choice": "group_move_4374134785",
+          "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 14.6; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 90.0,
+          "nearby_visible_enemies": {}
+        },
+        {
+          "time": 1789898796.755666,
+          "selection": "MobileCombat",
+          "choice": "continue",
+          "description": "Keep the current orders of these units unchanged.",
+          "current_orders": {
+            "Move Move": 2
+          },
+          "health": 90.0,
+          "nearby_visible_enemies": {
+            "Overlord": 1
+          }
+        }
+      ],
+      "next_tick_without_tag": 4110
+    },
+    {
+      "tag": 4330356742,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 4110,
+          "position": [
+            65.5,
+            8.625
+          ],
+          "health": 45.0
+        }
+      ],
+      "submitted_orders": [
+        {
+          "loop": 4110,
+          "time": 1789898809.53332,
+          "ability_id": 23,
+          "unit_tags": [
+            4330356742
+          ],
+          "result": "Success",
+          "point": [
+            153.3333282470703,
+            48.0
+          ]
+        }
+      ],
+      "model_decisions": [
+        {
+          "time": 1789898808.971223,
+          "selection": "MobileCombat",
+          "choice": "group_map_attack_move_middle_east",
+          "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 96.3 to 96.3; actual engine route and travel distance unknown",
+          "current_orders": {},
+          "health": 45.0,
+          "nearby_visible_enemies": {
+            "Zergling": 4
+          }
+        }
+      ],
+      "next_tick_without_tag": 4839
+    },
+    {
+      "tag": 4317773841,
+      "initial": false,
+      "observations": [
+        {
+          "loop": 5716,
+          "position": [
+            66.925048828125,
+            8.894775390625
+          ],
+          "health": 35.0
+        }
+      ],
+      "submitted_orders": [],
+      "model_decisions": [
+        {
+          "time": 1789898880.7714539,
+          "selection": "Marine",
+          "choice": "continue",
+          "description": "Keep the current orders of these units unchanged.",
+          "current_orders": {
+            "Attack Attack": 1,
+            "Move Move": 1
+          },
+          "health": 35.0,
+          "nearby_visible_enemies": {
+            "Zergling": 4
+          }
+        }
+      ],
+      "next_tick_without_tag": 6186
+    }
+  ],
+  "limits": "First appearance is not proven production; last appearance and missing next tick are not proven death. Observations are sparse. Accepted orders do not prove execution, completion, or exact path. No gameplay/API calls."
+}

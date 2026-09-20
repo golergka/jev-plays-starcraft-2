@@ -6495,3 +6495,15 @@ birth causes, route or idle duration. No paidcalls/gamecommands. New reusable
 script takes any unit type and retains positions, health, submitted results and
 first subsequent tick without each tag. Do not infer that accepted training or
 orders establish successful execution. No newmission until nextgeneral change.
+
+### Lab443 — missing Marine order was an explicit continuation
+
+Offline440 audit now maps question keys to selection members, covering by-type
+coordination as well as MobileCombat. Tag4317773841 at5716 belonged to Marine;
+Jev explicitly chose continue: keep current orders unchanged. Its selection
+reported Attack:1 and Move:1,35totalhealth and four nearbyZerglings. Thus no
+submitted command here is intentional continuation, not omitted control. This
+does not establish tactical quality or a cause of later disappearance. Preserve
+model decisions beside executed orders to distinguish these cases. No paidcalls.
+Native visual recheck confirms defeat13:30, allstructuresdestroyed,1/4relics;
+no active controller. Continue periodic visual checks alongside telemetry.
