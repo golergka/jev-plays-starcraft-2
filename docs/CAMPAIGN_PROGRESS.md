@@ -7034,3 +7034,14 @@ resources and all submittedproducercommands. Do not blame model cancellation
 or claim APIacceptance meansconstruction. No newcalls/liveorders/codechange.
 Next inspect addon placement/query semantics against actual engine behavior;
 keep outcome20thdefeat and campaign scope unchanged.
+
+### Lab482 — untargeted builds lack placement preflight; semantics unresolved
+
+Checked officialquery.proto/protocolaction-errors and localview/controller.
+Pointbuilds use placementqueries; target1/5untargetedBuild actions do not. Query
+fields are optional but docs do not define addon omitted-position semantics.
+Delayedfailures already collected on all three observationpaths; absence of
+failure doesnotprovecompletion. No invented coordinate filter added. Evidence
+and next engine diagnostic in482-addon-api-review.md. Clarified481: Marine24403
+is a laterproducerorder, but earlieridleobservations preclude claiming it as
+observedcauseofaddonfailure. No modelspend/gamecommands/livepolicychange.
