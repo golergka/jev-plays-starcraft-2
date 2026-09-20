@@ -1,0 +1,2141 @@
+{
+  "run": "runs/20260920T100335.561953Z",
+  "rows": [
+    {
+      "time": 1789898625.871349,
+      "loop": 49,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.94,
+          "probabilities": {
+            "protect": 0.0,
+            "continue_operations": 0.0,
+            "recover": 0.01,
+            "pursue_objective": 0.94,
+            "attack": 0.0,
+            "explore": 0.01,
+            "assemble": 0.02,
+            "strengthen": 0.02
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "medium": 0.28,
+            "long": 0.2,
+            "soon": 0.52
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "medium": 0.42,
+            "soon": 0.48,
+            "long": 0.1
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "mobile_combat": 0.64,
+            "by_current_order": 0.09,
+            "by_type": 0.27
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898627.176173,
+      "loop": 49,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 49,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 161
+      },
+      "choice": "group_last_known_attack_move_8756723713",
+      "description": "attack move to last-known ProtossRelic location [60.0,35.3]; snapshot under fog, current presence unknown; straight-line distances across selection: 19.8 to 22.5; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          }
+        ],
+        "count": 4,
+        "center": [
+          64.5,
+          14.4
+        ],
+        "nearest_visible_enemy_distance": null,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 3.1,
+        "largest_distance_to_nearest_selection_member": 2.1,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898641.842033,
+      "loop": 409,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.81,
+          "probabilities": {
+            "pursue_objective": 0.84,
+            "explore": 0.04,
+            "strengthen": 0.05,
+            "assemble": 0.03,
+            "protect": 0.02,
+            "attack": 0.0,
+            "recover": 0.01,
+            "continue_operations": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.88,
+          "probabilities": {
+            "medium": 0.06,
+            "long": 0.02,
+            "soon": 0.92
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.74,
+          "probabilities": {
+            "medium": 0.14,
+            "long": 0.03,
+            "soon": 0.83
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "by_current_order": 0.07,
+            "mobile_combat": 0.69,
+            "by_type": 0.24
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898642.883517,
+      "loop": 409,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 409,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 521
+      },
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 94.1 to 94.5; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          }
+        ],
+        "count": 4,
+        "center": [
+          59.9,
+          35.6
+        ],
+        "nearest_visible_enemy_distance": null,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 2.2,
+        "largest_distance_to_nearest_selection_member": 0.7,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 4,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898649.418616,
+      "loop": 573,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "protect": 0.18,
+            "strengthen": 0.07,
+            "attack": 0.0,
+            "continue_operations": 0.01,
+            "assemble": 0.06,
+            "pursue_objective": 0.67,
+            "explore": 0.0,
+            "recover": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.86,
+          "probabilities": {
+            "soon": 0.9,
+            "long": 0.04,
+            "medium": 0.06
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "soon": 0.75,
+            "long": 0.06,
+            "medium": 0.19
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "by_current_order": 0.14,
+            "by_type": 0.18,
+            "mobile_combat": 0.6799999999999999
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898650.642273,
+      "loop": 573,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 573,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 685
+      },
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 102.5 to 107.3; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4383309825,
+            "type": "Medic"
+          },
+          {
+            "tag": 4330618882,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324327425,
+            "type": "Marine"
+          },
+          {
+            "tag": 4324065281,
+            "type": "Marine"
+          },
+          {
+            "tag": 4362862593,
+            "type": "Marine"
+          }
+        ],
+        "count": 5,
+        "center": [
+          49.1,
+          30.8
+        ],
+        "nearest_visible_enemy_distance": 4.5,
+        "visible_enemies_within_12_of_any_member": {
+          "SporeCrawler": 1,
+          "CreepTumorBurrowed": 2,
+          "Overlord": 1,
+          "SpineCrawler": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 227.4,
+        "max_separation": 26.6,
+        "largest_distance_to_nearest_selection_member": 25.7,
+        "count_change_since_previous_decision": 1,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 72,
+        "current_order_counts": {
+          "Effect MedicHeal": 1,
+          "Scan Move": 1,
+          "Attack Attack": 6
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898675.782058,
+      "loop": 1163,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.66,
+          "probabilities": {
+            "assemble": 0.11,
+            "continue_operations": 0.01,
+            "strengthen": 0.1,
+            "recover": 0.02,
+            "pursue_objective": 0.71,
+            "attack": 0.0,
+            "protect": 0.05,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "long": 0.03,
+            "soon": 0.67,
+            "medium": 0.3
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "long": 0.03,
+            "soon": 0.42,
+            "medium": 0.55
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.49,
+          "probabilities": {
+            "by_type": 0.17,
+            "mobile_combat": 0.66,
+            "by_current_order": 0.17
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898677.197461,
+      "loop": 1163,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 1163,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 1275
+      },
+      "choice": "group_map_move_middle_east",
+      "description": "move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 95.1 to 102.5; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4327211011,
+            "type": "SpecialOpsDropship"
+          },
+          {
+            "tag": 4301520907,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          60.2,
+          15.0
+        ],
+        "nearest_visible_enemy_distance": 16.3,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 8,
+        "cargo_slots_available": 4,
+        "passengers_by_type": {
+          "Marauder": 4
+        },
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 195.0,
+        "max_separation": 8.7,
+        "largest_distance_to_nearest_selection_member": 8.7,
+        "count_change_since_previous_decision": -3,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Transport MedivacUnloadAll": 1
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898690.209414,
+      "loop": 1482,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "pursue_objective": 0.59,
+            "continue_operations": 0.0,
+            "attack": 0.0,
+            "recover": 0.01,
+            "explore": 0.0,
+            "protect": 0.14,
+            "strengthen": 0.02,
+            "assemble": 0.24000000000000002
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "medium": 0.42,
+            "soon": 0.55,
+            "long": 0.03
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "medium": 0.58,
+            "soon": 0.39,
+            "long": 0.03
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.6,
+          "probabilities": {
+            "by_current_order": 0.09,
+            "mobile_combat": 0.74,
+            "by_type": 0.17
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898691.517673,
+      "loop": 1482,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 1482,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 1594
+      },
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 76.2 to 107.0; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4327211011,
+            "type": "SpecialOpsDropship"
+          },
+          {
+            "tag": 4325113860,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4346871812,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4330618884,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4330356740,
+            "type": "Marauder"
+          },
+          {
+            "tag": 4391960582,
+            "type": "Marine"
+          },
+          {
+            "tag": 4301520907,
+            "type": "Marine"
+          }
+        ],
+        "count": 7,
+        "center": [
+          62.4,
+          18.7
+        ],
+        "nearest_visible_enemy_distance": 3.6,
+        "visible_enemies_within_12_of_any_member": {
+          "CreepTumorBurrowed": 2,
+          "SporeCrawler": 1,
+          "Stalker": 3,
+          "SpineCrawler": 1,
+          "Overlord": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 12,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 615.0,
+        "max_separation": 58.8,
+        "largest_distance_to_nearest_selection_member": 37.8,
+        "count_change_since_previous_decision": 5,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 44,
+        "current_order_counts": {
+          "Move Move": 6,
+          "Attack Attack": 4
+        },
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898717.0575528,
+      "loop": 2086,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "assemble": 0.2,
+            "strengthen": 0.06,
+            "continue_operations": 0.01,
+            "explore": 0.0,
+            "pursue_objective": 0.58,
+            "attack": 0.0,
+            "protect": 0.13,
+            "recover": 0.02
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "long": 0.1,
+            "soon": 0.56,
+            "medium": 0.34
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "long": 0.12,
+            "soon": 0.37,
+            "medium": 0.51
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.59,
+          "probabilities": {
+            "mobile_combat": 0.72,
+            "by_current_order": 0.12,
+            "by_type": 0.16
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898738.005632,
+      "loop": 2549,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "recover": 0.02,
+            "continue_operations": 0.01,
+            "explore": 0.0,
+            "attack": 0.0,
+            "protect": 0.16,
+            "pursue_objective": 0.67,
+            "assemble": 0.06,
+            "strengthen": 0.07
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "medium": 0.3,
+            "long": 0.12,
+            "soon": 0.58
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "medium": 0.42,
+            "long": 0.15,
+            "soon": 0.43
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "by_type": 0.25,
+            "mobile_combat": 0.63,
+            "by_current_order": 0.12
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898748.25238,
+      "loop": 2782,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.6,
+          "probabilities": {
+            "recover": 0.01,
+            "explore": 0.0,
+            "protect": 0.26,
+            "attack": 0.0,
+            "pursue_objective": 0.66,
+            "strengthen": 0.04,
+            "continue_operations": 0.0,
+            "assemble": 0.03
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "soon": 0.58,
+            "long": 0.11,
+            "medium": 0.31
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "soon": 0.36,
+            "long": 0.2,
+            "medium": 0.44
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "by_type": 0.16,
+            "by_current_order": 0.12,
+            "mobile_combat": 0.72
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898776.902009,
+      "loop": 3417,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.74,
+          "probabilities": {
+            "pursue_objective": 0.77,
+            "attack": 0.0,
+            "protect": 0.03,
+            "assemble": 0.05,
+            "strengthen": 0.13,
+            "recover": 0.01,
+            "explore": 0.0,
+            "continue_operations": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.3,
+          "probabilities": {
+            "long": 0.07,
+            "soon": 0.53,
+            "medium": 0.4
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "long": 0.17,
+            "soon": 0.31,
+            "medium": 0.52
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "by_type": 0.39,
+            "by_current_order": 0.09,
+            "mobile_combat": 0.52
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898778.582252,
+      "loop": 3417,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 3417,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 3529
+      },
+      "choice": "group_move_4374134785",
+      "description": "Move to visible ProtossRelic tag 4374134785; straight-line distances across selection: 13.8 to 14.6; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4317773831,
+            "type": "Marine"
+          },
+          {
+            "tag": 4364173322,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          57.9,
+          11.6
+        ],
+        "nearest_visible_enemy_distance": 41.4,
+        "visible_enemies_within_12_of_any_member": {},
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 90.0,
+        "max_separation": 0.7,
+        "largest_distance_to_nearest_selection_member": 0.7,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 2,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898795.2732868,
+      "loop": 3832,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.71,
+          "probabilities": {
+            "assemble": 0.11,
+            "strengthen": 0.09,
+            "protect": 0.03,
+            "recover": 0.01,
+            "pursue_objective": 0.75,
+            "attack": 0.0,
+            "explore": 0.0,
+            "continue_operations": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "soon": 0.47,
+            "medium": 0.46,
+            "long": 0.07
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.37,
+          "probabilities": {
+            "soon": 0.3,
+            "medium": 0.58,
+            "long": 0.12
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "by_type": 0.32,
+            "by_current_order": 0.18,
+            "mobile_combat": 0.5
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898796.755666,
+      "loop": 3832,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 3832,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 3944
+      },
+      "choice": "continue",
+      "description": "Keep the current orders of these units unchanged.",
+      "facts": {
+        "members": [
+          {
+            "tag": 4317773831,
+            "type": "Marine"
+          },
+          {
+            "tag": 4364173322,
+            "type": "Marine"
+          }
+        ],
+        "count": 2,
+        "center": [
+          34.4,
+          33.0
+        ],
+        "nearest_visible_enemy_distance": 10.7,
+        "visible_enemies_within_12_of_any_member": {
+          "Overlord": 1
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 90.0,
+        "max_separation": 0.7,
+        "largest_distance_to_nearest_selection_member": 0.7,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {
+          "Move Move": 2
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898807.838429,
+      "loop": 4110,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "protect": 0.26,
+            "pursue_objective": 0.58,
+            "recover": 0.01,
+            "continue_operations": 0.0,
+            "explore": 0.0,
+            "attack": 0.0,
+            "strengthen": 0.11,
+            "assemble": 0.04
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "medium": 0.4,
+            "long": 0.06,
+            "soon": 0.54
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "medium": 0.53,
+            "long": 0.12,
+            "soon": 0.35
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.15,
+          "probabilities": {
+            "by_type": 0.38,
+            "by_current_order": 0.18,
+            "mobile_combat": 0.44
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898808.971223,
+      "loop": 4110,
+      "kind": "selection",
+      "selection": "MobileCombat",
+      "strategy": {
+        "loop": 4110,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 4222
+      },
+      "choice": "group_map_attack_move_middle_east",
+      "description": "attack move to middle-east map sector at [153.3,48.0]; walkable static terrain; straight-line distances across selection: 96.3 to 96.3; actual engine route and travel distance unknown",
+      "facts": {
+        "members": [
+          {
+            "tag": 4330356742,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          65.5,
+          8.6
+        ],
+        "nearest_visible_enemy_distance": 9.3,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 4
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 45.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": -1,
+        "damaged_count": 0,
+        "incomplete_count": 0,
+        "lowest_health_percent": 100,
+        "current_order_counts": {},
+        "idle_count": 1,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898840.307877,
+      "loop": 4839,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "continue_operations": 0.0,
+            "explore": 0.0,
+            "protect": 0.4,
+            "assemble": 0.01,
+            "strengthen": 0.06,
+            "attack": 0.0,
+            "recover": 0.01,
+            "pursue_objective": 0.52
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "long": 0.08,
+            "medium": 0.26,
+            "soon": 0.66
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "long": 0.16,
+            "medium": 0.45999999999999996,
+            "soon": 0.38
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.27,
+          "probabilities": {
+            "by_type": 0.51,
+            "by_current_order": 0.16,
+            "mobile_combat": 0.33
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898849.513598,
+      "loop": 5046,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.42,
+          "probabilities": {
+            "protect": 0.42,
+            "assemble": 0.01,
+            "continue_operations": 0.0,
+            "recover": 0.01,
+            "attack": 0.0,
+            "strengthen": 0.06,
+            "pursue_objective": 0.5,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "long": 0.04,
+            "medium": 0.33,
+            "soon": 0.63
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "long": 0.06,
+            "medium": 0.52,
+            "soon": 0.42
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "by_current_order": 0.22,
+            "mobile_combat": 0.34,
+            "by_type": 0.44
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898872.662664,
+      "loop": 5562,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.55,
+          "probabilities": {
+            "recover": 0.01,
+            "assemble": 0.01,
+            "strengthen": 0.05,
+            "attack": 0.0,
+            "protect": 0.32,
+            "continue_operations": 0.0,
+            "pursue_objective": 0.61,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "soon": 0.53,
+            "long": 0.08,
+            "medium": 0.39
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "soon": 0.39,
+            "long": 0.14,
+            "medium": 0.47
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "by_type": 0.33,
+            "by_current_order": 0.24,
+            "mobile_combat": 0.43
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898879.662804,
+      "loop": 5716,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "strengthen": 0.09,
+            "protect": 0.37,
+            "pursue_objective": 0.5,
+            "attack": 0.0,
+            "continue_operations": 0.0,
+            "recover": 0.01,
+            "assemble": 0.03,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "long": 0.04,
+            "medium": 0.34,
+            "soon": 0.62
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "long": 0.06,
+            "medium": 0.51,
+            "soon": 0.43
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "mobile_combat": 0.33,
+            "by_current_order": 0.24,
+            "by_type": 0.43
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898880.7714539,
+      "loop": 5716,
+      "kind": "selection",
+      "selection": "Marine",
+      "strategy": {
+        "loop": 5716,
+        "choice": "pursue_objective",
+        "description": "Commit effort to completing the active primary mission objectives described in mission_context. Further decisions choose the necessary movement, interactions, combat or preparation; this priority does not assume the objective is destruction of an enemy base.",
+        "review_at": 5828
+      },
+      "choice": "continue",
+      "description": "Keep the current orders of these units unchanged.",
+      "facts": {
+        "members": [
+          {
+            "tag": 4317773841,
+            "type": "Marine"
+          }
+        ],
+        "count": 1,
+        "center": [
+          66.9,
+          8.9
+        ],
+        "nearest_visible_enemy_distance": 0.7,
+        "visible_enemies_within_12_of_any_member": {
+          "Zergling": 4
+        },
+        "cargo_slots_used": 0,
+        "cargo_slots_available": 0,
+        "passengers_by_type": {},
+        "harvesters_assigned": 0,
+        "harvesters_ideal": 0,
+        "total_health": 35.0,
+        "max_separation": 0.0,
+        "largest_distance_to_nearest_selection_member": null,
+        "count_change_since_previous_decision": 0,
+        "damaged_count": 1,
+        "incomplete_count": 0,
+        "lowest_health_percent": 78,
+        "current_order_counts": {
+          "Attack Attack": 1,
+          "Move Move": 1
+        },
+        "idle_count": 0,
+        "some_can_harvest_minerals": false,
+        "some_can_construct_buildings": false,
+        "some_can_train_units": false
+      }
+    },
+    {
+      "time": 1789898900.881098,
+      "loop": 6186,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "strengthen": 0.06,
+            "assemble": 0.01,
+            "continue_operations": 0.0,
+            "recover": 0.01,
+            "explore": 0.0,
+            "attack": 0.0,
+            "pursue_objective": 0.57,
+            "protect": 0.35
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "soon": 0.58,
+            "medium": 0.35,
+            "long": 0.07
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "soon": 0.42,
+            "medium": 0.52,
+            "long": 0.06
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "by_current_order": 0.22,
+            "by_type": 0.52,
+            "mobile_combat": 0.26
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898907.3166552,
+      "loop": 6324,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.49,
+          "probabilities": {
+            "explore": 0.0,
+            "recover": 0.01,
+            "assemble": 0.01,
+            "continue_operations": 0.0,
+            "protect": 0.34,
+            "pursue_objective": 0.56,
+            "attack": 0.0,
+            "strengthen": 0.07
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.23,
+          "probabilities": {
+            "long": 0.03,
+            "medium": 0.48,
+            "soon": 0.49
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "long": 0.04,
+            "medium": 0.66,
+            "soon": 0.3
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "by_current_order": 0.18,
+            "mobile_combat": 0.45,
+            "by_type": 0.37
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898926.791239,
+      "loop": 6767,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.49,
+          "probabilities": {
+            "assemble": 0.02,
+            "strengthen": 0.06,
+            "continue_operations": 0.0,
+            "recover": 0.01,
+            "explore": 0.0,
+            "attack": 0.0,
+            "pursue_objective": 0.56,
+            "protect": 0.35
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "soon": 0.56,
+            "medium": 0.41,
+            "long": 0.03
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.33,
+          "probabilities": {
+            "soon": 0.39,
+            "medium": 0.56,
+            "long": 0.05
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "by_type": 0.46,
+            "by_current_order": 0.19,
+            "mobile_combat": 0.35
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898941.840171,
+      "loop": 7111,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "pursue_objective": 0.5700000000000001,
+            "attack": 0.0,
+            "protect": 0.36,
+            "assemble": 0.01,
+            "strengthen": 0.05,
+            "recover": 0.01,
+            "explore": 0.0,
+            "continue_operations": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "long": 0.06,
+            "soon": 0.42,
+            "medium": 0.52
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "long": 0.05,
+            "soon": 0.29,
+            "medium": 0.66
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.15,
+          "probabilities": {
+            "by_current_order": 0.21,
+            "by_type": 0.44,
+            "mobile_combat": 0.35
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898972.652752,
+      "loop": 7796,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "attack": 0.0,
+            "protect": 0.33,
+            "pursue_objective": 0.61,
+            "assemble": 0.01,
+            "recover": 0.01,
+            "strengthen": 0.04,
+            "explore": 0.0,
+            "continue_operations": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "soon": 0.63,
+            "long": 0.04,
+            "medium": 0.33
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.28,
+          "probabilities": {
+            "soon": 0.37,
+            "long": 0.11,
+            "medium": 0.52
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "by_type": 0.5,
+            "mobile_combat": 0.33,
+            "by_current_order": 0.17
+          }
+        }
+      }
+    },
+    {
+      "time": 1789898994.5744,
+      "loop": 8291,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.4,
+          "probabilities": {
+            "assemble": 0.01,
+            "continue_operations": 0.0,
+            "strengthen": 0.04,
+            "recover": 0.01,
+            "pursue_objective": 0.48,
+            "attack": 0.0,
+            "explore": 0.0,
+            "protect": 0.46
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.52,
+          "probabilities": {
+            "long": 0.03,
+            "soon": 0.68,
+            "medium": 0.29
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "long": 0.06,
+            "soon": 0.4,
+            "medium": 0.54
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "by_type": 0.54,
+            "mobile_combat": 0.29,
+            "by_current_order": 0.17
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899003.447941,
+      "loop": 8489,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.45,
+          "probabilities": {
+            "recover": 0.01,
+            "attack": 0.0,
+            "protect": 0.52,
+            "assemble": 0.01,
+            "strengthen": 0.05,
+            "continue_operations": 0.0,
+            "explore": 0.0,
+            "pursue_objective": 0.41
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.49,
+          "probabilities": {
+            "soon": 0.66,
+            "long": 0.07,
+            "medium": 0.27
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "soon": 0.47,
+            "long": 0.1,
+            "medium": 0.43
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "by_current_order": 0.22,
+            "by_type": 0.44,
+            "mobile_combat": 0.34
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899027.179622,
+      "loop": 9018,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "strengthen": 0.02,
+            "explore": 0.0,
+            "pursue_objective": 0.67,
+            "protect": 0.3,
+            "continue_operations": 0.0,
+            "attack": 0.0,
+            "assemble": 0.0,
+            "recover": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.55,
+          "probabilities": {
+            "medium": 0.25,
+            "long": 0.06,
+            "soon": 0.69
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "medium": 0.42,
+            "long": 0.11,
+            "soon": 0.47
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.11,
+          "probabilities": {
+            "by_current_order": 0.21,
+            "mobile_combat": 0.41,
+            "by_type": 0.38
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899034.965787,
+      "loop": 9191,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "strengthen": 0.04,
+            "continue_operations": 0.0,
+            "attack": 0.0,
+            "pursue_objective": 0.43,
+            "assemble": 0.01,
+            "protect": 0.51,
+            "recover": 0.01,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "soon": 0.6799999999999999,
+            "medium": 0.27,
+            "long": 0.05
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "soon": 0.41,
+            "medium": 0.49,
+            "long": 0.1
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.19,
+          "probabilities": {
+            "by_type": 0.46,
+            "by_current_order": 0.19,
+            "mobile_combat": 0.35
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899063.543861,
+      "loop": 9834,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "strengthen": 0.02,
+            "protect": 0.29,
+            "pursue_objective": 0.68,
+            "attack": 0.0,
+            "continue_operations": 0.0,
+            "recover": 0.01,
+            "assemble": 0.0,
+            "explore": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "medium": 0.25,
+            "long": 0.03,
+            "soon": 0.72
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.21,
+          "probabilities": {
+            "long": 0.06,
+            "medium": 0.47,
+            "soon": 0.47
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "by_current_order": 0.26,
+            "by_type": 0.45,
+            "mobile_combat": 0.29
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899071.321771,
+      "loop": 10005,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.48,
+          "probabilities": {
+            "protect": 0.37,
+            "pursue_objective": 0.55,
+            "recover": 0.02,
+            "continue_operations": 0.0,
+            "explore": 0.0,
+            "attack": 0.0,
+            "strengthen": 0.05,
+            "assemble": 0.01
+          }
+        },
+        "strategy_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.24,
+          "probabilities": {
+            "medium": 0.49,
+            "long": 0.05,
+            "soon": 0.46
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.48,
+          "probabilities": {
+            "medium": 0.65,
+            "long": 0.04,
+            "soon": 0.31
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "by_type": 0.53,
+            "by_current_order": 0.15,
+            "mobile_combat": 0.32
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899113.8360581,
+      "loop": 10960,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "strengthen": 0.04,
+            "protect": 0.54,
+            "continue_operations": 0.0,
+            "explore": 0.0,
+            "pursue_objective": 0.37,
+            "recover": 0.05,
+            "assemble": 0.0,
+            "attack": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.32,
+          "probabilities": {
+            "medium": 0.4,
+            "long": 0.06,
+            "soon": 0.54
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "medium": 0.36,
+            "long": 0.07,
+            "soon": 0.57
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "by_type": 0.48,
+            "mobile_combat": 0.27,
+            "by_current_order": 0.25
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899122.035779,
+      "loop": 11143,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "pursue_objective": 0.6,
+            "explore": 0.0,
+            "strengthen": 0.02,
+            "assemble": 0.0,
+            "attack": 0.0,
+            "protect": 0.33,
+            "recover": 0.05,
+            "continue_operations": 0.0
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.51,
+          "probabilities": {
+            "medium": 0.29,
+            "long": 0.04,
+            "soon": 0.67
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "medium": 0.48,
+            "long": 0.06,
+            "soon": 0.46
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "by_current_order": 0.24,
+            "mobile_combat": 0.22,
+            "by_type": 0.54
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899155.692999,
+      "loop": 11896,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "protect",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "continue_operations": 0.0,
+            "recover": 0.09,
+            "attack": 0.0,
+            "explore": 0.0,
+            "protect": 0.53,
+            "strengthen": 0.02,
+            "assemble": 0.01,
+            "pursue_objective": 0.34
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "soon": 0.66,
+            "medium": 0.28,
+            "long": 0.06
+          }
+        },
+        "contribution_review": {
+          "choice": "medium",
+          "type": "choice",
+          "confidence": 0.17,
+          "probabilities": {
+            "soon": 0.43,
+            "medium": 0.45,
+            "long": 0.12
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.1,
+          "probabilities": {
+            "mobile_combat": 0.38,
+            "by_current_order": 0.22,
+            "by_type": 0.4
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899167.1925042,
+      "loop": 12155,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "protect": 0.31,
+            "attack": 0.0,
+            "assemble": 0.02,
+            "explore": 0.0,
+            "continue_operations": 0.0,
+            "recover": 0.06,
+            "pursue_objective": 0.59,
+            "strengthen": 0.02
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.54,
+          "probabilities": {
+            "soon": 0.7,
+            "long": 0.04,
+            "medium": 0.26
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.2,
+          "probabilities": {
+            "soon": 0.45999999999999996,
+            "long": 0.09,
+            "medium": 0.45
+          }
+        },
+        "coordination": {
+          "choice": "by_type",
+          "type": "choice",
+          "confidence": 0.11,
+          "probabilities": {
+            "by_type": 0.39999999999999997,
+            "by_current_order": 0.24,
+            "mobile_combat": 0.36
+          }
+        }
+      }
+    },
+    {
+      "time": 1789899197.0860229,
+      "loop": 12826,
+      "kind": "strategy",
+      "answers": {
+        "strategy": {
+          "choice": "pursue_objective",
+          "type": "choice",
+          "confidence": 0.44,
+          "probabilities": {
+            "assemble": 0.02,
+            "strengthen": 0.09,
+            "explore": 0.0,
+            "continue_operations": 0.01,
+            "protect": 0.16,
+            "pursue_objective": 0.51,
+            "attack": 0.0,
+            "recover": 0.21
+          }
+        },
+        "strategy_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.46,
+          "probabilities": {
+            "soon": 0.64,
+            "medium": 0.32,
+            "long": 0.04
+          }
+        },
+        "contribution_review": {
+          "choice": "soon",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "soon": 0.48,
+            "medium": 0.48,
+            "long": 0.04
+          }
+        },
+        "coordination": {
+          "choice": "mobile_combat",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "by_type": 0.24,
+            "mobile_combat": 0.57,
+            "by_current_order": 0.19
+          }
+        }
+      }
+    }
+  ],
+  "limits": "Recorded observations only. Marine is an audit filter, not a gameplay rule. Spatial separation is straight-line distance, not route length. No causal claim or game commands."
+}

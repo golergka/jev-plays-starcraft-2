@@ -6507,3 +6507,18 @@ does not establish tactical quality or a cause of later disappearance. Preserve
 model decisions beside executed orders to distinguish these cases. No paidcalls.
 Native visual recheck confirms defeat13:30, allstructuresdestroyed,1/4relics;
 no active controller. Continue periodic visual checks alongside telemetry.
+
+### Lab444 — coordination audit rules out missing dispersion facts
+
+Offline440 trace links strategic answers and Marine-containing selection orders.
+At573 MobileCombat count5 spans26.6; at1482 count7 spans58.8 mapunits. Both
+receive attack-move middle east under pursue_objective. Strategy repeatedly
+chooses pursue_objective, with protect only late; no assemble in this run.
+Existing selection facts already include max_separation and nearest-member
+isolation (lab066 introduced these), so do not duplicate that intervention.
+This suggests testing strategy-option semantics: pursue_objective explicitly
+includes combat OR preparation, while competing options are specific means.
+Hypothesis only: a broad objective option may obscure allocation tradeoffs.
+Next bounded recorded-state comparison should retain all concrete actions and
+ask about immediate commitment versus preparation, without root choosing either.
+New offline audit costs zero and submits no game orders. No unchanged retry.
