@@ -1,0 +1,19 @@
+{
+  "trial": 407,
+  "run": "runs/20260920T080421.634510Z",
+  "calls": 184,
+  "cost_usd": 0.12795195000000004,
+  "ui_verification": {
+    "time": 1789892189.6539378,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "14:56",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "decision_errors": 0,
+  "conclusion": "Opening five income assignments reproduced live; army attrition and repair-heavy survival did not complete the mission. No root orders or midtrial policy changes."
+}

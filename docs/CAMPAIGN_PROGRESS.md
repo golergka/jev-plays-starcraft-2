@@ -6019,3 +6019,15 @@ chose save. Option says prioritize batch, but implementation excludes all other
 purchases. Next change should describe that exact exclusivity to Jev before any
 new test; do not silently override its job or inject replacement build orders.
 Partial evidence artifact only; no outcome claim and no policy edit during407.
+
+### Lab409 — local-facts live trial407 ends in native defeat14:56
+
+Session3580 exited0; run20260920T080421.634510Z. Native screenshot confirms all
+structures destroyed,0/4relics,0minerals/0gas.184calls $0.127951950, no decision
+errors. Firstfiveworkers all choseincome, visually confirmed mining. Earlyarmy
+lost; workers expanded, rebuiltBarracks, repaired underattack; no durableforce.
+Repeated native checks duringplay confirmed these behaviors and camera coverage.
+No root orders or midtrial policy changes. Tenth native Smashdefeat; no causal
+success claim from longer survival or localfacts alone. Result/UI/checkpoint and
+publicreport reconciled. Next correct explicit purchase-reservation semantics
+identified408 before deciding on another live trial; unchangedretry not started.
