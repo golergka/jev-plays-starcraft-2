@@ -2,12 +2,12 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** Through lab351, local result
-files contain 38 independently UI-verified Zero Hour defeats. The latest finished
-attempt lasted 12:47 and cost $0.110368020 for 181 successful requests. No later
+**Liberation Day and The Outlaws are verified won.** Through lab366, local result
+files contain 40 independently UI-verified Zero Hour defeats. The latest finished
+attempt lasted 15:49 and cost $0.134164632 for 213 successful requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab351
+## Current evidence through lab366
 
 The persistent difficulty is converting local choices into coordinated, sustained
 objective progress. Native screenshots show the army gathering near one Command
@@ -38,16 +38,28 @@ A Jev-selected three-Marine training batch produced three newly observed complet
 Marine tags in trial298. Low-level utilities can execute Jev commitments between
 paid decisions; no policy forces a build order, worker allocation, bunker loading,
 or movement route. Exact loop deadlines avoid unverified seconds conversions.
-The current decision objective is the text “Hold out for evacuation.” The visible
-evacuation countdown is now supplied through a tested player-visible timer-window
-adapter. All 179 successful requests in trial337 included that context, but the
-trial still lost at 12:28. No hidden wave schedule is supplied.
+The current decision objective is “Complete the player-visible mission objectives.”
+Native visible objective names, descriptions, primary/bonus flags and lifecycle
+states now accompany the visible countdown. Hidden objectives are excluded before
+their text is read. A native fixture verified creation, visibility, state changes,
+destruction and stale-section cleanup; trial358 verified delivery in a real mission.
+205 of its 213 requests contained objectives, including 40 containing the failed
+bonus objective. It still lost at 15:49. No hidden wave schedule is supplied.
+
+Trial365 adds a bounded startup wait for objective initialization and explicit
+controlled-unit identities. The startup gate opened after about five seconds;
+the first 19 successful requests all followed it and carried member identities.
+This verifies delivery, not improved reasoning. Trial365 remains in progress.
 
 The spending governor remains $0.10 per rolling five minutes, with pacing targeting
-60% of that allowance and loud termination if admission exceeds the cap. The 38 verified-defeat
-result files total $7.221843048 in recorded request costs. This excludes other
+60% of that allowance and loud termination if admission exceeds the cap. The 40 verified-defeat
+result files total $7.487440506 in recorded request costs. This excludes other
 runs, wins, probes and unresolved billing; it is not an account balance or lifetime
 total. Model latency alone does not describe the budget-constrained control rate.
+In a partial trial365 audit, Marine-only requests consumed $0.030827454 of
+$0.095639670, about 32%; large combat menus use a three-request tournament.
+Recent cycles were paced about 29 seconds apart. A bounded paired cost comparison
+is prepared but not yet run; full-menu savings have not been established.
 
 A separate combat-kind Score trial (344) also lost. Its 25 rating requests cost
 $0.019556208, 17.7% of the trial total. They selected Move 15 times, Hold 9 times,
@@ -62,10 +74,11 @@ force-count questions matched existing counts, even zero Marines after the force
 was gone. Neither probe was deployed as gameplay policy.
 
 Lab350 fixed an actual episode-memory bug: verified API restarts emitted a
-different event from fresh map joins and were excluded from history. The current
-trial loads two verified attempts on this exact map. Lab351 verified both summaries
-in all five sampled strategy/investment request payloads. Delivery is established;
-learning or better play is not. That trial is still in progress as of this update.
+different event from fresh map joins and were excluded from history. Trial350
+loaded two verified attempts on its exact map, and all 40 relevant requests
+contained those histories. It lost at 14:39. Trial358 used a newly instrumented map
+filename and therefore loaded no exact-map history; trial365 loads one verified
+attempt on that map. Delivery is established; learning or better play is not.
 
 Unseen delayed execution errors remain in a bounded 32-entry queue until first
 included in context. Trial318's invalid-placement error at loop8087 appeared in a
