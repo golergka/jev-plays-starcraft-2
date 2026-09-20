@@ -1,7 +1,7 @@
 """Jev-generated, advisory production intentions; never executes purchases."""
 def target_questions(state):
     types=sorted({label[6:] for labels in state.get('observed_capabilities_by_type',{}).values()
-                  for label in labels if label.startswith('Train ') and label[6:] in state.get('unit_type_facts',{})})
+                  for label in labels if label.startswith('Train ') and label[6:] in (set(state.get('unit_type_facts',{})) | set(state.get('historical_production_type_facts',{})))})
     questions={}
     for index,name in enumerate(types):
         current=state.get('selection_facts',{}).get(name,{}).get('count',0)
@@ -16,6 +16,16 @@ def target_questions(state):
 
 
 async def production_intentions(state, jev, memory, loop, strategy):
+    # Losing a producer must not erase previously observed producible types.
+    # Historical catalog facts describe prior observations, not current legality.
+    known = memory.setdefault('historical_production_type_facts', {})
+    for labels in state.get('observed_capabilities_by_type', {}).values():
+        for label in labels:
+            name = label[6:] if label.startswith('Train ') else None
+            if name in state.get('unit_type_facts', {}):
+                known[name] = state['unit_type_facts'][name]
+    state = {**state, 'historical_production_type_facts': dict(known),
+             'historical_production_note': 'Previously observed catalog facts for trainable types; their producers or prerequisites may now be absent. These facts do not establish current production availability. Goals are hypothetical and purchases still use currently offered controls.'}
     questions = target_questions(state)
     if not questions:
         memory.pop('production_intentions', None)

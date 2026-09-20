@@ -32,5 +32,23 @@ def test_invalid_goal_is_loud_and_not_cached():
         memory={}
         with pytest.raises(ValueError):
             await production_intentions({'observed_capabilities_by_type':{'X':['Train Marine']},'unit_type_facts':{'Marine':{}}},Model('invalid'),memory,0,'attack')
-        assert not memory
+        assert 'production_intentions' not in memory
+    asyncio.run(run())
+
+
+def test_lost_producer_does_not_erase_known_military_goal():
+    async def run():
+        state={'observed_capabilities_by_type':{'Barracks':['Train Marine','Train Unknown']},
+               'unit_type_facts':{'Marine':{'mineral_cost':50}},
+               'selection_facts':{'Marine':{'count':2}}}
+        model=Model(); memory={}
+        await production_intentions(state,model,memory,100,'protect')
+        state['unit_type_facts']={}
+        state['selection_facts']={}
+        result=await production_intentions(state,model,memory,2200,'protect')
+        assert len(result['goals'])==1
+        assert 'Marine' in result['goals'][0]['question']
+        assert 'Currently observed count: 0.' in result['goals'][0]['question']
+        assert 'historical_production_type_facts' not in state
+        assert model.calls==2
     asyncio.run(run())

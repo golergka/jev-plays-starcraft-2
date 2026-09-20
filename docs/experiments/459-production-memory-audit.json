@@ -1,0 +1,228 @@
+{
+  "source": "runs/20260920T104430.451350Z",
+  "rows": [
+    {
+      "loop": 47,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": true,
+      "questions": [
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 3. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 1. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 5. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 1778,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": true,
+      "questions": [
+        "Choose a production intent for Marauder during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 4. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for Medic during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 7. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 3057,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 8. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 4276,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 10. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 4781,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 10. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 6699,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 8. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 6897,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 8. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 9996,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 11. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 12295,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 12. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 12852,
+      "remembered_barracks_controls": [
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": true,
+      "questions": [
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 13. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 15261,
+      "remembered_barracks_controls": [
+        "Smart: interact with unfinished owned construction",
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": true,
+      "questions": [
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 12. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 17943,
+      "remembered_barracks_controls": [
+        "Smart: interact with unfinished owned construction",
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": true,
+      "questions": [
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 15. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 18252,
+      "remembered_barracks_controls": [
+        "Smart: interact with unfinished owned construction",
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": true,
+      "questions": [
+        "Choose a production intent for Marine during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 0. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types.",
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 15. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 19066,
+      "remembered_barracks_controls": [
+        "Smart: interact with unfinished owned construction",
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 14. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 20064,
+      "remembered_barracks_controls": [
+        "Smart: interact with unfinished owned construction",
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 14. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    },
+    {
+      "loop": 20303,
+      "remembered_barracks_controls": [
+        "Smart: interact with unfinished owned construction",
+        "Train FlameMech",
+        "Train Marauder",
+        "Train Marine",
+        "Train Medic"
+      ],
+      "marine_catalog_present": false,
+      "questions": [
+        "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 13. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types."
+      ]
+    }
+  ],
+  "limits": "Offline evidence of omitted goal questions, not proof that restoring them improves purchases or survival."
+}

@@ -6699,3 +6699,18 @@ of456benefit. No rootorders/midrunpolicychanges. Keep distinction: wording
 changed sampled unload behavior and one live continuation; campaign stillfails.
 Next address production/force allocation and broad objective dominance, using
 journal to avoid repeating prior context-only or action-kind interventions.
+
+### Lab459 — preserve observed production types after producer loss
+
+Found framework-level goal omission:457 at3057 remembers Barracks TrainMarine,
+Medic,Marauder but current unit_type_facts lacks those types. target_questions
+requires currentcatalogmembership, thus requests onlySCV goals through12295;
+Marinegoal returns12852 after Barracksrebuild. This narrows Jev's advisorygoal
+space at exactly the wrong time for recovery, though purchases remain available.
+Retain catalog facts for previously observed trainable types in intentionmemory,
+explicitly historical and not proof of current legality/prerequisites. Unknown
+labels without everobservedcatalog still excluded. Newgoals may refer to absent
+units; no forced military target or purchase. Same current purchase controls.
+220tests pass, including lostproducer/zeroobservedcount and inputimmutability.
+No paidcalls/live run thisturn. Next bounded trial must test whether remembered
+military goals actually influence rebuilding; no claim from tests alone.
