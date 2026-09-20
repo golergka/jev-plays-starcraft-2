@@ -1,0 +1,190 @@
+{
+  "source": "runs/20260920T133712.486436Z/events.jsonl",
+  "method": "First/middle/last purchase requests. Same questions and full state. Treatment adds same-run catalog durations for types already in state. Alternating arms; six-call ceiling; no game orders. Positive durations are raw fields, zeros marked unknown. Barracks loop calibration does not verify every type.",
+  "pairs": [
+    {
+      "loop": 47,
+      "added_facts": {
+        "CommandCenter": 1600.0,
+        "SupplyDepot": 480.0,
+        "Refinery": 480.0,
+        "Barracks": 960.0,
+        "Bunker": 480.0,
+        "Factory": 960.0,
+        "BarracksTechLab": 400.0,
+        "SCV": null,
+        "Marine": 400.0
+      },
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_4",
+            "type": "choice",
+            "confidence": 0.43,
+            "probabilities": {
+              "project_1": 0.01,
+              "project_4": 0.48,
+              "save": 0.11,
+              "batch_4": 0.03,
+              "save_for_1": 0.01,
+              "save_for_0": 0.0,
+              "project_7": 0.18000000000000002,
+              "project_3": 0.11,
+              "project_5": 0.0,
+              "batch_5": 0.0,
+              "batch_3": 0.0,
+              "project_8": 0.06,
+              "project_6": 0.01,
+              "batch_7": 0.0,
+              "project_2": 0.0,
+              "project_0": 0.0
+            }
+          },
+          "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}."
+        },
+        "durations": {
+          "answer": {
+            "choice": "project_4",
+            "type": "choice",
+            "confidence": 0.45,
+            "probabilities": {
+              "project_3": 0.11,
+              "save_for_1": 0.01,
+              "project_2": 0.0,
+              "project_0": 0.01,
+              "batch_7": 0.0,
+              "project_8": 0.06,
+              "save_for_0": 0.0,
+              "project_6": 0.02,
+              "project_7": 0.19,
+              "save": 0.07,
+              "batch_4": 0.03,
+              "project_1": 0.02,
+              "batch_5": 0.0,
+              "project_4": 0.48,
+              "batch_3": 0.0,
+              "project_5": 0.0
+            }
+          },
+          "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}."
+        }
+      }
+    },
+    {
+      "loop": 8300,
+      "added_facts": {
+        "CommandCenter": 1600.0,
+        "SupplyDepot": 480.0,
+        "Refinery": 480.0,
+        "Barracks": 960.0,
+        "Bunker": 480.0,
+        "Factory": 960.0,
+        "SCV": null,
+        "Marine": 400.0
+      },
+      "answers": {
+        "durations": {
+          "answer": {
+            "choice": "project_4",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "batch_6": 0.01,
+              "project_3": 0.0,
+              "project_5": 0.02,
+              "project_7": 0.05,
+              "project_0": 0.0,
+              "project_6": 0.15,
+              "project_2": 0.06,
+              "batch_4": 0.03,
+              "save_for_0": 0.0,
+              "project_1": 0.07,
+              "project_4": 0.42,
+              "save": 0.19
+            }
+          },
+          "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 0; current orders: {'Move Move': 1}."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "project_4",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "project_2": 0.05,
+              "project_3": 0.0,
+              "batch_4": 0.03,
+              "project_4": 0.43,
+              "project_7": 0.07,
+              "project_6": 0.16,
+              "project_1": 0.06,
+              "project_5": 0.01,
+              "project_0": 0.0,
+              "save_for_0": 0.0,
+              "batch_6": 0.01,
+              "save": 0.18
+            }
+          },
+          "description": "Purchase one Marine. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 0; current orders: {'Move Move': 1}."
+        }
+      }
+    },
+    {
+      "loop": 16768,
+      "added_facts": {
+        "CommandCenter": 1600.0,
+        "SupplyDepot": 480.0,
+        "Refinery": 480.0,
+        "Barracks": 960.0,
+        "Bunker": 480.0,
+        "Factory": 960.0,
+        "BarracksTechLab": 400.0,
+        "BarracksReactor": 800.0,
+        "SCV": null,
+        "Marine": 400.0
+      },
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_2",
+            "type": "choice",
+            "confidence": 0.94,
+            "probabilities": {
+              "save_for_4": 0.0,
+              "save_for_3": 0.0,
+              "save_for_0": 0.0,
+              "save": 0.05,
+              "project_2": 0.95,
+              "project_0": 0.0,
+              "save_for_1": 0.0,
+              "save_for_2": 0.0,
+              "project_1": 0.0
+            }
+          },
+          "description": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}."
+        },
+        "durations": {
+          "answer": {
+            "choice": "project_2",
+            "type": "choice",
+            "confidence": 0.94,
+            "probabilities": {
+              "save_for_4": 0.0,
+              "save": 0.04,
+              "project_0": 0.0,
+              "save_for_2": 0.01,
+              "project_1": 0.0,
+              "save_for_3": 0.0,
+              "save_for_0": 0.0,
+              "project_2": 0.95,
+              "save_for_1": 0.0
+            }
+          },
+          "description": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}."
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0036827280000000006
+}
