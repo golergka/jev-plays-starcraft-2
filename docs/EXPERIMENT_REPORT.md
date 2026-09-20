@@ -7,9 +7,9 @@ native victory screen reports 20:12, after 42 independently UI-verified defeats.
 The winning run cost $0.192928932 for 261 successful Jev requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab392
+## Current evidence through lab396
 
-Smash and Grab has six independently verified defeats:
+Smash and Grab has seven independently verified defeats:
 
 | Trial | Native mission time | Relics | Successful requests | Request cost |
 | --- | --- | --- | --- | --- |
@@ -19,6 +19,7 @@ Smash and Grab has six independently verified defeats:
 | 387 | 11:27 | 0/4 | 171 | $0.090893418 |
 | 390 | 10:49 | 0/4 | 167 | $0.089919186 |
 | 392 | 29:42 | 0/4 | 344 | $0.255891468 |
+| 396 | 17:39 | 1/4 | 233 | $0.150269406 |
 
 The longer attempts sustained workers, construction and repairs without restoring
 an effective army or completing the primary objective. Survival time is not a

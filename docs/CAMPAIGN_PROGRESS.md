@@ -5810,3 +5810,18 @@ contains distinct shield/cooldown values and unchanged Jev-selected commands.
 for later campaign scope. No paid calls for this correction. User STREAMING.md
 changes left untouched. Next fresh trial can verify real request delivery and
 outcome; it cannot isolate causality from one match.
+
+### Lab396 — observation projection trial ends in defeat at 17:39
+
+Run20260920T070430.852681Z/session20767 exited0. Native UI independently confirms
+defeat17:39, all structures destroyed, 1/4 relics, 0minerals/826gas.233successful
+requests cost$0.150269406. Restart verified28524→0; live packed tactical requests
+contained health,shield,weapon_cooldown,weapon_status. No policy edits or root
+orders during the attempt.
+
+Opening force collected one relic, then disappeared; later army recovery failed.
+Workers increased, a Barracks was rebuilt and a Bunker briefly appeared. Visual
+checks showed prolonged repairs under Zerg attack, with minerals nearly exhausted
+and gas accumulating. Delivery correction is verified; better decisions or causal
+benefit are not. Seven Smash defeats; first three campaign missions remain the
+only verified wins. Result/checkpoint/public artifact/report reconciled.

@@ -1,0 +1,17 @@
+{
+  "run": "runs/20260920T070430.852681Z",
+  "ui_verification": {
+    "time": 1789888680.235199,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "17:39",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "1/4",
+    "minerals": 0,
+    "vespene": 826
+  },
+  "calls": 233,
+  "cost_usd": 0.15026940600000002,
+  "scope": "Own health/shield/weapon cooldown/status fields preserved in tactical requests. Contribution top-choice retained. Fields verified in live paid request. No policy changes or root orders during run. One relic collected; no main objective completion. No causal benefit established."
+}
