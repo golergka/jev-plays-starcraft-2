@@ -4537,3 +4537,13 @@ choice retains prior duration/default672. No extra round trip or task preference
 147tests pass, including long commitment retention and subsequent shorter choice.
 Keep reduced concrete context307 for this trial; do not attribute effects solely
 to duration without comparisons.
+
+### Lab311 — chosen-duration trial loses15:12 with resources unspent
+
+Native defeat15:12,04:57remaining,1208minerals,all structures destroyed.
+219calls,$0.140278488. Contribution duration choices:{672: 16}.
+No engine/controller errors. Army reached21Marines early, mining reached14/27
+in native9:53 screenshot, but army disappeared while resources accumulated.
+Duration choice reproduced672loop baseline rather than adaptive retention; longer
+survival than308is not causal evidence. Thirty-four verified Zero Hour defeats;
+no campaign advancement. Controller terminal, SC2 on defeat screen.
