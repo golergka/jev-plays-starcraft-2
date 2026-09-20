@@ -6750,3 +6750,19 @@ comparison. Do not claim three affordable-rebuild failures. Notdeployed; no
 livecommands. One informative affordablecase unchanged, insufficient reason to
 add more context or retrylive. Next tests should select affordable rebuilding
 states explicitly and investigate goal priority rather than only fact repetition.
+
+
+### Lab463 — explicit goal priority still favors workers
+
+Native visual check again confirms460 defeat9:09, allstructuresdestroyed.
+Nine offline calls cost $0.004277406. Selected first/middle/last of six460
+investment states with absent Barracks and immediate Barracks purchase offered:
+3540/4290/4882. Jev chooses one of its own advisory production goals or none,
+then receives that priority alongside the unchanged full investment menu.
+Alternating baseline/enriched order; every purchase and saving retained.
+All three priorities are SCV expansion; both arms purchase one SCV in all three.
+Thus independent Expand-all goals are not the only issue: explicit prioritization
+also favors workers in these samples. No evidence to deploy another paid stage
+or restart unchanged. Small exploratory sample, not proof that worker purchases
+are always wrong. No live orders or policy changes. Visual observation remains
+part of live monitoring; API telemetry alone cannot establish mission success.

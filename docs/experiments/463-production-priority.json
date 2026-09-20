@@ -1,0 +1,171 @@
+{
+  "source": "runs/20260920T110319.423869Z/events.jsonl",
+  "eligible_states": 6,
+  "pairs": [
+    {
+      "loop": 3540,
+      "priority": {
+        "choice": "goal_3",
+        "type": "choice",
+        "confidence": 0.3,
+        "probabilities": {
+          "goal_1": 0.14,
+          "goal_2": 0.01,
+          "goal_0": 0.26,
+          "goal_3": 0.44,
+          "none": 0.15
+        }
+      },
+      "priority_description": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types. Chosen intent: Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow.",
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.25,
+            "probabilities": {
+              "project_2": 0.05,
+              "project_3": 0.34,
+              "project_4": 0.15,
+              "project_1": 0.02,
+              "save_for_0": 0.02,
+              "project_0": 0.18,
+              "batch_3": 0.07,
+              "save": 0.17
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        },
+        "priority": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.45,
+            "probabilities": {
+              "project_1": 0.01,
+              "save_for_0": 0.02,
+              "batch_3": 0.13,
+              "project_4": 0.08,
+              "project_0": 0.11,
+              "project_2": 0.03,
+              "project_3": 0.51,
+              "save": 0.11
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 6; idle: 0; current orders: {'Harvest Gather SCV': 1, 'Effect Repair SCV': 2, 'Move Move': 2, 'Harvest Return SCV': 3}."
+        }
+      }
+    },
+    {
+      "loop": 4290,
+      "priority": {
+        "choice": "goal_3",
+        "type": "choice",
+        "confidence": 0.26,
+        "probabilities": {
+          "goal_0": 0.22,
+          "goal_3": 0.41,
+          "goal_1": 0.17,
+          "none": 0.19,
+          "goal_2": 0.01
+        }
+      },
+      "priority_description": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 6. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types. Chosen intent: Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow.",
+      "answers": {
+        "priority": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.48,
+            "probabilities": {
+              "project_3": 0.55,
+              "project_1": 0.01,
+              "project_4": 0.01,
+              "batch_3": 0.18,
+              "save_for_0": 0.01,
+              "project_0": 0.09,
+              "save": 0.11,
+              "project_2": 0.04
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Move Move': 3, 'Harvest Return SCV': 2, 'Harvest Gather SCV': 2}."
+        },
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.36,
+            "probabilities": {
+              "project_3": 0.43,
+              "project_1": 0.02,
+              "project_4": 0.02,
+              "save": 0.15,
+              "project_2": 0.07,
+              "batch_3": 0.15,
+              "project_0": 0.14,
+              "save_for_0": 0.02
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 7; idle: 0; current orders: {'Move Move': 3, 'Harvest Return SCV': 2, 'Harvest Gather SCV': 2}."
+        }
+      }
+    },
+    {
+      "loop": 4882,
+      "priority": {
+        "choice": "goal_3",
+        "type": "choice",
+        "confidence": 0.32,
+        "probabilities": {
+          "goal_0": 0.24,
+          "goal_3": 0.46,
+          "goal_2": 0.01,
+          "none": 0.14,
+          "goal_1": 0.15
+        }
+      },
+      "priority_description": "Choose a production intent for SCV during the next 2016 game loops to help complete the primary mission objective. Currently observed count: 5. This is a hypothetical goal, not an order. Shared resources and production capacity must be allocated separately across types. Chosen intent: Increase the number of owned SCV above the current count. Seek additional units of this type when resources and production allow.",
+      "answers": {
+        "baseline": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.45,
+            "probabilities": {
+              "project_0": 0.12,
+              "save_for_0": 0.02,
+              "batch_3": 0.13,
+              "project_3": 0.52,
+              "project_2": 0.02,
+              "project_1": 0.01,
+              "save": 0.17,
+              "project_4": 0.01
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        },
+        "priority": {
+          "answer": {
+            "choice": "project_3",
+            "type": "choice",
+            "confidence": 0.51,
+            "probabilities": {
+              "project_2": 0.02,
+              "project_3": 0.58,
+              "project_4": 0.01,
+              "project_1": 0.01,
+              "save_for_0": 0.01,
+              "project_0": 0.11,
+              "batch_3": 0.12,
+              "save": 0.14
+            }
+          },
+          "description": "Purchase one SCV. Adds another unit able to: Attack-move order control; damage depends on weapons or separate abilities, Attack-target order control; damage depends on weapons or separate abilities, Build Barracks, Build Bunker, Build EngineeringBay, Build Refinery on visible gas geyser tag 4299948033 at [69.5,5.5], Build Refinery on visible gas geyser tag 4300734465 at [73.5,19.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 0; current orders: {'Effect Repair SCV': 1, 'Move Move': 1, 'Harvest Gather SCV': 3, 'Harvest Return SCV': 1}."
+        }
+      }
+    }
+  ],
+  "method": "First/middle/last states with absent Barracks, advisory goals and immediate Barracks purchase offered. Jev chooses one advisory goal priority or none. Full investment menus unchanged; baseline/enriched order alternates. Nine-call ceiling, exploratory offline only, no game commands.",
+  "calls": 9,
+  "cost_usd": 0.004277406
+}
