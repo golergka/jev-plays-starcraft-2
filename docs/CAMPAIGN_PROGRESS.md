@@ -6319,3 +6319,15 @@ Save→Save; middle SCV→Save; last save-for-SCV→Save. One pair each, no caus
 performance claim. This does not establish better preparation or objective
 progress, so do not deploy or restart on this evidence. Script and artifact
 preserve distributions and selected descriptions. No gameplay orders.
+
+### Lab429 — remove repeated purchase action lists; no useful shift established
+
+Reviewed lab228 before probing: that earlier ablation removed shared context;
+this probe instead retains entire state and removes only repeated 'Adds another
+unit able to' action lists from purchase criteria. Shared observed capabilities,
+weapons, costs, technology prerequisites and every option remain. Motivation is
+trial424's long SCV descriptions and continued worker purchases after Barracks
+recovery. First/middle/last recorded investments, alternating arms, six calls
+$0.003376926. Save→Save, SCV→Save, save-for-SCV→save-for-SCV. No evidence of
+better preparation, so not deployed. No gameplay commands or new mission run.
+These small paired probes cannot establish significance or mission performance.

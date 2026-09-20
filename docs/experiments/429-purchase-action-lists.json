@@ -1,0 +1,194 @@
+{
+  "source": "runs/20260920T090555.000913Z/events.jsonl",
+  "method": "First/middle/last eligible recorded requests. Full original state retained; treatment removes duplicated Adds another unit able to action lists from option descriptions, retaining them in shared observed_capabilities_by_type. All costs, weapons, prerequisite descriptions and choices remain. Alternating order, one pair per state. No gameplay commands; descriptive comparison, not causal performance evidence.",
+  "pairs": [
+    {
+      "time": 1789895165.958741,
+      "treatment_criteria": {
+        "save": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "project_0": "Purchase one Barracks. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_1": "Purchase one Bunker. Its action capabilities have not yet been observed. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_2": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_3": "Purchase one Firebat. Its action capabilities have not yet been observed. Has weapons: Ground targets at range 2.0. Cost/effects: {'type': 'Firebat', 'minerals': 100, 'vespene': 25, 'supply': 2.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "batch_3": "Commit to up to three training requests for Firebat over 2016 game loops, using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Firebat. Its action capabilities have not yet been observed. Has weapons: Ground targets at range 2.0. Cost/effects: {'type': 'Firebat', 'minerals': 100, 'vespene': 25, 'supply': 2.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_4": "Purchase one Marine. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}.",
+        "batch_4": "Commit to up to three training requests for Marine over 2016 game loops, using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Marine. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 3; idle: 3; current orders: {}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_5": "Purchase one Medic. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Medic', 'minerals': 75, 'vespene': 50, 'supply': 2.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "batch_5": "Commit to up to three training requests for Medic over 2016 game loops, using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Medic. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Medic', 'minerals': 75, 'vespene': 50, 'supply': 2.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_6": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_7": "Purchase one SCV. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 5; current orders: {}.",
+        "batch_7": "Commit to up to three training requests for SCV over 2016 game loops, using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 5; idle: 5; current orders: {}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_8": "Purchase one SupplyDepot. Adds 8 supply capacity when complete. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+        "save_for_0": "Commit to saving for CommandCenter for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 250, 'vespene': 0, 'supply': 0}. Purchase one CommandCenter. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "save_for_1": "Commit to saving for Factory for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 0, 'vespene': 50, 'supply': 0}. Purchase one Factory. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for Starport, Armory; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Factory', 'minerals': 150, 'vespene': 100, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Starport', 'requires_attached': False}, {'unit': 'Armory', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "baseline": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.26,
+          "probabilities": {
+            "project_7": 0.13,
+            "project_6": 0.02,
+            "project_2": 0.0,
+            "batch_5": 0.01,
+            "project_8": 0.03,
+            "batch_4": 0.09,
+            "save_for_1": 0.02,
+            "batch_3": 0.01,
+            "project_3": 0.04,
+            "project_5": 0.03,
+            "batch_7": 0.06,
+            "project_0": 0.03,
+            "save_for_0": 0.0,
+            "project_1": 0.05,
+            "project_4": 0.17,
+            "save": 0.31
+          }
+        }
+      },
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.36,
+          "probabilities": {
+            "project_4": 0.1,
+            "project_3": 0.05,
+            "project_6": 0.03,
+            "project_1": 0.05,
+            "save_for_1": 0.02,
+            "project_2": 0.0,
+            "batch_5": 0.01,
+            "batch_3": 0.01,
+            "batch_4": 0.07,
+            "project_8": 0.02,
+            "save": 0.41000000000000003,
+            "batch_7": 0.07,
+            "project_5": 0.02,
+            "project_7": 0.12,
+            "project_0": 0.02,
+            "save_for_0": 0.0
+          }
+        }
+      }
+    },
+    {
+      "time": 1789895624.73529,
+      "treatment_criteria": {
+        "save": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "project_0": "Purchase one Barracks. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_1": "Purchase one CommandCenter. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_2": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_3": "Purchase one MissileTurret. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_4": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_5": "Research upgrade TerranInfantryArmorsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "project_6": "Research upgrade TerranInfantryWeaponsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "project_7": "Purchase one SCV. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 2; current orders: {'Move Move': 4, 'Harvest Gather SCV': 5, 'Harvest Return SCV': 1, 'Build EngineeringBay': 1}.",
+        "batch_7": "Commit to up to three training requests for SCV over 2016 game loops, using currently executable controls and choosing the producer separately. No other new unit, structure or upgrade purchase is allowed while this batch is active, including while waiting for resources or an available training control. This exclusive reservation ends when the batch finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 2; current orders: {'Move Move': 4, 'Harvest Gather SCV': 5, 'Harvest Return SCV': 1, 'Build EngineeringBay': 1}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_8": "Purchase one SensorTower. Its action capabilities have not yet been observed. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SensorTower', 'minerals': 125, 'vespene': 100, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_9": "Purchase one SupplyDepot. Adds 8 supply capacity when complete. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "explicit": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.11,
+          "probabilities": {
+            "project_3": 0.05,
+            "batch_7": 0.12,
+            "project_5": 0.01,
+            "project_6": 0.01,
+            "save": 0.19,
+            "project_0": 0.04,
+            "project_2": 0.11,
+            "project_9": 0.05,
+            "project_4": 0.06,
+            "project_8": 0.03,
+            "project_7": 0.17,
+            "project_1": 0.16
+          }
+        }
+      },
+      "baseline": {
+        "investment": {
+          "choice": "project_7",
+          "type": "choice",
+          "confidence": 0.16,
+          "probabilities": {
+            "project_2": 0.08,
+            "project_3": 0.05,
+            "batch_7": 0.11,
+            "project_9": 0.07,
+            "project_4": 0.04,
+            "project_7": 0.23,
+            "project_6": 0.01,
+            "project_8": 0.03,
+            "project_1": 0.16,
+            "project_0": 0.05,
+            "project_5": 0.01,
+            "save": 0.16
+          }
+        }
+      }
+    },
+    {
+      "time": 1789896608.119745,
+      "treatment_criteria": {
+        "save": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "save_for_0": "Commit to saving for Barracks for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 140, 'vespene': 0, 'supply': 0}. Purchase one Barracks. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "save_for_1": "Commit to saving for CommandCenter for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 390, 'vespene': 0, 'supply': 0}. Purchase one CommandCenter. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "save_for_2": "Commit to saving for EngineeringBay for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 115, 'vespene': 0, 'supply': 0}. Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "save_for_3": "Commit to saving for MissileTurret for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 90, 'vespene': 0, 'supply': 0}. Purchase one MissileTurret. Has weapons: Air targets at range 7.0. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "save_for_4": "Commit to saving for Refinery for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 65, 'vespene': 0, 'supply': 0}. Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "save_for_5": "Commit to saving for Research TerranInfantryArmorsLevel1 for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 90, 'vespene': 0, 'supply': 0}. Research upgrade TerranInfantryArmorsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "save_for_6": "Commit to saving for Research TerranInfantryWeaponsLevel1 for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 90, 'vespene': 0, 'supply': 0}. Research upgrade TerranInfantryWeaponsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "save_for_7": "Commit to saving for SCV for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 40, 'vespene': 0, 'supply': 0}. Purchase one SCV. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 28; idle: 5; current orders: {'Move Move': 10, 'Harvest Gather SCV': 7, 'Harvest Return SCV': 6, 'Effect Repair SCV': 3}.",
+        "save_for_8": "Commit to saving for SensorTower for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 115, 'vespene': 0, 'supply': 0}. Purchase one SensorTower. Its action capabilities have not yet been observed. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SensorTower', 'minerals': 125, 'vespene': 100, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "save_for_9": "Commit to saving for SupplyDepot for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. Resource shortfall: {'minerals': 90, 'vespene': 0, 'supply': 0}. Purchase one SupplyDepot. Adds 8 supply capacity when complete. No weapons listed in the unit catalog. Attack-order controls do not establish weapon damage; separate abilities or passengers may have other effects. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}."
+      },
+      "baseline": {
+        "investment": {
+          "choice": "save_for_7",
+          "type": "choice",
+          "confidence": 0.58,
+          "probabilities": {
+            "save_for_4": 0.02,
+            "save_for_1": 0.01,
+            "save_for_8": 0.01,
+            "save_for_3": 0.03,
+            "save_for_6": 0.0,
+            "save_for_2": 0.01,
+            "save_for_9": 0.04,
+            "save_for_5": 0.01,
+            "save_for_7": 0.62,
+            "save_for_0": 0.01,
+            "save": 0.24
+          }
+        }
+      },
+      "explicit": {
+        "investment": {
+          "choice": "save_for_7",
+          "type": "choice",
+          "confidence": 0.5,
+          "probabilities": {
+            "save_for_5": 0.0,
+            "save_for_2": 0.01,
+            "save_for_6": 0.0,
+            "save_for_8": 0.01,
+            "save_for_9": 0.03,
+            "save": 0.31,
+            "save_for_1": 0.01,
+            "save_for_0": 0.01,
+            "save_for_3": 0.04,
+            "save_for_7": 0.55,
+            "save_for_4": 0.03
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.0033769259999999997
+}
