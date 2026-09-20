@@ -356,7 +356,7 @@ async def choose_investment(view, state, jev, memory=None):
         example = projects[name][0][1]
         criteria[f'project_{i}'] = investment_description(name,example.get('project'),state)
         if memory is not None and example['description'].startswith('Train '):
-            criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 2016 game loops (about90 seconds), '
+            criteria[f'batch_{i}'] = (f'Commit to up to three training requests for {name} over 2016 game loops, '
                 'using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. '
                 'Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. '
                 +investment_description(name,example.get('project'),state))
@@ -368,7 +368,7 @@ async def choose_investment(view, state, jev, memory=None):
         resources = view.get('resources',{})
         shortfall = {k:max(0,project[k]-resources.get(r,0)) for k,r in
                      [('minerals','minerals'),('vespene','vespene'),('supply','supply_remaining')]}
-        criteria[f'save_for_{i}'] = (f'Commit to saving for {name} for up to 224 game loops (about ten seconds), purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. '
+        criteria[f'save_for_{i}'] = (f'Commit to saving for {name} for up to 224 game loops, purchasing it if it becomes executable before that review. No other purchase will spend that reserved budget during this commitment. '
             f'The engine offers its ability when resource requirements are ignored, but no executable purchase/site is currently offered. '
             f'Resource shortfall: {shortfall}. '+investment_description(name,project,state))
     carried = False
@@ -621,7 +621,7 @@ async def choose_contributions(view, state, questions, jev, memory):
             answers[key] = {'choice':plan['choice']}
         else:
             pending[key] = {**question,'instructions':question['instructions']+
-                f' Commit to this contribution for up to {commitment_loops} game loops (about thirty seconds), '
+                f' Commit to this contribution for up to {commitment_loops} game loops, '
                 'unless its controls become unavailable or the strategic priority changes. '
                 'Concrete orders are still selected separately during the commitment.'}
     predictions = await jev.ask(control_state(state),pending) if pending else {}
@@ -767,9 +767,9 @@ async def decide(view, jev, memory):
             'type':'choice',
             'instructions':'Choose when to review this high-level priority and selection grouping again. Tactical orders and investment decisions continue during this interval using fresh observations. Longer intervals reduce repeated model spending but delay revising the priority. The next review occurs at the first budget-permitted decision after the selected interval.',
             'criteria':{
-                'soon':'Review after 112 game loops (about five game seconds).',
-                'medium':'Retain for 672 game loops (about thirty game seconds).',
-                'long':'Retain for 2016 game loops (about ninety game seconds).',
+                'soon':'Review after 112 game loops.',
+                'medium':'Retain for 672 game loops.',
+                'long':'Retain for 2016 game loops.',
             },
         }, 'coordination': {
             'type':'choice',

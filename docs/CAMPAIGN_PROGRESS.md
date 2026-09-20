@@ -4405,3 +4405,19 @@ active mission and19:57 evacuation timer; window retained. Run
 opening, not ending detection or strategic improvement. Budget before launch
 $0.043193724/rolling5min; unchanged$0.10 cap. Continue periodic native visual
 checks as requested, rather than inferring scene quality from unit counts.
+
+### Lab299 — use exact loop deadlines in Jev context
+
+Periodic native screenshot at1:51 shows director following a bunker under attack,
+not merely the base. No root tactical orders issued. Trial298 integrated restart
+continues: loop2440,16Marines,5SCVs,2Barracks,$0.027227382 for49calls. A Jev-selected
+Marine production batch issued two accepted followups at1187/1304; acceptance is
+not completion. Current endpoint is not a mission result.
+
+Removed six approximate seconds conversions from investment, contribution and
+strategic-review descriptions. Exact loop durations remain, execution unchanged.
+The previous assumptions mixed game-clock interpretation with faster-speed loop
+conversion; factual time context should not imply an unverified clock rate.
+145tests pass, including integrated restart coverage. This is a context correction,
+not evidence of strategic improvement. Current trial becomes mixed prompt revisions
+after committed live reload.
