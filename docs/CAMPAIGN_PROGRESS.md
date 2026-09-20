@@ -5322,3 +5322,41 @@ leaf coverage, complete original-option union, legal final answers and exactly
 three requests for all15. No paid probe, live policy change, savings assertion or
 mission outcome claim. Next: finish current trial, then measure paired cost before
 considering removal of redundant tournament calls.
+
+### Lab368 — identity/context trial loses with 2:03 left
+
+Trial365 run20260920T042029.397484Z/session87049 exited0; native screenshot
+independently verifies defeat at18:06, evacuation02:03,28minerals/260gas, all
+structures destroyed.283successfulrequests,$0.152360628. All283 carried visible
+objectives; one prior exact-map attempt loaded. Engine feedback includes SCV
+NotEnoughFood and SupplyDepot CouldntReachTarget; no model request failures.
+Checkpoint now41verifiedZeroHourdefeats; only firsttwo missions verified wins.
+
+Visual checks saw production/base destruction while Marines remained near a
+bunker, then bridge combat and attrition. Longer survival does not isolate identity
+context benefit: startup gate, history and stochastic choices also differ. No
+live policy changes or root tactics. Artifact368 and local UI/result records agree.
+
+### Lab369 — complete tournament costs more than full-menu Choice
+
+After trial365 terminated, bounded probe compared first/middle/last reconstructed
+Marine menus (102/119/94 options). Same state and criterion ordering within each
+pair; alternating arm order.12calls cost$0.008013852 under existing rolling cap.
+Full requests total$0.002491650 versus whole tournaments$0.005522202:54.88% lower
+cost for these menu decisions. Full walltimes0.52–0.62s versus0.95–0.96s tournament.
+Two pairs choose the same bunker-join; first differs Hold versus bunker-join.
+No quality improvement or whole-run54.88% savings claim. No game actions in probe.
+
+### Lab370 — full menu first, bounded tournament on explicit size rejection
+
+Default large-order path now sends all criteria once. Only provider
+max_tokens_exceeded rejection triggers prior bounded Jev-finalist tournament;
+other errors propagate loudly. No criteria pruning, strategy, target choice,
+budget increase or root tactical intervention. Comparator explicitly selects the
+legacy tournament path so future cost comparisons remain meaningful.
+
+194tests pass, including full-menu single call, size fallback with complete leaves
+and Jev-only finalists, and propagation of other errors. Rejected requests retain
+framework conservative reservations; fallback can therefore hit the same hard
+budget limit rather than bypass it. Next live trial measures total cost/control
+cadence and gameplay; sampled request savings alone do not establish victory.

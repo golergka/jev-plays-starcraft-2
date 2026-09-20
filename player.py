@@ -6,7 +6,7 @@ Commit this file to activate it at the next decision boundary.
 """
 import json
 import asyncio
-from openrouter.errors import PaymentRequiredResponseError
+from openrouter.errors import PaymentRequiredResponseError, BadRequestResponseError
 import math
 import random
 import re
@@ -165,8 +165,8 @@ def describe_action_feedback(view, memory):
     return [combined[k] for k in sorted(combined)]
 
 
-async def ask_order_menus(state, questions, jev):
-    """Bound concrete menus with Jev-selected finalists, retaining every option."""
+async def ask_order_menus(state, questions, jev, *, full_first=True):
+    """Try whole menus; use Jev-selected finalists only after a size rejection."""
     small, large = {}, {}
     for key, question in questions.items():
         criteria = question.get('criteria', {})
@@ -178,7 +178,7 @@ async def ask_order_menus(state, questions, jev):
         middle = len(items)//2
         parts = [{**question, 'criteria': dict(items[:middle])},
                  {**question, 'criteria': dict(items[middle:])}]
-        answers = await asyncio.gather(*(ask_order_menus(state, {key:part}, jev) for part in parts))
+        answers = await asyncio.gather(*(ask_order_menus(state, {key:part}, jev, full_first=False) for part in parts))
         winners = []
         for part, answer in zip(parts, answers):
             choice = answer.get(key, {}).get('choice')
@@ -190,8 +190,19 @@ async def ask_order_menus(state, questions, jev):
         return await jev.ask(state, {key:{**question,
             'criteria':{choice:question['criteria'][choice] for choice in winners}}})
 
+    async def large_menu(key, question):
+        if full_first:
+            try:
+                return await jev.ask(state, {key:question})
+            except BadRequestResponseError as exc:
+                if 'max_tokens_exceeded' not in str(exc):
+                    raise
+                jev.log('order_menu_size_fallback', question=key,
+                        options=len(question['criteria']))
+        return await tournament(key, question)
+
     calls = ([jev.ask(state, small)] if small else [])
-    calls.extend(tournament(key, question) for key, question in large.items())
+    calls.extend(large_menu(key, question) for key, question in large.items())
     answers = await asyncio.gather(*calls)
     return {key:value for answer in answers for key,value in answer.items()}
 

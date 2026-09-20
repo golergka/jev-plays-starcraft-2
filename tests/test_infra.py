@@ -1049,12 +1049,39 @@ def test_order_menu_tournament_exposes_every_option_and_uses_only_jev_finalists(
             self.requests.append(qs)
             return {k:{'choice':max(q['criteria'],key=int)} for k,q in qs.items()}
     model=Model()
-    answer=asyncio.run(ask_order_menus({'fact':'visible'},questions,model))
+    answer=asyncio.run(ask_order_menus({'fact':'visible'},questions,model,full_first=False))
     assert answer['squad']['choice']=='7'
     assert {k for request in model.requests for k in request['squad']['criteria']}==set(map(str,range(8)))
     assert set(model.requests[-1]['squad']['criteria'])=={'3','7'}
     assert len(questions['squad']['criteria'])==8
     assert all(len(q['squad']['criteria'])<=2 for q in model.requests)
+
+
+def test_large_order_menu_uses_one_full_request_and_only_size_errors_fallback(monkeypatch):
+    import player
+    class Rejected(Exception): pass
+    monkeypatch.setattr(player,'BadRequestResponseError',Rejected)
+    questions={'squad':{'type':'choice','instructions':'Choose',
+        'criteria':{str(i):'x'*5000 for i in range(8)}}}
+    class Model:
+        def __init__(self,error=None): self.requests=[];self.error=error;self.events=[]
+        def log(self,event,**kw): self.events.append(event)
+        async def ask(self,state,qs):
+            self.requests.append(qs)
+            if self.error and len(self.requests)==1: raise Rejected(self.error)
+            return {k:{'choice':max(q['criteria'],key=int)} for k,q in qs.items()}
+    model=Model()
+    assert asyncio.run(player.ask_order_menus({},questions,model))['squad']['choice']=='7'
+    assert model.requests==[questions]
+    model=Model('max_tokens_exceeded')
+    assert asyncio.run(player.ask_order_menus({},questions,model))['squad']['choice']=='7'
+    assert model.events.count('order_menu_size_fallback')==1
+    assert set(model.requests[-1]['squad']['criteria'])=={'3','7'}
+    assert len(model.requests)==8  # One rejected full menu, then seven bounded tree requests.
+    model=Model('invalid_schema')
+    with pytest.raises(Rejected,match='invalid_schema'):
+        asyncio.run(player.ask_order_menus({},questions,model))
+    assert len(model.requests)==1
 
 
 def test_depot_state_controls_require_current_engine_offer_and_no_target():

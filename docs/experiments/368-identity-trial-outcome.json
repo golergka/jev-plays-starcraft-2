@@ -1,0 +1,53 @@
+{
+  "run": "runs/20260920T042029.397484Z",
+  "ui_verification": {
+    "time": 1789878851.25538,
+    "verification": "native SC2 screenshot via cua",
+    "mission": "Zero Hour",
+    "result": "defeat",
+    "mission_time": "18:06",
+    "evacuation_remaining": "02:03",
+    "reason": "All of your structures have been destroyed.",
+    "minerals": 28,
+    "vespene": 260
+  },
+  "calls": 283,
+  "cost_usd": 0.15236062800000003,
+  "errors": [
+    {
+      "time": 1789878349.639731,
+      "event": "engine_action_error",
+      "loop": 6961,
+      "failures": [
+        {
+          "ability_id": 524,
+          "unit_tags": [
+            4299948033
+          ],
+          "result": "NotEnoughFood"
+        }
+      ]
+    },
+    {
+      "time": 1789878439.9323158,
+      "event": "engine_action_error",
+      "loop": 8972,
+      "failures": [
+        {
+          "ability_id": 319,
+          "unit_tags": [
+            4401659910
+          ],
+          "result": "CouldntReachTarget"
+        }
+      ]
+    }
+  ],
+  "history_count": {
+    "time": 1789878034.581235,
+    "event": "episode_history_loaded",
+    "attempts": 1
+  },
+  "objective_requests": 283,
+  "scope": "One live attempt with startup gate, explicit identity context and one prior attempt. No isolated causal quality claim."
+}

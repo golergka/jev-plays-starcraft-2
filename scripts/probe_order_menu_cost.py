@@ -67,7 +67,7 @@ async def main():
                 before_cost, before_calls, started = model.cost, model.calls, time.monotonic()
                 questions = {args.selection: question}
                 answer = await (model.ask(state, questions) if arm == 'full'
-                                else ask_order_menus(state, questions, model))
+                                else ask_order_menus(state, questions, model, full_first=False))
                 pair[arm] = {'answer': answer[args.selection], 'cost_usd': model.cost-before_cost,
                              'calls': model.calls-before_calls, 'wall_seconds': time.monotonic()-started}
                 result.update(calls=model.calls, cost_usd=model.cost)
