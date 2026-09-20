@@ -5,6 +5,7 @@ The harness owns sockets, action validation, telemetry, and persistent memory.
 Commit this file to activate it at the next decision boundary.
 """
 import json
+import os
 import asyncio
 from jev_sc2.concurrency import gather_owned
 from openrouter.errors import PaymentRequiredResponseError, BadRequestResponseError
@@ -272,6 +273,28 @@ def sample_concrete_answer(answer, criteria, rng):
     if sum(weights.values()) <= 0:
         raise ValueError('Empty concrete-order probability mass')
     return {**answer, 'choice': rng.choices(keys, weights=[weights[k] for k in keys], k=1)[0]}
+
+
+async def choose_with_opaque_keys(state, questions, jev, selections):
+    """Reversible presentation experiment; no action filtering or ranking."""
+    if os.getenv('JEV_CONCRETE_MENU_SEED'):
+        raise ValueError('Opaque-key experiment requires JEV_CONCRETE_MENU_SEED unset to preserve menu order')
+    mappings = {name:{f'option_{i:03d}':key for i,key in enumerate(q['criteria'])}
+                for name,q in questions.items() if name in selections}
+    encoded = {name:({**q, 'criteria':{alias:q['criteria'][key]
+                     for alias,key in mappings[name].items()}} if name in mappings else q)
+               for name,q in questions.items()}
+    answers = await choose_concrete_orders(state, encoded, jev)
+    for name,mapping in mappings.items():
+        if name not in answers:
+            raise ValueError(f'Missing opaque answer for {name}')
+        answer = answers[name]
+        if answer.get('choice') not in mapping or any(k not in mapping for k in answer.get('probabilities',{})):
+            raise ValueError(f'Unknown opaque action identifier for {name}')
+        answers[name] = {**answer, 'choice':mapping[answer['choice']],
+                        'probabilities':{mapping[k]:v for k,v in answer.get('probabilities',{}).items()}}
+        jev.log('opaque_order_decode', selection=name, choice=answers[name]['choice'], mapping=mapping)
+    return answers
 
 
 async def choose_concrete_orders(state, questions, jev):
@@ -1162,7 +1185,10 @@ async def decide(view, jev, memory):
                 scored = {k:q for k,q in concrete_questions.items() if k in direct_selections}
                 if scored:
                     concrete_questions.update(await rate_order_kinds(order_state(state),scored,jev,memory))
-            answers.update(await choose_concrete_orders(order_state(state),concrete_questions,jev))
+            if os.getenv('JEV_OPAQUE_COMBAT_KEYS') == '1':
+                answers.update(await choose_with_opaque_keys(order_state(state),concrete_questions,jev,direct_selections))
+            else:
+                answers.update(await choose_concrete_orders(order_state(state),concrete_questions,jev))
             if memory.get('sample_combat_orders'):
                 rng = memory.setdefault('combat_order_rng', random.Random(20260920))
                 for kind in sorted(set(concrete_questions) & direct_selections):
