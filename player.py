@@ -80,23 +80,32 @@ def recent_outcomes(view, memory, window=672):
         for key in ('mean_net_displacement','mean_sampled_distance_travelled'):
             item[key] = round(item[key]/item['units_observed_throughout_window'],1)
     point_order_progress = []
-    for tag in sorted(continuous):
-        samples = [h['units'][tag] for h in history]
-        if len(samples) < 2 or any(u.get('position') is None for u in samples):
+    for tag, unit in sorted(current['units'].items()):
+        orders = unit.get('orders', [])
+        if len(orders) != 1 or orders[0].get('target_point') is None:
             continue
-        orders = [u.get('orders', []) for u in samples]
-        if any(len(o) != 1 or o[0].get('target_point') is None for o in orders):
+        first = orders[0]
+        comparable = []
+        for entry in reversed(history):
+            previous = entry['units'].get(tag)
+            if previous is None or previous.get('position') is None:
+                break
+            previous_orders = previous.get('orders', [])
+            if (len(previous_orders) != 1 or
+                previous_orders[0].get('ability') != first.get('ability') or
+                previous_orders[0].get('target_point') != first['target_point']):
+                break
+            comparable.append(entry)
+        if len(comparable) < 2:
             continue
-        first = orders[0][0]
-        if any(o[0].get('ability') != first.get('ability') or
-               o[0]['target_point'] != first['target_point'] for o in orders[1:]):
-            continue
+        comparable.reverse()
+        samples = [entry['units'][tag] for entry in comparable]
         target = first['target_point']
         before = math.dist(samples[0]['position'], target)
         after = math.dist(samples[-1]['position'], target)
         point_order_progress.append({'tag':tag, 'type':samples[-1]['type'],
             'ability':first.get('ability'), 'target_point':target,
-            'observed_loops':loop-history[0]['loop'],
+            'observed_loops':loop-comparable[0]['loop'],
             'initial_straight_line_distance':round(before,1),
             'current_straight_line_distance':round(after,1),
             'distance_reduction':round(before-after,1)})
@@ -128,7 +137,7 @@ def recent_outcomes(view, memory, window=672):
             'currently_incomplete_projects':unfinished,
             'construction_interpretation':'Only observed progress transitions count as completion. Newly appearing completed units are not attributed to construction. No progress over a short interval does not establish abandonment.',
             'unchanged_point_order_progress':point_order_progress,
-            'point_order_interpretation':'Same sole point order at every retained observation, not proof of uninterrupted execution. Positive distance reduction means closer to its destination. Straight-line distance is not route distance; necessary detours or combat can increase it. Missing entries mean insufficient comparable observations, not zero progress.',
+            'point_order_interpretation':'Same sole point order across the latest consecutive comparable observations, not proof of uninterrupted execution. Positive distance reduction means closer to its destination. Straight-line distance is not route distance; necessary detours or combat can increase it. Missing entries mean insufficient comparable observations, not zero progress.',
             'movement_by_type':movement,
             'movement_interpretation':'Map units over the observed window, only units present at every sample. Sampled travel is a lower bound; net displacement can be zero after useful round trips. Neither measure alone indicates success or failure.',
             'own_units_appeared_by_type':dict(appeared),
