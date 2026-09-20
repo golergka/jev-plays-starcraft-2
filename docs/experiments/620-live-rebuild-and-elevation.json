@@ -1,0 +1,62 @@
+{
+  "lab": 620,
+  "trial": 618,
+  "status": "running",
+  "purchase_loop": 8552,
+  "rebuilt_barracks_tag": 4362600482,
+  "observed_construction": [
+    {
+      "loop": 8678,
+      "build_progress": 0.042,
+      "health": 137.724609375
+    },
+    {
+      "loop": 8995,
+      "build_progress": 0.372,
+      "health": 434.834716796875
+    },
+    {
+      "loop": 9067,
+      "build_progress": 0.447,
+      "health": 502.317138671875
+    },
+    {
+      "loop": 9276,
+      "build_progress": 0.665,
+      "health": 698.20361328125
+    },
+    {
+      "loop": 9437,
+      "build_progress": 0.832,
+      "health": 849.101806640625
+    },
+    {
+      "loop": 9930,
+      "build_progress": 1.0,
+      "health": 1000.0
+    },
+    {
+      "loop": 10115,
+      "build_progress": 1.0,
+      "health": 1000.0
+    },
+    {
+      "loop": 10651,
+      "build_progress": 1.0,
+      "health": 576.0
+    },
+    {
+      "loop": 10818,
+      "build_progress": 1.0,
+      "health": 340.0
+    }
+  ],
+  "elevation_requests_verified": 6,
+  "native_visual": {
+    "time": "10:58",
+    "minerals": 967,
+    "relics": "0/4",
+    "observation": "Barracks in mineral area under Zerg attack; workers remain nearby."
+  },
+  "interpretation": "A Barracks rebuild was selected and reached observed completion. This addresses an earlier recovery failure but does not establish horizon-prompt causality or mission success. Elevation fields reached live requests after619 reload; no combat-choice effect established."
+}
