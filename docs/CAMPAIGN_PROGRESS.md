@@ -6865,3 +6865,15 @@ be read as actual live purchase sequences. Snapshot artifact records exact
 current totals and all reviewed choices; outcome pending, no policy change or
 root orders. Preserve this trial; later compare realized production and losses,
 not merely diagnoses or time survived.
+
+
+### Lab470 — apparently short batch completed its full request allowance
+
+Trial468 remains live/session49275. Investigated batch3684 followed by fresh
+investment3971. Background executor armed after initial accepted Marine request,
+then accepted two more at3804/3957; released3971 for completed request allowance.
+No premature cancellation or silently lost commitment. Artifact preserves logs.
+Acceptance does not establish completion/survival; no framework change justified.
+Latest check11275:163calls $0.104991684,zeroerrors, Barracksstillobserved with
+oneMarine/oneMedic/fiveSCVs. Native9:24 earlier showed small advancingforce near
+Zergdefenses. No claimed outcome; keep following this run, not an unchangedretry.

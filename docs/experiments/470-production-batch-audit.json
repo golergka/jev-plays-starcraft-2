@@ -1,0 +1,157 @@
+{
+  "source": "runs/20260920T112554.439774Z/events.jsonl",
+  "events": [
+    {
+      "time": 1789903728.0811698,
+      "event": "production_batch_chosen",
+      "target_project": "Marine",
+      "remaining": 3,
+      "loop": 3684,
+      "review_at": 5700,
+      "strategy": "pursue_objective"
+    },
+    {
+      "time": 1789903728.081374,
+      "event": "production_batch_request",
+      "loop": 3684,
+      "target_project": "Marine",
+      "remaining_attempts": 2,
+      "command": {
+        "unit_tag": 4313055233,
+        "ability_id": 560
+      }
+    },
+    {
+      "time": 1789903728.8248792,
+      "event": "production_job_armed",
+      "loop": 3684,
+      "job": {
+        "target_project": "Marine",
+        "remaining": 2,
+        "loop": 3684,
+        "review_at": 5700,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 560
+        },
+        "last_request_loop": 3684
+      }
+    },
+    {
+      "time": 1789903732.216442,
+      "event": "production_job_request",
+      "loop": 3804,
+      "remaining_attempts": 1,
+      "command": {
+        "unit_tag": 4313055233,
+        "ability_id": 560
+      }
+    },
+    {
+      "time": 1789903732.31341,
+      "event": "production_job_execution",
+      "loop": 3804,
+      "commands": [
+        {
+          "unit_tag": 4313055233,
+          "ability_id": 560
+        }
+      ],
+      "submitted": 1,
+      "results": [
+        1
+      ],
+      "age": 8,
+      "submitted_actions": [
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ]
+    },
+    {
+      "time": 1789903737.779722,
+      "event": "production_job_wait",
+      "loop": 3929,
+      "reason": "exact selected command unavailable or unaffordable",
+      "job": {
+        "target_project": "Marine",
+        "remaining": 1,
+        "loop": 3684,
+        "review_at": 5700,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 560
+        },
+        "last_request_loop": 3804,
+        "waiting": false
+      }
+    },
+    {
+      "time": 1789903738.993278,
+      "event": "production_job_request",
+      "loop": 3957,
+      "remaining_attempts": 0,
+      "command": {
+        "unit_tag": 4313055233,
+        "ability_id": 560
+      }
+    },
+    {
+      "time": 1789903739.0633228,
+      "event": "production_job_execution",
+      "loop": 3957,
+      "commands": [
+        {
+          "unit_tag": 4313055233,
+          "ability_id": 560
+        }
+      ],
+      "submitted": 1,
+      "results": [
+        1
+      ],
+      "age": 7,
+      "submitted_actions": [
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4313055233
+          ],
+          "result": "Success"
+        }
+      ]
+    },
+    {
+      "time": 1789903739.566862,
+      "event": "production_job_released",
+      "current_loop": 3971,
+      "reason": "completed request allowance",
+      "job": {
+        "target_project": "Marine",
+        "remaining": 0,
+        "loop": 3684,
+        "review_at": 5700,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 560
+        },
+        "last_request_loop": 3957,
+        "waiting": false
+      }
+    }
+  ],
+  "finding": "Three Marine requests accepted at 3684,3804,3957; reservation released at3971 after allowance completed. Initial acceptance appears in production_job_armed. Acceptance is not completion or survival evidence."
+}
