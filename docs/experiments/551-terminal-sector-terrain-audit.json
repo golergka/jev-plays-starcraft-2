@@ -1,0 +1,89 @@
+{
+  "lab": 551,
+  "kind": "read_only_terminal_sector_audit",
+  "game_loop": 20972,
+  "sectors": [
+    {
+      "sector": "south_west",
+      "point": [
+        30.666666666666668,
+        16.0
+      ],
+      "visibility": 3,
+      "terrain": "unknown (not currently visible)"
+    },
+    {
+      "sector": "south_center",
+      "point": [
+        92.0,
+        16.0
+      ],
+      "visibility": 0,
+      "terrain": "unknown (not currently visible)"
+    },
+    {
+      "sector": "south_east",
+      "point": [
+        153.33333333333334,
+        16.0
+      ],
+      "visibility": 3,
+      "terrain": "unknown (not currently visible)"
+    },
+    {
+      "sector": "middle_west",
+      "point": [
+        30.666666666666668,
+        48.0
+      ],
+      "visibility": 3,
+      "terrain": "unknown (not currently visible)"
+    },
+    {
+      "sector": "middle_center",
+      "point": [
+        92.0,
+        48.0
+      ],
+      "visibility": 3,
+      "terrain": "unknown (not currently visible)"
+    },
+    {
+      "sector": "middle_east",
+      "point": [
+        153.33333333333334,
+        48.0
+      ],
+      "visibility": 2,
+      "terrain": "walkable static terrain"
+    },
+    {
+      "sector": "north_west",
+      "point": [
+        30.666666666666668,
+        80.0
+      ],
+      "visibility": 3,
+      "terrain": "unknown (not currently visible)"
+    },
+    {
+      "sector": "north_center",
+      "point": [
+        92.0,
+        80.0
+      ],
+      "visibility": 2,
+      "terrain": "blocked static terrain"
+    },
+    {
+      "sector": "north_east",
+      "point": [
+        153.33333333333334,
+        80.0
+      ],
+      "visibility": 3,
+      "terrain": "unknown (not currently visible)"
+    }
+  ],
+  "limitation": "Only currently visible terrain inspected; terminal visibility cannot establish earlier route reachability. No path queries or model calls."
+}
