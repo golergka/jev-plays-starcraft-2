@@ -9,7 +9,7 @@ mission is verified won; all three campaigns remain incomplete.
 
 ## Current evidence through lab422
 
-Smash and Grab has twelve independently verified defeats:
+Smash and Grab has thirteen independently verified defeats:
 
 | Trial | Native mission time | Relics | Successful requests | Request cost |
 | --- | --- | --- | --- | --- |
@@ -25,6 +25,7 @@ Smash and Grab has twelve independently verified defeats:
 | 407/409 | 14:56 | 0/4 | 184 | $0.127951950 |
 | 414/415 | 14:25 | 0/4 | 170 | $0.123729648 |
 | 421/422 | 27:39 | 0/4 | 312 | $0.249544218 |
+| 424/427 | 31:10 | 1/4 | 348 | $0.295994076 |
 
 Trial400 stopped on a rolling-budget rejection before the native defeat. Its final
 interval had no controller; this is not a clean policy comparison.
@@ -354,3 +355,5 @@ verified adapter changes without a reconnect. A separate presentation director
 frames local visible action; it never selects unit orders. Source commits remain
 the experiment journal, with full per-mission history in
 [CAMPAIGN_PROGRESS.md](CAMPAIGN_PROGRESS.md).
+
+Trial424 ended when the Zerg captured the artifact, with structures still standing. Damage-only early reviews did not produce a mission victory. Native UI and controller ending agree; this was not a time-limit interruption.

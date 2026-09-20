@@ -1,0 +1,21 @@
+{
+  "trial": 424,
+  "run": "runs/20260920T090555.000913Z",
+  "calls": 348,
+  "cost_usd": 0.295994076,
+  "ui_verification": {
+    "time": 1789896675.648066,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "31:10",
+    "reason": "The zerg have captured the artifact!",
+    "protoss_relics": "1/4",
+    "minerals": 4,
+    "vespene": 346
+  },
+  "decision_errors": 0,
+  "early_review_count": 22,
+  "peak_run_response_cost_300s": 0.069529362,
+  "limits": "Response costs for this run only, not reservations or other processes. One trial does not establish causal benefit from damage-only early review. Native objective defeat occurred with structures still standing; not a controller time limit."
+}

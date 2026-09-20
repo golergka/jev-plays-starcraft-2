@@ -6287,3 +6287,24 @@ and objective progress, not simply whether Jev understands Air. No policy
 change or paid probe on the basis of the incomplete interpretation. Trial424
 still live; controller handle10774 verified. Correcting evidence avoids an
 unjustified tactical rule or misleading claim about Jev's limitations.
+
+### Lab427 — damage-only review trial loses the objective at31:10
+
+Trial424/run20260920T090555.000913Z/session10774 ended exit0. Native defeat
+at31:10 explicitly says Zerg captured the artifact; structures still standing.
+1/4 relics,4 minerals346gas.348calls $0.295994076,22earlyreviews,zero decision
+errors. Peak settled response costs within300s $0.069529362 (this run only,
+not reservations). Reconciled nativeUI, result, checkpoint and public report.
+Thirteenth verified Smash defeat; only firstthree campaign missions won.
+
+Damage621 triggered first earlyreview but Jev chose a Move order; Marine
+subsequently disappeared668. Later damage-review1309 also chose Move; Medic
+and remaining Marine disappeared before nextordinary1976. Disappearance is
+not itself proof of death. Faster review did not establish useful combat
+response. Base recovered Barracks by14682, with Marine and batch options
+available, yet selected Save, CommandCenter, turret and SCV in following
+reviews. Visual inspections documented sustained repairs and worker growth,
+then air pressure and objective loss. Longer survival is not mission success
+or causal proof of pacing benefit. No direct root orders or policy edits.
+Next experiment should address autonomous allocation/objective progress;
+repeating this policy unchanged is not justified by this outcome.
