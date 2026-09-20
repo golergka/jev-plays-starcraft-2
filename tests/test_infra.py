@@ -581,7 +581,7 @@ def test_purchase_description_distinguishes_empty_from_unknown_weapon_catalog():
 def test_campaign_medic_heal_name_exposes_only_damaged_visible_biological_targets():
     from s2clientprotocol import data_pb2 as data
     from jev_sc2.view import support_candidates
-    catalog={2750:data.AbilityData(ability_id=2750,friendly_name='Effect MedicHeal',target=3)}
+    catalog={2750:data.AbilityData(ability_id=2750,friendly_name='Effect MedicHeal',target=3,cast_range=2)}
     types={1:data.UnitTypeData(unit_id=1,attributes=[data.Biological]),
            2:data.UnitTypeData(unit_id=2,attributes=[data.Mechanical])}
     medic=raw.Unit(tag=1,unit_type=1,alliance=raw.Self,display_type=raw.Visible,health=30,health_max=60)
@@ -589,9 +589,15 @@ def test_campaign_medic_heal_name_exposes_only_damaged_visible_biological_target
                       health=health,health_max=100,build_progress=1)
              for tag,kind,visibility,health in [(2,1,raw.Visible,40),(3,1,raw.Visible,100),
                                                (4,1,raw.Hidden,40),(5,2,raw.Visible,40)]]
+    targets[0].pos.x = 3
+    targets[0].pos.y = 4
     choices=support_candidates(medic,{2750},catalog,types,[medic]+targets,{1:'Marine'})
     assert [c['command'] for c in choices]==[{'unit_tag':1,'ability_id':2750,'target_tag':2}]
     assert 'restore missing health (40/100)' in choices[0]['description']
+    assert 'current center distance 5.0; catalog cast range 2' in choices[0]['description']
+    catalog[2750].ClearField('cast_range')
+    unknown_range=support_candidates(medic,{2750},catalog,types,[medic]+targets,{1:'Marine'})
+    assert 'catalog cast range' not in unknown_range[0]['description']
     assert support_candidates(medic,set(),catalog,types,[medic]+targets,{})==[]
 
 

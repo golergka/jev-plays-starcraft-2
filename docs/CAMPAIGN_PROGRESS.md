@@ -5606,3 +5606,24 @@ Do not interpret longer survival than381 as improved objectivepursuit or a prove
 benefit of capabilitywording. No unchangedretry started. Three completed missions
 retained; localUI/result/checkpoint and publicartifact383 saved. Next investigate
 a distinct evidenced general failure, consulting negative probes including384.
+
+### Lab385 — support geometry and autocast audit, no paid trial yet
+
+After383terminal, read-only data request to existingSC2 verifies MedicHeal2750:
+allow_autocast=true, explicit cast_range=2. Repair316:allow_autocast=true but
+cast_range absent; absence must not become zero. Harvest295rangealsoabsent.
+Official protocol sources checked:
+https://raw.githubusercontent.com/Blizzard/s2client-proto/master/s2clientprotocol/data.proto
+https://raw.githubusercontent.com/Blizzard/s2client-proto/master/s2clientprotocol/raw.proto
+AbilityData supports optional cast_range and allow_autocast; ActionRaw supports
+toggle_autocast. RawUnit does not expose current autocast state. Do not silently
+assume off or issue toggle as if idempotent enable. No autocast action sent.
+
+Expose geometric center distance on generic owned-target support choices, and
+catalog cast range only when explicitly present. Describe distance as neither
+path length nor reachability guarantee. Preserve all existing legal choices;
+no nearest-target rule, range filtering, mission-specific targeting or policy
+priority. Medic regression checks3-4-5distance,explicit2range,andabsentmetadata.
+Earlier348aggregatecombatdistanceprobe was negative; this adapter change makes
+support execution facts explicit, not a claim of improved Jev performance.
+Validation:200 tests passed. No paid model requests or new mission attempt.

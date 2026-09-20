@@ -164,8 +164,12 @@ def support_candidates(unit, legal, catalog, unit_catalog, own, names, builder=F
                     continue
                 effect = (f'load into this unit; needs {product.cargo_size} cargo slots; '
                           'this joint action reserves the passenger for this control cycle, overriding its separate movement/combat order')
+            geometry = f'current center distance {math.hypot(target.pos.x-unit.pos.x, target.pos.y-unit.pos.y):.1f}'
+            if meta.HasField('cast_range'):
+                geometry += f'; catalog cast range {meta.cast_range:g}'
+            geometry += '; distance is not a path or a guarantee of reachability'
             candidates.append({'id':f'ability_{ability}_{target.tag}',
-                'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; engine validates target',
+                'description':f'{label} on owned {names.get(target.unit_type,str(target.unit_type))} tag {target.tag}: {effect}; {geometry}; engine validates target',
                 'capability_description':f'{label}: '+('restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting' if kind=='repair' else 'restore damaged owned units' if kind=='heal' else 'interact with unfinished owned construction' if kind=='construction_interaction' else 'load owned units into available cargo space'),
                 'exclusive_target':kind=='load',
                 'command':{'unit_tag':unit.tag,'ability_id':ability,'target_tag':target.tag}})
