@@ -28,5 +28,13 @@
       "options": 150
     }
   ],
-  "interpretation": "Live decoding verified; no mission outcome yet."
+  "interpretation": "Live decoding verified; no mission outcome yet.",
+  "visual_followups": [
+    {
+      "time": "11:34",
+      "supply": "6/11",
+      "relics": "1/4",
+      "observation": "Replacement Barracks complete; two Marines visible near mineral line; selected Command Center 1500/1500; 793 minerals and 0 gas. No terminal outcome."
+    }
+  ]
 }
