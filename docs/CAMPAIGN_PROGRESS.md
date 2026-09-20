@@ -5256,3 +5256,18 @@ missing/emptycontext doesnotre-enablethisstartupdelay. Timer-onlymapsunchanged.
 This avoidsactingonthegenericobjectivebeforemissioninitialization; itisnot a
 strategyfix.192testspassincludingtimeoutandlatch; no newpaidtrial. CurrentSC2still
 357mapdefeatscreen. No campaignprogressclaim.
+
+### Lab363 — quantify repeated commands without unsafe deduplication
+
+Offline358audit finds48exactreissues among237acceptedcommands inunambiguousticks;
+6tickswithfiltered/misalignedcommandcounts excludedandhistorycleared.25Move,19Hold,
+2Smart,1TrainMarine,1TrainSCV reissues. Repeatedtraining canintentionallyqueueanother
+unit; identicalmovementmaybenecessaryafterexternalstatechange. This metricisnot
+proof ofinterruption or wastedwork. Script/artifact363 preservecoverageandcaveats.
+
+Validatorcurrentlyturnsexactofferedcommandsintofreshvalidatedactions butdoesnot
+checkfreshactiveorders. Blindpayload-dedup wouldincorrectlydrop repeatedproduction
+andmisrepresentacknowledgements/backgroundjobcounts. No gameplaychange orpaidcalls.
+Any future idempotenceutility must comparefreshactiveorder/queue/target semantics,
+retainproductionrequests,andreport no-op fulfillment separatelyfromengineacceptance.
+Do notclaim48safelyavoidableactionsfromthisaudit. Controllerremainsstopped.

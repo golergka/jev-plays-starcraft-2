@@ -1,0 +1,34 @@
+{
+  "source": "runs/20260920T040013.597739Z/events.jsonl",
+  "accepted_commands_in_unambiguous_ticks": 237,
+  "exact_reissues": 48,
+  "accepted_by_ability": {
+    "295": 18,
+    "556": 11,
+    "320": 1,
+    "324": 1,
+    "524": 5,
+    "18": 55,
+    "560": 3,
+    "558": 9,
+    "23": 36,
+    "323": 1,
+    "16": 62,
+    "4": 18,
+    "316": 6,
+    "407": 4,
+    "319": 1,
+    "1": 4,
+    "408": 1,
+    "318": 1
+  },
+  "reissued_by_ability": {
+    "560": 1,
+    "524": 1,
+    "16": 25,
+    "18": 19,
+    "1": 2
+  },
+  "ambiguous_ticks_excluded": 6,
+  "scope": "Same serialized command as the previous accepted command for that unit in unambiguous tick logs. Not proof of interrupted work or wasted actions: unit state may change, and background jobs are not included. No semantic remapping or coordinate tolerance applied."
+}
