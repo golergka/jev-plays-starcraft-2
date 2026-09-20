@@ -1,0 +1,77 @@
+{
+  "lab": 622,
+  "run": "runs/20260920T185046.826418Z",
+  "start_commit": "83a7b40",
+  "status": "running",
+  "opening_combat_loop": 47,
+  "own_z": [
+    [
+      "Barracks",
+      9.977362632751465
+    ],
+    [
+      "SCV",
+      9.962406158447266
+    ],
+    [
+      "Marine",
+      9.962615966796875
+    ],
+    [
+      "SCV",
+      9.962406158447266
+    ],
+    [
+      "Marine",
+      9.964632987976074
+    ],
+    [
+      "SCV",
+      9.962406158447266
+    ],
+    [
+      "SCV",
+      9.962406158447266
+    ],
+    [
+      "Marine",
+      9.964632987976074
+    ],
+    [
+      "Refinery",
+      9.959564208984375
+    ],
+    [
+      "Medic",
+      9.962677001953125
+    ],
+    [
+      "SupplyDepot",
+      9.974180221557617
+    ],
+    [
+      "CommandCenter",
+      9.970680236816406
+    ],
+    [
+      "BarracksTechLab",
+      9.977362632751465
+    ],
+    [
+      "SupplyDepot",
+      9.968719482421875
+    ],
+    [
+      "SCV",
+      9.962406158447266
+    ]
+  ],
+  "visible_relic_z": [
+    [
+      "ProtossRelic",
+      8.087410926818848
+    ]
+  ],
+  "opening_choice": "group_last_known_attack_move_8756723713",
+  "interpretation": "Elevation present from opening; no reachability or outcome inferred. Same horizon/compact-menu settings as618 with elevation loaded from start."
+}
