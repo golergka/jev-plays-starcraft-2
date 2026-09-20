@@ -4491,3 +4491,11 @@ summaries; removal would be a lossy behavioral experiment, not pure compression.
 Current302session36019 live atloop8145:6SCVs,1Barracks,1Bunker,$0.073457748.
 Native8:46 shows base overrun and surviving Barracks under attack. No engine or
 decision errors recorded yet; not a terminal result.
+
+### Lab306 — record clean feedback-retention trial defeat
+
+Trial302 native defeat8:56,11:13remaining,zero minerals,all structures destroyed.
+128calls,$0.074979366. No delayed engine errors occurred, so delivery-retention
+fix remains unexercised live. No campaign advancement. Current controller terminal;
+SC2 remains on defeat screen. Review next general experiment before another
+unchanged paid retry. Thirty-two UI-verified Zero Hour defeats now recorded.
