@@ -4634,3 +4634,15 @@ live policy comparison. It does not establish better decisions, sustained army
 production, or causal benefit. Script/artifact317 recorded. No live change yet;
 next implementation must keep all legal options, unchanged mechanics/budget, and
 Jev-only judgments rather than adding unit preferences or a scripted build.
+
+### Lab318 — opt-in live scored investment policy
+
+--investment-scores enables one descriptive Score per offered investment,including
+wait,saving commitments and training batches. Highest Jev score selects; exact
+ties use seeded random tie-break, no unit preference. Missing/nonfinite/out-of-
+range ratings fail loudly. Same candidate set,affordability,producer choice and
+execution checks. Previous Choice sampling remains default/comparison path.
+154tests pass including all-option coverage and invalid ratings. Scores are not
+calibrated utilities or success probabilities. Explicit trial may raise token
+cost despite batched request; unchanged rolling governor/pacing remains active.
+Next run tests policy and cost, not merely API compatibility.

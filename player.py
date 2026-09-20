@@ -344,6 +344,28 @@ def investment_sampling_probabilities(weights):
     return {key:value/total for key,value in scaled.items()}
 
 
+async def score_investment_options(state, criteria, jev, memory, loop):
+    questions = {key:{'type':'score',
+        'instructions':'Rate how useful this specific action is for completing the stated mission objective in the current observed situation. Account for costs, existing forces, current queues and known threats. Evaluate the action itself, including waiting when offered. Action: '+description,
+        'criteria':['Actively undermines progress toward the objective.',
+                    'Offers little useful progress in the current situation.',
+                    'Offers some useful progress but limited immediate value.',
+                    'Offers substantial useful progress in the current situation.',
+                    'Offers exceptionally important progress toward the objective now.']}
+        for key,description in criteria.items()}
+    answers = await jev.ask(state, questions)
+    scores = {key:answers.get(key,{}).get('score') for key in criteria}
+    if any(isinstance(v,bool) or not isinstance(v,(int,float)) or
+           not math.isfinite(v) or not 0 <= v <= 4 for v in scores.values()):
+        raise ValueError('Incomplete or invalid Jev investment scores')
+    best = max(scores.values())
+    ties = [key for key,value in scores.items() if value == best]
+    choice = memory.setdefault('investment_score_rng',random.Random(20260920)).choice(ties)
+    jev.log('investment_scores',loop=loop,scores=scores,choice=choice,
+            interpretation='Ranked descriptive ratings, not calibrated utility or win probabilities.')
+    return choice
+
+
 async def choose_investment(view, state, jev, memory=None):
     """Jev allocates the common budget, then selects the actual producer/site."""
     projects = {}
@@ -415,29 +437,34 @@ async def choose_investment(view, state, jev, memory=None):
             jev.log('investment_wait',loop=view['loop'],target_project=target,review_at=plan['review_at'])
             return []
     if not carried:
-        answer = await jev.ask({**investment_state(state),
-            **({'previous_attempts':memory['previous_attempts']} if memory and memory.get('previous_attempts') else {})}, {'investment': {
-            'type':'choice',
-            'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
-                           'This decision controls all new training and construction; no other selection will spend resources this tick. '
-                           'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
-            'criteria':criteria,
-        }})
-        prediction = answer.get('investment',{})
-        choice = prediction.get('choice')
-        probabilities = prediction.get('probabilities',{})
-        weights = {k:float(v) for k,v in probabilities.items()
-                   if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
-        if memory is not None and weights:
-            rng = memory.setdefault('investment_rng',random.Random(20260918))
-            sampling_probabilities = investment_sampling_probabilities(weights)
-            sampled = rng.choices(list(sampling_probabilities),
-                                  weights=list(sampling_probabilities.values()),k=1)[0]
-            jev.log('investment_sample',loop=view['loop'],top_choice=choice,
-                    sampled_choice=sampled,probabilities=weights,
-                    sampling_exponent=1, sampling_scope='jev_legal_distribution',
-                    sampling_probabilities=sampling_probabilities,seed=20260918)
-            choice = sampled
+        if memory is not None and memory.get('investment_scoring_enabled'):
+            choice = await score_investment_options({**investment_state(state),
+                **({'previous_attempts':memory['previous_attempts']} if memory.get('previous_attempts') else {})},
+                criteria,jev,memory,view['loop'])
+        else:
+            answer = await jev.ask({**investment_state(state),
+                **({'previous_attempts':memory['previous_attempts']} if memory and memory.get('previous_attempts') else {})}, {'investment': {
+                'type':'choice',
+                'instructions':'Allocate the shared resources across the entire force. Choose the next purchase, a bounded training batch, or save. '
+                               'This decision controls all new training and construction; no other selection will spend resources this tick. '
+                               'Existing queues continue. Compare the marginal benefit of each available project in the current situation.',
+                'criteria':criteria,
+            }})
+            prediction = answer.get('investment',{})
+            choice = prediction.get('choice')
+            probabilities = prediction.get('probabilities',{})
+            weights = {k:float(v) for k,v in probabilities.items()
+                       if k in criteria and isinstance(v,(int,float)) and math.isfinite(v) and v>0}
+            if memory is not None and weights:
+                rng = memory.setdefault('investment_rng',random.Random(20260918))
+                sampling_probabilities = investment_sampling_probabilities(weights)
+                sampled = rng.choices(list(sampling_probabilities),
+                                      weights=list(sampling_probabilities.values()),k=1)[0]
+                jev.log('investment_sample',loop=view['loop'],top_choice=choice,
+                        sampled_choice=sampled,probabilities=weights,
+                        sampling_exponent=1, sampling_scope='jev_legal_distribution',
+                        sampling_probabilities=sampling_probabilities,seed=20260918)
+                choice = sampled
     if choice in criteria and choice.startswith('batch_'):
         index=int(choice.split('_')[1])
         memory['production_batch']={'target_project':names[index],'remaining':3,
@@ -457,7 +484,7 @@ async def choose_investment(view, state, jev, memory=None):
                 memory.pop('production_batch',None)
         return [command]
     jev.log('investment_choice',loop=view['loop'],choice=choice,projects=names,future_projects=future_names,
-            source='carried_jev_commitment' if carried else 'jev_distribution')
+            source='carried_jev_commitment' if carried else ('jev_scores' if (memory or {}).get('investment_scoring_enabled') else 'jev_distribution'))
     if memory is not None:
         target = (future_names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('save_for_') else
                   names[int(choice.split('_')[-1])] if choice in criteria and choice.startswith('project_') else None)

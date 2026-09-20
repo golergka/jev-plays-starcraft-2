@@ -146,7 +146,8 @@ async def run(args):
     loader = PlayerLoader(ROOT)
     loader.refresh()
     budget_error = None
-    memory = {"production_executor_enabled": True}
+    memory = {"production_executor_enabled": True,
+              "investment_scoring_enabled": getattr(args,"investment_scores",False)}
     camera_memory = {}
     jev = Jev(log, stamp, max_calls=args.max_calls)
     proc = None
@@ -415,6 +416,7 @@ def main():
     parser.add_argument('--seconds',type=float,default=180)
     parser.add_argument('--max-calls',type=int,default=300)
     parser.add_argument('--interval',type=float,default=0.35)
+    parser.add_argument('--investment-scores',action='store_true',help='Experimental Jev-rated investment selection')
     parser.add_argument('--max-age-loops',type=int,default=32)
     parser.add_argument('--objective',default='Keep your units alive and defeat visible enemy units.')
     parser.add_argument('--doctor',action='store_true')

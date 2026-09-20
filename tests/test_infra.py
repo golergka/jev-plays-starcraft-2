@@ -1438,3 +1438,26 @@ def test_jev_selected_role_duration_applies_only_to_new_commitments():
     asyncio.run(player.choose_contributions({'loop':2017},state,q,model,memory))
     assert model.calls==2
     assert memory['contribution_plans']['purpose_Test']['review_at']==2129
+
+
+def test_scored_investments_keep_every_option_and_choose_jev_rating():
+    import player
+    class Model:
+        def log(self,*a,**k): pass
+        async def ask(self,state,questions):
+            assert set(questions)=={'save','project_0','batch_0'}
+            assert all(q['type']=='score' for q in questions.values())
+            return {k:{'score':v} for k,v in {'save':1.5,'project_0':2.1,'batch_0':2.8}.items()}
+    choice=asyncio.run(player.score_investment_options({},
+        {'save':'Wait','project_0':'Purchase fictional unit','batch_0':'Train three'},Model(),{},5))
+    assert choice=='batch_0'
+
+
+@pytest.mark.parametrize('bad',[None,float('nan'),float('inf'),-1,5,True])
+def test_scored_investment_rejects_invalid_ratings(bad):
+    import player
+    class Model:
+        def log(self,*a,**k): pass
+        async def ask(self,state,questions):return {'save':{'score':bad}}
+    with pytest.raises(ValueError,match='investment scores'):
+        asyncio.run(player.score_investment_options({}, {'save':'Wait'},Model(),{},1))
