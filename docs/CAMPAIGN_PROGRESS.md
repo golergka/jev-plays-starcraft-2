@@ -4263,3 +4263,21 @@ Next investigate whether the intermediate contribution gate prevents useful
 concrete alternatives despite preserving a role. Consult prior direct-role and
 menu experiments before a new structural test; do not repeat argmax-vs-sampling
 or planning-horizon wording changes as if untested.
+
+### Lab290 — remove the abstract contribution gate for economic selections
+
+Journal review: lab198/200 tested top versus sampled roles, not eliminating role
+filtering. Lab201 bypassed that gate for mobile combat only; economic selections
+still lost all concrete alternatives outside a sampled/retained category.
+Extend direct concrete comparison to selections with observed gathering/building
+capabilities. No unit-name whitelist, worker allocation, target or purchase rule.
+Includes economic production actors when their observed Build capabilities qualify.
+Existing shared investment, exact execution validation, full-menu tournaments and
+budget cap stay in force. Concrete questions retain continue and individual control.
+
+This deliberately supersedes role retention for those selections; longer672loop
+commitments remain for selections that still use roles. Removes one semantic gate
+but expands menus and can increase tournament calls/cost; no savings promised.
+141tests pass, including fictional harvester seeing movement, attack and harvesting
+in the same question and executing only Jev's selected command. No live probe yet;
+next fresh ZeroHour run tests this structural interface change.

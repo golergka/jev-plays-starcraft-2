@@ -1331,3 +1331,22 @@ def test_contribution_commitment_survives_paced_review_but_not_expiry_or_strateg
     memory['contribution_plans']['purpose_Test'].update(loop=2,review_at=226)
     asyncio.run(player.choose_contributions({'loop':300},state,q,model,memory))
     assert model.calls == 5
+
+
+def test_economic_units_compare_concrete_actions_without_role_gate():
+    import player
+    unit={'tag':1,'type':'FictionalHarvester','position':[0,0],'candidates':[
+        {'id':'north','description':'Move north','command':{'unit_tag':1,'ability_id':16,'point':[0,6]}},
+        {'id':'gather_9','description':'Gather minerals from visible field','command':{'unit_tag':1,'ability_id':295,'target_tag':9}},
+        {'id':'attack_move_north','description':'Attack-move north','command':{'unit_tag':1,'ability_id':23,'point':[0,6]}}]}
+    class Model:
+        def log(self,*a,**k):pass
+        async def ask(self,state,questions):
+            if 'strategy' in questions:
+                return {'strategy':{'choice':'protect'},'coordination':{'choice':'by_type'}}
+            assert not any(k.startswith('purpose_') for k in questions)
+            key='FictionalHarvester / unit 1'
+            assert {'group_north','group_gather_9','group_attack_move_north','continue'} <= set(questions[key]['criteria'])
+            return {key:{'choice':'group_gather_9'}}
+    commands=asyncio.run(player.decide({'loop':1,'self':[unit]},Model(),{}))
+    assert commands==[unit['candidates'][1]['command']]

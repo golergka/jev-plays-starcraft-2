@@ -907,6 +907,12 @@ async def decide(view, jev, memory):
                and not u.get('available_build_abilities')
                and not any(c.startswith(('Build ', 'Harvest')) for c in learned.get(u['type'],[]))
                for u in selected)}
+    economic_selections = {kind for kind,selected in cohorts.items()
+        if all(any(c['id'].startswith('gather_') for c in u['candidates'])
+               or u.get('available_build_abilities')
+               or any(c.startswith(('Build ', 'Harvest')) for c in learned.get(u['type'],[]))
+               for u in selected)}
+    direct_selections |= economic_selections
     purpose_questions = {f'purpose_{kind}': {
         'type':'choice',
         'instructions':f'Choose how the {len(cohorts[kind])} {kind} units should contribute to completing the mission now. '
@@ -922,7 +928,9 @@ async def decide(view, jev, memory):
             if kind in direct_selections:
                 concrete_questions[kind]=q
                 jev.log('direct_order_menu',loop=view['loop'],cohort=kind,
-                        reason='Movement/attack selection chooses among all offered orders without abstract role filtering')
+                        reason=('Economic selection chooses among all offered orders without abstract role filtering'
+                                if kind in economic_selections else
+                                'Movement/attack selection chooses among all offered orders without abstract role filtering'))
                 continue
             role=roles.get(f'purpose_{kind}',{}).get('choice')
             jev.log('purpose_choice',loop=view['loop'],cohort=kind,choice=role)
