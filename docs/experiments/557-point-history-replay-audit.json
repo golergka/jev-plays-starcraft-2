@@ -1,0 +1,49 @@
+{
+  "source": "runs/20260920T154915.350832Z/events.jsonl",
+  "method": "Replay unique model-state unit snapshots through current recent_outcomes; logs may omit controller observations and round positions. No paid calls.",
+  "snapshots": 17,
+  "point_order_counts": {
+    "Move Move": 39,
+    "Build Barracks": 3
+  },
+  "qualifying_snapshots": 2,
+  "examples": [
+    {
+      "loop": 3581,
+      "progress": [
+        {
+          "tag": "4300210177",
+          "type": "SCV",
+          "ability": "Build Barracks",
+          "target_point": [
+            65.5,
+            7.5
+          ],
+          "observed_loops": 428,
+          "initial_straight_line_distance": 1.6,
+          "current_straight_line_distance": 1.1,
+          "distance_reduction": 0.5
+        }
+      ]
+    },
+    {
+      "loop": 3695,
+      "progress": [
+        {
+          "tag": "4300210177",
+          "type": "SCV",
+          "ability": "Build Barracks",
+          "target_point": [
+            65.5,
+            7.5
+          ],
+          "observed_loops": 542,
+          "initial_straight_line_distance": 1.6,
+          "current_straight_line_distance": 1.1,
+          "distance_reduction": 0.5
+        }
+      ]
+    }
+  ],
+  "interpretation": "Current suffix algorithm produces two worker Build Barracks samples from recorded observations, but no combat samples. Combat roster snapshots occur at loops 48,331,845,1284,1535; point orders appear at331 and1535 without a later matching surviving-unit sample. Early force loss, not a demonstrated schema mismatch, limits this measurement. Replay is sparse and does not reconstruct every live observation."
+}
