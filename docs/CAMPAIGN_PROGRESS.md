@@ -6007,3 +6007,15 @@ selection. No forced worker allocation, mission rules or tactical root orders.
 This tests reduction of factual indirection in live play. Extra prompt tokens are
 a tradeoff; the shared budget cap remains unchanged. Start one same-mission trial
 next and inspect native gameplay during it, not only its terminal screen.
+
+### Lab408 — live407 purchase reservation audit (trial still running)
+
+Native checks show opening five workers mining, followed by no surviving combat
+force and550unspentminerals at2:49. Recorded executor armed Medic batch at646,
+waited at765 on unavailable/unaffordable exact command. choose_investment returns
+without a new question while executor commitment holds, until2016loopdeadline or
+other cancellation. This explains a purchasing gap without assuming Jev repeatedly
+chose save. Option says prioritize batch, but implementation excludes all other
+purchases. Next change should describe that exact exclusivity to Jev before any
+new test; do not silently override its job or inject replacement build orders.
+Partial evidence artifact only; no outcome claim and no policy edit during407.

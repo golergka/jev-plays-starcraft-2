@@ -1,0 +1,87 @@
+{
+  "source": "runs/20260920T080421.634510Z/events.jsonl",
+  "scope": "Partial ongoing lab407; no terminal outcome inferred",
+  "finding": "Executor owns all purchases while a production batch is active. Medic batch waits on unavailable or unaffordable exact command. Wording prioritizes rather than explicitly excludes other purchases.",
+  "events": [
+    {
+      "time": 1789891499.9406981,
+      "event": "production_batch_chosen",
+      "target_project": "Medic",
+      "remaining": 3,
+      "loop": 646,
+      "review_at": 2662,
+      "strategy": "pursue_objective"
+    },
+    {
+      "time": 1789891499.940777,
+      "event": "production_batch_request",
+      "loop": 646,
+      "target_project": "Medic",
+      "remaining_attempts": 2,
+      "command": {
+        "unit_tag": 4313055233,
+        "ability_id": 564
+      }
+    },
+    {
+      "time": 1789891501.0748868,
+      "event": "production_job_armed",
+      "loop": 646,
+      "job": {
+        "target_project": "Medic",
+        "remaining": 2,
+        "loop": 646,
+        "review_at": 2662,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 564
+        },
+        "last_request_loop": 646
+      }
+    },
+    {
+      "time": 1789891504.0374799,
+      "event": "production_job_wait",
+      "loop": 765,
+      "reason": "exact selected command unavailable or unaffordable",
+      "job": {
+        "target_project": "Medic",
+        "remaining": 2,
+        "loop": 646,
+        "review_at": 2662,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 564
+        },
+        "last_request_loop": 646
+      }
+    },
+    {
+      "time": 1789891589.127053,
+      "event": "production_job_released",
+      "current_loop": 2666,
+      "reason": "deadline reached",
+      "job": {
+        "target_project": "Medic",
+        "remaining": 2,
+        "loop": 646,
+        "review_at": 2662,
+        "strategy": "pursue_objective",
+        "executor": true,
+        "armed": true,
+        "command": {
+          "unit_tag": 4313055233,
+          "ability_id": 564
+        },
+        "last_request_loop": 646,
+        "waiting": true
+      }
+    }
+  ]
+}
