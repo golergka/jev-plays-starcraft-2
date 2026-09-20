@@ -1,0 +1,259 @@
+{
+  "source": "runs/20260920T070430.852681Z/events.jsonl",
+  "method": "First/middle/last resource-category question subsets. Identical state; optional explicit continuation durations. Alternate arm order. No actions or executor deployed; not a savings or success measurement.",
+  "pairs": [
+    {
+      "time": 1789887882.167725,
+      "baseline": {
+        "SCV / unit 4300210177": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.81,
+          "probabilities": {
+            "gather_minerals": 0.88,
+            "gather_vespene": 0.1,
+            "continue": 0.02
+          }
+        },
+        "SCV / unit 4299423745": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.89,
+          "probabilities": {
+            "gather_minerals": 0.93,
+            "gather_vespene": 0.05,
+            "continue": 0.02
+          }
+        },
+        "SCV / unit 4320657409": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.83,
+          "probabilities": {
+            "gather_minerals": 0.88,
+            "gather_vespene": 0.09,
+            "continue": 0.03
+          }
+        },
+        "SCV / unit 4323803137": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "gather_minerals": 0.69,
+            "gather_vespene": 0.29,
+            "continue": 0.02
+          }
+        },
+        "SCV / unit 4299161601": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.9,
+          "probabilities": {
+            "gather_minerals": 0.94,
+            "gather_vespene": 0.04,
+            "continue": 0.02
+          }
+        }
+      },
+      "commitments": {
+        "SCV / unit 4300210177": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.91,
+          "probabilities": {
+            "gather_minerals": 0.93,
+            "continue_2016": 0.0,
+            "continue_672": 0.0,
+            "gather_vespene": 0.06,
+            "continue": 0.01,
+            "continue_112": 0.0
+          }
+        },
+        "SCV / unit 4299423745": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.96,
+          "probabilities": {
+            "gather_minerals": 0.97,
+            "continue_2016": 0.0,
+            "continue_672": 0.0,
+            "gather_vespene": 0.02,
+            "continue_112": 0.0,
+            "continue": 0.01
+          }
+        },
+        "SCV / unit 4320657409": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.92,
+          "probabilities": {
+            "gather_minerals": 0.94,
+            "continue_2016": 0.0,
+            "continue_672": 0.0,
+            "gather_vespene": 0.04,
+            "continue": 0.02,
+            "continue_112": 0.0
+          }
+        },
+        "SCV / unit 4323803137": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.81,
+          "probabilities": {
+            "gather_minerals": 0.85,
+            "continue_2016": 0.0,
+            "continue_672": 0.0,
+            "gather_vespene": 0.14,
+            "continue": 0.01,
+            "continue_112": 0.0
+          }
+        },
+        "SCV / unit 4299161601": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.98,
+          "probabilities": {
+            "gather_minerals": 0.98,
+            "continue_2016": 0.0,
+            "continue_672": 0.0,
+            "gather_vespene": 0.01,
+            "continue": 0.01,
+            "continue_112": 0.0
+          }
+        }
+      }
+    },
+    {
+      "time": 1789888247.06423,
+      "commitments": {
+        "SCV / unit 4349231107": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.14,
+          "probabilities": {
+            "continue_2016": 0.09,
+            "gather_vespene": 0.03,
+            "continue": 0.28,
+            "gather_minerals": 0.18,
+            "continue_672": 0.14,
+            "continue_112": 0.28
+          }
+        },
+        "SCV / unit 4328521746": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.19,
+          "probabilities": {
+            "continue_2016": 0.13,
+            "gather_vespene": 0.01,
+            "continue": 0.34,
+            "gather_minerals": 0.09,
+            "continue_672": 0.27,
+            "continue_112": 0.16
+          }
+        },
+        "SCV / unit 4299423745": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.34,
+          "probabilities": {
+            "continue_2016": 0.06,
+            "gather_vespene": 0.01,
+            "continue": 0.45,
+            "gather_minerals": 0.11,
+            "continue_672": 0.18,
+            "continue_112": 0.19
+          }
+        },
+        "SCV / unit 4323803137": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.18,
+          "probabilities": {
+            "continue_2016": 0.04,
+            "gather_vespene": 0.02,
+            "continue": 0.28,
+            "gather_minerals": 0.31,
+            "continue_672": 0.12,
+            "continue_112": 0.23
+          }
+        }
+      },
+      "baseline": {
+        "SCV / unit 4349231107": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.38,
+          "probabilities": {
+            "continue": 0.59,
+            "gather_minerals": 0.36,
+            "gather_vespene": 0.05
+          }
+        },
+        "SCV / unit 4328521746": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.75,
+          "probabilities": {
+            "continue": 0.83,
+            "gather_minerals": 0.15,
+            "gather_vespene": 0.02
+          }
+        },
+        "SCV / unit 4299423745": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.62,
+          "probabilities": {
+            "continue": 0.75,
+            "gather_minerals": 0.22,
+            "gather_vespene": 0.03
+          }
+        },
+        "SCV / unit 4323803137": {
+          "choice": "continue",
+          "type": "choice",
+          "confidence": 0.31,
+          "probabilities": {
+            "continue": 0.55,
+            "gather_minerals": 0.43,
+            "gather_vespene": 0.02
+          }
+        }
+      }
+    },
+    {
+      "time": 1789888606.0005162,
+      "baseline": {
+        "SCV / unit 4325113868": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.53,
+          "probabilities": {
+            "continue": 0.13,
+            "gather_minerals": 0.69,
+            "gather_vespene": 0.18
+          }
+        }
+      },
+      "commitments": {
+        "SCV / unit 4325113868": {
+          "choice": "gather_minerals",
+          "type": "choice",
+          "confidence": 0.71,
+          "probabilities": {
+            "continue": 0.11,
+            "continue_112": 0.02,
+            "continue_672": 0.02,
+            "gather_minerals": 0.76,
+            "gather_vespene": 0.08,
+            "continue_2016": 0.01
+          }
+        }
+      }
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.00330834
+}

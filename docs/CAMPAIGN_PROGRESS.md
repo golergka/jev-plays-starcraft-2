@@ -5842,3 +5842,21 @@ safely be omitted. Next investigate explicit Jev-selected continuation horizons
 and observation-driven invalidation, retaining Jev authority over allocation and
 threat responses. Do not substitute a scripted mineral/gas ratio. Artifact397
 preserved; no paid calls, policy edits or new game this turn.
+
+### Lab398 — explicit harvest commitments attract no selections in three states
+
+Reviewed existing role horizons: their contract explicitly keeps concrete orders
+separate, so using them to suppress concrete reviews would silently expand Jev's
+commitment. Instead bounded recorded-state probe adds explicit continue112/672/
+2016 resource-choice options with stated early invalidation and acceptance of
+already-visible enemy risk. Original continue remains available. First/middle/
+last396resource-question subsets, same state, alternating arm order, sixcalls
+$0.003308340. No executor or game commands.
+
+No extended duration selected. Opening five workers choose minerals inbotharms;
+middle four baselinecontinue become threecontinue/oneminerals; final worker
+minerals inboth. Added options explain applicability to existing harvest orders,
+but are not mechanically filtered in this probe; any deployment must filter
+and validate eligibility. No evidence of actual savings or improved allocation;
+do not silently interpret ordinarycontinue as authorization for long retention.
+Script/artifact398 preserved. No live policy change or unchanged replay started.
