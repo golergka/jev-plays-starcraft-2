@@ -222,8 +222,24 @@ def describe_action_feedback(view, memory):
     return [combined[k] for k in sorted(combined)]
 
 
+def compact_distance_labels(question):
+    """Factor repeated distance semantics without dropping choices or values."""
+    pattern = r'; straight-line distances across selection: ([0-9.]+) to ([0-9.]+); actual engine route and travel distance unknown'
+    changed = False
+    criteria = {}
+    for key, description in question.get('criteria', {}).items():
+        value, count = re.subn(pattern, r'; distance_range=[\1,\2]', description)
+        changed = changed or bool(count)
+        criteria[key] = value
+    if not changed:
+        return question
+    return {**question, 'criteria': criteria, 'instructions': question.get('instructions', '') +
+            '\nFor every option, distance_range=[minimum,maximum] gives straight-line distances across the selection. Actual engine route and travel distance are unknown.'}
+
+
 async def ask_order_menus(state, questions, jev, *, full_first=True):
     """Try whole menus; use Jev-selected finalists only after a size rejection."""
+    questions = {key:compact_distance_labels(q) for key,q in questions.items()}
     small, large = {}, {}
     for key, question in questions.items():
         criteria = question.get('criteria', {})
