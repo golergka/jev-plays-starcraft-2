@@ -1,0 +1,65 @@
+{
+  "trial": 527,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T140520.401026Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-context-lab376.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome48836867cad3477883714eb5f736ae4b.SC2Bank",
+      "engine_time": "1789903082",
+      "loop": 16988
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 228,
+    "cost": 0.13504365000000007,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T140520.401026Z/game.SC2Replay",
+    "ui_verification": {
+      "native_time": "17:41",
+      "outcome": "DEFEAT",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "1/4 last unobscured view at 15:23"
+    }
+  },
+  "maintenance_events": 0,
+  "errors": [
+    {
+      "time": 1789913591.137009,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789913692.791743,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    },
+    {
+      "time": 1789913841.849476,
+      "event": "engine_action_error",
+      "loop": 15955,
+      "failures": [
+        {
+          "ability_id": 560,
+          "unit_tags": [
+            4357881899
+          ],
+          "result": "NotEnoughFood"
+        }
+      ]
+    },
+    {
+      "time": 1789913877.806197,
+      "event": "decision_error",
+      "error": "ReadTimeout",
+      "detail": ""
+    }
+  ],
+  "conclusion": "Defeat verified visually. Exact point matching did not preserve any orders; observed engine rounding prevented matches. The tolerance correction committed during this attempt only activates on the next framework start. One early relic is not evidence of preservation benefit."
+}
