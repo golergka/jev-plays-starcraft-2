@@ -1,0 +1,32 @@
+{
+  "lab": 593,
+  "trial": 592,
+  "result": {
+    "status": "defeat",
+    "players": [],
+    "player_id": 1,
+    "run": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T174903.256607Z",
+    "map_name": "Smash and Grab",
+    "local_map_path": "ttychus01-dialogue-lab586.SC2Map",
+    "verification": {
+      "status": "defeat",
+      "source": "campaign ending instrumentation",
+      "credit_enabled": false,
+      "bank": "/Users/golergka/Library/Application Support/Blizzard/StarCraft II/Banks/JevOutcome759ebc44b7f14ad6ab4f4592d12c09af.SC2Bank",
+      "engine_time": "1789916218",
+      "loop": 10524
+    },
+    "reason": "Independently confirmed native mission defeat",
+    "calls": 155,
+    "cost": 0.09024241799999996,
+    "replay": "/Users/golergka/Documents/ChatGPT/jev/runs/20260920T174903.256607Z/game.SC2Replay",
+    "ui_verification": {
+      "result": "defeat",
+      "outcome": "DEFEAT",
+      "native_time": "10:57",
+      "failure": "All of your structures have been destroyed.",
+      "relics": "0/4 last unobscured view at 10:27"
+    }
+  },
+  "interpretation": "Three verified previous attempts reached strategy context, but the early army/base loss persisted. Workers prolonged survival through repairs until minerals ran out. Longer survival than587 did not establish objective progress or a causal benefit."
+}
