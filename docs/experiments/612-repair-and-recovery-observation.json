@@ -1,0 +1,145 @@
+{
+  "lab": 612,
+  "trial": 610,
+  "status": "running",
+  "native_visual": {
+    "time": "6:53",
+    "command_center_health": "1453/1500",
+    "minerals": 0,
+    "gas": 50,
+    "supply": "11/27",
+    "relics": "0/4",
+    "observation": "Multiple SCVs repair Command Center while three Stalkers attack; workers also near mineral line."
+  },
+  "investment_choices": [
+    {
+      "loop": 3054,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 3229,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 3681,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 4088,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 4260,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 4752,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 4953,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 5278,
+      "selected": "SCV",
+      "projects_offered": [
+        "Barracks",
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 5390,
+      "selected": "SCV",
+      "projects_offered": [
+        "EngineeringBay",
+        "Refinery",
+        "SCV",
+        "SupplyDepot"
+      ]
+    },
+    {
+      "loop": 5704,
+      "selected": "save",
+      "projects_offered": []
+    },
+    {
+      "loop": 5878,
+      "selected": "save",
+      "projects_offered": []
+    },
+    {
+      "loop": 6367,
+      "selected": "save",
+      "projects_offered": []
+    },
+    {
+      "loop": 6559,
+      "selected": "save",
+      "projects_offered": []
+    },
+    {
+      "loop": 6883,
+      "selected": "save",
+      "projects_offered": []
+    },
+    {
+      "loop": 6969,
+      "selected": "save",
+      "projects_offered": []
+    }
+  ],
+  "interpretation": "Jev repeatedly selects additional SCVs while a Barracks rebuild is offered, then saving when no immediate project is offered. Repair appears to sustain base health; observation does not attribute all spending to repairs or establish eventual failure. No manual allocation or tactical override applied."
+}
