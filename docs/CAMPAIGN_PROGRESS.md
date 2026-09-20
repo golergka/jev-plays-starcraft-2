@@ -4619,3 +4619,18 @@ expected equivalences. Next distinct offline hypothesis: score all investments
 on common descriptive usefulness levels, retaining wait and all offered purchases;
 compare rankings without assuming equivalence to Choice or deploying blindly.
 No paid calls or live policy changes this audit.
+
+### Lab317 — independent usefulness scores change investment rankings
+
+Six-call paired first/middle/last >=500mineral trial310 states, identical shared
+state/exact offered descriptions. Original Choice vs one Score per option on five
+descriptive usefulness levels,including wait; alternate order. Cost$0.003159996.
+Choice topssave in all3. Score tops:Bunker2.04(vssave1.59),Bunker2.08(vssave1.54),
+SCV1.54(vssave1.51). Third margin0.03is especially weak. No guaranteed cross-
+primitive equivalence, calibrated utility, or win probability interpretation.
+
+Unlike recent prompt variants this changes top rankings, warranting a bounded
+live policy comparison. It does not establish better decisions, sustained army
+production, or causal benefit. Script/artifact317 recorded. No live change yet;
+next implementation must keep all legal options, unchanged mechanics/budget, and
+Jev-only judgments rather than adding unit preferences or a scripted build.

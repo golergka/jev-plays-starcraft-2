@@ -1,0 +1,942 @@
+{
+  "source": "runs/20260920T014947.229712Z/events.jsonl",
+  "method": "First/middle/last >=500mineral investment states. Compare original Choice with one Score per exact offered option, including save. Identical shared state, alternating order. Scores describe usefulness, not win probabilities or calibrated utility. Six-call cap; no game commands.",
+  "pairs": [
+    {
+      "recorded_time": 1789869298.248802,
+      "options": {
+        "save": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "project_0": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks using the engine-defined location, Build TechLab Barracks using the engine-defined location, Smart: interact with unfinished owned construction, Train Marine. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_1": "Purchase one BarracksReactor. Its action capabilities have not yet been observed. Cost/effects: {'type': 'BarracksReactor', 'minerals': 50, 'vespene': 50, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_2": "Purchase one BarracksTechLab. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for SiegeTank (requires attached addon), Reaper (requires attached addon), Marauder (requires attached addon), Banshee (requires attached addon), Raven (requires attached addon), Goliath (requires attached addon), Wraith (requires attached addon), Firebat (requires attached addon), Diamondback (requires attached addon), Predator (requires attached addon), ScienceVessel (requires attached addon), Medic (requires attached addon); other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'BarracksTechLab', 'minerals': 50, 'vespene': 25, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'SiegeTank', 'requires_attached': True}, {'unit': 'Reaper', 'requires_attached': True}, {'unit': 'Marauder', 'requires_attached': True}, {'unit': 'Banshee', 'requires_attached': True}, {'unit': 'Raven', 'requires_attached': True}, {'unit': 'Goliath', 'requires_attached': True}, {'unit': 'Wraith', 'requires_attached': True}, {'unit': 'Firebat', 'requires_attached': True}, {'unit': 'Diamondback', 'requires_attached': True}, {'unit': 'Predator', 'requires_attached': True}, {'unit': 'ScienceVessel', 'requires_attached': True}, {'unit': 'Medic', 'requires_attached': True}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_3": "Purchase one Bunker. Adds another unit able to: Load Bunker: load owned units into available cargo space. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_4": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_5": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_6": "Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 0; current orders: {'HoldPosition Hold': 13, 'Attack Attack': 1}.",
+        "batch_6": "Commit to up to three training requests for Marine over 2016 game loops, using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 13; idle: 0; current orders: {'HoldPosition Hold': 13, 'Attack Attack': 1}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_7": "Purchase one MissileTurret. Adds another unit able to: Attack visible targets. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_8": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_9": "Research upgrade TerranInfantryArmorsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "project_10": "Research upgrade TerranInfantryWeaponsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "project_11": "Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 15; idle: 5; current orders: {'Harvest Gather SCV': 7, 'Harvest Return SCV': 3}.",
+        "batch_11": "Commit to up to three training requests for SCV over 2016 game loops, using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 15; idle: 5; current orders: {'Harvest Gather SCV': 7, 'Harvest Return SCV': 3}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_12": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "choice": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.26,
+          "probabilities": {
+            "project_6": 0.03,
+            "batch_6": 0.03,
+            "project_0": 0.01,
+            "project_4": 0.08,
+            "project_8": 0.04,
+            "batch_11": 0.14,
+            "project_5": 0.01,
+            "save": 0.3,
+            "project_12": 0.03,
+            "project_3": 0.09,
+            "project_7": 0.02,
+            "project_11": 0.18,
+            "project_9": 0.0,
+            "project_1": 0.01,
+            "project_2": 0.02,
+            "project_10": 0.01
+          }
+        }
+      },
+      "scores": {
+        "save": {
+          "score": 1.59,
+          "type": "score",
+          "confidence": 0.46,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.53,
+            "2": 0.27,
+            "3": 0.15,
+            "4": 0.02
+          }
+        },
+        "project_0": {
+          "score": 1.2,
+          "type": "score",
+          "confidence": 0.72,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.68,
+            "2": 0.23,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_1": {
+          "score": 1.35,
+          "type": "score",
+          "confidence": 0.62,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.6,
+            "2": 0.32,
+            "3": 0.03,
+            "4": 0.0
+          }
+        },
+        "project_2": {
+          "score": 1.28,
+          "type": "score",
+          "confidence": 0.69,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.66,
+            "2": 0.27,
+            "3": 0.03,
+            "4": 0.0
+          }
+        },
+        "project_3": {
+          "score": 2.04,
+          "type": "score",
+          "confidence": 0.44,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.25,
+            "2": 0.4,
+            "3": 0.27,
+            "4": 0.04
+          }
+        },
+        "project_4": {
+          "score": 1.38,
+          "type": "score",
+          "confidence": 0.53,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.51,
+            "2": 0.32,
+            "3": 0.07,
+            "4": 0.01
+          }
+        },
+        "project_5": {
+          "score": 1.04,
+          "type": "score",
+          "confidence": 0.85,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.83,
+            "2": 0.1,
+            "3": 0.0,
+            "4": 0.0
+          }
+        },
+        "project_6": {
+          "score": 1.51,
+          "type": "score",
+          "confidence": 0.52,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.49,
+            "2": 0.43,
+            "3": 0.05,
+            "4": 0.0
+          }
+        },
+        "batch_6": {
+          "score": 1.4,
+          "type": "score",
+          "confidence": 0.54,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.51,
+            "2": 0.35,
+            "3": 0.06,
+            "4": 0.01
+          }
+        },
+        "project_7": {
+          "score": 1.51,
+          "type": "score",
+          "confidence": 0.5,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.49,
+            "2": 0.37,
+            "3": 0.08,
+            "4": 0.01
+          }
+        },
+        "project_8": {
+          "score": 1.26,
+          "type": "score",
+          "confidence": 0.67,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.65,
+            "2": 0.25,
+            "3": 0.03,
+            "4": 0.0
+          }
+        },
+        "project_9": {
+          "score": 1.26,
+          "type": "score",
+          "confidence": 0.66,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.63,
+            "2": 0.28,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_10": {
+          "score": 1.23,
+          "type": "score",
+          "confidence": 0.7,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.66,
+            "2": 0.25,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_11": {
+          "score": 1.69,
+          "type": "score",
+          "confidence": 0.53,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.37,
+            "2": 0.48,
+            "3": 0.11,
+            "4": 0.01
+          }
+        },
+        "batch_11": {
+          "score": 1.55,
+          "type": "score",
+          "confidence": 0.42,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.45,
+            "2": 0.36,
+            "3": 0.11,
+            "4": 0.01
+          }
+        },
+        "project_12": {
+          "score": 1.46,
+          "type": "score",
+          "confidence": 0.55,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.5700000000000001,
+            "2": 0.3,
+            "3": 0.08,
+            "4": 0.01
+          }
+        }
+      },
+      "ranking": [
+        "project_3",
+        "project_11",
+        "save",
+        "batch_11",
+        "project_6",
+        "project_7",
+        "project_12",
+        "batch_6",
+        "project_4",
+        "project_1",
+        "project_2",
+        "project_8",
+        "project_9",
+        "project_10",
+        "project_0",
+        "project_5"
+      ]
+    },
+    {
+      "recorded_time": 1789869476.510155,
+      "options": {
+        "save": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "project_0": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks using the engine-defined location, Build TechLab Barracks using the engine-defined location, Smart: interact with unfinished owned construction, Train Marine. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 2; idle: 2; current orders: {}.",
+        "project_1": "Purchase one BarracksReactor. Its action capabilities have not yet been observed. Cost/effects: {'type': 'BarracksReactor', 'minerals': 50, 'vespene': 50, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_2": "Purchase one BarracksTechLab. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for SiegeTank (requires attached addon), Reaper (requires attached addon), Marauder (requires attached addon), Banshee (requires attached addon), Raven (requires attached addon), Goliath (requires attached addon), Wraith (requires attached addon), Firebat (requires attached addon), Diamondback (requires attached addon), Predator (requires attached addon), ScienceVessel (requires attached addon), Medic (requires attached addon); other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'BarracksTechLab', 'minerals': 50, 'vespene': 25, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'SiegeTank', 'requires_attached': True}, {'unit': 'Reaper', 'requires_attached': True}, {'unit': 'Marauder', 'requires_attached': True}, {'unit': 'Banshee', 'requires_attached': True}, {'unit': 'Raven', 'requires_attached': True}, {'unit': 'Goliath', 'requires_attached': True}, {'unit': 'Wraith', 'requires_attached': True}, {'unit': 'Firebat', 'requires_attached': True}, {'unit': 'Diamondback', 'requires_attached': True}, {'unit': 'Predator', 'requires_attached': True}, {'unit': 'ScienceVessel', 'requires_attached': True}, {'unit': 'Medic', 'requires_attached': True}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_3": "Purchase one Bunker. Adds another unit able to: Attack visible targets, Load Bunker: load owned units into available cargo space, UnloadAll Bunker: unload carried passengers. Existing owned Bunker cargo: 1 slots occupied, 3 available; passengers by type: {'Marine': 1}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'Bunker', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_4": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 0; current orders: {'Train SCV': 2}.",
+        "project_5": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_6": "Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 11; idle: 11; current orders: {}.",
+        "batch_6": "Commit to up to three training requests for Marine over 2016 game loops, using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one Marine. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Move to locations or entities. Has weapons: Any targets at range 5.0. Cost/effects: {'type': 'Marine', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 11; idle: 11; current orders: {}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_7": "Purchase one MissileTurret. Adds another unit able to: Attack visible targets. Cost/effects: {'type': 'MissileTurret', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_8": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 1; idle: 1; current orders: {}.",
+        "project_9": "Research upgrade TerranInfantryArmorsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "project_10": "Research upgrade TerranInfantryWeaponsLevel1. Costs 100 minerals and 100 gas; catalog research time 2560.0. Produces an upgrade, not an additional unit. The API provides its name but no detailed effect description; do not assume unlisted effects.",
+        "project_11": "Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 20; idle: 6; current orders: {'Harvest Return SCV': 3, 'Harvest Gather SCV': 11}.",
+        "batch_11": "Commit to up to three training requests for SCV over 2016 game loops, using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 20; idle: 6; current orders: {'Harvest Return SCV': 3, 'Harvest Gather SCV': 11}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_12": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "scores": {
+        "save": {
+          "score": 1.54,
+          "type": "score",
+          "confidence": 0.46,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.55,
+            "2": 0.24,
+            "3": 0.12,
+            "4": 0.03
+          }
+        },
+        "project_0": {
+          "score": 1.2,
+          "type": "score",
+          "confidence": 0.72,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.69,
+            "2": 0.22,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_1": {
+          "score": 1.19,
+          "type": "score",
+          "confidence": 0.69,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.66,
+            "2": 0.22,
+            "3": 0.03,
+            "4": 0.0
+          }
+        },
+        "project_2": {
+          "score": 1.15,
+          "type": "score",
+          "confidence": 0.77,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.75,
+            "2": 0.18,
+            "3": 0.01,
+            "4": 0.0
+          }
+        },
+        "project_3": {
+          "score": 2.08,
+          "type": "score",
+          "confidence": 0.51,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.19,
+            "2": 0.47,
+            "3": 0.28,
+            "4": 0.03
+          }
+        },
+        "project_4": {
+          "score": 1.35,
+          "type": "score",
+          "confidence": 0.52,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.11,
+            "1": 0.51,
+            "2": 0.3,
+            "3": 0.07,
+            "4": 0.01
+          }
+        },
+        "project_5": {
+          "score": 1.04,
+          "type": "score",
+          "confidence": 0.86,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.85,
+            "2": 0.09,
+            "3": 0.0,
+            "4": 0.0
+          }
+        },
+        "project_6": {
+          "score": 1.28,
+          "type": "score",
+          "confidence": 0.58,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.11,
+            "1": 0.56,
+            "2": 0.28,
+            "3": 0.05,
+            "4": 0.0
+          }
+        },
+        "batch_6": {
+          "score": 1.21,
+          "type": "score",
+          "confidence": 0.53,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.18,
+            "1": 0.51,
+            "2": 0.24,
+            "3": 0.06,
+            "4": 0.01
+          }
+        },
+        "project_7": {
+          "score": 1.8,
+          "type": "score",
+          "confidence": 0.44,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.31,
+            "2": 0.42,
+            "3": 0.18,
+            "4": 0.03
+          }
+        },
+        "project_8": {
+          "score": 1.16,
+          "type": "score",
+          "confidence": 0.73,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.08,
+            "1": 0.7,
+            "2": 0.2,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_9": {
+          "score": 1.14,
+          "type": "score",
+          "confidence": 0.71,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.11,
+            "1": 0.68,
+            "2": 0.19,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_10": {
+          "score": 1.01,
+          "type": "score",
+          "confidence": 0.77,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.13,
+            "1": 0.74,
+            "2": 0.12,
+            "3": 0.01,
+            "4": 0.0
+          }
+        },
+        "project_11": {
+          "score": 1.68,
+          "type": "score",
+          "confidence": 0.49,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.39,
+            "2": 0.45,
+            "3": 0.11,
+            "4": 0.01
+          }
+        },
+        "batch_11": {
+          "score": 1.57,
+          "type": "score",
+          "confidence": 0.38,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.42,
+            "2": 0.35,
+            "3": 0.12,
+            "4": 0.02
+          }
+        },
+        "project_12": {
+          "score": 1.47,
+          "type": "score",
+          "confidence": 0.52,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.55,
+            "2": 0.29,
+            "3": 0.09,
+            "4": 0.02
+          }
+        }
+      },
+      "choice": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.26,
+          "probabilities": {
+            "project_7": 0.04,
+            "project_6": 0.05,
+            "batch_6": 0.03,
+            "project_8": 0.01,
+            "project_9": 0.0,
+            "project_1": 0.01,
+            "batch_11": 0.11,
+            "project_4": 0.08,
+            "project_0": 0.01,
+            "project_11": 0.13,
+            "project_12": 0.04,
+            "project_3": 0.16,
+            "save": 0.31,
+            "project_10": 0.0,
+            "project_2": 0.02,
+            "project_5": 0.0
+          }
+        }
+      },
+      "ranking": [
+        "project_3",
+        "project_7",
+        "project_11",
+        "batch_11",
+        "save",
+        "project_12",
+        "project_4",
+        "project_6",
+        "batch_6",
+        "project_0",
+        "project_1",
+        "project_8",
+        "project_2",
+        "project_9",
+        "project_5",
+        "project_10"
+      ]
+    },
+    {
+      "recorded_time": 1789869667.279131,
+      "options": {
+        "save": "Make no new purchase at this review. Requests no new unit, structure or upgrade; resources remain available. Does not change existing orders.",
+        "project_0": "Purchase one Barracks. Adds another unit able to: Build Reactor Barracks using the engine-defined location, Build TechLab Barracks using the engine-defined location, Smart: interact with unfinished owned construction, Train Marine. Satisfies a catalog technology prerequisite for Bunker, GhostAcademy, Factory, OrbitalCommand, MercCompound; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'Barracks', 'minerals': 150, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Bunker', 'requires_attached': False}, {'unit': 'GhostAcademy', 'requires_attached': False}, {'unit': 'Factory', 'requires_attached': False}, {'unit': 'OrbitalCommand', 'requires_attached': False}, {'unit': 'MercCompound', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_1": "Purchase one CommandCenter. Adds another unit able to: Train SCV. Satisfies a catalog technology prerequisite for Barracks, EngineeringBay; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Adds 11 supply capacity when complete. Existing owned CommandCenter cargo: 0 slots occupied, 5 available; passengers by type: {}. This purchase does not issue loading commands; loading is a separate decision. Cost/effects: {'type': 'CommandCenter', 'minerals': 400, 'vespene': 0, 'supply': 0.0, 'supply_provided': 11.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'Barracks', 'requires_attached': False}, {'unit': 'EngineeringBay', 'requires_attached': False}]}. Already owned: 1; idle: 0; current orders: {'Train SCV': 2}.",
+        "project_2": "Purchase one EngineeringBay. Its action capabilities have not yet been observed. Satisfies a catalog technology prerequisite for MissileTurret, SensorTower, PlanetaryFortress, PerditionTurret, PsiDisruptor, HiveMindEmulator; other requirements and an appropriate producer may still be needed; this does not guarantee current trainability. Cost/effects: {'type': 'EngineeringBay', 'minerals': 125, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': [{'unit': 'MissileTurret', 'requires_attached': False}, {'unit': 'SensorTower', 'requires_attached': False}, {'unit': 'PlanetaryFortress', 'requires_attached': False}, {'unit': 'PerditionTurret', 'requires_attached': False}, {'unit': 'PsiDisruptor', 'requires_attached': False}, {'unit': 'HiveMindEmulator', 'requires_attached': False}]}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_3": "Purchase one Refinery. Its action capabilities have not yet been observed. Enables workers to harvest gas from this site after construction. Cost/effects: {'type': 'Refinery', 'minerals': 75, 'vespene': 0, 'supply': 0.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': True, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}.",
+        "project_4": "Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 23; idle: 0; current orders: {'Effect Repair SCV': 14, 'Move Move': 14, 'Harvest Return SCV': 3, 'HoldPosition Hold': 1, 'Harvest Gather SCV': 5}.",
+        "batch_4": "Commit to up to three training requests for SCV over 2016 game loops, using currently executable controls and choosing the producer separately. Prioritize this batch over other new purchases until it finishes, expires, or your strategic priority changes. Each request costs the listed per-unit resources; rejected or stale requests still consume one attempt. Purchase one SCV. Adds another unit able to: Attack visible targets, Attack-move, engaging encountered enemies, Build Barracks, Build Bunker, Build CommandCenter, Build EngineeringBay, Build MissileTurret, Build Refinery on visible gas geyser tag 4366532609 at [75.5,14.5], Build SupplyDepot, Effect Repair SCV: restore damaged owned units; repair can consume resources and occupies the worker instead of harvesting, Harvest resources, Move to locations or entities, Return carried resources to a resource drop-off, Smart: interact with unfinished owned construction. Has weapons: Ground targets at range 0.1. Cost/effects: {'type': 'SCV', 'minerals': 50, 'vespene': 0, 'supply': 1.0, 'supply_provided': 0.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 23; idle: 0; current orders: {'Effect Repair SCV': 14, 'Move Move': 14, 'Harvest Return SCV': 3, 'HoldPosition Hold': 1, 'Harvest Gather SCV': 5}. The producer selected for the first request stays fixed; after acceptance, remaining requests execute automatically between model reviews, at least 112 loops apart, only while affordable and available. No replacement producer is selected.",
+        "project_5": "Purchase one SupplyDepot. Adds another unit able to: Lower this supply depot so ground units can pass over its footprint. Adds 8 supply capacity when complete. Cost/effects: {'type': 'SupplyDepot', 'minerals': 100, 'vespene': 0, 'supply': 0.0, 'supply_provided': 8.0, 'allows_vespene_harvesting': False, 'catalog_tech_requirement_for': []}. Already owned: 0; idle: 0; current orders: {}."
+      },
+      "choice": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.41,
+          "probabilities": {
+            "project_5": 0.17,
+            "save": 0.49,
+            "project_3": 0.03,
+            "project_0": 0.02,
+            "batch_4": 0.1,
+            "project_4": 0.13,
+            "project_1": 0.05,
+            "project_2": 0.01
+          }
+        }
+      },
+      "scores": {
+        "save": {
+          "score": 1.51,
+          "type": "score",
+          "confidence": 0.49,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.5700000000000001,
+            "2": 0.24,
+            "3": 0.12,
+            "4": 0.02
+          }
+        },
+        "project_0": {
+          "score": 1.16,
+          "type": "score",
+          "confidence": 0.65,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.13,
+            "1": 0.62,
+            "2": 0.21,
+            "3": 0.03,
+            "4": 0.01
+          }
+        },
+        "project_1": {
+          "score": 1.27,
+          "type": "score",
+          "confidence": 0.49,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.17,
+            "1": 0.5,
+            "2": 0.25,
+            "3": 0.07,
+            "4": 0.01
+          }
+        },
+        "project_2": {
+          "score": 1.19,
+          "type": "score",
+          "confidence": 0.68,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.66,
+            "2": 0.22,
+            "3": 0.03,
+            "4": 0.0
+          }
+        },
+        "project_3": {
+          "score": 1.03,
+          "type": "score",
+          "confidence": 0.72,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.16,
+            "1": 0.68,
+            "2": 0.14,
+            "3": 0.02,
+            "4": 0.0
+          }
+        },
+        "project_4": {
+          "score": 1.54,
+          "type": "score",
+          "confidence": 0.46,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.47000000000000003,
+            "2": 0.38,
+            "3": 0.09,
+            "4": 0.01
+          }
+        },
+        "batch_4": {
+          "score": 1.51,
+          "type": "score",
+          "confidence": 0.4,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.1,
+            "1": 0.44,
+            "2": 0.33,
+            "3": 0.11,
+            "4": 0.02
+          }
+        },
+        "project_5": {
+          "score": 1.48,
+          "type": "score",
+          "confidence": 0.44,
+          "legend": {
+            "0": "Actively undermines progress toward the objective.",
+            "1": "Offers little useful progress in the current situation.",
+            "2": "Offers some useful progress but limited immediate value.",
+            "3": "Offers substantial useful progress in the current situation.",
+            "4": "Offers exceptionally important progress toward the objective now."
+          },
+          "probabilities": {
+            "0": 0.09,
+            "1": 0.5,
+            "2": 0.27,
+            "3": 0.11,
+            "4": 0.03
+          }
+        }
+      },
+      "ranking": [
+        "project_4",
+        "save",
+        "batch_4",
+        "project_5",
+        "project_1",
+        "project_2",
+        "project_0",
+        "project_3"
+      ]
+    }
+  ],
+  "calls": 6,
+  "cost": 0.0031599960000000004
+}
