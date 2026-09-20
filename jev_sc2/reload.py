@@ -24,7 +24,8 @@ class PlayerLoader:
         # Policy helpers use the same committed snapshot as player.py. A private
         # import table avoids changing modules used by an in-flight old player.
         helper_names = ('intentions', 'bottleneck', 'order_families',
-                        'destination_categories', 'order_scores', 'commitment_review')
+                        'destination_categories', 'order_scores', 'commitment_review',
+                        'purchase_dependencies')
         helpers = {}
         helper_sources = {}
         for name in helper_names:

@@ -472,6 +472,10 @@ async def choose_investment(view, state, jev, memory=None):
             from jev_sc2.bottleneck import diagnose
             purchase_state['jev_bottleneck_diagnosis'] = await diagnose(
                 purchase_state, jev, memory, view['loop'], strategy)
+        if (memory or {}).get('purchase_dependencies_enabled'):
+            from jev_sc2.purchase_dependencies import assess
+            purchase_state['your_purchase_dependency_assessments'] = await assess(
+                purchase_state, criteria, jev, view['loop'])
         if memory is not None and memory.get('investment_scoring_enabled'):
             choice = await score_investment_options(purchase_state,
                 criteria,jev,memory,view['loop'])
