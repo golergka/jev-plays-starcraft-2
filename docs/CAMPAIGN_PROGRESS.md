@@ -5360,3 +5360,17 @@ and Jev-only finalists, and propagation of other errors. Rejected requests retai
 framework conservative reservations; fallback can therefore hit the same hard
 budget limit rather than bypass it. Next live trial measures total cost/control
 cadence and gameplay; sampled request savings alone do not establish victory.
+
+### Lab371 — full menus delivered live without tournament fallback
+
+Fresh restart run20260920T043601.934772Z/session93466, revision9dfdadf. Reset
+17388to0, two exact-map prior attempts loaded, objective gate readyloop110.
+Native0:25 and2:49 confirm active mission; Marines again gather near an empty
+bunker. No strategic improvement claim.
+
+First7 completed cycles:49requests,$0.027215202, median paced interval18.15seconds.
+Each cycle has one full Marine-menu request (102–119options); zero tournaments,
+size fallbacks or model errors in this prefix. This verifies cheaper path delivery,
+not sustained savings or victory. Artifact371 preserves partial cutoff. Existing
+budget/fog/actionvalidation and Jev tactical authority remain unchanged. Current
+controller confirmed live; do not restart or treat this partial audit as an outcome.

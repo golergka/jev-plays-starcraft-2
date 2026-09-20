@@ -1,0 +1,22 @@
+{
+  "run": "runs/20260920T043601.934772Z",
+  "partial_through_time": 1789879107.677363,
+  "calls": 49,
+  "cost_usd": 0.027215202,
+  "cycles": 7,
+  "median_paced_seconds": 18.153870000000012,
+  "marine_requests": 7,
+  "marine_options": [
+    102,
+    104,
+    106,
+    116,
+    115,
+    117,
+    119
+  ],
+  "fallbacks": 0,
+  "tournaments": 0,
+  "errors": [],
+  "scope": "Partial live delivery/cost only. Same map and policy except full-menu-first; two prior attempts loaded, so not an isolated outcome comparison."
+}
