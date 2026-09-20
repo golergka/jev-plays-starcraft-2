@@ -5901,3 +5901,22 @@ Nested regression verifies request cleanup precedes owner log closure and leaves
 no pending tasks; success preserves result order. Full suite204tests passes after
 correcting initial mechanical replacement of the return_exceptions collector.
 Next address burst admission/pacing before any paid resume. Trial400 incomplete.
+
+### Lab402 — bound concurrent dispatch before spending reservations
+
+400budget event reports$0.096003262 against$0.10. Recorded settled Jev costs in
+preceding300seconds total$0.056003262; difference$0.04 is reservation accounting,
+not demonstrated additional settled billing. Recursive17→8/9question split just
+beforestop increased simultaneous request pressure. Reducing fan-out addresses
+this observed burst without increasing dollar cap or resetting ledger.
+
+SDK wrapper now admits at most2transport requests concurrently. Wait for a slot
+before acquiring spend reservation; all actual budget failures still propagate
+loudly without retry. Log queue_ms/concurrency_limit for visibility. Decision
+freshness/timeout remains authoritative, so latency regressions fail visibly.
+Release slot before server-rejected recursive splitting to avoid deadlock; owned
+gather joins cancelledchildren. Successful responses settle before next dispatch.
+Test12concurrentrequests with$0.03cap/.005reservation and.001actualcost completes
+atpeak2,$0.012actual, zero inflight; previous unlimitedreservationburstwouldfail.
+Existing loud admission tests retained. No paid validation yet; savings or better
+campaignplay unproven. No automaticresume of400 in this change.

@@ -110,3 +110,28 @@ def test_pacing_charge_includes_unknown_bills_and_reconciles_known_cost(tmp_path
     assert spend.charged==pytest.approx(.006)
     spend.settle(unknown,.002)
     assert spend.charged==pytest.approx(.003)
+
+
+def test_concurrent_sdk_dispatch_caps_reservations_before_acquiring_budget(tmp_path):
+    import asyncio
+    from types import SimpleNamespace
+    from jev_sc2.jev import Jev
+    from jev_sc2.concurrency import gather_owned
+    active=peak=0
+    async def request(**kwargs):
+        nonlocal active,peak
+        active+=1;peak=max(peak,active)
+        await asyncio.sleep(.001)
+        active-=1
+        return SimpleNamespace(usage=SimpleNamespace(cost=.001),
+            model_dump=lambda **kw:{'answers':{'q':{'choice':'keep'}}})
+    model=Jev.__new__(Jev)
+    model.client=SimpleNamespace(alpha=SimpleNamespace(decisions=SimpleNamespace(create_async=request)))
+    model.model='typesafe/jev-1.13';model.session='test';model.log=lambda *a,**kw:None
+    model.calls=0;model.inflight=0;model.max_calls=None;model.cost=0
+    model.spend=RollingSpend(tmp_path/'spend.db',limit=.03,reserve=.005,clock=lambda:1000)
+    async def run():
+        return await gather_owned(*(model.ask({}, {'q':{'criteria':{'keep':'Continue'}}}) for _ in range(12)))
+    assert len(asyncio.run(run()))==12
+    assert peak==2 and active==0 and model.inflight==0
+    assert model.cost==pytest.approx(.012)

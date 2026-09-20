@@ -53,9 +53,22 @@ class Jev:
                 self.ask(state, dict(items[:middle])),
                 self.ask(state, dict(items[middle:])))
             return {key:value for half in halves for key,value in half.items()}
-        if self.max_calls is not None and self.calls + self.inflight >= self.max_calls:
-            raise CallBudgetReached()
-        token = self.spend.acquire() if hasattr(self, 'spend') else None
+        # Bound transport fan-out before reserving money. This does not catch or
+        # retry budget rejection; queued work remains subject to decision timeout.
+        if not hasattr(self, '_dispatch_slots'):
+            self._dispatch_slots = asyncio.Semaphore(2)
+        waiting_since = time.monotonic()
+        await self._dispatch_slots.acquire()
+        slot_held = True
+        try:
+            self.log('jev_dispatch', queue_ms=round((time.monotonic()-waiting_since)*1000),
+                     concurrency_limit=2)
+            if self.max_calls is not None and self.calls + self.inflight >= self.max_calls:
+                raise CallBudgetReached()
+            token = self.spend.acquire() if hasattr(self, 'spend') else None
+        except BaseException:
+            self._dispatch_slots.release()
+            raise
         self.inflight += 1
         try:
             started = time.monotonic()
@@ -84,6 +97,8 @@ class Jev:
             # batch retains the exact state, choices and criteria for each question.
             # Release this reservation before children reserve their own requests.
             self.inflight -= 1
+            self._dispatch_slots.release()
+            slot_held = False
             try:
                 items = list(questions.items())
                 middle = len(items)//2
@@ -103,3 +118,5 @@ class Jev:
             raise
         finally:
             self.inflight -= 1
+            if slot_held:
+                self._dispatch_slots.release()
