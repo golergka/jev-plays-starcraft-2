@@ -210,3 +210,13 @@ def test_competing_exclusive_jobs_do_not_arbitrarily_choose_a_carrier():
     class Log:
         def log(self,*args,**kwargs): pass
     assert coordinate_exclusive_jobs(view,jobs+[move],set(),Log())==[move]
+
+
+def test_selection_members_identify_mixed_and_overlapping_groups():
+    from player import selection_facts
+    units=[{'tag':101,'type':'Marine','position':[0,0],'health':45,'candidates':[]},
+           {'tag':202,'type':'Medic','position':[1,0],'health':60,'candidates':[]}]
+    facts=selection_facts({'self':units,'visible_entities':[]},
+                          {'combined':units,'single':[units[1]]},{})
+    assert facts['combined']['members']==[{'tag':101,'type':'Marine'},{'tag':202,'type':'Medic'}]
+    assert facts['single']['members']==[{'tag':202,'type':'Medic'}]

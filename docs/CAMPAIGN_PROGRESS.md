@@ -5271,3 +5271,19 @@ andmisrepresentacknowledgements/backgroundjobcounts. No gameplaychange orpaidcal
 Any future idempotenceutility must comparefreshactiveorder/queue/target semantics,
 retainproductionrequests,andreport no-op fulfillment separatelyfromengineacceptance.
 Do notclaim48safelyavoidableactionsfromthisaudit. Controllerremainsstopped.
+
+### Lab364 — make controlled-unit identity explicit in model context
+
+Re-readofficialhttps://docs.typesafe.ai/model-jaggedness/jev-1.13 and
+https://docs.typesafe.ai/primitives/choice . Docs warnagainstindirection/irrelevant
+context andstatequestionIDsarenotseenbythemodel. Auditedprompts:individualUnitfacts
+removedown tag,selectionsummaryomittedmembers,and supportassignmentinstructiondid
+notnameitsselection. Add factualtag/type memberrecords toselection_facts,retain
+own tag inindividualfacts,andname supportselection ininstruction. Existinggroup
+order/contributioninstructionsalreadyname theirselection. No targetpriorities,
+unitquotas,forcedactions,orprobabilitychanges.
+
+193testspassincludingmixed/overlappinggroupidentityregression. No modelcallsor
+livequalityclaim. This removesa specificreferentialambiguity,not anassertedcauseof
+allpriorfailures. Nextboundedtrial canverifyidentitydeliveryalongwith362startupgate;
+currentcontrollerstoppedandmap357ondefeatscreen.

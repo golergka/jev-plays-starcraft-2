@@ -565,6 +565,7 @@ def selection_facts(view, cohorts, previous_counts):
         economic_selected = [u for u in view['self'] if u['tag'] in tags]
         candidate_ids = {c['id'] for u in economic_selected for c in u['candidates']}
         facts[kind] = {
+            'members':[{'tag':u['tag'],'type':u['type']} for u in selected],
             'count':len(selected),
             'center':[round(sum(u['position'][i] for u in selected)/len(selected),1) for i in (0,1)],
             'nearest_visible_enemy_distance':round(min((math.dist(u['position'],e['position'])
@@ -692,7 +693,7 @@ async def assign_support(view, state, jev, requests):
             options['all'] = f'All {len(candidates)} eligible units perform this support action, replacing all their current orders. Concurrent repairs can consume shared resources.'
             plans[kind]['all'] = [c['command'] for c in candidates]
         questions[kind] = {'type':'choice',
-            'instructions':'Assign executors for the support action Jev selected. Consider their existing jobs, resources and urgency. '
+            'instructions':f'Assign executors for the support action Jev selected for {kind}. Consider their existing jobs, resources and urgency. '
                            'One passenger can enter only one carrier, so loading offers single-carrier assignments. '
                            'Unselected units retain their current orders.',
             'criteria':options}
@@ -1150,7 +1151,7 @@ async def decide_individual(view, jev, memory):
             options[candidate['id']] = description
             actions[candidate['id']] = candidate['command']
         candidates[tag] = actions
-        local = {k: v for k, v in unit.items() if k not in {'candidates', 'tag'}}
+        local = {k: v for k, v in unit.items() if k != 'candidates'}
         history = memory.setdefault('history', {}).setdefault(tag, [])
         # Budget pacing can put consecutive reviews beyond the former 112-loop
         # horizon. Keep bounded factual history over the outcome window instead.
