@@ -5524,3 +5524,31 @@ forcegroupingchange,missionroute,orbuildorder. Regressionusesactual2750name and
 injured/fullhealth/hidden/mechanical/selftargets. Nextboundedtrialwillmeasure
 whetherhealingoptionsreachJev andwhetheritselectsthem; victorybenefitunproven.
 Validation:198tests passed. No paidofflineprobe required for this deterministicbug.
+
+### Lab381 — Medic control exposed, second Smash and Grab defeat at 13:16
+
+Run20260920T052657.110535Z/session52146 terminal exit0. Native screenshots
+confirm defeat13:16, all structures destroyed, 0/4 relics, 0minerals/354gas.
+177 successful Jev requests cost $0.116499978. No model errors; one delayed
+NotEnoughFood rejection for SCV training. Three completed missions retained.
+
+MedicHeal reached paid criteria and was proposed once at loop766. That tick had
+three proposals and two accepted submissions, without a per-command mapping;
+therefore active healing execution remains unverified. Later observations had no
+Medic Heal orders. This does not exclude transient healing or native autocast.
+Longer survival than trial376 is not causal evidence of the name-recognition fix.
+
+Native vision at10:43 and12:01 showed workers surrounding a Command Center under
+Zerg attack, no army, no relic progress. Barracks reconstruction did occur later
+in the trace, so do not characterize the entire attempt as refusing to rebuild.
+All four SCV batches seen in the trace were sampled below Jev's top recommendation.
+This identifies our sampling contribution, not proof argmax would win. Reviewed
+prior argmax/sampling negative experiments; did not repeat that policy switch.
+
+Add actual submitted command identities, targets and corresponding immediate
+engine results to tick and production-job logs. Missing results say unreported;
+acceptance still does not prove completion. This closes the heal-attribution gap
+for subsequent runs without changing gameplay or adding paid context. Current
+trial completed under the previous process; instrumentation starts next launch.
+Regression covers unit/point targets, missing result and empty submissions.
+Validation:199 tests passed. Artifact381 and local outcome/checkpoint saved.

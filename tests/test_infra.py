@@ -631,6 +631,25 @@ def test_engine_feedback_distinguishes_rejection_acceptance_and_stale_drop():
     assert action_feedback([],[],100,1,40,32)['discarded_as_stale']
 
 
+def test_submitted_action_records_preserve_targets_and_missing_results():
+    from jev_sc2.__main__ import submitted_action_records
+    from s2clientprotocol import error_pb2
+    heal = sc.Action()
+    heal.action_raw.unit_command.ability_id = 2750
+    heal.action_raw.unit_command.unit_tags.append(7)
+    heal.action_raw.unit_command.target_unit_tag = 8
+    move = sc.Action()
+    move.action_raw.unit_command.ability_id = 16
+    move.action_raw.unit_command.unit_tags.append(9)
+    move.action_raw.unit_command.target_world_space_pos.x = 12.5
+    move.action_raw.unit_command.target_world_space_pos.y = 20
+    assert submitted_action_records([heal, move], [error_pb2.Success]) == [
+        {'ability_id': 2750, 'unit_tags': [7], 'target_tag': 8, 'result': 'Success'},
+        {'ability_id': 16, 'unit_tags': [9], 'point': [12.5, 20], 'result': 'unreported'},
+    ]
+    assert submitted_action_records([], []) == []
+
+
 def test_income_observation_distinguishes_missing_from_zero():
     from s2clientprotocol import query_pb2 as query
     class Client:

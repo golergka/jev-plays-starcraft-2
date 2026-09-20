@@ -38,6 +38,22 @@ def check_map_identity(info, expected):
         raise RuntimeError(f'Resume map mismatch: expected {Path(expected).name}, got {actual!r}')
 
 
+def submitted_action_records(actions, results):
+    """Record actual submitted commands, independent of filtered proposals."""
+    records = []
+    for index, action in enumerate(actions):
+        cmd = action.action_raw.unit_command
+        record = {'ability_id': cmd.ability_id, 'unit_tags': list(cmd.unit_tags),
+                  'result': (error_pb2.ActionResult.Name(results[index])
+                             if index < len(results) else 'unreported')}
+        if cmd.HasField('target_unit_tag'):
+            record['target_tag'] = cmd.target_unit_tag
+        if cmd.HasField('target_world_space_pos'):
+            record['point'] = [cmd.target_world_space_pos.x, cmd.target_world_space_pos.y]
+        records.append(record)
+    return records
+
+
 def action_feedback(actions, results, loop, requested, age, max_age):
     failures = []
     for action, result in zip(actions, results):
@@ -325,7 +341,8 @@ async def run(args):
                     job_response = await client.request('action',sc.RequestAction(actions=job_actions))
                     job_results = list(job_response.result)
                 log('production_job_execution',loop=view['loop'],commands=job_commands,
-                    submitted=len(job_actions),results=job_results,age=job_age)
+                    submitted=len(job_actions),results=job_results,age=job_age,
+                    submitted_actions=submitted_action_records(job_actions,job_results))
                 if len(job_results) != len(job_commands) or any(r != 1 for r in job_results):
                     cancel_job(memory,log,view['loop'],'request rejected or stale; no automatic retry')
                 await asyncio.sleep(0.2)
@@ -404,6 +421,7 @@ async def run(args):
                        for u in view['self']],
                 score=fresh.observation.score.score,decision_age_loops=age,
                 commands=commands,submitted=len(actions),action_results=results,
+                submitted_actions=submitted_action_records(actions,results),
                 action_errors=[str(e) for e in fresh.action_errors],
                 latency_ms=round((time.monotonic()-decision_start)*1000))
             # Pace completed decisions by their measured cost as the dollar

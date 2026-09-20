@@ -1,0 +1,55 @@
+{
+  "run": "runs/20260920T052657.110535Z",
+  "ui_verification": {
+    "time": 1789882702.756927,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "13:16",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 354
+  },
+  "calls": 177,
+  "cost_usd": 0.116499978,
+  "strategies": {
+    "explore": 2,
+    "strengthen": 5,
+    "protect": 15
+  },
+  "errors": [
+    {
+      "time": 1789882488.699397,
+      "event": "engine_action_error",
+      "loop": 10186,
+      "failures": [
+        {
+          "ability_id": 524,
+          "unit_tags": [
+            4297064449
+          ],
+          "result": "NotEnoughFood"
+        }
+      ]
+    }
+  ],
+  "healing_proposals": [
+    {
+      "loop": 766,
+      "commands": [
+        {
+          "unit_tag": 4383309825,
+          "ability_id": 2750,
+          "target_tag": 4362862593
+        }
+      ],
+      "submitted": 2,
+      "action_results": [
+        1,
+        1
+      ]
+    }
+  ],
+  "scope": "MedicHeal options delivered and proposed once; historical logs cannot identify whether that specific proposal was submitted. No causal survival benefit established. Sampling versus argmax already explored; no repeated policy change."
+}
