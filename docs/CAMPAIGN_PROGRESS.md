@@ -6551,3 +6551,17 @@ Next experiment should distinguish weapon-bearing and support geometry using
 observed unit facts, while retaining Jev's grouping and order choices; assess
 whether that changes decisions before a live retry. Do not duplicate lab066's
 existing all-member dispersion fields or claim regroup was unavailable.
+
+### Lab447 — catalog-weapon subgroup geometry does not change sampled orders
+
+Six-call paired probe440 costs $0.004958688. First/middle/last multi-member
+MobileCombat order states49/2086/3832 (not restricted to Marines, unlike445).
+Treatment adds count/members/diameter for catalog-weapon-present versus empty,
+using same-loop own positions and existing catalog; explicit caveat empty does
+not imply harmless or useless. All original questions/actions preserved.
+Both arms choose last-known attack-move49, middle-east attack-move2086,
+continue3832. No observed choice improvement, not deployed. These samples do
+not directly test1482; do not claim exhaustive absence of benefit. No live game
+commands. Together with412/418 this cautions against repeatedly enlarging local
+facts without changing decision formulation. Next inspect selection scoring and
+actual probabilities before another strategic or factual-context variation.
