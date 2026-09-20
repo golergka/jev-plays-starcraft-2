@@ -40,6 +40,20 @@ bool Fixture (bool testConds, bool runActions) {
     Snapshot("shown");
     JevObjectiveDestroy(objective);
     Snapshot("destroyed");
+    objective = JevObjectiveCreate(StringToText("Replacement"), StringToText("Replacement detail"), c_objectiveStateActive, false);
+    ObjectiveShow(objective, PlayerGroupSingle(1), true);
+    Snapshot("replacement");
+    JevObjectiveRegister(objective);
+    Snapshot("registered_twice");
+    JevObjectiveSetState(objective, c_objectiveStateFailed);
+    Snapshot("failed");
+    ObjectiveSetPlayerGroup(objective, PlayerGroupSingle(2));
+    Snapshot("other_player");
+    ObjectiveSetPlayerGroup(objective, PlayerGroupSingle(1));
+    ObjectiveShow(objective, PlayerGroupSingle(1), true);
+    Snapshot("returned_player");
+    JevObjectiveDestroyAll(PlayerGroupSingle(1));
+    Snapshot("destroy_all");
     return true;
 }
 void InitMap () {

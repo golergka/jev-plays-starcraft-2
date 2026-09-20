@@ -1,0 +1,155 @@
+{
+  "sections": {
+    "shown": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "2"
+      },
+      "name": {
+        "text": "[Completed] Updated objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "destroy_all": {
+      "section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "other_player": {
+      "section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "failed": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "3"
+      },
+      "name": {
+        "text": "[Failed] Replacement"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "renamed": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "1"
+      },
+      "name": {
+        "text": "Updated objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "replacement": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "1"
+      },
+      "name": {
+        "text": "Replacement"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "Objectives": {
+      "count": {
+        "int": "0"
+      }
+    },
+    "registered_twice": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "1"
+      },
+      "name": {
+        "text": "Replacement"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "destroyed": {
+      "section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "hidden": {
+      "section": {
+        "flag": "0"
+      },
+      "count": {
+        "int": "0"
+      }
+    },
+    "completed": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "2"
+      },
+      "name": {
+        "text": "[Completed] Updated objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "created": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "1"
+      },
+      "name": {
+        "text": "Visible objective"
+      },
+      "count": {
+        "int": "1"
+      }
+    },
+    "returned_player": {
+      "section": {
+        "flag": "1"
+      },
+      "state": {
+        "int": "3"
+      },
+      "name": {
+        "text": "[Failed] Replacement"
+      },
+      "count": {
+        "int": "1"
+      }
+    }
+  },
+  "validated_stages": 12,
+  "scope": "Native visibility/lifecycle fixture, not campaign success. Duplicate registration of the same ID tested; actual native allocation reuse not forced. Live reader/builder integration remains outstanding."
+}

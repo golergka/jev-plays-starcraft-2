@@ -5169,3 +5169,15 @@ fields. NativeUIinspectedafterfixture; no campaignobjectiveclaimed.185testspass.
 Remainingbeforeintegration:DestroyAll/reusedIDs/failedstate/playervisibilityswitch,
 freshnessreaderandbuilderwiring. CurrentSC2mapisdiagnostic355,notcampaign335;
 nextcampaignrunmustloadcorrectmapratherthanrestartthisfixture.
+
+### Lab356 — objective visibility/lifecycle native checks pass
+
+Extend355diagnosticfixture:replacementcreation,duplicateIDregistration,failedstate,
+moveobjective toplayer2 andback,DestroyAll(player1). Native356map compiled andran;
+all12snapshotstagespassreusablecheck_objective_fixture.py. Failurestate3anddisplay
+prefixpersistaftervisibilityreturns;otherplayer/DestroyAll snapshotscount0andold
+sectionabsent. Duplicate registration exportsoneentry withoutregistrycycle. Actual
+engineallocationreuseofdestroyedID notforced,so donotclaimthatcaseverified.
+NoJevcalls,campaigncredit,ornewcampaignrun. Artifact356retainsnativeexportfields.
+Readerfreshness/builderintegrationstillneededbeforeplayeruse. Currentmapisignored
+visible-objective-fixture-lab356.SC2Map; diagnosticprocessended normally.
