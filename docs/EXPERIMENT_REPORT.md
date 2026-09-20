@@ -2,12 +2,37 @@
 
 The infrastructure works. Jev makes real-time decisions in a retail SC2 campaign
 mission, through the ordinary player API, while the game appears on a live stream.
-**Liberation Day and The Outlaws are verified won.** Through lab366, local result
-files contain 40 independently UI-verified Zero Hour defeats. The latest finished
-attempt lasted 15:49 and cost $0.134164632 for 213 successful requests. No later
+**Liberation Day, The Outlaws and Zero Hour are verified won.** Zero Hour's
+native victory screen reports 20:12, after 42 independently UI-verified defeats.
+The winning run cost $0.192928932 for 261 successful Jev requests. No later
 mission is verified won; all three campaigns remain incomplete.
 
-## Current evidence through lab366
+## Current evidence through lab375
+
+The winning trial supplied observed decision cadence to strategic requests, kept
+full combat menus, and loaded three prior same-map attempts. Jev chose 672-loop
+role commitments in all 22 strategic reviews; 20 received measured cadence.
+Median paced decision interval was 25.62 seconds. One late token-limit decision
+error occurred; the controller recovered and continued to the verified victory.
+No root tactical orders or policy changes were made during the attempt.
+
+This is a verified outcome, not causal evidence that timing context caused the
+win. The army dwindled, many structures were lost, and thousands of minerals
+remained unspent. The native summary reports 307 enemies killed, 33 units lost,
+26 structures salvaged or lost, and no rebel squads rescued. Combat coordination
+and investment remain weak even though this attempt survived evacuation.
+
+A three-state paired probe measured 54.88% lower combat-menu costs for one full
+Choice request versus a complete tournament. Full-menu-first is now the default,
+with explicit token-limit fallback. Whole-run costs and cadence did not improve
+in the first live trial of that change. A separate $0.003657108 cadence probe
+changed review intervals in recorded states; its live benefit remains unisolated.
+
+The next configured mission is Smash and Grab. Campaign progression beyond these
+standalone missions, between-mission choices and all-three-campaign completion
+remain unverified. The rolling $0.10/five-minute cap is unchanged.
+
+## Evidence recorded through lab366 (historical)
 
 The persistent difficulty is converting local choices into coordinated, sustained
 objective progress. Native screenshots show the army gathering near one Command

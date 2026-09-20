@@ -5423,3 +5423,21 @@ forced interval,role assignment,tactic,or budget change.197tests pass including
 history bound,arithmetic and invalid-time cases. Initial test collection found the
 new module mistakenly at repository root; moved into package and reran all tests.
 Next live trial measures selected intervals,request cadence,cost and outcome.
+
+### Lab375 — Zero Hour victory independently verified
+
+Run20260920T045546.602442Z/session22926 terminalexit0. Native evacuation cinematic
+followed by VICTORY results:ZeroHour20:12,reward55000,307enemieskilled,46totalunits,
+33unitslost,26structuressalvagedorlost,0/8hatcheries,0/3rescues. Screenshot viaCUA
+independently confirms marker; local result/checkpoint nowcredit thirdmissionwin.
+42verifiedZeroHourdefeats precede this win. No latermission/allcampaignclaim.
+
+261successfulrequests,$0.192928932,36cycles,medianpaced25.62seconds.22strategic
+requests,20withcadence; strategyreviews17medium/5soon,rolereviews22medium.
+One late400max_tokens_exceeded decisionerror; controllercontinued. No policy
+changes or root tactics duringattempt. Army/base nearlycollapsed,largeunspentbank
+persisted. Victorydoesnotisolatecadenceeffect:threepreviousattemptsandstochastic
+trajectoryalsochanged. Artifact375/nativeUI/result/checkpoint agree. Reportupdated.
+
+Next configuredmissionSmashAndGrab has olderoutcomeadapter; inspectandupgrade its
+player-visible context integration before launching. Do notrestartZeroHour.

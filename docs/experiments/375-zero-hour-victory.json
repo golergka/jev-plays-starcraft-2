@@ -1,0 +1,39 @@
+{
+  "run": "runs/20260920T045546.602442Z",
+  "ui_verification": {
+    "time": 1789881190.370925,
+    "verification": "native SC2 victory results screenshot via cua",
+    "mission": "Zero Hour",
+    "result": "victory",
+    "mission_time": "20:12",
+    "mission_reward": 55000,
+    "enemy_units_killed": 307,
+    "total_units_owned": 46,
+    "units_lost": 33,
+    "structures_salvaged_or_lost": 26,
+    "hatcheries_destroyed": "0/8",
+    "rebel_squads_rescued": "0/3"
+  },
+  "calls": 261,
+  "cost_usd": 0.19292893200000003,
+  "cycles": 36,
+  "median_paced_seconds": 25.620315000000055,
+  "strategic_calls": 22,
+  "with_cadence": 20,
+  "strategy_reviews": {
+    "medium": 17,
+    "soon": 5
+  },
+  "role_reviews": {
+    "medium": 22
+  },
+  "errors": [
+    {
+      "time": 1789881096.959754,
+      "event": "decision_error",
+      "error": "BadRequestResponseError",
+      "detail": "HTTP 400: {\"detail\":{\"error_type\":\"max_tokens_exceeded\"}}"
+    }
+  ],
+  "scope": "Verified mission victory after42verifieddefeats. One sequential trial,three prior same-map episodes,changing trajectories: does not isolate cadence-context effect. No root tactical orders or policy changes during the attempt."
+}
