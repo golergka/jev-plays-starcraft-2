@@ -1,0 +1,187 @@
+{
+  "source": "runs/20260920T014947.229712Z/events.jsonl",
+  "method": "First/middle/last >=500 mineral investment requests. Compare original to identical question with separate Jev-generated no-new-purchase outlook added to state. Outlook is a model estimate, not observation. Alternate baseline/enriched order. Nine calls maximum; no gameplay commands.",
+  "pairs": [
+    {
+      "recorded_time": 1789869298.248802,
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.29,
+          "probabilities": {
+            "save": 0.34,
+            "project_12": 0.03,
+            "project_10": 0.01,
+            "batch_6": 0.03,
+            "project_1": 0.02,
+            "project_7": 0.01,
+            "project_3": 0.07,
+            "project_11": 0.19,
+            "project_9": 0.0,
+            "batch_11": 0.14,
+            "project_5": 0.01,
+            "project_2": 0.02,
+            "project_4": 0.07,
+            "project_0": 0.01,
+            "project_8": 0.02,
+            "project_6": 0.03
+          }
+        }
+      },
+      "outlook": {
+        "outlook": {
+          "choice": "uncertain",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "likely_success": 0.16,
+            "uncertain": 0.48,
+            "unlikely_success": 0.36
+          }
+        }
+      },
+      "with_outlook": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.25,
+          "probabilities": {
+            "save": 0.29,
+            "project_2": 0.02,
+            "project_8": 0.02,
+            "project_5": 0.01,
+            "project_11": 0.22,
+            "project_7": 0.01,
+            "project_0": 0.01,
+            "project_9": 0.0,
+            "batch_6": 0.02,
+            "batch_11": 0.17,
+            "project_6": 0.03,
+            "project_3": 0.07,
+            "project_10": 0.01,
+            "project_12": 0.04,
+            "project_1": 0.01,
+            "project_4": 0.07
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789869476.510155,
+      "outlook": {
+        "outlook": {
+          "choice": "unlikely_success",
+          "type": "choice",
+          "confidence": 0.68,
+          "probabilities": {
+            "likely_success": 0.08,
+            "uncertain": 0.14,
+            "unlikely_success": 0.78
+          }
+        }
+      },
+      "with_outlook": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "project_10": 0.0,
+            "batch_11": 0.09,
+            "project_0": 0.01,
+            "project_6": 0.05,
+            "project_1": 0.01,
+            "batch_6": 0.03,
+            "project_5": 0.0,
+            "project_4": 0.08,
+            "project_9": 0.0,
+            "project_3": 0.2,
+            "project_7": 0.05,
+            "project_8": 0.01,
+            "project_11": 0.14,
+            "project_12": 0.04,
+            "save": 0.27,
+            "project_2": 0.02
+          }
+        }
+      },
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.22,
+          "probabilities": {
+            "project_12": 0.03,
+            "project_0": 0.01,
+            "project_2": 0.02,
+            "project_6": 0.05,
+            "project_7": 0.05,
+            "batch_6": 0.03,
+            "project_10": 0.0,
+            "project_11": 0.15000000000000002,
+            "batch_11": 0.1,
+            "project_9": 0.0,
+            "save": 0.28,
+            "project_4": 0.07,
+            "project_5": 0.0,
+            "project_8": 0.01,
+            "project_1": 0.01,
+            "project_3": 0.18000000000000002
+          }
+        }
+      }
+    },
+    {
+      "recorded_time": 1789869667.279131,
+      "original": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.35,
+          "probabilities": {
+            "project_0": 0.02,
+            "project_1": 0.07,
+            "batch_4": 0.12,
+            "save": 0.43,
+            "project_4": 0.13,
+            "project_2": 0.01,
+            "project_5": 0.19,
+            "project_3": 0.03
+          }
+        }
+      },
+      "outlook": {
+        "outlook": {
+          "choice": "unlikely_success",
+          "type": "choice",
+          "confidence": 0.88,
+          "probabilities": {
+            "unlikely_success": 0.92,
+            "likely_success": 0.03,
+            "uncertain": 0.05
+          }
+        }
+      },
+      "with_outlook": {
+        "investment": {
+          "choice": "save",
+          "type": "choice",
+          "confidence": 0.43,
+          "probabilities": {
+            "batch_4": 0.08,
+            "project_2": 0.01,
+            "save": 0.51,
+            "project_5": 0.18,
+            "project_4": 0.12,
+            "project_0": 0.02,
+            "project_3": 0.03,
+            "project_1": 0.05
+          }
+        }
+      }
+    }
+  ],
+  "calls": 9,
+  "cost": 0.004153422
+}

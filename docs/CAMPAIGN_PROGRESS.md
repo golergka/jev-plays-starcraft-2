@@ -4562,3 +4562,19 @@ Question chars10957→9677,11135→9786,10230→8871. No evidence supporting cap
 list verbosity as the cause; do not deploy. Narrow negative result, not general
 proof of inability. Script/artifact312 preserve method. Game remains terminal;
 no unchanged retry started merely to exercise infrastructure.
+
+### Lab313 — Jev no-purchase forecast does not change investment top choice
+
+Nine-call offline probe:first/middle/last >=500mineral states from310. Jev first
+forecasts mission success if no new purchases occur(existing queues/current-unit
+orders continue); feed full answer back as explicitly uncertain model estimate.
+Unchanged investment question; alternate baseline/enriched order. Cost$0.004153422.
+
+Forecasts:uncertain.48(unlikely.36),unlikely.78,unlikely.92. All three investment
+topsremain save. Save probabilities.34→.29,.28→.27,.43→.51. Recognizing poor
+no-purchase outlook did not produce a different top investment in these samples;
+probability shifts mixed. No guarantee that any available purchase would rescue
+the state, and individual no-purchase decisions are not equivalent to never buying.
+Thus this is a narrow negative chaining result, not proof of logical contradiction
+or universal incapability. Do not add extra live call without evidence of benefit.
+Script/artifact313 preserve outputs. SC2 remains terminal; no paid gameplay running.
