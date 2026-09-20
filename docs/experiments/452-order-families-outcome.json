@@ -1,0 +1,23 @@
+{
+  "trial": 451,
+  "run": "runs/20260920T102844.284417Z",
+  "calls": 188,
+  "cost_usd": 0.12441092999999996,
+  "ui_verification": {
+    "time": 1789900827.222056,
+    "verification": "native SC2 defeat screenshot via cua",
+    "mission": "Smash and Grab",
+    "result": "defeat",
+    "mission_time": "14:53",
+    "reason": "All of your structures have been destroyed.",
+    "protoss_relics": "0/4",
+    "minerals": 0,
+    "vespene": 0
+  },
+  "decision_errors": 1,
+  "family_choices": {
+    "move": 11,
+    "attack_move": 3
+  },
+  "limits": "Single live trial; no causal attribution of duration. One ReadTimeout recovered. No root tactical commands or midrun policy changes."
+}

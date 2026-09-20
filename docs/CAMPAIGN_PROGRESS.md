@@ -6619,3 +6619,18 @@ MobileCombat family answersMove (78→26 and79→25 options);13calls$.006313356
 at initialcheck. No tactical intervention. Follow session59815, stdout
 /tmp/jev-smash-and-grab-lab451.log; do not restart merely on observation timeout.
 Live outcome unproven;15previousSmashdefeats. This entry records start only.
+
+### Lab452 — order families lose14:53 without selecting regroup
+
+Trial451/run20260920T102844.284417Z/session59815 terminalexit0; native defeat
+14:53 allstructuresdestroyed,0/4relics,0minerals0gas.188successfulcalls
+$0.124410930,oneReadTimeout recovered on samecontroller. Fourteenfamily choices:
+11Move,3attack-move,zeroRegroup. Replacements repeatedlysent middle-east; early
+force vanished, Barracksgone by8691. Threebunkers at9422 hadzero passengers;
+workers/repairs extendedbase survival, EngineeringBay added but no armyrecovery.
+Native visuals checked throughout, including finaldefeat. Reconciledresult,
+checkpoint16thSmashdefeat and publicreport. No rootorders/midrunpolicychanges.
+449's one recorded-state regroup choice did not translate to live improvement.
+Do not retry unchanged or promotefamilymode todefault. Investigate why general
+objective navigation dominates immediate survival/production dependencies;
+future experiment must address that behavior rather than merely more context.
