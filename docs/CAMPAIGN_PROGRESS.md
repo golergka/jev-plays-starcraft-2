@@ -6787,3 +6787,21 @@ universally wrong. No game commands, no unchanged live retry. Next investigation
 should distinguish decision competence from menu/representation effects with
 controlled examples before another campaign expenditure; avoid repeating prior
 buy-vs-wait, independent-goal, or added-facts probes as new ideas.
+
+
+### Lab465 — dependency controls pass with explicit goals and rules
+
+Six synthetic calls $0.000152502; all six expected top choices. Crossed SC2
+names (SCV/Barracks/Marine) and neutral names (Unit A/Facility B/Unit C) with
+worker target, military target without producer, military target with producer.
+Rules specify200credits,50unitcost,150producercost,twoactions,noincome/noother
+requirements and immediate completions; earliest attainment breaks ties. Jev
+buys worker/builds producer/trains target respectively in both vocabularies.
+These are explicitly hypothetical controls, not claims about actual SC2 timing,
+prerequisites or appropriate strategy. Complete inputs/answers preserved.
+This narrows464: Jev is not demonstrated incapable of the elementary dependency;
+it can solve it when the desired unit and deterministic rules are explicit.
+No claim of reliable live planning, uncertainty handling, or choosing the right
+intermediate goal. No target is imposed on live Jev and no executor deployed.
+Next useful distinction is goal selection versus goal execution in real-state
+counterfactual diagnostics, while preserving autonomous goals in the player.

@@ -1,0 +1,293 @@
+{
+  "method": "Six synthetic deterministic controls: worker target, missing producer, existing producer; SC2 names and neutral names. Full state and questions retained. No live policy or orders. Expected first action derived from explicit toy rules, not StarCraft strategy.",
+  "cases": [
+    {
+      "id": "sc2_names_worker",
+      "state": {
+        "scenario": "Synthetic deterministic dependency test. These stipulated rules override any real-game knowledge. This is not a live game observation.",
+        "objective": "Obtain exactly one additional SCV within the next two actions.",
+        "resources": {
+          "credits": 200
+        },
+        "owned": {
+          "SCV": 1,
+          "Barracks": 0,
+          "Marine": 0
+        },
+        "rules": [
+          "Each action completes immediately. No income, refunds, combat, losses, movement, upgrades, supply constraints or other requirements exist.",
+          "Buying one SCV costs 50 credits and has no other effects.",
+          "Buying one Barracks costs 150 credits and has no other effects.",
+          "Training one Marine costs 50 credits and requires owning at least one Barracks. Training does not consume the producer.",
+          "Waiting uses an action and changes nothing.",
+          "Only the first action is being selected. A second action may be selected afterward using the same rules and remaining credits."
+        ],
+        "tie_break": "If multiple first actions permit success, choose the one that obtains the required unit in the fewest actions."
+      },
+      "questions": {
+        "first_action": {
+          "type": "choice",
+          "instructions": "Choose the first action to achieve the stated objective under the stated rules and tie-break.",
+          "criteria": {
+            "a": "Buy one SCV now.",
+            "b": "Wait without purchasing anything.",
+            "c": "Buy one Barracks now."
+          }
+        }
+      },
+      "expected": "a",
+      "answer": {
+        "choice": "a",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "a": 1.0,
+          "c": 0.0,
+          "b": 0.0
+        }
+      },
+      "correct": true
+    },
+    {
+      "id": "sc2_names_missing_producer",
+      "state": {
+        "scenario": "Synthetic deterministic dependency test. These stipulated rules override any real-game knowledge. This is not a live game observation.",
+        "objective": "Obtain exactly one additional Marine within the next two actions.",
+        "resources": {
+          "credits": 200
+        },
+        "owned": {
+          "SCV": 1,
+          "Barracks": 0,
+          "Marine": 0
+        },
+        "rules": [
+          "Each action completes immediately. No income, refunds, combat, losses, movement, upgrades, supply constraints or other requirements exist.",
+          "Buying one SCV costs 50 credits and has no other effects.",
+          "Buying one Barracks costs 150 credits and has no other effects.",
+          "Training one Marine costs 50 credits and requires owning at least one Barracks. Training does not consume the producer.",
+          "Waiting uses an action and changes nothing.",
+          "Only the first action is being selected. A second action may be selected afterward using the same rules and remaining credits."
+        ],
+        "tie_break": "If multiple first actions permit success, choose the one that obtains the required unit in the fewest actions."
+      },
+      "questions": {
+        "first_action": {
+          "type": "choice",
+          "instructions": "Choose the first action to achieve the stated objective under the stated rules and tie-break.",
+          "criteria": {
+            "a": "Buy one SCV now.",
+            "b": "Wait without purchasing anything.",
+            "c": "Buy one Barracks now."
+          }
+        }
+      },
+      "expected": "c",
+      "answer": {
+        "choice": "c",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "b": 0.0,
+          "c": 1.0,
+          "a": 0.0
+        }
+      },
+      "correct": true
+    },
+    {
+      "id": "sc2_names_existing_producer",
+      "state": {
+        "scenario": "Synthetic deterministic dependency test. These stipulated rules override any real-game knowledge. This is not a live game observation.",
+        "objective": "Obtain exactly one additional Marine within the next two actions.",
+        "resources": {
+          "credits": 200
+        },
+        "owned": {
+          "SCV": 1,
+          "Barracks": 1,
+          "Marine": 0
+        },
+        "rules": [
+          "Each action completes immediately. No income, refunds, combat, losses, movement, upgrades, supply constraints or other requirements exist.",
+          "Buying one SCV costs 50 credits and has no other effects.",
+          "Buying one Barracks costs 150 credits and has no other effects.",
+          "Training one Marine costs 50 credits and requires owning at least one Barracks. Training does not consume the producer.",
+          "Waiting uses an action and changes nothing.",
+          "Only the first action is being selected. A second action may be selected afterward using the same rules and remaining credits."
+        ],
+        "tie_break": "If multiple first actions permit success, choose the one that obtains the required unit in the fewest actions."
+      },
+      "questions": {
+        "first_action": {
+          "type": "choice",
+          "instructions": "Choose the first action to achieve the stated objective under the stated rules and tie-break.",
+          "criteria": {
+            "a": "Buy one SCV now.",
+            "b": "Wait without purchasing anything.",
+            "c": "Buy one Barracks now.",
+            "d": "Train one Marine now."
+          }
+        }
+      },
+      "expected": "d",
+      "answer": {
+        "choice": "d",
+        "type": "choice",
+        "confidence": 0.95,
+        "probabilities": {
+          "d": 0.97,
+          "b": 0.0,
+          "c": 0.03,
+          "a": 0.0
+        }
+      },
+      "correct": true
+    },
+    {
+      "id": "abstract_names_worker",
+      "state": {
+        "scenario": "Synthetic deterministic dependency test. These stipulated rules override any real-game knowledge. This is not a live game observation.",
+        "objective": "Obtain exactly one additional Unit A within the next two actions.",
+        "resources": {
+          "credits": 200
+        },
+        "owned": {
+          "Unit A": 1,
+          "Facility B": 0,
+          "Unit C": 0
+        },
+        "rules": [
+          "Each action completes immediately. No income, refunds, combat, losses, movement, upgrades, supply constraints or other requirements exist.",
+          "Buying one Unit A costs 50 credits and has no other effects.",
+          "Buying one Facility B costs 150 credits and has no other effects.",
+          "Training one Unit C costs 50 credits and requires owning at least one Facility B. Training does not consume the producer.",
+          "Waiting uses an action and changes nothing.",
+          "Only the first action is being selected. A second action may be selected afterward using the same rules and remaining credits."
+        ],
+        "tie_break": "If multiple first actions permit success, choose the one that obtains the required unit in the fewest actions."
+      },
+      "questions": {
+        "first_action": {
+          "type": "choice",
+          "instructions": "Choose the first action to achieve the stated objective under the stated rules and tie-break.",
+          "criteria": {
+            "a": "Buy one Unit A now.",
+            "b": "Wait without purchasing anything.",
+            "c": "Buy one Facility B now."
+          }
+        }
+      },
+      "expected": "a",
+      "answer": {
+        "choice": "a",
+        "type": "choice",
+        "confidence": 1.0,
+        "probabilities": {
+          "b": 0.0,
+          "a": 1.0,
+          "c": 0.0
+        }
+      },
+      "correct": true
+    },
+    {
+      "id": "abstract_names_missing_producer",
+      "state": {
+        "scenario": "Synthetic deterministic dependency test. These stipulated rules override any real-game knowledge. This is not a live game observation.",
+        "objective": "Obtain exactly one additional Unit C within the next two actions.",
+        "resources": {
+          "credits": 200
+        },
+        "owned": {
+          "Unit A": 1,
+          "Facility B": 0,
+          "Unit C": 0
+        },
+        "rules": [
+          "Each action completes immediately. No income, refunds, combat, losses, movement, upgrades, supply constraints or other requirements exist.",
+          "Buying one Unit A costs 50 credits and has no other effects.",
+          "Buying one Facility B costs 150 credits and has no other effects.",
+          "Training one Unit C costs 50 credits and requires owning at least one Facility B. Training does not consume the producer.",
+          "Waiting uses an action and changes nothing.",
+          "Only the first action is being selected. A second action may be selected afterward using the same rules and remaining credits."
+        ],
+        "tie_break": "If multiple first actions permit success, choose the one that obtains the required unit in the fewest actions."
+      },
+      "questions": {
+        "first_action": {
+          "type": "choice",
+          "instructions": "Choose the first action to achieve the stated objective under the stated rules and tie-break.",
+          "criteria": {
+            "a": "Buy one Unit A now.",
+            "b": "Wait without purchasing anything.",
+            "c": "Buy one Facility B now."
+          }
+        }
+      },
+      "expected": "c",
+      "answer": {
+        "choice": "c",
+        "type": "choice",
+        "confidence": 0.99,
+        "probabilities": {
+          "a": 0.0,
+          "b": 0.0,
+          "c": 1.0
+        }
+      },
+      "correct": true
+    },
+    {
+      "id": "abstract_names_existing_producer",
+      "state": {
+        "scenario": "Synthetic deterministic dependency test. These stipulated rules override any real-game knowledge. This is not a live game observation.",
+        "objective": "Obtain exactly one additional Unit C within the next two actions.",
+        "resources": {
+          "credits": 200
+        },
+        "owned": {
+          "Unit A": 1,
+          "Facility B": 1,
+          "Unit C": 0
+        },
+        "rules": [
+          "Each action completes immediately. No income, refunds, combat, losses, movement, upgrades, supply constraints or other requirements exist.",
+          "Buying one Unit A costs 50 credits and has no other effects.",
+          "Buying one Facility B costs 150 credits and has no other effects.",
+          "Training one Unit C costs 50 credits and requires owning at least one Facility B. Training does not consume the producer.",
+          "Waiting uses an action and changes nothing.",
+          "Only the first action is being selected. A second action may be selected afterward using the same rules and remaining credits."
+        ],
+        "tie_break": "If multiple first actions permit success, choose the one that obtains the required unit in the fewest actions."
+      },
+      "questions": {
+        "first_action": {
+          "type": "choice",
+          "instructions": "Choose the first action to achieve the stated objective under the stated rules and tie-break.",
+          "criteria": {
+            "a": "Buy one Unit A now.",
+            "b": "Wait without purchasing anything.",
+            "c": "Buy one Facility B now.",
+            "d": "Train one Unit C now."
+          }
+        }
+      },
+      "expected": "d",
+      "answer": {
+        "choice": "d",
+        "type": "choice",
+        "confidence": 0.4,
+        "probabilities": {
+          "b": 0.0,
+          "d": 0.55,
+          "a": 0.0,
+          "c": 0.45
+        }
+      },
+      "correct": true
+    }
+  ],
+  "calls": 6,
+  "cost_usd": 0.000152502
+}
